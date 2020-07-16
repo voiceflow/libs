@@ -24,7 +24,7 @@ export type Project = t.TypeOf<typeof TProject>;
 
 export const ENDPOINT = 'project';
 
-export class ProjectResource extends CrudResource<typeof TProject.props, 'projectID'> {
+class ProjectResource extends CrudResource<typeof TProject.props, 'projectID'> {
   constructor(fetch: Fetch) {
     super({
       id: TProjectID,
@@ -43,3 +43,5 @@ export class ProjectResource extends CrudResource<typeof TProject.props, 'projec
     return data;
   }
 }
+
+export default ProjectResource;

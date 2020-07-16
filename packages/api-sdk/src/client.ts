@@ -1,6 +1,5 @@
-import axios, { AxiosInstance } from 'axios';
-
 import Fetch from '@/fetch';
+import { Project } from '@/resources';
 
 type Options = {
   clientKey: string;
@@ -9,10 +8,12 @@ type Options = {
 };
 
 class Client {
-  private fetch: Fetch;
+  public project: Project;
 
   constructor({ clientKey, apiEndpoint, authorization }: Options) {
-    this.fetch = new Fetch({ clientKey, apiEndpoint, authorization });
+    const fetch = new Fetch({ clientKey, apiEndpoint, authorization });
+
+    this.project = new Project(fetch);
   }
 }
 
