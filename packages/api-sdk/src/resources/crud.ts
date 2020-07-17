@@ -1,49 +1,58 @@
-import * as t from 'io-ts';
+import type { BaseScheme, SchemeType } from '@/types';
 
 import BaseResource from './base';
 
-class CrudResource<P extends Record<string, t.Mixed>, K extends keyof P> extends BaseResource<P, K> {
-  private getRUDEndpoint(id: t.TypeOf<P[K]>) {
-    return `${this.getEndpoint()}/${id}`;
+class CrudResource<S extends BaseScheme, K extends keyof SchemeType<S>> extends BaseResource<S, K> {
+  protected _getCRUDEndpoint(id?: SchemeType<S>[K]): string {
+    return id ? `${this._getEndpoint()}/${id}` : this._getEndpoint();
   }
 
-  public async get(id: t.TypeOf<P[K]>): Promise<t.TypeOfProps<P>> {
-    this.validateID(id);
-
-    const { data } = await this.fetch.get<t.TypeOfProps<P>>(this.getRUDEndpoint(id));
+  protected async _get<T extends SchemeType<S>>(): Promise<T[]> {
+    const { data } = await this.fetch.get<T[]>(this._getCRUDEndpoint());
 
     return data;
   }
 
-  public async list(): Promise<t.TypeOfProps<P>[]> {
-    const { data } = await this.fetch.get<t.TypeOfProps<P>[]>(this.getEndpoint());
+  protected async _getByID<T extends SchemeType<S>>(id: SchemeType<S>[K]): Promise<T> {
+    this._assertModelID(id);
+
+    const { data } = await this.fetch.get<T>(this._getCRUDEndpoint(id));
 
     return data;
   }
 
-  public async create(body: Omit<t.TypeOfProps<P>, K | 'created'>): Promise<t.TypeOfProps<P>> {
-    this.validateCreatBody(body);
+  protected async _post<T extends SchemeType<S>>(body: Omit<T, K | 'created'>): Promise<T> {
+    this._assertPutAndPostBody(body);
 
-    const { data } = await this.fetch.post<t.TypeOfProps<P>>(this.getEndpoint(), body);
-
-    return data;
-  }
-
-  public async update(id: t.TypeOf<P[K]>, body: Partial<t.TypeOfProps<P>>): Promise<Partial<t.TypeOfProps<P>>> {
-    this.validateID(id);
-    this.validateUpdateBody(body);
-
-    const { data } = await this.fetch.patch<Partial<t.TypeOfProps<P>>>(this.getRUDEndpoint(id), body);
+    const { data } = await this.fetch.post<T>(this._getCRUDEndpoint(), body);
 
     return data;
   }
 
-  public async delete(id: t.TypeOf<P[K]>): Promise<t.TypeOfProps<P>> {
-    this.validateID(id);
+  protected async _put<T extends SchemeType<S>>(id: SchemeType<S>[K], body: Omit<T, K | 'created'>): Promise<T> {
+    this._assertModelID(id);
+    this._assertPutAndPostBody(body);
 
-    const { data } = await this.fetch.delete<t.TypeOfProps<P>>(this.getRUDEndpoint(id));
+    const { data } = await this.fetch.put<T>(this._getCRUDEndpoint(id), body);
 
     return data;
+  }
+
+  protected async _patch<T extends SchemeType<S>>(id: SchemeType<S>[K], body: Partial<T>): Promise<Partial<T>> {
+    this._assertModelID(id);
+    this._assertPatchBody(body);
+
+    const { data } = await this.fetch.patch<Partial<T>>(this._getCRUDEndpoint(id), body);
+
+    return data;
+  }
+
+  protected async _delete(id: SchemeType<S>[K]): Promise<SchemeType<S>[K]> {
+    this._assertModelID(id);
+
+    await this.fetch.delete(this._getCRUDEndpoint(id));
+
+    return id;
   }
 }
 

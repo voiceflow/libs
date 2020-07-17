@@ -1,57 +1,47 @@
-import * as t from 'io-ts';
+import * as s from 'superstruct';
 
 import type Fetch from '@/fetch';
-import { omit, validate } from '@/utils';
+import type { BaseScheme, SchemeType } from '@/types';
+import { createPutAndPostStruct } from '@/utils';
 
-class BaseResource<P extends Record<string, t.Mixed>, K extends keyof P> {
-  private readonly id: t.NumberC | t.StringC;
-
-  private readonly modalIDKey: K;
-
-  private readonly updateBody: t.PartialC<P>;
-
-  private readonly createBody: t.TypeC<Omit<P, K>>;
-
+class BaseResource<S extends BaseScheme, K extends keyof SchemeType<S>> {
   protected readonly fetch: Fetch;
+
+  private readonly modelIDKey: K;
+
+  private readonly struct: s.Struct<S>;
+
+  private readonly patchStruct: s.Struct<S>;
+
+  private readonly putAndPostStruct: s.Struct<S>;
 
   private readonly resourceEndpoint: string;
 
-  constructor({
-    id,
-    props,
-    fetch,
-    modalIDKey,
-    resourceEndpoint,
-  }: {
-    id: t.NumberC | t.StringC;
-    props: P;
-    fetch: Fetch;
-    modalIDKey: K;
-    resourceEndpoint: string;
-  }) {
-    this.id = id;
+  constructor({ fetch, schema, modelIDKey, resourceEndpoint }: { fetch: Fetch; schema: S; modelIDKey: K; resourceEndpoint: string }) {
     this.fetch = fetch;
-    this.modalIDKey = modalIDKey;
+    this.modelIDKey = modelIDKey;
     this.resourceEndpoint = resourceEndpoint;
 
-    this.updateBody = t.partial(props);
-    this.createBody = t.type(omit(props, this.modalIDKey, 'created' as K));
+    this.struct = s.type(schema);
+    this.patchStruct = s.partial(schema);
+
+    this.putAndPostStruct = createPutAndPostStruct(schema, modelIDKey);
   }
 
-  protected validateID(id: t.TypeOf<P[K]>): void {
-    validate(this.id.decode(id));
-  }
-
-  protected validateUpdateBody(body: Partial<t.TypeOfProps<P>>): void {
-    validate(this.updateBody.decode(body));
-  }
-
-  protected validateCreatBody(body: Omit<t.TypeOfProps<P>, K | 'created'>): void {
-    validate(this.createBody.decode(body));
-  }
-
-  protected getEndpoint(): string {
+  protected _getEndpoint(): string {
     return this.resourceEndpoint;
+  }
+
+  protected _assertModelID(id: string | number | SchemeType<S>[K]): void {
+    s.assert(id, this.struct.schema[this.modelIDKey]);
+  }
+
+  protected _assertPatchBody(body: Partial<SchemeType<S>>): void {
+    s.assert(body, this.patchStruct);
+  }
+
+  protected _assertPutAndPostBody(body: Omit<SchemeType<S>, K | 'created'>): void {
+    s.assert(body, this.putAndPostStruct);
   }
 }
 

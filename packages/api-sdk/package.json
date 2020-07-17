@@ -16,7 +16,8 @@
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "io-ts": "^2.2.8",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.5",
+    "superstruct": "^0.10.12"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
@@ -64,7 +65,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
+      "__pre-commit": "lint-staged",
       "pre-push": "git-branch-check"
     }
   },

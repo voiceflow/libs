@@ -1,17 +1,15 @@
-import * as t from 'io-ts';
+import * as s from 'superstruct';
 
-import { TBlockID, TCreatorID, TProjectID, TTeamID, TTimestamp, TVariable, TWorkspaceID } from '@/validations';
+export type UnknownRecord = Record<string, unknown>;
 
-export type TeamID = t.TypeOf<typeof TTeamID>;
+export type BaseScheme = Record<string, s.Struct<any>>;
 
-export type BlockID = t.TypeOf<typeof TBlockID>;
+export type Flatten<T> = T extends infer U ? { [K in keyof U]: U[K] } : never;
 
-export type Variable = t.TypeOf<typeof TVariable>;
+export type OptionalKeys<T> = { [K in keyof T]: undefined extends T[K] ? K : never }[keyof T];
 
-export type Timestamp = t.TypeOf<typeof TTimestamp>;
+export type RequiredKeys<T> = { [K in keyof T]: undefined extends T[K] ? never : K }[keyof T];
 
-export type ProjectID = t.TypeOf<typeof TProjectID>;
+export type OptionalizeObject<T> = Flatten<{ [K in RequiredKeys<T>]: T[K] } & { [K in OptionalKeys<T>]?: T[K] }>;
 
-export type CreatorID = t.TypeOf<typeof TCreatorID>;
-
-export type WorkspaceID = t.TypeOf<typeof TWorkspaceID>;
+export type SchemeType<T extends BaseScheme> = OptionalizeObject<{ [K in keyof T]: s.StructType<T[K]> }>;

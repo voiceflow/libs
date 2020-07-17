@@ -1,34 +1,33 @@
-import * as t from 'io-ts';
+import * as s from 'superstruct';
 
 import Client from '@/client';
-import { validate } from '@/utils';
 
-const Options = t.type({
-  clientKey: t.string,
-  apiEndpoint: t.string,
+export * from '@/models';
+export * from '@/constants';
+
+const Options = s.object({
+  clientKey: s.string(),
+  apiEndpoint: s.string(),
 });
 
-const GenerateClientOptions = t.type({
-  authorization: t.string,
+const GenerateClientOptions = s.type({
+  authorization: s.string(),
 });
-
-type OptionsType = t.TypeOf<typeof Options>;
-type GenerateClientOptionsType = t.TypeOf<typeof GenerateClientOptions>;
 
 class ApiSDK {
   private clientKey: string;
 
   private apiEndpoint: string;
 
-  constructor({ clientKey, apiEndpoint }: OptionsType) {
-    validate(Options.decode({ clientKey, apiEndpoint }));
+  constructor({ clientKey, apiEndpoint }: s.StructType<typeof Options>) {
+    s.assert({ clientKey, apiEndpoint }, Options);
 
     this.clientKey = clientKey;
     this.apiEndpoint = apiEndpoint;
   }
 
-  public generateClient({ authorization }: GenerateClientOptionsType): Client {
-    validate(GenerateClientOptions.decode({ authorization }));
+  public generateClient({ authorization }: s.StructType<typeof GenerateClientOptions>): Client {
+    s.assert({ authorization }, GenerateClientOptions);
 
     return new Client({
       clientKey: this.clientKey,
