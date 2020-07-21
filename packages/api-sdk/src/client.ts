@@ -1,11 +1,5 @@
-import Fetch from '@/fetch';
+import Fetch, { FetchOptions } from '@/fetch';
 import { Diagram, Program, Project, Version } from '@/resources';
-
-type Options = {
-  clientKey: string;
-  apiEndpoint: string;
-  authorization: string;
-};
 
 class Client {
   public project: Project;
@@ -16,7 +10,7 @@ class Client {
 
   public diagram: Diagram;
 
-  constructor({ clientKey, apiEndpoint, authorization }: Options) {
+  constructor({ clientKey, apiEndpoint, authorization }: FetchOptions) {
     const fetch = new Fetch({ clientKey, apiEndpoint, authorization });
 
     this.project = new Project(fetch);

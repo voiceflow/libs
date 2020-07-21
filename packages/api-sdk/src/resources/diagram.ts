@@ -12,7 +12,7 @@ export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
 class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey> {
-  private _nodePutAndPostStruct = createPutAndPostStruct(SNode.schema, 'id');
+  private _nodePutAndPostStruct = createPutAndPostStruct(SNode.schema, 'id', true);
 
   constructor(fetch: Fetch) {
     super({
@@ -23,15 +23,19 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     });
   }
 
-  public get(id: DiagramID): Promise<Diagram> {
-    return super._getByID<Diagram>(id);
+  public async get<T extends Partial<Diagram>>(id: DiagramID, fields: string[]): Promise<T>;
+
+  public async get(id: DiagramID): Promise<Diagram>;
+
+  public async get(id: DiagramID, fields?: string[]) {
+    return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  public create(body: Omit<Diagram, ModelIDKey>): Promise<Diagram> {
+  public async create(body: Omit<Diagram, ModelIDKey>): Promise<Diagram> {
     return super._post<Diagram>(body);
   }
 
-  public update(id: DiagramID, body: Partial<Diagram>): Promise<Partial<Diagram>> {
+  public async update(id: DiagramID, body: Partial<Diagram>): Promise<Partial<Diagram>> {
     return super._patch<Diagram>(id, body);
   }
 
@@ -45,7 +49,7 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     return data;
   }
 
-  public delete(id: DiagramID): Promise<DiagramID> {
+  public async delete(id: DiagramID): Promise<DiagramID> {
     return super._delete(id);
   }
 }

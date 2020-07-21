@@ -1,7 +1,7 @@
 import * as s from 'superstruct';
 
 import type Fetch from '@/fetch';
-import { BasePlatformData, DiagramID, Project, ProjectID, SProject, SWorkspaceID, Version, VersionPlatformData, WorkspaceID } from '@/models';
+import { BasePlatformData, Project, ProjectID, SProject, SWorkspaceID, Version, VersionPlatformData, WorkspaceID } from '@/models';
 
 import CrudResource from '../crud';
 import MembersResource from './members';
@@ -25,30 +25,40 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
     this.members = new MembersResource(fetch, ENDPOINT);
   }
 
-  async list<P extends BasePlatformData, M extends BasePlatformData>(workspaceID: WorkspaceID): Promise<Project<P, M>[]> {
+  public async list<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(workspaceID: WorkspaceID, fields: string[]): Promise<P[]>;
+
+  public async list<P extends BasePlatformData, M extends BasePlatformData>(workspaceID: WorkspaceID): Promise<Project<P, M>[]>;
+
+  public async list(workspaceID: WorkspaceID, fields?: string[]) {
     s.assert(workspaceID, SWorkspaceID);
 
-    const { data } = await this.fetch.get<Project<P, M>[]>(`workspace/${workspaceID}/projects`);
+    const { data } = await this.fetch.get(`workspace/${workspaceID}/projects${this._getFieldsQuery(fields)}`);
 
     return data;
   }
 
-  public get<P extends BasePlatformData, M extends BasePlatformData>(id: ProjectID): Promise<Project<P, M>> {
-    return super._getByID<Project<P, M>>(id);
+  public async get<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(id: ProjectID, fields: string[]): Promise<P>;
+
+  public async get<P extends BasePlatformData, M extends BasePlatformData>(id: ProjectID): Promise<Project<P, M>>;
+
+  public async get(id: ProjectID, fields?: string[]) {
+    return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  public create<P extends BasePlatformData, M extends BasePlatformData>(body: Omit<Project<P, M>, ModelIDKey | 'created'>): Promise<Project<P, M>> {
+  public async create<P extends BasePlatformData, M extends BasePlatformData>(
+    body: Omit<Project<P, M>, ModelIDKey | 'created'>
+  ): Promise<Project<P, M>> {
     return super._post<Project<P, M>>(body);
   }
 
-  public update<P extends BasePlatformData, M extends BasePlatformData>(
+  public async update<P extends BasePlatformData, M extends BasePlatformData>(
     id: ProjectID,
     body: Partial<Project<P, M>>
   ): Promise<Partial<Project<P, M>>> {
     return super._patch<Project<P, M>>(id, body);
   }
 
-  public delete(id: ProjectID): Promise<ProjectID> {
+  public async delete(id: ProjectID): Promise<ProjectID> {
     return super._delete(id);
   }
 
@@ -61,10 +71,14 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
     return data;
   }
 
-  public async getVersions<P extends VersionPlatformData>(id: ProjectID): Promise<Version<P>[]> {
+  public async getVersions<P extends Partial<Version<VersionPlatformData>>>(id: ProjectID, fields: string[]): Promise<P[]>;
+
+  public async getVersions<P extends VersionPlatformData>(id: ProjectID): Promise<Version<P>[]>;
+
+  public async getVersions(id: ProjectID, fields?: string[]) {
     this._assertModelID(id);
 
-    const { data } = await this.fetch.get<Version<P>[]>(`${this._getCRUDEndpoint(id)}/versions`);
+    const { data } = await this.fetch.get(`${this._getCRUDEndpoint(id)}/versions${this._getFieldsQuery(fields)}`);
 
     return data;
   }

@@ -1,19 +1,19 @@
 import * as s from 'superstruct';
 
 import type Fetch from '@/fetch';
-import type { BaseScheme, SchemeType } from '@/types';
-import { createPutAndPostStruct } from '@/utils';
+import type { BaseSchema, SchemeType } from '@/types';
+import { CreatePutAndPostStruct, createPutAndPostStruct } from '@/utils';
 
-class BaseResource<S extends BaseScheme, K extends keyof SchemeType<S>> {
+class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>> {
   protected readonly fetch: Fetch;
 
   private readonly modelIDKey: K;
 
-  private readonly struct: s.Struct<S>;
+  private readonly struct: s.Struct<SchemeType<S>, S>;
 
   private readonly patchStruct: s.Struct<S>;
 
-  private readonly putAndPostStruct: s.Struct<S>;
+  private readonly putAndPostStruct: CreatePutAndPostStruct<S, K>;
 
   private readonly resourceEndpoint: string;
 
@@ -22,9 +22,8 @@ class BaseResource<S extends BaseScheme, K extends keyof SchemeType<S>> {
     this.modelIDKey = modelIDKey;
     this.resourceEndpoint = resourceEndpoint;
 
-    this.struct = s.type(schema);
+    this.struct = s.object(schema);
     this.patchStruct = s.partial(schema);
-
     this.putAndPostStruct = createPutAndPostStruct(schema, modelIDKey);
   }
 
@@ -32,8 +31,12 @@ class BaseResource<S extends BaseScheme, K extends keyof SchemeType<S>> {
     return this.resourceEndpoint;
   }
 
+  protected _getFieldsQuery(fields?: string[]): string {
+    return fields ? `?fields=${fields.join(',')}` : '';
+  }
+
   protected _assertModelID(id: string | number | SchemeType<S>[K]): void {
-    s.assert(id, this.struct.schema[this.modelIDKey]);
+    s.assert(id, this.struct.schema[this.modelIDKey as string]);
   }
 
   protected _assertPatchBody(body: Partial<SchemeType<S>>): void {

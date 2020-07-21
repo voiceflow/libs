@@ -1,22 +1,30 @@
-import type { BaseScheme, SchemeType } from '@/types';
+import type { BaseSchema, SchemeType } from '@/types';
 
 import BaseResource from './base';
 
-class CrudResource<S extends BaseScheme, K extends keyof SchemeType<S>> extends BaseResource<S, K> {
+class CrudResource<S extends BaseSchema, K extends keyof SchemeType<S>> extends BaseResource<S, K> {
   protected _getCRUDEndpoint(id?: SchemeType<S>[K]): string {
     return id ? `${this._getEndpoint()}/${id}` : this._getEndpoint();
   }
 
-  protected async _get<T extends SchemeType<S>>(): Promise<T[]> {
-    const { data } = await this.fetch.get<T[]>(this._getCRUDEndpoint());
+  protected async _get<T extends Partial<SchemeType<S>>>(fields: string[]): Promise<T[]>;
+
+  protected async _get<T extends SchemeType<S>>(): Promise<T[]>;
+
+  protected async _get<T extends SchemeType<S>>(fields?: string[]) {
+    const { data } = await this.fetch.get<T[]>(`${this._getCRUDEndpoint()}${this._getFieldsQuery(fields)}`);
 
     return data;
   }
 
-  protected async _getByID<T extends SchemeType<S>>(id: SchemeType<S>[K]): Promise<T> {
+  protected async _getByID<T extends Partial<SchemeType<S>>>(id: SchemeType<S>[K], fields: string[]): Promise<T>;
+
+  protected async _getByID<T extends SchemeType<S>>(id: SchemeType<S>[K]): Promise<T>;
+
+  protected async _getByID(id: SchemeType<S>[K], fields?: string[]) {
     this._assertModelID(id);
 
-    const { data } = await this.fetch.get<T>(this._getCRUDEndpoint(id));
+    const { data } = await this.fetch.get(`${this._getCRUDEndpoint(id)}${this._getFieldsQuery(fields)}`);
 
     return data;
   }

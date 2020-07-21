@@ -1,13 +1,14 @@
 import * as s from 'superstruct';
 
-import { Platform } from '@/constants';
+import { dynamicObject } from '@/utils';
 
-export const SPlatform = s.enums(Object.values(Platform));
+export const SPlatform = s.string();
+export type Platform = s.StructType<typeof SPlatform>;
 
 export const SName = s.string();
 export type Name = s.StructType<typeof SName>;
 
-export const STeamID = s.number();
+export const STeamID = s.string();
 export type TeamID = s.StructType<typeof STeamID>;
 
 // alias for the team id
@@ -48,7 +49,8 @@ export type Slot = s.StructType<typeof SSlot>;
 export const SNodeID = s.string();
 export type NodeID = s.StructType<typeof SNodeID>;
 
-export const SNode = s.object({ id: SNodeID });
+export const SNode = dynamicObject({ id: SNodeID });
+
 export type Node = s.StructType<typeof SNode>;
 
 export const SBasePlatformData = s.object();

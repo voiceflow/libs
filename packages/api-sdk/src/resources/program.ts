@@ -18,19 +18,23 @@ class ProgramResource extends CrudResource<typeof SProgram['schema'], ModelIDKey
     });
   }
 
-  public get(id: ProgramID): Promise<Program> {
-    return super._getByID<Program>(id);
+  public async get<T extends Partial<Program>>(id: ProgramID, fields: string[]): Promise<T>;
+
+  public async get(id: ProgramID): Promise<Program>;
+
+  public async get(id: ProgramID, fields?: string[]) {
+    return fields ? super._getByID<Program>(id, fields) : super._getByID<Program>(id);
   }
 
-  public create(body: Omit<Program, ModelIDKey>): Promise<Program> {
+  public async create(body: Omit<Program, ModelIDKey>): Promise<Program> {
     return super._post<Program>(body);
   }
 
-  public update(id: ProgramID, body: Omit<Program, ModelIDKey>): Promise<Omit<Program, ModelIDKey>> {
+  public async update(id: ProgramID, body: Omit<Program, ModelIDKey>): Promise<Omit<Program, ModelIDKey>> {
     return super._put<Program>(id, body);
   }
 
-  public delete(id: ProgramID): Promise<ProgramID> {
+  public async delete(id: ProgramID): Promise<ProgramID> {
     return super._delete(id);
   }
 }

@@ -1,0 +1,243 @@
+/* eslint-disable dot-notation */
+import { expect } from 'chai';
+import sinon from 'sinon';
+import * as s from 'superstruct';
+
+import { Version } from '@/resources';
+import Crud from '@/resources/crud';
+
+const RESPONSE_DATA = { field1: '1', field2: { subfield: [1, 10] } };
+
+const createClient = () => {
+  const assert = sinon.stub(s, 'assert');
+
+  const fetch = {
+    get: sinon.stub(),
+    post: sinon.stub(),
+    put: sinon.stub(),
+    patch: sinon.stub(),
+    delete: sinon.stub(),
+  };
+
+  const crud = {
+    get: sinon.stub(),
+    getByID: sinon.stub(),
+    post: sinon.stub(),
+    put: sinon.stub(),
+    patch: sinon.stub(),
+    delete: sinon.stub(),
+  };
+
+  Crud.prototype['_get'] = crud.get;
+  Crud.prototype['_getByID'] = crud.getByID;
+  Crud.prototype['_post'] = crud.post;
+  Crud.prototype['_put'] = crud.put;
+  Crud.prototype['_patch'] = crud.patch;
+  Crud.prototype['_delete'] = crud.delete;
+
+  const resource = new Version(fetch as any);
+
+  return {
+    crud,
+    fetch,
+    assert,
+    resource,
+  };
+};
+
+describe('VersionResource', () => {
+  afterEach(() => {
+    sinon.restore();
+  });
+
+  it('.get', async () => {
+    const { crud, resource } = createClient();
+
+    crud.getByID.resolves(RESPONSE_DATA);
+
+    const data = await resource.get('1');
+
+    expect(crud.getByID.callCount).to.eql(1);
+    expect(crud.getByID.args[0]).to.eql(['1']);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
+  it('.get fields', async () => {
+    const { crud, resource } = createClient();
+
+    crud.getByID.resolves(RESPONSE_DATA);
+
+    const data = await resource.get<{ name: string }>('1', ['name']);
+
+    expect(crud.getByID.callCount).to.eql(1);
+    expect(crud.getByID.args[0]).to.eql(['1', ['name']]);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
+  it('.create', async () => {
+    const { crud, resource } = createClient();
+
+    crud.post.resolves(RESPONSE_DATA);
+
+    const body = {
+      _id: '1',
+      creatorID: 1,
+      projectID: '1',
+
+      name: 'name',
+      variables: [],
+      platformData: {
+        settings: {},
+        publishing: {},
+      },
+      rootDiagramID: '1',
+    };
+
+    const data = await resource.create(body);
+
+    expect(crud.post.callCount).to.eql(1);
+    expect(crud.post.args[0]).to.eql([body]);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
+  it('.update', async () => {
+    const { crud, resource } = createClient();
+
+    crud.patch.resolves(RESPONSE_DATA);
+
+    const body = {
+      name: 'new name',
+      variables: ['aaaa'],
+    };
+
+    const data = await resource.update('1', body);
+
+    expect(crud.patch.callCount).to.eql(1);
+    expect(crud.patch.args[0]).to.eql(['1', body]);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
+  it('.delete', async () => {
+    const { crud, resource } = createClient();
+
+    crud.delete.resolves(RESPONSE_DATA);
+
+    const data = await resource.delete('1');
+
+    expect(crud.delete.callCount).to.eql(1);
+    expect(crud.delete.args[0]).to.eql(['1']);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
+  it('.updatePlatformData', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.patch.resolves({ data: RESPONSE_DATA });
+
+    const body = {
+      settings: {
+        key: 'value',
+      },
+      publishing: {},
+    };
+
+    const data = await resource.updatePlatformData('1', body);
+
+    expect(fetch.patch.callCount).to.eql(1);
+    expect(fetch.patch.args[0]).to.eql(['versions/1/platform', body]);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(2);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+    expect(assert.args[1]).to.eql([{ settings: { key: 'value' }, publishing: {} }, resource['_partialPlatformData']]);
+  });
+
+  it('.updatePlatformDataSettings', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.patch.resolves({ data: RESPONSE_DATA });
+
+    const body = { key: 'value' };
+
+    const data = await resource.updatePlatformDataSettings('1', body);
+
+    expect(fetch.patch.callCount).to.eql(1);
+    expect(fetch.patch.args[0]).to.eql(['versions/1/settings', body]);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(2);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+    expect(assert.args[1]).to.eql([{ key: 'value' }, resource['struct'].schema.platformData.schema.settings]);
+  });
+
+  it('.updatePlatformDataPublishing', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.put.resolves({ data: RESPONSE_DATA });
+
+    const body = { key: 'value' };
+
+    const data = await resource.updatePlatformDataPublishing('1', body);
+
+    expect(fetch.put.callCount).to.eql(1);
+    expect(fetch.put.args[0]).to.eql(['versions/1/publishing', body]);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(2);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+    expect(assert.args[1]).to.eql([{ key: 'value' }, resource['struct'].schema.platformData.schema.publishing]);
+  });
+
+  it('.getPrograms', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getPrograms('1');
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/1/programs']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+  });
+
+  it('.getPrograms fields', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getPrograms<{ id: number; variables: string[] }>('1', ['id', 'variables']);
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/1/programs?fields=id,variables']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+  });
+
+  it('.getDiagrams', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getDiagrams('1');
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/1/diagrams']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+  });
+
+  it('.getDiagrams fields', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getDiagrams<{ _id: string; name: string }>('1', ['_id', 'name']);
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/1/diagrams?fields=_id,name']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+  });
+});

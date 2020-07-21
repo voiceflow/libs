@@ -1,4 +1,4 @@
-import ApiSDK, { Platform } from '@/index';
+import ApiSDK from '@/index';
 
 const main = async () => {
   const apiSdk = new ApiSDK({ clientKey: 'mock', apiEndpoint: 'https://localhost:8080' });
@@ -6,15 +6,16 @@ const main = async () => {
 
   // project
   const createdProject = await client.project.create<{ data: string }, { data: number }>({
-    teamID: 1,
+    teamID: '1',
     moduleID: 1,
     creatorID: 1,
     name: 'name',
     members: [],
-    platform: Platform.ALEXA,
+    platform: 'alexa',
     platformData: { data: 'data' },
   });
   const project = await client.project.get<{ data: string }, { data: number }>('1');
+  const projectPartial = await client.project.get<{ name: string }>('1', ['name']);
   const partialProject = await client.project.update<{ data: string }, { data: number }>('1', {
     name: 'name 1',
     members: [

@@ -33,6 +33,6 @@
     }
   },
   "compileOnSave": false,
-  "include": ["src/**/*.ts", "typings/**/*.d.ts", "example/**/*.ts"],
+  "include": ["src/**/*.ts", "typings/**/*.d.ts", "example/**/*.ts", "tests/**/*.ts"],
   "exclude": ["node_modules/**"]
 }

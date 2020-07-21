@@ -93,6 +93,7 @@
     "build": "npm run clean && ttsc --project ./tsconfig.build.json",
     "clean": "rimraf build",
     "lint": "eslint \"src/**/*.{ts}\"",
-    "test": "NODE_ENV=test nyc ts-mocha --paths --opts mocha.opts"
+    "test": "NODE_ENV=test nyc ts-mocha --paths",
+    "tdd": "yarn test --watch"
   }
 }

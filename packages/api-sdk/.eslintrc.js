@@ -12,7 +12,6 @@ module.exports = {
     'func-names': 'off',
     'import/extensions': 'off',
     // disabled temporarily by setting as warnings
-    'eslint-comments/disable-enable-pair': 'warn',
     'eslint-comments/no-unlimited-disable': 'warn',
     'promise/always-return': 'warn',
     'promise/param-names': 'warn',
@@ -40,6 +39,7 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
       },
     },
   ],
