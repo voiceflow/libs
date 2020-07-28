@@ -1,12 +1,12 @@
 import axios, { AxiosInstance } from 'axios';
 
-export type FetchOptions = {
+type FetchOptions = {
   clientKey: string;
   apiEndpoint: string;
   authorization: string;
 };
 
-export type FetchReturnType<T> = {
+type FetchReturnType<T> = {
   data: T;
   status: number;
 };

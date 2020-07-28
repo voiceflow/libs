@@ -91,6 +91,7 @@
     "clean": "rimraf build",
     "lint": "eslint \"src/**/*.{ts}\"",
     "test": "NODE_ENV=test nyc ts-mocha --paths",
-    "tdd": "yarn test --watch"
+    "tdd": "yarn test --watch",
+    "prepare": "npm run build"
   }
 }

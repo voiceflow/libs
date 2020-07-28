@@ -1,7 +1,16 @@
-import Fetch, { FetchOptions } from '@/fetch';
-import { Diagram, Program, Project, Version } from '@/resources';
+import Fetch from '@/fetch';
+import { Diagram, Program, Project, User, Version } from '@/resources';
+
+export type ClientOptions = {
+  creatorID: string;
+  clientKey: string;
+  apiEndpoint: string;
+  authorization: string;
+};
 
 class Client {
+  public user: User;
+
   public project: Project;
 
   public version: Version;
@@ -10,9 +19,10 @@ class Client {
 
   public diagram: Diagram;
 
-  constructor({ clientKey, apiEndpoint, authorization }: FetchOptions) {
+  constructor({ creatorID, clientKey, apiEndpoint, authorization }: ClientOptions) {
     const fetch = new Fetch({ clientKey, apiEndpoint, authorization });
 
+    this.user = new User(creatorID);
     this.project = new Project(fetch);
     this.version = new Version(fetch);
     this.program = new Program(fetch);
