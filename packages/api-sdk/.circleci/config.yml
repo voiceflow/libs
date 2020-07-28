@@ -11,11 +11,11 @@ jobs:
       - checkout
       - vfcommon/install_node_modules
       - run:
-          name: 'Build package'
+          name: "Build package"
           command: |
             yarn build
       - run:
-          name: 'Run tests'
+          name: "Run tests"
           command: |
             yarn test
       - codecov/upload:
@@ -24,11 +24,12 @@ jobs:
 workflows:
   test-and-release:
     jobs:
-      - build-and-test
+      - build-and-test:
+          context: dev-test
       - vfcommon/release:
+          context: dev-test
           requires:
             - build-and-test
           filters:
             branches:
               only: master
-
