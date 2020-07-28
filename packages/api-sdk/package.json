@@ -1,5 +1,5 @@
 {
-  "name": "api-sdk",
+  "name": "@voiceflow/api-sdk",
   "description": "wrapper for creator-api",
   "version": "1.0.0",
   "author": "Voiceflow",
@@ -82,9 +82,6 @@
     ]
   },
   "prettier": "@voiceflow/prettier-config",
-  "release": {
-    "branch": "production"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voiceflow/api-sdk.git"
