@@ -23,7 +23,7 @@ export const SProgram = s.object({
   startId: SNodeID,
   skill_id: SSkillID,
 
-  lines: s.record(s.string(), SNode),
+  lines: s.record(SNodeID, SNode),
   commands: s.array(SProgramCommand),
   variables: s.array(SVariable),
 });

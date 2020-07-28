@@ -49,8 +49,10 @@ export type Slot = s.StructType<typeof SSlot>;
 export const SNodeID = s.string();
 export type NodeID = s.StructType<typeof SNodeID>;
 
-export const SNode = dynamicObject({ id: SNodeID });
+export const SNodeType = s.string();
+export type NodeType = s.StructType<typeof SNodeID>;
 
+export const SNode = dynamicObject({ id: SNodeID, type: SNodeType });
 export type Node = s.StructType<typeof SNode>;
 
 export const SBasePlatformData = s.object();

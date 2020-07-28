@@ -1,7 +1,9 @@
-class User {
-  private creatorID: string;
+import { CreatorID } from '@/models';
 
-  constructor(creatorID: string) {
+class User {
+  private creatorID: CreatorID;
+
+  constructor(creatorID: CreatorID) {
     this.creatorID = creatorID;
   }
 

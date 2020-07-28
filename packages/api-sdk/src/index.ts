@@ -1,6 +1,7 @@
 import * as s from 'superstruct';
 
 import Client from '@/client';
+import { SCreatorID } from '@/models';
 
 export type { default as Client } from '@/client';
 
@@ -12,7 +13,7 @@ export const SOptions = s.object({
 });
 
 export const SGenerateClientOptions = s.type({
-  creatorID: s.string(),
+  creatorID: SCreatorID,
   authorization: s.string(),
 });
 

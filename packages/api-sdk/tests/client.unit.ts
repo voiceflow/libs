@@ -7,7 +7,7 @@ const CLIENT_RESOURCES = [Diagram, Program, Project, Version, User];
 
 const createClient = () =>
   new Client({
-    creatorID: '123',
+    creatorID: 123,
     clientKey: '123qwe123',
     apiEndpoint: 'apiEndpoint',
     authorization: 'qwe123qwe',

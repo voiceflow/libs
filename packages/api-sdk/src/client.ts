@@ -1,8 +1,9 @@
 import Fetch from '@/fetch';
+import { CreatorID } from '@/models';
 import { Diagram, Program, Project, User, Version } from '@/resources';
 
 export type ClientOptions = {
-  creatorID: string;
+  creatorID: CreatorID;
   clientKey: string;
   apiEndpoint: string;
   authorization: string;

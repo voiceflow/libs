@@ -37,10 +37,10 @@ describe('ApiSDK', () => {
   it('.generateClient', () => {
     const { sdk, assert } = createSDK();
 
-    const client = sdk.generateClient({ authorization: 'authorization', creatorID: '123' });
+    const client = sdk.generateClient({ authorization: 'authorization', creatorID: 123 });
 
     expect(client).to.be.instanceOf(Client);
     expect(assert.callCount).to.eql(2);
-    expect(assert.args[1]).to.eql([{ authorization: 'authorization', creatorID: '123' }, SGenerateClientOptions]);
+    expect(assert.args[1]).to.eql([{ authorization: 'authorization', creatorID: 123 }, SGenerateClientOptions]);
   });
 });
