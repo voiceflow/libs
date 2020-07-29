@@ -1,6 +1,6 @@
 import * as s from 'superstruct';
 
-import { Node, SCreatorID, SDiagramID, SName, SNode, SVariable, SVersionID } from './shared';
+import { DiagramNode, SCreatorID, SDiagramID, SDiagramNode, SName, SVariable, SVersionID } from './shared';
 
 export const SDiagram = s.object({
   _id: SDiagramID,
@@ -13,9 +13,9 @@ export const SDiagram = s.object({
   offsetX: s.number(),
   offsetY: s.number(),
   zoom: s.number(),
-  nodes: s.array(SNode),
+  nodes: s.array(SDiagramNode),
 });
 
-export type Diagram<N extends Node = Node> = Omit<s.StructType<typeof SDiagram>, 'nodes'> & {
+export type Diagram<N extends DiagramNode = DiagramNode> = Omit<s.StructType<typeof SDiagram>, 'nodes'> & {
   nodes: N[];
 };

@@ -84,7 +84,7 @@ export const SCoordPoint = s.number();
 export type CoordPoint = s.StructType<typeof SCoordPoint>;
 
 export const SDiagramNodeData = dynamicObject({ name: SName, color: s.string() });
-export type DiagramNodeData<D extends UnknownRecord = UnknownRecord> = Pick<s.StructType<typeof SNode>, 'name' | 'color'> & D;
+export type DiagramNodeData<D extends UnknownRecord = UnknownRecord> = Pick<s.StructType<typeof SDiagramNodeData>, 'name' | 'color'> & D;
 
 export const SDiagramNode = s.object({
   nodeID: SNodeID,
