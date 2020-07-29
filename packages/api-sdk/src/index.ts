@@ -1,7 +1,6 @@
 import * as s from 'superstruct';
 
 import Client from '@/client';
-import { SCreatorID } from '@/models';
 
 export type { default as Client } from '@/client';
 
@@ -13,7 +12,6 @@ export const SOptions = s.object({
 });
 
 export const SGenerateClientOptions = s.type({
-  creatorID: SCreatorID,
   authorization: s.string(),
 });
 
@@ -29,11 +27,10 @@ class ApiSDK {
     this.apiEndpoint = apiEndpoint;
   }
 
-  public generateClient({ creatorID, authorization }: s.StructType<typeof SGenerateClientOptions>): Client {
-    s.assert({ creatorID, authorization }, SGenerateClientOptions);
+  public generateClient({ authorization }: s.StructType<typeof SGenerateClientOptions>): Client {
+    s.assert({ authorization }, SGenerateClientOptions);
 
     return new Client({
-      creatorID,
       clientKey: this.clientKey,
       apiEndpoint: this.apiEndpoint,
       authorization,

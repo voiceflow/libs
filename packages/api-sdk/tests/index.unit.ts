@@ -4,6 +4,7 @@ import sinon from 'sinon';
 import * as s from 'superstruct';
 
 import Client from '@/client';
+import JWT from 'jsonwebtoken';
 import ApiSDK, { SGenerateClientOptions, SOptions } from '@/index';
 
 const createSDK = () => {
@@ -19,6 +20,8 @@ const createSDK = () => {
     assert,
   };
 };
+
+const authorization = JWT.sign({}, 'test');
 
 describe('ApiSDK', () => {
   afterEach(() => {
@@ -37,10 +40,10 @@ describe('ApiSDK', () => {
   it('.generateClient', () => {
     const { sdk, assert } = createSDK();
 
-    const client = sdk.generateClient({ authorization: 'authorization', creatorID: 123 });
+    const client = sdk.generateClient({ authorization });
 
     expect(client).to.be.instanceOf(Client);
     expect(assert.callCount).to.eql(2);
-    expect(assert.args[1]).to.eql([{ authorization: 'authorization', creatorID: 123 }, SGenerateClientOptions]);
+    expect(assert.args[1]).to.eql([{ authorization }, SGenerateClientOptions]);
   });
 });
