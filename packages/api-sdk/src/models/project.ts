@@ -20,7 +20,7 @@ export const SProject = s.object({
   platformData: SBasePlatformData,
 });
 
-export type Project<P extends BasePlatformData, M extends BasePlatformData> = s.StructType<typeof SProject> & {
+export type Project<P extends BasePlatformData, M extends BasePlatformData> = Omit<s.StructType<typeof SProject>, 'platformData'> & {
   members: Member<M>[];
   platformData: P;
 };

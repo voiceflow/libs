@@ -2,6 +2,8 @@ import * as s from 'superstruct';
 
 export type UnknownRecord = Record<string, unknown>;
 
+export type ArrayElement<A> = A extends readonly (infer T)[] ? T : never;
+
 export type BaseSchema = Record<string, s.Struct<any>>;
 
 export type Flatten<T> = T extends infer U ? { [K in keyof U]: U[K] } : never;
