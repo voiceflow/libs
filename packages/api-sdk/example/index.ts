@@ -14,7 +14,7 @@ const main = async () => {
     platform: 'alexa',
     platformData: { data: 'data' },
   });
-  const project = await client.project.get<{ data: string }, { data: number }>('1');
+  const project = await client.project.get<{ data: string }, { data: number }>('11');
   const projectPartial = await client.project.get<{ name: string }>('1', ['name']);
   const partialProject = await client.project.update<{ data: string }, { data: number }>('1', {
     name: 'name 1',
