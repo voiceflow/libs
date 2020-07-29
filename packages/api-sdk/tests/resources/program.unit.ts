@@ -51,10 +51,10 @@ describe('ProgramResource', () => {
 
     crud.getByID.resolves(RESPONSE_DATA);
 
-    const data = await resource.get(1);
+    const data = await resource.get('1');
 
     expect(crud.getByID.callCount).to.eql(1);
-    expect(crud.getByID.args[0]).to.eql([1]);
+    expect(crud.getByID.args[0]).to.eql(['1']);
     expect(data).to.eql(RESPONSE_DATA);
   });
 
@@ -63,10 +63,10 @@ describe('ProgramResource', () => {
 
     crud.getByID.resolves(RESPONSE_DATA);
 
-    const data = await resource.get<{ id: number; startID: string }>(1, ['id', 'startID']);
+    const data = await resource.get<{ id: string; startID: string }>('1', ['id', 'startID']);
 
     expect(crud.getByID.callCount).to.eql(1);
-    expect(crud.getByID.args[0]).to.eql([1, ['id', 'startID']]);
+    expect(crud.getByID.args[0]).to.eql(['1', ['id', 'startID']]);
     expect(data).to.eql(RESPONSE_DATA);
   });
 
@@ -76,12 +76,12 @@ describe('ProgramResource', () => {
     crud.post.resolves(RESPONSE_DATA);
 
     const body = {
-      id: 1,
+      id: '1',
       startId: '1',
       skill_id: '1',
 
       lines: {
-        1: { id: '1' },
+        1: { id: '1', type: 'type' },
       },
       commands: [],
       variables: [],
@@ -104,7 +104,7 @@ describe('ProgramResource', () => {
       skill_id: '1',
 
       lines: {
-        1: { id: '1' },
+        1: { id: '1', type: 'type' },
       },
       commands: [
         {
@@ -116,10 +116,10 @@ describe('ProgramResource', () => {
       variables: ['var1'],
     };
 
-    const data = await resource.update(1, body);
+    const data = await resource.update('1', body);
 
     expect(crud.put.callCount).to.eql(1);
-    expect(crud.put.args[0]).to.eql([1, body]);
+    expect(crud.put.args[0]).to.eql(['1', body]);
     expect(data).to.eql(RESPONSE_DATA);
   });
 
@@ -128,10 +128,10 @@ describe('ProgramResource', () => {
 
     crud.delete.resolves(RESPONSE_DATA);
 
-    const data = await resource.delete(1);
+    const data = await resource.delete('1');
 
     expect(crud.delete.callCount).to.eql(1);
-    expect(crud.delete.args[0]).to.eql([1]);
+    expect(crud.delete.args[0]).to.eql(['1']);
     expect(data).to.eql(RESPONSE_DATA);
   });
 });

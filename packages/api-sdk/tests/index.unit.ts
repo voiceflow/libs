@@ -1,10 +1,10 @@
 /* eslint-disable dot-notation */
 import { expect } from 'chai';
+import JWT from 'jsonwebtoken';
 import sinon from 'sinon';
 import * as s from 'superstruct';
 
 import Client from '@/client';
-import JWT from 'jsonwebtoken';
 import ApiSDK, { SGenerateClientOptions, SOptions } from '@/index';
 
 const createSDK = () => {
