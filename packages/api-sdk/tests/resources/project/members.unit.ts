@@ -17,6 +17,7 @@ const createClient = () => {
     put: sinon.stub(),
     patch: sinon.stub(),
     delete: sinon.stub(),
+    granularPatch: sinon.stub(),
   };
 
   const resource = new Members(fetch as any, 'projects');
@@ -113,16 +114,30 @@ describe('ProjectResource', () => {
   it('.updateCurrentUser', async () => {
     const { fetch, assert, resource } = createClient();
 
-    fetch.patch.resolves({ data: RESPONSE_DATA });
+    fetch.put.resolves({ data: RESPONSE_DATA });
 
     const data = await resource.updateCurrentUser('1', { platformData: {} });
 
-    expect(fetch.patch.callCount).to.eql(1);
-    expect(fetch.patch.args[0]).to.eql(['projects/1/members', { platformData: {} }]);
+    expect(fetch.put.callCount).to.eql(1);
+    expect(fetch.put.args[0]).to.eql(['projects/1/members', { platformData: {} }]);
     expect(data).to.eql(RESPONSE_DATA);
     expect(assert.callCount).to.eql(2);
     expect(assert.args[0]).to.eql(['1', SProjectID]);
-    expect(assert.args[1]).to.eql([{ platformData: {} }, resource['patchStruct']]);
+    expect(assert.args[1]).to.eql([{ platformData: {} }, resource['putAndPostStruct']]);
+  });
+
+  it('.patchCurrentUser', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.granularPatch.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.granularUpdateCurrentUser('1', 'platformData.vendors[$id].name', 'name', { id: '1' });
+
+    expect(fetch.granularPatch.callCount).to.eql(1);
+    expect(fetch.granularPatch.args[0]).to.eql(['projects/1/members', 'platformData.vendors[$id].name', 'name', { id: '1' }]);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', SProjectID]);
   });
 
   it('.deleteCurrentUser', async () => {
