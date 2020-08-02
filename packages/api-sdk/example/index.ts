@@ -31,11 +31,11 @@ const main = async () => {
   const versions = await client.project.getVersions<{ settings: { a: number }; publishing: { b: string } }>('1');
 
   // project members
-  const createdUser = await client.project.members.createCurrentUser<{ data: number }>('1', { platformData: { data: 1 } });
-  const users = await client.project.members.list('1');
-  const user = await client.project.members.getCurrentUser<{ data: number }>('1');
-  const updatedUser = await client.project.members.updateCurrentUser<{ data: number }>('1', { platformData: { data: 2 } });
-  await client.project.members.deleteCurrentUser('1');
+  const createdUser = await client.project.member.create<{ data: number }>('1', { platformData: { data: 1 } });
+  const users = await client.project.member.list('1');
+  const user = await client.project.member.get<{ data: number }>('1');
+  const updatedUser = await client.project.member.update<{ data: number }>('1', { platformData: { data: 2 } });
+  await client.project.member.delete('1');
 
   // version
   // etc...

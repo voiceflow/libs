@@ -1,8 +1,8 @@
 /* eslint-disable dot-notation */
 import { expect } from 'chai';
+import JWT from 'jsonwebtoken';
 
 import { User } from '@/resources';
-import JWT from 'jsonwebtoken';
 
 const SAMPLE_USER = {
   id: 1,

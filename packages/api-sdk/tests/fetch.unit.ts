@@ -114,18 +114,6 @@ describe('Fetch', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
-  it('.granularPatch', async () => {
-    const { fetch, axiosInstance } = createFetch();
-
-    axiosInstance.patch.resolves(RESPONSE_DATA);
-
-    const data = await fetch.granularPatch('patch', 'path.[$var].nested', [1, 2], { var: 20 });
-
-    expect(axiosInstance.patch.callCount).to.eql(1);
-    expect(axiosInstance.patch.args[0]).to.eql(['patch', { value: [1, 2], path: 'path.[$var].nested', pathVariables: { var: 20 } }]);
-    expect(data).to.eql(RESPONSE_DATA);
-  });
-
   it('.delete', async () => {
     const { fetch, axiosInstance } = createFetch();
 
@@ -135,6 +123,18 @@ describe('Fetch', () => {
 
     expect(axiosInstance.delete.callCount).to.eql(1);
     expect(axiosInstance.delete.args[0]).to.eql(['delete']);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
+  it('.granularPatch', async () => {
+    const { fetch, axiosInstance } = createFetch();
+
+    axiosInstance.patch.resolves(RESPONSE_DATA);
+
+    const data = await fetch.granularPatch('patch', 'path.[$var].nested', [1, 2], { var: 20 });
+
+    expect(axiosInstance.patch.callCount).to.eql(1);
+    expect(axiosInstance.patch.args[0]).to.eql(['patch', { value: [1, 2], path: 'path.[$var].nested', pathVariables: { var: 20 } }]);
     expect(data).to.eql(RESPONSE_DATA);
   });
 });

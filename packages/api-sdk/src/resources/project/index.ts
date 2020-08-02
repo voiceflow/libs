@@ -4,7 +4,7 @@ import type Fetch from '@/fetch';
 import { BasePlatformData, Project, ProjectID, SProject, SWorkspaceID, Version, VersionPlatformData, WorkspaceID } from '@/models';
 
 import CrudResource from '../crud';
-import MembersResource from './members';
+import MemberResource from './member';
 
 export const ENDPOINT = 'projects';
 
@@ -12,7 +12,7 @@ export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
 class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey> {
-  public members: MembersResource;
+  public member: MemberResource;
 
   constructor(fetch: Fetch) {
     super({
@@ -22,7 +22,7 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
       resourceEndpoint: ENDPOINT,
     });
 
-    this.members = new MembersResource(fetch, ENDPOINT);
+    this.member = new MemberResource(fetch, ENDPOINT);
   }
 
   public async list<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(workspaceID: WorkspaceID, fields: string[]): Promise<P[]>;
