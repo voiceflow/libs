@@ -86,7 +86,7 @@ export type Block<D extends UnknownRecord = UnknownRecord> = DiagramNode<D & { n
 export type Port<PD extends UnknownRecord = UnknownRecord> = {
   type: string;
   target: string | null;
-  data: PD;
+  data?: PD;
 };
 // [Port, ...Port[]] means one or more ports
 export type Step<D extends UnknownRecord = UnknownRecord, P = [Port, ...Port[]]> = DiagramNode<D & { ports: P }>;
