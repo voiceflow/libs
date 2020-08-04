@@ -62,12 +62,6 @@ export type Command = s.StructType<typeof SCommand>;
 export const SNodeID = s.string();
 export type NodeID = s.StructType<typeof SNodeID>;
 
-export const SPortType = s.string();
-export type PortType = s.StructType<typeof SPortType>;
-
-export const SPort = s.object({ type: SPortType, target: s.nullable(SNodeID), data: s.optional(s.object()) });
-export type Port<D extends UnknownRecord = UnknownRecord> = Omit<s.StructType<typeof SPort>, 'data'> & { data?: D };
-
 export const SNodeType = s.string();
 export type NodeType = s.StructType<typeof SNodeID>;
 
@@ -77,40 +71,25 @@ export type Node<D extends UnknownRecord = UnknownRecord> = Pick<s.StructType<ty
 export const SCoordPoint = s.number();
 export type CoordPoint = s.StructType<typeof SCoordPoint>;
 
-export const SBlockData = dynamicObject({
-  name: s.optional(SName),
-  color: s.optional(s.string()),
-  steps: s.optional(s.array(SNodeID)),
-});
-export type BlockData<D extends UnknownRecord = UnknownRecord> = s.StructType<typeof SBlockData> & D;
-
-export const SBlock = s.object({
-  nodeID: SNodeID,
-  x: SCoordPoint,
-  y: SCoordPoint,
-  type: SNodeType,
-  data: SBlockData,
-});
-export type Block<D extends UnknownRecord = UnknownRecord> = Omit<s.StructType<typeof SBlock>, 'data'> & {
-  data: BlockData<D>;
-};
-
-export const SStepData = dynamicObject({
-  ports: s.array(SPort),
-});
-export type StepData<D extends UnknownRecord = UnknownRecord> = s.StructType<typeof SStepData> & D;
-
-export const SStep = s.object({
+export const SDiagramNode = s.object({
   nodeID: SNodeID,
   type: SNodeType,
-  data: SStepData,
+  coords: s.optional(s.tuple([s.number(), s.number()])),
+  data: s.object(),
 });
-export type Step<D extends UnknownRecord = UnknownRecord> = Omit<s.StructType<typeof SStep>, 'data'> & {
-  data: StepData<D>;
+export type DiagramNode<D extends UnknownRecord = UnknownRecord> = Omit<s.StructType<typeof SDiagramNode>, 'data'> & {
+  data: D;
 };
 
-export const SDiagramNode = s.union([SBlock, SStep]);
-export type DiagramNode<D extends UnknownRecord = UnknownRecord> = Step<D> | Block<D>;
+export type Block<D extends UnknownRecord = UnknownRecord> = DiagramNode<D & { name: string; color: string; steps: string[] }>;
+
+export type Port<PD extends UnknownRecord = UnknownRecord> = {
+  type: string;
+  target: string | null;
+  data: PD;
+};
+// [Port, ...Port[]] means one or more ports
+export type Step<D extends UnknownRecord = UnknownRecord, P = [Port, ...Port[]]> = DiagramNode<D & { ports: P }>;
 
 export const SBasePlatformData = s.object();
 export type BasePlatformData = s.StructType<typeof SBasePlatformData>;
