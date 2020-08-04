@@ -81,7 +81,9 @@ export type DiagramNode<D extends UnknownRecord = UnknownRecord> = Omit<s.Struct
   data: D;
 };
 
-export type Block<D extends UnknownRecord = UnknownRecord> = DiagramNode<D & { name: string; color: string; steps: string[] }>;
+export type Block<D extends UnknownRecord = UnknownRecord> = DiagramNode<D & { name: string; color: string; steps: string[] }> & {
+  coords: [number, number];
+};
 
 export type Port<PD extends UnknownRecord = UnknownRecord> = {
   type: string;
