@@ -77,11 +77,18 @@ export const SDiagramNode = s.object({
   coords: s.optional(s.tuple([s.number(), s.number()])),
   data: s.object(),
 });
-export type DiagramNode<D extends UnknownRecord = UnknownRecord> = Omit<s.StructType<typeof SDiagramNode>, 'data'> & {
+export type DiagramNode<T extends string = string, D extends UnknownRecord = UnknownRecord> = Omit<
+  s.StructType<typeof SDiagramNode>,
+  'data' | 'type'
+> & {
+  type: T;
   data: D;
 };
 
-export type Block<D extends UnknownRecord = UnknownRecord> = DiagramNode<D & { name: string; color: string; steps: string[] }> & {
+export type Block<T extends string = string, D extends UnknownRecord = UnknownRecord> = DiagramNode<
+  T,
+  D & { name: string; color: string; steps: string[] }
+> & {
   coords: [number, number];
 };
 
@@ -91,7 +98,7 @@ export type Port<PD extends UnknownRecord = UnknownRecord> = {
   data?: PD;
 };
 // [Port, ...Port[]] means one or more ports
-export type Step<D extends UnknownRecord = UnknownRecord, P = [Port, ...Port[]]> = DiagramNode<D & { ports: P }>;
+export type Step<T extends string = string, D extends UnknownRecord = UnknownRecord, P = [Port, ...Port[]]> = DiagramNode<T, D & { ports: P }>;
 
 export const SBasePlatformData = s.object();
 export type BasePlatformData = s.StructType<typeof SBasePlatformData>;
