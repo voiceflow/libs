@@ -66,7 +66,10 @@ export const SNodeType = s.string();
 export type NodeType = s.StructType<typeof SNodeID>;
 
 export const SNode = dynamicObject({ id: SNodeID, type: SNodeType });
-export type Node<D extends UnknownRecord = UnknownRecord> = Pick<s.StructType<typeof SNode>, 'id' | 'type'> & D;
+export type Node<T extends string = string, D extends UnknownRecord = UnknownRecord> = {
+  id: string;
+  type: T;
+} & D;
 
 export const SCoordPoint = s.number();
 export type CoordPoint = s.StructType<typeof SCoordPoint>;
