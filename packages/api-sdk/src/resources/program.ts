@@ -1,5 +1,5 @@
 import type Fetch from '@/fetch';
-import { Program, ProgramID, SProgram } from '@/models';
+import { Node, Program, ProgramID, SProgram } from '@/models';
 
 import CrudResource from './crud';
 
@@ -20,18 +20,18 @@ class ProgramResource extends CrudResource<typeof SProgram['schema'], ModelIDKey
 
   public async get<T extends Partial<Program>>(id: ProgramID, fields: string[]): Promise<T>;
 
-  public async get(id: ProgramID): Promise<Program>;
+  public async get<T extends Node>(id: ProgramID): Promise<Program<Node>>;
 
   public async get(id: ProgramID, fields?: string[]) {
     return fields ? super._getByID<Program>(id, fields) : super._getByID<Program>(id);
   }
 
-  public async create(body: Omit<Program, ModelIDKey>): Promise<Program> {
-    return super._post<Program>(body);
+  public async create<T extends Node>(body: Omit<Program<T>, ModelIDKey>): Promise<Program<T>> {
+    return super._post<Program<T>>(body);
   }
 
-  public async update(id: ProgramID, body: Omit<Program, ModelIDKey>): Promise<Omit<Program, ModelIDKey>> {
-    return super._put<Program>(id, body);
+  public async update<T extends Node>(id: ProgramID, body: Omit<Program<T>, ModelIDKey>): Promise<Omit<Program<T>, ModelIDKey>> {
+    return super._put<Program<T>>(id, body);
   }
 
   public async delete(id: ProgramID): Promise<ProgramID> {

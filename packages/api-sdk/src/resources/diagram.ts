@@ -1,7 +1,7 @@
 import * as s from 'superstruct';
 
 import type Fetch from '@/fetch';
-import { Diagram, DiagramID, Node, NodeID, SDiagram, SNode, SNodeID } from '@/models';
+import { Diagram, DiagramID, DiagramNode, NodeID, SDiagram, SNode, SNodeID } from '@/models';
 import { createPutAndPostStruct } from '@/utils';
 
 import CrudResource from './crud';
@@ -25,26 +25,26 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
 
   public async get<T extends Partial<Diagram>>(id: DiagramID, fields: string[]): Promise<T>;
 
-  public async get(id: DiagramID): Promise<Diagram>;
+  public async get<T extends DiagramNode = DiagramNode>(id: DiagramID): Promise<Diagram<T>>;
 
   public async get(id: DiagramID, fields?: string[]) {
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  public async create(body: Omit<Diagram, ModelIDKey>): Promise<Diagram> {
-    return super._post<Diagram>(body);
+  public async create<T extends DiagramNode = DiagramNode>(body: Omit<Diagram<T>, ModelIDKey>): Promise<Diagram<T>> {
+    return super._post<Diagram<T>>(body);
   }
 
-  public async update(id: DiagramID, body: Partial<Diagram>): Promise<Partial<Diagram>> {
-    return super._patch<Diagram>(id, body);
+  public async update<T extends DiagramNode = DiagramNode>(id: DiagramID, body: Partial<Diagram<T>>): Promise<Partial<Diagram<T>>> {
+    return super._patch<Diagram<T>>(id, body);
   }
 
-  public async updateNode(id: DiagramID, nodeID: NodeID, body: Omit<Node, 'id'>): Promise<Node> {
+  public async updateNode(id: DiagramID, nodeID: NodeID, body: Omit<DiagramNode, 'nodeID'>): Promise<DiagramNode> {
     this._assertModelID(id);
     s.assert(nodeID, SNodeID);
     s.assert(body, this._nodePutAndPostStruct);
 
-    const { data } = await this.fetch.put<Node>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
+    const { data } = await this.fetch.put<DiagramNode>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
 
     return data;
   }
