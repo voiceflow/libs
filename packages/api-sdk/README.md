@@ -1,6 +1,6 @@
-# backend-template
+# api-sdk
 
-Template repo
+SDK for Voiceflow API, with typings for general voiceflow data structures
 
 ## Getting Started
 
