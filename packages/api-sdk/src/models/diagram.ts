@@ -15,7 +15,6 @@ export const SDiagram = s.object({
   zoom: s.number(),
   nodes: s.record(SNodeID, SDiagramNode),
 
-  created: STimestamp,
   modified: STimestamp,
 });
 

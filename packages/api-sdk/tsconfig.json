@@ -25,7 +25,7 @@
     "listEmittedFiles": false,
     "listFiles": false,
     "pretty": true,
-    "lib": ["es2017"],
+    "lib": ["es2017", "DOM"],
     "outDir": "./build",
     "baseUrl": ".",
     "paths": {
