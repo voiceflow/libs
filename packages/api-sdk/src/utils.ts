@@ -38,3 +38,7 @@ export const createPutAndPostStruct = <S extends BaseSchema, K extends keyof Sch
 
   return isDynamic ? dynamicObject(localCreateScheme) : s.object(localCreateScheme);
 };
+
+export const getWindow = () => {
+  return typeof window === 'undefined' ? null : window;
+};
