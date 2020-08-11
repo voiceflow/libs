@@ -46,6 +46,7 @@ describe('Fetch', () => {
         headers: {
           clientKey: CLIENT_KEY,
           authorization: AUTHORIZATION,
+          withCredentials: true,
         },
       },
     ]);
@@ -61,6 +62,7 @@ describe('Fetch', () => {
         headers: {
           clientKey: CLIENT_KEY,
           authorization: AUTHORIZATION,
+          withCredentials: true,
         },
       },
     ]);
