@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 type FetchOptions = {
   clientKey: string;
@@ -17,10 +17,17 @@ class Fetch {
   private axios: AxiosInstance;
 
   constructor({ clientKey, apiEndpoint, authorization }: FetchOptions) {
-    this.axios = axios.create({
+    const config: AxiosRequestConfig = {
       baseURL: apiEndpoint.endsWith('/') ? apiEndpoint : `${apiEndpoint}/`,
-      headers: { clientKey, authorization },
-    });
+      headers: { clientKey },
+      withCredentials: true,
+    };
+
+    if (authorization) {
+      config.headers.authorization = authorization;
+    }
+
+    this.axios = axios.create(config);
   }
 
   public async get<T extends unknown>(url: string): Promise<FetchReturnType<T>> {
