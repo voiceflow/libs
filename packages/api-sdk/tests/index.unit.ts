@@ -4,7 +4,7 @@ import JWT from 'jsonwebtoken';
 import sinon from 'sinon';
 import * as s from 'superstruct';
 
-import Client from '@/client';
+import { Client, PublicClient } from '@/client';
 import ApiSDK, { SGenerateClientOptions, SOptions } from '@/index';
 
 const createSDK = () => {
@@ -35,6 +35,15 @@ describe('ApiSDK', () => {
     expect(sdk['apiEndpoint']).to.eql('endpoint');
     expect(assert.callCount).to.eql(1);
     expect(assert.args[0]).to.eql([{ clientKey: '123', apiEndpoint: 'endpoint' }, SOptions]);
+  });
+
+  it('.generatePublicClient', () => {
+    const { sdk, assert } = createSDK();
+
+    const client = sdk.generatePublicClient();
+
+    expect(client).to.be.instanceOf(PublicClient);
+    expect(assert.callCount).to.eql(1);
   });
 
   it('.generateClient', () => {

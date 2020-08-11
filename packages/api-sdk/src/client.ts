@@ -4,12 +4,10 @@ import { Diagram, Program, Project, User, Version } from '@/resources';
 export type ClientOptions = {
   clientKey: string;
   apiEndpoint: string;
-  authorization: string;
+  authorization?: string;
 };
 
-class Client {
-  public user: User;
-
+export class PublicClient {
   public project: Project;
 
   public version: Version;
@@ -21,7 +19,6 @@ class Client {
   constructor({ clientKey, apiEndpoint, authorization }: ClientOptions) {
     const fetch = new Fetch({ clientKey, apiEndpoint, authorization });
 
-    this.user = new User(authorization);
     this.project = new Project(fetch);
     this.version = new Version(fetch);
     this.program = new Program(fetch);
@@ -29,4 +26,12 @@ class Client {
   }
 }
 
-export default Client;
+export class Client extends PublicClient {
+  public user: User;
+
+  constructor({ clientKey, apiEndpoint, authorization }: Required<ClientOptions>) {
+    super({ clientKey, apiEndpoint, authorization });
+
+    this.user = new User(authorization);
+  }
+}

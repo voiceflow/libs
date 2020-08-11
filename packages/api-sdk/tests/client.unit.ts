@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import JWT from 'jsonwebtoken';
 
-import Client from '@/client';
+import { Client } from '@/client';
 import { Diagram, Program, Project, User, Version } from '@/resources';
 
 const CLIENT_RESOURCES = [Diagram, Program, Project, Version, User];

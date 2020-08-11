@@ -1,8 +1,8 @@
 import * as s from 'superstruct';
 
-import Client from '@/client';
+import { Client, PublicClient } from '@/client';
 
-export type { default as Client } from '@/client';
+export type { Client, PublicClient } from '@/client';
 export type { UnknownRecord, ArrayElement, Flatten } from '@/types';
 export * from '@/models';
 
@@ -25,6 +25,13 @@ class ApiSDK {
 
     this.clientKey = clientKey;
     this.apiEndpoint = apiEndpoint;
+  }
+
+  public generatePublicClient(): PublicClient {
+    return new PublicClient({
+      clientKey: this.clientKey,
+      apiEndpoint: this.apiEndpoint,
+    });
   }
 
   public generateClient({ authorization }: s.StructType<typeof SGenerateClientOptions>): Client {

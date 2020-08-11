@@ -3,7 +3,7 @@ import axios, { AxiosInstance } from 'axios';
 type FetchOptions = {
   clientKey: string;
   apiEndpoint: string;
-  authorization: string;
+  authorization?: string;
 };
 
 type FetchReturnType<T> = {
