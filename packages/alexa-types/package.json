@@ -1,10 +1,10 @@
 {
-  "name": "backend-template",
-  "description": "Template project for creating new backend repos",
-  "version": "1.0.0",
+  "name": "@voiceflow/alexa-types",
+  "description": "Alexa service types",
+  "version": "0.1.0",
   "author": "Voiceflow",
   "bugs": {
-    "url": "https://github.com/voiceflow/backend-template/issues"
+    "url": "https://github.com/voiceflow/alexa-types/issues"
   },
   "config": {
     "commitizen": {
@@ -90,7 +90,7 @@
     "ttypescript": "^1.5.8",
     "typescript": "^3.9.7"
   },
-  "homepage": "https://github.com/voiceflow/backend-template#readme",
+  "homepage": "https://github.com/voiceflow/alexa-types#readme",
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
@@ -98,7 +98,7 @@
       "pre-push": "git-branch-check"
     }
   },
-  "license": "ISC",
+  "license": "UNLICENSED",
   "lint-staged": {
     "package.json": [
       "fixpack",
@@ -113,7 +113,7 @@
   "prettier": "@voiceflow/prettier-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voiceflow/backend-template.git"
+    "url": "git+https://github.com/voiceflow/alexa-types.git"
   },
   "scripts": {
     "build": "yarn clean && ttsc --project ./tsconfig.build.json",
@@ -122,6 +122,7 @@
     "gen-certs": "scripts/generate_certs.sh",
     "init:db": "dbcli init --env test --restart",
     "lint": "eslint \"src/**/*.{js,ts}\"",
+    "prepare": "yarn build",
     "local": "NODE_ENV=local ts-node --files -r tsconfig-paths/register start.ts",
     "local:watch": "NODE_ENV=local forever --watch -c \"ts-node -r tsconfig-paths/register\" start.ts",
     "start": "NODE_ENV=production node --max-old-space-size=8192 build/start.js",
