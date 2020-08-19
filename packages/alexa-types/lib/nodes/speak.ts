@@ -8,18 +8,20 @@ export enum DialogType {
   VOICE = 'voice',
 }
 
+export type SpeakDialog =
+  | {
+      type: DialogType.VOICE;
+      voice: Voice;
+      content: string;
+    }
+  | {
+      type: DialogType.AUDIO;
+      url: string;
+    };
+
 export type SpeakData = {
   randomize: boolean;
-  dialogs:
-    | {
-        type: DialogType.VOICE;
-        voice: Voice;
-        content: string;
-      }
-    | {
-        type: DialogType.AUDIO;
-        url: string;
-      }[];
+  dialogs: SpeakDialog[];
 };
 
 // canvas step
