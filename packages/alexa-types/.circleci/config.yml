@@ -11,13 +11,9 @@ jobs:
       - checkout
       - vfcommon/install_node_modules
       - run:
-          name: "Build package"
+          name: 'Build package'
           command: |
             yarn build
-      - run:
-          name: "Run tests"
-          command: |
-            yarn test
       - codecov/upload:
           file: nyc_coverage/lcov.info
 
