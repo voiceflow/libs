@@ -1,10 +1,6 @@
-// eslint-disable-next-line import/prefer-default-export
+export { Step as DefaultStep, Node as DefaultNode } from '@voiceflow/api-sdk';
+
 export enum NodeType {
   SPEAK = 'speak',
   FLOW = 'flow',
-}
-
-export enum DialogType {
-  AUDIO = 'audio',
-  VOICE = 'voice',
 }

@@ -1,32 +1,15 @@
-import { Node, Step } from '@voiceflow/api-sdk';
+import { Prompt } from '../types';
+import { DefaultNode, DefaultStep, NodeType } from './types';
 
-import { Voice } from '../types';
-import { DialogType, NodeType } from './types';
-
-export type SpeakDialog =
-  | {
-      type: DialogType.VOICE;
-      voice: Voice;
-      content: string;
-    }
-  | {
-      type: DialogType.AUDIO;
-      url: string;
-    };
-
-export type SpeakData = {
+export type StepData = {
   randomize: boolean;
-  dialogs: SpeakDialog[];
+  dialogs: Prompt[];
 };
 
-// canvas step
-export type SpeakStep = Step<NodeType.SPEAK, SpeakData>;
+export type NodeData = {
+  prompt?: string;
+  nextId?: string | null;
+} & ({ speak: string } | { random_speak: string[] });
 
-// program node
-export type SpeakNode = Node<
-  NodeType.SPEAK,
-  {
-    prompt?: string;
-    nextId?: string | null;
-  } & ({ speak: string } | { random_speak: string[] })
->;
+export type Step = DefaultStep<NodeType.SPEAK, StepData>;
+export type Node = DefaultNode<NodeType.SPEAK, NodeData>;

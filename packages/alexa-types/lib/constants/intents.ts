@@ -25,6 +25,7 @@ export enum AmazonIntent {
   SCROLL_LEFT = 'AMAZON.ScrollLeftIntent',
   SCROLL_DOWN = 'AMAZON.ScrollDownIntent',
   SELECT = 'AMAZON.SelectIntent',
+  VOICEFLOW = 'VoiceFlowIntent',
 }
 
 export const VALID_UTTERANCES =

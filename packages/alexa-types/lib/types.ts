@@ -22,7 +22,8 @@ export enum Locale {
 }
 
 export enum Voice {
-  ALEXA = 'Alexa',
+  ALEXA = 'Alexa', // not a real voice (default no voice)
+  AUDIO = 'audio', // not a real voice (use content as audio url)
   IVY = 'Ivy',
   JOANNA = 'Joanna',
   JOEY = 'Joey',
