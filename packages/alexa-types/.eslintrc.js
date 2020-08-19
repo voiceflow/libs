@@ -36,6 +36,7 @@ module.exports = {
         'import/export': 'off',
         'valid-jsdoc': 'off',
         'no-useless-constructor': 'off',
+        '@typescript-eslint/no-namespace': 'off',
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',

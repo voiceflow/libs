@@ -1,6 +1,6 @@
 import { Prompt, Voice } from '../types';
 
-export enum Repeat {
+export enum RepeatType {
   OFF = 'OFF',
   DIALOG = 'DIALOG',
   ALL = 'ALL',
@@ -17,17 +17,17 @@ export type AccountLinking = {
   accessTokenScheme: string;
 };
 
-export enum Session {
+export enum SessionType {
   RESTART = 'restart',
   RESUME = 'resume',
 }
 
 export type RestartSession = {
-  type: Session.RESTART;
+  type: SessionType.RESTART;
 };
 
 export type ResumeSession = {
-  type: Session.RESUME;
+  type: SessionType.RESUME;
   resume: null | Prompt;
   follow: null | Prompt;
 };
@@ -37,7 +37,7 @@ export type AlexaSettings = {
   accountLinking: null | AccountLinking;
   customInterface: boolean;
   session: RestartSession | ResumeSession;
-  repeat: Repeat;
+  repeat: RepeatType;
   error: null | Prompt;
 };
 
@@ -76,8 +76,8 @@ export const defaultPrompt = (prompt?: Prompt | null): null | Prompt => {
 export const defaultAlexaSettings = ({
   events = null,
   customInterface = false,
-  session = { type: Session.RESTART },
-  repeat = Repeat.ALL,
+  session = { type: SessionType.RESTART },
+  repeat = RepeatType.ALL,
   accountLinking,
   error,
 }: Partial<AlexaSettings> = {}): AlexaSettings => ({

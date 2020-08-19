@@ -1,7 +1,5 @@
-export type VendorID = string; // reference to external amazon vendor
-
 export type Vendor = {
-  vendorID: VendorID;
+  vendorID: string;
   skillID: string; // reference id to external alexa skill
   products: {
     productID: string; // reference to project.platformData.products[i].productID
@@ -10,7 +8,7 @@ export type Vendor = {
 };
 
 export type AlexaProjectMemberData = {
-  selectedVendor: null | VendorID;
+  selectedVendor: null | string;
   vendors: Vendor[];
 };
 

@@ -1,12 +1,7 @@
 import { Node, Step } from '@voiceflow/api-sdk';
 
 import { Voice } from '../types';
-import { NodeType } from './types';
-
-export enum DialogType {
-  AUDIO = 'audio',
-  VOICE = 'voice',
-}
+import { DialogType, NodeType } from './types';
 
 export type SpeakDialog =
   | {
@@ -31,10 +26,7 @@ export type SpeakStep = Step<NodeType.SPEAK, SpeakData>;
 export type SpeakNode = Node<
   NodeType.SPEAK,
   {
-    audio?: string;
-    speak?: string;
     prompt?: string;
-    nextId?: string;
-    random_speak?: string[];
-  }
+    nextId?: string | null;
+  } & ({ speak: string } | { random_speak: string[] })
 >;
