@@ -69,7 +69,7 @@
       "git add"
     ]
   },
-  "main": "build/lib/index.js",
+  "main": "build/index.js",
   "prettier": "@voiceflow/prettier-config",
   "repository": {
     "type": "git",
