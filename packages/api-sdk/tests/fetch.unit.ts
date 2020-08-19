@@ -112,7 +112,7 @@ describe('Fetch', () => {
     const data = await fetch.patch('patch', { name: 'New Name' });
 
     expect(axiosInstance.patch.callCount).to.eql(1);
-    expect(axiosInstance.patch.args[0]).to.eql(['patch', { name: 'New Name' }]);
+    expect(axiosInstance.patch.args[0]).to.eql(['patch', { name: 'New Name' }, undefined]);
     expect(data).to.eql(RESPONSE_DATA);
   });
 

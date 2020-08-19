@@ -48,8 +48,8 @@ class Fetch {
     return { data, status };
   }
 
-  public async patch<T extends unknown>(url: string, body?: unknown): Promise<FetchReturnType<T>> {
-    const { data, status } = await this.axios.patch<T>(url, body);
+  public async patch<T extends unknown>(url: string, body: unknown, query?: Record<string, string>): Promise<FetchReturnType<T>> {
+    const { data, status } = await this.axios.patch<T>(url, body, query ? { params: query } : undefined);
 
     return { data, status };
   }

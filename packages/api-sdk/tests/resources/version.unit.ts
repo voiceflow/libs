@@ -146,9 +146,8 @@ describe('VersionResource', () => {
     expect(fetch.patch.callCount).to.eql(1);
     expect(fetch.patch.args[0]).to.eql(['versions/1/platform', body]);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(2);
+    expect(assert.callCount).to.eql(1);
     expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
-    expect(assert.args[1]).to.eql([{ settings: { key: 'value' }, publishing: {} }, resource['_partialPlatformData']]);
   });
 
   it('.updatePlatformDataSettings', async () => {
@@ -161,7 +160,7 @@ describe('VersionResource', () => {
     const data = await resource.updatePlatformDataSettings('1', body);
 
     expect(fetch.patch.callCount).to.eql(1);
-    expect(fetch.patch.args[0]).to.eql(['versions/1/settings', body]);
+    expect(fetch.patch.args[0]).to.eql(['versions/1/platform', body, { path: 'settings' }]);
     expect(data).to.eql(RESPONSE_DATA);
     expect(assert.callCount).to.eql(2);
     expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
@@ -171,14 +170,14 @@ describe('VersionResource', () => {
   it('.updatePlatformDataPublishing', async () => {
     const { fetch, assert, resource } = createClient();
 
-    fetch.put.resolves({ data: RESPONSE_DATA });
+    fetch.patch.resolves({ data: RESPONSE_DATA });
 
     const body = { key: 'value' };
 
     const data = await resource.updatePlatformDataPublishing('1', body);
 
-    expect(fetch.put.callCount).to.eql(1);
-    expect(fetch.put.args[0]).to.eql(['versions/1/publishing', body]);
+    expect(fetch.patch.callCount).to.eql(1);
+    expect(fetch.patch.args[0]).to.eql(['versions/1/platform', body, { path: 'publishing' }]);
     expect(data).to.eql(RESPONSE_DATA);
     expect(assert.callCount).to.eql(2);
     expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);

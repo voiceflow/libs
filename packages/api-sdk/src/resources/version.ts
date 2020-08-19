@@ -1,6 +1,6 @@
 import * as s from 'superstruct';
 
-import type Fetch from '@/fetch';
+import Fetch from '@/fetch';
 import { Diagram, Program, SVersion, Version, VersionID, VersionPlatformData } from '@/models';
 
 import CrudResource from './crud';
@@ -44,7 +44,6 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
 
   public async updatePlatformData<P extends VersionPlatformData>(id: VersionID, body: Partial<P>): Promise<Partial<P>> {
     this._assertModelID(id);
-    s.assert(body, this._partialPlatformData);
 
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/platform`, body);
 
@@ -55,7 +54,7 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     this._assertModelID(id);
     s.assert(body, SVersion.schema.platformData.schema.settings);
 
-    const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/settings`, body);
+    const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/platform`, body, { path: 'settings' });
 
     return data;
   }
@@ -64,7 +63,7 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     this._assertModelID(id);
     s.assert(body, SVersion.schema.platformData.schema.publishing);
 
-    const { data } = await this.fetch.put<P>(`${this._getCRUDEndpoint(id)}/publishing`, body);
+    const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/platform`, body, { path: 'publishing' });
 
     return data;
   }
