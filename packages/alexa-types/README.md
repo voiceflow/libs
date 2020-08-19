@@ -1,6 +1,6 @@
-# backend-template
+# alexa-types
 
-Template repo
+all alexa types for consumption on `creator-app` `alexa-service` `alexa`
 
 ## Getting Started
 
