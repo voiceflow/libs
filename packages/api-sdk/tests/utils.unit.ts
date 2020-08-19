@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import * as s from 'superstruct';
 
-import { createPutAndPostStruct, dynamicObject } from '@/utils';
+import { createPutAndPostStruct, dynamicObject, getWindow } from '@/utils';
 
 describe('utils', () => {
   it('createPutAndPostStruct', () => {
@@ -12,13 +12,12 @@ describe('utils', () => {
       field2: s.array(s.string()),
     });
 
-    const postAndPutStruct = createPutAndPostStruct(struct.schema, 'id');
+    const postAndPutStruct = createPutAndPostStruct(struct.schema, 'id', []);
 
-    expect(postAndPutStruct.schema).to.eql({
-      key: struct.schema.key,
-      field1: struct.schema.field1,
-      field2: struct.schema.field2,
-    });
+    expect(postAndPutStruct.schema.id.type).to.eql('number?');
+    expect(postAndPutStruct.schema.key).to.eql(struct.schema.key);
+    expect(postAndPutStruct.schema.field1).to.eql(struct.schema.field1);
+    expect(postAndPutStruct.schema.field2).to.eql(struct.schema.field2);
   });
 
   it('createPutAndPostStruct with created', () => {
@@ -33,10 +32,9 @@ describe('utils', () => {
       [symbol]: s.number(), // just for tests
     });
 
-    const postAndPutStruct = createPutAndPostStruct(struct.schema, symbol);
+    const postAndPutStruct = createPutAndPostStruct(struct.schema, symbol, ['id']);
 
     expect(postAndPutStruct.schema).to.eql({
-      id: struct.schema.id,
       key: struct.schema.key,
       field1: struct.schema.field1,
       field2: struct.schema.field2,
@@ -49,11 +47,10 @@ describe('utils', () => {
       key: s.string(),
     });
 
-    const postAndPutStruct = createPutAndPostStruct(struct.schema, 'id');
+    const postAndPutStruct = createPutAndPostStruct(struct.schema, 'id', []);
 
-    expect(postAndPutStruct.schema).to.eql({
-      key: struct.schema.key,
-    });
+    expect(postAndPutStruct.schema.id.type).to.eql('number?');
+    expect(postAndPutStruct.schema.key).to.eql(struct.schema.key);
   });
 
   it('dynamicObject', () => {
@@ -89,5 +86,19 @@ describe('utils', () => {
     } catch (err) {
       expect(err).to.be.instanceOf(s.StructError);
     }
+  });
+
+  it('getWindow', () => {
+    expect(getWindow()).to.be.eql(null);
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    global.window = {};
+
+    expect(getWindow()).to.be.eql({});
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    global.window = undefined;
   });
 });

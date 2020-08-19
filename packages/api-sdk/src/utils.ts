@@ -1,11 +1,6 @@
 import * as s from 'superstruct';
 
-import type { BaseSchema, SchemeType } from '@/types';
-
-export type CreatePutAndPostStruct<S extends BaseSchema, K extends keyof SchemeType<S>> = s.Struct<
-  SchemeType<Omit<S, K | 'created'>>,
-  Omit<S, K | 'created'>
->;
+import type { BaseSchema, PutPostStruct, SchemeType } from '@/types';
 
 export const dynamicObject = <S extends BaseSchema>(schema: S): s.Struct<Record<string, any> & SchemeType<S>, S> => {
   const Struct = s.object(schema);
@@ -29,14 +24,19 @@ export const dynamicObject = <S extends BaseSchema>(schema: S): s.Struct<Record<
   return Struct;
 };
 
-export const createPutAndPostStruct = <S extends BaseSchema, K extends keyof SchemeType<S>>(
+export const createPutAndPostStruct = <S extends BaseSchema, K extends keyof SchemeType<S>, E extends keyof SchemeType<S> = never>(
   schema: S,
   idKey: K,
+  excludedKeys: E[],
   isDynamic?: boolean
-): CreatePutAndPostStruct<S, K> => {
-  const { [idKey]: _, created, ...localCreateScheme } = schema;
+): PutPostStruct<S, K, E> => {
+  const createScheme = Object.keys(schema)
+    .filter((key) => key !== idKey && key !== 'created' && !excludedKeys.includes(key as E))
+    .reduce<Omit<S, K | E | 'created'>>((acc, key) => Object.assign(acc, { [key]: schema[key] }), {} as Omit<S, K | E | 'created'>);
 
-  return isDynamic ? dynamicObject(localCreateScheme) : s.object(localCreateScheme);
+  return isDynamic
+    ? dynamicObject({ ...createScheme, [idKey]: s.optional(schema[idKey as string]) })
+    : (s.object({ ...createScheme, [idKey]: s.optional(schema[idKey as string]) }) as any);
 };
 
 export const getWindow = () => {

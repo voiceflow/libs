@@ -9,7 +9,7 @@ export const ENDPOINT = 'versions';
 
 export type ModelKey = '_id';
 
-class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey> {
+class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 'creatorID'> {
   _partialPlatformData = s.partial(SVersion.schema.platformData);
 
   constructor(fetch: Fetch) {
@@ -18,6 +18,7 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey> 
       schema: SVersion.schema,
       modelIDKey: '_id',
       resourceEndpoint: ENDPOINT,
+      postPutExcludedFields: ['creatorID'],
     });
   }
 
@@ -29,7 +30,7 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey> 
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  public async create<P extends VersionPlatformData>(body: Omit<Version<P>, ModelKey | 'created'>): Promise<Version<P>> {
+  public async create<P extends VersionPlatformData>(body: Omit<Version<P>, ModelKey | 'created' | 'creatorID'>): Promise<Version<P>> {
     return super._post<Version<P>>(body);
   }
 

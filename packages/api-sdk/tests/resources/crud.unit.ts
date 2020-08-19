@@ -28,7 +28,7 @@ const createClient = () => {
     delete: sinon.stub(),
   };
 
-  const resource = new CrudResource({
+  const resource = new CrudResource<typeof schema, 'id', 'id'>({
     fetch: fetch as any,
     schema: schema as any,
     modelIDKey: 'id',
@@ -77,10 +77,10 @@ describe('CrudResource', () => {
 
     fetch.get.resolves(RESPONSE_DATA);
 
-    const data = await resource['_get']<{ bla: string }>(['bla']);
+    const data = await resource['_get']<{ key: string }>(['key']);
 
     expect(fetch.get.callCount).to.eql(1);
-    expect(fetch.get.args[0]).to.eql(['endpoint?fields=bla']);
+    expect(fetch.get.args[0]).to.eql(['endpoint?fields=key']);
     expect(data).to.eql(RESPONSE_DATA.data);
   });
 
@@ -103,10 +103,10 @@ describe('CrudResource', () => {
 
     fetch.get.resolves(RESPONSE_DATA);
 
-    const data = await resource['_getByID']<{ bla: string }>('1', ['bla', 'aaa']);
+    const data = await resource['_getByID']<{ key: string; optional?: string }>('1', ['key', 'optional']);
 
     expect(fetch.get.callCount).to.eql(1);
-    expect(fetch.get.args[0]).to.eql(['endpoint/1?fields=bla,aaa']);
+    expect(fetch.get.args[0]).to.eql(['endpoint/1?fields=key,optional']);
     expect(data).to.eql(RESPONSE_DATA.data);
     expect(assert.callCount).to.eql(1);
     expect(assert.args[0]).to.eql(['1', schema.id]);

@@ -52,13 +52,16 @@ describe('BaseResource', () => {
     const { schema, fetch, resource } = createClient();
     const { id, ...schemeWithoutID } = schema;
 
+    const { id: putAndPostID, ...putAndPostSchemeWithoutID } = resource['putAndPostStruct'].schema;
+
     expect(resource['fetch']).to.eql(fetch);
     expect(resource['modelIDKey']).to.eql('id');
     expect(resource['resourceEndpoint']).to.eql('endpoint');
     expect(resource['struct'].schema).to.eql(schema);
     expect(resource['patchStruct'].schema).to.eql(schema);
     expect(resource['patchStruct'].type).to.eql(s.partial(schema as any).type);
-    expect(resource['putAndPostStruct'].schema).to.eql(schemeWithoutID);
+    expect(putAndPostSchemeWithoutID).to.eql(schemeWithoutID);
+    expect(putAndPostID.type).to.eql('string?');
   });
 
   it('._getEndpoint', () => {

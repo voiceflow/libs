@@ -12,7 +12,7 @@ export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
 class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey> {
-  private _nodePutAndPostStruct = createPutAndPostStruct(SNode.schema, 'id', true);
+  private _nodePutAndPostStruct = createPutAndPostStruct(SNode.schema, 'id', [], true);
 
   constructor(fetch: Fetch) {
     super({
@@ -31,7 +31,7 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  public async create<T extends DiagramNode = DiagramNode>(body: Omit<Diagram<T>, ModelIDKey>): Promise<Diagram<T>> {
+  public async create<T extends DiagramNode = DiagramNode>(body: Omit<Diagram<T>, '_id'> & Partial<Pick<Diagram<T>, '_id'>>): Promise<Diagram<T>> {
     return super._post<Diagram<T>>(body);
   }
 

@@ -1,10 +1,10 @@
 import * as s from 'superstruct';
 
 import type Fetch from '@/fetch';
-import type { BaseSchema, SchemeType } from '@/types';
-import { CreatePutAndPostStruct, createPutAndPostStruct } from '@/utils';
+import type { BaseSchema, PutPostSchemeType, PutPostStruct, SchemeType } from '@/types';
+import { createPutAndPostStruct } from '@/utils';
 
-class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>> {
+class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>, E extends keyof SchemeType<S> = never> {
   protected readonly fetch: Fetch;
 
   private readonly modelIDKey: K;
@@ -13,18 +13,30 @@ class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>> {
 
   private readonly patchStruct: s.Struct<S>;
 
-  private readonly putAndPostStruct: CreatePutAndPostStruct<S, K>;
+  private readonly putAndPostStruct: PutPostStruct<S, K, E>;
 
   private readonly resourceEndpoint: string;
 
-  constructor({ fetch, schema, modelIDKey, resourceEndpoint }: { fetch: Fetch; schema: S; modelIDKey: K; resourceEndpoint: string }) {
+  constructor({
+    fetch,
+    schema,
+    modelIDKey,
+    resourceEndpoint,
+    postPutExcludedFields = [],
+  }: {
+    fetch: Fetch;
+    schema: S;
+    modelIDKey: K;
+    resourceEndpoint: string;
+    postPutExcludedFields?: E[];
+  }) {
     this.fetch = fetch;
     this.modelIDKey = modelIDKey;
     this.resourceEndpoint = resourceEndpoint;
 
     this.struct = s.object(schema);
     this.patchStruct = s.partial(schema);
-    this.putAndPostStruct = createPutAndPostStruct(schema, modelIDKey);
+    this.putAndPostStruct = createPutAndPostStruct(schema, modelIDKey, postPutExcludedFields);
   }
 
   protected _getEndpoint(): string {
@@ -43,7 +55,7 @@ class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>> {
     s.assert(body, this.patchStruct);
   }
 
-  protected _assertPutAndPostBody(body: Omit<SchemeType<S>, K | 'created'>): void {
+  protected _assertPutAndPostBody(body: PutPostSchemeType<S, K, E>): void {
     s.assert(body, this.putAndPostStruct);
   }
 }
