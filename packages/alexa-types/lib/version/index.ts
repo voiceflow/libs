@@ -16,7 +16,7 @@ export enum AlexaStage {
   REVIEW = 'REVIEW',
 }
 
-export type AlexaPlatformData = {
+export type AlexaVersionData = {
   slots: Slot[];
   intents: Intent[];
 
@@ -28,7 +28,7 @@ export type AlexaPlatformData = {
   };
 };
 
-export type AlexaVersion = Version<AlexaPlatformData>;
+export type AlexaVersion = Version<AlexaVersionData>;
 
 export const defaultAlexaVersionData = ({
   slots = [],
@@ -36,7 +36,7 @@ export const defaultAlexaVersionData = ({
   settings,
   publishing,
   status: { stage = AlexaStage.DEV } = {} as any,
-}: Partial<AlexaPlatformData>): AlexaPlatformData => ({
+}: Partial<AlexaVersionData>): AlexaVersionData => ({
   slots,
   intents,
   settings: defaultAlexaSettings(settings),
