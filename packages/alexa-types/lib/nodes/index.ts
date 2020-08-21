@@ -1,8 +1,9 @@
 import * as Flow from './flow';
 import * as Speak from './speak';
+import * as Start from './start';
 
 export * from './types';
 
-export type AlexaSteps = Speak.Step | Flow.Step;
+export type AlexaSteps = Start.Step | Speak.Step | Flow.Step;
 
-export type AlexaNodes = Speak.Node | Flow.Node;
+export type AlexaNodes = Start.Node | Speak.Node | Flow.Node;
