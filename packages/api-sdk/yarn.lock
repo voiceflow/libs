@@ -632,6 +632,13 @@
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
   integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
 
+"@types/express-pino-logger@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@types/express-pino-logger/-/express-pino-logger-4.0.2.tgz#0ac505e0e597ecb42a88e21bbe7cd6bfecfd2f42"
+  integrity sha512-pjFbznTQ/h9Dht4YP1Zqfj2+4S8K4u7K+EowklXhf0aL43KUIYo126w2h8mtwoHfa91Z3BYA8w2wfUfwNAHroA==
+  dependencies:
+    "@types/pino-http" "*"
+
 "@types/json-schema@^7.0.3":
   version "7.0.5"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.5.tgz#dcce4430e64b443ba8945f0290fb564ad5bac6dd"
@@ -679,6 +686,29 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
+"@types/pino-http@*":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@types/pino-http/-/pino-http-5.0.4.tgz#101b27d78d780304cbef1fc3f6900e581ceecec6"
+  integrity sha512-i9Awlslw9Yhrm04SBTt/r89Ca2oQb38ewzoFRgZ0oFUYBVYCgzUCRRksNZGP7Q2nYoGBn+pAjhB1bzReGKs8xw==
+  dependencies:
+    "@types/pino" "*"
+
+"@types/pino-std-serializers@*":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@types/pino-std-serializers/-/pino-std-serializers-2.4.1.tgz#f8bd52a209c8b3c97d1533b1ba27f57c816382bf"
+  integrity sha512-17XcksO47M24IVTVKPeAByWUd3Oez7EbIjXpSbzMPhXVzgjGtrOa49gKBwxH9hb8dKv58OelsWQ+A1G1l9S3wQ==
+  dependencies:
+    "@types/node" "*"
+
+"@types/pino@*", "@types/pino@^6.3.0":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@types/pino/-/pino-6.3.0.tgz#a4ad317278eca19becbc87f5ceafebb99d486604"
+  integrity sha512-AuZ32IbQlzW3XY9jA9X8iXkhMTtloKWHz1Ze23ClPx7L8ES69BNGfH308LsU2tHnDCLLCFoZvMn8+1njBx2EKg==
+  dependencies:
+    "@types/node" "*"
+    "@types/pino-std-serializers" "*"
+    "@types/sonic-boom" "*"
+
 "@types/retry@^0.12.0":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
@@ -695,6 +725,13 @@
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@types/sinonjs__fake-timers/-/sinonjs__fake-timers-6.0.1.tgz#681df970358c82836b42f989188d133e218c458e"
   integrity sha512-yYezQwGWty8ziyYLdZjwxyMb0CZR49h8JALHGrxjQHWlqGgc8kLdHEgWrgL0uZ29DMvEVBDnHU2Wg36zKSIUtA==
+
+"@types/sonic-boom@*":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@types/sonic-boom/-/sonic-boom-0.7.0.tgz#38337036293992a1df65dd3161abddf8fb9b7176"
+  integrity sha512-AfqR0fZMoUXUNwusgXKxcE9DPlHNDHQp6nKYUd4PSRpLobF5CCevSpyTEBcVZreqaWKCnGBr9KI1fHMTttoB7A==
+  dependencies:
+    "@types/node" "*"
 
 "@typescript-eslint/eslint-plugin@^3.6.1":
   version "3.6.1"
@@ -820,13 +857,15 @@
   dependencies:
     current-git-branch "^1.1.0"
 
-"@voiceflow/logger@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@voiceflow/logger/-/logger-1.1.1.tgz#778e6cb725f6c6053328355916211d4d6b5a90ea"
-  integrity sha512-1Ah+JhzYj9xnCOSIPVQB/5lrnKOEsDKdQ6Tks5H+9SZgFWIYp3RrLjMOYDbseNf9iO1DPM/tlYUt5R3SxwV0eA==
+"@voiceflow/logger@^1.1.10":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@voiceflow/logger/-/logger-1.2.0.tgz#0076497941d67581061a3d62ee5d087f2d59667c"
+  integrity sha512-q7hXY8beYL/nf7L4U7epQfpwv0w281fTOFvSeXWRrR62/ad+0nUq/6+MMEVuuVG9nVhunyFrb4n6zTWJVA4WRw==
   dependencies:
-    "@types/chai" "^4.2.11"
+    "@types/express-pino-logger" "^4.0.2"
+    "@types/pino" "^6.3.0"
     "@voiceflow/pino-pretty" "^3.5.0"
+    "@zerollup/ts-transform-paths" "^1.7.18"
     express-pino-logger "^4.0.0"
     pino "^5.14.0"
 

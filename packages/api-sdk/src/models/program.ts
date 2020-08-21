@@ -5,7 +5,7 @@ import { Node, NodeID, SCommand, SNode, SNodeID, SProgramID, SVariable, SVersion
 export const SProgram = s.object({
   id: SProgramID,
   startId: SNodeID,
-  versionId: SVersionID,
+  skill_id: SVersionID,
 
   lines: s.record(SNodeID, SNode),
   commands: s.array(SCommand),
