@@ -116,6 +116,18 @@ describe('Fetch', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
+  it('.patch with query', async () => {
+    const { fetch, axiosInstance } = createFetch();
+
+    axiosInstance.patch.resolves(RESPONSE_DATA);
+
+    const data = await fetch.patch('patch', { name: 'New Name' }, { key: '1' });
+
+    expect(axiosInstance.patch.callCount).to.eql(1);
+    expect(axiosInstance.patch.args[0]).to.eql(['patch', { name: 'New Name' }, { params: { key: '1' } }]);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
   it('.delete', async () => {
     const { fetch, axiosInstance } = createFetch();
 

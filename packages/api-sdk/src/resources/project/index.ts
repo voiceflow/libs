@@ -32,7 +32,7 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
   public async list(workspaceID: WorkspaceID, fields?: string[]) {
     s.assert(workspaceID, SWorkspaceID);
 
-    const { data } = await this.fetch.get(`workspace/${workspaceID}/projects${this._getFieldsQuery(fields)}`);
+    const { data } = await this.fetch.get(`workspaces/${workspaceID}/projects${this._getFieldsQuery(fields)}`);
 
     return data;
   }

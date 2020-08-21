@@ -82,7 +82,7 @@ describe('ProjectResource', () => {
     const data = await resource.list('1');
 
     expect(fetch.get.callCount).to.eql(1);
-    expect(fetch.get.args[0]).to.eql(['workspace/1/projects']);
+    expect(fetch.get.args[0]).to.eql(['workspaces/1/projects']);
     expect(data).to.eql(RESPONSE_DATA);
   });
 
@@ -94,7 +94,7 @@ describe('ProjectResource', () => {
     const data = await resource.list<{ platformData: Record<string, unknown> }>('1', ['platformData']);
 
     expect(fetch.get.callCount).to.eql(1);
-    expect(fetch.get.args[0]).to.eql(['workspace/1/projects?fields=platformData']);
+    expect(fetch.get.args[0]).to.eql(['workspaces/1/projects?fields=platformData']);
     expect(data).to.eql(RESPONSE_DATA);
   });
 
