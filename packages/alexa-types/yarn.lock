@@ -705,13 +705,13 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@voiceflow/api-sdk@^1.4.11":
-  version "1.4.11"
-  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.4.11.tgz#8501d812163c82c27dd333c46173e4117f74d6c6"
-  integrity sha512-E171N8cSN5uan9mqx58CuK3pLAkNS5rv/dtfQ/PqY91Phm/k/sMNl7N3k78grfAE74GGCgqszjTMOH3iETQrLw==
+"@voiceflow/api-sdk@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.5.1.tgz#6b818e58d8accea50bae3bfd04598efad12d6c89"
+  integrity sha512-IPNvmOyUIESSrhW6OKwsJsycwvsqOk9qu5bClYMqCwSNvJ96Plz1X07KVyZ12gIpYjVctSvm+Lre2sVIPVdeDg==
   dependencies:
     "@types/atob" "^2.1.2"
-    "@voiceflow/logger" "^1.1.1"
+    "@voiceflow/logger" "^1.1.10"
     atob "^2.1.2"
     axios "^0.19.2"
     core-js "^3.6.5"
@@ -756,7 +756,7 @@
   dependencies:
     current-git-branch "^1.1.0"
 
-"@voiceflow/logger@^1.1.1":
+"@voiceflow/logger@^1.1.10":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@voiceflow/logger/-/logger-1.2.0.tgz#0076497941d67581061a3d62ee5d087f2d59667c"
   integrity sha512-q7hXY8beYL/nf7L4U7epQfpwv0w281fTOFvSeXWRrR62/ad+0nUq/6+MMEVuuVG9nVhunyFrb4n6zTWJVA4WRw==
