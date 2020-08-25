@@ -1,9 +1,9 @@
 import { DefaultNode, DefaultStep, NodeType } from './types';
 
-export type StepData = { diagramID: string };
+export type StepData = { diagramID: string | null };
 
 export type NodeData = {
-  diagram_id: string;
+  diagram_id?: string;
   variable_map?: {
     inputs?: [string, string][];
     outputs?: [string, string][];
