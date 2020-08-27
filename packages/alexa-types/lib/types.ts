@@ -3,6 +3,11 @@ export type Prompt = {
   content: string;
 };
 
+export type NoMatches = {
+  randomize: boolean;
+  reprompts: Prompt[];
+};
+
 export enum Locale {
   EN_US = 'en-US',
   EN_AU = 'en-AU',

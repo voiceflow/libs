@@ -4,4 +4,5 @@ export enum NodeType {
   SPEAK = 'speak',
   FLOW = 'flow',
   START = 'start',
+  INTERACTION = 'interaction',
 }

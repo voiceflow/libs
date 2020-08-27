@@ -11,3 +11,8 @@ export type Slot = {
   color?: string;
   inputs: string[];
 };
+
+export type SlotMapping = {
+  slot: string | null;
+  variable: string | null;
+};
