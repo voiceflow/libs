@@ -26,7 +26,7 @@ export type StepData = {
 
 export type Interaction = {
   intent: string;
-  mappings?: Required<SlotMapping>[];
+  mappings?: SlotMapping[];
   nextIdIndex?: number;
 };
 
