@@ -1,10 +1,11 @@
 import * as Flow from './flow';
 import * as Interaction from './interaction';
+import * as Set from './set';
 import * as Speak from './speak';
 import * as Start from './start';
 
 export * from './types';
 
-export type AlexaSteps = Start.Step | Speak.Step | Flow.Step | Interaction.Step;
+export type AlexaSteps = Set.Step | Flow.Step | Start.Step | Speak.Step | Interaction.Step;
 
-export type AlexaNodes = Start.Node | Speak.Node | Flow.Node | Interaction.Node;
+export type AlexaNodes = Set.Node | Flow.Node | Start.Node | Speak.Node | Interaction.Node;
