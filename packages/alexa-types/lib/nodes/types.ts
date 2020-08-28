@@ -8,6 +8,7 @@ export enum NodeType {
   SPEAK = 'speak',
   START = 'start',
   INTERACTION = 'interaction',
+  CODE = 'code',
 }
 
 export type GenericExpression<T extends ExpressionType, V> = {
