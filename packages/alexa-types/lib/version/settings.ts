@@ -39,6 +39,7 @@ export type AlexaSettings = {
   session: RestartSession | ResumeSession;
   repeat: RepeatType;
   error: null | Prompt;
+  permissions: string[];
 };
 
 export const defaultAccountLinking = (accountLinking?: null | Partial<AccountLinking>): null | AccountLinking => {
@@ -78,6 +79,7 @@ export const defaultAlexaSettings = ({
   customInterface = false,
   session = { type: SessionType.RESTART },
   repeat = RepeatType.ALL,
+  permissions = [],
   accountLinking,
   error,
 }: Partial<AlexaSettings> = {}): AlexaSettings => ({
@@ -85,6 +87,7 @@ export const defaultAlexaSettings = ({
   customInterface,
   session,
   repeat,
+  permissions,
   accountLinking: defaultAccountLinking(accountLinking),
   error: defaultPrompt(error),
 });
