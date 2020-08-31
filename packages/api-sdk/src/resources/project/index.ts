@@ -11,7 +11,7 @@ export const ENDPOINT = 'projects';
 export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
-class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey> {
+class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey, 'creatorID'> {
   public member: MemberResource;
 
   constructor(fetch: Fetch) {
@@ -20,6 +20,7 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
       schema: SProject.schema,
       modelIDKey,
       resourceEndpoint: ENDPOINT,
+      postPutExcludedFields: ['creatorID'],
     });
 
     this.member = new MemberResource(fetch, ENDPOINT);
@@ -46,7 +47,7 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
   }
 
   public async create<P extends BasePlatformData, M extends BasePlatformData>(
-    body: Omit<Project<P, M>, ModelIDKey | 'created'>
+    body: Omit<Project<P, M>, ModelIDKey | 'created' | 'creatorID'>
   ): Promise<Project<P, M>> {
     return super._post<Project<P, M>>(body);
   }
