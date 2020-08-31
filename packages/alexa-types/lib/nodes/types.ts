@@ -5,13 +5,14 @@ export { Step as DefaultStep, Node as DefaultNode } from '@voiceflow/api-sdk';
 export enum NodeType {
   SET = 'set',
   FLOW = 'flow',
+  CARD = 'card',
   CODE = 'code',
   SPEAK = 'speak',
   START = 'start',
   INTENT = 'intent',
   CAPTURE = 'capture',
+  PROMPT = 'prompt',
   INTERACTION = 'interaction',
-  CARD = 'card',
 }
 
 export type GenericExpression<T extends ExpressionType, V> = {
