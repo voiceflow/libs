@@ -10,8 +10,9 @@ export enum NodeType {
   SPEAK = 'speak',
   START = 'start',
   INTENT = 'intent',
-  CAPTURE = 'capture',
   PROMPT = 'prompt',
+  RANDOM = 'random',
+  CAPTURE = 'capture',
   INTERACTION = 'interaction',
 }
 
