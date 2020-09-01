@@ -55,7 +55,7 @@ export type CommandMapping = s.StructType<typeof SCommandMapping>;
 export const SCommand = dynamicObject({
   type: s.string(),
 });
-export type Command<T, D extends UnknownRecord = UnknownRecord> = {
+export type Command<T extends string = string, D extends UnknownRecord = UnknownRecord> = {
   type: T;
 } & D;
 
