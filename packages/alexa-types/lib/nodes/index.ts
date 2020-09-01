@@ -25,14 +25,4 @@ export type AlexaSteps =
   | Prompt.Step
   | Random.Step;
 
-export type AlexaNodes =
-  | Set.Node
-  | Capture.Node
-  | Flow.Node
-  | Start.Node
-  | Speak.Node
-  | Interaction.Node
-  | Code.Node
-  | Intent.Node
-  | Card.Node
-  | Random.Node;
+export type AlexaNodes = Set.Node | Capture.Node | Flow.Node | Start.Node | Speak.Node | Interaction.Node | Code.Node | Card.Node | Random.Node;
