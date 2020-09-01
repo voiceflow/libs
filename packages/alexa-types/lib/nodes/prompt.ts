@@ -7,4 +7,4 @@ export type StepData = {
   noMatches: NoMatches;
 };
 
-export type Step = DefaultStep<NodeType.PROMPT, StepData>;
+export type Step = DefaultStep<NodeType.PROMPT, StepData, []>;
