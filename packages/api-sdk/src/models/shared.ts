@@ -52,12 +52,12 @@ export const SCommandMapping = s.object({
 });
 export type CommandMapping = s.StructType<typeof SCommandMapping>;
 
-export const SCommand = s.object({
-  intent: SIntent,
-  mappings: s.array(SCommandMapping),
-  diagram_id: SDiagramID,
+export const SCommand = dynamicObject({
+  type: s.string(),
 });
-export type Command = s.StructType<typeof SCommand>;
+export type Command<T, D extends UnknownRecord = UnknownRecord> = {
+  type: T;
+} & D;
 
 export const SNodeID = s.string();
 export type NodeID = s.StructType<typeof SNodeID>;
