@@ -1,6 +1,6 @@
 import { SlotMapping } from '@/version';
 
-import { DefaultStep, NodeType } from './types';
+import { DefaultCommand, DefaultStep, NodeType } from './types';
 
 export type StepData = {
   intent: string | null;
@@ -8,3 +8,11 @@ export type StepData = {
 };
 
 export type Step = DefaultStep<NodeType.INTENT, StepData>;
+
+export type CommandData = {
+  intent: string;
+  mappings: { variable: string; slot: string }[];
+  diagram_id: string;
+};
+
+export type Command = DefaultCommand<NodeType.INTENT, CommandData>;

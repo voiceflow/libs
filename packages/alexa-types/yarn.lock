@@ -705,10 +705,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@voiceflow/api-sdk@1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.5.1.tgz#6b818e58d8accea50bae3bfd04598efad12d6c89"
-  integrity sha512-IPNvmOyUIESSrhW6OKwsJsycwvsqOk9qu5bClYMqCwSNvJ96Plz1X07KVyZ12gIpYjVctSvm+Lre2sVIPVdeDg==
+"@voiceflow/api-sdk@1.5.5":
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.5.5.tgz#cc1d2509c674c24a9d4f8cdb11cef99ad1ec5a0f"
+  integrity sha512-TWpIKE+E+q+F3HkrI9ZX+mXpPxf8a8XawbaqnpeDZ9ImFgUweJuJkVWUC+IUM3g3B33ikCzZZ5dzp8/N10TUTw==
   dependencies:
     "@types/atob" "^2.1.2"
     "@voiceflow/logger" "^1.1.10"

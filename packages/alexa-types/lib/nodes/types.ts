@@ -1,6 +1,6 @@
 import { ExpressionType } from '@/types';
 
-export { Step as DefaultStep, Node as DefaultNode } from '@voiceflow/api-sdk';
+export { Step as DefaultStep, Node as DefaultNode, Command as DefaultCommand } from '@voiceflow/api-sdk';
 
 export enum NodeType {
   SET = 'set',
