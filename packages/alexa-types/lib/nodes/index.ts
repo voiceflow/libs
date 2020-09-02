@@ -1,8 +1,10 @@
+import * as Api from './api';
 import * as Capture from './capture';
 import * as Card from './card';
 import * as Code from './code';
 import * as Flow from './flow';
 import * as If from './if';
+import * as Integration from './integration';
 import * as Intent from './intent';
 import * as Interaction from './interaction';
 import * as Prompt from './prompt';
@@ -24,6 +26,7 @@ export type AlexaSteps =
   | Intent.Step
   | Card.Step
   | Prompt.Step
+  | Api.Step
   | Random.Step
   | If.Step;
 
@@ -36,6 +39,7 @@ export type AlexaNodes =
   | Interaction.Node
   | Code.Node
   | Card.Node
+  | Integration.Node
   | Random.Node
   | If.Node;
 

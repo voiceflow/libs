@@ -2,8 +2,15 @@ import { ExpressionType } from '@/types';
 
 export { Step as DefaultStep, Node as DefaultNode, Command as DefaultCommand } from '@voiceflow/api-sdk';
 
+export enum IntegrationType {
+  ZAPIER = 'Zapier',
+  CUSTOM_API = 'Custom API',
+  GOOGLE_SHEETS = 'Google Sheets',
+}
+
 export enum NodeType {
   SET = 'set',
+  API = 'api',
   FLOW = 'flow',
   CARD = 'card',
   CODE = 'code',
@@ -11,9 +18,12 @@ export enum NodeType {
   START = 'start',
   INTENT = 'intent',
   PROMPT = 'prompt',
+  ZAPIER = 'zapier',
   RANDOM = 'random',
   CAPTURE = 'capture',
+  INTEGRATION = 'integration',
   INTERACTION = 'interaction',
+  GOOGLE_SHEETS = 'google_sheets',
   IF = 'if',
 }
 
