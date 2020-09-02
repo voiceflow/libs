@@ -2,6 +2,7 @@ import * as Capture from './capture';
 import * as Card from './card';
 import * as Code from './code';
 import * as Flow from './flow';
+import * as If from './if';
 import * as Intent from './intent';
 import * as Interaction from './interaction';
 import * as Prompt from './prompt';
@@ -23,8 +24,19 @@ export type AlexaSteps =
   | Intent.Step
   | Card.Step
   | Prompt.Step
-  | Random.Step;
+  | Random.Step
+  | If.Step;
 
-export type AlexaNodes = Set.Node | Capture.Node | Flow.Node | Start.Node | Speak.Node | Interaction.Node | Code.Node | Card.Node | Random.Node;
+export type AlexaNodes =
+  | Set.Node
+  | Capture.Node
+  | Flow.Node
+  | Start.Node
+  | Speak.Node
+  | Interaction.Node
+  | Code.Node
+  | Card.Node
+  | Random.Node
+  | If.Node;
 
 export type AlexaCommands = Intent.Command;

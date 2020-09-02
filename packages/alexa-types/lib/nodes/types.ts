@@ -14,6 +14,7 @@ export enum NodeType {
   RANDOM = 'random',
   CAPTURE = 'capture',
   INTERACTION = 'interaction',
+  IF = 'if',
 }
 
 export type GenericExpression<T extends ExpressionType, V> = {
