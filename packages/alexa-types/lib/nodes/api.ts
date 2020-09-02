@@ -7,7 +7,7 @@ export type APIKeyVal = {
 
 export type APIMapping = {
   path: string;
-  variable: string | null;
+  var: string | null;
 };
 
 export enum APIBodyType {

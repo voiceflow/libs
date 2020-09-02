@@ -21,8 +21,8 @@ export enum NodeType {
   ZAPIER = 'zapier',
   RANDOM = 'random',
   CAPTURE = 'capture',
-  INTEGRATION = 'integration',
   INTERACTION = 'interaction',
+  INTEGRATIONS = 'integrations',
   GOOGLE_SHEETS = 'google_sheets',
   IF = 'if',
 }
