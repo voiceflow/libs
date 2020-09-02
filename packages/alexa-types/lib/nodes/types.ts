@@ -9,22 +9,45 @@ export enum IntegrationType {
 }
 
 export enum NodeType {
-  SET = 'set',
-  API = 'api',
-  FLOW = 'flow',
-  CARD = 'card',
-  CODE = 'code',
   SPEAK = 'speak',
   START = 'start',
-  INTENT = 'intent',
-  PROMPT = 'prompt',
-  ZAPIER = 'zapier',
-  RANDOM = 'random',
-  CAPTURE = 'capture',
   INTERACTION = 'interaction',
+
+  // logic
+  SET = 'set',
+  IF = 'if',
+  CAPTURE = 'capture',
+  RANDOM = 'random',
+
+  // integrations
+  API = 'api',
   INTEGRATIONS = 'integrations',
   GOOGLE_SHEETS = 'google_sheets',
-  IF = 'if',
+
+  // advanced
+  INTENT = 'intent',
+  STREAM = 'stream',
+  FLOW = 'flow',
+  CODE = 'code',
+  EXIT = 'exit',
+  PROMPT = 'prompt',
+
+  // visuals
+  CARD = 'card',
+  DISPLAY = 'display',
+
+  // user
+  PERMISSION = 'permission',
+  ACCOUNT_LINKING = 'account_linking',
+  USER_INFO = 'user_info',
+  PAYMENT = 'payment',
+  CANCEL_PAYMENT = 'cancel_payment',
+  REMINDER = 'reminder',
+  DEPRECATED = 'deprecated',
+
+  // event
+  DIRECTIVE = 'directive',
+  EVENT = 'event',
 }
 
 export type GenericExpression<T extends ExpressionType, V> = {
