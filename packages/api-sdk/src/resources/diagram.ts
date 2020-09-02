@@ -31,6 +31,12 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
+  public async getRTC(id: DiagramID) {
+    const { data } = await this.fetch.get<{ diagram: Diagram; timestamp: number }>(`${this._getCRUDEndpoint(id)}/rtc`);
+
+    return data;
+  }
+
   public async create<T extends DiagramNode = DiagramNode>(body: Omit<Diagram<T>, '_id'> & Partial<Pick<Diagram<T>, '_id'>>): Promise<Diagram<T>> {
     return super._post<Diagram<T>>(body);
   }

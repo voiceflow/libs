@@ -75,6 +75,19 @@ describe('DiagramResource', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
+  it('.getRTC', async () => {
+    const { fetch, resource } = createClient();
+
+    const response = { diagram: { name: 'diagram name' }, timestamp: 12345 };
+    fetch.get.resolves({ data: response });
+
+    const data = await resource.getRTC('1');
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['diagrams/1/rtc']);
+    expect(data).to.eql(response);
+  });
+
   it('.create', async () => {
     const { crud, resource } = createClient();
 
