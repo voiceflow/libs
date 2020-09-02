@@ -31,8 +31,8 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  public async getRTC(id: DiagramID) {
-    const { data } = await this.fetch.get<{ diagram: Diagram; timestamp: number }>(`${this._getCRUDEndpoint(id)}/rtc`);
+  public async getRTC<T extends Diagram>(id: DiagramID) {
+    const { data } = await this.fetch.get<{ diagram: T; timestamp: number }>(`${this._getCRUDEndpoint(id)}/rtc`);
 
     return data;
   }
