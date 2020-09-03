@@ -5,7 +5,7 @@ import sinon from 'sinon';
 import * as s from 'superstruct';
 
 import { Client, PublicClient } from '@/client';
-import ApiSDK, { SGenerateClientOptions, SOptions } from '@/index';
+import ApiSDK, { SGenerateClientParams, SParams } from '@/index';
 
 const createSDK = () => {
   const assert = sinon.stub(s, 'assert');
@@ -34,7 +34,7 @@ describe('ApiSDK', () => {
     expect(sdk['clientKey']).to.eql('123');
     expect(sdk['apiEndpoint']).to.eql('endpoint');
     expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql([{ clientKey: '123', apiEndpoint: 'endpoint' }, SOptions]);
+    expect(assert.args[0]).to.eql([{ clientKey: '123', apiEndpoint: 'endpoint' }, SParams]);
   });
 
   it('.generatePublicClient', () => {
@@ -53,6 +53,6 @@ describe('ApiSDK', () => {
 
     expect(client).to.be.instanceOf(Client);
     expect(assert.callCount).to.eql(2);
-    expect(assert.args[1]).to.eql([{ authorization }, SGenerateClientOptions]);
+    expect(assert.args[1]).to.eql([{ authorization }, SGenerateClientParams]);
   });
 });

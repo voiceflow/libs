@@ -4,26 +4,26 @@ import type Fetch from '@/fetch';
 import { BasePlatformData, Project, ProjectID, SProject, SWorkspaceID, Version, VersionPlatformData, WorkspaceID } from '@/models';
 
 import CrudResource from '../crud';
+import { ENDPOINT } from './constants';
 import MemberResource from './member';
-
-export const ENDPOINT = 'projects';
 
 export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
-class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey, 'creatorID'> {
+class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey, ProjectResource, 'creatorID'> {
   public member: MemberResource;
 
   constructor(fetch: Fetch) {
     super({
       fetch,
+      clazz: ProjectResource,
       schema: SProject.schema,
       modelIDKey,
       resourceEndpoint: ENDPOINT,
       postPutExcludedFields: ['creatorID'],
     });
 
-    this.member = new MemberResource(fetch, ENDPOINT);
+    this.member = new MemberResource(fetch);
   }
 
   public async list<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(workspaceID: WorkspaceID, fields: string[]): Promise<P[]>;

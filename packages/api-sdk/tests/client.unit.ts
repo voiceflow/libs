@@ -2,9 +2,10 @@ import { expect } from 'chai';
 import JWT from 'jsonwebtoken';
 
 import { Client } from '@/client';
+import Fetch from '@/fetch';
 import { Diagram, Program, Project, User, Version } from '@/resources';
 
-const CLIENT_RESOURCES = [Diagram, Program, Project, Version, User];
+const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User];
 
 const createClient = () =>
   new Client({

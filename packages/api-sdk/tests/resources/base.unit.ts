@@ -26,10 +26,14 @@ const createClient = () => {
     put: sinon.stub(),
     patch: sinon.stub(),
     delete: sinon.stub(),
+    initWithOptions: sinon.stub(),
   };
 
-  const resource = new BaseResource<typeof schema, 'id'>({
+  class Resource {}
+
+  const resource = new BaseResource<typeof schema, 'id', Resource>({
     fetch: fetch as any,
+    clazz: Resource,
     schema: schema as any,
     modelIDKey: 'id',
     resourceEndpoint: 'endpoint',
@@ -40,6 +44,7 @@ const createClient = () => {
     assert,
     schema,
     resource,
+    Resource,
   };
 };
 
@@ -49,12 +54,13 @@ describe('BaseResource', () => {
   });
 
   it('.constructor', () => {
-    const { schema, fetch, resource } = createClient();
+    const { schema, fetch, resource, Resource } = createClient();
     const { id, ...schemeWithoutID } = schema;
 
     const { id: putAndPostID, ...putAndPostSchemeWithoutID } = resource['putAndPostStruct'].schema;
 
     expect(resource['fetch']).to.eql(fetch);
+    expect(resource['clazz']).to.eql(Resource);
     expect(resource['modelIDKey']).to.eql('id');
     expect(resource['resourceEndpoint']).to.eql('endpoint');
     expect(resource['struct'].schema).to.eql(schema);
@@ -127,6 +133,21 @@ describe('BaseResource', () => {
         },
       },
       resource['putAndPostStruct'],
+    ]);
+  });
+
+  it('.options', () => {
+    const { fetch, resource, Resource } = createClient();
+
+    const instance = resource.options({
+      headers: { key: 'val' },
+    });
+
+    expect(instance).to.be.instanceOf(Resource);
+    expect(fetch.initWithOptions.args[0]).to.eql([
+      {
+        headers: { key: 'val' },
+      },
     ]);
   });
 });

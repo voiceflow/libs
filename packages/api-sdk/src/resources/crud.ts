@@ -2,7 +2,12 @@ import type { BaseSchema, PutPostType, SchemeType } from '@/types';
 
 import BaseResource from './base';
 
-class CrudResource<S extends BaseSchema, K extends keyof SchemeType<S>, E extends keyof SchemeType<S> = never> extends BaseResource<S, K, E> {
+class CrudResource<
+  S extends BaseSchema,
+  K extends keyof SchemeType<S>,
+  C extends Record<string, any>,
+  E extends keyof SchemeType<S> = never
+> extends BaseResource<S, K, C, E> {
   protected _getCRUDEndpoint(id?: SchemeType<S>[K]): string {
     return id ? `${this._getEndpoint()}/${id}` : this._getEndpoint();
   }

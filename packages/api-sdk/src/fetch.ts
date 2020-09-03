@@ -1,6 +1,11 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
+export type FetchConfig = {
+  headers?: Record<string, string>;
+};
+
 type FetchOptions = {
+  options?: FetchConfig;
   clientKey: string;
   apiEndpoint: string;
   authorization?: string;
@@ -16,16 +21,12 @@ export type PathVariables = Record<string, string | number>;
 class Fetch {
   private axios: AxiosInstance;
 
-  constructor({ clientKey, apiEndpoint, authorization }: FetchOptions) {
+  constructor({ options, clientKey, apiEndpoint, authorization }: FetchOptions) {
     const config: AxiosRequestConfig = {
       baseURL: apiEndpoint.endsWith('/') ? apiEndpoint : `${apiEndpoint}/`,
-      headers: { clientKey },
+      headers: { ...options?.headers, clientKey, authorization },
       withCredentials: true,
     };
-
-    if (authorization) {
-      config.headers.authorization = authorization;
-    }
 
     this.axios = axios.create(config);
   }
@@ -70,6 +71,28 @@ class Fetch {
     const { data, status } = await this.axios.patch<T>(url, { path, value, pathVariables });
 
     return { data, status };
+  }
+
+  public setOptions({ headers }: FetchConfig) {
+    const { clientKey, authorization, ...defaultHeaders } = this.axios.defaults.headers;
+
+    this.axios.defaults.headers = {
+      ...defaultHeaders,
+      ...headers,
+      clientKey,
+      authorization,
+    };
+  }
+
+  public initWithOptions({ headers }: FetchConfig) {
+    const { clientKey, authorization, ...defaultHeaders } = this.axios.defaults.headers;
+
+    return new Fetch({
+      options: { headers: { ...defaultHeaders, ...headers } },
+      clientKey,
+      apiEndpoint: this.axios.defaults.baseURL!,
+      authorization,
+    });
   }
 }
 

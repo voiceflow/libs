@@ -4,17 +4,19 @@ import Fetch, { PathVariables } from '@/fetch';
 import { BasePlatformData, CreatorID, Member, ProjectID, SMember, SProjectID } from '@/models';
 
 import BaseResource from '../base';
+import { ENDPOINT } from './constants';
 
 export const modelIDKey = 'creatorID';
 export type ModelIDKey = typeof modelIDKey;
 
-class MemberResource extends BaseResource<typeof SMember['schema'], ModelIDKey> {
-  constructor(fetch: Fetch, parentResourceEndpoint: string) {
+class MemberResource extends BaseResource<typeof SMember['schema'], ModelIDKey, MemberResource> {
+  constructor(fetch: Fetch) {
     super({
       fetch,
+      clazz: MemberResource,
       schema: SMember.schema,
       modelIDKey,
-      resourceEndpoint: parentResourceEndpoint,
+      resourceEndpoint: ENDPOINT,
     });
   }
 

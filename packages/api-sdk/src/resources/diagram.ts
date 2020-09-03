@@ -11,12 +11,13 @@ const ENDPOINT = 'diagrams';
 export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
-class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey> {
+class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey, DiagramResource> {
   private _nodePutAndPostStruct = createPutAndPostStruct(SNode.schema, 'id', [], true);
 
   constructor(fetch: Fetch) {
     super({
       fetch,
+      clazz: DiagramResource,
       schema: SDiagram.schema,
       modelIDKey,
       resourceEndpoint: ENDPOINT,

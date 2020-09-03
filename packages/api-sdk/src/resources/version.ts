@@ -9,12 +9,13 @@ export const ENDPOINT = 'versions';
 
 export type ModelKey = '_id';
 
-class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 'creatorID'> {
+class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, VersionResource, 'creatorID'> {
   _partialPlatformData = s.partial(SVersion.schema.platformData);
 
   constructor(fetch: Fetch) {
     super({
       fetch,
+      clazz: VersionResource,
       schema: SVersion.schema,
       modelIDKey: '_id',
       resourceEndpoint: ENDPOINT,
