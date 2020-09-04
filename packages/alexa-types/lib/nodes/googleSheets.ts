@@ -1,0 +1,59 @@
+import { DefaultStep, IntegrationType, IntegrationUser, NodeType } from './types';
+
+export enum GoogleSheetsActionType {
+  CREATE_DATA = 'Create Data',
+  UPDATE_DATA = 'Update Data',
+  DELETE_DATA = 'Delete Data',
+  RETRIEVE_DATA = 'Retrieve Data',
+}
+
+export type GoogleSheetsValueLabel = {
+  value: number;
+  label: string;
+};
+
+export type GoogleSheetsMapping = {
+  arg1: GoogleSheetsValueLabel;
+  arg2: string;
+};
+
+export type GoogleSheetsSpreadsheet = {
+  value: string;
+  label: string;
+};
+
+export type StepData = {
+  user?: IntegrationUser;
+  sheet: null | GoogleSheetsValueLabel;
+  endRow: string;
+  mapping: GoogleSheetsMapping[];
+  startRow: string;
+  rowNumber: string;
+  rowValues: string[];
+  matchValue: string;
+  spreadsheet: null | GoogleSheetsSpreadsheet;
+  headerColumn: null | GoogleSheetsValueLabel;
+  selectedAction: null | GoogleSheetsActionType;
+  selectedIntegration: IntegrationType.GOOGLE_SHEETS;
+};
+
+export type NodeData = {
+  fail_id?: string | null;
+  success_id?: string | null;
+  action_data: {
+    user?: IntegrationUser;
+    sheet: null | GoogleSheetsValueLabel;
+    mapping: GoogleSheetsMapping[];
+    end_row: string;
+    start_row: string;
+    row_values: string[];
+    row_number: string;
+    match_value: string;
+    spreadsheet: null | GoogleSheetsSpreadsheet;
+    header_column: null | GoogleSheetsValueLabel;
+  };
+  selected_action: null | GoogleSheetsActionType;
+  selected_integration: IntegrationType.GOOGLE_SHEETS;
+};
+
+export type Step = DefaultStep<NodeType.GOOGLE_SHEETS, StepData>;

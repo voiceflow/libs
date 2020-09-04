@@ -8,6 +8,22 @@ export enum IntegrationType {
   GOOGLE_SHEETS = 'Google Sheets',
 }
 
+export enum IntegrationPlatform {
+  ZAPIER = 'Zapier',
+  GOOGLE_SHEETS = 'Google Sheets',
+}
+
+export type IntegrationUser = {
+  user_id?: string;
+  platform?: IntegrationPlatform;
+  user_data?: { email?: string; name?: string };
+  created_at?: string;
+  creator_id?: number;
+  project_id?: null | string;
+  requires_refresh?: null | boolean;
+  integration_user_id?: string;
+};
+
 export enum NodeType {
   SPEAK = 'speak',
   START = 'start',
