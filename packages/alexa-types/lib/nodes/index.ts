@@ -12,6 +12,7 @@ import * as Random from './random';
 import * as Set from './set';
 import * as Speak from './speak';
 import * as Start from './start';
+import * as Zapier from './zapier';
 
 export * from './types';
 
@@ -28,6 +29,7 @@ export type AlexaSteps =
   | Prompt.Step
   | Api.Step
   | Random.Step
+  | Zapier.Step
   | If.Step;
 
 export type AlexaNodes =

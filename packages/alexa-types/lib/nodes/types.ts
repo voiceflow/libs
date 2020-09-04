@@ -21,6 +21,7 @@ export enum NodeType {
 
   // integrations
   API = 'api',
+  ZAPIER = 'zapier',
   INTEGRATIONS = 'integrations',
   GOOGLE_SHEETS = 'google_sheets',
 

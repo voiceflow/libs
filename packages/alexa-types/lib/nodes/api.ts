@@ -42,7 +42,7 @@ export type StepData = {
   mappings: APIMapping[];
   bodyType: APIBodyType;
   selectedAction: APIActionType;
-  selectedIntegration: IntegrationType;
+  selectedIntegration: IntegrationType.CUSTOM_API;
 };
 
 export type NodeData = {
