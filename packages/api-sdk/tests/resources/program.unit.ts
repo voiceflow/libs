@@ -108,6 +108,7 @@ describe('ProgramResource', () => {
       },
       commands: [
         {
+          type: '1',
           diagram_id: '1',
           intent: 'intent',
           mappings: [],

@@ -20,7 +20,7 @@ const createClient = () => {
     granularPatch: sinon.stub(),
   };
 
-  const resource = new Member(fetch as any, 'projects');
+  const resource = new Member(fetch as any);
 
   return {
     fetch,

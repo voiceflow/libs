@@ -28,7 +28,8 @@ const createClient = () => {
     delete: sinon.stub(),
   };
 
-  const resource = new CrudResource<typeof schema, 'id', 'id'>({
+  const resource = new CrudResource<typeof schema, 'id', any, 'id'>({
+    clazz: class {},
     fetch: fetch as any,
     schema: schema as any,
     modelIDKey: 'id',

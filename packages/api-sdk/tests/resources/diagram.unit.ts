@@ -102,7 +102,10 @@ describe('DiagramResource', () => {
       offsetX: 0,
       offsetY: 0,
       zoom: 1,
-      nodes: [{ id: '1' }],
+      nodes: {
+        1: { nodeID: '1', type: 'type', data: {} },
+        2: { nodeID: '2', type: 'type', data: {} },
+      },
     };
 
     const data = await resource.create(body);
@@ -124,7 +127,10 @@ describe('DiagramResource', () => {
       offsetX: 2,
       offsetY: 2,
       zoom: 1,
-      nodes: [{ id: '1' }, { id: '2' }],
+      nodes: {
+        1: { nodeID: '1', type: 'type', data: {} },
+        2: { nodeID: '2', type: 'type', data: {} },
+      },
     };
 
     const data = await resource.update('1', body);
@@ -139,15 +145,15 @@ describe('DiagramResource', () => {
 
     fetch.put.resolves({ data: RESPONSE_DATA });
 
-    const data = await resource.updateNode('1', '2', { key: 'value' });
+    const data = await resource.updateNode('1', '2', { type: 'type', data: { key: 'value' } });
 
     expect(fetch.put.callCount).to.eql(1);
-    expect(fetch.put.args[0]).to.eql(['diagrams/1/nodes/2', { key: 'value' }]);
+    expect(fetch.put.args[0]).to.eql(['diagrams/1/nodes/2', { type: 'type', data: { key: 'value' } }]);
     expect(data).to.eql(RESPONSE_DATA);
     expect(assert.callCount).to.eql(3);
     expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
     expect(assert.args[1]).to.eql(['2', SNodeID]);
-    expect(assert.args[2]).to.eql([{ key: 'value' }, resource['_nodePutAndPostStruct']]);
+    expect(assert.args[2]).to.eql([{ type: 'type', data: { key: 'value' } }, resource['_nodePutAndPostStruct']]);
   });
 
   it('.delete', async () => {

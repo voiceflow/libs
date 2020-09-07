@@ -203,7 +203,7 @@ describe('VersionResource', () => {
 
     fetch.get.resolves({ data: RESPONSE_DATA });
 
-    const data = await resource.getPrograms<{ id: number; variables: string[] }>('1', ['id', 'variables']);
+    const data = await resource.getPrograms<{ id: string; variables: string[] }>('1', ['id', 'variables']);
 
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/programs?fields=id,variables']);
@@ -235,6 +235,20 @@ describe('VersionResource', () => {
 
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/diagrams?fields=_id,name']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+  });
+
+  it('.export', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.export('1');
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/1/export']);
     expect(data).to.eql(RESPONSE_DATA);
     expect(assert.callCount).to.eql(1);
     expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);

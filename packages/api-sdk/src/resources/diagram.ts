@@ -11,7 +11,7 @@ const ENDPOINT = 'diagrams';
 export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
-class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey, DiagramResource> {
+class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey, DiagramResource, 'modified'> {
   private _nodePutAndPostStruct = createPutAndPostStruct(SNode.schema, 'id', [], true);
 
   constructor(fetch: Fetch) {
@@ -38,7 +38,9 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     return data;
   }
 
-  public async create<T extends DiagramNode = DiagramNode>(body: Omit<Diagram<T>, '_id'> & Partial<Pick<Diagram<T>, '_id'>>): Promise<Diagram<T>> {
+  public async create<T extends DiagramNode = DiagramNode>(
+    body: Omit<Diagram<T>, '_id' | 'modified'> & Partial<Pick<Diagram<T>, '_id'>>
+  ): Promise<Diagram<T>> {
     return super._post<Diagram<T>>(body);
   }
 

@@ -71,7 +71,7 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
 
   public async getPrograms<T extends Partial<Program>>(id: VersionID, fields: string[]): Promise<T[]>;
 
-  public async getPrograms(id: VersionID): Promise<Program[]>;
+  public async getPrograms<T extends Program = Program>(id: VersionID): Promise<T[]>;
 
   public async getPrograms(id: VersionID, fields?: string[]) {
     this._assertModelID(id);
@@ -83,12 +83,20 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
 
   public async getDiagrams<T extends Partial<Diagram>>(id: VersionID, fields: string[]): Promise<T[]>;
 
-  public async getDiagrams(id: VersionID): Promise<Diagram[]>;
+  public async getDiagrams<T extends Diagram = Diagram>(id: VersionID): Promise<T[]>;
 
   public async getDiagrams(id: VersionID, fields?: string[]) {
     this._assertModelID(id);
 
     const { data } = await this.fetch.get(`${this._getCRUDEndpoint(id)}/diagrams${this._getFieldsQuery(fields)}`);
+
+    return data;
+  }
+
+  public async export<D extends VersionPlatformData, P extends Program>(id: VersionID) {
+    this._assertModelID(id);
+
+    const { data } = await this.fetch.get<{ version: Version<D>; programs: P[] }>(`${this._getCRUDEndpoint(id)}/export`);
 
     return data;
   }
