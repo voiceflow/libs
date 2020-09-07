@@ -42,15 +42,15 @@ export type NodeData = {
   success_id?: string | null;
   action_data: {
     user?: IntegrationUser;
-    sheet: null | GoogleSheetsValueLabel;
-    mapping: GoogleSheetsMapping[];
+    sheet: null | number;
+    mapping: { arg1: number; arg2: string }[];
     end_row: string;
     start_row: string;
     row_values: string[];
     row_number: string;
     match_value: string;
-    spreadsheet: null | GoogleSheetsSpreadsheet;
-    header_column: null | GoogleSheetsValueLabel;
+    spreadsheet: null | string;
+    header_column: null | number;
   };
   selected_action: null | GoogleSheetsActionType;
   selected_integration: IntegrationType.GOOGLE_SHEETS;
