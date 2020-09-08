@@ -1,3 +1,4 @@
+import * as AccountLinking from './accountLinking';
 import * as Api from './api';
 import * as Capture from './capture';
 import * as Card from './card';
@@ -32,6 +33,7 @@ export type AlexaSteps =
   | Prompt.Step
   | Api.Step
   | Exit.Step
+  | AccountLinking.Step
   | Random.Step
   | Zapier.Step
   | GoogleSheets.Step
@@ -49,6 +51,7 @@ export type AlexaNodes =
   | Card.Node
   | Integration.Node
   | Exit.Node
+  | AccountLinking.Node
   | Random.Node
   | If.Node
   | Reminder.Node;
