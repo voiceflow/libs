@@ -11,6 +11,7 @@ import * as Intent from './intent';
 import * as Interaction from './interaction';
 import * as Prompt from './prompt';
 import * as Random from './random';
+import * as Reminder from './reminder';
 import * as Set from './set';
 import * as Speak from './speak';
 import * as Start from './start';
@@ -34,7 +35,8 @@ export type AlexaSteps =
   | Random.Step
   | Zapier.Step
   | GoogleSheets.Step
-  | If.Step;
+  | If.Step
+  | Reminder.Step;
 
 export type AlexaNodes =
   | Set.Node
@@ -48,6 +50,7 @@ export type AlexaNodes =
   | Integration.Node
   | Exit.Node
   | Random.Node
-  | If.Node;
+  | If.Node
+  | Reminder.Node;
 
 export type AlexaCommands = Intent.Command;
