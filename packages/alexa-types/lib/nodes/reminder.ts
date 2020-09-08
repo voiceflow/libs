@@ -10,6 +10,11 @@ export enum ReminderClientType {
   SCHEDULED = 'scheduled',
 }
 
+export enum RecurrenceFreq {
+  DAILY = 'DAILY',
+  WEEKLY = 'WEEKLY',
+}
+
 export type StepData = {
   reminder: {
     name: string;
@@ -38,7 +43,7 @@ export type NodeData = {
     };
     date: string;
     timezone: string;
-    recurrence?: { byDay?: string; freq: string };
+    recurrence?: { byDay?: string[]; freq: RecurrenceFreq };
   };
   fail_id?: string;
   success_id?: string;
