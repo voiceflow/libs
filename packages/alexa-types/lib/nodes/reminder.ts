@@ -38,7 +38,7 @@ export type NodeData = {
     };
     date: string;
     timezone: string;
-    recurrence?: { startDateTime?: string; endDateTime?: string; recurrenceRules: string[] };
+    recurrence?: { byDay?: string; freq: string };
   };
   fail_id?: string;
   success_id?: string;
