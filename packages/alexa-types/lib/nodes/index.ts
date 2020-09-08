@@ -2,6 +2,7 @@ import * as Api from './api';
 import * as Capture from './capture';
 import * as Card from './card';
 import * as Code from './code';
+import * as Exit from './exit';
 import * as Flow from './flow';
 import * as GoogleSheets from './googleSheets';
 import * as If from './if';
@@ -29,6 +30,7 @@ export type AlexaSteps =
   | Card.Step
   | Prompt.Step
   | Api.Step
+  | Exit.Step
   | Random.Step
   | Zapier.Step
   | GoogleSheets.Step
@@ -44,6 +46,7 @@ export type AlexaNodes =
   | Code.Node
   | Card.Node
   | Integration.Node
+  | Exit.Node
   | Random.Node
   | If.Node;
 
