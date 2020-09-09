@@ -29,7 +29,7 @@ export type Card = {
   type: CardType;
   title: string;
   text: string;
-  image: {
+  image?: {
     largeImageUrl?: string;
     smallImageUrl?: string;
   };
