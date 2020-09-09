@@ -25,40 +25,22 @@ export enum AlexaPermissions {
 
 /* ----------------------- Alexa Card Types ----------------------- */
 
-type BaseCardData<T extends CardType> = {
-  cardType: T;
-};
-
-type AccountLinkCardData = BaseCardData<CardType.LINK>;
-
-type AskForPermissionsConsentCardData = BaseCardData<CardType.PERMISSIONS> & {
-  permissions: Array<AlexaPermissions>;
-};
-
-type SimpleCardData<T extends CardType = CardType.SIMPLE> = BaseCardData<T> & {
+export type Card = {
+  type: CardType;
   title: string;
   text: string;
-};
-
-type StandardCardData = SimpleCardData<CardType.STANDARD> & {
-  largeImageUrl: null | string;
-  smallImageUrl: null | string;
+  image: {
+    largeImageUrl?: string;
+    smallImageUrl?: string;
+  };
 };
 
 /* ----------------------- Voiceflow Data Types ----------------------- */
 
-export type StepData = StandardCardData | SimpleCardData | AccountLinkCardData | AskForPermissionsConsentCardData;
+export type StepData = Card;
 
 export type NodeData = {
-  card: {
-    type: CardType;
-    title: string;
-    text: string;
-    image: {
-      largeImageUrl: string;
-      smallImageUrl: string;
-    };
-  };
+  card: Card;
   nextId?: string;
 };
 
