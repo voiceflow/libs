@@ -1,0 +1,6 @@
+{
+  "release": {
+    "branch": "master"
+  },
+  "npmPublish": false
+}
