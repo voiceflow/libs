@@ -1,3 +1,13 @@
+import { v1 } from 'ask-smapi-model';
+
+export type AmazonProfile = {
+  name: string;
+  email: string;
+  user_id: string;
+};
+
+export type AmazonVendor = Required<v1.vendorManagement.Vendor>;
+
 export type Prompt = {
   voice: Voice;
   content: string;
