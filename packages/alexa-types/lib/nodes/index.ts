@@ -3,6 +3,7 @@ import * as Api from './api';
 import * as Capture from './capture';
 import * as Card from './card';
 import * as Code from './code';
+import * as Directive from './directive';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as GoogleSheets from './googleSheets';
@@ -38,7 +39,8 @@ export type AlexaSteps =
   | Zapier.Step
   | GoogleSheets.Step
   | If.Step
-  | Reminder.Step;
+  | Reminder.Step
+  | Directive.Step;
 
 export type AlexaNodes =
   | Set.Node
@@ -54,6 +56,7 @@ export type AlexaNodes =
   | AccountLinking.Node
   | Random.Node
   | If.Node
-  | Reminder.Node;
+  | Reminder.Node
+  | Directive.Node;
 
 export type AlexaCommands = Intent.Command;
