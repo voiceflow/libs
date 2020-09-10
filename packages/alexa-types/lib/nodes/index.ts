@@ -11,6 +11,7 @@ import * as If from './if';
 import * as Integration from './integration';
 import * as Intent from './intent';
 import * as Interaction from './interaction';
+import * as Permission from './permission';
 import * as Prompt from './prompt';
 import * as Random from './random';
 import * as Reminder from './reminder';
@@ -35,6 +36,7 @@ export type AlexaSteps =
   | Api.Step
   | Exit.Step
   | AccountLinking.Step
+  | Permission.Step
   | Random.Step
   | Zapier.Step
   | GoogleSheets.Step
@@ -54,6 +56,7 @@ export type AlexaNodes =
   | Integration.Node
   | Exit.Node
   | AccountLinking.Node
+  | Permission.Node
   | Random.Node
   | If.Node
   | Reminder.Node
