@@ -1,5 +1,6 @@
 import * as AccountLinking from './accountLinking';
 import * as Api from './api';
+import * as CancelPayment from './cancelPayment';
 import * as Capture from './capture';
 import * as Card from './card';
 import * as Code from './code';
@@ -42,7 +43,8 @@ export type AlexaSteps =
   | GoogleSheets.Step
   | If.Step
   | Reminder.Step
-  | Directive.Step;
+  | Directive.Step
+  | CancelPayment.Step;
 
 export type AlexaNodes =
   | Set.Node
@@ -60,6 +62,7 @@ export type AlexaNodes =
   | Random.Node
   | If.Node
   | Reminder.Node
-  | Directive.Node;
+  | Directive.Node
+  | CancelPayment.Node;
 
 export type AlexaCommands = Intent.Command;
