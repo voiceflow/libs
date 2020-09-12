@@ -7,8 +7,6 @@ const main = async () => {
   // project
   const createdProject = await client.project.create<{ data: string }, { data: number }>({
     teamID: '1',
-    moduleID: 1,
-    creatorID: 1,
     name: 'name',
     members: [],
     platform: 'alexa',
