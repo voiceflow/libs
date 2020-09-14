@@ -19,6 +19,7 @@ import * as Reminder from './reminder';
 import * as Set from './set';
 import * as Speak from './speak';
 import * as Start from './start';
+import * as UserInfo from './userInfo';
 import * as Zapier from './zapier';
 
 export * from './types';
@@ -44,6 +45,7 @@ export type AlexaSteps =
   | If.Step
   | Reminder.Step
   | Directive.Step
+  | UserInfo.Step
   | CancelPayment.Step;
 
 export type AlexaNodes =
@@ -63,6 +65,7 @@ export type AlexaNodes =
   | If.Node
   | Reminder.Node
   | Directive.Node
+  | UserInfo.Node
   | CancelPayment.Node;
 
 export type AlexaCommands = Intent.Command;
