@@ -5,6 +5,7 @@ import * as Capture from './capture';
 import * as Card from './card';
 import * as Code from './code';
 import * as Directive from './directive';
+import * as Event from './event';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as GoogleSheets from './googleSheets';
@@ -46,6 +47,7 @@ export type AlexaSteps =
   | Reminder.Step
   | Directive.Step
   | UserInfo.Step
+  | Event.Step
   | CancelPayment.Step;
 
 export type AlexaNodes =
@@ -66,6 +68,7 @@ export type AlexaNodes =
   | Reminder.Node
   | Directive.Node
   | UserInfo.Node
+  | Event.Node
   | CancelPayment.Node;
 
 export type AlexaCommands = Intent.Command;
