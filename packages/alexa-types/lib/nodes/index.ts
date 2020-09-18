@@ -21,6 +21,7 @@ import * as Reminder from './reminder';
 import * as Set from './set';
 import * as Speak from './speak';
 import * as Start from './start';
+import * as Stream from './stream';
 import * as UserInfo from './userInfo';
 import * as Zapier from './zapier';
 
@@ -46,6 +47,7 @@ export type AlexaSteps =
   | GoogleSheets.Step
   | If.Step
   | Reminder.Step
+  | Stream.Step
   | Directive.Step
   | UserInfo.Step
   | Event.Step
@@ -68,6 +70,7 @@ export type AlexaNodes =
   | Random.Node
   | If.Node
   | Reminder.Node
+  | Stream.Node
   | Directive.Node
   | UserInfo.Node
   | Event.Node
