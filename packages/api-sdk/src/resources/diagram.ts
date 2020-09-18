@@ -38,9 +38,7 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     return data;
   }
 
-  public async create<T extends DiagramNode = DiagramNode>(
-    body: Omit<Diagram<T>, '_id' | 'modified'> & Partial<Pick<Diagram<T>, '_id'>>
-  ): Promise<Diagram<T>> {
+  public async create<T extends DiagramNode = DiagramNode>(body: Omit<Diagram<T>, '_id'> & Partial<Pick<Diagram<T>, '_id'>>): Promise<Diagram<T>> {
     return super._post<Diagram<T>>(body);
   }
 
