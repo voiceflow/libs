@@ -52,6 +52,12 @@ export enum Locale {
   HI_IN = 'hi-IN',
 }
 
+export enum ProductType {
+  CONSUMABLE = 'CONSUMABLE',
+  ENTITLEMENT = 'ENTITLEMENT',
+  SUBSCRIPTION = 'SUBSCRIPTION',
+}
+
 export enum Voice {
   ALEXA = 'Alexa', // not a real voice (default no voice)
   AUDIO = 'audio', // not a real voice (use content as audio url)

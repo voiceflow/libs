@@ -1,53 +1,62 @@
-import { Locale } from '../types';
+import { Locale, ProductType } from '../types';
 
-export type MarketPlace = 'amazon.com' | 'amazon.co.uk' | 'amazon.de' | 'amazon.es' | 'amazon.fr' | 'amazon.it' | 'amazon.co.jp';
+export enum MarketPlace {
+  DE = 'amazon.de',
+  ES = 'amazon.es',
+  FR = 'amazon.fr',
+  IT = 'amazon.it',
+  COM = 'amazon.com',
+  CO_JP = 'amazon.co.jp',
+  CO_UK = 'amazon.co.uk',
+}
+
+export enum SubscriptionPaymentFrequency {
+  YEARLY = 'YEARLY',
+  MONTHLY = 'MONTHLY',
+}
+
+export type PublishingPrice = {
+  releaseDate: string; // e.g. 2020-06-15
+  defaultPriceListing: {
+    price: number;
+    currency: string;
+  };
+};
+
+export type PublishingLocale = {
+  name: string;
+  summary: string;
+  keywords: string[];
+  description: string;
+  smallIconUri: string; // url
+  largeIconUri: string; // url
+  examplePhrases: string[];
+  customProductPrompts: {
+    boughtCardDescription: string;
+    purchasePromptDescription: string;
+  };
+};
 
 // products in sql
 export type AlexaProduct = {
-  productID: string; // id
-  name: string; // name
-  // rest is data field
-  type: 'SUBSCRIPTION' | 'CONSUMABLE' | 'ENTITLEMENT';
+  name: string;
+  type: ProductType;
   version: '1.0';
+  productID: string;
   referenceName: string;
-  subscriptionInformation?: {
-    subscriptionPaymentFrequency: 'MONTHLY' | 'YEARLY';
-    subscriptionTrialPeriodDays: string;
+  purchasableState: 'PURCHASABLE';
+  testingInstructions: string;
+  privacyAndCompliance: {
+    locales: Partial<Record<Locale, { privacyPolicyUrl: string }>>;
   };
   publishingInformation: {
+    pricing: Partial<Record<MarketPlace, PublishingPrice>>;
+    locales: Partial<Record<Locale, PublishingLocale>>;
+    taxInformation: { category: string };
     distributionCountries: string[]; // eg ["US", "DE", ...]
-    pricing: {
-      [key in MarketPlace]?: {
-        releaseDate: string; // e.g. 2020-06-15
-        defaultPriceListing: {
-          price: number;
-          currency: string;
-        };
-      };
-    };
-    taxInformation: {
-      category: string;
-    };
-    locales: Record<
-      Locale,
-      {
-        name: string;
-        smallIconUri: string; // url
-        largeIconUri: string; // url
-        summary: string;
-        description: string;
-        keywords: string[];
-        examplePhrases: string[];
-        customProductPrompts: {
-          boughtCardDescription: string;
-          purchasePromptDescription: string;
-        };
-      }
-    >;
   };
-  privacyAndCompliance: {
-    locales: Record<Locale, { privacyPolicyUrl: string }>;
+  subscriptionInformation?: {
+    subscriptionTrialPeriodDays: number;
+    subscriptionPaymentFrequency: SubscriptionPaymentFrequency;
   };
-  testingInstructions: string;
-  purchasableState: 'PURCHASABLE';
 };

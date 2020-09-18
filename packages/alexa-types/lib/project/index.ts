@@ -7,13 +7,13 @@ export * from './product';
 export * from './member';
 
 export type AlexaProjectData = {
-  products: AlexaProduct[];
+  products: Record<string, AlexaProduct>;
 };
 
 export type AlexaProject = Project<AlexaProjectData, AlexaProjectMemberData> & {
   platform: 'alexa';
 };
 
-export const defaultAlexaProjectData = ({ products = [] }: Partial<AlexaProjectData> = {}): AlexaProjectData => ({
+export const defaultAlexaProjectData = ({ products = {} }: Partial<AlexaProjectData> = {}): AlexaProjectData => ({
   products,
 });

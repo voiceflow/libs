@@ -13,6 +13,7 @@ import * as If from './if';
 import * as Integration from './integration';
 import * as Intent from './intent';
 import * as Interaction from './interaction';
+import * as Payment from './payment';
 import * as Permission from './permission';
 import * as Prompt from './prompt';
 import * as Random from './random';
@@ -48,6 +49,7 @@ export type AlexaSteps =
   | Directive.Step
   | UserInfo.Step
   | Event.Step
+  | Payment.Step
   | CancelPayment.Step;
 
 export type AlexaNodes =
@@ -69,6 +71,7 @@ export type AlexaNodes =
   | Directive.Node
   | UserInfo.Node
   | Event.Node
+  | Payment.Node
   | CancelPayment.Node;
 
 export type AlexaCommands = Intent.Command;
