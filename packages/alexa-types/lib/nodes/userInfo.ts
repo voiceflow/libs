@@ -16,11 +16,13 @@ export type Permission = {
   selected: { value: string } | null;
 };
 
-export type NodeData = {
-  fail_id?: string;
-  success_id?: string;
-  permissions: Permission[];
-};
+export type NodeData =
+  | { nextId?: string | null }
+  | {
+      fail_id?: string | null;
+      success_id?: string | null;
+      permissions: Permission[];
+    };
 
 export type Step = DefaultStep<NodeType.USER_INFO, StepData>;
 export type Node = DefaultNode<NodeType.USER_INFO, NodeData>;
