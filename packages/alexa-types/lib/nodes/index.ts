@@ -5,6 +5,7 @@ import * as Capture from './capture';
 import * as Card from './card';
 import * as Code from './code';
 import * as Directive from './directive';
+import * as Display from './display';
 import * as Event from './event';
 import * as Exit from './exit';
 import * as Flow from './flow';
@@ -52,7 +53,8 @@ export type AlexaSteps =
   | UserInfo.Step
   | Event.Step
   | Payment.Step
-  | CancelPayment.Step;
+  | CancelPayment.Step
+  | Display.Step;
 
 export type AlexaNodes =
   | Set.Node
@@ -75,6 +77,7 @@ export type AlexaNodes =
   | UserInfo.Node
   | Event.Node
   | Payment.Node
-  | CancelPayment.Node;
+  | CancelPayment.Node
+  | Display.Node;
 
 export type AlexaCommands = Intent.Command;
