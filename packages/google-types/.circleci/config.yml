@@ -1,155 +1,28 @@
 version: 2.1
 
-parameters:
-  npm-repo:
-    type: string
-    default: "@voiecflow/<COMPONENT_NAME>"
-  container-image-url:
-    type: string
-    default: "168387678261.dkr.ecr.us-east-1.amazonaws.com/<COMPONENT_NAME>"
-  k8s-asset:
-    type: string
-    default: "deployment/<COMPONENT_NAME>"
-  k8s-namespace:
-    type: string
-    default: "voiceflow-v1" # This is usually voiceflow-v1
-  ssh-fingerprint:
-    type: string
-    default: "12:34:56:78:90:ab:cd:ef:gh:ij:kl:mn:op" # This is needed to push and delete dev env branches.
-  dev-env-component:
-    type: string
-    default: "<DEV_ENV_COMPONENT_NAME>"
-
-# Reusable YAML chunks
-defaults:
-  prod_deploy_filters: &prod_deploy_filters
-    filters:
-      branches:
-        ignore: /.*/
-      tags:
-        only: /^v[0-9]*(\.[0-9]*)*$/
-
 orbs:
-  codecov: codecov/codecov@1.0.2
   vfcommon: voiceflow/common@0.0.13
 
-# # Additional commands for your CI process
-# commands:
-#   clone_s3_assets:
-#     steps:
-#       - run:
-#           name: Clone s3 assets
-#           command: |
-#             aws s3 sync s3://com.voiceflow.ci.assets/alexa ~/project/tests/smokeTest/recordedSessions
-
 jobs:
-  test:
-    executor: vfcommon/code-test-executor
+  build-and-test:
+    executor: vfcommon/default-executor
     steps:
       - checkout
       - vfcommon/install_node_modules
-      # - vfcommon/setup_pg           # Enable if you need to migrate+seed the pg database
-      # - vfcommon/setup_dynamodb     # Enable if you need to seed the DynamoDB; ensure you have the scripts/mock_aws_credentials.sh script included!
-      # - vfcommon/setup_mongodb      # Enable if you need to see the MongoDB
       - run:
           name: "Build package"
           command: |
             yarn build
-      - run:
-          name: "Run tests"
-          command: |
-            yarn test
-      - codecov/upload:
-          file: nyc_coverage/lcov.info
-      # Additional steps to run test job below:
 
-  build-push-image:
-    executor: vfcommon/build-executor
-    steps:
-      - vfcommon/build_push_image:
-          image_repo: << pipeline.parameters.container-image-url >>
-          release_pkg: << pipeline.parameters.npm-repo >>
-
-  deploy-image:
-    executor: vfcommon/build-executor
-    steps:
-      - vfcommon/deploy_image:
-          image_repo: << pipeline.parameters.container-image-url >>
-          namespace: << pipeline.parameters.k8s-namespace >>
-          target: << pipeline.parameters.k8s-asset >>
-
-  deploy-on-tag:
-    executor: vfcommon/build-executor
-    steps:
-      - vfcommon/deploy_image:
-          image_repo: << pipeline.parameters.container-image-url >>
-          namespace: << pipeline.parameters.k8s-namespace >>
-          target: << pipeline.parameters.k8s-asset >>
-          tagged: true
-
-  build-deploy-dev-env:
-    executor: vfcommon/build-executor
-    steps:
-      - vfcommon/build_deploy_dev_env:
-          image_repo: << pipeline.parameters.container-image-url >>
-          component: << pipeline.parameters.dev-env-component >>
-          ssh_key: << pipeline.parameters.ssh-fingerprint >>
-
-# When should each job run and what are their dependencies?
 workflows:
-  # # Staging
-  # build-deploy-staging:
-  #   jobs:
-  #     - build-push-image:
-  #         context: dev-test
-  #         filters:
-  #           branches:
-  #             only:
-  #               - staging
-  #     - deploy-image:
-  #         context: dev-test
-  #         requires:
-  #           - build-push-image
-  #         filters:
-  #           branches:
-  #             only:
-  #               - staging
-
-  # # Development environments
-  # build-deploy-environment:
-  #   jobs:
-  #     - build-deploy-dev-env:
-  #         context: dev-test
-  #         filters:
-  #           branches:
-  #             only:
-  #               - /env-.*/
-
-  # Master (production)
-  test-and-release-app:
+  test-and-release:
     jobs:
-      - test:
+      - build-and-test:
           context: dev-test
-          filters:
-            branches:
-              ignore:
-                - /env-.*/
-                - staging
       - vfcommon/release:
           context: dev-test
           requires:
-            - test
+            - build-and-test
           filters:
             branches:
               only: master
-  # # Deploy the application
-  # deploy-app:
-  #   jobs:
-  #     - build-push-image:
-  #         <<: *prod_deploy_filters
-  #         context: dev-test
-  #     - deploy-on-tag:
-  #         <<: *prod_deploy_filters
-  #         context: dev-test
-  #         requires:
-  #           - build-push-image
