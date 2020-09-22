@@ -9,6 +9,7 @@ export type StepData = {
   type: DisplayType;
   imageURL?: string;
   title?: string;
+  jsonFileName?: string;
   datasource: string;
   document: string;
   aplCommands?: string;
