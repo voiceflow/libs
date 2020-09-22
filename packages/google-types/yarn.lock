@@ -540,10 +540,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@voiceflow/api-sdk@1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.7.0.tgz#d99080d6731fcd1268d68c00605b30c798edd785"
-  integrity sha512-cZO13zfFBInGabZ6RBwrEs7RAXpBc9EWPZYBS48gBW4U42T28dvexcNPz6kmOXCl+3ip0MlnGZk+YuB44wBO9A==
+"@voiceflow/api-sdk@1.9.2":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.9.2.tgz#877193d57780743ba9e9666900b6160508e30c01"
+  integrity sha512-M743aRs21PJSIx68MxdjEI6lzFfBot7bEGi6DrGXrbxfNjWERdEoNV/ProszXdoyTfdZ14dFcrWFHaXZkVqbmw==
   dependencies:
     "@types/atob" "^2.1.2"
     "@voiceflow/logger" "^1.1.10"
