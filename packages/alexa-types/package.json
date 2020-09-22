@@ -12,7 +12,7 @@
     }
   },
   "dependencies": {
-    "@voiceflow/api-sdk": "1.7.0",
+    "@voiceflow/api-sdk": "1.9.2",
     "ask-smapi-model": "^1.11.0"
   },
   "devDependencies": {
