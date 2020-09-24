@@ -14,6 +14,7 @@ import * as Random from './random';
 import * as Set from './set';
 import * as Speak from './speak';
 import * as Start from './start';
+import * as Stream from './stream';
 import * as Zapier from './zapier';
 
 export * from './types';
@@ -34,7 +35,8 @@ export type GoogleSteps =
   | Random.Step
   | Zapier.Step
   | GoogleSheets.Step
-  | If.Step;
+  | If.Step
+  | Stream.Step;
 
 export type GoogleNodes =
   | Set.Node
@@ -48,6 +50,7 @@ export type GoogleNodes =
   | Integration.Node
   | Exit.Node
   | Random.Node
-  | If.Node;
+  | If.Node
+  | Stream.Node;
 
 export type GoogleCommands = Intent.Command;
