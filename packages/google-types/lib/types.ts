@@ -24,24 +24,6 @@ export enum ExpressionType {
   ADVANCE = 'advance',
 }
 
-export enum Locale {
-  EN_US = 'en-US',
-  EN_AU = 'en-AU',
-  EN_CA = 'en-CA',
-  EN_IN = 'en-IN',
-  EN_GB = 'en-GB',
-  FR_CA = 'fr-CA',
-  ES_US = 'es-US',
-  FR_FR = 'fr-FR',
-  DE_DE = 'de-DE',
-  IT_IT = 'it-IT',
-  JA_JP = 'ja-JP',
-  ES_ES = 'es-ES',
-  ES_MX = 'es-MX',
-  PT_BR = 'pt-BR',
-  HI_IN = 'hi-IN',
-}
-
 export enum Voice {
   DEFAULT = 'default', // not a real voice (default no voice)
 }

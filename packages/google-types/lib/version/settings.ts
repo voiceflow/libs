@@ -22,12 +22,9 @@ export type ResumeSession = {
 };
 
 export type GoogleSettings = {
-  events: null | string;
-  customInterface: boolean;
   session: RestartSession | ResumeSession;
   repeat: RepeatType;
   error: null | Prompt;
-  permissions: string[];
 };
 
 export const defaultPrompt = (prompt?: Prompt | null): null | Prompt => {
@@ -39,17 +36,11 @@ export const defaultPrompt = (prompt?: Prompt | null): null | Prompt => {
 };
 
 export const defaultGoogleSettings = ({
-  events = null,
-  customInterface = false,
   session = { type: SessionType.RESTART },
   repeat = RepeatType.ALL,
-  permissions = [],
   error,
 }: Partial<GoogleSettings> = {}): GoogleSettings => ({
-  events,
-  customInterface,
   session,
   repeat,
-  permissions,
   error: defaultPrompt(error),
 });

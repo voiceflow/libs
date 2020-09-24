@@ -10,4 +10,6 @@ export type GoogleProject = Project<GoogleProjectData, GoogleProjectMemberData> 
   platform: 'google';
 };
 
-export const defaultGoogleProjectData = (_: Partial<GoogleProjectData> = {}): GoogleProjectData => ({});
+export const defaultGoogleProjectData = (projectData: Partial<GoogleProjectData> = {}): GoogleProjectData => ({
+  ...projectData,
+});

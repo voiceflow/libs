@@ -540,7 +540,7 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@voiceflow/api-sdk@1.9.2":
+"@voiceflow/api-sdk@^1.9.2":
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.9.2.tgz#877193d57780743ba9e9666900b6160508e30c01"
   integrity sha512-M743aRs21PJSIx68MxdjEI6lzFfBot7bEGi6DrGXrbxfNjWERdEoNV/ProszXdoyTfdZ14dFcrWFHaXZkVqbmw==

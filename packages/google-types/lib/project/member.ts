@@ -1,3 +1,9 @@
-export type GoogleProjectMemberData = {};
+export type GoogleProjectMemberData = {
+  /** reference to the external google project ID */
+  googleProjectID: string | null;
+};
 
-export const defaultGoogleProjectMemberData = (_: Partial<GoogleProjectMemberData> = {}): GoogleProjectMemberData => ({});
+export const defaultGoogleProjectMemberData = (memberData: Partial<GoogleProjectMemberData> = {}): GoogleProjectMemberData => ({
+  ...memberData,
+  googleProjectID: null,
+});
