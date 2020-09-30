@@ -66,6 +66,7 @@ export enum Locale {
 
 export enum Voice {
   DEFAULT = 'default', // not a real voice (default no voice)
+  AUDIO = 'audio',
 }
 
 export const DEFAULT_Voice = {};
