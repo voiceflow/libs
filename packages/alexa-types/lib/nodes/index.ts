@@ -4,6 +4,7 @@ import * as CancelPayment from './cancelPayment';
 import * as Capture from './capture';
 import * as Card from './card';
 import * as Code from './code';
+import * as Command from './command';
 import * as Directive from './directive';
 import * as Display from './display';
 import * as Event from './event';
@@ -54,7 +55,8 @@ export type AlexaSteps =
   | Event.Step
   | Payment.Step
   | CancelPayment.Step
-  | Display.Step;
+  | Display.Step
+  | Command.Step;
 
 export type AlexaNodes =
   | Set.Node
@@ -75,9 +77,8 @@ export type AlexaNodes =
   | Stream.Node
   | Directive.Node
   | UserInfo.Node
-  | Event.Node
   | Payment.Node
   | CancelPayment.Node
   | Display.Node;
 
-export type AlexaCommands = Intent.Command;
+export type AlexaCommands = Intent.Command | Command.Command | Event.Command;

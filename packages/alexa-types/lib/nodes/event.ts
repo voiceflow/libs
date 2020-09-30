@@ -1,4 +1,4 @@
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { DefaultCommand, DefaultStep, NodeType } from './types';
 
 export type Mapping = {
   var: string | null;
@@ -10,11 +10,12 @@ export type StepData = {
   requestName: string;
 };
 
-export type NodeData = {
+export type Step = DefaultStep<NodeType.EVENT, StepData>;
+
+export type CommandData = {
   next?: string | null;
   event: string;
   mappings: Mapping[];
 };
 
-export type Step = DefaultStep<NodeType.EVENT, StepData>;
-export type Node = DefaultNode<NodeType.EVENT, NodeData>;
+export type Command = DefaultCommand<NodeType.EVENT, CommandData>;
