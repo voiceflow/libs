@@ -11,6 +11,7 @@ export type AmazonVendor = Required<v1.vendorManagement.Vendor>;
 export type Prompt = {
   voice: Voice;
   content: string;
+  desc?: string; // desc when voice is 'audio'
 };
 
 export type NoMatches = {
