@@ -5,6 +5,7 @@ export type GoogleProfile = oauth2_v2.Schema$Userinfo;
 export type Prompt = {
   voice: Voice;
   content: string;
+  desc?: string; // desc when voice is 'audio'
 };
 
 export type NoMatches = {
@@ -66,7 +67,7 @@ export enum Locale {
 
 export enum Voice {
   DEFAULT = 'default', // not a real voice (default no voice)
-  AUDIO = 'audio',
+  AUDIO = 'audio', // not a real voice (use content as audio url)
 }
 
 export const DEFAULT_Voice = {};
