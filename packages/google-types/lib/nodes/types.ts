@@ -48,6 +48,7 @@ export enum NodeType {
   CODE = 'code',
   EXIT = 'exit',
   PROMPT = 'prompt',
+  COMMAND = 'command',
 
   // visuals
   CARD = 'card',

@@ -2,6 +2,7 @@ import * as Api from './api';
 import * as Capture from './capture';
 import * as Card from './card';
 import * as Code from './code';
+import * as Command from './command';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as GoogleSheets from './googleSheets';
@@ -36,7 +37,8 @@ export type GoogleSteps =
   | Zapier.Step
   | GoogleSheets.Step
   | If.Step
-  | Stream.Step;
+  | Stream.Step
+  | Command.Step;
 
 export type GoogleNodes =
   | Set.Node
@@ -53,4 +55,4 @@ export type GoogleNodes =
   | If.Node
   | Stream.Node;
 
-export type GoogleCommands = Intent.Command;
+export type GoogleCommands = Intent.Command | Command.Command;
