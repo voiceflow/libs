@@ -51,6 +51,9 @@
   },
   "license": "UNLICENSED",
   "lint-staged": {
+    ".circleci/config.yml": [
+      "circleci config validate"
+    ],
     "package.json": [
       "fixpack",
       "git add"
