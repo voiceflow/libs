@@ -1,0 +1,76 @@
+{
+  "name": "@voiceflow/general-types",
+  "description": "Vocieflwo general project types",
+  "version": "0.1.0",
+  "author": "Voiceflow",
+  "bugs": {
+    "url": "https://github.com/voiceflow/general-types/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@voiceflow/api-sdk": "^1.9.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
+    "@voiceflow/commitlint-config": "^1.0.1",
+    "@voiceflow/eslint-config": "^2.0.4",
+    "@voiceflow/git-branch-check": "^1.0.6",
+    "@voiceflow/prettier-config": "^1.0.4",
+    "@zerollup/ts-transform-paths": "^1.7.9",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-simple-import-sort": "^5.0.0",
+    "fixpack": "^2.3.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "prettier-eslint-cli": "^5.0.0",
+    "rimraf": "^3.0.0",
+    "semantic-release": "^15.13.31",
+    "sinon": "^7.5.0",
+    "ts-node": "^8.5.4",
+    "tsconfig-paths": "^3.9.0",
+    "ttypescript": "^1.5.8",
+    "typescript": "^3.9.7"
+  },
+  "homepage": "https://github.com/voiceflow/general-types#readme",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "pre-push": "git-branch-check"
+    }
+  },
+  "license": "UNLICENSED",
+  "lint-staged": {
+    "package.json": [
+      "fixpack",
+      "git add"
+    ],
+    "**/*.{js,ts}": [
+      "eslint --fix",
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "main": "build/index.js",
+  "prettier": "@voiceflow/prettier-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voiceflow/general-types.git"
+  },
+  "scripts": {
+    "build": "yarn clean && ttsc --project ./tsconfig.build.json",
+    "clean": "rimraf build",
+    "lint": "eslint \"lib/**/*.{js,ts}\"",
+    "prepare": "yarn build"
+  }
+}

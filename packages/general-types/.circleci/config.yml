@@ -1,0 +1,28 @@
+version: 2.1
+
+orbs:
+  vfcommon: voiceflow/common@0.0.16
+
+jobs:
+  build-and-test:
+    executor: vfcommon/default-executor
+    steps:
+      - checkout
+      - vfcommon/install_node_modules
+      - run:
+          name: "Build package"
+          command: |
+            yarn build
+
+workflows:
+  test-and-release:
+    jobs:
+      - build-and-test:
+          context: dev-test
+      - vfcommon/release:
+          context: dev-test
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only: master
