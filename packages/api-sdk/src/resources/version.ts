@@ -31,7 +31,7 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  public async create<P extends VersionPlatformData>(body: Omit<Version<P>, ModelKey | 'created' | 'creatorID'>): Promise<Version<P>> {
+  public async create<P extends VersionPlatformData>(body: Omit<Version<P>, ModelKey | 'creatorID'>): Promise<Version<P>> {
     return super._post<Version<P>>(body);
   }
 

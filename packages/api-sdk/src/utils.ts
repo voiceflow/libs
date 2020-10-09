@@ -31,8 +31,8 @@ export const createPutAndPostStruct = <S extends BaseSchema, K extends keyof Sch
   isDynamic?: boolean
 ): PutPostStruct<S, K, E> => {
   const createScheme = Object.keys(schema)
-    .filter((key) => key !== idKey && key !== 'created' && !excludedKeys.includes(key as E))
-    .reduce<Omit<S, K | E | 'created'>>((acc, key) => Object.assign(acc, { [key]: schema[key] }), {} as Omit<S, K | E | 'created'>);
+    .filter((key) => key !== idKey && !excludedKeys.includes(key as E))
+    .reduce<Omit<S, K | E>>((acc, key) => Object.assign(acc, { [key]: schema[key] }), {} as Omit<S, K | E>);
 
   return isDynamic
     ? dynamicObject({ ...createScheme, [idKey]: s.optional(schema[idKey as string]) })

@@ -47,7 +47,7 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
   }
 
   public async create<P extends BasePlatformData, M extends BasePlatformData>(
-    body: Omit<Project<P, M>, ModelIDKey | 'created' | 'creatorID'>
+    body: Omit<Project<P, M>, ModelIDKey | 'creatorID'>
   ): Promise<Project<P, M>> {
     return super._post<Project<P, M>>(body);
   }

@@ -3,7 +3,7 @@ import JWT from 'jsonwebtoken';
 
 import { Client } from '@/client';
 import Fetch from '@/fetch';
-import { Diagram, Program, Project, User, Version } from '@/resources';
+import { Diagram, Program, Project, Session, User, Version } from '@/resources';
 
 const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User];
 

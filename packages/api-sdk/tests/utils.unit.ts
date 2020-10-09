@@ -20,27 +20,6 @@ describe('utils', () => {
     expect(postAndPutStruct.schema.field2).to.eql(struct.schema.field2);
   });
 
-  it('createPutAndPostStruct with created', () => {
-    const symbol = Symbol('new');
-
-    const struct = s.object({
-      id: s.number(),
-      key: s.string(),
-      field1: s.boolean(),
-      field2: s.array(s.string()),
-      created: s.string(),
-      [symbol]: s.number(), // just for tests
-    });
-
-    const postAndPutStruct = createPutAndPostStruct(struct.schema, symbol, ['id']);
-
-    expect(postAndPutStruct.schema).to.eql({
-      key: struct.schema.key,
-      field1: struct.schema.field1,
-      field2: struct.schema.field2,
-    });
-  });
-
   it('createPutAndPostStruct dynamic object', () => {
     const struct = dynamicObject({
       id: s.number(),

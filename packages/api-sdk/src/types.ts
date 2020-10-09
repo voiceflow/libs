@@ -16,15 +16,12 @@ export type OptionalizeObject<T> = Flatten<{ [K in RequiredKeys<T>]: T[K] } & { 
 
 export type SchemeType<T extends BaseSchema> = OptionalizeObject<{ [K in keyof T]: s.StructType<T[K]> }>;
 
-export type PutPostType<S extends Record<string, any>, K extends keyof S, E extends keyof S> = Omit<S, K | E | 'created'> & Partial<Pick<S, K>>;
+export type PutPostType<S extends Record<string, any>, K extends keyof S, E extends keyof S> = Omit<S, K | E> & Partial<Pick<S, K>>;
 
-export type PutPostSchemeType<S extends BaseSchema, K extends keyof SchemeType<S>, E extends keyof SchemeType<S>> = Omit<
-  SchemeType<S>,
-  K | E | 'created'
-> &
+export type PutPostSchemeType<S extends BaseSchema, K extends keyof SchemeType<S>, E extends keyof SchemeType<S>> = Omit<SchemeType<S>, K | E> &
   Partial<Pick<SchemeType<S>, K>>;
 
 export type PutPostStruct<S extends BaseSchema, K extends keyof SchemeType<S>, E extends keyof SchemeType<S>> = s.Struct<
   PutPostSchemeType<S, K, E>,
-  Omit<S, E | 'created'>
+  Omit<S, E>
 >;
