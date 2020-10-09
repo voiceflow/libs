@@ -3,10 +3,11 @@ export enum SlotType {
   DATE_TIME = 'actions.type.DateTime',
   TIME = 'actions.type.Time',
   NUMBER = 'actions.type.Number',
+  CUSTOM = 'custom',
 }
 
 export const SlotData = [
-  { label: 'Custom', type: null, locales: {} },
+  { label: 'Custom', type: SlotType.CUSTOM, locales: {} },
   {
     label: 'Date',
     type: SlotType.DATE,
