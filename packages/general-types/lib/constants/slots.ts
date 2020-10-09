@@ -1,3 +1,4 @@
+// TODO: Change the prebuilt slot types to LUIS
 export enum SlotType {
   DATE = 'actions.type.Date',
   DATE_TIME = 'actions.type.DateTime',
