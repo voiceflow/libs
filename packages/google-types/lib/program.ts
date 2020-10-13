@@ -1,5 +1,5 @@
 import { Program } from '@voiceflow/api-sdk';
 
-import { GoogleCommands, GoogleNodes } from './nodes';
+import { GoogleNodes } from './nodes';
 
-export type GoogleProgram = Program<GoogleNodes, GoogleCommands>;
+export type GoogleProgram = Program<GoogleNodes>;

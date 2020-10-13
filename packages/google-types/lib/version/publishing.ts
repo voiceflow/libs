@@ -18,19 +18,19 @@ export type GooglePublishing = {
   sampleInvocations: string[];
 
   // general settings
-  enabledRegions?: string[],
-  disabledRegions?: string[],
-  category?: Category,
-  usesTransactionsApi?: boolean,
-  usesDigitalPurchaseApi?: boolean,
-  usesInteractiveCanvas?: boolean,
-  usesHomeStorage?: boolean,
-  designedForFamily?: boolean,
-  containsAlcoholOrTobaccoContent?: boolean,
-  keepsMicOpen?: boolean,
-  surfaceRequirements?: any,
-  testingInstructions?: string,
-  accountLinking?: any,
+  enabledRegions?: string[];
+  disabledRegions?: string[];
+  category?: Category;
+  usesTransactionsApi?: boolean;
+  usesDigitalPurchaseApi?: boolean;
+  usesInteractiveCanvas?: boolean;
+  usesHomeStorage?: boolean;
+  designedForFamily?: boolean;
+  containsAlcoholOrTobaccoContent?: boolean;
+  keepsMicOpen?: boolean;
+  surfaceRequirements?: any;
+  testingInstructions?: string;
+  accountLinking?: any;
 };
 
 export const defaultGooglePublishing = ({

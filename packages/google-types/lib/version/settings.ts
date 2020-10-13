@@ -1,4 +1,6 @@
-import { Prompt, Voice } from '../types';
+import { Prompt } from '@voiceflow/general-types';
+
+import { Voice } from '../types';
 
 export enum RepeatType {
   OFF = 'OFF',
@@ -17,17 +19,17 @@ export type RestartSession = {
 
 export type ResumeSession = {
   type: SessionType.RESUME;
-  resume: null | Prompt;
-  follow: null | Prompt;
+  resume: null | Prompt<Voice>;
+  follow: null | Prompt<Voice>;
 };
 
 export type GoogleSettings = {
   session: RestartSession | ResumeSession;
   repeat: RepeatType;
-  error: null | Prompt;
+  error: null | Prompt<Voice>;
 };
 
-export const defaultPrompt = (prompt?: Prompt | null): null | Prompt => {
+export const defaultPrompt = (prompt?: Prompt<Voice> | null): null | Prompt<Voice> => {
   if (!prompt || !prompt.content) return null;
   return {
     content: prompt.content,

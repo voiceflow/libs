@@ -2,33 +2,6 @@ import { oauth2_v2 } from 'googleapis';
 
 export type GoogleProfile = oauth2_v2.Schema$Userinfo;
 
-export type Prompt = {
-  voice: Voice;
-  content: string;
-  desc?: string; // desc when voice is 'audio'
-};
-
-export type NoMatches = {
-  randomize: boolean;
-  reprompts: Prompt[];
-};
-
-export enum ExpressionType {
-  PLUS = 'plus',
-  MINUS = 'minus',
-  TIMES = 'times',
-  DIVIDE = 'divide',
-  EQUALS = 'equals',
-  GREATER = 'greater',
-  LESS = 'less',
-  AND = 'and',
-  OR = 'or',
-  NOT = 'not',
-  VALUE = 'value',
-  VARIABLE = 'variable',
-  ADVANCE = 'advance',
-}
-
 export enum Locale {
   EN_AU = 'en-AU',
   EN_CA = 'en-CA',

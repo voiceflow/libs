@@ -19,46 +19,46 @@ export enum Category {
   TRAVEL_AND_TRANSPORTATION = 'TRAVEL_AND_TRANSPORTATION',
   UTILITIES = 'UTILITIES',
   WEATHER = 'WEATHER',
-  HOME_CONTROL = 'HOME_CONTROL'
+  HOME_CONTROL = 'HOME_CONTROL',
 }
 
 export type LocalizedSettings = {
-  displayName: string,
-  pronunciation: string,
-  shortDescription: string,
-  fullDescription: string,
-  smallLogoImage: string,
-  largeBannerImage: string,
-  developerName: string,
-  developerEmail: string,
-  termsOfServiceUrl: string,
-  voice: string,
-  voiceLocale: string,
-  privacyPolicyUrl: string,
-  sampleInvocations: string[],
-  themeCustomization?: any,
-}
+  displayName: string;
+  pronunciation: string;
+  shortDescription: string;
+  fullDescription: string;
+  smallLogoImage: string;
+  largeBannerImage: string;
+  developerName: string;
+  developerEmail: string;
+  termsOfServiceUrl: string;
+  voice: string;
+  voiceLocale: string;
+  privacyPolicyUrl: string;
+  sampleInvocations: string[];
+  themeCustomization?: any;
+};
 
 export type Settings = {
-  projectId: string,
-  defaultLocale: string,
-  localizedSettings: LocalizedSettings,
-  enabledRegions?: string[],
-  disabledRegions?: string[],
-  category?: Category,
-  usesTransactionsApi?: boolean,
-  usesDigitalPurchaseApi?: boolean,
-  usesInteractiveCanvas?: boolean,
-  usesHomeStorage?: boolean,
-  designedForFamily?: boolean,
-  containsAlcoholOrTobaccoContent?: boolean,
-  keepsMicOpen?: boolean,
-  surfaceRequirements?: any,
-  testingInstructions?: string,
-  accountLinking?: any,
-}
+  projectId: string;
+  defaultLocale: string;
+  localizedSettings: LocalizedSettings;
+  enabledRegions?: string[];
+  disabledRegions?: string[];
+  category?: Category;
+  usesTransactionsApi?: boolean;
+  usesDigitalPurchaseApi?: boolean;
+  usesInteractiveCanvas?: boolean;
+  usesHomeStorage?: boolean;
+  designedForFamily?: boolean;
+  containsAlcoholOrTobaccoContent?: boolean;
+  keepsMicOpen?: boolean;
+  surfaceRequirements?: any;
+  testingInstructions?: string;
+  accountLinking?: any;
+};
 
 export type SettingsConfigFile = {
-  filePath: 'settings/settings.yaml',
-  settings: Settings
-}
+  filePath: 'settings/settings.yaml';
+  settings: Settings;
+};

@@ -1,12 +1,9 @@
 import { Version } from '@voiceflow/api-sdk';
+import { defaultGeneralVersionData, GeneralVersionData } from '@voiceflow/general-types';
 
-import { Intent } from './intent';
 import { defaultGooglePublishing, GooglePublishing } from './publishing';
 import { defaultGoogleSettings, GoogleSettings } from './settings';
-import { Slot } from './slot';
 
-export * from './slot';
-export * from './intent';
 export * from './publishing';
 export * from './settings';
 
@@ -16,10 +13,7 @@ export enum GoogleStage {
   REVIEW = 'REVIEW',
 }
 
-export type GoogleVersionData = {
-  slots: Slot[];
-  intents: Intent[];
-
+export type GoogleVersionData = GeneralVersionData & {
   settings: GoogleSettings;
   publishing: GooglePublishing;
 
@@ -31,17 +25,13 @@ export type GoogleVersionData = {
 export type GoogleVersion = Version<GoogleVersionData>;
 
 export const defaultGoogleVersionData = ({
-  slots = [],
-  intents = [],
+  status: { stage = GoogleStage.DEV } = { stage: GoogleStage.DEV },
   settings,
   publishing,
-  status: { stage = GoogleStage.DEV } = {} as any,
+  ...generalVersionData
 }: Partial<GoogleVersionData>): GoogleVersionData => ({
-  slots,
-  intents,
+  ...defaultGeneralVersionData(generalVersionData),
+  status: { stage },
   settings: defaultGoogleSettings(settings),
   publishing: defaultGooglePublishing(publishing),
-  status: {
-    stage,
-  },
 });

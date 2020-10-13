@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@voiceflow/api-sdk": "^1.9.2",
+    "@voiceflow/general-types": "^1.1.0",
     "googleapis": "^60.0.1"
   },
   "devDependencies": {
@@ -71,7 +72,7 @@
   "scripts": {
     "build": "yarn clean && ttsc --project ./tsconfig.build.json",
     "clean": "rimraf build",
-    "lint": "eslint \"src/**/*.{js,ts}\"",
+    "lint": "eslint \"lib/**/*.{js,ts}\"",
     "prepare": "yarn build"
   }
 }
