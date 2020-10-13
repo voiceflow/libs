@@ -540,24 +540,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@voiceflow/api-sdk@1.10.1":
+"@voiceflow/api-sdk@1.10.1", "@voiceflow/api-sdk@^1.10.1":
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.10.1.tgz#c9177eb866a003b786453056cdb11439d820f076"
   integrity sha512-PEpf0dybn5YCc9Sp2JrYGW5sYGe3dxGJ7QPcTdFUp0Hz/D4ihsisLKEU5LhcRFXQU62o+PlxAQt/u90/QDHHmA==
-  dependencies:
-    "@types/atob" "^2.1.2"
-    "@voiceflow/logger" "^1.1.10"
-    atob "^2.1.2"
-    axios "^0.19.2"
-    core-js "^3.6.5"
-    io-ts "^2.2.8"
-    regenerator-runtime "^0.13.5"
-    superstruct "^0.10.12"
-
-"@voiceflow/api-sdk@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.9.2.tgz#877193d57780743ba9e9666900b6160508e30c01"
-  integrity sha512-M743aRs21PJSIx68MxdjEI6lzFfBot7bEGi6DrGXrbxfNjWERdEoNV/ProszXdoyTfdZ14dFcrWFHaXZkVqbmw==
   dependencies:
     "@types/atob" "^2.1.2"
     "@voiceflow/logger" "^1.1.10"
