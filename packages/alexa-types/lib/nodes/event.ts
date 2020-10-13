@@ -1,3 +1,5 @@
+import { NodeID } from '@voiceflow/general-types';
+
 import { DefaultCommand, DefaultStep, NodeType } from './types';
 
 export type Mapping = {
@@ -10,12 +12,11 @@ export type StepData = {
   requestName: string;
 };
 
-export type Step = DefaultStep<NodeType.EVENT, StepData>;
-
 export type CommandData = {
-  next?: string | null;
+  next?: NodeID;
   event: string;
   mappings: Mapping[];
 };
 
+export type Step = DefaultStep<NodeType.EVENT, StepData>;
 export type Command = DefaultCommand<NodeType.EVENT, CommandData>;

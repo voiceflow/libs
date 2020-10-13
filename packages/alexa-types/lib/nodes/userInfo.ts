@@ -1,3 +1,5 @@
+import { NodeID } from '@voiceflow/general-types';
+
 import { DefaultNode, DefaultStep, NodeType, PermissionType } from './types';
 
 export type UserInfo = {
@@ -17,10 +19,10 @@ export type Permission = {
 };
 
 export type NodeData =
-  | { nextId?: string | null }
+  | { nextId?: NodeID }
   | {
-      fail_id?: string | null;
-      success_id?: string | null;
+      fail_id?: NodeID;
+      success_id?: NodeID;
       permissions: Permission[];
     };
 

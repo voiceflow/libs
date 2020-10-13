@@ -91,9 +91,3 @@ export const validSampleCharacters = `${validSampleCharactersWithoutCurlyBracesO
 // }
 // TYLER: lmao I decompiled the ADC front end source code so these regexes are good as it gets 👌
 export const sampleUtteranceRegex = `[^${validSampleCharacters}|]`;
-
-export const SLOT_REGEXP = /{{\[([^ .[\]{}]*?)]\.([^ .[\]{}]*?)}}/g;
-
-export const IS_VARIABLE_REGEXP = /^{.*}$/;
-
-export const READABLE_VARIABLE_REGEXP = /{([^ .[\]{}]*?)}/g;

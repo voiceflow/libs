@@ -1,3 +1,4 @@
+import { NodeID } from '@voiceflow/general-types';
 import { v1 } from 'ask-smapi-model';
 
 import { DefaultNode, DefaultStep, NodeType, PermissionType } from './types';
@@ -7,7 +8,7 @@ export type StepData = {
 };
 
 export type NodeData = {
-  nextId?: string | null;
+  nextId?: NodeID;
   permission_card: true | v1.skill.Manifest.PermissionName[];
 };
 

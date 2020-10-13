@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['@voiceflow/eslint-config', 'plugin:@typescript-eslint/recommended'],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'simple-import-sort'],
+  plugins: ['prettier', '@typescript-eslint', 'simple-import-sort'],
   rules: {
     'no-continue': 'off',
     'no-process-env': 'off',
@@ -24,6 +24,7 @@ module.exports = {
     'sonarjs/prefer-object-literal': 'warn',
     'consistent-return': 'warn',
     'global-require': 'warn',
+    'prettier/prettier': 'error',
 
     'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
     'simple-import-sort/sort': 'error',

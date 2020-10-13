@@ -1,6 +1,7 @@
+import { Prompt } from '@voiceflow/general-types';
 import { v1 } from 'ask-smapi-model';
 
-import { Prompt, Voice } from '../types';
+import { Voice } from '../types';
 
 export enum RepeatType {
   OFF = 'OFF',
@@ -41,12 +42,12 @@ export type RestartSession = {
 
 export type ResumeSession = {
   type: SessionType.RESUME;
-  resume: null | Prompt;
-  follow: null | Prompt;
+  resume: null | Prompt<Voice>;
+  follow: null | Prompt<Voice>;
 };
 
 export type AlexaSettings = {
-  error: null | Prompt;
+  error: null | Prompt<Voice>;
   repeat: RepeatType;
   events: null | string;
   session: RestartSession | ResumeSession;
@@ -85,7 +86,7 @@ export const defaultAccountLinking = (accountLinking?: null | Partial<AccountLin
   };
 };
 
-export const defaultPrompt = (prompt?: Prompt | null): null | Prompt => {
+export const defaultPrompt = (prompt?: Prompt<Voice> | null): null | Prompt<Voice> => {
   if (!prompt || !prompt.content) return null;
   return {
     content: prompt.content,

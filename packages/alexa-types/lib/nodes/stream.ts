@@ -1,3 +1,5 @@
+import { NodeID } from '@voiceflow/general-types';
+
 import { DefaultNode, DefaultStep, NodeType } from './types';
 
 export type StepData = {
@@ -13,11 +15,11 @@ export type StepData = {
 export type NodeData = {
   loop: boolean;
   play: string;
-  NEXT?: string | null;
+  NEXT?: NodeID;
   title?: string;
-  nextId?: string | null;
+  nextId?: NodeID;
   PAUSE_ID: string;
-  PREVIOUS?: string | null;
+  PREVIOUS?: NodeID;
   icon_img?: string;
   description?: string;
   background_img?: string;

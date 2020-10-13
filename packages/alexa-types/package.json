@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "@voiceflow/api-sdk": "1.10.1",
-    "ask-smapi-model": "^1.11.0"
+    "@voiceflow/general-types": "^1.1.0",
+    "ask-smapi-model": "^1.11.0",
+    "eslint-plugin-prettier": "^3.1.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
@@ -53,7 +55,7 @@
   "homepage": "https://github.com/voiceflow/alexa-types#readme",
   "husky": {
     "hooks": {
-      "__commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged",
       "pre-push": "git-branch-check"
     }
@@ -79,7 +81,7 @@
   "scripts": {
     "build": "yarn clean && ttsc --project ./tsconfig.build.json",
     "clean": "rimraf build",
-    "lint": "eslint \"src/**/*.{js,ts}\"",
+    "lint": "eslint \"lib/**/*.{js,ts}\"",
     "prepare": "yarn build"
   }
 }

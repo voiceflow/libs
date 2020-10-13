@@ -1,3 +1,5 @@
+import { NodeID } from '@voiceflow/general-types';
+
 import { DefaultNode, DefaultStep, NodeType } from './types';
 
 export type StepData = {
@@ -5,11 +7,11 @@ export type StepData = {
 };
 
 export type NodeData =
-  | { nextId?: string | null }
+  | { nextId?: NodeID }
   | {
-      fail_id?: string;
+      fail_id?: NodeID;
       product_id: string;
-      success_id?: string;
+      success_id?: NodeID;
     };
 
 export type Step = DefaultStep<NodeType.PAYMENT, StepData>;

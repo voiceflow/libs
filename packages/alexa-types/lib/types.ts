@@ -8,32 +8,6 @@ export type AmazonProfile = {
 
 export type AmazonVendor = Required<v1.vendorManagement.Vendor>;
 
-export type Prompt = {
-  voice: Voice;
-  content: string;
-};
-
-export type NoMatches = {
-  randomize: boolean;
-  reprompts: Prompt[];
-};
-
-export enum ExpressionType {
-  PLUS = 'plus',
-  MINUS = 'minus',
-  TIMES = 'times',
-  DIVIDE = 'divide',
-  EQUALS = 'equals',
-  GREATER = 'greater',
-  LESS = 'less',
-  AND = 'and',
-  OR = 'or',
-  NOT = 'not',
-  VALUE = 'value',
-  VARIABLE = 'variable',
-  ADVANCE = 'advance',
-}
-
 export enum Locale {
   EN_US = 'en-US',
   EN_AU = 'en-AU',
