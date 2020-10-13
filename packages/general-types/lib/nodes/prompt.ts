@@ -2,9 +2,9 @@ import { NoMatches, Prompt } from '@/types';
 
 import { DefaultStep, NodeType } from './types';
 
-export type StepData = {
-  reprompt: Prompt | null;
-  noMatches: NoMatches;
+export type StepData<V> = {
+  reprompt: Prompt<V> | null;
+  noMatches: NoMatches<V>;
 };
 
-export type Step = DefaultStep<NodeType.PROMPT, StepData, []>;
+export type Step<V> = DefaultStep<NodeType.PROMPT, StepData<V>, []>;

@@ -1,6 +1,5 @@
 import * as Api from './api';
 import * as Capture from './capture';
-import * as Card from './card';
 import * as Code from './code';
 import * as Command from './command';
 import * as Exit from './exit';
@@ -15,29 +14,26 @@ import * as Random from './random';
 import * as Set from './set';
 import * as Speak from './speak';
 import * as Start from './start';
-import * as Stream from './stream';
 import * as Zapier from './zapier';
 
 export * from './types';
 
-export type GeneralSteps =
+export type GeneralSteps<V> =
   | Set.Step
-  | Capture.Step
+  | Capture.Step<V>
   | Flow.Step
   | Start.Step
-  | Speak.Step
-  | Interaction.Step
+  | Speak.Step<V>
+  | Interaction.Step<V>
   | Code.Step
   | Intent.Step
-  | Card.Step
-  | Prompt.Step
+  | Prompt.Step<V>
   | Api.Step
   | Exit.Step
   | Random.Step
   | Zapier.Step
   | GoogleSheets.Step
   | If.Step
-  | Stream.Step
   | Command.Step;
 
 export type GeneralNodes =
@@ -48,11 +44,9 @@ export type GeneralNodes =
   | Speak.Node
   | Interaction.Node
   | Code.Node
-  | Card.Node
   | Integration.Node
   | Exit.Node
   | Random.Node
-  | If.Node
-  | Stream.Node;
+  | If.Node;
 
 export type GeneralCommands = Intent.Command | Command.Command;

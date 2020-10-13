@@ -4,10 +4,10 @@ export type IntentInput = {
 };
 
 export type IntentSlotDialog = {
+  prompt: IntentInput[];
   confirm: IntentInput[];
   utterances: IntentInput[];
   confirmEnabled: boolean;
-  prompt: IntentInput[];
 };
 
 export type IntentSlot = {

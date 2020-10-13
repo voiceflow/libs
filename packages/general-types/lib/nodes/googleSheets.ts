@@ -1,4 +1,4 @@
-import { DefaultStep, IntegrationType, IntegrationUser, NodeType } from './types';
+import { DefaultStep, IntegrationType, IntegrationUser, NodeID, NodeType } from './types';
 
 export enum GoogleSheetsActionType {
   CREATE_DATA = 'Create Data',
@@ -38,8 +38,8 @@ export type StepData = {
 };
 
 export type NodeData = {
-  fail_id?: string | null;
-  success_id?: string | null;
+  fail_id?: NodeID;
+  success_id?: NodeID;
   action_data: {
     user?: IntegrationUser;
     sheet: null | number;

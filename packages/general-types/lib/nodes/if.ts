@@ -1,13 +1,13 @@
-import { DefaultNode, DefaultStep, Expression, NodeType } from './types';
+import { DefaultNode, DefaultStep, Expression, NodeID, NodeType } from './types';
 
 export type StepData = {
   expressions: Expression[];
 };
 
 export type NodeData = {
-  expressions: (string | number)[];
+  elseId?: NodeID;
   nextIds: string[];
-  elseId?: string;
+  expressions: (string | number)[];
 };
 
 export type Step = DefaultStep<NodeType.IF, StepData>;

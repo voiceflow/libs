@@ -2,6 +2,42 @@ import { ExpressionType } from '@/types';
 
 export { Step as DefaultStep, Node as DefaultNode, Command as DefaultCommand } from '@voiceflow/api-sdk';
 
+export type NodeID = string | null;
+
+export enum NodeType {
+  SPEAK = 'speak',
+  START = 'start',
+  INTERACTION = 'interaction',
+
+  // logic
+  SET = 'set',
+  IF = 'if',
+  RANDOM = 'random',
+  CAPTURE = 'capture',
+
+  // integrations
+  API = 'api',
+  ZAPIER = 'zapier',
+  INTEGRATIONS = 'integrations',
+  GOOGLE_SHEETS = 'google_sheets',
+
+  // advanced
+  INTENT = 'intent',
+  FLOW = 'flow',
+  CODE = 'code',
+  EXIT = 'exit',
+  PROMPT = 'prompt',
+  COMMAND = 'command',
+
+  // other
+  DEPRECATED = 'deprecated',
+}
+
+export type CommandMapping = {
+  slot: string;
+  variable: string;
+};
+
 export enum IntegrationType {
   ZAPIER = 'Zapier',
   CUSTOM_API = 'Custom API',
@@ -23,50 +59,6 @@ export type IntegrationUser = {
   requires_refresh?: null | boolean;
   integration_user_id?: string;
 };
-
-export enum NodeType {
-  SPEAK = 'speak',
-  START = 'start',
-  INTERACTION = 'interaction',
-
-  // logic
-  SET = 'set',
-  IF = 'if',
-  CAPTURE = 'capture',
-  RANDOM = 'random',
-
-  // integrations
-  API = 'api',
-  ZAPIER = 'zapier',
-  INTEGRATIONS = 'integrations',
-  GOOGLE_SHEETS = 'google_sheets',
-
-  // advanced
-  INTENT = 'intent',
-  STREAM = 'stream',
-  FLOW = 'flow',
-  CODE = 'code',
-  EXIT = 'exit',
-  PROMPT = 'prompt',
-  COMMAND = 'command',
-
-  // visuals
-  CARD = 'card',
-  DISPLAY = 'display',
-
-  // user
-  PERMISSION = 'permission',
-  ACCOUNT_LINKING = 'account_linking',
-  USER_INFO = 'user_info',
-  PAYMENT = 'payment',
-  CANCEL_PAYMENT = 'cancel_payment',
-  REMINDER = 'reminder',
-  DEPRECATED = 'deprecated',
-
-  // event
-  DIRECTIVE = 'directive',
-  EVENT = 'event',
-}
 
 export type GenericExpression<T extends ExpressionType, V> = {
   type: T;

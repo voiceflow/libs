@@ -1,4 +1,4 @@
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
 
 export type StepData = {
   code: string;
@@ -6,8 +6,8 @@ export type StepData = {
 
 export type NodeData = {
   code: string;
-  fail_id?: string;
-  success_id?: string;
+  fail_id?: NodeID;
+  success_id?: NodeID;
 };
 
 export type Step = DefaultStep<NodeType.CODE, StepData>;

@@ -1,4 +1,4 @@
-import { DefaultNode, DefaultStep, Expression, NodeType } from './types';
+import { DefaultNode, DefaultStep, Expression, NodeID, NodeType } from './types';
 
 export type Set = {
   variable: string | null;
@@ -16,7 +16,7 @@ export type NodeSet = {
 
 export type NodeData = {
   sets: NodeSet[];
-  nextId?: string | null;
+  nextId?: NodeID;
 };
 
 export type Step = DefaultStep<NodeType.SET, StepData>;

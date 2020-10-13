@@ -1,9 +1,9 @@
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
 
 export type StepData = {};
 
 export type NodeData = {
-  nextId?: string;
+  nextId?: NodeID;
 };
 
 export type Step = DefaultStep<NodeType.START, StepData>;

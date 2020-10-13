@@ -1,4 +1,4 @@
-import { DefaultStep, IntegrationType, NodeType } from './types';
+import { DefaultStep, IntegrationType, NodeID, NodeType } from './types';
 
 export type APIKeyVal = {
   key: string;
@@ -46,8 +46,8 @@ export type StepData = {
 };
 
 export type NodeData = {
-  fail_id?: string | null;
-  success_id?: string | null;
+  fail_id?: NodeID;
+  success_id?: NodeID;
   action_data: {
     url: string;
     body: APIKeyVal[];

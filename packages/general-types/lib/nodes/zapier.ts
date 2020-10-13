@@ -1,4 +1,4 @@
-import { DefaultStep, IntegrationType, IntegrationUser, NodeType } from './types';
+import { DefaultStep, IntegrationType, IntegrationUser, NodeID, NodeType } from './types';
 
 export enum ZapierActionType {
   START_A_ZAP = 'Start a Zap',
@@ -12,11 +12,11 @@ export type StepData = {
 };
 
 export type NodeData = {
-  fail_id?: string | null;
-  success_id?: string | null;
+  fail_id?: NodeID;
+  success_id?: NodeID;
   action_data: {
-    value: string;
     user?: IntegrationUser;
+    value: string;
   };
   selected_action: ZapierActionType;
   selected_integration: IntegrationType.ZAPIER;

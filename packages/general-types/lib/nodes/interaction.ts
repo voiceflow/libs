@@ -1,14 +1,14 @@
 import { NoMatches, Prompt } from '@/types';
 import { SlotMapping } from '@/version';
 
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
 
 export enum ElseType {
   PATH = 'path',
   REPROMPT = 'reprompt',
 }
 
-export type ElseData = NoMatches & {
+export type ElseData<V> = NoMatches<V> & {
   type: ElseType;
 };
 
@@ -17,11 +17,11 @@ export type Choice = {
   mappings?: SlotMapping[];
 };
 
-export type StepData = {
+export type StepData<V> = {
   name: string;
-  else: ElseData;
+  else: ElseData<V>;
   choices: Choice[];
-  reprompt: Prompt | null;
+  reprompt: Prompt<V> | null;
 };
 
 export type Interaction = {
@@ -31,7 +31,7 @@ export type Interaction = {
 };
 
 export type NodeData = {
-  elseId?: string;
+  elseId?: NodeID;
   nextIds: string[];
   reprompt?: string;
   noMatches?: string[];
@@ -39,6 +39,5 @@ export type NodeData = {
   interactions: Interaction[];
 };
 
-export type Step = DefaultStep<NodeType.INTERACTION, StepData>;
-
+export type Step<V> = DefaultStep<NodeType.INTERACTION, StepData<V>>;
 export type Node = DefaultNode<NodeType.INTERACTION, NodeData>;

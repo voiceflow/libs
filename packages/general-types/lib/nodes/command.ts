@@ -1,21 +1,25 @@
-import { DefaultCommand, DefaultStep, NodeType } from './types';
+import { Port } from '@voiceflow/api-sdk';
+
+import { SlotMapping } from '@/version';
+
+import { CommandMapping, DefaultCommand, DefaultStep, NodeID, NodeType } from './types';
 
 export type StepData = {
-  intent: string | null;
-  diagramID: string | null;
-  mappings: { variable: string; slot: string }[];
   name: string;
+  intent: string | null;
+  mappings: SlotMapping[];
+  diagramID: string | null;
+
   // manually define ports to allow command step processing
-  ports: { type: string; target: string | null }[];
+  ports: Port[];
+};
+
+export type CommandData = {
+  next?: NodeID;
+  intent: string;
+  mappings: CommandMapping[];
+  diagram_id?: string;
 };
 
 export type Step = DefaultStep<NodeType.COMMAND, StepData>;
-
-export type CommandData = {
-  intent: string;
-  mappings: { variable: string; slot: string }[];
-  diagram_id?: string;
-  next?: null | string;
-};
-
 export type Command = DefaultCommand<NodeType.COMMAND, CommandData>;

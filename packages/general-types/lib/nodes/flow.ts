@@ -1,15 +1,19 @@
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
 
-export type variableMapping = [string | null, string | null][];
-export type StepData = { diagramID: string | null; variableMap: null | { inputs: variableMapping; outputs: variableMapping } };
+export type VariableMapping = [string | null, string | null][];
+
+export type StepData = {
+  diagramID: string | null;
+  variableMap: null | { inputs: VariableMapping; outputs: VariableMapping };
+};
 
 export type NodeData = {
+  nextId?: NodeID;
   diagram_id?: string;
   variable_map?: {
     inputs?: [string, string][];
     outputs?: [string, string][];
   };
-  nextId?: string | null;
 };
 
 export type Step = DefaultStep<NodeType.FLOW, StepData>;

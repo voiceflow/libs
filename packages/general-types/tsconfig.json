@@ -25,23 +25,14 @@
     "listEmittedFiles": false,
     "listFiles": false,
     "pretty": true,
-    "lib": [
-      "es2017"
-    ],
+    "lib": ["es2017"],
     "outDir": "./build",
     "baseUrl": "./lib",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "compileOnSave": false,
-  "include": [
-    "**/*.ts",
-    "typings/**/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules/**"
-  ]
+  "include": ["**/*.ts", "typings/**/*.d.ts"],
+  "exclude": ["node_modules/**", "build/**"]
 }
