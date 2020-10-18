@@ -1,5 +1,5 @@
 import { Prompt } from '../types';
-import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
+import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
 export type StepData<V> = {
   dialogs: Prompt<V>[];
@@ -13,3 +13,4 @@ export type NodeData = {
 
 export type Step<V> = DefaultStep<NodeType.SPEAK, StepData<V>>;
 export type Node = DefaultNode<NodeType.SPEAK, NodeData>;
+export type TraceFrame = DefaultTraceFrame<TraceType.SPEAK, { message: string }>;

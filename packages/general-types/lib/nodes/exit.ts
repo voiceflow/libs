@@ -1,4 +1,4 @@
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { DefaultNode, DefaultStep, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
 export type StepData = {};
 
@@ -8,3 +8,4 @@ export type NodeData = {
 
 export type Step = DefaultStep<NodeType.EXIT, StepData>;
 export type Node = DefaultNode<NodeType.EXIT, NodeData>;
+export type TraceFrame = DefaultTraceFrame<TraceType.END>;

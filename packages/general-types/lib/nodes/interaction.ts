@@ -1,7 +1,7 @@
 import { NoMatches, Prompt } from '@/types';
 import { SlotMapping } from '@/version';
 
-import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
+import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
 export enum ElseType {
   PATH = 'path',
@@ -41,3 +41,4 @@ export type NodeData = {
 
 export type Step<V> = DefaultStep<NodeType.INTERACTION, StepData<V>>;
 export type Node = DefaultNode<NodeType.INTERACTION, NodeData>;
+export type TraceFrame = DefaultTraceFrame<TraceType.CHOICE, { choices: { name: string }[] }>;

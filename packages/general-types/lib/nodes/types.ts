@@ -2,6 +2,20 @@ import { ExpressionType } from '@/types';
 
 export { Step as DefaultStep, Node as DefaultNode, Command as DefaultCommand } from '@voiceflow/api-sdk';
 
+export type TraceFrame<T extends string = string, P extends unknown = undefined> = P extends undefined ? { type: T } : { type: T; payload: P };
+
+export enum TraceType {
+  END = 'end',
+  FLOW = 'flow',
+  SPEAK = 'speak',
+  BLOCK = 'block',
+  DEBUG = 'debug',
+  CHOICE = 'choice',
+}
+
+export type DebugTraceFrame = TraceFrame<TraceType.DEBUG, { message: string }>;
+export type BlockTraceFrame = TraceFrame<TraceType.BLOCK, { blockID: string }>;
+
 export type NodeID = string | null;
 
 export enum NodeType {
