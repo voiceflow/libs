@@ -1,6 +1,6 @@
-import { NodeID } from '@voiceflow/general-types';
+import { NodeID, TraceFrame as DefaultTraceFrame } from '@voiceflow/general-types';
 
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { DefaultNode, DefaultStep, NodeType, TraceType } from './types';
 
 export type StepData = {
   loop: boolean;
@@ -25,5 +25,12 @@ export type NodeData = {
   background_img?: string;
 };
 
+export enum TraceStreamAction {
+  LOOP = 'LOOP',
+  PLAY = 'PLAY',
+  PAUSE = 'PAUSE',
+}
+
 export type Step = DefaultStep<NodeType.STREAM, StepData>;
 export type Node = DefaultNode<NodeType.STREAM, NodeData>;
+export type TraceFrame = DefaultTraceFrame<TraceType.STREAM, { src: string; action: TraceStreamAction; token: string }>;
