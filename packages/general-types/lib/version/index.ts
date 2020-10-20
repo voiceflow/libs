@@ -7,9 +7,18 @@ export * from './intent';
 export type GeneralVersionData = {
   slots: Slot[];
   intents: Intent[];
+  settings: {};
+  publishing: {};
 };
 
-export const defaultGeneralVersionData = ({ slots = [], intents = [] }: Partial<GeneralVersionData>): GeneralVersionData => ({
+export const defaultGeneralVersionData = ({
+  slots = [],
+  intents = [],
+  settings = {},
+  publishing = {},
+}: Partial<GeneralVersionData>): GeneralVersionData => ({
   slots,
   intents,
+  settings,
+  publishing,
 });
