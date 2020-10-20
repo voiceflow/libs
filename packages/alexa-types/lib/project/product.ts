@@ -10,6 +10,9 @@ export enum MarketPlace {
   CO_UK = 'amazon.co.uk',
 }
 
+export const encodeMarketPlaceKey = (key: MarketPlace) => key.replace('.', '\\u002e');
+export const decodeMarketPlaceKey = (key: string) => key.replace('\\u002e', '.') as MarketPlace;
+
 export enum SubscriptionPaymentFrequency {
   YEARLY = 'YEARLY',
   MONTHLY = 'MONTHLY',
