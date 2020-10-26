@@ -29,3 +29,34 @@ export enum ExpressionType {
   VARIABLE = 'variable',
   ADVANCE = 'advance',
 }
+
+export enum StateRequestType {
+  INTENT = 'INTENT',
+}
+
+export enum IntentRequestType {
+  INTENT_REQUEST = 'IntentRequest',
+}
+
+export type IntentRequestSlot = {
+  name: string;
+  value?: string;
+};
+
+export type IntentRequestIntent = {
+  name: string;
+  slots: IntentRequestSlot[];
+};
+
+export type IntentRequestPayload = {
+  type: StateRequestType.INTENT;
+  input?: string;
+  intent: IntentRequestIntent;
+};
+
+export type IntentRequest = {
+  type: StateRequestType.INTENT;
+  payload: IntentRequestPayload;
+};
+
+export type StateRequest = IntentRequest;

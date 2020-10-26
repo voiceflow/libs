@@ -11,6 +11,7 @@ export enum TraceType {
   BLOCK = 'block',
   DEBUG = 'debug',
   CHOICE = 'choice',
+  STREAM = 'stream',
 }
 
 export type DebugTraceFrame = TraceFrame<TraceType.DEBUG, { message: string }>;
@@ -44,6 +45,7 @@ export enum NodeType {
   COMMAND = 'command',
 
   // other
+  STREAM = 'stream',
   DEPRECATED = 'deprecated',
 }
 

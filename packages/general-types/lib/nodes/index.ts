@@ -14,6 +14,7 @@ import * as Random from './random';
 import * as Set from './set';
 import * as Speak from './speak';
 import * as Start from './start';
+import * as Stream from './stream';
 import * as Zapier from './zapier';
 
 export * from './types';
@@ -34,6 +35,7 @@ export type GeneralSteps<V> =
   | Zapier.Step
   | GoogleSheets.Step
   | If.Step
+  | Stream.Step
   | Command.Step;
 
 export type GeneralNodes =
@@ -47,6 +49,7 @@ export type GeneralNodes =
   | Integration.Node
   | Exit.Node
   | Random.Node
+  | Stream.Node
   | If.Node;
 
 export type GeneralCommands = Intent.Command | Command.Command;
