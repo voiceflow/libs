@@ -45,7 +45,7 @@ export type IntentRequestSlot = {
 
 export type IntentRequestIntent = {
   name: string;
-  slots: IntentRequestSlot[];
+  slots: Record<string, IntentRequestSlot>;
 };
 
 export type IntentRequestPayload = {
