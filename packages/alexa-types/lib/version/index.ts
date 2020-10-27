@@ -1,6 +1,7 @@
 import { Version } from '@voiceflow/api-sdk';
 import { defaultGeneralVersionData, GeneralVersionData } from '@voiceflow/general-types';
 
+import { Voice } from '../types';
 import { AlexaPublishing, defaultAlexaPublishing } from './publishing';
 import { AlexaSettings, defaultAlexaSettings } from './settings';
 
@@ -13,7 +14,7 @@ export enum AlexaStage {
   REVIEW = 'REVIEW',
 }
 
-export type AlexaVersionData = GeneralVersionData & {
+export type AlexaVersionData = Omit<GeneralVersionData<Voice>, 'settings' | 'publishing'> & {
   settings: AlexaSettings;
   publishing: AlexaPublishing;
 
@@ -30,7 +31,7 @@ export const defaultAlexaVersionData = ({
   publishing,
   ...generalVersionData
 }: Partial<AlexaVersionData>): AlexaVersionData => ({
-  ...defaultGeneralVersionData(generalVersionData),
+  ...defaultGeneralVersionData<Voice>(generalVersionData, { defaultVoice: Voice.ALEXA }),
   status: { stage },
   settings: defaultAlexaSettings(settings),
   publishing: defaultAlexaPublishing(publishing),

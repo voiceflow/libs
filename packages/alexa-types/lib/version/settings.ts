@@ -1,13 +1,9 @@
-import { Prompt } from '@voiceflow/general-types';
+import { defaultGeneralSettings, GeneralSettings, ResumeSession as GeneralResumeSession } from '@voiceflow/general-types';
 import { v1 } from 'ask-smapi-model';
 
 import { Voice } from '../types';
 
-export enum RepeatType {
-  OFF = 'OFF',
-  ALL = 'ALL',
-  DIALOG = 'DIALOG',
-}
+export type ResumeSession = GeneralResumeSession<Voice>;
 
 export enum AccountLinkingType {
   IMPLICIT = 'IMPLICIT',
@@ -31,26 +27,8 @@ export type AccountLinking = {
   defaultTokenExpirationInSeconds: number;
 };
 
-export enum SessionType {
-  RESUME = 'resume',
-  RESTART = 'restart',
-}
-
-export type RestartSession = {
-  type: SessionType.RESTART;
-};
-
-export type ResumeSession = {
-  type: SessionType.RESUME;
-  resume: null | Prompt<Voice>;
-  follow: null | Prompt<Voice>;
-};
-
-export type AlexaSettings = {
-  error: null | Prompt<Voice>;
-  repeat: RepeatType;
+export type AlexaSettings = GeneralSettings<Voice> & {
   events: null | string;
-  session: RestartSession | ResumeSession;
   permissions: string[];
   accountLinking: null | AccountLinking;
   customInterface: boolean;
@@ -86,28 +64,16 @@ export const defaultAccountLinking = (accountLinking?: null | Partial<AccountLin
   };
 };
 
-export const defaultPrompt = (prompt?: Prompt<Voice> | null): null | Prompt<Voice> => {
-  if (!prompt || !prompt.content) return null;
-  return {
-    content: prompt.content,
-    voice: prompt.voice || Voice.ALEXA,
-  };
-};
-
 export const defaultAlexaSettings = ({
   events = null,
-  customInterface = false,
-  session = { type: SessionType.RESTART },
-  repeat = RepeatType.ALL,
   permissions = [],
   accountLinking,
-  error,
+  customInterface = false,
+  ...generalSettings
 }: Partial<AlexaSettings> = {}): AlexaSettings => ({
+  ...defaultGeneralSettings<Voice>(generalSettings, { defaultVoice: Voice.ALEXA }),
   events,
-  customInterface,
-  session,
-  repeat,
   permissions,
   accountLinking: defaultAccountLinking(accountLinking),
-  error: defaultPrompt(error),
+  customInterface,
 });

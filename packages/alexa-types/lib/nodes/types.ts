@@ -1,9 +1,5 @@
 export { Step as DefaultStep, Node as DefaultNode, Command as DefaultCommand } from '@voiceflow/api-sdk';
 
-export enum TraceType {
-  STREAM = 'stream',
-}
-
 export enum PermissionType {
   AVS_DISTRIBUTED_AUDIO = 'avs::distributed_audio',
   ALEXA_ASYNC_EVENT_WRITE = 'alexa::async_event:write',
@@ -53,9 +49,6 @@ export enum PermissionType {
 }
 
 export enum NodeType {
-  // advanced
-  STREAM = 'stream',
-
   // visuals
   CARD = 'card',
   DISPLAY = 'display',

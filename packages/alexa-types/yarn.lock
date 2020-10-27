@@ -749,10 +749,10 @@
     eslint-plugin-sonarjs "^0.4.0"
     eslint-plugin-xss "^0.1.9"
 
-"@voiceflow/general-types@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.2.0.tgz#491f3d155c71cb502bd284d0fa2e0c7b989786e1"
-  integrity sha512-WAwrIGr9RQy6MvauLUiK9J/7BHoi3DRqjNFsixQ0T7/m2fO2jpkzzhuI14j8E8Ojr3kq8njDH22juFy3JIG4Jw==
+"@voiceflow/general-types@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.3.0.tgz#fea802ef2116add8b8f634ed544f293cc83293a3"
+  integrity sha512-rjrONcH0fZYFw9+Qe1eWfO7Lb6Zwj2nEXa3yvUQIyWwoCppdlEUWVhOHg5/SeT3gAHu2FAKwHG4pAI9J7kO6Jg==
   dependencies:
     "@voiceflow/api-sdk" "1.10.1"
 
