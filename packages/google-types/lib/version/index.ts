@@ -1,6 +1,7 @@
 import { Version } from '@voiceflow/api-sdk';
 import { defaultGeneralVersionData, GeneralVersionData } from '@voiceflow/general-types';
 
+import { Voice } from '../types';
 import { defaultGooglePublishing, GooglePublishing } from './publishing';
 import { defaultGoogleSettings, GoogleSettings } from './settings';
 
@@ -13,7 +14,7 @@ export enum GoogleStage {
   REVIEW = 'REVIEW',
 }
 
-export type GoogleVersionData = GeneralVersionData & {
+export type GoogleVersionData = Omit<GeneralVersionData<Voice>, 'settings' | 'publishing'> & {
   settings: GoogleSettings;
   publishing: GooglePublishing;
 
@@ -30,7 +31,7 @@ export const defaultGoogleVersionData = ({
   publishing,
   ...generalVersionData
 }: Partial<GoogleVersionData>): GoogleVersionData => ({
-  ...defaultGeneralVersionData(generalVersionData),
+  ...defaultGeneralVersionData<Voice>(generalVersionData, { defaultVoice: Voice.DEFAULT }),
   status: { stage },
   settings: defaultGoogleSettings(settings),
   publishing: defaultGooglePublishing(publishing),
