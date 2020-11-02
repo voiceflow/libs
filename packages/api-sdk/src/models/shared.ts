@@ -99,6 +99,7 @@ export type Port<PD extends UnknownRecord = UnknownRecord> = {
   type: string;
   target: string | null;
   data?: PD;
+  id: string;
 };
 // [Port, ...Port[]] means one or more ports
 export type Step<T extends string = string, D extends UnknownRecord = UnknownRecord, P = [Port, ...Port[]]> = DiagramNode<T, D & { ports: P }>;
