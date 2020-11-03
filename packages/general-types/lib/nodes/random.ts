@@ -12,7 +12,7 @@ export type StepData = {
 
 export type NodeData = {
   random: RandomType;
-  nextIds: string[];
+  nextIds: (string | null)[];
 };
 
 export type Step = DefaultStep<NodeType.RANDOM, StepData>;

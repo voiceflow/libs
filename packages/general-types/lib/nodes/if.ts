@@ -6,7 +6,7 @@ export type StepData = {
 
 export type NodeData = {
   elseId?: NodeID;
-  nextIds: string[];
+  nextIds: (string | null)[];
   expressions: (string | number)[];
 };
 

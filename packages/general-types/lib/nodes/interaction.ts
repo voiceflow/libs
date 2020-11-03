@@ -32,7 +32,7 @@ export type Interaction = {
 
 export type NodeData = {
   elseId?: NodeID;
-  nextIds: string[];
+  nextIds: (string | null)[];
   reprompt?: string;
   noMatches?: string[];
   randomize?: boolean;
