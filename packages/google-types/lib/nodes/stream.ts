@@ -15,7 +15,7 @@ export type NodeData = {
   loop: boolean;
   play: string;
   title?: string;
-  nextId?: NodeID;
+  gNextId?: NodeID;
   icon_img?: string;
   description?: string;
   background_img?: string;
