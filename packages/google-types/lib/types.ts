@@ -2,6 +2,32 @@ import { oauth2_v2 } from 'googleapis';
 
 export type GoogleProfile = oauth2_v2.Schema$Userinfo;
 
+export enum Language {
+  HK= 'zh-HK',
+  CN= 'zh-CN',
+  TW= 'zh-TW',
+  DA= 'da',
+  NL= 'nl',
+  EN= 'en',
+  FR= 'fr',
+  DE= 'de',
+  HI= 'hi',
+  ID= 'id',
+  IT= 'it',
+  JA= 'ja',
+  KO= 'ko',
+  NO= 'no',
+  PL= 'pl',
+  PT= 'pt',
+  BR= 'pt-BR',
+  RU= 'ru',
+  ES= 'es',
+  SV= 'sv',
+  TH= 'th',
+  TR= 'tr',
+  UK= 'uk',
+}
+
 export enum Locale {
   EN_AU = 'en-AU',
   EN_CA = 'en-CA',
@@ -12,6 +38,7 @@ export enum Locale {
   EN_US = 'en-US',
   ZH_HK = 'zh-HK',
   ZH_TW = 'zh-TW',
+  ZH_CN = 'zh-CN',
   DA_DK = 'da-DK',
   NL_NL = 'nl-NL',
   NL_BE = 'nl-BE',
