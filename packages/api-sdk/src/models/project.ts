@@ -18,6 +18,7 @@ export const SProject = s.object({
   members: s.array(SMember),
   platform: SPlatform,
   devVersion: s.optional(SVersionID),
+  liveVersion: s.optional(SVersionID),
   platformData: SBasePlatformData,
   privacy: s.optional(s.enums([ProjectPrivacy.PRIVATE, ProjectPrivacy.PUBLIC])),
 });
