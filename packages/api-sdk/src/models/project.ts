@@ -16,11 +16,12 @@ export const SProject = s.object({
   name: SName,
   image: s.optional(s.string()),
   members: s.array(SMember),
+  privacy: s.optional(s.enums([ProjectPrivacy.PRIVATE, ProjectPrivacy.PUBLIC])),
   platform: SPlatform,
   devVersion: s.optional(SVersionID),
   liveVersion: s.optional(SVersionID),
   platformData: SBasePlatformData,
-  privacy: s.optional(s.enums([ProjectPrivacy.PRIVATE, ProjectPrivacy.PUBLIC])),
+  prototypeVersion: s.optional(SVersionID),
 });
 
 export type Project<P extends BasePlatformData, M extends BasePlatformData> = Omit<s.StructType<typeof SProject>, 'platformData' | 'members'> & {
