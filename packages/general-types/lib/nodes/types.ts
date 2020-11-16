@@ -46,6 +46,7 @@ export enum NodeType {
 
   // other
   STREAM = 'stream',
+  GENERAL = 'general',
   DEPRECATED = 'deprecated',
 }
 

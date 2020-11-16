@@ -4,6 +4,7 @@ import * as Code from './code';
 import * as Command from './command';
 import * as Exit from './exit';
 import * as Flow from './flow';
+import * as General from './general';
 import * as GoogleSheets from './googleSheets';
 import * as If from './if';
 import * as Integration from './integration';
@@ -36,6 +37,7 @@ export type GeneralSteps<V> =
   | GoogleSheets.Step
   | If.Step
   | Stream.Step
+  | General.Step
   | Command.Step;
 
 export type GeneralNodes =
@@ -50,6 +52,7 @@ export type GeneralNodes =
   | Exit.Node
   | Random.Node
   | Stream.Node
+  | General.Node
   | If.Node;
 
 export type GeneralCommands = Intent.Command | Command.Command;
