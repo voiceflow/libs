@@ -3,11 +3,11 @@ import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame } from './types'
 export type AnyTrace = TraceFrame<any, any>;
 
 export type StepData<T extends AnyTrace = AnyTrace> = {
-  trace?: null | T;
+  traces: (null | T)[];
 };
 
 export type NodeData<T extends AnyTrace = AnyTrace> = {
-  trace: T;
+  traces: T[];
   nextId?: NodeID;
 };
 
