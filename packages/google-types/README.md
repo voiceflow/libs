@@ -4,4 +4,4 @@ all google types for consumption on `creator-app` `google-service` `google-clien
 
 ## Nodes
 
-presently reference node types by `import Speak from @voiceflow/google-types/lib/types`
+presently reference node types by `import Speak from @voiceflow/google-types/build/types`
