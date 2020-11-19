@@ -41,6 +41,9 @@
     "ttypescript": "^1.5.8",
     "typescript": "^3.9.7"
   },
+  "files": [
+    "build"
+  ],
   "homepage": "https://github.com/voiceflow/general-types#readme",
   "husky": {
     "hooks": {
