@@ -10,6 +10,12 @@ export enum AccountLinkingType {
   AUTH_CODE = 'AUTH_CODE',
 }
 
+export enum ModelSensitivity {
+  LOW = 'LOW',
+  HIGH = 'HIGH',
+  MEDIUM = 'MEDIUM',
+}
+
 export enum AccountLinkingAccessTokenScheme {
   HTTP_BASIC = 'HTTP_BASIC',
   REQUEST_BODY_CREDENTIALS = 'REQUEST_BODY_CREDENTIALS',
@@ -32,6 +38,7 @@ export type AlexaSettings = GeneralSettings<Voice> & {
   permissions: string[];
   accountLinking: null | AccountLinking;
   customInterface: boolean;
+  modelSensitivity: null | ModelSensitivity;
 };
 
 export const defaultAccountLinking = (accountLinking?: null | Partial<AccountLinking>): null | AccountLinking => {
@@ -69,6 +76,7 @@ export const defaultAlexaSettings = ({
   permissions = [],
   accountLinking,
   customInterface = false,
+  modelSensitivity = null,
   ...generalSettings
 }: Partial<AlexaSettings> = {}): AlexaSettings => ({
   ...defaultGeneralSettings<Voice>(generalSettings, { defaultVoice: Voice.ALEXA }),
@@ -76,4 +84,5 @@ export const defaultAlexaSettings = ({
   permissions,
   accountLinking: defaultAccountLinking(accountLinking),
   customInterface,
+  modelSensitivity,
 });
