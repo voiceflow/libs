@@ -623,10 +623,10 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@voiceflow/api-sdk@1.13.0":
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.13.0.tgz#cff763433fad24906347e6c88fd58e2af8d9cf33"
-  integrity sha512-uZVNdYy52lBCXPutTHPOynXi64b+P463fugEfm/A76nJK93gM9WYWNnBBiLkBlpC15CDeF7dTXNlfE32blBQNw==
+"@voiceflow/api-sdk@1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.13.1.tgz#9bee05823bc7d72362ff28552b4e31a5b51da44a"
+  integrity sha512-L4sK23/sT8y2iWnW3gaKKXQr2SvXTiMXQqfqM3D7hR00BEAnZQx7AQ3QStU8Frd5nIJ74O/Y3jPBs82f0TPSBA==
   dependencies:
     "@types/atob" "^2.1.2"
     "@voiceflow/logger" "^1.1.10"
