@@ -540,10 +540,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@voiceflow/api-sdk@1.13.0":
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.13.0.tgz#cff763433fad24906347e6c88fd58e2af8d9cf33"
-  integrity sha512-uZVNdYy52lBCXPutTHPOynXi64b+P463fugEfm/A76nJK93gM9WYWNnBBiLkBlpC15CDeF7dTXNlfE32blBQNw==
+"@voiceflow/api-sdk@1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.13.1.tgz#9bee05823bc7d72362ff28552b4e31a5b51da44a"
+  integrity sha512-L4sK23/sT8y2iWnW3gaKKXQr2SvXTiMXQqfqM3D7hR00BEAnZQx7AQ3QStU8Frd5nIJ74O/Y3jPBs82f0TPSBA==
   dependencies:
     "@types/atob" "^2.1.2"
     "@voiceflow/logger" "^1.1.10"
@@ -584,12 +584,12 @@
     eslint-plugin-sonarjs "^0.4.0"
     eslint-plugin-xss "^0.1.9"
 
-"@voiceflow/general-types@1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.8.0.tgz#195fb13597637eb9d131d16ac8f69b5b96980a02"
-  integrity sha512-N/o/ErJDBdX1ph77tTwuEHG73d/94X9kgRc/dqnbH6PfuNzuj9RsRGGIvc6C7oApe1Mm7eJpA1SYKja9RN6TZQ==
+"@voiceflow/general-types@1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.8.1.tgz#1326c100c132035ea49f3cb48245c96066b1a02c"
+  integrity sha512-uxCMnc/gQtJcTM5ugBwJWpkntDmzWbULF91M1CGhUF3c7WJl6+rSymSIrEp8bTwYmesy/Ur33Uz+nCbug3UP7A==
   dependencies:
-    "@voiceflow/api-sdk" "1.13.0"
+    "@voiceflow/api-sdk" "1.13.1"
 
 "@voiceflow/git-branch-check@^1.0.6":
   version "1.0.6"
