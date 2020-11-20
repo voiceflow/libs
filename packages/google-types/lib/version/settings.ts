@@ -7,5 +7,5 @@ export type ResumeSession = GeneralResumeSession<Voice>;
 export type GoogleSettings = GeneralSettings<Voice>;
 
 export const defaultGoogleSettings = ({ ...generalSettings }: Partial<GoogleSettings> = {}): GoogleSettings => ({
-  ...defaultGeneralSettings<Voice>(generalSettings, { defaultVoice: Voice.DEFAULT }),
+  ...defaultGeneralSettings<Voice>(generalSettings, { defaultPromptVoice: Voice.DEFAULT }),
 });

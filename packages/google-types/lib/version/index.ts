@@ -31,7 +31,7 @@ export const defaultGoogleVersionData = ({
   publishing,
   ...generalVersionData
 }: Partial<GoogleVersionData>): GoogleVersionData => ({
-  ...defaultGeneralVersionData<Voice>(generalVersionData, { defaultVoice: Voice.DEFAULT }),
+  ...defaultGeneralVersionData<Voice>(generalVersionData, { defaultPromptVoice: Voice.DEFAULT }),
   status: { stage },
   settings: defaultGoogleSettings(settings),
   publishing: defaultGooglePublishing(publishing),
