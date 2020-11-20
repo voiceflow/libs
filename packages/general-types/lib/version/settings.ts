@@ -25,6 +25,7 @@ export type GeneralSettings<V> = {
   error: null | Prompt<V>;
   repeat: RepeatType;
   session: RestartSession | ResumeSession<V>;
+  defaultVoice: null | V;
 };
 
 export const defaultPrompt = <V>(prompt: Prompt<V> | null | undefined, defaultVoice: V): null | Prompt<V> => {
@@ -39,10 +40,11 @@ export const defaultPrompt = <V>(prompt: Prompt<V> | null | undefined, defaultVo
 };
 
 export const defaultGeneralSettings = <V>(
-  { error, repeat = RepeatType.ALL, session = { type: SessionType.RESTART } }: Partial<GeneralSettings<V>> = {},
-  { defaultVoice }: { defaultVoice: V }
+  { error, repeat = RepeatType.ALL, session = { type: SessionType.RESTART }, defaultVoice = null }: Partial<GeneralSettings<V>> = {},
+  { defaultPromptVoice }: { defaultPromptVoice: V }
 ): GeneralSettings<V> => ({
-  error: defaultPrompt<V>(error, defaultVoice),
+  error: defaultPrompt<V>(error, defaultVoice ?? defaultPromptVoice),
   repeat,
   session,
+  defaultVoice,
 });

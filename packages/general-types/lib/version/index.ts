@@ -15,7 +15,7 @@ export type GeneralVersionData<V> = {
 
 export const defaultGeneralVersionData = <V>(
   { slots = [], intents = [], settings, publishing = {} }: Partial<GeneralVersionData<V>>,
-  options: { defaultVoice: V }
+  options: { defaultPromptVoice: V }
 ): GeneralVersionData<V> => ({
   slots,
   intents,
