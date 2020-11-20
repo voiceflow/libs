@@ -79,7 +79,7 @@ export const defaultAlexaSettings = ({
   modelSensitivity = null,
   ...generalSettings
 }: Partial<AlexaSettings> = {}): AlexaSettings => ({
-  ...defaultGeneralSettings<Voice>(generalSettings, { defaultVoice: Voice.ALEXA }),
+  ...defaultGeneralSettings<Voice>(generalSettings, { defaultPromptVoice: Voice.ALEXA }),
   events,
   permissions,
   accountLinking: defaultAccountLinking(accountLinking),

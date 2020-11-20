@@ -31,7 +31,7 @@ export const defaultAlexaVersionData = ({
   publishing,
   ...generalVersionData
 }: Partial<AlexaVersionData>): AlexaVersionData => ({
-  ...defaultGeneralVersionData<Voice>(generalVersionData, { defaultVoice: Voice.ALEXA }),
+  ...defaultGeneralVersionData<Voice>(generalVersionData, { defaultPromptVoice: Voice.ALEXA }),
   status: { stage },
   settings: defaultAlexaSettings(settings),
   publishing: defaultAlexaPublishing(publishing),
