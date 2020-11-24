@@ -40,14 +40,52 @@ export type ProgramID = s.StructType<typeof SProgramID>;
 export const SDiagramID = s.string();
 export type DiagramID = s.StructType<typeof SDiagramID>;
 
-export const SIntent = s.string();
+export const SIntentInput = s.object({
+  text: s.string(),
+  slots: s.optional(s.array(s.string())),
+});
+export type IntentInput = s.StructType<typeof SIntentInput>;
+
+export const SIntentSlotDialog = s.object({
+  prompt: SIntentInput,
+  confirm: SIntentInput,
+  utterances: SIntentInput,
+  confirmEnabled: s.boolean(),
+});
+export type IntentSlotDialog = s.StructType<typeof SIntentSlotDialog>;
+
+export const SIntentSlot = s.object({
+  id: s.string(),
+  dialog: SIntentSlotDialog,
+  required: s.boolean(),
+});
+export type IntentSlot = s.StructType<typeof SIntentSlot>;
+
+export const SIntent = s.object({
+  key: s.string(),
+  name: s.string(),
+  slots: s.optional(s.array(SIntentSlot)),
+  inputs: SIntentInput,
+});
 export type Intent = s.StructType<typeof SIntent>;
 
-export const SSlot = s.string();
+export const SSlot = s.object({
+  key: s.string(),
+  name: s.string(),
+  type: s.object({ value: s.optional(s.string()) }),
+  color: s.optional(s.string()),
+  inputs: s.array(s.string()),
+});
 export type Slot = s.StructType<typeof SSlot>;
 
+export const SSlotMapping = s.object({
+  slot: s.nullable(s.string()),
+  variable: s.nullable(SVariable),
+});
+export type SlotMapping = s.StructType<typeof SSlotMapping>;
+
 export const SCommandMapping = s.object({
-  slot: SSlot,
+  slot: s.string(),
   variable: SVariable,
 });
 export type CommandMapping = s.StructType<typeof SCommandMapping>;

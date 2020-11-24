@@ -21,7 +21,6 @@ export const SProject = s.object({
   devVersion: s.optional(SVersionID),
   liveVersion: s.optional(SVersionID),
   platformData: SBasePlatformData,
-  prototypeData: s.optional(s.object()),
 });
 
 export type Project<P extends BasePlatformData, M extends BasePlatformData> = Omit<s.StructType<typeof SProject>, 'platformData' | 'members'> & {
