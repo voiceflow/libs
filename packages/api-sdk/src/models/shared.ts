@@ -47,9 +47,9 @@ export const SIntentInput = s.object({
 export type IntentInput = s.StructType<typeof SIntentInput>;
 
 export const SIntentSlotDialog = s.object({
-  prompt: SIntentInput,
-  confirm: SIntentInput,
-  utterances: SIntentInput,
+  prompt: s.array(SIntentInput),
+  confirm: s.array(SIntentInput),
+  utterances: s.array(SIntentInput),
   confirmEnabled: s.boolean(),
 });
 export type IntentSlotDialog = s.StructType<typeof SIntentSlotDialog>;
@@ -65,7 +65,7 @@ export const SIntent = s.object({
   key: s.string(),
   name: s.string(),
   slots: s.optional(s.array(SIntentSlot)),
-  inputs: SIntentInput,
+  inputs: s.array(SIntentInput),
 });
 export type Intent = s.StructType<typeof SIntent>;
 
