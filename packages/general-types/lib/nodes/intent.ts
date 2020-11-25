@@ -1,6 +1,6 @@
-import { SlotMapping } from '@/version';
+import { CommandMapping, SlotMapping } from '@voiceflow/api-sdk';
 
-import { CommandMapping, DefaultCommand, DefaultStep, NodeID, NodeType } from './types';
+import { DefaultCommand, DefaultStep, NodeID, NodeType } from './types';
 
 export type StepData = {
   intent: string | null;

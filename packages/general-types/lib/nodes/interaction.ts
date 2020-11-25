@@ -1,5 +1,6 @@
+import { SlotMapping } from '@voiceflow/api-sdk';
+
 import { NoMatches, Prompt } from '@/types';
-import { SlotMapping } from '@/version';
 
 import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 

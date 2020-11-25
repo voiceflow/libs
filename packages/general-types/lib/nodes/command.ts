@@ -1,8 +1,6 @@
-import { Port } from '@voiceflow/api-sdk';
+import { CommandMapping, Port, SlotMapping } from '@voiceflow/api-sdk';
 
-import { SlotMapping } from '@/version';
-
-import { CommandMapping, DefaultCommand, DefaultStep, NodeID, NodeType } from './types';
+import { DefaultCommand, DefaultStep, NodeID, NodeType } from './types';
 
 export type StepData = {
   name: string;

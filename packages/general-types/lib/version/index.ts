@@ -1,17 +1,10 @@
-import { Intent } from './intent';
-import { defaultGeneralSettings, GeneralSettings } from './settings';
-import { Slot } from './slot';
+import { VersionPlatformData } from '@voiceflow/api-sdk';
 
-export * from './slot';
-export * from './intent';
+import { defaultGeneralSettings, GeneralSettings } from './settings';
+
 export * from './settings';
 
-export type GeneralVersionData<V> = {
-  slots: Slot[];
-  intents: Intent[];
-  settings: GeneralSettings<V>;
-  publishing: {};
-};
+export type GeneralVersionData<V> = VersionPlatformData<GeneralSettings<V>, {}>;
 
 export const defaultGeneralVersionData = <V>(
   { slots = [], intents = [], settings, publishing = {} }: Partial<GeneralVersionData<V>>,

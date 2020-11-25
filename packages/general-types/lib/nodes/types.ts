@@ -50,11 +50,6 @@ export enum NodeType {
   DEPRECATED = 'deprecated',
 }
 
-export type CommandMapping = {
-  slot: string;
-  variable: string;
-};
-
 export enum IntegrationType {
   ZAPIER = 'Zapier',
   CUSTOM_API = 'Custom API',
