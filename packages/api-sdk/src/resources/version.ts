@@ -81,6 +81,18 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     return data;
   }
 
+  public async getPrototypePrograms<T extends Partial<Program>>(id: VersionID, fields: string[]): Promise<T[]>;
+
+  public async getPrototypePrograms<T extends Program = Program>(id: VersionID): Promise<T[]>;
+
+  public async getPrototypePrograms(id: VersionID, fields?: string[]) {
+    this._assertModelID(id);
+
+    const { data } = await this.fetch.get(`${this._getCRUDEndpoint(id)}/prototype-programs${this._getFieldsQuery(fields)}`);
+
+    return data;
+  }
+
   public async getDiagrams<T extends Partial<Diagram>>(id: VersionID, fields: string[]): Promise<T[]>;
 
   public async getDiagrams<T extends Diagram = Diagram>(id: VersionID): Promise<T[]>;

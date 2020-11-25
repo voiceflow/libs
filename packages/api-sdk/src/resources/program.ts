@@ -9,13 +9,13 @@ export const modelIDKey = 'id';
 export type ModelIDKey = typeof modelIDKey;
 
 class ProgramResource extends CrudResource<typeof SProgram['schema'], ModelIDKey, ProgramResource> {
-  constructor(fetch: Fetch) {
+  constructor(fetch: Fetch, { resourceEndpoint = ENDPOINT }: { resourceEndpoint?: string } = {}) {
     super({
       fetch,
       clazz: ProgramResource,
       schema: SProgram.schema,
       modelIDKey,
-      resourceEndpoint: ENDPOINT,
+      resourceEndpoint,
     });
   }
 

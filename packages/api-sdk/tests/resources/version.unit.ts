@@ -87,6 +87,8 @@ describe('VersionResource', () => {
       name: 'name',
       variables: [],
       platformData: {
+        slots: [],
+        intents: [],
         settings: {},
         publishing: {},
       },
@@ -207,6 +209,34 @@ describe('VersionResource', () => {
 
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/programs?fields=id,variables']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+  });
+
+  it('.getPrototypePrograms', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getPrototypePrograms('1');
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/1/prototype-programs']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+  });
+
+  it('.getPrototypePrograms fields', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getPrototypePrograms<{ id: string; variables: string[] }>('1', ['id', 'variables']);
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/1/prototype-programs?fields=id,variables']);
     expect(data).to.eql(RESPONSE_DATA);
     expect(assert.callCount).to.eql(1);
     expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
