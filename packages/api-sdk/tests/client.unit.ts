@@ -3,7 +3,7 @@ import JWT from 'jsonwebtoken';
 
 import { Client } from '@/client';
 import Fetch from '@/fetch';
-import { Diagram, Program, Project, Session, User, Version } from '@/resources';
+import { Diagram, Program, Project, PrototypeProgram, User, Version } from '@/resources';
 
 const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User];
 
@@ -49,5 +49,11 @@ describe('Client', () => {
     const client = createClient();
 
     expect(client.user).to.be.instanceOf(User);
+  });
+
+  it('.prototypeProgram', () => {
+    const client = createClient();
+
+    expect(client.prototypeProgram).to.be.instanceOf(PrototypeProgram);
   });
 });
