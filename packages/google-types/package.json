@@ -12,8 +12,8 @@
     }
   },
   "dependencies": {
-    "@voiceflow/api-sdk": "1.13.1",
-    "@voiceflow/general-types": "1.8.1",
+    "@voiceflow/api-sdk": "1.15.2",
+    "@voiceflow/general-types": "1.9.2",
     "googleapis": "^60.0.1"
   },
   "devDependencies": {
