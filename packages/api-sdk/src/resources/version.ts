@@ -1,7 +1,7 @@
 import * as s from 'superstruct';
 
 import Fetch from '@/fetch';
-import { Diagram, Program, SVersion, Version, VersionID, VersionPlatformData } from '@/models';
+import { Diagram, Program, Project, SVersion, Version, VersionID, VersionPlatformData } from '@/models';
 
 import CrudResource from './crud';
 
@@ -105,12 +105,27 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     return data;
   }
 
-  public async export<D extends VersionPlatformData, P extends Program>(id: VersionID) {
+  public async export<P extends Project<any, any>, V extends Version<any>, D extends Diagram, PM extends Program>(
+    id: VersionID,
+    options?: { programs: true }
+  ): Promise<{ project: P; version: V; diagrams: Record<string, D>; programs: Record<string, PM> }>;
+
+  public async export<P extends Project<any, any>, V extends Version<any>, D extends Diagram>(id: VersionID, options?: { programs?: boolean }) {
     this._assertModelID(id);
 
-    const { data } = await this.fetch.get<{ version: Version<D>; programs: P[] }>(`${this._getCRUDEndpoint(id)}/export`);
+    const { data } = await this.fetch.get<{ project: P; version: V; diagrams: Record<string, D> }>(
+      `${this._getCRUDEndpoint(id)}/export${options?.programs ? '?programs=1' : ''}`
+    );
 
     return data;
+  }
+
+  public async import<P extends Project<any, any>>(
+    workspaceID: string,
+    data: { project: P; version: Version<any>; diagrams: Record<string, Diagram<any>> }
+  ) {
+    const { data: newProject } = await this.fetch.post<{ project: P }>(`${this._getCRUDEndpoint()}/import`, { workspaceID, data });
+    return newProject;
   }
 }
 

@@ -283,4 +283,30 @@ describe('VersionResource', () => {
     expect(assert.callCount).to.eql(1);
     expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
+
+  it('.export programs', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.export('1', { programs: true });
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/1/export?programs=1']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+  });
+
+  it('.import', async () => {
+    const { fetch, resource } = createClient();
+
+    fetch.post.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.import('workspace', '1' as any);
+
+    expect(fetch.post.callCount).to.eql(1);
+    expect(fetch.post.args[0]).to.eql(['versions/import', { workspaceID: 'workspace', data: '1' }]);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
 });
