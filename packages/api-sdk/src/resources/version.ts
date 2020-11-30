@@ -124,7 +124,7 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     workspaceID: string,
     data: { project: P; version: Version<any>; diagrams: Record<string, Diagram<any>> }
   ) {
-    const { data: newProject } = await this.fetch.post<{ project: P }>(`${this._getCRUDEndpoint()}/import`, { workspaceID, data });
+    const { data: newProject } = await this.fetch.post<P>(`${this._getCRUDEndpoint()}/import`, { workspaceID, data });
     return newProject;
   }
 }
