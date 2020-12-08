@@ -1,7 +1,7 @@
 import * as s from 'superstruct';
 
 import Fetch from '@/fetch';
-import { Diagram, Program, Project, SVersion, Version, VersionID, VersionPlatformData } from '@/models';
+import { Diagram, Program, Project, SVersion, Version, VersionID, VersionPlatformData, VersionPrototype } from '@/models';
 
 import CrudResource from './crud';
 
@@ -125,7 +125,16 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     data: { project: P; version: Version<any>; diagrams: Record<string, Diagram<any>> }
   ) {
     const { data: newProject } = await this.fetch.post<P>(`${this._getCRUDEndpoint()}/import`, { workspaceID, data });
+
     return newProject;
+  }
+
+  public async getPrototype(id: VersionID) {
+    this._assertModelID(id);
+
+    const { data } = await this.fetch.get<VersionPrototype>(`${this._getCRUDEndpoint(id)}/prototype`);
+
+    return data;
   }
 }
 

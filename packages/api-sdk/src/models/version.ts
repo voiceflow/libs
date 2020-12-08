@@ -53,23 +53,34 @@ export type VersionPrototypeContext<C extends Command = Command> = Omit<s.Struct
   stack?: VersionPrototypeStackFrame<C>[];
 };
 
-export const SVersionPrototypeModel = s.union([
-  s.object({
-    slots: s.array(SSlot),
-    intents: s.array(SIntent),
-  }),
-  s.object({ endpoint: s.string() }),
-]);
+export const SVersionPrototypeData = s.object({
+  name: s.string(),
+  locales: s.array(s.string()),
+});
+
+export type VersionPrototypeData<L extends string> = Omit<s.StructType<typeof SVersionPrototypeData>, 'locales'> & {
+  locales: L[];
+};
+
+export const SVersionPrototypeModel = s.object({
+  slots: s.array(SSlot),
+  intents: s.array(SIntent),
+});
 
 export type VersionPrototypeModel = s.StructType<typeof SVersionPrototypeModel>;
 
 export const SVersionPrototype = s.object({
+  data: SVersionPrototypeData,
   model: SVersionPrototypeModel,
   context: SVersionPrototypeContext,
-  settings: s.object(),
+  settings: s.object(), // TODO: add types
 });
 
-export type VersionPrototype<C extends Command = Command> = Omit<s.StructType<typeof SVersionPrototype>, 'context'> & {
+export type VersionPrototype<C extends Command = Command, L extends string = string> = Omit<
+  s.StructType<typeof SVersionPrototype>,
+  'context' | 'data'
+> & {
+  data: VersionPrototypeData<L>;
   context: VersionPrototypeContext<C>;
 };
 
@@ -85,10 +96,10 @@ export const SVersion = s.object({
   rootDiagramID: SDiagramID,
 });
 
-export type Version<P extends VersionPlatformData, C extends Command = Command> = Omit<
+export type Version<P extends VersionPlatformData, C extends Command = Command, L extends string = string> = Omit<
   s.StructType<typeof SVersion>,
   'prototype' | 'platformData'
 > & {
-  prototype?: VersionPrototype<C>;
+  prototype?: VersionPrototype<C, L>;
   platformData: P;
 };

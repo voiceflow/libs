@@ -1,7 +1,7 @@
 import * as s from 'superstruct';
 
 import type Fetch from '@/fetch';
-import { BasePlatformData, Project, ProjectID, SProject, SWorkspaceID, Version, VersionPlatformData, WorkspaceID } from '@/models';
+import { BasePlatformData, Project, ProjectID, ProjectPrototype, SProject, SWorkspaceID, Version, VersionPlatformData, WorkspaceID } from '@/models';
 
 import CrudResource from '../crud';
 import { ENDPOINT } from './constants';
@@ -80,6 +80,14 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
     this._assertModelID(id);
 
     const { data } = await this.fetch.get(`${this._getCRUDEndpoint(id)}/versions${this._getFieldsQuery(fields)}`);
+
+    return data;
+  }
+
+  public async getPrototype(id: ProjectID) {
+    this._assertModelID(id);
+
+    const { data } = await this.fetch.get<ProjectPrototype>(`${this._getCRUDEndpoint(id)}/prototype`);
 
     return data;
   }

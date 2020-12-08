@@ -309,4 +309,18 @@ describe('VersionResource', () => {
     expect(fetch.post.args[0]).to.eql(['versions/import', { workspaceID: 'workspace', data: '1' }]);
     expect(data).to.eql(RESPONSE_DATA);
   });
+
+  it('.getPrototype', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getPrototype('1');
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/1/prototype']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+  });
 });
