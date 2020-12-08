@@ -1,4 +1,4 @@
-import { Prompt } from '../types';
+import { Locale, Prompt, Voice } from '@/types';
 
 export enum RepeatType {
   OFF = 'OFF',
@@ -15,17 +15,23 @@ export type RestartSession = {
   type: SessionType.RESTART;
 };
 
-export type ResumeSession<V> = {
+export type BaseResumeSession<V> = {
   type: SessionType.RESUME;
   resume: null | Prompt<V>;
   follow: null | Prompt<V>;
 };
 
-export type GeneralSettings<V> = {
+export type BaseVersionSettings<V> = {
   error: null | Prompt<V>;
   repeat: RepeatType;
-  session: RestartSession | ResumeSession<V>;
+  session: RestartSession | BaseResumeSession<V>;
   defaultVoice: null | V;
+};
+
+export type ResumeSession = BaseResumeSession<Voice>;
+
+export type GeneralVersionSettings = BaseVersionSettings<Voice> & {
+  locales: Locale[];
 };
 
 export const defaultPrompt = <V>(prompt: Prompt<V> | null | undefined, defaultVoice: V): null | Prompt<V> => {
@@ -39,12 +45,20 @@ export const defaultPrompt = <V>(prompt: Prompt<V> | null | undefined, defaultVo
   };
 };
 
-export const defaultGeneralSettings = <V>(
-  { error, repeat = RepeatType.ALL, session = { type: SessionType.RESTART }, defaultVoice = null }: Partial<GeneralSettings<V>> = {},
+export const defaultBaseVersionSettings = <V>(
+  { error, repeat = RepeatType.ALL, session = { type: SessionType.RESTART }, defaultVoice = null }: Partial<BaseVersionSettings<V>> = {},
   { defaultPromptVoice }: { defaultPromptVoice: V }
-): GeneralSettings<V> => ({
+): BaseVersionSettings<V> => ({
   error: defaultPrompt<V>(error, defaultVoice ?? defaultPromptVoice),
   repeat,
   session,
   defaultVoice,
+});
+
+export const defaultGeneralVersionSettings = ({
+  locales = [Locale.EN_US],
+  ...baseSettings
+}: Partial<GeneralVersionSettings> = {}): GeneralVersionSettings => ({
+  ...defaultBaseVersionSettings(baseSettings, { defaultPromptVoice: Voice.DEFAULT }),
+  locales,
 });

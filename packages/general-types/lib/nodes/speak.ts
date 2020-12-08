@@ -1,4 +1,5 @@
-import { Prompt } from '../types';
+import { Prompt } from '@/types';
+
 import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
 export type StepData<V> = {
@@ -13,7 +14,4 @@ export type NodeData = {
 
 export type Step<V> = DefaultStep<NodeType.SPEAK, StepData<V>>;
 export type Node = DefaultNode<NodeType.SPEAK, NodeData>;
-export type TraceFrame = DefaultTraceFrame<TraceType.SPEAK, {
-  message: string;
-  choices?: {name: string}[]
-}>;
+export type TraceFrame = DefaultTraceFrame<TraceType.SPEAK, { message: string; choices?: { name: string }[] }>;

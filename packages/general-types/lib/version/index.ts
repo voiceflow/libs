@@ -1,17 +1,28 @@
-import { StrictVersionPlatformData } from '@voiceflow/api-sdk';
+import { StrictVersionPlatformData, Version } from '@voiceflow/api-sdk';
 
-import { defaultGeneralSettings, GeneralSettings } from './settings';
+import { GeneralCommands } from '@/nodes';
+import { Locale, Voice } from '@/types';
+
+import { BaseVersionSettings, defaultBaseVersionSettings, defaultGeneralVersionSettings, GeneralVersionSettings } from './settings';
 
 export * from './settings';
 
-export type GeneralVersionData<V> = StrictVersionPlatformData<GeneralSettings<V>>;
+export type BaseVersionData<V> = StrictVersionPlatformData<BaseVersionSettings<V>>;
 
-export const defaultGeneralVersionData = <V>(
-  { slots = [], intents = [], settings, publishing = {} }: Partial<GeneralVersionData<V>>,
+export const defaultBaseVersionData = <V>(
+  { slots = [], intents = [], settings, publishing = {} }: Partial<BaseVersionData<V>>,
   options: { defaultPromptVoice: V }
-): GeneralVersionData<V> => ({
+): BaseVersionData<V> => ({
   slots,
   intents,
-  settings: defaultGeneralSettings<V>(settings, options),
+  settings: defaultBaseVersionSettings<V>(settings, options),
   publishing,
+});
+
+export type GeneralVersionData = StrictVersionPlatformData<GeneralVersionSettings>;
+export type GeneralVersion = Version<GeneralVersionData, GeneralCommands, Locale>;
+
+export const defaultGeneralVersionData = ({ settings, ...data }: Partial<GeneralVersionData>): GeneralVersionData => ({
+  ...defaultBaseVersionData(data, { defaultPromptVoice: Voice.DEFAULT }),
+  settings: defaultGeneralVersionSettings(settings),
 });

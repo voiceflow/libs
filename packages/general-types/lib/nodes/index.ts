@@ -1,3 +1,5 @@
+import { Voice } from '@/types';
+
 import * as Api from './api';
 import * as Capture from './capture';
 import * as Code from './code';
@@ -20,7 +22,7 @@ import * as Zapier from './zapier';
 
 export * from './types';
 
-export type GeneralSteps<V> =
+export type BaseSteps<V> =
   | Set.Step
   | Capture.Step<V>
   | Flow.Step
@@ -40,7 +42,7 @@ export type GeneralSteps<V> =
   | General.Step
   | Command.Step;
 
-export type GeneralNodes =
+export type BaseNodes =
   | Set.Node
   | Capture.Node
   | Flow.Node
@@ -55,4 +57,8 @@ export type GeneralNodes =
   | General.Node
   | If.Node;
 
-export type GeneralCommands = Intent.Command | Command.Command;
+export type BaseCommands = Intent.Command | Command.Command;
+
+export type GeneralSteps = BaseSteps<Voice>;
+export type GeneralNodes = BaseNodes;
+export type GeneralCommands = BaseCommands;

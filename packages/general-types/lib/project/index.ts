@@ -4,4 +4,4 @@ export type GeneralProject = Project<BasePlatformData, BasePlatformData> & {
   platform: 'general';
 };
 
-export const defaultAlexaProjectData = (data: Partial<BasePlatformData> = {}): BasePlatformData => ({ ...data });
+export const defaultGeneralProjectData = (data: Partial<BasePlatformData> = {}): BasePlatformData => ({ ...data });
