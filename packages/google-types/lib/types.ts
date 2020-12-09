@@ -3,26 +3,26 @@ import { oauth2_v2 } from 'googleapis';
 export type GoogleProfile = oauth2_v2.Schema$Userinfo;
 
 export enum Language {
-  HK= 'zh-HK',
-  TW= 'zh-TW',
-  DA= 'da',
-  NL= 'nl',
-  EN= 'en',
-  FR= 'fr',
-  DE= 'de',
-  HI= 'hi',
-  ID= 'id',
-  IT= 'it',
-  JA= 'ja',
-  KO= 'ko',
-  NO= 'no',
-  PL= 'pl',
-  PT= 'pt',
-  RU= 'ru',
-  ES= 'es',
-  SV= 'sv',
-  TH= 'th',
-  TR= 'tr',
+  HK = 'zh-HK',
+  TW = 'zh-TW',
+  DA = 'da',
+  NL = 'nl',
+  EN = 'en',
+  FR = 'fr',
+  DE = 'de',
+  HI = 'hi',
+  ID = 'id',
+  IT = 'it',
+  JA = 'ja',
+  KO = 'ko',
+  NO = 'no',
+  PL = 'pl',
+  PT = 'pt',
+  RU = 'ru',
+  ES = 'es',
+  SV = 'sv',
+  TH = 'th',
+  TR = 'tr',
 }
 
 export enum Locale {
@@ -32,7 +32,7 @@ export enum Locale {
   // Danish
   DA_DK = 'da-DK',
 
-  //Dutch
+  // Dutch
   NL_NL = 'nl-NL',
   NL_BE = 'nl-BE',
 

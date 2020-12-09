@@ -1,7 +1,7 @@
 import { Category } from '@/constants';
 import { Locale } from '@/types';
 
-export type GooglePublishing = {
+export type GoogleVersionPublishing = {
   // localized settings
   voice: string;
   locales: Locale[];
@@ -33,7 +33,7 @@ export type GooglePublishing = {
   accountLinking?: any;
 };
 
-export const defaultGooglePublishing = ({
+export const defaultGoogleVersionPublishing = ({
   voice = '',
   locales = [],
   displayName = '',
@@ -47,7 +47,7 @@ export const defaultGooglePublishing = ({
   shortDescription = '',
   termsOfServiceUrl = '',
   sampleInvocations = [],
-}: Partial<GooglePublishing> = {}): GooglePublishing => ({
+}: Partial<GoogleVersionPublishing> = {}): GoogleVersionPublishing => ({
   voice,
   locales,
   displayName,

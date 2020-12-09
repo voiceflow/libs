@@ -1,11 +1,11 @@
-import { defaultGeneralSettings, GeneralSettings, ResumeSession as GeneralResumeSession } from '@voiceflow/general-types';
+import { BaseResumeSession, BaseVersionSettings, defaultBaseVersionSettings } from '@voiceflow/general-types';
 
-import { Voice } from '../types';
+import { Voice } from '@/types';
 
-export type ResumeSession = GeneralResumeSession<Voice>;
+export type ResumeSession = BaseResumeSession<Voice>;
 
-export type GoogleSettings = GeneralSettings<Voice>;
+export type GoogleVersionSettings = BaseVersionSettings<Voice>;
 
-export const defaultGoogleSettings = ({ ...generalSettings }: Partial<GoogleSettings> = {}): GoogleSettings => ({
-  ...defaultGeneralSettings<Voice>(generalSettings, { defaultPromptVoice: Voice.DEFAULT }),
+export const defaultGoogleVersionSettings = ({ ...generalSettings }: Partial<GoogleVersionSettings> = {}): GoogleVersionSettings => ({
+  ...defaultBaseVersionSettings<Voice>(generalSettings, { defaultPromptVoice: Voice.DEFAULT }),
 });
