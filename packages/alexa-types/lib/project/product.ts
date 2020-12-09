@@ -1,4 +1,4 @@
-import { Locale, ProductType } from '../types';
+import { Locale, ProductType } from '@/types';
 
 export enum MarketPlace {
   DE = 'amazon.de',

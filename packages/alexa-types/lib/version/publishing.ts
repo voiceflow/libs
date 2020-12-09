@@ -1,6 +1,6 @@
-import { Locale } from '../types';
+import { Locale } from '@/types';
 
-export type AlexaPublishing = {
+export type AlexaVersionPublishing = {
   forExport: boolean;
   hasAds: boolean;
   summary: string;
@@ -21,7 +21,7 @@ export type AlexaPublishing = {
   updatesDescription?: string;
 };
 
-export const defaultAlexaPublishing = ({
+export const defaultAlexaVersionPublishing = ({
   invocationName = '',
   hasPurchase = false,
   forExport = true,
@@ -40,7 +40,7 @@ export const defaultAlexaPublishing = ({
   category = '',
   locales = [Locale.EN_US],
   updatesDescription,
-}: Partial<AlexaPublishing> = {}): AlexaPublishing => ({
+}: Partial<AlexaVersionPublishing> = {}): AlexaVersionPublishing => ({
   summary,
   invocations,
   smallIcon,

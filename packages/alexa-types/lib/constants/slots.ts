@@ -1,4 +1,4 @@
-import { Locale as L } from '../types';
+import { Locale as L } from '@/types';
 
 export enum SlotType {
   DATE = 'AMAZON.DATE',

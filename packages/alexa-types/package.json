@@ -12,8 +12,8 @@
     }
   },
   "dependencies": {
-    "@voiceflow/api-sdk": "1.17.1",
-    "@voiceflow/general-types": "1.10.2",
+    "@voiceflow/api-sdk": "1.18.0",
+    "@voiceflow/general-types": "1.11.0",
     "ask-smapi-model": "^1.11.0",
     "eslint-plugin-prettier": "^3.1.4"
   },
