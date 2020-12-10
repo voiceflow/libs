@@ -1,5 +1,4 @@
-import { Category } from '@/constants';
-import { Locale } from '@/types';
+import { Category, Locale } from '@/constants';
 
 export type GoogleVersionPublishing = {
   // localized settings
