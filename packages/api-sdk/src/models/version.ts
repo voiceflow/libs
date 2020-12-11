@@ -29,13 +29,13 @@ export type StrictVersionPlatformData<S extends UnknownRecord = UnknownRecord, P
 export type VersionPlatformData<S extends UnknownRecord = UnknownRecord, P extends UnknownRecord = UnknownRecord> = UnknownRecord &
   StrictVersionPlatformData<S, P>;
 
-export const SVersionPrototypeStackFrame = s.partial({
+export const SVersionPrototypeStackFrame = s.object({
   nodeID: s.optional(s.nullable(s.string())),
   programID: s.string(),
 
-  storage: s.object(),
+  storage: s.optional(s.object()),
   commands: s.optional(s.array(SCommand)),
-  variables: s.object(),
+  variables: s.optional(s.object()),
 });
 
 export type VersionPrototypeStackFrame<C extends Command = Command> = Omit<s.StructType<typeof SVersionPrototypeStackFrame>, 'commands'> & {
