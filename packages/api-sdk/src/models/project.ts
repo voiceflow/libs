@@ -3,11 +3,31 @@ import * as s from 'superstruct';
 import { Member, SMember } from './member';
 import { BasePlatformData, SBasePlatformData, SCreatorID, SName, SPlatform, SProjectID, STeamID, SVersionID } from './shared';
 
+export enum ProjectPrototypeNLPType {
+  LUIS = 'LUIS',
+}
+
+export const SProjectPrototypeLuis = s.object({
+  type: s.enums([ProjectPrototypeNLPType.LUIS]),
+  appID: s.string(),
+});
+
+type ProjectPrototypeNLPBase<T extends string, S extends s.Struct<any>> = { type: T } & Omit<s.StructType<S>, 'type'>;
+
+export type ProjectPrototypeLuis = ProjectPrototypeNLPBase<ProjectPrototypeNLPType.LUIS, typeof SProjectPrototypeLuis>;
+
+export const SProjectPrototypeNLP = s.union([SProjectPrototypeLuis]);
+
+export type ProjectPrototypeNLP = ProjectPrototypeLuis;
+
 export const SProjectPrototype = s.object({
+  nlp: s.optional(SProjectPrototypeNLP),
   data: s.object(),
 });
 
-export type ProjectPrototype = s.StructType<typeof SProjectPrototype>;
+export type ProjectPrototype = Omit<s.StructType<typeof SProjectPrototype>, 'nlp'> & {
+  nlp?: ProjectPrototypeNLP;
+};
 
 export enum ProjectPrivacy {
   PUBLIC = 'public',
