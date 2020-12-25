@@ -15,7 +15,11 @@ export type IntentRequest = Request<
   {
     query: string; // original text input
     intent: { name: string }; // matched intent name
-    slots: { name: string; value: string }[]; // slot matches
+    slots: {
+      name: string; // name of matched slot
+      value: string; // inferred value of matched slot
+      query?: string; // raw value of matched slot
+    }[]; // slot matches - multiple of the same slot name may be matched
   }
 >;
 
