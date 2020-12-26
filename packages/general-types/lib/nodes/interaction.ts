@@ -34,7 +34,7 @@ export type NodeData<E = GeneralEvent> = {
   reprompt?: string;
   noMatches?: string[];
   interactions: {
-    event: E[];
+    event: E;
     nextId: string | null;
   }[];
   elseId?: NodeID | null;
