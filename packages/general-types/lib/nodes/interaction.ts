@@ -35,9 +35,9 @@ export type NodeData<E = GeneralEvent> = {
   noMatches?: string[];
   interactions: {
     event: E[];
-    nextID: string | null;
+    nextId: string | null;
   }[];
-  elseID?: NodeID | null;
+  elseId?: NodeID | null;
 };
 
 export type Step<V> = DefaultStep<NodeType.INTERACTION, StepData<V>>;
