@@ -129,10 +129,19 @@ export type Command<E> =
       event: E;
     };
 
-export type IntentEvent = {
-  intent: string;
-  mappings?: SlotMapping[];
-};
+export enum EventType {
+  INTENT = 'intent',
+}
+
+export type Event<T extends EventType, D> = { type: T } & D;
+
+export type IntentEvent = Event<
+  EventType.INTENT,
+  {
+    intent: string;
+    mappings?: SlotMapping[];
+  }
+>;
 
 export type GeneralEvent = IntentEvent;
 
