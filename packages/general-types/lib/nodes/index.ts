@@ -3,16 +3,16 @@ import { Voice } from '@/types';
 import * as Api from './api';
 import * as Capture from './capture';
 import * as Code from './code';
-import * as Command from './command';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as General from './general';
 import * as GoogleSheets from './googleSheets';
 import * as If from './if';
 import * as Integration from './integration';
-import * as Intent from './intent';
 import * as Interaction from './interaction';
+import * as Intent from './jump';
 import * as Prompt from './prompt';
+import * as Command from './push';
 import * as Random from './random';
 import * as Set from './set';
 import * as Speak from './speak';
@@ -57,8 +57,5 @@ export type BaseNodes =
   | General.Node
   | If.Node;
 
-export type BaseCommands = Intent.Command | Command.Command;
-
 export type GeneralSteps = BaseSteps<Voice>;
 export type GeneralNodes = BaseNodes;
-export type GeneralCommands = BaseCommands;

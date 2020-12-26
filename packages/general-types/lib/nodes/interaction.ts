@@ -2,7 +2,7 @@ import { SlotMapping } from '@voiceflow/api-sdk';
 
 import { NoMatches, Prompt } from '@/types';
 
-import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
+import { DefaultNode, DefaultStep, GeneralEvent, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
 export enum ElseType {
   PATH = 'path',
@@ -25,19 +25,19 @@ export type StepData<V> = {
   reprompt: Prompt<V> | null;
 };
 
-export type Interaction = {
+export type IntentEvent = {
   intent: string;
   mappings?: SlotMapping[];
-  nextIdIndex?: number;
 };
 
-export type NodeData = {
-  elseId?: NodeID;
-  nextIds: (string | null)[];
+export type NodeData<E = GeneralEvent> = {
   reprompt?: string;
   noMatches?: string[];
-  randomize?: boolean;
-  interactions: Interaction[];
+  interactions: {
+    event: E[];
+    nextID: string | null;
+  }[];
+  elseID?: NodeID | null;
 };
 
 export type Step<V> = DefaultStep<NodeType.INTERACTION, StepData<V>>;

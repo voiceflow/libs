@@ -1,6 +1,8 @@
+import { SlotMapping } from '@voiceflow/api-sdk';
+
 import { ExpressionType } from '@/types';
 
-export { Step as DefaultStep, Node as DefaultNode, Command as DefaultCommand } from '@voiceflow/api-sdk';
+export { Step as DefaultStep, Node as DefaultNode } from '@voiceflow/api-sdk';
 
 export type TraceFrame<T extends string = string, P extends unknown = undefined> = P extends undefined ? { type: T } : { type: T; payload: P };
 
@@ -109,3 +111,29 @@ export type Expression =
   | GreaterExpression
   | AdvancedExpression
   | VariableExpression;
+
+export enum CommandType {
+  JUMP = 'jump',
+  PUSH = 'push',
+}
+
+export type Command<E> =
+  | {
+      type: CommandType.JUMP;
+      nextID: string | null;
+      event: E;
+    }
+  | {
+      type: CommandType.PUSH;
+      diagramID: string | null;
+      event: E;
+    };
+
+export type IntentEvent = {
+  intent: string;
+  mappings?: SlotMapping[];
+};
+
+export type GeneralEvent = IntentEvent;
+
+export type GeneralCommand = Command<GeneralEvent>;
