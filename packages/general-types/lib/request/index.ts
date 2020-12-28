@@ -25,4 +25,4 @@ export type IntentRequest = Request<
 
 export type DataRequest<D = Record<string, unknown>> = Request<RequestType.DATA, D>;
 
-export type GeneralRequest = TextRequest | IntentRequest | DataRequest;
+export type GeneralRequest = TextRequest | IntentRequest | DataRequest | null;
