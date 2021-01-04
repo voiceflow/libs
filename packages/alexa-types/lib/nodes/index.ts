@@ -37,4 +37,4 @@ export type AlexaNodes =
   | CancelPayment.Node
   | Display.Node;
 
-export type AlexaCommands = Event.Command;
+export type AlexaCommand = Event.Command;
