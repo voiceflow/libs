@@ -24,7 +24,7 @@ class Fetch {
   constructor({ options, clientKey, apiEndpoint, authorization }: FetchOptions) {
     const config: AxiosRequestConfig = {
       baseURL: apiEndpoint.endsWith('/') ? apiEndpoint : `${apiEndpoint}/`,
-      headers: { ...options?.headers, clientKey, authorization },
+      headers: { ...options?.headers, clientKey, ...(authorization ? { authorization } : {}) },
       withCredentials: true,
     };
 

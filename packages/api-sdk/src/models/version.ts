@@ -1,10 +1,9 @@
 import * as s from 'superstruct';
 
-import { Command, SCommand, SIntent, SSlot } from '@/models';
 import { UnknownRecord } from '@/types';
 import { dynamicObject } from '@/utils';
 
-import { SCreatorID, SDiagramID, SName, SProjectID, SVariable, SVersionID } from './shared';
+import { Command, SCommand, SCreatorID, SDiagramID, SIntent, SName, SProjectID, SPrototypeModel, SSlot, SVariable, SVersionID } from './shared';
 
 export const SVersionPlatformDataSettings = s.object();
 
@@ -62,16 +61,9 @@ export type VersionPrototypeData<L extends string> = Omit<s.StructType<typeof SV
   locales: L[];
 };
 
-export const SVersionPrototypeModel = s.object({
-  slots: s.array(SSlot),
-  intents: s.array(SIntent),
-});
-
-export type VersionPrototypeModel = s.StructType<typeof SVersionPrototypeModel>;
-
 export const SVersionPrototype = s.object({
   data: SVersionPrototypeData,
-  model: SVersionPrototypeModel,
+  model: SPrototypeModel,
   context: SVersionPrototypeContext,
   settings: s.object(), // TODO: add types
 });

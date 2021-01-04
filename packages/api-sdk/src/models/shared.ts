@@ -144,3 +144,10 @@ export type Step<T extends string = string, D extends UnknownRecord = UnknownRec
 
 export const SBasePlatformData = s.object();
 export type BasePlatformData = s.StructType<typeof SBasePlatformData>;
+
+export const SPrototypeModel = s.object({
+  slots: s.array(SSlot),
+  intents: s.array(SIntent),
+});
+
+export type PrototypeModel = s.StructType<typeof SPrototypeModel>;

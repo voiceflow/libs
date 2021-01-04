@@ -1,7 +1,7 @@
 import * as s from 'superstruct';
 
 import { Member, SMember } from './member';
-import { BasePlatformData, SBasePlatformData, SCreatorID, SName, SPlatform, SProjectID, STeamID, SVersionID } from './shared';
+import { BasePlatformData, SBasePlatformData, SCreatorID, SName, SPlatform, SProjectID, SPrototypeModel, STeamID, SVersionID } from './shared';
 
 export enum ProjectPrototypeNLPType {
   LUIS = 'LUIS',
@@ -23,6 +23,7 @@ export type ProjectPrototypeNLP = ProjectPrototypeLuis;
 export const SProjectPrototype = s.object({
   nlp: s.optional(SProjectPrototypeNLP),
   data: s.object(),
+  trainedModel: s.optional(SPrototypeModel),
 });
 
 export type ProjectPrototype = Omit<s.StructType<typeof SProjectPrototype>, 'nlp'> & {

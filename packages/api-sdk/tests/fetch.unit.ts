@@ -13,7 +13,7 @@ const RESPONSE_DATA = {
   status: 200,
 };
 
-const createFetch = (apiEndpoint = '', options?: FetchConfig) => {
+const createFetch = (apiEndpoint = '', { options, authorization = 'qwe123qwe' }: { options?: FetchConfig; authorization?: string | null } = {}) => {
   const axiosInstance = {
     get: sinon.stub(),
     post: sinon.stub(),
@@ -29,7 +29,7 @@ const createFetch = (apiEndpoint = '', options?: FetchConfig) => {
     options,
     clientKey: '123qwe123',
     apiEndpoint,
-    authorization: 'qwe123qwe',
+    authorization: authorization === null ? undefined : authorization,
   });
 
   return { fetch, axiosCreate, axiosInstance };
@@ -73,7 +73,7 @@ describe('Fetch', () => {
   });
 
   it('.constructor with globalHeaders', () => {
-    const { axiosCreate } = createFetch('https://example.com', { headers: { key: 'val' } });
+    const { axiosCreate } = createFetch('https://example.com', { options: { headers: { key: 'val' } } });
 
     expect(axiosCreate.callCount).to.eql(1);
     expect(axiosCreate.args[0]).to.eql([
@@ -84,6 +84,19 @@ describe('Fetch', () => {
           clientKey: CLIENT_KEY,
           authorization: AUTHORIZATION,
         },
+        withCredentials: true,
+      },
+    ]);
+  });
+
+  it('.constructor without authorization', () => {
+    const { axiosCreate } = createFetch('https://example.com', { authorization: null });
+
+    expect(axiosCreate.callCount).to.eql(1);
+    expect(axiosCreate.args[0]).to.eql([
+      {
+        baseURL: 'https://example.com/',
+        headers: { clientKey: CLIENT_KEY },
         withCredentials: true,
       },
     ]);
@@ -174,7 +187,7 @@ describe('Fetch', () => {
   });
 
   it('.initWithOptions', async () => {
-    const { fetch, axiosCreate } = createFetch('https://example.com', { headers: { key: 'val' } });
+    const { fetch, axiosCreate } = createFetch('https://example.com', { options: { headers: { key: 'val' } } });
 
     Object.assign(fetch['axios'], {
       defaults: {
@@ -206,7 +219,7 @@ describe('Fetch', () => {
   });
 
   it('.setOptions', async () => {
-    const { fetch } = createFetch('https://example.com', { headers: { key: 'val' } });
+    const { fetch } = createFetch('https://example.com', { options: { headers: { key: 'val' } } });
 
     Object.assign(fetch['axios'], {
       defaults: {
