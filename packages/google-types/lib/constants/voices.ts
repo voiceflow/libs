@@ -1,4 +1,4 @@
-import { VoiceLanguageCode } from './locales';
+import { VoiceLanguageCode, Locale } from './locales';
 
 export enum VoiceType {
   STANDARD = 'standard',
@@ -20,18 +20,27 @@ export enum VoiceLanguage {
   ARABIC = 'Arabic',
   BENGALI_INDIA = 'Bengali (India)',
   CHINESE_HONG_KONG = 'Chinese (Hong Kong)',
+  CHINESE_TAIWAN = 'Chinese (Taiwan)',
   CZECH_CZECH_REPUBLIC = 'Czech (Czech Republic)',
   DANISH_DENMARK = 'Danish (Denmark)',
   DUTCH_NETHERLANDS = 'Dutch (Netherlands)',
+  DUTCH_BELGIUM = 'Dutch (Belgium)',
   ENGLISH_AUSTRALIA = 'English (Australia)',
+  ENGLISH_CANADA = 'English (Canada)',
   ENGLISH_INDIA = 'English (India)',
+  ENGLISH_BELGIUM = 'English (Belgium)',
+  ENGLISH_SINGAPORE = 'English (Singapore)',
   ENGLISH_UK = 'English (UK)',
   ENGLISH_US = 'English (US)',
   FILIPINO_PHILIPPINES = 'Filipino (Philippines)',
   FINNISH_FINLAND = 'Finnish (Finland)',
   FRENCH_CANADA = 'French (Canada)',
   FRENCH_FRANCE = 'French (France)',
+  FRENCH_BELGIUM = 'French (Belgium)',
   GERMAN_GERMANY = 'German (Germany)',
+  GERMAN_AUSTRIA = 'German (Austria)',
+  GERMAN_SWITZERLAND = 'German (Switzerland)',
+  GERMAN_BELGIUM = 'German (Belgium)',
   GREEK_GREECE = 'Greek (Greece)',
   GUJARATI_INDIA = 'Gujarati (India)',
   HINDI_INDIA = 'Hindi (India)',
@@ -50,6 +59,7 @@ export enum VoiceLanguage {
   RUSSIAN_RUSSIA = 'Russian (Russia)',
   SLOVAK_SLOVAKIA = 'Slovak (Slovakia)',
   SPANISH_SPAIN = 'Spanish (Spain)',
+  SPANISH = 'Spanish',
   SWEDISH_SWEDEN = 'Swedish (Sweden)',
   TAMIL_INDIA = 'Tamil (India)',
   TELUGU_INDIA = 'Telugu (India)',
@@ -64,6 +74,42 @@ export type GoogleVoice = {
   voiceType: VoiceType[];
   voiceName: string[];
   ssmlGender: string;
+};
+
+export const LocaleCodeToCountryLanguage: Record<Locale, VoiceLanguage> = {
+  [Locale.ZH_HK]: VoiceLanguage.CHINESE_HONG_KONG,
+  [Locale.ZH_TW]: VoiceLanguage.CHINESE_TAIWAN,
+  [Locale.DA_DK]: VoiceLanguage.DANISH_DENMARK,
+  [Locale.NL_NL]: VoiceLanguage.DUTCH_NETHERLANDS,
+  [Locale.NL_BE]: VoiceLanguage.DUTCH_BELGIUM,
+  [Locale.EN_AU]: VoiceLanguage.ENGLISH_AUSTRALIA,
+  [Locale.EN_CA]: VoiceLanguage.ENGLISH_CANADA,
+  [Locale.EN_GB]: VoiceLanguage.ENGLISH_UK,
+  [Locale.EN_IN]: VoiceLanguage.ENGLISH_INDIA,
+  [Locale.EN_BE]: VoiceLanguage.ENGLISH_BELGIUM,
+  [Locale.EN_SG]: VoiceLanguage.ENGLISH_SINGAPORE,
+  [Locale.EN_US]: VoiceLanguage.ENGLISH_US,
+  [Locale.FR_FR]: VoiceLanguage.FRENCH_FRANCE,
+  [Locale.FR_CA]: VoiceLanguage.FRENCH_CANADA,
+  [Locale.FR_BE]: VoiceLanguage.FRENCH_BELGIUM,
+  [Locale.DE_DE]: VoiceLanguage.GERMAN_GERMANY,
+  [Locale.DE_AT]: VoiceLanguage.GERMAN_AUSTRIA,
+  [Locale.DE_CH]: VoiceLanguage.GERMAN_SWITZERLAND,
+  [Locale.DE_BE]: VoiceLanguage.GERMAN_BELGIUM,
+  [Locale.HI_IN]: VoiceLanguage.HINDI_INDIA,
+  [Locale.ID_ID]: VoiceLanguage.INDONASIAN_INDONESIA,
+  [Locale.IT_IT]: VoiceLanguage.ITALIAN_ITALY,
+  [Locale.JA_JP]: VoiceLanguage.JAPANESE_JAPAN,
+  [Locale.KO_KR]: VoiceLanguage.KOREAN_SOUTH_KOREA,
+  [Locale.NO_NO]: VoiceLanguage.NORWEGIAN_NORWAY,
+  [Locale.PL_PL]: VoiceLanguage.POLISH_POLAND,
+  [Locale.PT_BR]: VoiceLanguage.PORTUGESE_BRAZIL,
+  [Locale.RU_RU]: VoiceLanguage.RUSSIAN_RUSSIA,
+  [Locale.ES_ES]: VoiceLanguage.SPANISH_SPAIN,
+  [Locale.ES_419]: VoiceLanguage.SPANISH,
+  [Locale.SV_SE]: VoiceLanguage.SLOVAK_SLOVAKIA,
+  [Locale.TH_TH]: VoiceLanguage.THAI_THAILAND,
+  [Locale.TR_TR]: VoiceLanguage.TURKISH_TURKEY,
 };
 
 export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, GoogleVoice[]> = {
