@@ -14,4 +14,4 @@ export type NodeData = {
 
 export type Step<V> = DefaultStep<NodeType.SPEAK, StepData<V>>;
 export type Node = DefaultNode<NodeType.SPEAK, NodeData>;
-export type TraceFrame = DefaultTraceFrame<TraceType.SPEAK, { message: string; choices?: { name: string }[] }>;
+export type TraceFrame = DefaultTraceFrame<TraceType.SPEAK, { message: string; type?: string; voice?: string; src?: string | null }>;

@@ -16,9 +16,6 @@ export enum TraceType {
   STREAM = 'stream',
 }
 
-export type DebugTraceFrame = TraceFrame<TraceType.DEBUG, { message: string }>;
-export type BlockTraceFrame = TraceFrame<TraceType.BLOCK, { blockID: string }>;
-
 export type NodeID = string | null;
 
 export enum NodeType {

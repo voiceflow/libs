@@ -4,3 +4,4 @@ export * from './project';
 export * from './version';
 export * from './request';
 export * from './constants';
+export * from './trace';
