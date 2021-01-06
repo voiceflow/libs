@@ -583,7 +583,7 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, GoogleVoice[]> 
     {
       voiceLanguage: VoiceLanguage.ENGLISH_UK,
       voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.EN_GB}-${VoiceType.STANDARD}-D`, `${VoiceLanguageCode.EN_GB}-${VoiceType.WAVENET}-D`],
+      voiceName: [`${VoiceLanguageCode.EN_GB}-${VoiceType.STANDARD}-F`, `${VoiceLanguageCode.EN_GB}-${VoiceType.WAVENET}-F`],
       ssmlGender: `${SSMLGender.FEMALE}-3`,
     },
   ],
