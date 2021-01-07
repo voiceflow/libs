@@ -42,4 +42,4 @@ export type NodeData<E = GeneralEvent> = {
 
 export type Step<V> = DefaultStep<NodeType.INTERACTION, StepData<V>>;
 export type Node = DefaultNode<NodeType.INTERACTION, NodeData>;
-export type TraceFrame = DefaultTraceFrame<TraceType.CHOICE, { choices: { name: string }[] }>;
+export type TraceFrame = DefaultTraceFrame<TraceType.CHOICE, { choices: { intent?: string; name: string }[] }>;
