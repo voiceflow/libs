@@ -70,4 +70,5 @@ export enum NodeType {
   COMMAND = 'command',
   INTENT = 'intent',
   INTERACTION = 'interaction',
+  CAPTURE = 'capture',
 }
