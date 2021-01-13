@@ -1,5 +1,5 @@
 import { Version } from '@voiceflow/api-sdk';
-import { BaseVersionData, defaultBaseVersionData, GeneralCommand, Locale } from '@voiceflow/general-types';
+import { BaseVersionData, defaultBaseVersionData, Locale } from '@voiceflow/general-types';
 
 import { AlexaCommand } from '@/nodes';
 import { Voice } from '@/types';
@@ -25,7 +25,7 @@ export type AlexaVersionData = Omit<BaseVersionData<Voice>, 'settings' | 'publis
   };
 };
 
-export type AlexaVersion = Version<AlexaVersionData, GeneralCommand | AlexaCommand, Locale>;
+export type AlexaVersion = Version<AlexaVersionData, AlexaCommand, Locale>;
 
 export const defaultAlexaVersionData = ({
   status: { stage = AlexaStage.DEV } = { stage: AlexaStage.DEV },

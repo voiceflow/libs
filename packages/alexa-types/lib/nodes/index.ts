@@ -1,9 +1,12 @@
 import * as AccountLinking from './accountLinking';
 import * as CancelPayment from './cancelPayment';
 import * as Card from './card';
+import * as Command from './command';
 import * as Directive from './directive';
 import * as Display from './display';
 import * as Event from './event';
+import * as Intent from './intent';
+import * as Interaction from './interaction';
 import * as Payment from './payment';
 import * as Permission from './permission';
 import * as Reminder from './reminder';
@@ -23,7 +26,10 @@ export type AlexaSteps =
   | Event.Step
   | Payment.Step
   | CancelPayment.Step
-  | Display.Step;
+  | Display.Step
+  | Command.Step
+  | Interaction.Step
+  | Intent.Step;
 
 export type AlexaNodes =
   | Card.Node
@@ -35,6 +41,7 @@ export type AlexaNodes =
   | UserInfo.Node
   | Payment.Node
   | CancelPayment.Node
-  | Display.Node;
+  | Display.Node
+  | Interaction.Node;
 
-export type AlexaCommand = Event.Command;
+export type AlexaCommand = Event.Command | Command.Command | Intent.Command;

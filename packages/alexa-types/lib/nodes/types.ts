@@ -65,4 +65,9 @@ export enum NodeType {
   // event
   DIRECTIVE = 'directive',
   EVENT = 'event',
+
+  // request
+  COMMAND = 'command',
+  INTENT = 'intent',
+  INTERACTION = 'interaction',
 }
