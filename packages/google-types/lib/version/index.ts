@@ -1,6 +1,7 @@
 import { Version } from '@voiceflow/api-sdk';
-import { BaseVersionData, defaultBaseVersionData, GeneralCommand, Locale } from '@voiceflow/general-types';
+import { BaseVersionData, defaultBaseVersionData, Locale } from '@voiceflow/general-types';
 
+import { GoogleCommand } from '@/nodes';
 import { Voice } from '@/types';
 
 import { defaultGoogleVersionPublishing, GoogleVersionPublishing } from './publishing';
@@ -24,7 +25,7 @@ export type GoogleVersionData = Omit<BaseVersionData<Voice>, 'settings' | 'publi
   };
 };
 
-export type GoogleVersion = Version<GoogleVersionData, GeneralCommand, Locale>;
+export type GoogleVersion = Version<GoogleVersionData, GoogleCommand, Locale>;
 
 export const defaultGoogleVersionVersionData = ({
   status: { stage = GoogleStage.DEV } = { stage: GoogleStage.DEV },
