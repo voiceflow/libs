@@ -43,6 +43,7 @@ export type DiagramID = s.StructType<typeof SDiagramID>;
 export const SIntentInput = s.object({
   text: s.string(),
   slots: s.optional(s.array(s.string())),
+  voice: s.optional(s.string()),
 });
 export type IntentInput = s.StructType<typeof SIntentInput>;
 
