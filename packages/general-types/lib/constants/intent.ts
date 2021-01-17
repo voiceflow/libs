@@ -1,14 +1,14 @@
 export enum IntentName {
-  NO = 'NO',
-  YES = 'YES',
-  STOP = 'STOP',
-  NEXT = 'NEXT',
-  PAUSE = 'PAUSE',
-  CANCEL = 'CANCEL',
-  RESUME = 'RESUME',
-  REPEAT = 'REPEAT',
-  PREVIOUS = 'PREVIOUS',
-  START_OVER = 'START_OVER',
+  NO = 'VF.NO',
+  YES = 'VF.YES',
+  STOP = 'VF.STOP',
+  NEXT = 'VF.NEXT',
+  PAUSE = 'VF.PAUSE',
+  CANCEL = 'VF.CANCEL',
+  RESUME = 'VF.RESUME',
+  REPEAT = 'VF.REPEAT',
+  PREVIOUS = 'VF.PREVIOUS',
+  START_OVER = 'VF.START_OVER',
 }
 
 export type DefaultIntent = {
