@@ -24,6 +24,7 @@ export const SProjectPrototype = s.object({
   nlp: s.optional(SProjectPrototypeNLP),
   data: s.object(),
   trainedModel: s.optional(SPrototypeModel),
+  lastTrainedTime: s.optional(s.number()),
 });
 
 export type ProjectPrototype = Omit<s.StructType<typeof SProjectPrototype>, 'nlp'> & {
