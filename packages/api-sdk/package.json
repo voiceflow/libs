@@ -94,7 +94,12 @@
     "build": "npm run clean && ttsc --project ./tsconfig.build.json",
     "clean": "rimraf build",
     "lint": "eslint \"src/**/*.ts\"",
-    "test": "NODE_ENV=test nyc ts-mocha --paths",
+    "lint:fix": "yarn lint --fix",
+    "lint:quiet": "yarn lint --quiet",
+    "test": "NODE_ENV=test nyc ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.{unit,it}.ts'",
+    "test:integration": "NODE_ENV=test nyc ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.it.ts'",
+    "test:single": "NODE_ENV=test ts-mocha --paths --config ./config/tests/.mocharc.json",
+    "test:unit": "NODE_ENV=test nyc ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.unit.ts'",
     "tdd": "yarn test --watch",
     "prepare": "npm run build"
   }

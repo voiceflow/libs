@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   codecov: codecov/codecov@1.0.2
-  vfcommon: voiceflow/common@0.0.13
+  vfcommon: voiceflow/common@0.0.52
 
 jobs:
   build-and-test:
@@ -10,16 +10,12 @@ jobs:
     steps:
       - checkout
       - vfcommon/install_node_modules
-      - run:
-          name: "Build package"
-          command: |
-            yarn build
-      - run:
-          name: "Run tests"
-          command: |
-            yarn test
+      - vfcommon/lint_source
+      - vfcommon/build
+      - vfcommon/unit_tests
       - codecov/upload:
           file: nyc_coverage/lcov.info
+          flags: unit
 
 workflows:
   test-and-release:

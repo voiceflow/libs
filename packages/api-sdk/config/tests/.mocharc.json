@@ -5,5 +5,5 @@
   "require": ["source-map-support/register"],
   "exit": true,
   "use-strict": true,
-  "recursive": ["./tests/**/*.unit.ts"]
+  "recursive": true
 }
