@@ -85,6 +85,8 @@
     "build": "yarn clean && ttsc --project ./tsconfig.build.json",
     "clean": "rimraf build",
     "lint": "eslint \"lib/**/*.{js,ts}\"",
+    "lint:fix": "yarn lint --fix",
+    "lint:quiet": "yarn lint --quiet",
     "prepare": "yarn build"
   }
 }
