@@ -1,4 +1,4 @@
-import { VoiceLanguageCode, Locale } from './locales';
+import { Locale, VoiceLanguageCode } from './locales';
 
 export enum VoiceType {
   STANDARD = 'standard',
