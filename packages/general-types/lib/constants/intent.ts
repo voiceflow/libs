@@ -1,3 +1,5 @@
+import { Language } from '@/types';
+
 export enum IntentName {
   NO = 'VF.NO',
   YES = 'VF.YES',
@@ -18,7 +20,7 @@ export type DefaultIntent = {
 
 export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   // English (AU,CA,US,UK,IN)
-  en: [
+  [Language.EN]: [
     {
       name: IntentName.NO,
       samples: ['no', 'nope', 'nay', 'nah', 'no way', 'negative'],
@@ -62,7 +64,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   ],
 
   // French (CA,FR)
-  fr: [
+  [Language.FR]: [
     {
       name: IntentName.NO,
       samples: ['non', 'nan', 'absolument pas', 'hors de question', 'bien sûr que non'],
@@ -115,7 +117,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   ],
 
   // Japanese (JA)
-  ja: [
+  [Language.JA]: [
     {
       name: IntentName.NO,
       samples: ['no', 'いいえ', 'そうだはない', 'いやそれどころか', 'ノン', '否', '否や'],
@@ -174,7 +176,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   ],
 
   // Italian (IT)
-  it: [
+  [Language.IT]: [
     {
       name: IntentName.NO,
       samples: ['il no', 'no', 'il rifiuto', 'la negazione', 'nessuno'],
@@ -234,7 +236,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   ],
 
   // Spanish (ES,MX)
-  es: [
+  [Language.ES]: [
     {
       name: IntentName.NO,
       samples: ['no', 'ninguno', 'imposible', 'prohibido', 'la negativa', 'el voto negativo', 'el voto en contra'],
@@ -289,7 +291,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   ],
 
   // German (DE)
-  de: [
+  [Language.DE]: [
     {
       name: IntentName.NO,
       samples: ['no', 'nein', 'kein', 'nicht'],
@@ -351,7 +353,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   ],
 
   // Portuguese (PT)
-  pt: [
+  [Language.PT]: [
     {
       name: IntentName.NO,
       samples: ['no', 'não', 'negativa'],
@@ -395,7 +397,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   ],
 
   // Hindi (IN)
-  hi: [
+  [Language.HI]: [
     {
       name: IntentName.NO,
       samples: ['नहीं', 'ना', 'नेगटिव़्', 'नो', 'नोप्'],

@@ -53,6 +53,59 @@ export enum Locale {
   TR_TR = 'tr-TR',
 }
 
+export enum Language {
+  // English
+  EN = 'en',
+
+  // Arabic
+  AR = 'ar',
+
+  // Chinese
+  ZH = 'zh',
+
+  // Dutch
+  NL = 'nl',
+
+  // French
+  FR = 'fr',
+
+  // German
+  DE = 'de',
+
+  // Gujarati
+  GU = 'gu',
+
+  // Hindi
+  HI = 'hi',
+
+  // Italian
+  IT = 'it',
+
+  // Japanese
+  JA = 'ja',
+
+  // Korean
+  KO = 'ko',
+
+  // Marathi
+  MR = 'mr',
+
+  // Portugese
+  PT = 'pt',
+
+  // Spanish
+  ES = 'es',
+
+  // Tamil
+  TA = 'ta',
+
+  // Telugu
+  TE = 'te',
+
+  // Turkish
+  TR = 'tr',
+}
+
 export enum Voice {
   AUDIO = 'audio', // not a real voice (use content as audio url)
   DEFAULT = 'default', // not a real voice (default no voice)
