@@ -20,6 +20,7 @@ export type IntentRequest = Request<
       value: string; // inferred value of matched entity
       query?: string; // raw value of matched entity
     }[]; // entities matches - multiple of the same entity name may be matched
+    confidence?: number; // 0-1 confidence of match;
   }
 >;
 
