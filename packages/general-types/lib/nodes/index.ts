@@ -18,6 +18,7 @@ import * as Set from './set';
 import * as Speak from './speak';
 import * as Start from './start';
 import * as Stream from './stream';
+import * as Visual from './visual';
 import * as Zapier from './zapier';
 
 export * from './types';
@@ -40,6 +41,7 @@ export type BaseSteps<V> =
   | If.Step
   | Stream.Step
   | General.Step
+  | Visual.Step
   | Command.Step;
 
 export type BaseNodes =
@@ -55,6 +57,7 @@ export type BaseNodes =
   | Random.Node
   | Stream.Node
   | General.Node
+  | Visual.Node
   | If.Node;
 
 export type GeneralSteps = BaseSteps<Voice>;
