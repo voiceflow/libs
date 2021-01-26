@@ -20,9 +20,9 @@
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
     "@voiceflow/commitlint-config": "^1.0.1",
-    "@voiceflow/eslint-config": "^2.0.4",
-    "@voiceflow/git-branch-check": "^1.0.6",
-    "@voiceflow/prettier-config": "^1.0.4",
+    "@voiceflow/eslint-config": "^2.0.5",
+    "@voiceflow/git-branch-check": "^1.1.3",
+    "@voiceflow/prettier-config": "^1.0.5",
     "@zerollup/ts-transform-paths": "^1.7.9",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
@@ -54,9 +54,6 @@
   },
   "license": "UNLICENSED",
   "lint-staged": {
-    ".circleci/config.yml": [
-      "circleci config validate"
-    ],
     "package.json": [
       "fixpack",
       "git add"
@@ -79,6 +76,7 @@
     "lint": "eslint \"lib/**/*.{js,ts}\"",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
+    "lint:report": "yarn lint --format json -o sonar/report.json",
     "prepare": "yarn build"
   }
 }
