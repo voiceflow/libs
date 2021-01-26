@@ -45,3 +45,6 @@ local_secrets.yaml
 
 # build folder
 build
+
+#Sonar report
+sonar/
