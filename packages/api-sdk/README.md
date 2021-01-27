@@ -1,5 +1,9 @@
 # api-sdk
 
+[![circle ci](https://circleci.com/gh/voiceflow/api-sdk/tree/master.svg?style=shield&circle-token=4cca5aee2fe1ed3f55217da5c004db623a949d9e)](https://circleci.com/gh/voiceflow/api-sdk/tree/master)
+[![codecov](https://codecov.io/gh/voiceflow/api-sdk/branch/master/graph/badge.svg?token=I7UDBF71DB)](https://codecov.io/gh/voiceflow/api-sdk)
+[![sonar quality gate](https://sonarcloud.io/api/project_badges/measure?project=voiceflow_api-sdk&metric=alert_status)](https://sonarcloud.io/dashboard?id=voiceflow_api-sdk)
+
 SDK for Voiceflow API, with typings for general voiceflow data structures
 
 ## Getting Started
