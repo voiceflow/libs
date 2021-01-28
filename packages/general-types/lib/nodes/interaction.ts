@@ -1,6 +1,6 @@
 import { SlotMapping } from '@voiceflow/api-sdk';
 
-import { NoMatches, Prompt } from '@/types';
+import { Chip, NoMatches, Prompt } from '@/types';
 
 import { DefaultNode, DefaultStep, GeneralEvent, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
@@ -23,6 +23,7 @@ export type StepData<V> = {
   else: ElseData<V>;
   choices: Choice[];
   reprompt: Prompt<V> | null;
+  chips: Chip[] | null;
 };
 
 export type IntentEvent = {
@@ -38,6 +39,7 @@ export type NodeData<E = GeneralEvent> = {
     nextId: string | null;
   }[];
   elseId?: NodeID | null;
+  chips?: Chip[];
 };
 
 export type Step<V> = DefaultStep<NodeType.INTERACTION, StepData<V>>;

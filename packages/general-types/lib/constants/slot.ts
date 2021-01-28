@@ -66,14 +66,14 @@ export const SlotTypes: ObjectKeys = {
   [Language.FR]: [
     {
       name: SlotType.NUMBER,
-      label: 'Nummer',
+      label: 'Nombre',
       values: ['-43', '0', '35.5', '8', '520', '23599', '325', '15', '84730909029', '6947'],
     },
   ],
   [Language.ES]: [
     {
       name: SlotType.NUMBER,
-      label: 'Nummer',
+      label: 'Número',
       values: ['-43', '0', '35.5', '8', '520', '23599', '325', '15', '84730909029', '6947'],
     },
     // {

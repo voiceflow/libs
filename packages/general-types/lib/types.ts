@@ -117,6 +117,10 @@ export type Prompt<V> = {
   content: string;
 };
 
+export type Chip = {
+  label: string;
+};
+
 export type NoMatches<V> = {
   randomize: boolean;
   reprompts: Prompt<V>[];
