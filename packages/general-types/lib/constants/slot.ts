@@ -22,13 +22,8 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.NUMBER,
       label: 'Number',
-      values: ['-1', '0', '3.5', '4', '500', '23599', '-52', '15'],
+      values: ['-43', '0', '35.5', '8', '520', '23599', '325', '15', '84730909029', '6947'],
     },
-    // {
-    //   name: SlotType.COLOR,
-    //   label: 'Color',
-    //   values: ['white', 'blue', 'green', 'black', 'brown', 'yellow', 'red', 'maroon', 'cyan', 'orange'],
-    // },
     {
       name: SlotType.NAME,
       label: 'Name',
@@ -55,29 +50,56 @@ export const SlotTypes: ObjectKeys = {
         'sam',
       ],
     },
+    // {
+    //   name: SlotType.COLOR,
+    //   label: 'Color',
+    //   values: ['white', 'blue', 'green', 'black', 'brown', 'yellow', 'red', 'maroon', 'cyan', 'orange'],
+    // },
+  ],
+  [Language.DE]: [
+    {
+      name: SlotType.NUMBER,
+      label: 'Nummer',
+      values: ['-43', '0', '35.5', '8', '520', '23599', '325', '15', '84730909029', '6947'],
+    },
+  ],
+  [Language.FR]: [
+    {
+      name: SlotType.NUMBER,
+      label: 'Nummer',
+      values: ['-43', '0', '35.5', '8', '520', '23599', '325', '15', '84730909029', '6947'],
+    },
   ],
   [Language.ES]: [
+    {
+      name: SlotType.NUMBER,
+      label: 'Nummer',
+      values: ['-43', '0', '35.5', '8', '520', '23599', '325', '15', '84730909029', '6947'],
+    },
+    // {
+    //   name: SlotType.NAME,
+    //   label: 'Nombre',
+    //   values: [
+    //     'alejandro',
+    //     'xavier',
+    //     'savannah',
+    //     'santiago',
+    //     'sofia',
+    //     'camila',
+    //     'mateo',
+    //     'nicolas',
+    //     'samuel',
+    //     'valeria',
+    //     'lucas',
+    //     'diego',
+    //     'juan',
+    //     'isabella',
+    //   ],
+    // },
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
     //   values: ['negro', 'blanco', 'rojo', 'azul', 'verde', 'marrón', 'verde', 'naranja', 'amarillo', 'cian', 'violeta'],
     // },
-    {
-      name: SlotType.NAME,
-      label: 'Nombre',
-      values: ['alejandro', 'xavier', 'savannah', 'santiago', 'sofia', 'camila', 'mateo', 'nicolas', 'samuel', 'valeria', 'lucas', 'diego', 'juan'],
-    },
   ],
-  // [Language.RU]: [
-  //   {
-  //     name: SlotType.COLOR,
-  //     label: 'Цвет',
-  //     values: ['белый', 'голубой', 'зеленый'],
-  //   },
-  //   {
-  //     name: SlotType.FOODSIZE,
-  //     label: 'Размер порции',
-  //     values: ['маленькая', 'средняя', 'большая'],
-  //   },
-  // ],
 };
