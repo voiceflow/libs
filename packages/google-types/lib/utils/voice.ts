@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 import {
   GoogleVoice,
   Language,
@@ -8,8 +6,9 @@ import {
   VoiceLanguageCode,
   VoiceLanguageCodeToVoice,
   VoiceType,
-} from './constants';
+} from '@/constants';
 
+// eslint-disable-next-line import/prefer-default-export
 export const getVoiceForLanguage = (language: Language, voiceType: VoiceType) => {
   const locales = LanguageToLocale[language];
 

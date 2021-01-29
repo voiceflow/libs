@@ -602,6 +602,11 @@
   resolved "https://registry.yarnpkg.com/@voiceflow/commitlint-config/-/commitlint-config-1.0.1.tgz#e9513aa348d5e88ff064022e2dae8d0d7e227f6a"
   integrity sha512-7amH9jUarcsB5CXmYNOeejQXtCs7kdyETjPp6q2x0y1mNGWfhqzWZ/FySP+wkvFytXyu46PADH29rBw3p2zGdw==
 
+"@voiceflow/common@6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@voiceflow/common/-/common-6.5.0.tgz#68659641bf7e868b4594a640d63072f573b62f1e"
+  integrity sha512-6czuZhUs3dGT/5IWI2ejTf/y69BmzG3/PCS0o1YoE0wxGxXPpfBUdelK9ZKCVgk6s89WnuDKYLKmgNWpln2dkw==
+
 "@voiceflow/eslint-config@^2.0.5":
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/@voiceflow/eslint-config/-/eslint-config-2.0.5.tgz#7c167fbb703dddd9db7a10b335ec34d8aeafad76"
@@ -630,10 +635,10 @@
     eslint-plugin-xss "^0.1.9"
     typescript "^3.9.7"
 
-"@voiceflow/general-types@1.21.0":
-  version "1.21.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.21.0.tgz#b909698a18c8db77f5cc7fb3a5e6fb5efd350d63"
-  integrity sha512-/gsDTuR1db4Mw0Tm22LVLDAOFcHN/iPuHqV7NL7jReUC7RWXx7BmQSskloeLFCL/Sa4MOmEo+79PAYUFNO6CVw==
+"@voiceflow/general-types@1.22.0":
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.22.0.tgz#3c6775b87945253502f13ba6b8583f09233ff395"
+  integrity sha512-D0/9gk3SNsLdkoeyUm7LWdVNBnB8d2nzT4ZpdmDEKsh78oTkBXEGVBd5ns/kojw+MJfKy/F+J2t6XlRsvRnLbQ==
   dependencies:
     "@voiceflow/api-sdk" "1.22.0"
 

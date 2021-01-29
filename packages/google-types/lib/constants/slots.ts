@@ -1,30 +1,31 @@
+import { BuiltinSlot } from '@voiceflow/common';
+
 export enum SlotType {
   DATE = 'actions.type.Date',
-  DATE_TIME = 'actions.type.DateTime',
   TIME = 'actions.type.Time',
   NUMBER = 'actions.type.Number',
+  DATE_TIME = 'actions.type.DateTime',
 }
 
-export const SlotData = [
-  { label: 'Custom', type: null, locales: {} },
+export const BUILT_IN_SLOTS: BuiltinSlot<SlotType, never>[] = [
   {
-    label: 'Date',
     type: SlotType.DATE,
+    label: 'Date',
     immutable: true,
   },
   {
-    label: 'DateTime',
     type: SlotType.DATE_TIME,
+    label: 'DateTime',
     immutable: true,
   },
   {
-    label: 'Time',
     type: SlotType.TIME,
+    label: 'Time',
     immutable: true,
   },
   {
-    label: 'Number',
     type: SlotType.NUMBER,
+    label: 'Number',
     immutable: true,
   },
 ];

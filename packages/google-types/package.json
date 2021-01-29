@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@voiceflow/api-sdk": "1.22.0",
-    "@voiceflow/general-types": "1.21.0",
+    "@voiceflow/common": "6.5.0",
+    "@voiceflow/general-types": "1.22.0",
     "googleapis": "^60.0.1"
   },
   "devDependencies": {
@@ -50,7 +51,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
+      "_pre-commit": "lint-staged",
       "pre-push": "git-branch-check"
     }
   },

@@ -7,9 +7,9 @@ export enum Voice {
   AUDIO = 'audio', // not a real voice (use content as audio url)
 }
 
-export const DEFAULT_Voice = {};
+export const DEFAULT_LOCALE_VOICE_MAP = {};
 
-export const REGIONAL_Voice = [
+export const REGIONAL_VOICE = [
   {
     label: 'Default',
     options: [Voice.DEFAULT],
