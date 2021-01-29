@@ -1,3 +1,5 @@
+import { BuiltinSlot } from '@voiceflow/common';
+
 import { Locale as L } from '@/types';
 
 export enum SlotType {
@@ -105,25 +107,24 @@ export enum SlotType {
   WRITTENCREATIVEWORKTYPE = 'AMAZON.WrittenCreativeWorkType',
 }
 
-export const SlotData = [
-  { label: 'Custom', type: null, locales: {} },
+export const BUILT_IN_SLOTS: BuiltinSlot<SlotType, L>[] = [
   {
     label: 'Date',
     type: SlotType.DATE,
-    immutable: true,
     locales: [L.DE_DE, L.EN_US, L.EN_CA, L.PT_BR, L.EN_IN, L.HI_IN, L.ES_ES, L.FR_CA, L.ES_MX, L.IT_IT, L.EN_AU, L.ES_US, L.FR_FR, L.EN_GB, L.JA_JP],
+    immutable: true,
   },
   {
     label: 'Number',
     type: SlotType.NUMBER,
-    immutable: true,
     locales: [L.DE_DE, L.EN_US, L.EN_CA, L.PT_BR, L.EN_IN, L.HI_IN, L.ES_ES, L.FR_CA, L.ES_MX, L.IT_IT, L.EN_AU, L.ES_US, L.FR_FR, L.EN_GB, L.JA_JP],
+    immutable: true,
   },
   {
     label: 'Time',
     type: SlotType.TIME,
-    immutable: true,
     locales: [L.DE_DE, L.EN_US, L.EN_CA, L.PT_BR, L.EN_IN, L.HI_IN, L.ES_ES, L.FR_CA, L.ES_MX, L.IT_IT, L.EN_AU, L.ES_US, L.FR_FR, L.EN_GB, L.JA_JP],
+    immutable: true,
   },
   {
     label: 'Color',
@@ -139,8 +140,8 @@ export const SlotData = [
   {
     label: 'Duration',
     type: SlotType.DURATION,
-    immutable: true,
     locales: [L.DE_DE, L.EN_US, L.EN_CA, L.PT_BR, L.EN_IN, L.HI_IN, L.ES_ES, L.FR_CA, L.ES_MX, L.IT_IT, L.EN_AU, L.ES_US, L.FR_FR, L.EN_GB, L.JA_JP],
+    immutable: true,
   },
   {
     label: 'Ordinal',
@@ -232,8 +233,8 @@ export const SlotData = [
   {
     label: 'FourDigitNumber',
     type: SlotType.FOUR_DIGIT_NUMBER,
-    immutable: true,
     locales: [L.DE_DE, L.EN_US, L.EN_CA, L.PT_BR, L.EN_IN, L.HI_IN, L.ES_ES, L.FR_CA, L.ES_MX, L.IT_IT, L.EN_AU, L.ES_US, L.FR_FR, L.EN_GB, L.JA_JP],
+    immutable: true,
   },
   { label: 'GB_CITY', type: SlotType.GB_CITY, locales: [L.DE_DE, L.EN_US, L.EN_CA, L.EN_AU, L.EN_GB] },
   { label: 'GB_FIRST_NAME', type: SlotType.GB_FIRST_NAME, locales: [L.DE_DE, L.EN_US, L.EN_CA, L.EN_AU, L.EN_GB] },

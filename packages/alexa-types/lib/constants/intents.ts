@@ -1,3 +1,9 @@
+import { BuiltinIntent } from '@voiceflow/common';
+import { DefaultIntent } from '@voiceflow/general-types';
+import { v1 } from 'ask-smapi-model';
+
+export type InterfaceType = v1.skill.Manifest.Interface['type'];
+
 export enum AmazonIntent {
   CANCEL = 'AMAZON.CancelIntent',
   FALLBACK = 'AMAZON.FallbackIntent',
@@ -28,10 +34,11 @@ export enum AmazonIntent {
   VOICEFLOW = 'VoiceFlowIntent',
 }
 
-export const VALID_UTTERANCES =
-  "a-zA-Z\xC0-\xFF\u0100-\u017F\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFF9F\u4E00-\u9FAF\u3400-\u4DBF._'\\- \\[\\]";
+export type AlexaDefaultIntent = DefaultIntent & {
+  keep?: string[];
+};
 
-export const INTERFACE_INTENTS = {
+export const INTERFACE_INTENTS: Partial<Record<InterfaceType, { name: AmazonIntent }[]>> = {
   // Reference: https://developer.amazon.com/docs/custom-skills/audioplayer-interface-reference.html#intents
   AUDIO_PLAYER: [
     {
@@ -64,7 +71,7 @@ export const INTERFACE_INTENTS = {
   ],
 };
 
-export const BUILT_IN_INTENTS_ALEXA = [
+export const BUILT_IN_INTENTS: BuiltinIntent[] = [
   {
     name: AmazonIntent.CANCEL,
     slots: [],
@@ -171,7 +178,7 @@ export const BUILT_IN_INTENTS_ALEXA = [
   },
 ];
 
-export const DEFAULT_INTENTS = {
+export const DEFAULT_INTENTS: Record<string, { defaults: AlexaDefaultIntent[]; builtIns: AlexaDefaultIntent[] }> = {
   // English (AU,CA,US,UK,IN)
   en: {
     defaults: [
@@ -197,7 +204,7 @@ export const DEFAULT_INTENTS = {
         samples: ['no', 'nope', 'nay', 'nah', 'no way', 'negative'],
       },
     ],
-    built_ins: [
+    builtIns: [
       {
         name: AmazonIntent.REPEAT,
         samples: ['repeat', 'again', 'say again'],
@@ -229,7 +236,7 @@ export const DEFAULT_INTENTS = {
         samples: ['non', 'nan', 'absolument pas', 'hors de question', 'bien sûr que non'],
       },
     ],
-    built_ins: [
+    builtIns: [
       {
         name: AmazonIntent.REPEAT,
         samples: [
@@ -303,7 +310,7 @@ export const DEFAULT_INTENTS = {
         samples: ['no', 'いいえ', 'そうだはない', 'いやそれどころか', 'ノン', '否', '否や'],
       },
     ],
-    built_ins: [
+    builtIns: [
       {
         name: AmazonIntent.REPEAT,
         samples: ['repeat', '繰り返す', '引き返す', '折れ返る', '返す'],
@@ -362,7 +369,7 @@ export const DEFAULT_INTENTS = {
         samples: ['il no', 'no', 'il rifiuto', 'la negazione', 'nessuno'],
       },
     ],
-    built_ins: [
+    builtIns: [
       {
         name: AmazonIntent.REPEAT,
         samples: ['repeat', '繰り返す', '引き返す', '折れ返る', '返す'],
@@ -405,7 +412,7 @@ export const DEFAULT_INTENTS = {
         samples: ['no', 'ninguno', 'imposible', 'prohibido', 'la negativa', 'el voto negativo', 'el voto en contra'],
       },
     ],
-    built_ins: [
+    builtIns: [
       {
         name: AmazonIntent.REPEAT,
         samples: ['repeat', 'repetir', 'repetirse', 'reiterar', 'recitar', 'volver a dar'],
@@ -455,7 +462,7 @@ export const DEFAULT_INTENTS = {
         samples: ['no', 'nein', 'kein', 'nicht'],
       },
     ],
-    built_ins: [
+    builtIns: [
       {
         name: AmazonIntent.REPEAT,
         samples: ['repeat', 'wiederholen', 'wiedergeben', 'repetieren', 'weitersagen'],
@@ -487,7 +494,7 @@ export const DEFAULT_INTENTS = {
         samples: ['no', 'não', 'negativa'],
       },
     ],
-    built_ins: [
+    builtIns: [
       {
         name: AmazonIntent.REPEAT,
         samples: ['repeat', 'repetir', 'reiterar', 'refazer', 'amiudar', 'recitar de cor'],
@@ -587,7 +594,7 @@ export const DEFAULT_INTENTS = {
         samples: ['नहीं', 'ना', 'नेगटिव़्', 'नो', 'नोप्'], // negative, no, nope
       },
     ],
-    built_ins: [
+    builtIns: [
       {
         name: AmazonIntent.REPEAT,
         samples: [
@@ -617,7 +624,7 @@ export const DEFAULT_INTENTS = {
   },
 };
 
-export const CATCH_ALL_INTENT = {
+export const CATCH_ALL_INTENT: Record<string, AlexaDefaultIntent> = {
   en: {
     name: 'VoiceFlowIntent',
     samples: ['voice flow'],

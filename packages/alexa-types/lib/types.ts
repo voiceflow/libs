@@ -74,7 +74,7 @@ export enum Voice {
   BIANCA = 'Bianca',
 }
 
-export const DEFAULT_Voice = {
+export const DEFAULT_LOCALE_VOICE_MAP = {
   [Locale.DE_DE]: Voice.MARLENE,
   [Locale.EN_AU]: Voice.NICOLE,
   [Locale.EN_CA]: Voice.JOANNA,
@@ -92,7 +92,7 @@ export const DEFAULT_Voice = {
   [Locale.HI_IN]: Voice.ADITI,
 };
 
-export const REGIONAL_Voice = [
+export const REGIONAL_VOICE = [
   {
     label: 'Default',
     options: [Voice.ALEXA],
