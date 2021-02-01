@@ -1,5 +1,4 @@
-class Config {
+// eslint-disable-next-line import/prefer-default-export
+export class Config {
   tts?: boolean;
 }
-
-export default Config;
