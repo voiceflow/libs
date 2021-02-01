@@ -7,21 +7,41 @@ export enum CanvasVisibility {
   CROPPED = 'cropped',
 }
 
+export enum APLType {
+  JSON = 'JSON',
+  SPLASH = 'SPLASH',
+}
+
 export enum VisualType {
+  APL = 'apl',
   IMAGE = 'image',
 }
 
 export type ImageStepData = {
+  visualType: VisualType.IMAGE;
+
   image: string | null;
   device: DeviceType | null;
   dimensions: Dimensions | null;
-  visualType: VisualType.IMAGE;
   canvasVisibility: CanvasVisibility;
 };
 
-export type StepData = ImageStepData;
+export type APLStepData = {
+  visualType: VisualType.APL;
+
+  title?: string;
+  aplType: APLType;
+  imageURL?: string;
+  document?: string;
+  datasource?: string;
+  aplCommands?: string;
+  jsonFileName?: string;
+};
+
+export type StepData = ImageStepData | APLStepData;
 
 export type NodeData = {
+  data: StepData;
   nextId?: NodeID;
 };
 
