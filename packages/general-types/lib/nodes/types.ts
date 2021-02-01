@@ -14,6 +14,7 @@ export enum TraceType {
   DEBUG = 'debug',
   CHOICE = 'choice',
   STREAM = 'stream',
+  VISUAL = 'visual',
 }
 
 export type NodeID = string | null;

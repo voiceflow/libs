@@ -1,6 +1,6 @@
 import { DeviceType, Dimensions } from '@/constants';
 
-import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
+import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
 export enum CanvasVisibility {
   FULL = 'full',
@@ -47,3 +47,4 @@ export type NodeData = {
 
 export type Step = DefaultStep<NodeType.VISUAL, StepData>;
 export type Node = DefaultNode<NodeType.VISUAL, NodeData>;
+export type TraceFrame = DefaultTraceFrame<TraceType.VISUAL, StepData>;
