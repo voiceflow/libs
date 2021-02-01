@@ -1,18 +1,9 @@
+import { APLStepData, APLType } from '@voiceflow/general-types/build/nodes/visual';
+
 import { DefaultNode, DefaultStep, NodeType } from './types';
 
-export enum DisplayType {
-  SPLASH = 'SPLASH',
-  JSON = 'JSON',
-}
-
-export type StepData = {
-  type: DisplayType;
-  imageURL?: string;
-  title?: string;
-  jsonFileName?: string;
-  datasource?: string;
-  document?: string;
-  aplCommands?: string;
+export type StepData = Omit<APLStepData, 'visualType' | 'aplType'> & {
+  type: APLType;
 };
 
 export type NodeData = {
