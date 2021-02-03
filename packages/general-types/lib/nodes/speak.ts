@@ -12,6 +12,11 @@ export type NodeData = {
   nextId?: NodeID;
 } & ({ speak: string } | { random_speak: string[] });
 
+export enum SpeakType {
+  AUDIO = 'audio',
+  MESSAGE = 'message',
+}
+
 export type Step<V> = DefaultStep<NodeType.SPEAK, StepData<V>>;
 export type Node = DefaultNode<NodeType.SPEAK, NodeData>;
-export type TraceFrame = DefaultTraceFrame<TraceType.SPEAK, { message: string; type?: string; voice?: string; src?: string | null }>;
+export type TraceFrame = DefaultTraceFrame<TraceType.SPEAK, { message: string; type: SpeakType; voice?: string; src?: string | null }>;
