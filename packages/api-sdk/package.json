@@ -15,7 +15,7 @@
     "@types/atob": "^2.1.2",
     "@voiceflow/logger": "^1.4.2",
     "atob": "^2.1.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "superstruct": "^0.10.12"
   },
   "devDependencies": {
