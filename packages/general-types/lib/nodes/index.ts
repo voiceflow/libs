@@ -3,6 +3,7 @@ import { Voice } from '@/types';
 import * as Api from './api';
 import * as Capture from './capture';
 import * as Code from './code';
+import * as Directive from './directive';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as General from './general';
@@ -42,7 +43,8 @@ export type BaseSteps<V> =
   | Stream.Step
   | General.Step
   | Visual.Step
-  | Command.Step;
+  | Command.Step
+  | Directive.Step;
 
 export type BaseNodes =
   | Set.Node
@@ -58,7 +60,8 @@ export type BaseNodes =
   | Stream.Node
   | General.Node
   | Visual.Node
-  | If.Node;
+  | If.Node
+  | Directive.Node;
 
 export type GeneralSteps = BaseSteps<Voice>;
 export type GeneralNodes = BaseNodes;
