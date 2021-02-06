@@ -48,6 +48,7 @@ export enum NodeType {
   STREAM = 'stream',
   VISUAL = 'visual',
   GENERAL = 'general',
+  DIRECTIVE = 'directive',
   DEPRECATED = 'deprecated',
 }
 
