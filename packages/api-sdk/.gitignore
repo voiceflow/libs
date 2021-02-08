@@ -23,6 +23,7 @@ newrelic_agent.log
 shared-local-instance.db
 
 .nyc_output
+nyc_coverage
 
 # Legacy app folder
 app/
