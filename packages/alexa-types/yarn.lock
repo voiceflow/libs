@@ -623,10 +623,10 @@
     eslint-plugin-xss "^0.1.9"
     typescript "^3.9.7"
 
-"@voiceflow/general-types@1.27.0":
-  version "1.27.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.27.0.tgz#5128f617ed55ba43f170864b07d4f639e12e951f"
-  integrity sha512-Y7xbbcizG4JRftpNCaL+uNYFaNBysiTutSi5oltZAtyL2agJb1hfvdnC/dG0cpcNDjF7wo0ns9DY59EkQuircQ==
+"@voiceflow/general-types@1.27.1":
+  version "1.27.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.27.1.tgz#79118baf41a97fbcfe5e5158b0518d667744bdb5"
+  integrity sha512-qJoe1QZvNbNOGrZvCXzCThGBbSbAXcVhEX974VrfN3zrvCrnRb1ZPAr8ZHALBvGuq6jc5ZqtifmB+CuOEoZWUw==
   dependencies:
     "@voiceflow/api-sdk" "1.23.0"
 
