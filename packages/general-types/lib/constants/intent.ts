@@ -5,6 +5,7 @@ export enum IntentName {
   YES = 'VF.YES',
   STOP = 'VF.STOP',
   NEXT = 'VF.NEXT',
+  HELP = 'VF.HELP',
   PAUSE = 'VF.PAUSE',
   CANCEL = 'VF.CANCEL',
   RESUME = 'VF.RESUME',
@@ -36,6 +37,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.NEXT,
       samples: ['next'],
+    },
+    {
+      name: IntentName.HELP,
+      samples: ['help', 'help me', 'i need help'],
     },
     {
       name: IntentName.PAUSE,
@@ -76,6 +81,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.STOP,
       samples: ["s'arrêter", 'arrêter', 'arrête', 'stop', 'fin', 'cesser', 'mettre fin', 'stopper', 'mettre un terme', 'interrompre'],
+    },
+    {
+      name: IntentName.HELP,
+      samples: ['aidez-moi', "l'assistance", 'aider'],
     },
     {
       name: IntentName.NEXT,
@@ -150,6 +159,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['次に', '次'],
     },
     {
+      name: IntentName.HELP,
+      samples: ['助けて', '手助け', 'アシスト'],
+    },
+    {
       name: IntentName.PAUSE,
       samples: ['一時停止', '休止'],
     },
@@ -210,6 +223,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['Il prossimo', 'seguente', 'prossimo'],
     },
     {
+      name: IntentName.HELP,
+      samples: ['aiuto', 'la assistenza', 'aiutami'],
+    },
+    {
       name: IntentName.PAUSE,
       samples: ['pausa', 'la pausa'],
     },
@@ -252,6 +269,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.NEXT,
       samples: ['siguiente', 'próximo'],
+    },
+    {
+      name: IntentName.HELP,
+      samples: ['ayuda', 'ayuadame'],
     },
     {
       name: IntentName.PAUSE,
@@ -327,6 +348,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['nächster', 'nächste', 'neben'],
     },
     {
+      name: IntentName.HELP,
+      samples: ['hilfe', 'hilf mir', 'helfen'],
+    },
+    {
       name: IntentName.PAUSE,
       samples: ['pause', 'pausieren', 'die pause'],
     },
@@ -369,6 +394,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.NEXT,
       samples: ['próxima', 'próximo', 'seguinte', 'seguida'],
+    },
+    {
+      name: IntentName.HELP,
+      samples: ['socorro', 'me ajude'],
     },
     {
       name: IntentName.PAUSE,
@@ -435,6 +464,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.NEXT,
       samples: ['आगे', 'अगला', 'आगामी', 'बाद'],
+    },
+    {
+      name: IntentName.HELP,
+      samples: ['मदद', 'मेरी मदद करो'],
     },
     {
       name: IntentName.PAUSE,
