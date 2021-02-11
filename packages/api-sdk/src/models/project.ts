@@ -7,7 +7,7 @@ export enum ProjectPrototypeNLPType {
   LUIS = 'LUIS',
 }
 
-export enum ProjectLineType {
+export enum ProjectLinkType {
   CURVED = 'CURVED',
   STRAIGHT = 'STRAIGHT',
 }
@@ -51,7 +51,7 @@ export const SProject = s.object({
   members: s.array(SMember),
   privacy: s.optional(s.enums([ProjectPrivacy.PRIVATE, ProjectPrivacy.PUBLIC])),
   platform: SPlatform,
-  lineType: s.optional(s.enums(Object.values(ProjectLineType))),
+  linkType: s.optional(s.enums(Object.values(ProjectLinkType))),
   prototype: s.optional(SProjectPrototype),
   devVersion: s.optional(SVersionID),
   liveVersion: s.optional(SVersionID),
