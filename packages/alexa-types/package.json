@@ -12,9 +12,9 @@
     }
   },
   "dependencies": {
-    "@voiceflow/api-sdk": "1.23.0",
+    "@voiceflow/api-sdk": "1.24.0",
     "@voiceflow/common": "6.5.0",
-    "@voiceflow/general-types": "1.27.1",
+    "@voiceflow/general-types": "1.28.0",
     "ask-smapi-model": "^1.11.0",
     "eslint-plugin-prettier": "^3.1.4"
   },
