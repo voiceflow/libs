@@ -461,10 +461,10 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@voiceflow/api-sdk@1.24.1":
-  version "1.24.1"
-  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.24.1.tgz#5ac1837205b4d7b064c385cc51c25517f993751f"
-  integrity sha512-KTVN/yRcyq8UgWLT76C1x4hNGmXRv7oftbpj2RnD8n1PQOQCDwudrn5yRCwBUVBhngm95SPwKvJnTqlQ4Bi+rQ==
+"@voiceflow/api-sdk@1.25.0":
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.25.0.tgz#0189df2e4e9ae5d51a68f152f89de44664e6f40d"
+  integrity sha512-xdBr87++LN5lJyRBjbxgQBq1krYREKDOfCQHDVtpATCG6iB4wyuZrmMZm5zxTb+BIhNmoFVG0JHvNwhnDA/XqQ==
   dependencies:
     "@types/atob" "^2.1.2"
     "@voiceflow/logger" "^1.4.2"
