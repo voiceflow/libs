@@ -136,6 +136,23 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
 
     return data;
   }
+
+  public async updatePrototype<P extends VersionPrototype>(id: VersionID, body: Partial<P>): Promise<P> {
+    this._assertModelID(id);
+
+    const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/prototype`, body);
+
+    return data;
+  }
+
+  public async updatePrototypeSettings<P extends VersionPrototype['settings']>(id: VersionID, body: Partial<P>): Promise<Partial<P>> {
+    this._assertModelID(id);
+    s.assert(body, SVersion.schema.prototype.schema.settings);
+
+    const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/prototype`, body, { path: 'settings' });
+
+    return data;
+  }
 }
 
 export default VersionResource;

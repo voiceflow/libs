@@ -61,11 +61,18 @@ export type VersionPrototypeData<L extends string> = Omit<s.StructType<typeof SV
   locales: L[];
 };
 
+export const SVersionPrototypeSettings = s.object({
+  layout: s.optional(s.string()),
+  brandColor: s.optional(s.string()),
+  branchImage: s.optional(s.string()),
+  avatar: s.optional(s.string()),
+});
+
 export const SVersionPrototype = s.object({
   data: SVersionPrototypeData,
   model: SPrototypeModel,
   context: SVersionPrototypeContext,
-  settings: s.object(), // TODO: add types
+  settings: SVersionPrototypeSettings,
 });
 
 export type VersionPrototype<C extends Command = Command, L extends string = string> = Omit<

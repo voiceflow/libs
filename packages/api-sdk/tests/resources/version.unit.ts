@@ -323,4 +323,41 @@ describe('VersionResource', () => {
     expect(assert.callCount).to.eql(1);
     expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
+
+  it('.updatePrototype', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.patch.resolves({ data: RESPONSE_DATA });
+
+    const body = {
+      settings: {
+        layout: 'value',
+      },
+    };
+
+    const data = await resource.updatePrototype('1', body);
+
+    expect(fetch.patch.callCount).to.eql(1);
+    expect(fetch.patch.args[0]).to.eql(['versions/1/prototype', body]);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+  });
+
+  it('.updatePrototypeSettings', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.patch.resolves({ data: RESPONSE_DATA });
+
+    const body = { layout: 'value' };
+
+    const data = await resource.updatePrototypeSettings('1', body);
+
+    expect(fetch.patch.callCount).to.eql(1);
+    expect(fetch.patch.args[0]).to.eql(['versions/1/prototype', body, { path: 'settings' }]);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(2);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+    expect(assert.args[1]).to.eql([{ layout: 'value' }, resource['struct'].schema.prototype.schema.settings]);
+  });
 });
