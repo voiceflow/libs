@@ -9,6 +9,9 @@ export type Platform = s.StructType<typeof SPlatform>;
 export const SName = s.string();
 export type Name = s.StructType<typeof SName>;
 
+export const SAPIKeyID = s.string();
+export type APIKeyID = s.StructType<typeof SAPIKeyID>;
+
 export const STeamID = s.string();
 export type TeamID = s.StructType<typeof STeamID>;
 

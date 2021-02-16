@@ -3,9 +3,9 @@ import JWT from 'jsonwebtoken';
 
 import { Client } from '@/client';
 import Fetch from '@/fetch';
-import { Diagram, Program, Project, PrototypeProgram, User, Version } from '@/resources';
+import { APIKey, Diagram, Program, Project, PrototypeProgram, User, Version } from '@/resources';
 
-const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User];
+const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User, APIKey];
 
 const createClient = () =>
   new Client({
@@ -55,5 +55,11 @@ describe('Client', () => {
     const client = createClient();
 
     expect(client.prototypeProgram).to.be.instanceOf(PrototypeProgram);
+  });
+
+  it('.apiKey', () => {
+    const client = createClient();
+
+    expect(client.apiKey).to.be.instanceOf(APIKey);
   });
 });
