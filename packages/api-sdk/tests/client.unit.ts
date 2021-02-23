@@ -7,17 +7,16 @@ import { APIKey, Diagram, Program, Project, PrototypeProgram, User, Version } fr
 
 const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User, APIKey];
 
-const createClient = () =>
+const createClient = (authorization?: string) =>
   new Client({
     clientKey: '123qwe123',
     apiEndpoint: 'apiEndpoint',
-    authorization: JWT.sign({}, 'test'),
+    authorization: authorization ?? JWT.sign({}, 'test'),
   });
 
 describe('Client', () => {
   it('.constructor', () => {
     const client = createClient();
-
     expect(Object.values(client).every((resource) => CLIENT_RESOURCES.some((Resource) => resource instanceof Resource))).to.eql(true);
   });
 

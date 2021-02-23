@@ -37,4 +37,14 @@ describe('UserResource', () => {
     // @ts-expect-error
     global.window = undefined;
   });
+
+  it('.constructor with API key', () => {
+    const DEFAULT_USER = {
+      creatorID: 0,
+      name: '',
+      email: '',
+    };
+
+    expect(new User('VF.APIkey')).to.eql(DEFAULT_USER);
+  });
 });

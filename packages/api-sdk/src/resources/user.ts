@@ -24,18 +24,24 @@ type UserToken = {
 };
 
 class User {
-  public creatorID: CreatorID;
+  public creatorID: CreatorID = 0;
 
-  public name: string;
+  public name = '';
 
-  public email: string;
+  public email = '';
+
+  isAPIKey(authorization: string): boolean {
+    return authorization.startsWith('VF.');
+  }
 
   constructor(authorization: string) {
-    const { id, name, email } = parseJWT<UserToken>(authorization);
+    if (!this.isAPIKey(authorization)) {
+      const { id, name, email } = parseJWT<UserToken>(authorization);
 
-    this.creatorID = id;
-    this.name = name;
-    this.email = email;
+      this.creatorID = id;
+      this.name = name;
+      this.email = email;
+    }
   }
 }
 
