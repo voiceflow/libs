@@ -12,6 +12,7 @@ export enum IntentName {
   REPEAT = 'VF.REPEAT',
   PREVIOUS = 'VF.PREVIOUS',
   START_OVER = 'VF.START_OVER',
+  NONE = 'None',
 }
 
 export type DefaultIntent = {
@@ -65,6 +66,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.START_OVER,
       samples: ['start over', 'restart'],
+    },
+    {
+      name: IntentName.NONE,
+      samples: [],
     },
   ],
 
@@ -122,6 +127,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.START_OVER,
       samples: ['recommencer', 'redémarrer'],
+    },
+    {
+      name: IntentName.NONE,
+      samples: [],
     },
   ],
 
@@ -185,6 +194,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.START_OVER,
       samples: ['最初からやり直す', '再起動'],
+    },
+    {
+      name: IntentName.NONE,
+      samples: [],
     },
   ],
 
@@ -250,6 +263,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       name: IntentName.START_OVER,
       samples: ['ricominciare', 'ricomincia'],
     },
+    {
+      name: IntentName.NONE,
+      samples: [],
+    },
   ],
 
   // Spanish (ES,MX)
@@ -308,6 +325,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.START_OVER,
       samples: ['reiniciar'],
+    },
+    {
+      name: IntentName.NONE,
+      samples: [],
     },
   ],
 
@@ -375,6 +396,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       name: IntentName.START_OVER,
       samples: ['Von vorn anfangen', 'Neustart', 'wieder starten'],
     },
+    {
+      name: IntentName.NONE,
+      samples: [],
+    },
   ],
 
   // Portuguese (PT)
@@ -422,6 +447,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.START_OVER,
       samples: ['recomeçar', 'reiniciar'],
+    },
+    {
+      name: IntentName.NONE,
+      samples: [],
     },
   ],
 
@@ -530,6 +559,10 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.START_OVER,
       samples: ['प्रारंभ करें', 'पुनर्प्रारंभ करें'],
+    },
+    {
+      name: IntentName.NONE,
+      samples: [],
     },
   ],
 };
