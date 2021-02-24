@@ -205,7 +205,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   [Language.IT]: [
     {
       name: IntentName.NO,
-      samples: ['il no', 'no', 'il rifiuto', 'la negazione', 'nessuno'],
+      samples: ['no', 'il no', 'il rifiuto', 'la negazione', 'nessuno'],
     },
     {
       name: IntentName.YES,
@@ -214,6 +214,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     {
       name: IntentName.STOP,
       samples: [
+        'stop',
         'la fermata',
         'il fermo',
         'lo stop',
@@ -233,7 +234,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     },
     {
       name: IntentName.NEXT,
-      samples: ['Il prossimo', 'seguente', 'prossimo'],
+      samples: ['prossimo', 'seguente', 'succesivo'],
     },
     {
       name: IntentName.HELP,
