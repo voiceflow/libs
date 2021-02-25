@@ -18,6 +18,7 @@ export type IntentRequest = Request<
     entities: {
       name: string; // name of matched entity
       value: string; // inferred value of matched entity
+      rawValue?: string[] | string[][]; // unmodifed value returned from LUIS
       query?: string; // raw value of matched entity
     }[]; // entities matches - multiple of the same entity name may be matched
     confidence?: number; // 0-1 confidence of match;

@@ -10,9 +10,15 @@ export enum SlotType {
   // COUNTRY = 'VF.COUNTRY',
   NAME = 'VF.NAME',
   EMAIL = 'VF.EMAIL',
+  NATOAPCO = 'VF.NATOAPCO',
 }
 
-export type SlotTypeValue = { name: SlotType; label: string; values: Array<string>; regex?: string };
+type SubList = {
+  canonicalForm: string;
+  list: Array<string>;
+};
+
+export type SlotTypeValue = { name: SlotType; label: string; values: Array<string>; regex?: string; list?: Array<SubList> };
 
 type ObjectKeys = {
   [key: string]: Array<SlotTypeValue>;
@@ -61,6 +67,53 @@ export const SlotTypes: ObjectKeys = {
       ],
     },
     EMAIL,
+    {
+      name: SlotType.NATOAPCO,
+      label: 'NatoApco',
+      values: [],
+      list: [
+        { canonicalForm: 'Alfa', list: ['Adam', 'Alpha'] },
+        { canonicalForm: 'Bravo', list: ['Boy', 'Baåker'] },
+        { canonicalForm: 'Charlie', list: ['Charles'] },
+        { canonicalForm: 'Delta', list: ['David'] },
+        { canonicalForm: 'Echo', list: ['Edward', 'Easy'] },
+        { canonicalForm: 'Foxtrot', list: ['Frank'] },
+        { canonicalForm: 'Golf', list: ['George'] },
+        { canonicalForm: 'Hotel', list: ['Henry'] },
+        { canonicalForm: 'India', list: ['Ida'] },
+        { canonicalForm: 'Juliett', list: ['John'] },
+        { canonicalForm: 'Kilo', list: ['King'] },
+        { canonicalForm: 'Lima', list: ['Lincoln'] },
+        { canonicalForm: 'Mike', list: ['Mary'] },
+        { canonicalForm: 'November', list: ['Nora'] },
+        { canonicalForm: 'Oscar', list: ['Ocean'] },
+        { canonicalForm: 'Papa', list: ['Paul'] },
+        { canonicalForm: 'Quebec', list: ['Queen'] },
+        { canonicalForm: 'Romeo', list: ['Robert'] },
+        { canonicalForm: 'Sierra', list: ['Sam'] },
+        { canonicalForm: 'Tango', list: ['Tom'] },
+        { canonicalForm: 'Uniform', list: ['Union'] },
+        { canonicalForm: 'Victor', list: [] },
+        { canonicalForm: 'Whiskey', list: ['William'] },
+        { canonicalForm: 'X-ray', list: ['Xray'] },
+        { canonicalForm: 'Yankee', list: ['Young', 'Yellow'] },
+        { canonicalForm: 'Zulu', list: ['Zebra'] },
+        { canonicalForm: '0', list: ['Zero', 'Nadazero'] },
+        { canonicalForm: '1', list: ['One', 'Wun', 'Unaone'] },
+        { canonicalForm: '2', list: ['Two', 'Too', 'Bissotwo'] },
+        { canonicalForm: '3', list: ['Three', 'Tree', 'Terrathree'] },
+        { canonicalForm: '4', list: ['Four', 'Fower', 'Kartefour'] },
+        { canonicalForm: '5', list: ['Five', 'Fife', 'Pantafive'] },
+        { canonicalForm: '6', list: ['Six', 'Soxisix'] },
+        { canonicalForm: '7', list: ['Seven', 'Setteseven'] },
+        { canonicalForm: '8', list: ['Eight', 'Oktoeight'] },
+        { canonicalForm: '9', list: ['Nine', 'Niner', 'Novenine'] },
+        { canonicalForm: '00', list: ['Hundred'] },
+        { canonicalForm: '000', list: ['Thousand'] },
+        { canonicalForm: '-', list: ['Dash', 'Hyphen'] },
+        { canonicalForm: '.', list: ['Decimal', 'Point', 'Stop'] },
+      ],
+    },
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
