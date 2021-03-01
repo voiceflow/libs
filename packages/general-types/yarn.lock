@@ -375,10 +375,10 @@
     "@types/pino-std-serializers" "*"
     "@types/sonic-boom" "*"
 
-"@types/pino@6.3.4":
-  version "6.3.4"
-  resolved "https://registry.yarnpkg.com/@types/pino/-/pino-6.3.4.tgz#f22524c33a7e21f45f5cc7fc2c570ccae0be98fa"
-  integrity sha512-03MpZ/HP6GlG0oo5dcb8NBpI21zNESswTbaA0VB4uuigXfVy+XLmzh39CY6VCAahPMxCPtuqSEdhwGeA3AOYXg==
+"@types/pino@^6.3.6":
+  version "6.3.6"
+  resolved "https://registry.yarnpkg.com/@types/pino/-/pino-6.3.6.tgz#3aa928bcbd30dc0c6a0ec2e9302cabd5dee6e832"
+  integrity sha512-yVgSyMGzNDYe/XNMJyuIkklDeZbFdGAxRztYLoN1QQrrgiLJ1oJPmnS8Ge5xpzI9ODKEddKH97VFQ7cWO6Pumw==
   dependencies:
     "@types/node" "*"
     "@types/pino-std-serializers" "*"
@@ -461,13 +461,13 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@voiceflow/api-sdk@1.25.0":
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.25.0.tgz#0189df2e4e9ae5d51a68f152f89de44664e6f40d"
-  integrity sha512-xdBr87++LN5lJyRBjbxgQBq1krYREKDOfCQHDVtpATCG6iB4wyuZrmMZm5zxTb+BIhNmoFVG0JHvNwhnDA/XqQ==
+"@voiceflow/api-sdk@1.27.1":
+  version "1.27.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.27.1.tgz#61ae6e1e8e91c8655a4823b8b02c64d321238900"
+  integrity sha512-sBK5APq8x0lIUxbRRWGYDvTfNwYqTC/on+YcCz0pNEgzNtEKK3OHotaBISR2ZThjyvsDBaREgQrMfx1NfUn0Fg==
   dependencies:
     "@types/atob" "^2.1.2"
-    "@voiceflow/logger" "^1.4.2"
+    "@voiceflow/logger" "^1.5.2"
     atob "^2.1.2"
     axios "^0.21.1"
     superstruct "^0.10.12"
@@ -512,15 +512,14 @@
   dependencies:
     current-git-branch "^1.1.0"
 
-"@voiceflow/logger@^1.4.2":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/logger/-/logger-1.5.0.tgz#3c46a627e41d5adfe75c9effcb825dbec71369ba"
-  integrity sha512-DvofI62TcGC/gE1RU1s8Nt7E2qwDZ6vqFvVRmxFaXMWZ1Y2pZu1BAf8j8Ms0XY/fQpZH/EmuOY/Sm0Pn5LdQNA==
+"@voiceflow/logger@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@voiceflow/logger/-/logger-1.5.2.tgz#da55a612f5ffaf17ec976f713b202b2f68a78bec"
+  integrity sha512-zp+yArdfUBrGSFf6Sw4T8q9apB3KWLNjt5tjGFimSna2lNJL0JV40hJAaPmb6YL4FVOzj8N0+ZL15uO7mUZGEA==
   dependencies:
     "@types/cls-hooked" "^4.3.1"
     "@types/express-pino-logger" "^4.0.2"
-    "@types/pino" "6.3.4"
-    "@voiceflow/pino" "6.11.0"
+    "@voiceflow/pino" "6.11.2"
     "@voiceflow/pino-pretty" "4.4.0"
     "@zerollup/ts-transform-paths" "^1.7.18"
     cls-hooked "^4.2.2"
@@ -544,11 +543,12 @@
     split2 "^3.1.1"
     strip-json-comments "^3.1.1"
 
-"@voiceflow/pino@6.11.0":
-  version "6.11.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/pino/-/pino-6.11.0.tgz#f4479cb074e54e725459909b81aa7e200a9ce86a"
-  integrity sha512-E7d267mhcTWr0tbae1arMixZVYsyOLBSZu1DKmaRYh9Hu7pvHS6cBIpjiP2tRWCApjE0vJrV56hlxPYoa16CZQ==
+"@voiceflow/pino@6.11.2":
+  version "6.11.2"
+  resolved "https://registry.yarnpkg.com/@voiceflow/pino/-/pino-6.11.2.tgz#87396fc01e5ab18f4cd64102b78e645c1bca3e84"
+  integrity sha512-SFXnv+u3U7v1zT8YscDgv7FAFuggIGLIgadAoia7a7pxFxREfXsCk7/Lub8zulgFKH1foByt3dAPPd2TAbx0UQ==
   dependencies:
+    "@types/pino" "^6.3.6"
     fast-redact "^3.0.0"
     fast-safe-stringify "^2.0.7"
     flatstr "^1.0.12"
