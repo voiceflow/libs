@@ -69,7 +69,7 @@ export const SlotTypes: ObjectKeys = {
     EMAIL,
     {
       name: SlotType.NATOAPCO,
-      label: 'NatoApco',
+      label: 'NATO/APCO',
       values: [],
       list: [
         { canonicalForm: 'Alfa', list: ['Adam', 'Alpha'] },

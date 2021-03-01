@@ -43,6 +43,7 @@ export enum NodeType {
   EXIT = 'exit',
   PROMPT = 'prompt',
   COMMAND = 'command',
+  TRACE = 'trace',
 
   // other
   STREAM = 'stream',
