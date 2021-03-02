@@ -61,6 +61,9 @@
   ],
   "license": "ISC",
   "main": "build/index.js",
+  "files": [
+    "build"
+  ],
   "prettier": "@voiceflow/prettier-config",
   "repository": {
     "type": "git",
