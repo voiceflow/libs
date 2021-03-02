@@ -1,5 +1,13 @@
 version: 2.1
 
+# Reusable YAML chunks
+defaults:
+  autorebase_filters: &autorebase_filters
+    branches:
+      ignore:
+        - /rebase-pull-request-.*/
+        - /cherry-pick-rebase-pull-request-.*/
+
 orbs:
   codecov: codecov/codecov@1.0.2
   vfcommon: voiceflow/common@0.0.67
@@ -27,6 +35,9 @@ workflows:
     jobs:
       - build-and-test:
           context: dev-test
+          filters:
+            <<: *autorebase_filters
+
       - vfcommon/release:
           context: dev-test
           requires:
