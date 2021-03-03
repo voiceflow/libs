@@ -1,23 +1,22 @@
-import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame } from './types';
-
-export type StepData = {
-  name: string;
-  body: string;
-  format?: string; // e.g. JSON/XML/raw/binary
-  paths: { label: string; isDefault?: boolean }[];
-};
+import { DefaultNode, DefaultStep, NodeID, TraceFrame as DefaultTraceFrame } from './types';
 
 export type NodeData = {
-  name: string;
-  body: any;
-  format?: string;
-  defaultPath?: number;
+  _v: 1;
+  data: Record<string, any>;
+  stop: boolean;
+  defaultPath?: number; // index starting from 0
   paths: {
     label: string;
-    nextId: NodeID | null;
+    nextID: NodeID | null;
   }[];
 };
 
-export type Step = DefaultStep<NodeType.TRACE, StepData>;
-export type Node = DefaultNode<NodeType.TRACE, NodeData>;
-export type TraceFrame = DefaultTraceFrame<string, NodeData>;
+export type StepData = {
+  data: Record<string, any> & {
+    ports: {}[];
+  };
+};
+
+export type Step = DefaultStep<string, StepData>;
+export type Node = DefaultNode<string, NodeData>;
+export type TraceFrame = DefaultTraceFrame<string, Record<string, any>>;
