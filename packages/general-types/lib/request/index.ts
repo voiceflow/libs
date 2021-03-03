@@ -28,6 +28,6 @@ export type IntentRequest = Request<
 
 export type DataRequest<D = Record<string, unknown>> = Request<RequestType.DATA, D>;
 
-export type TraceRequest = Request<RequestType.TRACE, { pathIndex: string | null }>;
+export type TraceRequest = Request<RequestType.TRACE, { pathIndex: number | null }>;
 
 export type GeneralRequest = TextRequest | IntentRequest | DataRequest | TraceRequest | null;
