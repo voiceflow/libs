@@ -2,7 +2,7 @@ import { SlotMapping } from '@voiceflow/api-sdk';
 
 import { Chip, NoMatches, Prompt } from '@/types';
 
-import { DefaultNode, DefaultStep, GeneralEvent, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
+import { DefaultNode, DefaultStep, Event, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
 export enum ElseType {
   PATH = 'path',
@@ -31,7 +31,7 @@ export type IntentEvent = {
   mappings?: SlotMapping[];
 };
 
-export type NodeData<E = GeneralEvent> = {
+export type NodeData<E = Event> = {
   reprompt?: string;
   noMatches?: string[];
   interactions: {

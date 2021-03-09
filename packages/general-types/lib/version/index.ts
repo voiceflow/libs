@@ -1,6 +1,6 @@
 import { StrictVersionPlatformData, Version } from '@voiceflow/api-sdk';
 
-import { GeneralCommand } from '@/nodes';
+import { Command } from '@/nodes';
 import { Locale, Voice } from '@/types';
 
 import { BaseVersionSettings, defaultBaseVersionSettings, defaultGeneralVersionSettings, GeneralVersionSettings } from './settings';
@@ -20,7 +20,7 @@ export const defaultBaseVersionData = <V>(
 });
 
 export type GeneralVersionData = StrictVersionPlatformData<GeneralVersionSettings>;
-export type GeneralVersion = Version<GeneralVersionData, GeneralCommand, Locale>;
+export type GeneralVersion = Version<GeneralVersionData, Command, Locale>;
 
 export const defaultGeneralVersionData = ({ settings, ...data }: Partial<GeneralVersionData>): GeneralVersionData => ({
   ...defaultBaseVersionData(data, { defaultPromptVoice: Voice.DEFAULT }),

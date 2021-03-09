@@ -2,7 +2,7 @@ import { SlotMapping } from '@voiceflow/api-sdk';
 
 import { ExpressionType } from '@/types';
 
-export { Step as DefaultStep, Node as DefaultNode } from '@voiceflow/api-sdk';
+export { Step as DefaultStep, Node as DefaultNode, Port as DefaultPort } from '@voiceflow/api-sdk';
 
 export type TraceFrame<T extends string = string, P extends unknown = undefined> = P extends undefined ? { type: T } : { type: T; payload: P };
 
@@ -113,12 +113,27 @@ export type Expression =
   | AdvancedExpression
   | VariableExpression;
 
+// BUILT IN EVENTS
+export enum EventType {
+  INTENT = 'intent',
+}
+
+export type Event<T extends string = string, D = unknown> = { type: T; data: D };
+
+export type IntentEvent = Event<
+  EventType.INTENT,
+  {
+    intent: string;
+    mappings?: SlotMapping[];
+  }
+>;
+
 export enum CommandType {
   JUMP = 'jump',
   PUSH = 'push',
 }
 
-export type Command<E> =
+export type Command<E extends Event = Event> =
   | {
       type: CommandType.JUMP;
       nextID: string | null;
@@ -129,21 +144,3 @@ export type Command<E> =
       diagramID: string | null;
       event: E;
     };
-
-export enum EventType {
-  INTENT = 'intent',
-}
-
-export type Event<T extends EventType, D> = { type: T } & D;
-
-export type IntentEvent = Event<
-  EventType.INTENT,
-  {
-    intent: string;
-    mappings?: SlotMapping[];
-  }
->;
-
-export type GeneralEvent = IntentEvent;
-
-export type GeneralCommand = Command<GeneralEvent>;

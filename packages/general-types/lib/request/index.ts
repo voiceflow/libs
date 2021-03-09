@@ -1,11 +1,8 @@
 export enum RequestType {
   INTENT = 'intent',
   TEXT = 'text',
-  DATA = 'data',
-  TRACE = 'trace',
 }
-
-export interface Request<T extends RequestType, P> {
+export interface Request<T extends string = string, P = Record<string, unknown>> {
   type: T;
   payload: P;
 }
@@ -25,9 +22,3 @@ export type IntentRequest = Request<
     confidence?: number; // 0-1 confidence of match;
   }
 >;
-
-export type DataRequest<D = Record<string, unknown>> = Request<RequestType.DATA, D>;
-
-export type TraceRequest = Request<RequestType.TRACE, { pathIndex: number | null }>;
-
-export type GeneralRequest = TextRequest | IntentRequest | DataRequest | TraceRequest | null;
