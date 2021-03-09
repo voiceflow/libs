@@ -118,7 +118,7 @@ export enum EventType {
   INTENT = 'intent',
 }
 
-export type Event<T extends string = string, D = unknown> = { type: T; data: D };
+export type Event<T extends string = string, D = unknown> = { type: T } & D;
 
 export type IntentEvent = Event<
   EventType.INTENT,
