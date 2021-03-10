@@ -2,7 +2,7 @@ export enum RequestType {
   INTENT = 'intent',
   TEXT = 'text',
 }
-export interface Request<T extends string = string, P = Record<string, unknown>> {
+export interface Request<T extends string = string, P = unknown> {
   type: T;
   payload: P;
 }
