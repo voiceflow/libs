@@ -45,7 +45,8 @@ export type BaseSteps<V> =
   | General.Step
   | Visual.Step
   | Command.Step
-  | Directive.Step;
+  | Directive.Step
+  | _v1.Step;
 
 export type BaseNodes =
   | Set.Node
