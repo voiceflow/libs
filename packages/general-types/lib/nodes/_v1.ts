@@ -3,7 +3,7 @@ import { Port } from '@voiceflow/api-sdk';
 import { DefaultNode, DefaultStep, Event, NodeID, TraceFrame as DefaultTraceFrame } from './types';
 
 export type StepData<B = unknown> = {
-  _v1: 1;
+  _v: 1;
   payload: B;
   stop?: boolean;
   defaultPath?: number;
