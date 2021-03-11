@@ -1,5 +1,6 @@
 import { Voice } from '@/types';
 
+import * as _v1 from './_v1';
 import * as Api from './api';
 import * as Capture from './capture';
 import * as Code from './code';
@@ -19,7 +20,6 @@ import * as Set from './set';
 import * as Speak from './speak';
 import * as Start from './start';
 import * as Stream from './stream';
-import * as Trace from './trace';
 import * as Visual from './visual';
 import * as Zapier from './zapier';
 
@@ -45,8 +45,7 @@ export type BaseSteps<V> =
   | General.Step
   | Visual.Step
   | Command.Step
-  | Directive.Step
-  | Trace.Step;
+  | Directive.Step;
 
 export type BaseNodes =
   | Set.Node
@@ -64,7 +63,7 @@ export type BaseNodes =
   | Visual.Node
   | If.Node
   | Directive.Node
-  | Trace.Node;
+  | _v1.Node;
 
 export type GeneralSteps = BaseSteps<Voice>;
 export type GeneralNodes = BaseNodes;
