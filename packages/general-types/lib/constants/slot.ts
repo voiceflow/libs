@@ -73,7 +73,7 @@ export const SlotTypes: ObjectKeys = {
       values: [],
       list: [
         { canonicalForm: 'Alfa', list: ['Adam', 'Alpha'] },
-        { canonicalForm: 'Bravo', list: ['Boy', 'Baåker'] },
+        { canonicalForm: 'Bravo', list: ['Boy', 'Baker'] },
         { canonicalForm: 'Charlie', list: ['Charles'] },
         { canonicalForm: 'Delta', list: ['David'] },
         { canonicalForm: 'Echo', list: ['Edward', 'Easy'] },
