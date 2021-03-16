@@ -66,6 +66,7 @@ export const SVersionPrototypeSettings = s.object({
   brandColor: s.optional(s.string()),
   branchImage: s.optional(s.string()),
   avatar: s.optional(s.string()),
+  password: s.optional(s.string()),
 });
 
 export const SVersionPrototype = s.object({
