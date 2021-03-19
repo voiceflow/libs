@@ -1,4 +1,3 @@
-import { TraceFrame as _V1Trace } from '@/nodes/_v1';
 import { TraceFrame as ExitTrace } from '@/nodes/exit';
 import { TraceFrame as FlowTrace } from '@/nodes/flow';
 import { TraceFrame as ChoiceTrace } from '@/nodes/interaction';
@@ -18,4 +17,4 @@ export { TraceFrame as _V1Trace } from '@/nodes/_v1';
 export type DebugTrace = TraceFrame<TraceType.DEBUG, { message: string }>;
 export type BlockTrace = TraceFrame<TraceType.BLOCK, { blockID: string }>;
 
-export type GeneralTrace = ExitTrace | SpeakTrace | ChoiceTrace | FlowTrace | StreamTrace | BlockTrace | DebugTrace | VisualTrace | _V1Trace;
+export type GeneralTrace = ExitTrace | SpeakTrace | ChoiceTrace | FlowTrace | StreamTrace | BlockTrace | DebugTrace | VisualTrace;
