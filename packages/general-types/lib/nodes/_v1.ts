@@ -19,4 +19,7 @@ export type NodeData<E = Event> = {
 
 export type Node = DefaultNode<string, NodeData>;
 export type Step<B = unknown, E = Event> = DefaultStep<string, StepData<B>, Port<{ event?: E }>[]>;
-export type TraceFrame = DefaultTraceFrame<string, Record<string, unknown>>;
+export type TraceFrame = DefaultTraceFrame<
+  string,
+  { data: unknown; paths: Array<{ event?: Event; nextID: NodeID | null }>; stop: boolean; defaultPath?: number }
+>;
