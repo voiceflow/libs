@@ -81,37 +81,74 @@ export type GenericExpression<T extends ExpressionType, V> = {
   depth: number;
 };
 
+export type GenericExpressionV2<T extends ExpressionType, V> = {
+  type: T;
+  value: V;
+};
+
 export type ExpressionTuple = [Expression, Expression];
 
 // can't use generic here due to recursion type issue
-export type NotExpression = { type: ExpressionType.NOT; value: Expression; depth: number };
-export type OrExpression = GenericExpression<ExpressionType.OR, ExpressionTuple>;
-export type AndExpression = GenericExpression<ExpressionType.AND, ExpressionTuple>;
-export type LessExpression = GenericExpression<ExpressionType.LESS, ExpressionTuple>;
-export type PlusExpression = GenericExpression<ExpressionType.PLUS, ExpressionTuple>;
-export type MinusExpression = GenericExpression<ExpressionType.MINUS, ExpressionTuple>;
-export type TimesExpression = GenericExpression<ExpressionType.TIMES, ExpressionTuple>;
-export type ValueExpression = GenericExpression<ExpressionType.VALUE, string>;
-export type DivideExpression = GenericExpression<ExpressionType.DIVIDE, ExpressionTuple>;
-export type EqualsExpression = GenericExpression<ExpressionType.EQUALS, ExpressionTuple>;
-export type GreaterExpression = GenericExpression<ExpressionType.GREATER, ExpressionTuple>;
-export type AdvancedExpression = GenericExpression<ExpressionType.ADVANCE, string>;
-export type VariableExpression = GenericExpression<ExpressionType.VARIABLE, string>;
+export type LegacyNotExpression = { type: ExpressionType.NOT; value: Expression; depth: number };
+export type LegacyOrExpression = GenericExpression<ExpressionType.OR, ExpressionTuple>;
+export type LegacyAndExpression = GenericExpression<ExpressionType.AND, ExpressionTuple>;
+export type LegacyPlusExpression = GenericExpression<ExpressionType.PLUS, ExpressionTuple>;
+export type LegacyMinusExpression = GenericExpression<ExpressionType.MINUS, ExpressionTuple>;
+export type LegacyTimesExpression = GenericExpression<ExpressionType.TIMES, ExpressionTuple>;
+export type LegacyValueExpression = GenericExpression<ExpressionType.VALUE, string>;
+export type LegacyDivideExpression = GenericExpression<ExpressionType.DIVIDE, ExpressionTuple>;
+export type LegacyEqualsExpression = GenericExpression<ExpressionType.EQUALS, ExpressionTuple>;
+export type LegacyAdvancedExpression = GenericExpression<ExpressionType.ADVANCE, string>;
+export type LegacyVariableExpression = GenericExpression<ExpressionType.VARIABLE, string>;
+export type LegacyGreaterExpression = GenericExpression<ExpressionType.GREATER, ExpressionTuple>;
+export type LegacyLessExpression = GenericExpression<ExpressionType.LESS, ExpressionTuple>;
+// new
+export type NotExpression = { type: ExpressionType.NOT; value: Expression };
+export type MinusExpression = GenericExpressionV2<ExpressionType.MINUS, ExpressionTuple>;
+export type TimesExpression = GenericExpressionV2<ExpressionType.TIMES, ExpressionTuple>;
+export type PlusExpression = GenericExpressionV2<ExpressionType.PLUS, ExpressionTuple>;
+export type DivideExpression = GenericExpressionV2<ExpressionType.DIVIDE, ExpressionTuple>;
+export type OrExpression = GenericExpressionV2<ExpressionType.OR, ExpressionTuple>;
+export type AndExpression = GenericExpressionV2<ExpressionType.AND, ExpressionTuple>;
+export type ValueExpression = GenericExpressionV2<ExpressionType.VALUE, string>;
+export type EqualsExpression = GenericExpressionV2<ExpressionType.EQUALS, ExpressionTuple>;
+export type AdvancedExpression = GenericExpressionV2<ExpressionType.ADVANCE, string>;
+export type VariableExpression = GenericExpressionV2<ExpressionType.VARIABLE, string>;
+export type GreaterExpression = GenericExpressionV2<ExpressionType.GREATER, ExpressionTuple>;
+export type LessExpression = GenericExpressionV2<ExpressionType.LESS, ExpressionTuple>;
+export type NotEqualExpression = GenericExpressionV2<ExpressionType.NOT_EQUAL, ExpressionTuple>;
+export type GreaterOrEqualExpression = GenericExpressionV2<ExpressionType.GREATER_OR_EQUAL, ExpressionTuple>;
+export type LessOrEqualExpression = GenericExpressionV2<ExpressionType.LESS_OR_EQUAL, ExpressionTuple>;
+export type ContainsExpression = GenericExpressionV2<ExpressionType.CONTAINS, ExpressionTuple>;
+export type NotContainExpression = GenericExpressionV2<ExpressionType.NOT_CONTAIN, ExpressionTuple>;
+export type StartsWithExpression = GenericExpressionV2<ExpressionType.STARTS_WITH, ExpressionTuple>;
+export type EndsWithExpression = GenericExpressionV2<ExpressionType.ENDS_WITH, ExpressionTuple>;
+export type HasValueExpression = GenericExpressionV2<ExpressionType.HAS_VALUE, ExpressionTuple>;
+export type IsEmptyExpression = GenericExpressionV2<ExpressionType.IS_EMPTY, ExpressionTuple>;
 
 export type Expression =
-  | OrExpression
-  | AndExpression
   | NotExpression
-  | LessExpression
-  | PlusExpression
   | MinusExpression
   | TimesExpression
-  | ValueExpression
+  | PlusExpression
   | DivideExpression
-  | EqualsExpression
-  | GreaterExpression
   | AdvancedExpression
-  | VariableExpression;
+  | ValueExpression
+  | VariableExpression
+  | OrExpression
+  | AndExpression
+  | EqualsExpression
+  | LessExpression
+  | LessOrEqualExpression
+  | GreaterExpression
+  | GreaterOrEqualExpression
+  | NotEqualExpression
+  | ContainsExpression
+  | NotContainExpression
+  | StartsWithExpression
+  | EndsWithExpression
+  | HasValueExpression
+  | IsEmptyExpression;
 
 // BUILT IN EVENTS
 export enum EventType {
