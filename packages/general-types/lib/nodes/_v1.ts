@@ -2,6 +2,8 @@ import { Port } from '@voiceflow/api-sdk';
 
 import { DefaultNode, DefaultStep, Event, NodeID, TraceFrame as DefaultTraceFrame } from './types';
 
+export const _V1_STOP_TYPES = 'stopTypes';
+
 export type StepData<B = unknown> = {
   _v: 1;
   payload: B;
