@@ -64,7 +64,7 @@ export type VersionPrototypeData<L extends string> = Omit<s.StructType<typeof SV
 export const SVersionPrototypeSettings = s.object({
   layout: s.optional(s.string()),
   brandColor: s.optional(s.string()),
-  branchImage: s.optional(s.string()),
+  brandImage: s.optional(s.string()),
   avatar: s.optional(s.string()),
   password: s.optional(s.string()),
 });
