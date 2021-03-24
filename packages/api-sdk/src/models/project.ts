@@ -15,6 +15,7 @@ export enum ProjectLinkType {
 export const SProjectPrototypeLuis = s.object({
   type: s.enums([ProjectPrototypeNLPType.LUIS]),
   appID: s.string(),
+  resourceID: s.optional(s.string()),
 });
 
 type ProjectPrototypeNLPBase<T extends string, S extends s.Struct<any>> = { type: T } & Omit<s.StructType<S>, 'type'>;
