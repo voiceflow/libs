@@ -327,12 +327,14 @@ export const DEFAULT_INTENTS: Record<string, { defaults: AlexaDefaultIntent[]; b
       {
         name: AmazonIntent.HELP,
         samples: [
+          'aiuto',
           'la assistenza',
           'il aiuto',
           'il soccorso',
           'lo manforte',
           'la persona di servizio',
           'aiutare',
+          'aiutami',
           'fare a meno di',
           'contribuire a',
           'assistere',
@@ -342,6 +344,7 @@ export const DEFAULT_INTENTS: Record<string, { defaults: AlexaDefaultIntent[]; b
       {
         name: AmazonIntent.STOP,
         samples: [
+          'stop',
           'la fermata',
           'il fermo',
           'lo stop',
@@ -366,13 +369,13 @@ export const DEFAULT_INTENTS: Record<string, { defaults: AlexaDefaultIntent[]; b
       },
       {
         name: AmazonIntent.NO,
-        samples: ['il no', 'no', 'il rifiuto', 'la negazione', 'nessuno'],
+        samples: ['no', 'il no', 'il rifiuto', 'la negazione', 'nessuno'],
       },
     ],
     builtIns: [
       {
         name: AmazonIntent.REPEAT,
-        samples: ['repeat', '繰り返す', '引き返す', '折れ返る', '返す'],
+        samples: ['ripetere', 'la ripetizione'],
       },
     ],
   },
