@@ -166,9 +166,9 @@ export type ExpressionV2 =
   | LessOrEqualExpression
   | GreaterOrEqualExpression;
 
-export type LogicGroupData = GenericExpressionV2<ExpressionTypeV2.AND | ExpressionTypeV2.OR, ExpressionV2>;
+export type LogicGroupData = GenericExpressionV2<ExpressionTypeV2.AND | ExpressionTypeV2.OR, ExpressionV2[]>;
 
-export type ExpressionData = GenericExpressionV2<ExpressionTypeV2.AND | ExpressionTypeV2.OR, ExpressionV2 | LogicGroupData>;
+export type ExpressionData = GenericExpressionV2<ExpressionTypeV2.AND | ExpressionTypeV2.OR, (ExpressionV2 | LogicGroupData)[]>;
 
 // BUILT IN EVENTS
 export enum EventType {

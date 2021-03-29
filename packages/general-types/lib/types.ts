@@ -143,6 +143,7 @@ export enum ExpressionType {
   DIVIDE = 'divide',
   NOT = 'not',
 }
+
 // new types
 
 export enum ExpressionTypeV2 {
