@@ -1,6 +1,6 @@
 import { SlotMapping } from '@voiceflow/api-sdk';
 
-import { ExpressionType } from '@/types';
+import { ExpressionType, ExpressionTypeV2 } from '@/types';
 
 export { Step as DefaultStep, Node as DefaultNode, Port as DefaultPort } from '@voiceflow/api-sdk';
 
@@ -75,23 +75,10 @@ export type IntegrationUser = {
   integration_user_id?: string;
 };
 
-export enum ConditionsLogicInterface {
-  VARIABLE = 'variable',
-  VALUE = 'value',
-  LOGIC_GROUP = 'logic_group',
-  EXPRESSION = 'expression',
-}
-
 export type GenericExpression<T extends ExpressionType, V> = {
   type: T;
   value: V;
   depth: number;
-};
-
-export type GenericExpressionV2<T extends ExpressionType, V> = {
-  type: T;
-  value: V;
-  logicInterface?: ConditionsLogicInterface;
 };
 
 export type ExpressionTuple = [Expression, Expression];
@@ -127,23 +114,38 @@ export type Expression =
   | VariableExpression;
 
 // new
-export type ValueExpressionV2 = GenericExpressionV2<ExpressionType.VALUE, string>;
-export type AdvancedExpressionV2 = GenericExpressionV2<ExpressionType.ADVANCE, string>;
-export type VariableExpressionV2 = GenericExpressionV2<ExpressionType.VARIABLE, string>;
-export type OrExpressionV2 = GenericExpressionV2<ExpressionType.OR, ExpressionTuple>;
-export type AndExpressionV2 = GenericExpressionV2<ExpressionType.AND, ExpressionTuple>;
-export type LessExpressionV2 = GenericExpressionV2<ExpressionType.LESS, ExpressionTuple>;
-export type EqualsExpressionV2 = GenericExpressionV2<ExpressionType.EQUALS, ExpressionTuple>;
-export type GreaterExpressionV2 = GenericExpressionV2<ExpressionType.GREATER, ExpressionTuple>;
-export type IsEmptyExpression = GenericExpressionV2<ExpressionType.IS_EMPTY, ExpressionTuple>;
-export type ContainsExpression = GenericExpressionV2<ExpressionType.CONTAINS, ExpressionTuple>;
-export type NotEqualExpression = GenericExpressionV2<ExpressionType.NOT_EQUAL, ExpressionTuple>;
-export type EndsWithExpression = GenericExpressionV2<ExpressionType.ENDS_WITH, ExpressionTuple>;
-export type HasValueExpression = GenericExpressionV2<ExpressionType.HAS_VALUE, ExpressionTuple>;
-export type NotContainExpression = GenericExpressionV2<ExpressionType.NOT_CONTAIN, ExpressionTuple>;
-export type StartsWithExpression = GenericExpressionV2<ExpressionType.STARTS_WITH, ExpressionTuple>;
-export type LessOrEqualExpression = GenericExpressionV2<ExpressionType.LESS_OR_EQUAL, ExpressionTuple>;
-export type GreaterOrEqualExpression = GenericExpressionV2<ExpressionType.GREATER_OR_EQUAL, ExpressionTuple>;
+
+export enum ConditionsLogicInterface {
+  VARIABLE = 'variable',
+  VALUE = 'value',
+  LOGIC_GROUP = 'logic_group',
+  EXPRESSION = 'expression',
+}
+
+export type GenericExpressionV2<T extends ExpressionTypeV2, V> = {
+  type: T;
+  value: V;
+  logicInterface?: ConditionsLogicInterface;
+};
+
+export type ExpressionTupleV2 = [ExpressionV2?, ExpressionV2?];
+export type ValueExpressionV2 = GenericExpressionV2<ExpressionTypeV2.VALUE, string>;
+export type AdvancedExpressionV2 = GenericExpressionV2<ExpressionTypeV2.ADVANCE, string>;
+export type VariableExpressionV2 = GenericExpressionV2<ExpressionTypeV2.VARIABLE, string>;
+export type OrExpressionV2 = GenericExpressionV2<ExpressionTypeV2.OR, ExpressionTupleV2>;
+export type AndExpressionV2 = GenericExpressionV2<ExpressionTypeV2.AND, ExpressionTupleV2>;
+export type LessExpressionV2 = GenericExpressionV2<ExpressionTypeV2.LESS, ExpressionTupleV2>;
+export type EqualsExpressionV2 = GenericExpressionV2<ExpressionTypeV2.EQUALS, ExpressionTupleV2>;
+export type GreaterExpressionV2 = GenericExpressionV2<ExpressionTypeV2.GREATER, ExpressionTupleV2>;
+export type IsEmptyExpression = GenericExpressionV2<ExpressionTypeV2.IS_EMPTY, ExpressionTupleV2>;
+export type ContainsExpression = GenericExpressionV2<ExpressionTypeV2.CONTAINS, ExpressionTupleV2>;
+export type NotEqualExpression = GenericExpressionV2<ExpressionTypeV2.NOT_EQUAL, ExpressionTupleV2>;
+export type EndsWithExpression = GenericExpressionV2<ExpressionTypeV2.ENDS_WITH, ExpressionTupleV2>;
+export type HasValueExpression = GenericExpressionV2<ExpressionTypeV2.HAS_VALUE, ExpressionTupleV2>;
+export type NotContainExpression = GenericExpressionV2<ExpressionTypeV2.NOT_CONTAIN, ExpressionTupleV2>;
+export type StartsWithExpression = GenericExpressionV2<ExpressionTypeV2.STARTS_WITH, ExpressionTupleV2>;
+export type LessOrEqualExpression = GenericExpressionV2<ExpressionTypeV2.LESS_OR_EQUAL, ExpressionTupleV2>;
+export type GreaterOrEqualExpression = GenericExpressionV2<ExpressionTypeV2.GREATER_OR_EQUAL, ExpressionTupleV2>;
 
 export type ExpressionV2 =
   | OrExpressionV2
@@ -163,6 +165,10 @@ export type ExpressionV2 =
   | StartsWithExpression
   | LessOrEqualExpression
   | GreaterOrEqualExpression;
+
+export type LogicGroupData = GenericExpressionV2<ExpressionTypeV2.AND | ExpressionTypeV2.OR, ExpressionV2>;
+
+export type ExpressionData = GenericExpressionV2<ExpressionTypeV2.AND | ExpressionTypeV2.OR, ExpressionV2 | LogicGroupData>;
 
 // BUILT IN EVENTS
 export enum EventType {

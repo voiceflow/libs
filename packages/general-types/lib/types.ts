@@ -132,6 +132,9 @@ export enum ExpressionType {
   LESS = 'less',
   AND = 'and',
   OR = 'or',
+  VALUE = 'value',
+  VARIABLE = 'variable',
+  ADVANCE = 'advance',
 
   // soon to be deprecated
   PLUS = 'plus',
@@ -139,11 +142,18 @@ export enum ExpressionType {
   TIMES = 'times',
   DIVIDE = 'divide',
   NOT = 'not',
+}
+// new types
+
+export enum ExpressionTypeV2 {
+  EQUALS = 'equals',
+  GREATER = 'greater',
+  LESS = 'less',
+  AND = 'and',
+  OR = 'or',
   VALUE = 'value',
   VARIABLE = 'variable',
   ADVANCE = 'advance',
-
-  // new types
   NOT_EQUAL = 'not_equal',
   GREATER_OR_EQUAL = 'greater_or_equal',
   LESS_OR_EQUAL = 'less_or_equal',
