@@ -3,4 +3,6 @@ export class Config {
   tts?: boolean;
 
   stripSSML?: boolean;
+
+  stopTypes?: string[];
 }
