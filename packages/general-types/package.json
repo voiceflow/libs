@@ -12,7 +12,7 @@
     }
   },
   "dependencies": {
-    "@voiceflow/api-sdk": "1.28.2"
+    "@voiceflow/api-sdk": "1.29.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
