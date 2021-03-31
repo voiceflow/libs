@@ -4,8 +4,6 @@ import { ExpressionType, ExpressionTypeV2 } from '@/types';
 
 export { Step as DefaultStep, Node as DefaultNode, Port as DefaultPort } from '@voiceflow/api-sdk';
 
-export type TraceFrame<T extends string = string, P extends unknown = undefined> = P extends undefined ? { type: T } : { type: T; payload: P };
-
 export enum TraceType {
   END = 'end',
   FLOW = 'flow',
@@ -201,3 +199,10 @@ export type Command<E extends Event = Event> =
       diagramID: string | null;
       event: E;
     };
+
+export type TraceFrame<T extends string = string, P extends unknown = undefined, E extends Event = Event> = {
+  type: T;
+  payload: P;
+  paths?: { event: E }[];
+  defaultPath?: number;
+};
