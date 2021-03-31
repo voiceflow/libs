@@ -129,10 +129,11 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     return newProject;
   }
 
-  public async getPrototype(id: VersionID) {
+  public async getPrototype(id: VersionID, body: { isPublic?: boolean } = {}) {
     this._assertModelID(id);
 
-    const { data } = await this.fetch.get<VersionPrototype>(`${this._getCRUDEndpoint(id)}/prototype`);
+    const query = body.isPublic ? `?isPublic=${body.isPublic}` : '';
+    const { data } = await this.fetch.get<VersionPrototype>(`${this._getCRUDEndpoint(id)}/prototype${query}`);
 
     return data;
   }
@@ -150,6 +151,14 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     s.assert(body, SVersion.schema.prototype.schema.settings);
 
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/prototype`, body, { path: 'settings' });
+
+    return data;
+  }
+
+  public async checkPrototypeSharedLogin(id: VersionID, body: { password: string }) {
+    this._assertModelID(id);
+
+    const { data } = await this.fetch.put<{ versionID: string }>(`${this._getCRUDEndpoint(id)}/prototype/share/login`, body);
 
     return data;
   }

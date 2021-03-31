@@ -67,6 +67,7 @@ export const SVersionPrototypeSettings = s.object({
   brandImage: s.optional(s.string()),
   avatar: s.optional(s.string()),
   password: s.optional(s.string()),
+  hasPassword: s.optional(s.boolean()),
 });
 
 export const SVersionPrototype = s.object({

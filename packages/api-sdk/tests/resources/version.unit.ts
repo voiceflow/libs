@@ -310,18 +310,31 @@ describe('VersionResource', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
-  it('.getPrototype', async () => {
-    const { fetch, assert, resource } = createClient();
+  describe('.getPrototype', async () => {
+    it('returns correctly', async () => {
+      const { fetch, assert, resource } = createClient();
 
-    fetch.get.resolves({ data: RESPONSE_DATA });
+      fetch.get.resolves({ data: RESPONSE_DATA });
 
-    const data = await resource.getPrototype('1');
+      const data = await resource.getPrototype('1');
 
-    expect(fetch.get.callCount).to.eql(1);
-    expect(fetch.get.args[0]).to.eql(['versions/1/prototype']);
-    expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+      expect(fetch.get.callCount).to.eql(1);
+      expect(fetch.get.args[0]).to.eql(['versions/1/prototype']);
+      expect(data).to.eql(RESPONSE_DATA);
+      expect(assert.callCount).to.eql(1);
+      expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+    });
+
+    it('attaches isPublic query parameter', async () => {
+      const { fetch, resource } = createClient();
+
+      fetch.get.resolves({ data: RESPONSE_DATA });
+
+      await resource.getPrototype('1', { isPublic: true });
+
+      expect(fetch.get.callCount).to.eql(1);
+      expect(fetch.get.args[0]).to.eql(['versions/1/prototype?isPublic=true']);
+    });
   });
 
   it('.updatePrototype', async () => {
@@ -359,5 +372,24 @@ describe('VersionResource', () => {
     expect(assert.callCount).to.eql(2);
     expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
     expect(assert.args[1]).to.eql([{ layout: 'value' }, resource['struct'].schema.prototype.schema.settings]);
+  });
+
+  it('checkPrototypeSharedLogin', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    const response = { data: 'dummy' };
+
+    fetch.put.resolves(response);
+
+    const body = { password: 'some-password' };
+    const versionID = '1';
+
+    const data = await resource.checkPrototypeSharedLogin(versionID, body);
+
+    expect(fetch.put.callCount).to.eql(1);
+    expect(fetch.put.args[0]).to.eql(['versions/1/prototype/share/login', body]);
+    expect(data).to.eql(response.data);
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 });
