@@ -581,6 +581,17 @@
     axios "^0.21.1"
     superstruct "^0.10.12"
 
+"@voiceflow/api-sdk@1.29.0":
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.29.0.tgz#8368427f13357507e5009d5b92086264bd890229"
+  integrity sha512-fILQ5XNAEG0FUCr2h9jhAnwC6qeRdFAK7vvZS9x0bCtZIh6GcRsjwJ3F7NqBu7rFImSafhW0vriKn4P3x+vwQQ==
+  dependencies:
+    "@types/atob" "^2.1.2"
+    "@voiceflow/logger" "^1.5.2"
+    atob "^2.1.2"
+    axios "^0.21.1"
+    superstruct "^0.10.12"
+
 "@voiceflow/commitlint-config@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@voiceflow/commitlint-config/-/commitlint-config-1.0.1.tgz#e9513aa348d5e88ff064022e2dae8d0d7e227f6a"
@@ -625,6 +636,13 @@
   integrity sha512-BKthZNP7MzNNeP0Sm3jX4QsjmoUGIJ2LY54/lz1wPB7rD9KVKX/YgeFPHAnZv6DAH209VU/wDR++STZh68DxmA==
   dependencies:
     "@voiceflow/api-sdk" "1.28.2"
+
+"@voiceflow/general-types@1.40.0":
+  version "1.40.0"
+  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.40.0.tgz#a9433eee6a92474b2cc1c97dd59968f58615c8f2"
+  integrity sha512-qX/jmUJT+hJhfK0AC+bxKjosrl/xAY/+WQwtq8SIl7BAh8WspgnKbDvUyoUV+xQUB0XplTQkI4st5IIq7PVgZw==
+  dependencies:
+    "@voiceflow/api-sdk" "1.29.0"
 
 "@voiceflow/git-branch-check@^1.1.3":
   version "1.1.3"
