@@ -1,6 +1,7 @@
 export enum RequestType {
   INTENT = 'intent',
   TEXT = 'text',
+  LAUNCH = 'launch',
 }
 export interface Request<T extends string = string, P = unknown> {
   type: T;
@@ -20,6 +21,7 @@ export type Entity = {
   query?: string; // raw value of matched entity
 };
 
+export type LaunchRequest = Request<RequestType.LAUNCH, undefined>;
 export type TextRequest = Request<RequestType.TEXT, string>;
 export type IntentRequest = Request<
   RequestType.INTENT,
