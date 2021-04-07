@@ -11,6 +11,7 @@ export enum SlotType {
   NAME = 'VF.NAME',
   EMAIL = 'VF.EMAIL',
   NATOAPCO = 'VF.NATOAPCO',
+  PHONENUMBER = 'VF.PHONENUMBER',
 }
 
 type SubList = {
@@ -31,6 +32,12 @@ const EMAIL: SlotTypeValue = {
   label: 'Email',
   values: ['user@voiceflow.com', 'professor@utoronto.edu', 'person_name@gmail.com', 'username123.signature@hotmail.com', 'researcher@charity.org'],
   regex: '^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$',
+};
+
+const PHONENUMBER: SlotTypeValue = {
+  name: SlotType.PHONENUMBER,
+  label: 'Phone Number',
+  values: ['1 (800) 642-7676', '123-456-7890', '647 126 3928', '360 392-1293', '906-459-2349'],
 };
 
 export const SlotTypes: ObjectKeys = {
@@ -67,6 +74,7 @@ export const SlotTypes: ObjectKeys = {
       ],
     },
     EMAIL,
+    PHONENUMBER,
     {
       name: SlotType.NATOAPCO,
       label: 'NATO/APCO',
@@ -147,6 +155,7 @@ export const SlotTypes: ObjectKeys = {
       ],
     },
     EMAIL,
+    PHONENUMBER,
   ],
   [Language.FR]: [
     {
@@ -160,6 +169,7 @@ export const SlotTypes: ObjectKeys = {
       values: ['Martin', 'Thomas', 'Jacques', 'Jean', 'Pierre', 'Marie', 'Nicolas', 'Emma', 'Louise', 'Alice', 'Hugo', 'Liam', 'Mohamed', 'Lea'],
     },
     EMAIL,
+    PHONENUMBER,
   ],
   [Language.PT]: [
     {
@@ -188,6 +198,7 @@ export const SlotTypes: ObjectKeys = {
       ],
     },
     EMAIL,
+    PHONENUMBER,
   ],
   [Language.ES]: [
     {
@@ -216,6 +227,7 @@ export const SlotTypes: ObjectKeys = {
       ],
     },
     EMAIL,
+    PHONENUMBER,
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -229,6 +241,7 @@ export const SlotTypes: ObjectKeys = {
       values: NUMBERS,
     },
     EMAIL,
+    PHONENUMBER,
   ],
   [Language.JA]: [
     {
@@ -237,5 +250,25 @@ export const SlotTypes: ObjectKeys = {
       values: NUMBERS,
     },
     EMAIL,
+    PHONENUMBER,
   ],
+  [Language.NL]: [
+    {
+      name: SlotType.NUMBER,
+      label: 'Aantal',
+      values: NUMBERS,
+    },
+    EMAIL,
+    PHONENUMBER,
+  ],
+  [Language.IT]: [
+    {
+      name: SlotType.NUMBER,
+      label: 'Numero',
+      values: NUMBERS,
+    },
+    EMAIL,
+    PHONENUMBER,
+  ],
+  [Language.KO]: [EMAIL, PHONENUMBER],
 };
