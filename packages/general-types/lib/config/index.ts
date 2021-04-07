@@ -5,4 +5,6 @@ export class Config {
   stripSSML?: boolean;
 
   stopTypes?: string[];
+
+  stopAll?: boolean;
 }
