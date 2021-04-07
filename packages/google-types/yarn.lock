@@ -470,21 +470,10 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@voiceflow/api-sdk@1.28.2":
-  version "1.28.2"
-  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.28.2.tgz#62836be46d6be8699a3e0cffc3bb4d6850e33d27"
-  integrity sha512-yxwaYRIotrf6nYSCduuRoGtj4lWHqnxJ0yoHbZ2E9vseYSNqvRl/JOB4VO4PKiCrOlX4pn8UllHcTPyFFvG4KQ==
-  dependencies:
-    "@types/atob" "^2.1.2"
-    "@voiceflow/logger" "^1.5.2"
-    atob "^2.1.2"
-    axios "^0.21.1"
-    superstruct "^0.10.12"
-
-"@voiceflow/api-sdk@1.29.0":
-  version "1.29.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.29.0.tgz#8368427f13357507e5009d5b92086264bd890229"
-  integrity sha512-fILQ5XNAEG0FUCr2h9jhAnwC6qeRdFAK7vvZS9x0bCtZIh6GcRsjwJ3F7NqBu7rFImSafhW0vriKn4P3x+vwQQ==
+"@voiceflow/api-sdk@1.29.1":
+  version "1.29.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/api-sdk/-/api-sdk-1.29.1.tgz#68cb2671842ab9c4c2f7adabf5a0fb1e9bdbc06a"
+  integrity sha512-I90/N2iHIo5XPSJOsUR4pyk3fiLcsmyHbEY7AEPbbbGCy+jqmCdOQuHN9hcP1ju/MeUdYRqDNs/gNZbKP6DeTA==
   dependencies:
     "@types/atob" "^2.1.2"
     "@voiceflow/logger" "^1.5.2"
@@ -530,19 +519,12 @@
     eslint-plugin-xss "^0.1.9"
     typescript "^3.9.7"
 
-"@voiceflow/general-types@1.37.2":
-  version "1.37.2"
-  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.37.2.tgz#5674cd0889025ebd12e8de5fbb3d2b4ededbde80"
-  integrity sha512-BKthZNP7MzNNeP0Sm3jX4QsjmoUGIJ2LY54/lz1wPB7rD9KVKX/YgeFPHAnZv6DAH209VU/wDR++STZh68DxmA==
+"@voiceflow/general-types@1.40.1":
+  version "1.40.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.40.1.tgz#a24197046e9528cff88afb1a010843e71c61d1ee"
+  integrity sha512-Bj5DQ3tPaksMezXPehzDPcrV6C18Bj3DYMu6o8DxZQUmB+ze7OkTH2OvgUSIf1zpQbtwuAhLN37iYGoXTWR12Q==
   dependencies:
-    "@voiceflow/api-sdk" "1.28.2"
-
-"@voiceflow/general-types@1.40.0":
-  version "1.40.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.40.0.tgz#a9433eee6a92474b2cc1c97dd59968f58615c8f2"
-  integrity sha512-qX/jmUJT+hJhfK0AC+bxKjosrl/xAY/+WQwtq8SIl7BAh8WspgnKbDvUyoUV+xQUB0XplTQkI4st5IIq7PVgZw==
-  dependencies:
-    "@voiceflow/api-sdk" "1.29.0"
+    "@voiceflow/api-sdk" "1.29.1"
 
 "@voiceflow/git-branch-check@^1.1.3":
   version "1.1.3"
