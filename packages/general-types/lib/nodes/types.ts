@@ -200,7 +200,7 @@ export type Command<E extends Event = Event> =
       event: E;
     };
 
-export type TraceFrame<T extends string = string, P extends unknown = undefined, E extends Event = Event> = {
+export type TraceFrame<T extends string = string, P extends unknown = any, E extends Event = Event> = {
   type: T;
   payload: P;
   paths?: { event: E }[];
