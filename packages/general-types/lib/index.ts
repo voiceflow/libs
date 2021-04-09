@@ -6,3 +6,4 @@ export * from './request';
 export * from './config';
 export * from './constants';
 export * from './trace';
+export * from './vf';
