@@ -395,9 +395,9 @@
   integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
 
 "@types/node@*":
-  version "14.14.35"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.35.tgz#42c953a4e2b18ab931f72477e7012172f4ffa313"
-  integrity sha512-Lt+wj8NVPx0zUmUwumiVXapmaLUcAk3yPuHCFVXras9k5VT9TdhJqKqGVUQCD60OTMCl0qxJ57OiTL0Mic3Iag==
+  version "14.14.37"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.37.tgz#a3dd8da4eb84a996c36e331df98d82abd76b516e"
+  integrity sha512-XYmBiy+ohOR4Lh5jE379fV2IU+6Jn4g5qASinhitfyO71b/sCo6MKsMLF5tc7Zf2CE8hViVQyYSobJNke8OvUw==
 
 "@types/node@^12.0.2":
   version "12.12.17"
@@ -421,6 +421,13 @@
   dependencies:
     "@types/pino" "*"
 
+"@types/pino-pretty@*":
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/@types/pino-pretty/-/pino-pretty-4.7.0.tgz#e4a18541f8464d1cc48216f5593cc6a0e62dc2c3"
+  integrity sha512-fIZ+VXf9gJoJR4tiiM7G+j/bZkPoZEfFGzA4d8tAWCTpTVyvVaBwnmdLs3wEXYpMjw8eXulrOzNCjmGHT3FgHw==
+  dependencies:
+    "@types/pino" "*"
+
 "@types/pino-std-serializers@*":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@types/pino-std-serializers/-/pino-std-serializers-2.4.1.tgz#f8bd52a209c8b3c97d1533b1ba27f57c816382bf"
@@ -429,11 +436,12 @@
     "@types/node" "*"
 
 "@types/pino@*", "@types/pino@^6.3.6":
-  version "6.3.6"
-  resolved "https://registry.yarnpkg.com/@types/pino/-/pino-6.3.6.tgz#3aa928bcbd30dc0c6a0ec2e9302cabd5dee6e832"
-  integrity sha512-yVgSyMGzNDYe/XNMJyuIkklDeZbFdGAxRztYLoN1QQrrgiLJ1oJPmnS8Ge5xpzI9ODKEddKH97VFQ7cWO6Pumw==
+  version "6.3.7"
+  resolved "https://registry.yarnpkg.com/@types/pino/-/pino-6.3.7.tgz#0ccef98a159230cb3fa2589c7e8b00a7550a69f6"
+  integrity sha512-v7FdDXVEL0Zx1zcCf0cJZMojChnF+O0ujDKV1UdocsLuUhENjdtNIaanCZK1zRELp35x//bI2/IHtYUK0vmRvw==
   dependencies:
     "@types/node" "*"
+    "@types/pino-pretty" "*"
     "@types/pino-std-serializers" "*"
     "@types/sonic-boom" "*"
 
@@ -619,10 +627,10 @@
     eslint-plugin-xss "^0.1.9"
     typescript "^3.9.7"
 
-"@voiceflow/general-types@1.40.1":
-  version "1.40.1"
-  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.40.1.tgz#a24197046e9528cff88afb1a010843e71c61d1ee"
-  integrity sha512-Bj5DQ3tPaksMezXPehzDPcrV6C18Bj3DYMu6o8DxZQUmB+ze7OkTH2OvgUSIf1zpQbtwuAhLN37iYGoXTWR12Q==
+"@voiceflow/general-types@1.41.1":
+  version "1.41.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.41.1.tgz#70d54f467bb314e8c30a747e17a8f6d813d950f1"
+  integrity sha512-hCD71vfIkR3nMXTjxKgiyEviSkNr/1IfE9SVoJi+6JB2ynYhPAL4kptKuQAHCIc0xjx876HVWrBf6yoUZLrkQQ==
   dependencies:
     "@voiceflow/api-sdk" "1.29.1"
 
@@ -4993,9 +5001,9 @@ snapdragon@^0.8.1:
     use "^3.1.0"
 
 sonic-boom@^1.0.2:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/sonic-boom/-/sonic-boom-1.4.0.tgz#d6d35196c32609b46193145afc1174a8c692d21e"
-  integrity sha512-1xUAszhQBOrjk7uisbStQZYkZxD3vkYlCUw5qzOblWQ1ILN5v0dVPAs+QPgszzoPmbdWx6jyT9XiLJ95JdlLiQ==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/sonic-boom/-/sonic-boom-1.4.1.tgz#d35d6a74076624f12e6f917ade7b9d75e918f53e"
+  integrity sha512-LRHh/A8tpW7ru89lrlkU4AszXt1dbwSjVWguGrmlxE7tawVmDBlI1PILMkXAxJTwqhgsEeTHzj36D5CmHgQmNg==
   dependencies:
     atomic-sleep "^1.0.0"
     flatstr "^1.0.12"
