@@ -5,12 +5,12 @@ import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceF
 export type StepData<V> = {
   dialogs: Prompt<V>[];
   randomize: boolean;
+  canvasVisibility?: CanvasNodeVisibility;
 };
 
 export type NodeData = {
   prompt?: string;
   nextId?: NodeID;
-  canvasNodeVisibility?: CanvasNodeVisibility;
 } & ({ speak: string } | { random_speak: string[] });
 
 export enum SpeakType {
