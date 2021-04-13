@@ -519,10 +519,10 @@
     eslint-plugin-xss "^0.1.9"
     typescript "^3.9.7"
 
-"@voiceflow/general-types@1.42.0":
-  version "1.42.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.42.0.tgz#a8f1994ed098ba591e02ffcd31bf4a64b4a7b654"
-  integrity sha512-ULJ1Fymiv/6ZnC1m7Zr+0WWYDDAU+p2M8u4Vo0QxCCwAVng7JJYknajulDSjUAEuY6r1J2Q7FN8yFU/HAH47Bw==
+"@voiceflow/general-types@1.42.1":
+  version "1.42.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.42.1.tgz#455900569235ad812e5236978d44c557177b7db1"
+  integrity sha512-5JWHEogVfqC5y/W+5CjULqj45mk3ZNaIBxkGNcvF//ViUufBJzX7pk3rzPtG1xPpI0PmB7gQ+8avt3hGmyvMFw==
   dependencies:
     "@voiceflow/api-sdk" "1.29.1"
 
