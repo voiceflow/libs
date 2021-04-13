@@ -126,6 +126,11 @@ export type NoMatches<V> = {
   reprompts: Prompt<V>[];
 };
 
+export enum CanvasNodeVisibility {
+  PREVIEW = 'preview',
+  ALL_VARIANTS = 'all-variants',
+}
+
 export enum ExpressionType {
   EQUALS = 'equals',
   GREATER = 'greater',

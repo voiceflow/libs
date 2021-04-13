@@ -1,4 +1,4 @@
-import { Prompt } from '@/types';
+import { CanvasNodeVisibility, Prompt } from '@/types';
 
 import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
@@ -10,6 +10,7 @@ export type StepData<V> = {
 export type NodeData = {
   prompt?: string;
   nextId?: NodeID;
+  canvasNodeVisibility?: CanvasNodeVisibility;
 } & ({ speak: string } | { random_speak: string[] });
 
 export enum SpeakType {

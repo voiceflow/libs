@@ -1,4 +1,4 @@
-import { Locale, Prompt, Voice } from '@/types';
+import { CanvasNodeVisibility, Locale, Prompt, Voice } from '@/types';
 
 export enum RepeatType {
   OFF = 'OFF',
@@ -26,6 +26,7 @@ export type BaseVersionSettings<V> = {
   repeat: RepeatType;
   session: RestartSession | BaseResumeSession<V>;
   defaultVoice: null | V;
+  defaultCanvasNodeVisibility: null | CanvasNodeVisibility;
 };
 
 export type ResumeSession = BaseResumeSession<Voice>;
@@ -46,13 +47,20 @@ export const defaultPrompt = <V>(prompt: Prompt<V> | null | undefined, defaultVo
 };
 
 export const defaultBaseVersionSettings = <V>(
-  { error, repeat = RepeatType.ALL, session = { type: SessionType.RESTART }, defaultVoice = null }: Partial<BaseVersionSettings<V>> = {},
+  {
+    error,
+    repeat = RepeatType.ALL,
+    session = { type: SessionType.RESTART },
+    defaultVoice = null,
+    defaultCanvasNodeVisibility = null,
+  }: Partial<BaseVersionSettings<V>> = {},
   { defaultPromptVoice }: { defaultPromptVoice: V }
 ): BaseVersionSettings<V> => ({
   error: defaultPrompt<V>(error, defaultVoice ?? defaultPromptVoice),
   repeat,
   session,
   defaultVoice,
+  defaultCanvasNodeVisibility,
 });
 
 export const defaultGeneralVersionSettings = ({
