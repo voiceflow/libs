@@ -627,10 +627,10 @@
     eslint-plugin-xss "^0.1.9"
     typescript "^3.9.7"
 
-"@voiceflow/general-types@1.41.1":
-  version "1.41.1"
-  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.41.1.tgz#70d54f467bb314e8c30a747e17a8f6d813d950f1"
-  integrity sha512-hCD71vfIkR3nMXTjxKgiyEviSkNr/1IfE9SVoJi+6JB2ynYhPAL4kptKuQAHCIc0xjx876HVWrBf6yoUZLrkQQ==
+"@voiceflow/general-types@1.42.0":
+  version "1.42.0"
+  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-1.42.0.tgz#a8f1994ed098ba591e02ffcd31bf4a64b4a7b654"
+  integrity sha512-ULJ1Fymiv/6ZnC1m7Zr+0WWYDDAU+p2M8u4Vo0QxCCwAVng7JJYknajulDSjUAEuY6r1J2Q7FN8yFU/HAH47Bw==
   dependencies:
     "@voiceflow/api-sdk" "1.29.1"
 
@@ -3335,9 +3335,6 @@ js-yaml@^3.13.0, js-yaml@^3.13.1:
   version "3.13.1"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
   integrity sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
-  dependencies:
-    argparse "^1.0.7"
-    esprima "^4.0.0"
 
 js-yaml@^3.14.0:
   version "3.14.1"
