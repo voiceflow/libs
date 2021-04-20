@@ -9,7 +9,7 @@ export const SVersionPlatformDataSettings = s.object();
 
 export const SVersionPlatformDataPublishing = s.object();
 
-// TODO: do not forget to add new field to the StrictVersionPlatformData union
+// TODO: do not forget to add new field to the StrictVersionPlatformData union.
 export const SVersionPlatformData = dynamicObject({
   slots: s.array(SSlot),
   intents: s.array(SIntent),

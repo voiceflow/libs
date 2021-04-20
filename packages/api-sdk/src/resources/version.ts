@@ -162,6 +162,14 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
 
     return data;
   }
+
+  public async getPrototypePlan(id: VersionID) {
+    this._assertModelID(id);
+
+    const { data } = await this.fetch.get<{ plan: string }>(`${this._getCRUDEndpoint(id)}/prototype/plan`);
+
+    return data;
+  }
 }
 
 export default VersionResource;

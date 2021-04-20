@@ -392,4 +392,22 @@ describe('VersionResource', () => {
     expect(assert.callCount).to.eql(1);
     expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
+
+  it('getPrototypePlan', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    const response = { data: 'dummy' };
+
+    fetch.get.resolves(response);
+
+    const versionID = '1';
+
+    const data = await resource.getPrototypePlan(versionID);
+
+    expect(assert.callCount).to.eql(1);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql([`versions/${versionID}/prototype/plan`]);
+    expect(data).to.eql(response.data);
+  });
 });

@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/voiceflow/api-sdk/branch/master/graph/badge.svg?token=I7UDBF71DB)](https://codecov.io/gh/voiceflow/api-sdk)
 [![sonar quality gate](https://sonarcloud.io/api/project_badges/measure?project=voiceflow_api-sdk&metric=alert_status)](https://sonarcloud.io/dashboard?id=voiceflow_api-sdk)
 
-SDK for Voiceflow API, with typings for general voiceflow data structures
+SDK for Voiceflow API, with typings for general voiceflow data structures.
 
 ## Getting Started
 
