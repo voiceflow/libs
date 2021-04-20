@@ -7,6 +7,7 @@ export type Set = {
 
 export type StepData = {
   sets: Set[];
+  title?: string;
 };
 
 export type NodeSet = {
