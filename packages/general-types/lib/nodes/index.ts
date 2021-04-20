@@ -10,6 +10,7 @@ import * as Flow from './flow';
 import * as General from './general';
 import * as GoogleSheets from './googleSheets';
 import * as If from './if';
+import * as IfV2 from './ifV2';
 import * as Integration from './integration';
 import * as Interaction from './interaction';
 import * as Intent from './jump';
@@ -17,6 +18,7 @@ import * as Prompt from './prompt';
 import * as Command from './push';
 import * as Random from './random';
 import * as Set from './set';
+import * as SetV2 from './setV2';
 import * as Speak from './speak';
 import * as Start from './start';
 import * as Stream from './stream';
@@ -27,6 +29,7 @@ export * from './types';
 
 export type BaseSteps<V> =
   | Set.Step
+  | SetV2.Step
   | Capture.Step<V>
   | Flow.Step
   | Start.Step
@@ -41,6 +44,7 @@ export type BaseSteps<V> =
   | Zapier.Step
   | GoogleSheets.Step
   | If.Step
+  | IfV2.Step
   | Stream.Step
   | General.Step
   | Visual.Step
@@ -50,6 +54,7 @@ export type BaseSteps<V> =
 
 export type BaseNodes =
   | Set.Node
+  | SetV2.Node
   | Capture.Node
   | Flow.Node
   | Start.Node
@@ -63,6 +68,7 @@ export type BaseNodes =
   | General.Node
   | Visual.Node
   | If.Node
+  | IfV2.Node
   | Directive.Node
   | _v1.Node;
 
