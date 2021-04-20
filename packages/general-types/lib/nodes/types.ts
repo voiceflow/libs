@@ -24,7 +24,9 @@ export enum NodeType {
 
   // logic
   SET = 'set',
+  SET_V2 = 'setV2',
   IF = 'if',
+  IF_V2 = 'ifV2',
   RANDOM = 'random',
   CAPTURE = 'capture',
 
@@ -51,6 +53,7 @@ export enum NodeType {
   DEPRECATED = 'deprecated',
 }
 
+// Integrations Step
 export enum IntegrationType {
   ZAPIER = 'Zapier',
   CUSTOM_API = 'Custom API',
@@ -73,6 +76,9 @@ export type IntegrationUser = {
   integration_user_id?: string;
 };
 
+// If/Set step Conditions
+
+// Legacy
 export type GenericExpression<T extends ExpressionType, V> = {
   type: T;
   value: V;
@@ -111,8 +117,7 @@ export type Expression =
   | AdvancedExpression
   | VariableExpression;
 
-// new
-
+// New
 export enum ConditionsLogicInterface {
   VARIABLE = 'variable',
   VALUE = 'value',
@@ -121,8 +126,9 @@ export enum ConditionsLogicInterface {
 }
 
 export type GenericExpressionV2<T extends ExpressionTypeV2, V> = {
-  type: T;
+  type: T | null;
   value: V;
+  name?: string;
   logicInterface?: ConditionsLogicInterface;
 };
 
