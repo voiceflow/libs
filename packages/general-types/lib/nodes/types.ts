@@ -20,6 +20,7 @@ export type NodeID = string | null;
 export enum NodeType {
   SPEAK = 'speak',
   START = 'start',
+  CARD = 'card',
   INTERACTION = 'interaction',
 
   // logic
