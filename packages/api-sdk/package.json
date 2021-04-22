@@ -76,7 +76,7 @@
     "lint:report": "yarn lint --format json -o sonar/report.json",
     "prepare": "npm run build",
     "tdd": "yarn test --watch",
-    "test": "NODE_ENV=test nyc ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.{unit,it}.ts'",
+    "test:run": "NODE_ENV=test nyc ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.{unit,it}.ts'",
     "test:dependencies": "depcheck",
     "test:integration": "NODE_ENV=test nyc ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.it.ts'",
     "test:single": "NODE_ENV=test ts-mocha --paths --config ./config/tests/.mocharc.json",
