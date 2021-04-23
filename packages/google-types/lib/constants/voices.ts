@@ -947,7 +947,7 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, GoogleVoice[]> 
     {
       voiceLanguage: VoiceLanguage.PORTUGESE_BRAZIL,
       voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.PT_BR}-${VoiceType.WAVENET}-E`, `${VoiceLanguageCode.PT_BR}-${VoiceType.STANDARD}-E`],
+      voiceName: [`${VoiceLanguageCode.PT_BR}-${VoiceType.WAVENET}-A`, `${VoiceLanguageCode.PT_BR}-${VoiceType.STANDARD}-A`],
       ssmlGender: `${SSMLGender.FEMALE}-1`,
     },
   ],
