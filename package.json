@@ -6,6 +6,8 @@
     }
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
     "@voiceflow/commitlint-config": "^1.0.1",
@@ -27,14 +29,14 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap --no-ci",
-    "build": "lerna run build --concurrency=4 --parallel",
+    "build": "lerna run build --concurrency=4 --stream",
     "clean": "yarn clean:artifacts && yarn clean:root",
     "clean:artifacts": "lerna run clean --parallel",
     "clean:root": "rimraf node_modules",
     "commit": "cz",
-    "lint": "eslint \"packages/**/lib/**/**.{js,ts}\"  \"packages/**/src/**/**.{js,ts}\"",
-    "lint:fix": "yarn lint --fix",
-    "lint:quiet": "yarn lint --quiet",
+    "lint": "lerna run lint --concurrency=4 --parallel",
+    "lint:fix": "lerna run lint:fix --concurrency=4 --parallel",
+    "lint:quiet": "lerna run lint:quiet --concurrency=4 --parallel",
     "lint:report": "lerna run lint:report --concurrency=4 --parallel",
     "postinstall": "yarn bootstrap",
     "test": "lerna run test --concurrency=4 --parallel",
