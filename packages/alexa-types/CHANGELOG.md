@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.50.2](https://github.com/voiceflow/alexa-types/compare/@voiceflow/alexa-types@1.50.1...@voiceflow/alexa-types@1.50.2) (2021-05-11)
+
+
+### Bug Fixes
+
+* fix lerna publish ([2aa0552](https://github.com/voiceflow/alexa-types/commit/2aa0552cb10be289a7cf5c3f4c759e0253b665f1))
+
+
+
+
+
 ## [1.50.1](https://github.com/voiceflow/alexa-types/compare/@voiceflow/alexa-types@1.50.0...@voiceflow/alexa-types@1.50.1) (2021-05-11)
 
 

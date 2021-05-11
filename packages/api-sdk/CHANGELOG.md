@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.31.2](https://github.com/voiceflow/api-sdk/compare/@voiceflow/api-sdk@1.31.1...@voiceflow/api-sdk@1.31.2) (2021-05-11)
+
+
+### Bug Fixes
+
+* fix lerna publish ([2aa0552](https://github.com/voiceflow/api-sdk/commit/2aa0552cb10be289a7cf5c3f4c759e0253b665f1))
+
+
+
+
+
 ## [1.31.1](https://github.com/voiceflow/api-sdk/compare/@voiceflow/api-sdk@1.31.0...@voiceflow/api-sdk@1.31.1) (2021-05-11)
 
 

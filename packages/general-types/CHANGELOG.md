@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.46.2](https://github.com/voiceflow/general-types/compare/@voiceflow/general-types@1.46.1...@voiceflow/general-types@1.46.2) (2021-05-11)
+
+
+### Bug Fixes
+
+* fix lerna publish ([2aa0552](https://github.com/voiceflow/general-types/commit/2aa0552cb10be289a7cf5c3f4c759e0253b665f1))
+
+
+
+
+
 ## [1.46.1](https://github.com/voiceflow/general-types/compare/@voiceflow/general-types@1.46.0...@voiceflow/general-types@1.46.1) (2021-05-11)
 
 
