@@ -40,6 +40,7 @@
     "lint:report": "lerna run lint:report --concurrency=4 --parallel",
     "postinstall": "yarn bootstrap",
     "test": "lerna run test --concurrency=4 --parallel",
+    "test2": "exit 0",
     "test:dependencies": "lerna run test:dependencies --concurrency=4 --parallel",
     "test:integration": "lerna run test:integration --concurrency=4 --parallel",
     "test:run": "lerna run test:run --concurrency=4 --parallel",
