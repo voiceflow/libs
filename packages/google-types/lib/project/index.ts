@@ -4,7 +4,7 @@ import { GoogleProjectMemberData } from './member';
 
 export * from './member';
 
-export type GoogleProjectData = {};
+export type GoogleProjectData = Record<string, unknown>;
 
 export type GoogleProject = Project<GoogleProjectData, GoogleProjectMemberData> & {
   platform: 'google';

@@ -1,6 +1,5 @@
 coverage
 .idea
-.nyc_output
 scratch.js
 /scripts
 /.ebextensions/
@@ -8,4 +7,8 @@ scratch.js
 /routes/multimodal/apl_authoring_tool
 /database
 /node_modules
-
+/routes
+**/build
+**/node_modules
+**/.nyc_output
+**/nyc_coverage

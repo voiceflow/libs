@@ -2,7 +2,7 @@ import { NodeID } from '@voiceflow/general-types';
 
 import { DefaultNode, DefaultStep, NodeType } from './types';
 
-export type StepData = {};
+export type StepData = Record<string, unknown>;
 
 export type NodeData = {
   nextId?: NodeID;

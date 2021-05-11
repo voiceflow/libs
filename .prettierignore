@@ -1,6 +1,5 @@
 coverage
 .idea
-.nyc_output
 scratch.js
 /scripts
 /.ebextensions/
@@ -9,3 +8,7 @@ scratch.js
 /database
 /node_modules
 /routes
+**/build
+**/node_modules
+**/.nyc_output
+**/nyc_coverage

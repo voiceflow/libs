@@ -1,6 +1,6 @@
 import { DefaultNode, DefaultStep, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
-export type StepData = {};
+export type StepData = Record<string, unknown>;
 
 export type NodeData = {
   end: true;

@@ -1,6 +1,6 @@
 import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
 
-export type StepData = {};
+export type StepData = Record<string, unknown>;
 
 export type NodeData = {
   nextId?: NodeID;
