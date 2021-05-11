@@ -1,13 +1,13 @@
 {
   "name": "@voiceflow/general-types",
   "description": "Vocieflwo general project types",
-  "version": "1.45.2",
+  "version": "1.46.0",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/general-types/issues"
   },
   "dependencies": {
-    "@voiceflow/api-sdk": "1.30.0"
+    "@voiceflow/api-sdk": "^1.31.0"
   },
   "devDependencies": {
     "@zerollup/ts-transform-paths": "^1.7.9",
