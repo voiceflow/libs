@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.31.6](https://github.com/voiceflow/api-sdk/compare/@voiceflow/api-sdk@1.31.5...@voiceflow/api-sdk@1.31.6) (2021-05-11)
+
+
+### Bug Fixes
+
+* remove test ([401711f](https://github.com/voiceflow/api-sdk/commit/401711faf97ea19c7cc2efe6e1d7a788fd36f6bc))
+
+
+
+
+
 ## [1.31.5](https://github.com/voiceflow/api-sdk/compare/@voiceflow/api-sdk@1.31.4...@voiceflow/api-sdk@1.31.5) (2021-05-11)
 
 
