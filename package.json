@@ -29,7 +29,7 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap --no-ci",
-    "build": "lerna run build --concurrency=4 --parallel",
+    "build": "lerna run build --concurrency=4 --stream",
     "clean": "yarn clean:artifacts && yarn clean:root",
     "clean:artifacts": "lerna run clean --parallel",
     "clean:root": "rimraf node_modules",
