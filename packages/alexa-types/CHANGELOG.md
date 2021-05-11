@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.50.1](https://github.com/voiceflow/alexa-types/compare/@voiceflow/alexa-types@1.50.0...@voiceflow/alexa-types@1.50.1) (2021-05-11)
+
+
+### Bug Fixes
+
+* added npmrc ([b257144](https://github.com/voiceflow/alexa-types/commit/b25714476c06da945917f05a840c957e82e388db))
+
+
+
+
+
 # 1.50.0 (2021-05-11)
 
 

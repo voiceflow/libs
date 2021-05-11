@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.46.1](https://github.com/voiceflow/general-types/compare/@voiceflow/general-types@1.46.0...@voiceflow/general-types@1.46.1) (2021-05-11)
+
+
+### Bug Fixes
+
+* added npmrc ([b257144](https://github.com/voiceflow/general-types/commit/b25714476c06da945917f05a840c957e82e388db))
+
+
+
+
+
 # 1.46.0 (2021-05-11)
 
 

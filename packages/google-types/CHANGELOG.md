@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.27.1](https://github.com/voiceflow/google-types/compare/@voiceflow/google-types@1.27.0...@voiceflow/google-types@1.27.1) (2021-05-11)
+
+
+### Bug Fixes
+
+* added npmrc ([b257144](https://github.com/voiceflow/google-types/commit/b25714476c06da945917f05a840c957e82e388db))
+
+
+
+
+
 # 1.27.0 (2021-05-11)
 
 
