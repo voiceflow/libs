@@ -35,6 +35,7 @@
     "lint": "eslint \"packages/**/lib/**/**.{js,ts}\"  \"packages/**/src/**/**.{js,ts}\"",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
+    "lint:report": "lerna run lint:report --concurrency=4 --parallel",
     "postinstall": "yarn bootstrap",
     "test": "lerna run test --concurrency=4 --parallel",
     "test:dependencies": "lerna run test:dependencies --concurrency=4 --parallel",
