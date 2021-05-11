@@ -47,7 +47,7 @@
   "scripts": {
     "build": "npm run clean && ttsc --project ./tsconfig.build.json",
     "clean": "rimraf build",
-    "lint": "eslint \"src/**/*.ts\"",
+    "lint": "eslint \"src/**/*.{ts,js}\"",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
     "lint:report": "yarn lint --format json -o sonar/report.json",
