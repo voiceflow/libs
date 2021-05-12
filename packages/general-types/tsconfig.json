@@ -1,5 +1,5 @@
 {
-  "extends": "@voiceflow/tsconfig/tsconfig.json",
+  "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
     "outDir": "./build",
     "baseUrl": "./src",

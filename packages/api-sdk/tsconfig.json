@@ -1,5 +1,5 @@
 {
-  "extends": "@voiceflow/tsconfig/tsconfig.json",
+  "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
     "lib": [
       "es2017",
