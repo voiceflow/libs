@@ -1,11 +1,13 @@
 import * as s from 'superstruct';
 
-import { Client, PublicClient } from '@/client';
+import { Client } from '@/client';
 import type { FetchConfig } from '@/fetch';
+import { PublicClient } from '@/publicclient';
 
-export type { Client, PublicClient } from '@/client';
-export type { UnknownRecord, ArrayElement, Flatten } from '@/types';
+export type { Client } from '@/client';
 export * from '@/models';
+export type { PublicClient } from '@/publicclient';
+export type { ArrayElement, Flatten, UnknownRecord } from '@/types';
 
 export const SParams = s.object({
   clientKey: s.string(),
