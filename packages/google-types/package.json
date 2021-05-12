@@ -13,7 +13,6 @@
     "googleapis": "^60.0.1"
   },
   "devDependencies": {
-    "@voiceflow/tsconfig": "^1.0.0",
     "@zerollup/ts-transform-paths": "^1.7.9",
     "depcheck": "^1.3.1",
     "rimraf": "^3.0.0",
