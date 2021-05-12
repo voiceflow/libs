@@ -11,7 +11,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['./*.js'],
+      files: ['*.js'],
       extends: ['@voiceflow/eslint-config/utility'],
     },
     {
