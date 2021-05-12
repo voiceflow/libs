@@ -2,7 +2,7 @@
   "extends": "@voiceflow/tsconfig/tsconfig.json",
   "compilerOptions": {
     "outDir": "./build",
-    "baseUrl": "./lib",
+    "baseUrl": "./src",
     "paths": {
       "@/*": [
         "./*"
