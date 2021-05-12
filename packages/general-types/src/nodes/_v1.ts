@@ -2,6 +2,7 @@ import { Port } from '@voiceflow/api-sdk';
 
 import { DefaultNode, DefaultStep, Event, NodeID } from './types';
 
+// eslint-disable-next-line no-underscore-dangle
 export const _V1_STOP_TYPES = 'stopTypes';
 
 export type StepData<B = unknown> = {

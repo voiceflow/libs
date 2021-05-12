@@ -20,7 +20,6 @@ jobs:
       - vfcommon/install_node_modules:
           avoid_post_install_scripts: false
       - vfcommon/build
-      - vfcommon/lint_source
       - vfcommon/lint_report
       - vfcommon/dependency_tests:
           step_name: Dependency Tests

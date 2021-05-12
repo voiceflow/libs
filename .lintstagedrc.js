@@ -1,5 +1,4 @@
 module.exports = {
-  'packages/**/package.json': ['fixpack'],
-  'packages/**/lib/**/**.{js,ts}': ['eslint --fix', 'prettier --write'],
-  'packages/**/src/**/**.{js,ts}': ['eslint --fix', 'prettier --write'],
+  '**/package.json': ['fixpack --quiet'],
+  '**/*.{js,ts}': ['eslint --fix'],
 };
