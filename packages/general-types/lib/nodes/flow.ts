@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
 
 export type VariableMapping = [string | null, string | null][];

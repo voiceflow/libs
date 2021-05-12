@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import { CanvasNodeVisibility, Prompt } from '@/types';
 
 import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';

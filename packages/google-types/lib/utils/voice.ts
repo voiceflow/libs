@@ -8,7 +8,6 @@ import {
   VoiceType,
 } from '@/constants';
 
-// eslint-disable-next-line import/prefer-default-export
 export const getVoiceForLanguage = (language: Language, voiceType: VoiceType) => {
   const locales = LanguageToLocale[language];
 

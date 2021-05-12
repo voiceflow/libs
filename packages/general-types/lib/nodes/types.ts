@@ -1,8 +1,10 @@
+/* eslint-disable camelcase */
+
 import { SlotMapping } from '@voiceflow/api-sdk';
 
 import { ExpressionType, ExpressionTypeV2 } from '@/types';
 
-export { Step as DefaultStep, Node as DefaultNode, Port as DefaultPort } from '@voiceflow/api-sdk';
+export { Node as DefaultNode, Port as DefaultPort, Step as DefaultStep } from '@voiceflow/api-sdk';
 
 export enum TraceType {
   END = 'end',

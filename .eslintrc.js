@@ -1,11 +1,16 @@
 module.exports = {
-  extends: ['@voiceflow/eslint-config', 'plugin:@typescript-eslint/recommended'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  extends: ['@voiceflow/eslint-config', '@voiceflow/eslint-config/typescript', '@voiceflow/eslint-config/utility'],
   overrides: [
     {
       files: ['*.ts'],
-      extends: ['@voiceflow/eslint-config/typescript'],
+      rules: {
+        'no-underscore-dangle': 'off',
+        'no-shadow': 'off',
+      }
+    },
+    {
+      files: ['packages/**/tests/**/*'],
+      extends: ['@voiceflow/eslint-config/mocha'],
     },
   ],
 };

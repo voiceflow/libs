@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
 export const AZURE_LOCALE_VOICE_META = {
   'ar-EG': { language: 'Arabic (Arabic )', locale: 'ar-EG', voices: [{ gender: 'Female', voiceID: 'azure-ar-EG-Hoda' }] },
   'ar-SA': { language: 'Arabic (Saudi Arabia)', locale: 'ar-SA', voices: [{ gender: 'Male', voiceID: 'azure-ar-SA-Naayf' }] },

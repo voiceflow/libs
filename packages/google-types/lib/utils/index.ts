@@ -1,2 +1,2 @@
-export * from './voice';
 export * from './invocationName';
+export * from './voice';

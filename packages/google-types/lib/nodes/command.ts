@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import { CommandMapping, Port, SlotMapping } from '@voiceflow/api-sdk';
 import { NodeID } from '@voiceflow/general-types';
 

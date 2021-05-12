@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import { v1 } from 'ask-smapi-model';
 
 export type AmazonProfile = {

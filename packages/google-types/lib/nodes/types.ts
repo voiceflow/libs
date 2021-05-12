@@ -1,4 +1,4 @@
-export { Step as DefaultStep, Node as DefaultNode, Command as DefaultCommand } from '@voiceflow/api-sdk';
+export { Command as DefaultCommand, Node as DefaultNode, Step as DefaultStep } from '@voiceflow/api-sdk';
 
 export enum NodeType {
   // visuals

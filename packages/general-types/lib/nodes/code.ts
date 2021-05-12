@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
 
 export type StepData = {

@@ -30,6 +30,7 @@ class User {
 
   public email = '';
 
+  // eslint-disable-next-line class-methods-use-this
   isAPIKey(authorization: string): boolean {
     return authorization.startsWith('VF.');
   }

@@ -7,7 +7,6 @@ const NON_LATIN_REGIONS = ['ja-JP', 'hi-IN'];
 
 const matchesKeyword = (splitName: string[]) => (keyword: string) => splitName.find((split) => split === keyword.toLowerCase());
 
-// eslint-disable-next-line import/prefer-default-export
 export const getInvocationNameError = (name?: string, locales: string[] = []) => {
   if (!name?.trim()) {
     return 'Invocation name required for Google';

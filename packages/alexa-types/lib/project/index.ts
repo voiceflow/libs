@@ -3,8 +3,8 @@ import { Project } from '@voiceflow/api-sdk';
 import { AlexaProjectMemberData } from './member';
 import { AlexaProduct } from './product';
 
-export * from './product';
 export * from './member';
+export * from './product';
 
 export type AlexaProjectData = {
   products: Record<string, AlexaProduct>;

@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import { NodeID } from '@voiceflow/general-types';
 
 import { DefaultNode, DefaultStep, NodeType, PermissionType } from './types';

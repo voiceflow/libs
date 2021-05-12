@@ -23,7 +23,6 @@ export enum DeviceType {
   GOOGLE_NEST_HUB = 'google_nest_hub',
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export const DEVICE_SIZE_MAP: Record<DeviceType, Dimensions> = {
   [DeviceType.MOBILE]: { width: 375, height: 812 },
   [DeviceType.TABLET]: { width: 1024, height: 1366 },

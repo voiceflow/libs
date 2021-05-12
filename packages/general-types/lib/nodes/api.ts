@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import { DefaultStep, IntegrationType, NodeID, NodeType } from './types';
 
 export type APIKeyVal = {

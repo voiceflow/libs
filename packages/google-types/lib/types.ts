@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { oauth2_v2 } from 'googleapis';
 
 export type GoogleProfile = oauth2_v2.Schema$Userinfo;

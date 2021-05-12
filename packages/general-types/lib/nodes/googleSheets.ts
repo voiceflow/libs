@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import { DefaultStep, IntegrationType, IntegrationUser, NodeID, NodeType } from './types';
 
 export enum GoogleSheetsActionType {
