@@ -1,15 +1,21 @@
 {
   "extends": "@voiceflow/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "lib": ["es2017", "DOM"],
+    "lib": [
+      "es2017",
+      "DOM"
+    ],
     "outDir": "./build",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./*"
+      ]
     }
   },
   "compileOnSave": false,
-  "include": ["src/**/*.ts", "typings/**/*.d.ts", "example/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["node_modules/**"]
+  "exclude": [
+    "node_modules/**",
+    "build/**"
+  ]
 }

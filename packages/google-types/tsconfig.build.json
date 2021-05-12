@@ -1,11 +1,16 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "declaration": true,
     "plugins": [
       {
         "transform": "@zerollup/ts-transform-paths"
       }
     ]
   },
-  "exclude": ["node_modules/**", "tests/**"]
+  "exclude": [
+    "node_modules/**",
+    "build/**",
+    "tests/**"
+  ]
 }

@@ -1,7 +1,6 @@
 {
   "extends": "@voiceflow/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
     "outDir": "./build",
     "baseUrl": "./lib",
     "paths": {
@@ -11,6 +10,8 @@
     }
   },
   "compileOnSave": false,
-  "include": ["**/*.ts", "typings/**/*.d.ts"],
-  "exclude": ["node_modules/**", "build/**"]
+  "exclude": [
+    "node_modules/**",
+    "build/**"
+  ]
 }
