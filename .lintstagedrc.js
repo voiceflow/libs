@@ -1,4 +1,4 @@
 module.exports = {
-  'packages/**/package.json': ['fixpack'],
+  '**/package.json': ['fixpack'],
   '**/*.{js,ts}': ['eslint --fix'],
 };

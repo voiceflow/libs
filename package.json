@@ -49,6 +49,6 @@
     "test:unit": "lerna run test:unit --concurrency=4 --parallel"
   },
   "workspaces": [
-    "packages/*"
+     "packages/*"
   ]
 }
