@@ -4,7 +4,8 @@ import JWT from 'jsonwebtoken';
 import sinon from 'sinon';
 import * as s from 'superstruct';
 
-import { Client, PublicClient } from '@/client';
+import { Client } from '@/client';
+import { PublicClient } from '@/publicclient';
 import ApiSDK, { SGenerateClientParams, SParams } from '@/index';
 
 const createSDK = () => {
