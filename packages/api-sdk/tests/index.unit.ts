@@ -5,8 +5,8 @@ import sinon from 'sinon';
 import * as s from 'superstruct';
 
 import { Client } from '@/client';
-import { PublicClient } from '@/publicclient';
 import ApiSDK, { SGenerateClientParams, SParams } from '@/index';
+import { PublicClient } from '@/publicclient';
 
 const createSDK = () => {
   const assert = sinon.stub(s, 'assert');
