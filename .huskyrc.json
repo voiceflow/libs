@@ -1,7 +1,7 @@
 {
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-    "pre-commit": "lint-staged",
+    "pre-commit": "yarn lint:fix && lint-staged",
     "pre-push": "git-branch-check"
   }
 }
