@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.46.7](https://github.com/voiceflow/general-types/compare/@voiceflow/general-types@1.46.6...@voiceflow/general-types@1.46.7) (2021-05-12)
+
+
+### Bug Fixes
+
+* standarization improvements (VF-281) ([#7](https://github.com/voiceflow/general-types/issues/7)) ([efb8e62](https://github.com/voiceflow/general-types/commit/efb8e62b2050232a07444786e638adbc09e4bcc3))
+
+
+
+
+
 ## [1.46.6](https://github.com/voiceflow/general-types/compare/@voiceflow/general-types@1.46.5...@voiceflow/general-types@1.46.6) (2021-05-11)
 
 **Note:** Version bump only for package @voiceflow/general-types
