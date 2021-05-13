@@ -103,5 +103,6 @@ dist
 
 build/
 sonar/
+nyc_coverage*
 
 .npmrc

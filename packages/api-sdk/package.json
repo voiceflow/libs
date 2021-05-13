@@ -48,10 +48,10 @@
     "tdd": "yarn test --watch",
     "test": "yarn test:run",
     "test:dependencies": "depcheck",
-    "test:integration": "NODE_ENV=test nyc ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.it.ts'",
+    "test:integration": "NODE_ENV=test nyc --report-dir=nyc_coverage_integration ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.it.ts'",
     "test:run": "NODE_ENV=test nyc ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.{unit,it}.ts'",
     "test:single": "NODE_ENV=test ts-mocha --paths --config ./config/tests/.mocharc.json",
-    "test:unit": "NODE_ENV=test nyc ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.unit.ts'"
+    "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.unit.ts'"
   },
   "types": "build/index.d.ts"
 }
