@@ -1,15 +1,15 @@
 {
   "name": "@voiceflow/google-types",
   "description": "Google service types",
-  "version": "1.27.9",
+  "version": "1.27.10",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/api-sdk": "^1.31.9",
+    "@voiceflow/api-sdk": "^1.31.10",
     "@voiceflow/common": "6.5.0",
-    "@voiceflow/general-types": "^1.46.9",
+    "@voiceflow/general-types": "^1.46.10",
     "googleapis": "^60.0.1"
   },
   "files": [
