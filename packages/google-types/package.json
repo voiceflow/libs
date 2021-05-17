@@ -4,7 +4,7 @@
   "version": "1.27.9",
   "author": "Voiceflow",
   "bugs": {
-    "url": "https://github.com/voiceflow/google-types/issues"
+    "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
     "@voiceflow/api-sdk": "^1.31.9",
@@ -15,7 +15,7 @@
   "files": [
     "build"
   ],
-  "homepage": "https://github.com/voiceflow/google-types#readme",
+  "homepage": "https://github.com/voiceflow/libs#readme",
   "keywords": [
     "voiceflow",
     "voiceflow-types"
@@ -24,7 +24,7 @@
   "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voiceflow/google-types.git"
+    "url": "git+https://github.com/voiceflow/libs.git"
   },
   "scripts": {
     "build": "yarn clean && ttsc --project ./tsconfig.build.json",

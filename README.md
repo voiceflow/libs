@@ -5,3 +5,19 @@
 # libs
 
 Voiceflow's Libraries
+
+## Alexa Types
+
+Check the full description [here](packages/alexa-types/README.md)
+
+## Google Types
+
+Check the full description [here](packages/google-types/README.md)
+
+## General Types
+
+Check the full description [here](packages/general-types/README.md)
+
+## API SDK
+
+Check the full description [here](packages/api-sdk/README.md)

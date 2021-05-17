@@ -4,7 +4,7 @@
   "version": "1.31.9",
   "author": "Voiceflow",
   "bugs": {
-    "url": "https://github.com/voiceflow/api-sdk/issues"
+    "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
     "@types/atob": "^2.1.2",
@@ -27,7 +27,7 @@
     "ts-mocha": "^7.0.0",
     "tsconfig-paths": "^3.9.0"
   },
-  "homepage": "https://github.com/voiceflow/api-sdk#readme",
+  "homepage": "https://github.com/voiceflow/libs#readme",
   "keywords": [
     "voiceflow"
   ],
@@ -35,7 +35,7 @@
   "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voiceflow/api-sdk.git"
+    "url": "git+https://github.com/voiceflow/libs.git"
   },
   "scripts": {
     "build": "npm run clean && ttsc --project ./tsconfig.build.json",
