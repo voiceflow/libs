@@ -37,7 +37,7 @@ const EMAIL: SlotTypeValue = {
 const PHONENUMBER: SlotTypeValue = {
   name: SlotType.PHONENUMBER,
   label: 'Phone Number',
-  values: ['1 (800) 642-7676', '123-456-7890', '647 126 3928', '360 392-1293', '906-459-2349'],
+  values: ['1 (800) 642-7676', '123-456-7890', '647 126 3928', '360 392-1293', '906-459-2349', '2018073710', '4791945491'],
 };
 
 export const SlotTypes: ObjectKeys = {
