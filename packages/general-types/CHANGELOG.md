@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.48.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.47.0...@voiceflow/general-types@1.48.0) (2021-05-26)
+
+
+### Features
+
+* set value type ([#10](https://github.com/voiceflow/libs/issues/10)) (VF-914) ([c0c79a6](https://github.com/voiceflow/libs/commit/c0c79a66dbd853f89a3a45b7a105d9ce8c6e1700))
+
+
+
+
+
 # [1.47.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.46.11...@voiceflow/general-types@1.47.0) (2021-05-26)
 
 
