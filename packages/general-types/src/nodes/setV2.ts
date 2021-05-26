@@ -1,8 +1,11 @@
+import { ExpressionTypeV2 } from '@/types';
+
 import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
 
 export type Set = {
   variable: string | null;
   expression: string;
+  type: ExpressionTypeV2.VALUE | ExpressionTypeV2.ADVANCE;
 };
 
 export type StepData = {
