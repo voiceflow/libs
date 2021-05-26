@@ -35,6 +35,7 @@ workflows:
             <<: *autorebase_filters
 
       - vfcommon/release_monorepo:
+          avoid_post_install_scripts: false
           ssh_key: "94:fb:dc:e2:30:96:9d:61:f5:6f:95:c2:32:20:f7:37"
           context: dev-test
           requires:
