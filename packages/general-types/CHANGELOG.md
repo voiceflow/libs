@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.48.2](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.48.1...@voiceflow/general-types@1.48.2) (2021-05-26)
+
+
+### Bug Fixes
+
+* **general-types:** add plain 10-digit and 13-digit phone numbers to training data (VF-975) ([#11](https://github.com/voiceflow/libs/issues/11)) ([f3edd47](https://github.com/voiceflow/libs/commit/f3edd472d29b69c17e9b725d786c021816957f8c))
+
+
+
+
+
 ## [1.48.1](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.48.0...@voiceflow/general-types@1.48.1) (2021-05-26)
 
 
