@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.47.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.46.11...@voiceflow/general-types@1.47.0) (2021-05-26)
+
+
+### Features
+
+* add hidden property to canvasvisibility (VF-917) ([#9](https://github.com/voiceflow/libs/issues/9)) ([b16f777](https://github.com/voiceflow/libs/commit/b16f7774011a331058ecaa233a64b57b00e48ce7))
+
+
+
+
+
 ## [1.46.11](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.46.10...@voiceflow/general-types@1.46.11) (2021-05-20)
 
 **Note:** Version bump only for package @voiceflow/general-types
