@@ -5,6 +5,7 @@ import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceF
 export enum CanvasVisibility {
   FULL = 'full',
   CROPPED = 'cropped',
+  HIDDEN = 'hidden',
 }
 
 export enum APLType {
