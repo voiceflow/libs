@@ -71,6 +71,7 @@ export const SIntent = s.object({
   slots: s.optional(s.array(SIntentSlot)),
   inputs: s.array(SIntentInput),
   builtIn: s.optional(s.boolean()),
+  _platform: s.optional(s.string()),
 });
 export type Intent = s.StructType<typeof SIntent>;
 
