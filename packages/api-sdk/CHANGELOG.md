@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.31.12](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.31.11...@voiceflow/api-sdk@1.31.12) (2021-05-31)
+
+
+### Bug Fixes
+
+* **api-sdk:** allow platform in intent ([#12](https://github.com/voiceflow/libs/issues/12)) ([d547367](https://github.com/voiceflow/libs/commit/d547367184d23ec81997a701cd121163e0561430))
+
+
+
+
+
 ## [1.31.11](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.31.10...@voiceflow/api-sdk@1.31.11) (2021-05-20)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
