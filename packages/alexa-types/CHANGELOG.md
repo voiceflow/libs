@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.51.0](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.50.16...@voiceflow/alexa-types@1.51.0) (2021-06-02)
+
+
+### Features
+
+* replace chips with buttons, refactor to interfaces (VF-1058) ([#13](https://github.com/voiceflow/libs/issues/13)) ([5ea1740](https://github.com/voiceflow/libs/commit/5ea17409dea19be3871eba440ed0d15f7abbe08a))
+
+
+
+
+
 ## [1.50.16](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.50.15...@voiceflow/alexa-types@1.50.16) (2021-05-31)
 
 **Note:** Version bump only for package @voiceflow/alexa-types

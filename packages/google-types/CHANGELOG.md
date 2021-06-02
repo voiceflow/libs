@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.28.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.27.16...@voiceflow/google-types@1.28.0) (2021-06-02)
+
+
+### Features
+
+* replace chips with buttons, refactor to interfaces (VF-1058) ([#13](https://github.com/voiceflow/libs/issues/13)) ([5ea1740](https://github.com/voiceflow/libs/commit/5ea17409dea19be3871eba440ed0d15f7abbe08a))
+
+
+
+
+
 ## [1.27.16](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.27.15...@voiceflow/google-types@1.27.16) (2021-05-31)
 
 **Note:** Version bump only for package @voiceflow/google-types
