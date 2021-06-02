@@ -34,9 +34,9 @@ export enum AmazonIntent {
   VOICEFLOW = 'VoiceFlowIntent',
 }
 
-export type AlexaDefaultIntent = DefaultIntent & {
+export interface AlexaDefaultIntent extends DefaultIntent {
   keep?: string[];
-};
+}
 
 export const INTERFACE_INTENTS: Partial<Record<InterfaceType, { name: AmazonIntent }[]>> = {
   // Reference: https://developer.amazon.com/docs/custom-skills/audioplayer-interface-reference.html#intents

@@ -1,6 +1,6 @@
 import * as s from 'superstruct';
 
-import { UnknownRecord } from '@/types';
+import { AnyRecord, Nullable } from '@/types';
 import { dynamicObject } from '@/utils';
 
 export const SPlatform = s.string();
@@ -99,9 +99,15 @@ export type CommandMapping = s.StructType<typeof SCommandMapping>;
 export const SCommand = dynamicObject({
   type: s.string(),
 });
-export type Command<T extends string = string, D extends UnknownRecord = UnknownRecord> = {
+/**
+ * @deprecated
+ */
+export type Command<T extends string = string, D extends AnyRecord = AnyRecord> = {
   type: T;
 } & D;
+export interface BaseCommand {
+  type: string;
+}
 
 export const SNodeID = s.string();
 export type NodeID = s.StructType<typeof SNodeID>;
@@ -110,10 +116,17 @@ export const SNodeType = s.string();
 export type NodeType = s.StructType<typeof SNodeID>;
 
 export const SNode = dynamicObject({ id: SNodeID, type: SNodeType });
-export type Node<T extends string = string, D extends UnknownRecord = UnknownRecord> = {
+/**
+ * @deprecated
+ */
+export type Node<T extends string = string, D extends AnyRecord = AnyRecord> = {
   id: string;
   type: T;
 } & D;
+export interface BaseNode {
+  id: string;
+  type: string;
+}
 
 export const SCoordPoint = s.number();
 export type CoordPoint = s.StructType<typeof SCoordPoint>;
@@ -124,32 +137,36 @@ export const SDiagramNode = s.object({
   coords: s.optional(s.tuple([s.number(), s.number()])),
   data: s.object(),
 });
-export type DiagramNode<T extends string = string, D extends UnknownRecord = UnknownRecord> = Omit<
-  s.StructType<typeof SDiagramNode>,
-  'data' | 'type'
-> & {
-  type: T;
+export interface BaseDiagramNode<D extends AnyRecord = AnyRecord> extends Omit<s.StructType<typeof SDiagramNode>, 'data'> {
   data: D;
-};
+}
 
-export type Block<T extends string = string, D extends UnknownRecord = UnknownRecord> = DiagramNode<
-  T,
-  D & { name: string; color: string; steps: string[] }
-> & {
+export interface BlockOnlyData {
+  name: string;
+  color: string;
+  steps: string[];
+}
+
+export interface BaseBlock<D extends AnyRecord = AnyRecord> extends BaseDiagramNode<D & BlockOnlyData> {
   coords: [number, number];
-};
+}
 
-export type Port<PD extends UnknownRecord = UnknownRecord> = {
+export interface BasePort<PD extends AnyRecord = AnyRecord> {
   type: string;
-  target: string | null;
+  target: Nullable<string>;
   data?: PD;
   id: string;
-};
-// [Port, ...Port[]] means one or more ports
-export type Step<T extends string = string, D extends UnknownRecord = UnknownRecord, P = [Port, ...Port[]]> = DiagramNode<T, D & { ports: P }>;
+}
+
+// [BasePort, ...BasePort[]] means one or more ports
+interface StepOnlyData<P = [BasePort, ...BasePort[]]> {
+  ports: P;
+}
+
+export type BaseStep<D extends AnyRecord = AnyRecord, P = [BasePort, ...BasePort[]]> = BaseDiagramNode<D & StepOnlyData<P>>;
 
 export const SBasePlatformData = s.object();
-export type BasePlatformData = s.StructType<typeof SBasePlatformData>;
+export type BasePlatformData = AnyRecord;
 
 export const SPrototypeModel = s.object({
   slots: s.array(SSlot),

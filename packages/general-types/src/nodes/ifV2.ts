@@ -1,13 +1,25 @@
-import { DefaultNode, DefaultStep, Event, ExpressionData, NodeID, NodeType } from './types';
+import { Nullable } from '@voiceflow/api-sdk';
 
-export type StepData = {
+import { BaseEvent, BaseNode, BaseStep, ExpressionData, NodeID, NodeType } from './types';
+
+export interface StepData {
   expressions: ExpressionData[];
-};
+}
 
-export type NodeData = {
-  payload: { expressions: (string | number)[]; elseId?: NodeID };
-  paths: Array<{ event?: Event; nextID: NodeID | null }>;
-};
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.IF_V2;
+}
 
-export type Step = DefaultStep<NodeType.IF_V2, StepData>;
-export type Node = DefaultNode<NodeType.IF_V2, NodeData>;
+export interface NodePath {
+  event?: BaseEvent;
+  nextID: Nullable<NodeID>;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.IF_V2;
+  payload: {
+    elseId?: NodeID;
+    expressions: (string | number)[];
+  };
+  paths: NodePath[];
+}

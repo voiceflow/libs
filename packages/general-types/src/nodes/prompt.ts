@@ -1,15 +1,11 @@
-import { Button, Chip, NoMatches, Prompt } from '@/types';
+import { NoMatches } from '@/types';
 
-import { DefaultStep, NodeType } from './types';
+import { BaseStep, NodeType, StepDataWithButtons, StepDataWithReprompt } from './types';
 
-export type StepData<V> = {
-  reprompt: Prompt<V> | null;
+export interface StepData<V> extends StepDataWithReprompt<V>, StepDataWithButtons {
   noMatches: NoMatches<V>;
-  buttons?: Button[] | null;
-  /**
-   * @deprecated Use buttons
-   */
-  chips: Chip[] | null;
-};
+}
 
-export type Step<V> = DefaultStep<NodeType.PROMPT, StepData<V>, []>;
+export interface Step<V> extends BaseStep<StepData<V>, []> {
+  type: NodeType.PROMPT;
+}

@@ -1,3 +1,4 @@
+import { Nullable } from '@voiceflow/api-sdk';
 import { BaseResumeSession, BaseVersionSettings, defaultBaseVersionSettings } from '@voiceflow/general-types';
 import { v1 } from 'ask-smapi-model';
 
@@ -21,7 +22,7 @@ export enum AccountLinkingAccessTokenScheme {
   REQUEST_BODY_CREDENTIALS = 'REQUEST_BODY_CREDENTIALS',
 }
 
-export type AccountLinking = {
+export interface AccountLinking {
   type: v1.skill.accountLinking.AccountLinkingType;
   scopes: string[];
   domains: string[];
@@ -31,17 +32,17 @@ export type AccountLinking = {
   authorizationUrl: string;
   accessTokenScheme: v1.skill.accountLinking.AccessTokenSchemeType;
   defaultTokenExpirationInSeconds: number;
-};
+}
 
-export type AlexaVersionSettings = BaseVersionSettings<Voice> & {
-  events: null | string;
+export interface AlexaVersionSettings extends BaseVersionSettings<Voice> {
+  events: Nullable<string>;
   permissions: string[];
-  accountLinking: null | AccountLinking;
+  accountLinking: Nullable<AccountLinking>;
   customInterface: boolean;
-  modelSensitivity: null | ModelSensitivity;
-};
+  modelSensitivity: Nullable<ModelSensitivity>;
+}
 
-export const defaultAccountLinking = (accountLinking?: null | Partial<AccountLinking>): null | AccountLinking => {
+export const defaultAccountLinking = (accountLinking?: Nullable<Partial<AccountLinking>>): Nullable<AccountLinking> => {
   if (!accountLinking) {
     return null;
   }

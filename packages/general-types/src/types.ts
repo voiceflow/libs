@@ -1,3 +1,5 @@
+import { Nullable } from '@voiceflow/api-sdk';
+
 export enum Locale {
   // English
   EN_US = 'en-US',
@@ -126,7 +128,7 @@ export type Chip = {
 
 export interface Button {
   name: string;
-  intent: string | null;
+  intent: Nullable<string>;
 }
 
 export type NoMatches<V> = {
@@ -137,6 +139,11 @@ export type NoMatches<V> = {
 export enum CanvasNodeVisibility {
   PREVIEW = 'preview',
   ALL_VARIANTS = 'all-variants',
+}
+
+export enum ButtonsLayout {
+  STACKED = 'stacked',
+  CAROUSEL = 'carousel',
 }
 
 export enum ExpressionType {

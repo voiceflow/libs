@@ -1,16 +1,18 @@
 /* eslint-disable camelcase */
 
-import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
+import { BaseNode, BaseStep, NodeID, NodeType } from './types';
 
-export type StepData = {
+export interface StepData {
   code: string;
-};
+}
 
-export type NodeData = {
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.CODE;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.CODE;
   code: string;
   fail_id?: NodeID;
   success_id?: NodeID;
-};
-
-export type Step = DefaultStep<NodeType.CODE, StepData>;
-export type Node = DefaultNode<NodeType.CODE, NodeData>;
+}

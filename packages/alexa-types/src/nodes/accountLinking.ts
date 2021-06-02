@@ -1,15 +1,18 @@
 /* eslint-disable camelcase */
 
+import { UnknownRecord } from '@voiceflow/api-sdk';
 import { NodeID } from '@voiceflow/general-types';
 
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { BaseNode, BaseStep, NodeType } from './types';
 
-export type StepData = Record<string, unknown>;
+export type StepData = UnknownRecord;
 
-export type NodeData = {
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.ACCOUNT_LINKING;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.ACCOUNT_LINKING;
   nextId?: NodeID;
   link_account: true;
-};
-
-export type Step = DefaultStep<NodeType.ACCOUNT_LINKING, StepData>;
-export type Node = DefaultNode<NodeType.ACCOUNT_LINKING, NodeData>;
+}

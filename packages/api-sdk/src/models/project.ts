@@ -18,9 +18,13 @@ export const SProjectPrototypeLuis = s.object({
   resourceID: s.optional(s.string()),
 });
 
-type ProjectPrototypeNLPBase<T extends string, S extends s.Struct<any>> = { type: T } & Omit<s.StructType<S>, 'type'>;
+export interface ProjectPrototypeNLPBase {
+  type: string;
+}
 
-export type ProjectPrototypeLuis = ProjectPrototypeNLPBase<ProjectPrototypeNLPType.LUIS, typeof SProjectPrototypeLuis>;
+export interface ProjectPrototypeLuis extends ProjectPrototypeNLPBase, Omit<s.StructType<typeof SProjectPrototypeLuis>, 'type'> {
+  type: ProjectPrototypeNLPType.LUIS;
+}
 
 export const SProjectPrototypeNLP = s.union([SProjectPrototypeLuis]);
 
@@ -33,9 +37,9 @@ export const SProjectPrototype = s.object({
   lastTrainedTime: s.optional(s.number()),
 });
 
-export type ProjectPrototype = Omit<s.StructType<typeof SProjectPrototype>, 'nlp'> & {
+export interface ProjectPrototype extends Omit<s.StructType<typeof SProjectPrototype>, 'nlp'> {
   nlp?: ProjectPrototypeNLP;
-};
+}
 
 export enum ProjectPrivacy {
   PUBLIC = 'public',
@@ -59,7 +63,8 @@ export const SProject = s.object({
   platformData: SBasePlatformData,
 });
 
-export type Project<P extends BasePlatformData, M extends BasePlatformData> = Omit<s.StructType<typeof SProject>, 'platformData' | 'members'> & {
+export interface Project<P extends BasePlatformData, M extends BasePlatformData>
+  extends Omit<s.StructType<typeof SProject>, 'platformData' | 'members'> {
   members: Member<M>[];
   platformData: P;
-};
+}

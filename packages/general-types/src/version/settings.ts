@@ -1,4 +1,6 @@
-import { CanvasNodeVisibility, Locale, Prompt, Voice } from '@/types';
+import { Nullable } from '@voiceflow/api-sdk';
+
+import { ButtonsLayout, CanvasNodeVisibility, Locale, Prompt, Voice } from '@/types';
 
 export enum RepeatType {
   OFF = 'OFF',
@@ -11,31 +13,32 @@ export enum SessionType {
   RESTART = 'restart',
 }
 
-export type RestartSession = {
+export interface RestartSession {
   type: SessionType.RESTART;
-};
+}
 
-export type BaseResumeSession<V> = {
+export interface BaseResumeSession<V> {
   type: SessionType.RESUME;
-  resume: null | Prompt<V>;
-  follow: null | Prompt<V>;
-};
+  resume: Nullable<Prompt<V>>;
+  follow: Nullable<Prompt<V>>;
+}
 
-export type BaseVersionSettings<V> = {
-  error: null | Prompt<V>;
+export interface BaseVersionSettings<V> {
+  error: Nullable<Prompt<V>>;
   repeat: RepeatType;
   session: RestartSession | BaseResumeSession<V>;
-  defaultVoice: null | V;
-  defaultCanvasNodeVisibility: null | CanvasNodeVisibility;
-};
+  defaultVoice: Nullable<V>;
+  defaultButtonsLayout: Nullable<ButtonsLayout>;
+  defaultCanvasNodeVisibility: Nullable<CanvasNodeVisibility>;
+}
 
 export type ResumeSession = BaseResumeSession<Voice>;
 
-export type GeneralVersionSettings = BaseVersionSettings<Voice> & {
+export interface GeneralVersionSettings extends BaseVersionSettings<Voice> {
   locales: Locale[];
-};
+}
 
-export const defaultPrompt = <V>(prompt: Prompt<V> | null | undefined, defaultVoice: V): null | Prompt<V> => {
+export const defaultPrompt = <V>(prompt: Nullable<Prompt<V>> | undefined, defaultVoice: V): Nullable<Prompt<V>> => {
   if (!prompt?.content) {
     return null;
   }
@@ -52,6 +55,7 @@ export const defaultBaseVersionSettings = <V>(
     repeat = RepeatType.ALL,
     session = { type: SessionType.RESTART },
     defaultVoice = null,
+    defaultButtonsLayout = null,
     defaultCanvasNodeVisibility = null,
   }: Partial<BaseVersionSettings<V>> = {},
   { defaultPromptVoice }: { defaultPromptVoice: V }
@@ -60,6 +64,7 @@ export const defaultBaseVersionSettings = <V>(
   repeat,
   session,
   defaultVoice,
+  defaultButtonsLayout,
   defaultCanvasNodeVisibility,
 });
 

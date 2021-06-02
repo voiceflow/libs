@@ -1,23 +1,33 @@
 /* eslint-disable camelcase */
+import { Nullable } from '@voiceflow/api-sdk';
 
-import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
+import { BaseNode, BaseStep, BaseTraceFrame, NodeID, NodeType, TraceType } from './types';
 
-export type VariableMapping = [string | null, string | null][];
+export type VariableMapping = [Nullable<string>, Nullable<string>][];
 
-export type StepData = {
-  diagramID: string | null;
-  variableMap: null | { inputs: VariableMapping; outputs: VariableMapping };
-};
+export interface StepData {
+  diagramID: Nullable<string>;
+  variableMap: Nullable<{ inputs: VariableMapping; outputs: VariableMapping }>;
+}
 
-export type NodeData = {
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.FLOW;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.FLOW;
   nextId?: NodeID;
   diagram_id?: string;
   variable_map?: {
     inputs?: [string, string][];
     outputs?: [string, string][];
   };
-};
+}
 
-export type Step = DefaultStep<NodeType.FLOW, StepData>;
-export type Node = DefaultNode<NodeType.FLOW, NodeData>;
-export type TraceFrame = DefaultTraceFrame<TraceType.FLOW, { diagramID: string }>;
+export interface TraceFramePayload {
+  diagramID: string;
+}
+
+export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
+  type: TraceType.FLOW;
+}

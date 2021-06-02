@@ -1,19 +1,19 @@
 /* eslint-disable camelcase */
 
-import { DefaultStep, IntegrationType, IntegrationUser, NodeID, NodeType } from './types';
+import { BaseStep, IntegrationType, IntegrationUser, NodeID, NodeType } from './types';
 
 export enum ZapierActionType {
   START_A_ZAP = 'Start a Zap',
 }
 
-export type StepData = {
+export interface StepData {
   user?: IntegrationUser;
   value: string;
   selectedAction: ZapierActionType;
   selectedIntegration: IntegrationType.ZAPIER;
-};
+}
 
-export type NodeData = {
+export interface NodeData {
   fail_id?: NodeID;
   success_id?: NodeID;
   action_data: {
@@ -22,6 +22,8 @@ export type NodeData = {
   };
   selected_action: ZapierActionType;
   selected_integration: IntegrationType.ZAPIER;
-};
+}
 
-export type Step = DefaultStep<NodeType.ZAPIER, StepData>;
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.ZAPIER;
+}

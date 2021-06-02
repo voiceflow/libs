@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
+import { Nullable } from '@voiceflow/api-sdk';
 
-import { DefaultStep, IntegrationType, IntegrationUser, NodeID, NodeType } from './types';
+import { BaseStep, IntegrationType, IntegrationUser, NodeID, NodeType } from './types';
 
 export enum GoogleSheetsActionType {
   CREATE_DATA = 'Create Data',
@@ -9,53 +10,55 @@ export enum GoogleSheetsActionType {
   RETRIEVE_DATA = 'Retrieve Data',
 }
 
-export type GoogleSheetsValueLabel = {
+export interface GoogleSheetsValueLabel {
   value: number;
   label: string;
-};
+}
 
-export type GoogleSheetsMapping = {
+export interface GoogleSheetsMapping {
   arg1: GoogleSheetsValueLabel;
   arg2: string;
-};
+}
 
-export type GoogleSheetsSpreadsheet = {
+export interface GoogleSheetsSpreadsheet {
   value: string;
   label: string;
-};
+}
 
-export type StepData = {
+export interface StepData {
   user?: IntegrationUser;
-  sheet: null | GoogleSheetsValueLabel;
+  sheet: Nullable<GoogleSheetsValueLabel>;
   endRow: string;
   mapping: GoogleSheetsMapping[];
   startRow: string;
   rowNumber: string;
   rowValues: string[];
   matchValue: string;
-  spreadsheet: null | GoogleSheetsSpreadsheet;
-  headerColumn: null | GoogleSheetsValueLabel;
-  selectedAction: null | GoogleSheetsActionType;
+  spreadsheet: Nullable<GoogleSheetsSpreadsheet>;
+  headerColumn: Nullable<GoogleSheetsValueLabel>;
+  selectedAction: Nullable<GoogleSheetsActionType>;
   selectedIntegration: IntegrationType.GOOGLE_SHEETS;
-};
+}
 
-export type NodeData = {
+export interface NodeData {
   fail_id?: NodeID;
   success_id?: NodeID;
   action_data: {
     user?: IntegrationUser;
-    sheet: null | number;
+    sheet: Nullable<number>;
     mapping: { arg1: number; arg2: string }[];
     end_row: string;
     start_row: string;
     row_values: string[];
     row_number: string;
     match_value: string;
-    spreadsheet: null | string;
-    header_column: null | number;
+    spreadsheet: Nullable<string>;
+    header_column: Nullable<number>;
   };
-  selected_action: null | GoogleSheetsActionType;
+  selected_action: Nullable<GoogleSheetsActionType>;
   selected_integration: IntegrationType.GOOGLE_SHEETS;
-};
+}
 
-export type Step = DefaultStep<NodeType.GOOGLE_SHEETS, StepData>;
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.GOOGLE_SHEETS;
+}

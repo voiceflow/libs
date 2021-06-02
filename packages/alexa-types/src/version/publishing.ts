@@ -1,6 +1,6 @@
 import { Locale } from '@/types';
 
-export type AlexaVersionPublishing = {
+export interface AlexaVersionPublishing {
   forExport: boolean;
   hasAds: boolean;
   summary: string;
@@ -19,7 +19,7 @@ export type AlexaVersionPublishing = {
   privacyPolicy: string;
   termsAndConditions: string;
   updatesDescription?: string;
-};
+}
 
 export const defaultAlexaVersionPublishing = ({
   invocationName = '',

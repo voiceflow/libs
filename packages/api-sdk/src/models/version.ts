@@ -1,9 +1,9 @@
 import * as s from 'superstruct';
 
-import { UnknownRecord } from '@/types';
+import { AnyRecord } from '@/types';
 import { dynamicObject } from '@/utils';
 
-import { Command, SCommand, SCreatorID, SDiagramID, SIntent, SName, SProjectID, SPrototypeModel, SSlot, SVariable, SVersionID } from './shared';
+import { BaseCommand, SCommand, SCreatorID, SDiagramID, SIntent, SName, SProjectID, SPrototypeModel, SSlot, SVariable, SVersionID } from './shared';
 
 export const SVersionPlatformDataSettings = s.object();
 
@@ -17,16 +17,15 @@ export const SVersionPlatformData = dynamicObject({
   publishing: SVersionPlatformDataPublishing,
 });
 
-export type StrictVersionPlatformData<S extends UnknownRecord = UnknownRecord, P extends UnknownRecord = UnknownRecord> = Pick<
-  s.StructType<typeof SVersionPlatformData>,
-  'slots' | 'intents'
-> & {
+export interface StrictVersionPlatformData<S extends AnyRecord = AnyRecord, P extends AnyRecord = AnyRecord>
+  extends Pick<s.StructType<typeof SVersionPlatformData>, 'slots' | 'intents'> {
   settings: S;
   publishing: P;
-};
+}
 
-export type VersionPlatformData<S extends UnknownRecord = UnknownRecord, P extends UnknownRecord = UnknownRecord> = UnknownRecord &
-  StrictVersionPlatformData<S, P>;
+export interface VersionPlatformData<S extends AnyRecord = AnyRecord, P extends AnyRecord = AnyRecord>
+  extends StrictVersionPlatformData<S, P>,
+    AnyRecord {}
 
 export const SVersionPrototypeStackFrame = s.object({
   nodeID: s.optional(s.nullable(s.string())),
@@ -37,9 +36,10 @@ export const SVersionPrototypeStackFrame = s.object({
   variables: s.optional(s.object()),
 });
 
-export type VersionPrototypeStackFrame<C extends Command = Command> = Omit<s.StructType<typeof SVersionPrototypeStackFrame>, 'commands'> & {
+export interface VersionPrototypeStackFrame<C extends BaseCommand = BaseCommand>
+  extends Omit<s.StructType<typeof SVersionPrototypeStackFrame>, 'commands'> {
   commands?: C[];
-};
+}
 
 export const SVersionPrototypeContext = s.partial({
   turn: s.object(),
@@ -48,18 +48,18 @@ export const SVersionPrototypeContext = s.partial({
   variables: s.object(),
 });
 
-export type VersionPrototypeContext<C extends Command = Command> = Omit<s.StructType<typeof SVersionPrototypeContext>, 'stack'> & {
+export interface VersionPrototypeContext<C extends BaseCommand = BaseCommand> extends Omit<s.StructType<typeof SVersionPrototypeContext>, 'stack'> {
   stack?: VersionPrototypeStackFrame<C>[];
-};
+}
 
 export const SVersionPrototypeData = s.object({
   name: s.string(),
   locales: s.array(s.string()),
 });
 
-export type VersionPrototypeData<L extends string> = Omit<s.StructType<typeof SVersionPrototypeData>, 'locales'> & {
+export interface VersionPrototypeData<L extends string> extends Omit<s.StructType<typeof SVersionPrototypeData>, 'locales'> {
   locales: L[];
-};
+}
 
 export const SVersionPrototypeSettings = s.object({
   layout: s.optional(s.string()),
@@ -77,13 +77,11 @@ export const SVersionPrototype = s.object({
   settings: SVersionPrototypeSettings,
 });
 
-export type VersionPrototype<C extends Command = Command, L extends string = string> = Omit<
-  s.StructType<typeof SVersionPrototype>,
-  'context' | 'data'
-> & {
+export interface VersionPrototype<C extends BaseCommand = BaseCommand, L extends string = string>
+  extends Omit<s.StructType<typeof SVersionPrototype>, 'context' | 'data'> {
   data: VersionPrototypeData<L>;
   context: VersionPrototypeContext<C>;
-};
+}
 
 export const SVersion = s.object({
   _id: SVersionID,
@@ -97,10 +95,8 @@ export const SVersion = s.object({
   rootDiagramID: SDiagramID,
 });
 
-export type Version<P extends VersionPlatformData, C extends Command = Command, L extends string = string> = Omit<
-  s.StructType<typeof SVersion>,
-  'prototype' | 'platformData'
-> & {
+export interface Version<P extends VersionPlatformData, C extends BaseCommand = BaseCommand, L extends string = string>
+  extends Omit<s.StructType<typeof SVersion>, 'prototype' | 'platformData'> {
   prototype?: VersionPrototype<C, L>;
   platformData: P;
-};
+}

@@ -22,7 +22,7 @@ export enum Category {
   HOME_CONTROL = 'HOME_CONTROL',
 }
 
-export type LocalizedSettings = {
+export interface LocalizedSettings {
   displayName: string;
   pronunciation: string;
   shortDescription: string;
@@ -37,9 +37,9 @@ export type LocalizedSettings = {
   privacyPolicyUrl: string;
   sampleInvocations: string[];
   themeCustomization?: any;
-};
+}
 
-export type Settings = {
+export interface Settings {
   projectId: string;
   defaultLocale: string;
   localizedSettings: LocalizedSettings;
@@ -56,9 +56,9 @@ export type Settings = {
   surfaceRequirements?: any;
   testingInstructions?: string;
   accountLinking?: any;
-};
+}
 
-export type SettingsConfigFile = {
+export interface SettingsConfigFile {
   filePath: 'settings/settings.yaml';
   settings: Settings;
-};
+}

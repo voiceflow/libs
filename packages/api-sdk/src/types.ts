@@ -1,5 +1,8 @@
 import * as s from 'superstruct';
 
+export type Nullable<T> = T | null;
+export type AnyRecord = Record<string, any>;
+
 export type UnknownRecord = Record<string, unknown>;
 
 export type ArrayElement<A> = A extends readonly (infer T)[] ? T : never;

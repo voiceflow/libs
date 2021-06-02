@@ -1,4 +1,4 @@
-export { Command as DefaultCommand, Node as DefaultNode, Step as DefaultStep } from '@voiceflow/api-sdk';
+export { BaseCommand, BaseNode, BasePort, BaseStep } from '@voiceflow/api-sdk';
 
 export enum PermissionType {
   AVS_DISTRIBUTED_AUDIO = 'avs::distributed_audio',

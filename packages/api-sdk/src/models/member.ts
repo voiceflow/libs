@@ -1,6 +1,6 @@
 import * as s from 'superstruct';
 
-import { UnknownRecord } from '@/types';
+import { AnyRecord } from '@/types';
 
 import { SBasePlatformData, SCreatorID } from './shared';
 
@@ -9,6 +9,6 @@ export const SMember = s.object({
   platformData: SBasePlatformData,
 });
 
-export type Member<P extends UnknownRecord = UnknownRecord> = Omit<s.StructType<typeof SMember>, 'platformData'> & {
+export interface Member<P extends AnyRecord = AnyRecord> extends Omit<s.StructType<typeof SMember>, 'platformData'> {
   platformData: P;
-};
+}

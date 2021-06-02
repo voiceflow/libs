@@ -1,18 +1,13 @@
-import { CommandMapping, SlotMapping } from '@voiceflow/api-sdk';
-import { NodeID } from '@voiceflow/general-types';
+import { Command as JumpCommand, StepData as JumpStepData } from '@voiceflow/general-types/build/nodes/jump';
 
-import { DefaultCommand, DefaultStep, NodeType } from './types';
+import { BaseStep, NodeType } from './types';
 
-export type StepData = {
-  intent: string | null;
-  mappings?: SlotMapping[];
-};
+export type StepData = JumpStepData;
 
-export type CommandData = {
-  next: NodeID;
-  intent: string;
-  mappings: CommandMapping[];
-};
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.INTENT;
+}
 
-export type Step = DefaultStep<NodeType.INTENT, StepData>;
-export type Command = DefaultCommand<NodeType.INTENT, CommandData>;
+export interface Command extends Omit<JumpCommand, 'type'> {
+  type: NodeType.INTENT;
+}

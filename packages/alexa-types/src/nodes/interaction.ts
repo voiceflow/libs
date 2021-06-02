@@ -1,45 +1,31 @@
-import { SlotMapping } from '@voiceflow/api-sdk';
-import { NodeID, NoMatches, Prompt } from '@voiceflow/general-types';
+import { Nullable } from '@voiceflow/api-sdk';
+import { NodeID } from '@voiceflow/general-types';
+import { ElseType, StepData as GeneralStepData } from '@voiceflow/general-types/build/nodes/interaction';
+import { DataWithMappings } from '@voiceflow/general-types/build/nodes/types';
 
 import { Voice } from '@/types';
 
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { BaseNode, BaseStep, NodeType } from './types';
 
-export enum ElseType {
-  PATH = 'path',
-  REPROMPT = 'reprompt',
+export { ElseType };
+
+export type StepData = Omit<GeneralStepData<Voice>, 'chips' | 'buttons' | 'buttonsLayout'>;
+
+export interface Interaction extends DataWithMappings {
+  intent: string;
+  nextIdIndex?: number;
 }
 
-export type ElseData<V> = NoMatches<V> & {
-  type: ElseType;
-};
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.INTERACTION;
+}
 
-export type Choice = {
-  intent: string;
-  mappings?: SlotMapping[];
-};
-
-export type StepData = {
-  name: string;
-  else: ElseData<Voice>;
-  choices: Choice[];
-  reprompt: Prompt<Voice> | null;
-};
-
-export type Interaction = {
-  intent: string;
-  mappings?: SlotMapping[];
-  nextIdIndex?: number;
-};
-
-export type NodeData = {
+export interface Node extends BaseNode {
+  type: NodeType.INTERACTION;
   elseId?: NodeID;
-  nextIds: (string | null)[];
+  nextIds: Nullable<string>[];
   reprompt?: string;
   noMatches?: string[];
   randomize?: boolean;
   interactions: Interaction[];
-};
-
-export type Step = DefaultStep<NodeType.INTERACTION, StepData>;
-export type Node = DefaultNode<NodeType.INTERACTION, NodeData>;
+}

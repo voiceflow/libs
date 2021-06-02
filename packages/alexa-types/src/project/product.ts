@@ -18,15 +18,15 @@ export enum SubscriptionPaymentFrequency {
   MONTHLY = 'MONTHLY',
 }
 
-export type PublishingPrice = {
+export interface PublishingPrice {
   releaseDate: string; // e.g. 2020-06-15
   defaultPriceListing: {
     price: number;
     currency: string;
   };
-};
+}
 
-export type PublishingLocale = {
+export interface PublishingLocale {
   name: string;
   summary: string;
   keywords: string[];
@@ -38,10 +38,10 @@ export type PublishingLocale = {
     boughtCardDescription: string;
     purchasePromptDescription: string;
   };
-};
+}
 
 // products in sql
-export type AlexaProduct = {
+export interface AlexaProduct {
   name: string;
   type: ProductType;
   version: '1.0';
@@ -62,4 +62,4 @@ export type AlexaProduct = {
     subscriptionTrialPeriodDays: number;
     subscriptionPaymentFrequency: SubscriptionPaymentFrequency;
   };
-};
+}

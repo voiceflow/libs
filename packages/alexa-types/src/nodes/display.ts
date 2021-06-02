@@ -1,17 +1,19 @@
 import { APLStepData, APLType } from '@voiceflow/general-types/build/nodes/visual';
 
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { BaseNode, BaseStep, NodeType } from './types';
 
-export type StepData = Omit<APLStepData, 'visualType' | 'aplType'> & {
+export interface StepData extends Omit<APLStepData, 'visualType' | 'aplType'> {
   type: APLType;
-};
+}
 
-export type NodeData = {
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.DISPLAY;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.DISPLAY;
   datasource: string;
   document: string;
   aplCommands?: string;
   nextId: string;
-};
-
-export type Step = DefaultStep<NodeType.DISPLAY, StepData>;
-export type Node = DefaultNode<NodeType.DISPLAY, NodeData>;
+}

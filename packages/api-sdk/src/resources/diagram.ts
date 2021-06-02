@@ -1,7 +1,7 @@
 import * as s from 'superstruct';
 
 import type Fetch from '@/fetch';
-import { Diagram, DiagramID, DiagramNode, NodeID, SDiagram, SNode, SNodeID } from '@/models';
+import { BaseDiagramNode, Diagram, DiagramID, NodeID, SDiagram, SNode, SNodeID } from '@/models';
 import { createPutAndPostStruct } from '@/utils';
 
 import CrudResource from './crud';
@@ -26,7 +26,7 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
 
   public async get<T extends Partial<Diagram>>(id: DiagramID, fields: string[]): Promise<T>;
 
-  public async get<T extends DiagramNode = DiagramNode>(id: DiagramID): Promise<Diagram<T>>;
+  public async get<T extends BaseDiagramNode = BaseDiagramNode>(id: DiagramID): Promise<Diagram<T>>;
 
   public async get(id: DiagramID, fields?: string[]) {
     return fields ? super._getByID(id, fields) : super._getByID(id);
@@ -38,20 +38,22 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     return data;
   }
 
-  public async create<T extends DiagramNode = DiagramNode>(body: Omit<Diagram<T>, '_id'> & Partial<Pick<Diagram<T>, '_id'>>): Promise<Diagram<T>> {
+  public async create<T extends BaseDiagramNode = BaseDiagramNode>(
+    body: Omit<Diagram<T>, '_id'> & Partial<Pick<Diagram<T>, '_id'>>
+  ): Promise<Diagram<T>> {
     return super._post<Diagram<T>>(body);
   }
 
-  public async update<T extends DiagramNode = DiagramNode>(id: DiagramID, body: Partial<Diagram<T>>): Promise<Partial<Diagram<T>>> {
+  public async update<T extends BaseDiagramNode = BaseDiagramNode>(id: DiagramID, body: Partial<Diagram<T>>): Promise<Partial<Diagram<T>>> {
     return super._patch<Diagram<T>>(id, body);
   }
 
-  public async updateNode(id: DiagramID, nodeID: NodeID, body: Omit<DiagramNode, 'nodeID'>): Promise<DiagramNode> {
+  public async updateNode(id: DiagramID, nodeID: NodeID, body: Omit<BaseDiagramNode, 'nodeID'>): Promise<BaseDiagramNode> {
     this._assertModelID(id);
     s.assert(nodeID, SNodeID);
     s.assert(body, this._nodePutAndPostStruct);
 
-    const { data } = await this.fetch.put<DiagramNode>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
+    const { data } = await this.fetch.put<BaseDiagramNode>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
 
     return data;
   }
