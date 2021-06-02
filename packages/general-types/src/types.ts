@@ -117,9 +117,17 @@ export type Prompt<V> = {
   content: string;
 };
 
+/**
+ * @deprecated Use Button instead
+ */
 export type Chip = {
   label: string;
 };
+
+export interface Button {
+  name: string;
+  intent: string | null;
+}
 
 export type NoMatches<V> = {
   randomize: boolean;

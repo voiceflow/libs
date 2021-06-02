@@ -1,5 +1,5 @@
 import { SlotMapping } from '@voiceflow/api-sdk';
-import { Chip, NodeID, NoMatches, Prompt } from '@voiceflow/general-types';
+import { Button, Chip, NodeID, NoMatches, Prompt } from '@voiceflow/general-types';
 
 import { Voice } from '@/types';
 
@@ -24,6 +24,10 @@ export type StepData = {
   else: ElseData<Voice>;
   choices: Choice[];
   reprompt: Prompt<Voice> | null;
+  buttons?: Button[] | null;
+  /**
+   * @deprecated Use buttons
+   */
   chips: Chip[] | null;
 };
 
@@ -40,6 +44,10 @@ export type NodeData = {
   noMatches?: string[];
   randomize?: boolean;
   interactions: Interaction[];
+  buttons?: Button[] | null;
+  /**
+   * @deprecated Use buttons
+   */
   chips?: Chip[];
 };
 
