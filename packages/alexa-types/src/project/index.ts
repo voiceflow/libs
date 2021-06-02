@@ -6,13 +6,13 @@ import { AlexaProduct } from './product';
 export * from './member';
 export * from './product';
 
-export type AlexaProjectData = {
+export interface AlexaProjectData {
   products: Record<string, AlexaProduct>;
-};
+}
 
-export type AlexaProject = Project<AlexaProjectData, AlexaProjectMemberData> & {
+export interface AlexaProject extends Project<AlexaProjectData, AlexaProjectMemberData> {
   platform: 'alexa';
-};
+}
 
 export const defaultAlexaProjectData = ({ products = {} }: Partial<AlexaProjectData> = {}): AlexaProjectData => ({
   products,

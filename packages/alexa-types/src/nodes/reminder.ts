@@ -2,7 +2,7 @@
 
 import { NodeID } from '@voiceflow/general-types';
 
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { BaseNode, BaseStep, NodeType } from './types';
 
 export enum ReminderType {
   SCHEDULED_ABSOLUTE = 'SCHEDULED_ABSOLUTE',
@@ -19,39 +19,32 @@ export enum RecurrenceFreq {
   WEEKLY = 'WEEKLY',
 }
 
-export type StepData = {
-  reminder: {
-    name: string;
-    type: ReminderType;
-    text: string;
-    time: {
-      h: string;
-      m: string;
-      s: string;
-    };
-    date: string;
-    timezone: string;
-    recurrence?: { byDay?: string; freq: string };
-    recurrenceBool: boolean;
+export interface Reminder {
+  name: string;
+  type: ReminderType;
+  text: string;
+  time: {
+    h: string;
+    m: string;
+    s: string;
   };
-};
+  date: string;
+  timezone: string;
+  recurrence?: { byDay?: string; freq: RecurrenceFreq };
+  recurrenceBool: boolean;
+}
 
-export type NodeData = {
-  reminder: {
-    type: ReminderType;
-    text: string;
-    time: {
-      h: string;
-      m: string;
-      s: string;
-    };
-    date: string;
-    timezone: string;
-    recurrence?: { byDay?: string[]; freq: RecurrenceFreq };
-  };
+export interface StepData {
+  reminder: Reminder;
+}
+
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.REMINDER;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.REMINDER;
+  reminder: Reminder;
   fail_id?: NodeID;
   success_id?: NodeID;
-};
-
-export type Step = DefaultStep<NodeType.REMINDER, StepData>;
-export type Node = DefaultNode<NodeType.REMINDER, NodeData>;
+}

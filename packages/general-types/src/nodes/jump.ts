@@ -1,11 +1,18 @@
-import { SlotMapping } from '@voiceflow/api-sdk';
+import { Nullable } from '@voiceflow/api-sdk';
 
-import { DefaultStep, NodeType } from './types';
+import { BaseCommand, BaseStep, DataWithMappings, NodeID, NodeType } from './types';
 
 // called the "intent block" on creator-app
-export type StepData = {
-  intent: string | null;
-  mappings?: SlotMapping[];
-};
+export interface StepData extends DataWithMappings {
+  intent: Nullable<string>;
+}
 
-export type Step = DefaultStep<NodeType.INTENT, StepData>;
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.INTENT;
+}
+
+export interface Command extends BaseCommand, Required<DataWithMappings> {
+  type: NodeType.INTENT;
+  next: NodeID;
+  intent: string;
+}

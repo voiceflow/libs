@@ -11,7 +11,7 @@ export enum APLDeviceMode {
   TV = 'tv',
 }
 
-export type APLDeviceConfig = {
+export interface APLDeviceConfig {
   name: string;
   mode: APLDeviceMode;
   svgIcon: string;
@@ -19,7 +19,7 @@ export type APLDeviceConfig = {
   height: number;
   density: number;
   isRound?: boolean;
-};
+}
 
 export const APL_DEVICE_CONFIG: Record<APLDeviceType, APLDeviceConfig> = {
   [APLDeviceType.SMALL_ROUND_HUB]: {

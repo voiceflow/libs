@@ -1,21 +1,19 @@
-import { Chip, Prompt } from '@/types';
+import { Nullable } from '@voiceflow/api-sdk';
 
-import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
+import { BaseNode, BaseStep, NodeID, NodeType, NodeWithButtons, NodeWithReprompt, StepDataWithButtons, StepDataWithReprompt } from './types';
 
-export type StepData<V> = {
-  slot: string | null;
-  variable: string | null;
-  reprompt: Prompt<V> | null;
+export interface StepData<V> extends StepDataWithButtons, StepDataWithReprompt<V> {
+  slot: Nullable<string>;
+  variable: Nullable<string>;
   slotInputs: string[];
-  chips: Chip[] | null;
-};
+}
 
-export type NodeData = {
+export interface Step<V> extends BaseStep<StepData<V>> {
+  type: NodeType.CAPTURE;
+}
+
+export interface Node extends BaseNode, NodeWithButtons, NodeWithReprompt {
+  type: NodeType.CAPTURE;
   nextId?: NodeID;
   variable: string;
-  reprompt?: string;
-  chips?: Chip[];
-};
-
-export type Step<V> = DefaultStep<NodeType.CAPTURE, StepData<V>>;
-export type Node = DefaultNode<NodeType.CAPTURE, NodeData>;
+}

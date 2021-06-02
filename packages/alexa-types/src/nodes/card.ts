@@ -1,26 +1,19 @@
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { Card as GeneralCard, CardType } from '@voiceflow/general-types/build/nodes/card';
 
-export enum CardType {
-  SIMPLE = 'Simple',
-  STANDARD = 'Standard',
-}
+import { BaseNode, BaseStep, NodeType } from './types';
 
-export type Card = {
-  type: CardType;
-  title: string;
-  text: string;
-  image?: {
-    largeImageUrl?: string;
-    smallImageUrl?: string;
-  };
-};
+export { CardType, GeneralCard };
+
+export type Card = GeneralCard;
 
 export type StepData = Card;
 
-export type NodeData = {
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.CARD;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.CARD;
   card: Card;
   nextId?: string;
-};
-
-export type Step = DefaultStep<NodeType.CARD, StepData>;
-export type Node = DefaultNode<NodeType.CARD, NodeData>;
+}

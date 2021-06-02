@@ -1,13 +1,15 @@
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { BaseNode, BaseStep, NodeType } from './types';
 
-export type StepData = {
+export interface StepData {
   directive: string;
-};
+}
 
-export type NodeData = {
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.DIRECTIVE;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.DIRECTIVE;
   directive: string;
   nextId: string;
-};
-
-export type Step = DefaultStep<NodeType.DIRECTIVE, StepData>;
-export type Node = DefaultNode<NodeType.DIRECTIVE, NodeData>;
+}

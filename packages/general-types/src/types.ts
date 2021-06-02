@@ -1,3 +1,7 @@
+import { Nullable } from '@voiceflow/api-sdk';
+
+import { BaseRequest } from './request';
+
 export enum Locale {
   // English
   EN_US = 'en-US',
@@ -117,9 +121,17 @@ export type Prompt<V> = {
   content: string;
 };
 
+/**
+ * @deprecated Use Button instead
+ */
 export type Chip = {
   label: string;
 };
+
+export interface Button<T extends BaseRequest = BaseRequest> {
+  name: string;
+  request: Nullable<T>;
+}
 
 export type NoMatches<V> = {
   randomize: boolean;
@@ -129,6 +141,11 @@ export type NoMatches<V> = {
 export enum CanvasNodeVisibility {
   PREVIEW = 'preview',
   ALL_VARIANTS = 'all-variants',
+}
+
+export enum ButtonsLayout {
+  STACKED = 'stacked',
+  CAROUSEL = 'carousel',
 }
 
 export enum ExpressionType {

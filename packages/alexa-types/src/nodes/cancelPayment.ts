@@ -2,19 +2,28 @@
 
 import { NodeID } from '@voiceflow/general-types';
 
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { BaseNode, BaseStep, NodeType } from './types';
 
 export type StepData = {
   productID: string;
 };
 
-export type NodeData =
-  | { nextId?: NodeID }
-  | {
-      fail_id?: NodeID;
-      success_id?: NodeID;
-      cancel_product_id: string;
-    };
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.CANCEL_PAYMENT;
+}
 
-export type Step = DefaultStep<NodeType.CANCEL_PAYMENT, StepData>;
-export type Node = DefaultNode<NodeType.CANCEL_PAYMENT, NodeData>;
+export interface BaseTypedNode extends BaseNode {
+  type: NodeType.CANCEL_PAYMENT;
+}
+
+export interface NextNode extends BaseTypedNode {
+  nextId?: NodeID;
+}
+
+export interface CancelNode extends BaseTypedNode {
+  fail_id?: NodeID;
+  success_id?: NodeID;
+  cancel_product_id: string;
+}
+
+export type Node = NextNode | CancelNode;

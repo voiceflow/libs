@@ -1,32 +1,42 @@
 /* eslint-disable camelcase */
 
+import { Nullable } from '@voiceflow/api-sdk';
 import { NodeID } from '@voiceflow/general-types';
 
-import { DefaultNode, DefaultStep, NodeType, PermissionType } from './types';
+import { BaseNode, BaseStep, NodeType, PermissionType } from './types';
 
-export type UserInfo = {
-  type: PermissionType | null;
-  mapTo: string | null;
-  product: string | null;
-};
+export interface UserInfo {
+  type: Nullable<PermissionType>;
+  mapTo: Nullable<string>;
+  product: Nullable<string>;
+}
 
-export type StepData = {
+export interface StepData {
   infos: UserInfo[];
-};
+}
 
-export type Permission = {
-  map_to: { value: string } | null;
-  product: { value: string } | null;
-  selected: { value: string } | null;
-};
+export interface Permission {
+  map_to: Nullable<{ value: string }>;
+  product: Nullable<{ value: string }>;
+  selected: Nullable<{ value: string }>;
+}
 
-export type NodeData =
-  | { nextId?: NodeID }
-  | {
-      fail_id?: NodeID;
-      success_id?: NodeID;
-      permissions: Permission[];
-    };
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.USER_INFO;
+}
 
-export type Step = DefaultStep<NodeType.USER_INFO, StepData>;
-export type Node = DefaultNode<NodeType.USER_INFO, NodeData>;
+export interface BaseTypedNode extends BaseNode {
+  type: NodeType.USER_INFO;
+}
+
+export interface NextNode extends BaseNode {
+  nextId?: NodeID;
+}
+
+export interface UseInfoNode extends BaseNode {
+  fail_id?: NodeID;
+  success_id?: NodeID;
+  permissions: Permission[];
+}
+
+export type Node = NextNode | UseInfoNode;

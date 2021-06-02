@@ -1,11 +1,22 @@
-import { DefaultNode, DefaultStep, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
+import { UnknownRecord } from '@voiceflow/api-sdk';
 
-export type StepData = Record<string, unknown>;
+import { BaseNode, BaseStep, BaseTraceFrame, NodeType, TraceType } from './types';
 
-export type NodeData = {
+export type StepData = UnknownRecord;
+
+export interface NodeData {
   end: true;
-};
+}
 
-export type Step = DefaultStep<NodeType.EXIT, StepData>;
-export type Node = DefaultNode<NodeType.EXIT, NodeData>;
-export type TraceFrame = DefaultTraceFrame<TraceType.END>;
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.EXIT;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.EXIT;
+  end: true;
+}
+
+export interface TraceFrame extends BaseTraceFrame {
+  type: TraceType.END;
+}

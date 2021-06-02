@@ -1,15 +1,11 @@
-import { NodeID, Prompt } from '@voiceflow/general-types';
+import { NodeID } from '@voiceflow/general-types';
+import { Node as GeneralNode, StepData as GeneralStepData } from '@voiceflow/general-types/build/nodes/capture';
 
 import { Voice } from '@/types';
 
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { BaseStep, NodeType } from './types';
 
-export type StepData = {
-  slot: string | null;
-  variable: string | null;
-  reprompt: Prompt<Voice> | null;
-  slotInputs: string[];
-};
+export type StepData = Omit<GeneralStepData<Voice>, 'chips' | 'buttons' | 'buttonsLayout'>;
 
 export type NodeData = {
   nextId?: NodeID;
@@ -17,5 +13,10 @@ export type NodeData = {
   reprompt?: string;
 };
 
-export type Step = DefaultStep<NodeType.CAPTURE, StepData>;
-export type Node = DefaultNode<NodeType.CAPTURE, NodeData>;
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.CAPTURE;
+}
+
+export interface Node extends Omit<GeneralNode, 'type' | 'chips' | 'buttons'> {
+  type: NodeType.CAPTURE;
+}

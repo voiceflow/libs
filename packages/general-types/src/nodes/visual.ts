@@ -1,11 +1,13 @@
+import { Nullable } from '@voiceflow/api-sdk';
+
 import { DeviceType, Dimensions } from '@/constants';
 
-import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
+import { BaseNode, BaseStep, BaseTraceFrame, NodeID, NodeType, TraceType } from './types';
 
 export enum CanvasVisibility {
   FULL = 'full',
-  CROPPED = 'cropped',
   HIDDEN = 'hidden',
+  CROPPED = 'cropped',
 }
 
 export enum APLType {
@@ -18,16 +20,20 @@ export enum VisualType {
   IMAGE = 'image',
 }
 
-export type ImageStepData = {
+interface BaseStepData {
+  visualType: VisualType;
+}
+
+export interface ImageStepData extends BaseStepData {
   visualType: VisualType.IMAGE;
 
-  image: string | null;
-  device: DeviceType | null;
-  dimensions: Dimensions | null;
+  image: Nullable<string>;
+  device: Nullable<DeviceType>;
+  dimensions: Nullable<Dimensions>;
   canvasVisibility: CanvasVisibility;
-};
+}
 
-export type APLStepData = {
+export interface APLStepData extends BaseStepData {
   visualType: VisualType.APL;
 
   title?: string;
@@ -37,15 +43,20 @@ export type APLStepData = {
   datasource?: string;
   aplCommands?: string;
   jsonFileName?: string;
-};
+}
 
 export type StepData = ImageStepData | APLStepData;
 
-export type NodeData = {
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.VISUAL;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.VISUAL;
   data: StepData;
   nextId?: NodeID;
-};
+}
 
-export type Step = DefaultStep<NodeType.VISUAL, StepData>;
-export type Node = DefaultNode<NodeType.VISUAL, NodeData>;
-export type TraceFrame = DefaultTraceFrame<TraceType.VISUAL, StepData>;
+export interface TraceFrame extends BaseTraceFrame<StepData> {
+  type: TraceType.VISUAL;
+}

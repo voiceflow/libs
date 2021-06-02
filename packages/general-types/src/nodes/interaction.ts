@@ -1,47 +1,66 @@
-import { SlotMapping } from '@voiceflow/api-sdk';
+import { Nullable } from '@voiceflow/api-sdk';
 
-import { Chip, NoMatches, Prompt } from '@/types';
+import { NoMatches } from '@/types';
 
-import { DefaultNode, DefaultStep, Event, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
+import {
+  BaseEvent,
+  BaseNode,
+  BaseStep,
+  BaseTraceFrame,
+  DataWithMappings,
+  NodeID,
+  NodeType,
+  NodeWithButtons,
+  NodeWithReprompt,
+  StepDataWithButtons,
+  StepDataWithReprompt,
+  TraceType,
+} from './types';
 
 export enum ElseType {
   PATH = 'path',
   REPROMPT = 'reprompt',
 }
 
-export type ElseData<V> = NoMatches<V> & {
+export interface ElseData<V> extends NoMatches<V> {
   type: ElseType;
-};
+}
 
-export type Choice = {
+export interface Choice extends DataWithMappings {
   intent: string;
-  mappings?: SlotMapping[];
-};
+}
 
-export type StepData<V> = {
+export interface StepData<V> extends StepDataWithButtons, StepDataWithReprompt<V> {
   name: string;
   else: ElseData<V>;
   choices: Choice[];
-  reprompt: Prompt<V> | null;
-  chips: Chip[] | null;
-};
+}
 
-export type IntentEvent = {
-  intent: string;
-  mappings?: SlotMapping[];
-};
+export interface NodeInteraction<E = BaseEvent> {
+  event: E;
+  nextId: Nullable<string>;
+}
 
-export type NodeData<E = Event> = {
-  reprompt?: string;
+export interface Step<V> extends BaseStep<StepData<V>> {
+  type: NodeType.INTERACTION;
+}
+
+export interface Node<E = BaseEvent> extends BaseNode, NodeWithButtons, NodeWithReprompt {
+  type: NodeType.INTERACTION;
+  elseId?: Nullable<NodeID>;
   noMatches?: string[];
-  interactions: {
-    event: E;
-    nextId: string | null;
-  }[];
-  elseId?: NodeID | null;
-  chips?: Chip[];
-};
+  interactions: NodeInteraction<E>[];
+}
 
-export type Step<V> = DefaultStep<NodeType.INTERACTION, StepData<V>>;
-export type Node = DefaultNode<NodeType.INTERACTION, NodeData>;
-export type TraceFrame = DefaultTraceFrame<TraceType.CHOICE, { choices: { intent?: string; name: string }[] }>;
+export interface TraceFrameChoice {
+  name: string;
+  intent?: string;
+}
+
+export interface TraceFramePayload {
+  choices: TraceFrameChoice[];
+}
+
+export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
+  type: TraceType.CHOICE;
+}

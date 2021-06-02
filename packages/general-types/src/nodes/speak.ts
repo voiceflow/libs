@@ -1,25 +1,49 @@
 /* eslint-disable camelcase */
 
+import { Nullable } from '@voiceflow/api-sdk';
+
 import { CanvasNodeVisibility, Prompt } from '@/types';
 
-import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame as DefaultTraceFrame, TraceType } from './types';
+import { BaseNode, BaseStep, BaseTraceFrame, NodeID, NodeType, TraceType } from './types';
 
-export type StepData<V> = {
+export interface StepData<V> {
   dialogs: Prompt<V>[];
   randomize: boolean;
   canvasVisibility?: CanvasNodeVisibility;
-};
-
-export type NodeData = {
-  prompt?: string;
-  nextId?: NodeID;
-} & ({ speak: string } | { random_speak: string[] });
+}
 
 export enum SpeakType {
   AUDIO = 'audio',
   MESSAGE = 'message',
 }
 
-export type Step<V> = DefaultStep<NodeType.SPEAK, StepData<V>>;
-export type Node = DefaultNode<NodeType.SPEAK, NodeData>;
-export type TraceFrame = DefaultTraceFrame<TraceType.SPEAK, { message: string; type: SpeakType; voice?: string; src?: string | null }>;
+export interface Step<V> extends BaseStep<StepData<V>> {
+  type: NodeType.SPEAK;
+}
+
+export interface BaseSpeak extends BaseNode {
+  type: NodeType.SPEAK;
+  prompt?: string;
+  nextId?: NodeID;
+}
+
+export interface SpeakNode extends BaseSpeak {
+  speak: string;
+}
+
+export interface RandomSpeakNode extends BaseSpeak {
+  random_speak: string[];
+}
+
+export type Node = SpeakNode | RandomSpeakNode;
+
+export interface TraceFramePayload {
+  message: string;
+  type: SpeakType;
+  voice?: string;
+  src?: Nullable<string>;
+}
+
+export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
+  type: TraceType.SPEAK;
+}

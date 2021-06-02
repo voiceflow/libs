@@ -1,10 +1,40 @@
 /* eslint-disable camelcase */
 
-import { SlotMapping } from '@voiceflow/api-sdk';
+import { BaseCommand, Nullable, SlotMapping } from '@voiceflow/api-sdk';
 
-import { ExpressionType, ExpressionTypeV2 } from '@/types';
+import { Button, ButtonsLayout, Chip, ExpressionType, ExpressionTypeV2, Prompt } from '@/types';
 
-export { Node as DefaultNode, Port as DefaultPort, Step as DefaultStep } from '@voiceflow/api-sdk';
+export { BaseCommand, BaseNode, BasePort, BaseStep } from '@voiceflow/api-sdk';
+
+export interface StepDataWithReprompt<V> {
+  reprompt: Nullable<Prompt<V>>;
+}
+
+export interface NodeWithReprompt {
+  reprompt?: string;
+}
+
+export interface StepDataWithButtons {
+  buttons?: Nullable<Button[]>;
+  buttonsLayout?: Nullable<ButtonsLayout>;
+
+  /**
+   * @deprecated Use buttons
+   */
+  chips: Nullable<Chip[]>;
+}
+
+export interface NodeWithButtons {
+  buttons?: Nullable<Button[]>;
+  /**
+   * @deprecated Use buttons
+   */
+  chips?: Chip[];
+}
+
+export interface DataWithMappings {
+  mappings?: SlotMapping[];
+}
 
 export enum TraceType {
   END = 'end',
@@ -17,7 +47,7 @@ export enum TraceType {
   VISUAL = 'visual',
 }
 
-export type NodeID = string | null;
+export type NodeID = Nullable<string>;
 
 export enum NodeType {
   SPEAK = 'speak',
@@ -68,30 +98,34 @@ export enum IntegrationPlatform {
   GOOGLE_SHEETS = 'Google Sheets',
 }
 
-export type IntegrationUser = {
+export interface IntegrationUser {
   user_id?: string;
   platform?: IntegrationPlatform;
   user_data?: { email?: string; name?: string };
   created_at?: string;
   creator_id?: number;
-  project_id?: null | string;
-  requires_refresh?: null | boolean;
+  project_id?: Nullable<string>;
+  requires_refresh?: Nullable<boolean>;
   integration_user_id?: string;
-};
+}
 
 // If/Set step Conditions
 
 // Legacy
-export type GenericExpression<T extends ExpressionType, V> = {
+export interface GenericExpression<T extends ExpressionType, V> {
   type: T;
   value: V;
   depth: number;
-};
+}
 
 export type ExpressionTuple = [Expression, Expression];
 
 // can't use generic here due to recursion type issue
-export type NotExpression = { type: ExpressionType.NOT; value: Expression; depth: number };
+export interface NotExpression {
+  type: ExpressionType.NOT;
+  value: Expression;
+  depth: number;
+}
 export type OrExpression = GenericExpression<ExpressionType.OR, ExpressionTuple>;
 export type AndExpression = GenericExpression<ExpressionType.AND, ExpressionTuple>;
 export type LessExpression = GenericExpression<ExpressionType.LESS, ExpressionTuple>;
@@ -128,12 +162,12 @@ export enum ConditionsLogicInterface {
   EXPRESSION = 'expression',
 }
 
-export type GenericExpressionV2<T extends ExpressionTypeV2, V> = {
-  type: T | null;
+export interface GenericExpressionV2<T extends ExpressionTypeV2, V> {
+  type: Nullable<T>;
   value: V;
   name?: string;
   logicInterface?: ConditionsLogicInterface;
-};
+}
 
 export type ExpressionTupleV2 = [ExpressionV2?, ExpressionV2?];
 export type ValueExpressionV2 = GenericExpressionV2<ExpressionTypeV2.VALUE, string>;
@@ -182,36 +216,49 @@ export enum EventType {
   INTENT = 'intent',
 }
 
+export interface BaseEvent {
+  type: string;
+}
+
+/**
+ * @deprecated
+ */
 export type Event<T extends string = string, D = unknown> = { type: T } & D;
 
-export type IntentEvent = Event<
-  EventType.INTENT,
-  {
-    intent: string;
-    mappings?: SlotMapping[];
-  }
->;
+export interface IntentEvent extends BaseEvent, DataWithMappings {
+  type: EventType;
+  intent: string;
+}
 
 export enum CommandType {
   JUMP = 'jump',
   PUSH = 'push',
 }
 
-export type Command<E extends Event = Event> =
-  | {
-      type: CommandType.JUMP;
-      nextID: string | null;
-      event: E;
-    }
-  | {
-      type: CommandType.PUSH;
-      diagramID: string | null;
-      event: E;
-    };
+export interface TypedBaseCommand<E extends BaseEvent = BaseEvent> extends BaseCommand {
+  type: CommandType;
+  event: E;
+}
 
-export type TraceFrame<T extends string = string, P extends unknown = any, E extends Event = Event> = {
-  type: T;
+export interface JumpCommand<E extends BaseEvent = BaseEvent> extends TypedBaseCommand<E> {
+  type: CommandType.JUMP;
+  nextID: Nullable<string>;
+}
+
+export interface PushCommand<E extends BaseEvent = BaseEvent> extends TypedBaseCommand<E> {
+  type: CommandType.PUSH;
+  diagramID: Nullable<string>;
+}
+
+export type Command<E extends BaseEvent = BaseEvent> = JumpCommand<E> | PushCommand<E>;
+
+export interface BaseTraceFramePath<E extends BaseEvent = BaseEvent> {
+  event: E;
+}
+
+export interface BaseTraceFrame<P = any, E extends BaseEvent = BaseEvent> {
+  type: string;
+  paths?: BaseTraceFramePath<E>[];
   payload: P;
-  paths?: { event: E }[];
   defaultPath?: number;
-};
+}

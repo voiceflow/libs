@@ -1,27 +1,31 @@
+import { Nullable } from '@voiceflow/api-sdk';
+
 import { ExpressionTypeV2 } from '@/types';
 
-import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
+import { BaseNode, BaseStep, NodeID, NodeType } from './types';
 
-export type Set = {
-  variable: string | null;
+export interface Set {
+  variable: Nullable<string>;
   expression: string;
   type: ExpressionTypeV2.VALUE | ExpressionTypeV2.ADVANCE;
-};
+}
 
-export type StepData = {
+export interface StepData {
   sets: Set[];
   title?: string;
-};
+}
 
-export type NodeSet = {
-  variable: string | null;
+export interface NodeSet {
+  variable: Nullable<string>;
   expression: string | number;
-};
+}
 
-export type NodeData = {
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.SET_V2;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.SET_V2;
   sets: NodeSet[];
   nextId?: NodeID;
-};
-
-export type Step = DefaultStep<NodeType.SET_V2, StepData>;
-export type Node = DefaultNode<NodeType.SET_V2, NodeData>;
+}

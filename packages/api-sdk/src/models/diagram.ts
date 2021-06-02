@@ -1,6 +1,6 @@
 import * as s from 'superstruct';
 
-import { DiagramNode, NodeID, SCreatorID, SDiagramID, SDiagramNode, SName, SNodeID, STimestamp, SVariable, SVersionID } from './shared';
+import { BaseDiagramNode, NodeID, SCreatorID, SDiagramID, SDiagramNode, SName, SNodeID, STimestamp, SVariable, SVersionID } from './shared';
 
 export const SDiagram = s.object({
   _id: SDiagramID,
@@ -20,6 +20,6 @@ export const SDiagram = s.object({
   modified: STimestamp,
 });
 
-export type Diagram<N extends DiagramNode = DiagramNode> = Omit<s.StructType<typeof SDiagram>, 'nodes'> & {
+export interface Diagram<N extends BaseDiagramNode = BaseDiagramNode> extends Omit<s.StructType<typeof SDiagram>, 'nodes'> {
   nodes: Record<NodeID, N>;
-};
+}

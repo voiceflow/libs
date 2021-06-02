@@ -1,11 +1,11 @@
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { BaseNode, BaseStep, NodeType } from './types';
 
 export enum CardType {
   SIMPLE = 'Simple',
   STANDARD = 'Standard',
 }
 
-export type Card = {
+export interface Card {
   type: CardType;
   title: string;
   text: string;
@@ -13,14 +13,16 @@ export type Card = {
     largeImageUrl?: string;
     smallImageUrl?: string;
   };
-};
+}
 
 export type StepData = Card;
 
-export type NodeData = {
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.CARD;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.CARD;
   card: Card;
   nextId?: string;
-};
-
-export type Step = DefaultStep<NodeType.CARD, StepData>;
-export type Node = DefaultNode<NodeType.CARD, NodeData>;
+}

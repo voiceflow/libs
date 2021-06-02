@@ -1,5 +1,5 @@
-import { Version } from '@voiceflow/api-sdk';
-import { BaseVersionData, defaultBaseVersionData, Locale } from '@voiceflow/general-types';
+import { StrictVersionPlatformData, Version } from '@voiceflow/api-sdk';
+import { defaultBaseVersionData, Locale } from '@voiceflow/general-types';
 
 import { GoogleCommand } from '@/nodes';
 import { Voice } from '@/types';
@@ -16,14 +16,11 @@ export enum GoogleStage {
   REVIEW = 'REVIEW',
 }
 
-export type GoogleVersionData = Omit<BaseVersionData<Voice>, 'settings' | 'publishing'> & {
-  settings: GoogleVersionSettings;
-  publishing: GoogleVersionPublishing;
-
+export interface GoogleVersionData extends StrictVersionPlatformData<GoogleVersionSettings, GoogleVersionPublishing> {
   status: {
     stage: GoogleStage;
   };
-};
+}
 
 export type GoogleVersion = Version<GoogleVersionData, GoogleCommand, Locale>;
 

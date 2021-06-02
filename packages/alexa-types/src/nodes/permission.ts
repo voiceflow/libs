@@ -3,16 +3,18 @@
 import { NodeID } from '@voiceflow/general-types';
 import { v1 } from 'ask-smapi-model';
 
-import { DefaultNode, DefaultStep, NodeType, PermissionType } from './types';
+import { BaseNode, BaseStep, NodeType, PermissionType } from './types';
 
-export type StepData = {
+export interface StepData {
   permissions: PermissionType[];
-};
+}
 
-export type NodeData = {
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.PERMISSION;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.PERMISSION;
   nextId?: NodeID;
   permission_card: true | v1.skill.Manifest.PermissionName[];
-};
-
-export type Step = DefaultStep<NodeType.PERMISSION, StepData>;
-export type Node = DefaultNode<NodeType.PERMISSION, NodeData>;
+}

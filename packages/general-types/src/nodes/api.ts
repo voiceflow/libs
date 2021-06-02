@@ -1,16 +1,17 @@
 /* eslint-disable camelcase */
+import { Nullable } from '@voiceflow/api-sdk';
 
-import { DefaultStep, IntegrationType, NodeID, NodeType } from './types';
+import { BaseStep, IntegrationType, NodeID, NodeType } from './types';
 
-export type APIKeyVal = {
+export interface APIKeyVal {
   key: string;
   val: string;
-};
+}
 
-export type APIMapping = {
+export interface APIMapping {
   path: string;
-  var: string | null;
-};
+  var: Nullable<string>;
+}
 
 export enum APIBodyType {
   FORM_DATA = 'formData',
@@ -34,7 +35,7 @@ export enum APIActionType {
   DELETE = 'Make a DELETE Request',
 }
 
-export type StepData = {
+export interface StepData {
   url: string;
   body: APIKeyVal[];
   method: APIMethod;
@@ -45,9 +46,9 @@ export type StepData = {
   bodyType: APIBodyType;
   selectedAction: APIActionType;
   selectedIntegration: IntegrationType.CUSTOM_API;
-};
+}
 
-export type NodeData = {
+export interface NodeData {
   fail_id?: NodeID;
   success_id?: NodeID;
   action_data: {
@@ -63,6 +64,8 @@ export type NodeData = {
   };
   selected_action: APIActionType;
   selected_integration: IntegrationType.CUSTOM_API;
-};
+}
 
-export type Step = DefaultStep<NodeType.API, StepData>;
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.API;
+}

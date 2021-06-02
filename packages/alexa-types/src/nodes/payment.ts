@@ -1,20 +1,29 @@
 /* eslint-disable camelcase */
-
+import { Nullable } from '@voiceflow/api-sdk';
 import { NodeID } from '@voiceflow/general-types';
 
-import { DefaultNode, DefaultStep, NodeType } from './types';
+import { BaseNode, BaseStep, NodeType } from './types';
 
-export type StepData = {
-  productID: string | null;
-};
+export interface StepData {
+  productID: Nullable<string>;
+}
 
-export type NodeData =
-  | { nextId?: NodeID }
-  | {
-      fail_id?: NodeID;
-      product_id: string;
-      success_id?: NodeID;
-    };
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.PAYMENT;
+}
 
-export type Step = DefaultStep<NodeType.PAYMENT, StepData>;
-export type Node = DefaultNode<NodeType.PAYMENT, NodeData>;
+export interface BaseTypedNode extends BaseNode {
+  type: NodeType.PAYMENT;
+}
+
+export interface NextNode extends BaseTypedNode {
+  nextId?: NodeID;
+}
+
+export interface PaymentNode extends BaseTypedNode {
+  fail_id?: NodeID;
+  product_id: string;
+  success_id?: NodeID;
+}
+
+export type Node = NextNode | PaymentNode;

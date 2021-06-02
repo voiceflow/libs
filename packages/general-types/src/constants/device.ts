@@ -1,7 +1,7 @@
-export type Dimensions = {
+export interface Dimensions {
   width: number;
   height: number;
-};
+}
 
 export enum DeviceType {
   MOBILE = 'mobile',

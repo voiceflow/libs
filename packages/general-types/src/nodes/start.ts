@@ -1,10 +1,14 @@
-import { DefaultNode, DefaultStep, NodeID, NodeType } from './types';
+import { UnknownRecord } from '@voiceflow/api-sdk';
 
-export type StepData = Record<string, unknown>;
+import { BaseNode, BaseStep, NodeID, NodeType } from './types';
 
-export type NodeData = {
+export type StepData = UnknownRecord;
+
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.START;
+}
+
+export interface Node extends BaseNode {
+  type: NodeType.START;
   nextId?: NodeID;
-};
-
-export type Step = DefaultStep<NodeType.START, StepData>;
-export type Node = DefaultNode<NodeType.START, NodeData>;
+}

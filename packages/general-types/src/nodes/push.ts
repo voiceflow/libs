@@ -1,16 +1,25 @@
-import { Port, SlotMapping } from '@voiceflow/api-sdk';
+/* eslint-disable camelcase */
+import { Nullable } from '@voiceflow/api-sdk';
 
-import { DefaultStep, NodeType } from './types';
+import { BaseCommand, BasePort, BaseStep, DataWithMappings, NodeID, NodeType } from './types';
 
 // called the "command block" on creator-app
-export type StepData = {
+export interface StepData extends DataWithMappings {
   name: string;
-  intent: string | null;
-  mappings: SlotMapping[];
-  diagramID: string | null;
+  intent: Nullable<string>;
+  diagramID: Nullable<string>;
 
   // manually define ports to allow command step processing
-  ports: Port[];
-};
+  ports: BasePort[];
+}
 
-export type Step = DefaultStep<NodeType.COMMAND, StepData>;
+export interface Step extends BaseStep<StepData> {
+  type: NodeType.COMMAND;
+}
+
+export interface Command extends BaseCommand, Required<DataWithMappings> {
+  type: NodeType.COMMAND;
+  next?: NodeID;
+  intent: string;
+  diagram_id?: string;
+}

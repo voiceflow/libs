@@ -2,11 +2,11 @@
 
 import { v1 } from 'ask-smapi-model';
 
-export type AmazonProfile = {
+export interface AmazonProfile {
   name: string;
   email: string;
   user_id: string;
-};
+}
 
 export type AmazonVendor = Required<v1.vendorManagement.Vendor>;
 

@@ -1,15 +1,19 @@
-import { DefaultNode, DefaultStep, NodeID, NodeType, TraceFrame } from './types';
+import { Nullable } from '@voiceflow/api-sdk';
 
-export type AnyTrace = TraceFrame<any, any>;
+import { BaseNode, BaseStep, BaseTraceFrame, NodeID, NodeType } from './types';
 
-export type StepData<T extends AnyTrace = AnyTrace> = {
-  traces: (null | T)[];
-};
+export type AnyTrace = BaseTraceFrame<any>;
 
-export type NodeData<T extends AnyTrace = AnyTrace> = {
+export interface StepData<T extends AnyTrace = AnyTrace> {
+  traces: Nullable<T>[];
+}
+
+export interface Step<T extends AnyTrace = AnyTrace> extends BaseStep<StepData<T>> {
+  type: NodeType.GENERAL;
+}
+
+export interface Node<T extends AnyTrace = AnyTrace> extends BaseNode {
+  type: NodeType.GENERAL;
   traces: T[];
   nextId?: NodeID;
-};
-
-export type Step<T extends AnyTrace = AnyTrace> = DefaultStep<NodeType.GENERAL, StepData<T>>;
-export type Node<T extends AnyTrace = AnyTrace> = DefaultNode<NodeType.GENERAL, NodeData<T>>;
+}

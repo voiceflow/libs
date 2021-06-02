@@ -15,10 +15,10 @@ export enum IntentName {
   NONE = 'None',
 }
 
-export type DefaultIntent = {
+export interface DefaultIntent {
   name: string;
   samples: string[];
-};
+}
 
 export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   // English (AU,CA,US,UK,IN)

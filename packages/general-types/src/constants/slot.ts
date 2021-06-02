@@ -14,16 +14,20 @@ export enum SlotType {
   PHONENUMBER = 'VF.PHONENUMBER',
 }
 
-type SubList = {
+interface SubList {
   canonicalForm: string;
   list: Array<string>;
-};
+}
 
-export type SlotTypeValue = { name: SlotType; label: string; values: Array<string>; regex?: string; list?: Array<SubList> };
+export interface SlotTypeValue {
+  name: SlotType;
+  label: string;
+  values: Array<string>;
+  regex?: string;
+  list?: Array<SubList>;
+}
 
-type ObjectKeys = {
-  [key: string]: Array<SlotTypeValue>;
-};
+type ObjectKeys = Record<string, Array<SlotTypeValue>>;
 
 const NUMBERS = ['-43', '0', '35.5', '8', '520', '23599', '325', '15', '84730909029', '6947'];
 

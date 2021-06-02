@@ -1,6 +1,6 @@
 import { Category, Locale } from '@/constants';
 
-export type GoogleVersionPublishing = {
+export interface GoogleVersionPublishing {
   // localized settings
   voice: string;
   locales: Locale[];
@@ -30,7 +30,7 @@ export type GoogleVersionPublishing = {
   surfaceRequirements?: any;
   testingInstructions?: string;
   accountLinking?: any;
-};
+}
 
 export const defaultGoogleVersionPublishing = ({
   voice = '',
