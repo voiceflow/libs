@@ -1,5 +1,7 @@
 import { Nullable } from '@voiceflow/api-sdk';
 
+import { BaseRequest } from './request';
+
 export enum Locale {
   // English
   EN_US = 'en-US',
@@ -126,9 +128,9 @@ export type Chip = {
   label: string;
 };
 
-export interface Button {
+export interface Button<T extends BaseRequest = BaseRequest> {
   name: string;
-  intent: Nullable<string>;
+  request: Nullable<T>;
 }
 
 export type NoMatches<V> = {

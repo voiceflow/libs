@@ -39,3 +39,9 @@ export interface IntentRequestPayload {
 export interface IntentRequest extends BaseRequest<IntentRequestPayload> {
   type: RequestType.INTENT;
 }
+
+export const isTextRequest = (request: BaseRequest): request is TextRequest => request.type === RequestType.TEXT;
+
+export const isLaunchRequest = (request: BaseRequest): request is LaunchRequest => request.type === RequestType.LAUNCH;
+
+export const isIntentRequest = (request: BaseRequest): request is IntentRequest => request.type === RequestType.INTENT;
