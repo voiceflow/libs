@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.32.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.32.0...@voiceflow/api-sdk@1.32.1) (2021-06-03)
+
+
+### Bug Fixes
+
+* prototype buttons property (VF-1069) ([#14](https://github.com/voiceflow/libs/issues/14)) ([206576e](https://github.com/voiceflow/libs/commit/206576e67b98531e1360c24b1273c7d3dfcd169b))
+
+
+
+
+
 # [1.32.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.31.12...@voiceflow/api-sdk@1.32.0) (2021-06-02)
 
 
