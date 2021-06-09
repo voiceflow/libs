@@ -40,6 +40,16 @@ export interface IntentRequest extends BaseRequest<IntentRequestPayload> {
   type: RequestType.INTENT;
 }
 
+export interface BaseRequestButton<T extends BaseRequest = BaseRequest> {
+  name: string;
+  request: T;
+}
+
+export type TextRequestButton = BaseRequestButton<TextRequest>;
+export type IntentRequestButton = BaseRequestButton<IntentRequest>;
+
+export type AnyRequestButton = TextRequestButton | IntentRequestButton;
+
 export const isTextRequest = (request: BaseRequest): request is TextRequest => request.type === RequestType.TEXT;
 
 export const isLaunchRequest = (request: BaseRequest): request is LaunchRequest => request.type === RequestType.LAUNCH;

@@ -1,6 +1,6 @@
 import { Nullable } from '@voiceflow/api-sdk';
 
-import { ButtonsLayout, CanvasNodeVisibility, Locale, Prompt, Voice } from '@/types';
+import { CanvasNodeVisibility, Locale, Prompt, Voice } from '@/types';
 
 export enum RepeatType {
   OFF = 'OFF',
@@ -28,7 +28,6 @@ export interface BaseVersionSettings<V> {
   repeat: RepeatType;
   session: RestartSession | BaseResumeSession<V>;
   defaultVoice: Nullable<V>;
-  defaultButtonsLayout: Nullable<ButtonsLayout>;
   defaultCanvasNodeVisibility: Nullable<CanvasNodeVisibility>;
 }
 
@@ -55,7 +54,6 @@ export const defaultBaseVersionSettings = <V>(
     repeat = RepeatType.ALL,
     session = { type: SessionType.RESTART },
     defaultVoice = null,
-    defaultButtonsLayout = null,
     defaultCanvasNodeVisibility = null,
   }: Partial<BaseVersionSettings<V>> = {},
   { defaultPromptVoice }: { defaultPromptVoice: V }
@@ -64,7 +62,6 @@ export const defaultBaseVersionSettings = <V>(
   repeat,
   session,
   defaultVoice,
-  defaultButtonsLayout,
   defaultCanvasNodeVisibility,
 });
 

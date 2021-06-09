@@ -2,7 +2,8 @@
 
 import { BaseCommand, Nullable, SlotMapping } from '@voiceflow/api-sdk';
 
-import { Button, ButtonsLayout, Chip, ExpressionType, ExpressionTypeV2, Prompt } from '@/types';
+import { AnyRequestButton } from '@/request';
+import { AnyButton, ButtonsLayout, Chip, ExpressionType, ExpressionTypeV2, Prompt } from '@/types';
 
 export { BaseCommand, BaseNode, BasePort, BaseStep } from '@voiceflow/api-sdk';
 
@@ -15,7 +16,7 @@ export interface NodeWithReprompt {
 }
 
 export interface StepDataWithButtons {
-  buttons?: Nullable<Button[]>;
+  buttons?: Nullable<AnyButton[]>;
   buttonsLayout?: Nullable<ButtonsLayout>;
 
   /**
@@ -25,7 +26,7 @@ export interface StepDataWithButtons {
 }
 
 export interface NodeWithButtons {
-  buttons?: Nullable<Button[]>;
+  buttons?: AnyRequestButton[];
   /**
    * @deprecated Use buttons
    */

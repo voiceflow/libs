@@ -1,5 +1,6 @@
 import { Nullable } from '@voiceflow/api-sdk';
 
+import { AnyRequestButton } from '@/request';
 import { NoMatches } from '@/types';
 
 import {
@@ -52,13 +53,8 @@ export interface Node<E = BaseEvent> extends BaseNode, NodeWithButtons, NodeWith
   interactions: NodeInteraction<E>[];
 }
 
-export interface TraceFrameChoice {
-  name: string;
-  intent?: string;
-}
-
 export interface TraceFramePayload {
-  choices: TraceFrameChoice[];
+  buttons: AnyRequestButton[];
 }
 
 export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {

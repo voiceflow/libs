@@ -1,7 +1,5 @@
 import { Nullable } from '@voiceflow/api-sdk';
 
-import { BaseRequest } from './request';
-
 export enum Locale {
   // English
   EN_US = 'en-US',
@@ -128,10 +126,26 @@ export type Chip = {
   label: string;
 };
 
-export interface Button<T extends BaseRequest = BaseRequest> {
-  name: string;
-  request: Nullable<T>;
+export enum ButtonType {
+  INTENT = 'INTENT',
 }
+
+export interface BaseButton<T> {
+  type: ButtonType;
+  name: string;
+  payload: T;
+}
+
+export interface IntentButton extends BaseButton<{ intentID: Nullable<string> }> {
+  type: ButtonType.INTENT;
+}
+
+export interface IntentButton extends BaseButton<{ intentID: Nullable<string> }> {
+  type: ButtonType.INTENT;
+}
+
+// will be union in future
+export type AnyButton = IntentButton;
 
 export type NoMatches<V> = {
   randomize: boolean;
