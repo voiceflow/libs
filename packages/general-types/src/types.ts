@@ -140,6 +140,10 @@ export interface IntentButton extends BaseButton<{ intentID: Nullable<string> }>
   type: ButtonType.INTENT;
 }
 
+export interface IntentButton extends BaseButton<{ intentID: Nullable<string> }> {
+  type: ButtonType.INTENT;
+}
+
 // will be union in future
 export type AnyButton = IntentButton;
 
