@@ -3,7 +3,7 @@ import { TraceFrame as FlowTrace } from '@/nodes/flow';
 import { TraceFrame as ChoiceTrace } from '@/nodes/interaction';
 import { TraceFrame as SpeakTrace } from '@/nodes/speak';
 import { TraceFrame as StreamTrace } from '@/nodes/stream';
-import { BaseTraceFrame, TraceType } from '@/nodes/types';
+import { BaseTraceFrame, NodeType, TraceType } from '@/nodes/types';
 import { TraceFrame as VisualTrace } from '@/nodes/visual';
 
 export { TraceFrame as ExitTrace } from '@/nodes/exit';
@@ -19,6 +19,15 @@ export interface DebugTracePayload {
 
 export interface DebugTrace extends BaseTraceFrame<DebugTracePayload> {
   type: TraceType.DEBUG;
+}
+
+export interface PathTracePayload {
+  path: string;
+  node: NodeType;
+}
+
+export interface PathTrace extends BaseTraceFrame<PathTracePayload> {
+  type: TraceType.PATH;
 }
 
 export interface BlockTracePayload {
