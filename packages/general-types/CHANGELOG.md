@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.49.2](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.49.1...@voiceflow/general-types@1.49.2) (2021-06-09)
+
+
+### Bug Fixes
+
+* button types (VF-000) ([#15](https://github.com/voiceflow/libs/issues/15)) ([43b9f23](https://github.com/voiceflow/libs/commit/43b9f23cfc164d3165d311766f479ce4abd48a0b))
+
+
+
+
+
 ## [1.49.1](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.49.0...@voiceflow/general-types@1.49.1) (2021-06-03)
 
 **Note:** Version bump only for package @voiceflow/general-types
