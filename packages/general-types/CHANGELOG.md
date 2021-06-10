@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.50.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.49.3...@voiceflow/general-types@1.50.0) (2021-06-10)
+
+
+### Features
+
+* add frameType to image step data ([#19](https://github.com/voiceflow/libs/issues/19)) ([584c368](https://github.com/voiceflow/libs/commit/584c368985a2afb17c228f319b3f28648a8c68fe))
+
+
+
+
+
 ## [1.49.3](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.49.2...@voiceflow/general-types@1.49.3) (2021-06-10)
 
 
