@@ -39,6 +39,7 @@ export interface DataWithMappings {
 
 export enum TraceType {
   END = 'end',
+  PATH = 'path',
   FLOW = 'flow',
   SPEAK = 'speak',
   BLOCK = 'block',

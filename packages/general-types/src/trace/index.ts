@@ -21,6 +21,14 @@ export interface DebugTrace extends BaseTraceFrame<DebugTracePayload> {
   type: TraceType.DEBUG;
 }
 
+export interface PathTracePayload {
+  path: string;
+}
+
+export interface PathTrace extends BaseTraceFrame<PathTracePayload> {
+  type: TraceType.PATH;
+}
+
 export interface BlockTracePayload {
   blockID: string;
 }
