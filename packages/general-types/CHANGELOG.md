@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.49.3](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.49.2...@voiceflow/general-types@1.49.3) (2021-06-10)
+
+
+### Bug Fixes
+
+* path trace type (VF-000) ([#17](https://github.com/voiceflow/libs/issues/17)) ([d85b258](https://github.com/voiceflow/libs/commit/d85b258e06b8c09e3c5be97cb32892a8565d1edf))
+
+
+
+
+
 ## [1.49.2](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.49.1...@voiceflow/general-types@1.49.2) (2021-06-09)
 
 
