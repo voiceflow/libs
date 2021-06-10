@@ -20,6 +20,12 @@ export enum VisualType {
   IMAGE = 'image',
 }
 
+export enum FrameType {
+  AUTO = 'AUTO',
+  DEVICE = 'DEVICE',
+  CUSTOM_SIZE = 'CUSTOM_SIZE',
+}
+
 interface BaseStepData {
   visualType: VisualType;
 }
@@ -31,6 +37,7 @@ export interface ImageStepData extends BaseStepData {
   device: Nullable<DeviceType>;
   dimensions: Nullable<Dimensions>;
   canvasVisibility: CanvasVisibility;
+  frameType?: FrameType;
 }
 
 export interface APLStepData extends BaseStepData {
