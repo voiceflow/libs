@@ -12,7 +12,7 @@ export enum IntentName {
   REPEAT = 'VF.REPEAT',
   PREVIOUS = 'VF.PREVIOUS',
   START_OVER = 'VF.START_OVER',
-  FALLBACK = 'Fallback',
+  FALLBACK = 'VF.FALLBACK',
 }
 
 export interface DefaultIntent {
