@@ -398,7 +398,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['Von vorn anfangen', 'Neustart', 'wieder starten'],
     },
     {
-      name: IntentName.FALLBACK,
+      name: IntentName.NONE,
       samples: [],
     },
   ],
