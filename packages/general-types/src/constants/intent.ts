@@ -12,7 +12,7 @@ export enum IntentName {
   REPEAT = 'VF.REPEAT',
   PREVIOUS = 'VF.PREVIOUS',
   START_OVER = 'VF.START_OVER',
-  FALLBACK = 'VF.FALLBACK',
+  NONE = 'VF.FALLBACK',
 }
 
 export interface DefaultIntent {
@@ -68,7 +68,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['start over', 'restart'],
     },
     {
-      name: IntentName.FALLBACK,
+      name: IntentName.NONE,
       samples: [],
     },
   ],
@@ -129,7 +129,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['recommencer', 'redémarrer'],
     },
     {
-      name: IntentName.FALLBACK,
+      name: IntentName.NONE,
       samples: [],
     },
   ],
@@ -196,7 +196,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['最初からやり直す', '再起動'],
     },
     {
-      name: IntentName.FALLBACK,
+      name: IntentName.NONE,
       samples: [],
     },
   ],
@@ -265,7 +265,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['ricominciare', 'ricomincia'],
     },
     {
-      name: IntentName.FALLBACK,
+      name: IntentName.NONE,
       samples: [],
     },
   ],
@@ -328,7 +328,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['reiniciar'],
     },
     {
-      name: IntentName.FALLBACK,
+      name: IntentName.NONE,
       samples: [],
     },
   ],
@@ -450,7 +450,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['recomeçar', 'reiniciar'],
     },
     {
-      name: IntentName.FALLBACK,
+      name: IntentName.NONE,
       samples: [],
     },
   ],
@@ -562,7 +562,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
       samples: ['प्रारंभ करें', 'पुनर्प्रारंभ करें'],
     },
     {
-      name: IntentName.FALLBACK,
+      name: IntentName.NONE,
       samples: [],
     },
   ],
