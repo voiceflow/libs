@@ -19,11 +19,11 @@ class ProgramResource extends CrudResource<typeof SProgram['schema'], ModelIDKey
     });
   }
 
-  public async get<T extends Partial<Program>>(id: ProgramID, fields: string[]): Promise<T>;
+  public async get<T extends Partial<Program>>(id: ProgramID, fields: readonly string[]): Promise<T>;
 
   public async get<T extends BaseNode, C extends BaseCommand>(id: ProgramID): Promise<Program<T, C>>;
 
-  public async get(id: ProgramID, fields?: string[]) {
+  public async get(id: ProgramID, fields?: readonly string[]) {
     return fields ? super._getByID<Program>(id, fields) : super._getByID<Program>(id);
   }
 

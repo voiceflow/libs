@@ -12,21 +12,21 @@ class CrudResource<
     return id ? `${this._getEndpoint()}/${id}` : this._getEndpoint();
   }
 
-  protected async _get<T extends Partial<SchemeType<S>>>(fields: string[]): Promise<T[]>;
+  protected async _get<T extends Partial<SchemeType<S>>>(fields: readonly string[]): Promise<T[]>;
 
   protected async _get<T extends SchemeType<S>>(): Promise<T[]>;
 
-  protected async _get<T extends SchemeType<S>>(fields?: string[]) {
+  protected async _get<T extends SchemeType<S>>(fields?: readonly string[]) {
     const { data } = await this.fetch.get<T[]>(`${this._getCRUDEndpoint()}${this._getFieldsQuery(fields)}`);
 
     return data;
   }
 
-  protected async _getByID<T extends Partial<SchemeType<S>>>(id: SchemeType<S>[K], fields: string[]): Promise<T>;
+  protected async _getByID<T extends Partial<SchemeType<S>>>(id: SchemeType<S>[K], fields: readonly string[]): Promise<T>;
 
   protected async _getByID<T extends SchemeType<S>>(id: SchemeType<S>[K]): Promise<T>;
 
-  protected async _getByID(id: SchemeType<S>[K], fields?: string[]) {
+  protected async _getByID(id: SchemeType<S>[K], fields?: readonly string[]) {
     this._assertModelID(id);
 
     const { data } = await this.fetch.get(`${this._getCRUDEndpoint(id)}${this._getFieldsQuery(fields)}`);

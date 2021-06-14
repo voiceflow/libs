@@ -26,11 +26,14 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
     this.member = new MemberResource(fetch);
   }
 
-  public async list<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(workspaceID: WorkspaceID, fields: string[]): Promise<P[]>;
+  public async list<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(
+    workspaceID: WorkspaceID,
+    fields: readonly string[]
+  ): Promise<P[]>;
 
   public async list<P extends BasePlatformData, M extends BasePlatformData>(workspaceID: WorkspaceID): Promise<Project<P, M>[]>;
 
-  public async list(workspaceID: WorkspaceID, fields?: string[]) {
+  public async list(workspaceID: WorkspaceID, fields?: readonly string[]) {
     s.assert(workspaceID, SWorkspaceID);
 
     const { data } = await this.fetch.get(`workspaces/${workspaceID}/projects${this._getFieldsQuery(fields)}`);
@@ -38,11 +41,11 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
     return data;
   }
 
-  public async get<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(id: ProjectID, fields: string[]): Promise<P>;
+  public async get<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(id: ProjectID, fields: readonly string[]): Promise<P>;
 
   public async get<P extends BasePlatformData, M extends BasePlatformData>(id: ProjectID): Promise<Project<P, M>>;
 
-  public async get(id: ProjectID, fields?: string[]) {
+  public async get(id: ProjectID, fields?: readonly string[]) {
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
@@ -72,11 +75,11 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
     return data;
   }
 
-  public async getVersions<P extends Partial<Version<VersionPlatformData>>>(id: ProjectID, fields: string[]): Promise<P[]>;
+  public async getVersions<P extends Partial<Version<VersionPlatformData>>>(id: ProjectID, fields: readonly string[]): Promise<P[]>;
 
   public async getVersions<P extends VersionPlatformData>(id: ProjectID): Promise<Version<P>[]>;
 
-  public async getVersions(id: ProjectID, fields?: string[]) {
+  public async getVersions(id: ProjectID, fields?: readonly string[]) {
     this._assertModelID(id);
 
     const { data } = await this.fetch.get(`${this._getCRUDEndpoint(id)}/versions${this._getFieldsQuery(fields)}`);

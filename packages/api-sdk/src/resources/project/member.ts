@@ -24,11 +24,11 @@ class MemberResource extends BaseResource<typeof SMember['schema'], ModelIDKey, 
     return `${this._getEndpoint()}/${id}/members`;
   }
 
-  public async list<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: string[]): Promise<P[]>;
+  public async list<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: readonly string[]): Promise<P[]>;
 
   public async list<P extends BasePlatformData>(projectID: ProjectID): Promise<Member<P>[]>;
 
-  public async list(projectID: ProjectID, fields?: string[]) {
+  public async list(projectID: ProjectID, fields?: readonly string[]) {
     s.assert(projectID, SProjectID);
 
     const { data } = await this.fetch.get(`${this._getCRUDEndpoint(projectID)}${this._getFieldsQuery(fields)}`);
@@ -36,11 +36,11 @@ class MemberResource extends BaseResource<typeof SMember['schema'], ModelIDKey, 
     return data;
   }
 
-  public async get<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: string[]): Promise<P>;
+  public async get<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: readonly string[]): Promise<P>;
 
   public async get<P extends BasePlatformData>(projectID: ProjectID): Promise<Member<P>>;
 
-  public async get(projectID: ProjectID, fields?: string[]) {
+  public async get(projectID: ProjectID, fields?: readonly string[]) {
     s.assert(projectID, SProjectID);
 
     const { data } = await this.fetch.get(`${this._getEndpoint()}/${projectID}/member${this._getFieldsQuery(fields)}`);

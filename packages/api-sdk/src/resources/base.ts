@@ -49,7 +49,7 @@ class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>, C extend
   }
 
   // eslint-disable-next-line class-methods-use-this
-  protected _getFieldsQuery(fields?: string[]): string {
+  protected _getFieldsQuery(fields?: readonly string[]): string {
     return fields ? `?fields=${fields.join(',')}` : '';
   }
 

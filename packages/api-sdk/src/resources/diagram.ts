@@ -24,11 +24,11 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     });
   }
 
-  public async get<T extends Partial<Diagram>>(id: DiagramID, fields: string[]): Promise<T>;
+  public async get<T extends Partial<Diagram>>(id: DiagramID, fields: readonly string[]): Promise<T>;
 
   public async get<T extends BaseDiagramNode = BaseDiagramNode>(id: DiagramID): Promise<Diagram<T>>;
 
-  public async get(id: DiagramID, fields?: string[]) {
+  public async get(id: DiagramID, fields?: readonly string[]) {
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
