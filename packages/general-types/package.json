@@ -1,13 +1,13 @@
 {
   "name": "@voiceflow/general-types",
   "description": "Vocieflwo general project types",
-  "version": "1.50.1",
+  "version": "1.50.2",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/api-sdk": "^1.32.2"
+    "@voiceflow/api-sdk": "^1.32.3"
   },
   "files": [
     "build"
