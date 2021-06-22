@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.32.5](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.32.4...@voiceflow/api-sdk@1.32.5) (2021-06-22)
+
+
+### Bug Fixes
+
+* **api-sdk:** only publish build folder (VF-483) ([#25](https://github.com/voiceflow/libs/issues/25)) ([4d08da8](https://github.com/voiceflow/libs/commit/4d08da81d24330a7f64a53b600a29eecb5dc665c))
+
+
+
+
+
 ## [1.32.4](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.32.3...@voiceflow/api-sdk@1.32.4) (2021-06-18)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
