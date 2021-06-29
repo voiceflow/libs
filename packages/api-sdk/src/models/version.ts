@@ -3,7 +3,20 @@ import * as s from 'superstruct';
 import { AnyRecord } from '@/types';
 import { dynamicObject } from '@/utils';
 
-import { BaseCommand, SCommand, SCreatorID, SDiagramID, SIntent, SName, SProjectID, SPrototypeModel, SSlot, SVariable, SVersionID } from './shared';
+import {
+  BaseCommand,
+  SCommand,
+  SCreatorID,
+  SDiagramID,
+  SIntent,
+  SName,
+  SPlatform,
+  SProjectID,
+  SPrototypeModel,
+  SSlot,
+  SVariable,
+  SVersionID,
+} from './shared';
 
 export const SVersionPlatformDataSettings = s.object();
 
@@ -75,6 +88,7 @@ export const SVersionPrototype = s.object({
   data: SVersionPrototypeData,
   model: SPrototypeModel,
   context: SVersionPrototypeContext,
+  platform: SPlatform,
   settings: SVersionPrototypeSettings,
 });
 
