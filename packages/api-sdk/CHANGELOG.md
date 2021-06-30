@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.33.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.32.5...@voiceflow/api-sdk@1.33.0) (2021-06-30)
+
+
+### Features
+
+* add prototype platform (VF-1177) ([#26](https://github.com/voiceflow/libs/issues/26)) ([4b25471](https://github.com/voiceflow/libs/commit/4b25471a428bc590d6a4f5c659680efd0bbbc539))
+
+
+
+
+
 ## [1.32.5](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.32.4...@voiceflow/api-sdk@1.32.5) (2021-06-22)
 
 
