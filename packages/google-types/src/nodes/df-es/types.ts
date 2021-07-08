@@ -1,4 +1,4 @@
 export enum NodeType {
   // visuals
-  IMAGE = 'image',
+  IMAGE = 'df-es-image',
 }
