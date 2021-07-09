@@ -15,6 +15,12 @@ export interface NodeWithReprompt {
   reprompt?: string;
 }
 
+export interface NodeWithNoMatches {
+  elseId?: Nullable<NodeID>;
+  randomize?: boolean;
+  noMatches?: string[];
+}
+
 export interface StepDataWithButtons {
   buttons?: Nullable<AnyButton[]>;
   buttonsLayout?: Nullable<ButtonsLayout>;

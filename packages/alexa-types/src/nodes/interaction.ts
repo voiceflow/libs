@@ -1,13 +1,11 @@
 import { Nullable } from '@voiceflow/api-sdk';
 import { NodeID } from '@voiceflow/general-types';
-import { ElseType, StepData as GeneralStepData } from '@voiceflow/general-types/build/nodes/interaction';
+import { StepData as GeneralStepData } from '@voiceflow/general-types/build/nodes/interaction';
 import { DataWithMappings } from '@voiceflow/general-types/build/nodes/types';
 
 import { Voice } from '@/types';
 
 import { BaseNode, BaseStep, NodeType } from './types';
-
-export { ElseType };
 
 export type StepData = Omit<GeneralStepData<Voice>, 'chips' | 'buttons' | 'buttonsLayout'>;
 
