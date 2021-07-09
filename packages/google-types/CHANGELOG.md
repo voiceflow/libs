@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.29.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.28.9...@voiceflow/google-types@1.29.0) (2021-07-09)
+
+
+### Features
+
+* image step and node (VF-1232) ([#27](https://github.com/voiceflow/libs/issues/27)) ([0d89f6c](https://github.com/voiceflow/libs/commit/0d89f6cf89696566f8982b8a7460d3640b78aebd))
+
+
+
+
+
 ## [1.28.9](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.28.8...@voiceflow/google-types@1.28.9) (2021-06-30)
 
 **Note:** Version bump only for package @voiceflow/google-types
