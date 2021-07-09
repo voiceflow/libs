@@ -2,7 +2,7 @@ import { BaseNode, BaseStep } from '../types';
 import { NodeType } from './types';
 
 export type StepData = {
-  payload: string;
+  data: string;
 };
 
 export interface Step extends BaseStep<StepData> {
@@ -11,6 +11,6 @@ export interface Step extends BaseStep<StepData> {
 
 export interface Node extends BaseNode {
   type: NodeType.PAYLOAD;
-  payload: string;
+  data: string;
   nextID?: string;
 }
