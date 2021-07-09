@@ -1,7 +1,8 @@
+import * as DFESImage from '@voiceflow/general-types/build/nodes/visual';
+
 import * as Capture from './capture';
 import * as Card from './card';
 import * as Command from './command';
-import * as DFESImage from './df-es/image';
 import * as Intent from './intent';
 import * as Interaction from './interaction';
 import * as Stream from './stream';
