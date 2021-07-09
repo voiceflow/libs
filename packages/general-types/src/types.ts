@@ -155,6 +155,7 @@ export enum NoMatchType {
 
 export interface NoMatches<V> {
   type: NoMatchType;
+  pathName?: string;
   randomize: boolean;
   reprompts: Prompt<V>[];
 }
