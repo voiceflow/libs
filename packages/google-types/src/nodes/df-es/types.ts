@@ -1,1 +1,3 @@
-export enum NodeType {}
+export enum NodeType {
+  PAYLOAD = 'payload',
+}
