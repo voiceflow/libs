@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.51.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.50.5...@voiceflow/general-types@1.51.0) (2021-07-10)
+
+
+### Features
+
+* add ability to have reprompts and else at the same time (VF-1251) ([#28](https://github.com/voiceflow/libs/issues/28)) ([4542e11](https://github.com/voiceflow/libs/commit/4542e114b818b49c9fda91e8845ffe8f8a1853da))
+
+
+
+
+
 ## [1.50.5](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.50.4...@voiceflow/general-types@1.50.5) (2021-06-30)
 
 **Note:** Version bump only for package @voiceflow/general-types
