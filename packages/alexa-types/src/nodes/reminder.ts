@@ -42,9 +42,13 @@ export interface Step extends BaseStep<StepData> {
   type: NodeType.REMINDER;
 }
 
+export interface NodeReminder extends Omit<Reminder, 'name' | 'recurrenceBool' | 'recurrence'> {
+  recurrence?: { byDay?: string[]; freq: RecurrenceFreq };
+}
+
 export interface Node extends BaseNode {
   type: NodeType.REMINDER;
-  reminder: Reminder;
+  reminder: NodeReminder;
   fail_id?: NodeID;
   success_id?: NodeID;
 }

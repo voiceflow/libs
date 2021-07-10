@@ -10,7 +10,7 @@
     "@voiceflow/api-sdk": "^1.33.0",
     "@voiceflow/common": "6.5.0",
     "@voiceflow/general-types": "^1.50.5",
-    "ask-smapi-model": "^1.11.0"
+    "ask-smapi-model": "1.14.0"
   },
   "files": [
     "build"

@@ -113,18 +113,18 @@ export enum Voice {
   DEFAULT = 'default', // not a real voice (default no voice)
 }
 
-export type Prompt<V> = {
+export interface Prompt<V> {
   desc?: string; // desc when voice is 'audio'
   voice: V;
   content: string;
-};
+}
 
 /**
  * @deprecated Use Button instead
  */
-export type Chip = {
+export interface Chip {
   label: string;
-};
+}
 
 export enum ButtonType {
   INTENT = 'INTENT',
@@ -147,10 +147,18 @@ export interface IntentButton extends BaseButton<{ intentID: Nullable<string> }>
 // will be union in future
 export type AnyButton = IntentButton;
 
-export type NoMatches<V> = {
+export enum NoMatchType {
+  PATH = 'path',
+  BOTH = 'both',
+  REPROMPT = 'reprompt',
+}
+
+export interface NoMatches<V> {
+  type: NoMatchType;
+  pathName?: string;
   randomize: boolean;
   reprompts: Prompt<V>[];
-};
+}
 
 export enum CanvasNodeVisibility {
   PREVIEW = 'preview',

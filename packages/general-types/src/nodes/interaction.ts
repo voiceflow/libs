@@ -9,23 +9,14 @@ import {
   BaseStep,
   BaseTraceFrame,
   DataWithMappings,
-  NodeID,
   NodeType,
   NodeWithButtons,
+  NodeWithNoMatches,
   NodeWithReprompt,
   StepDataWithButtons,
   StepDataWithReprompt,
   TraceType,
 } from './types';
-
-export enum ElseType {
-  PATH = 'path',
-  REPROMPT = 'reprompt',
-}
-
-export interface ElseData<V> extends NoMatches<V> {
-  type: ElseType;
-}
 
 export interface Choice extends DataWithMappings {
   intent: string;
@@ -33,7 +24,7 @@ export interface Choice extends DataWithMappings {
 
 export interface StepData<V> extends StepDataWithButtons, StepDataWithReprompt<V> {
   name: string;
-  else: ElseData<V>;
+  else: NoMatches<V>;
   choices: Choice[];
 }
 
@@ -46,10 +37,8 @@ export interface Step<V> extends BaseStep<StepData<V>> {
   type: NodeType.INTERACTION;
 }
 
-export interface Node<E = BaseEvent> extends BaseNode, NodeWithButtons, NodeWithReprompt {
+export interface Node<E = BaseEvent> extends BaseNode, NodeWithButtons, NodeWithReprompt, NodeWithNoMatches {
   type: NodeType.INTERACTION;
-  elseId?: Nullable<NodeID>;
-  noMatches?: string[];
   interactions: NodeInteraction<E>[];
 }
 

@@ -4,9 +4,9 @@ import { NodeID } from '@voiceflow/general-types';
 
 import { BaseNode, BaseStep, NodeType } from './types';
 
-export type StepData = {
+export interface StepData {
   productID: string;
-};
+}
 
 export interface Step extends BaseStep<StepData> {
   type: NodeType.CANCEL_PAYMENT;

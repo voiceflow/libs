@@ -7,11 +7,11 @@ import { BaseStep, NodeType } from './types';
 
 export type StepData = Omit<GeneralStepData<Voice>, 'chips' | 'buttons' | 'buttonsLayout'>;
 
-export type NodeData = {
+export interface NodeData {
   nextId?: NodeID;
   variable: string;
   reprompt?: string;
-};
+}
 
 export interface Step extends BaseStep<StepData> {
   type: NodeType.CAPTURE;
