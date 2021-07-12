@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.31.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.30.1...@voiceflow/google-types@1.31.0) (2021-07-12)
+
+
+### Features
+
+* payload df es step (VF-1233) ([#29](https://github.com/voiceflow/libs/issues/29)) ([dab29c7](https://github.com/voiceflow/libs/commit/dab29c71bc08ad3b2ec6ee3dd79928ad01ce548d))
+
+
+
+
+
 ## [1.30.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.30.0...@voiceflow/google-types@1.30.1) (2021-07-12)
 
 **Note:** Version bump only for package @voiceflow/google-types
