@@ -1,6 +1,6 @@
-import { NodeID, Nullable } from '@voiceflow/api-sdk';
+import { Nullable } from '@voiceflow/api-sdk';
 import { StepData as GeneralStepData } from '@voiceflow/general-types/build/nodes/interaction';
-import { DataWithMappings, NodeWithButtons, NodeWithReprompt } from '@voiceflow/general-types/build/nodes/types';
+import { DataWithMappings, NodeWithButtons, NodeWithNoMatches, NodeWithReprompt } from '@voiceflow/general-types/build/nodes/types';
 
 import { Voice } from '@/types';
 
@@ -17,11 +17,8 @@ export interface Step extends BaseStep<StepData> {
   type: NodeType.INTERACTION;
 }
 
-export interface Node extends BaseNode, NodeWithButtons, NodeWithReprompt {
+export interface Node extends BaseNode, NodeWithButtons, NodeWithReprompt, NodeWithNoMatches {
   type: NodeType.INTERACTION;
-  elseId?: NodeID;
   nextIds: Nullable<string>[];
-  noMatches?: string[];
-  randomize?: boolean;
   interactions: Interaction[];
 }

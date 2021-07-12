@@ -1832,10 +1832,10 @@ ask-sdk-model-runtime@^1.1.0:
   resolved "https://registry.yarnpkg.com/ask-sdk-model-runtime/-/ask-sdk-model-runtime-1.4.0.tgz#7ec395985c433dd9118a238932ac3a8ac8c0c0bd"
   integrity sha512-JSu9zGklm8jtaQMk344BTJqVSX/tenFNB7b+jgnoHDp4aRwmzCAlDnBiiNAVMXlbrBeIi+ms79yK1s2oq0PjFg==
 
-ask-smapi-model@^1.11.0:
-  version "1.15.3"
-  resolved "https://registry.yarnpkg.com/ask-smapi-model/-/ask-smapi-model-1.15.3.tgz#6ee94f08be850a381248b971491836e12a2effc7"
-  integrity sha512-QqYrAhRrHyUmyJKOm38ZEPGS7C9rjLnKEZ2Mg95dN+Em6z4ZDPBcwtXo9zTedAFEIfpIjgPhhytJUJgED8OtmA==
+ask-smapi-model@1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/ask-smapi-model/-/ask-smapi-model-1.14.0.tgz#1076b92eef9fa08a8d29b7c24b0e0063ba809b02"
+  integrity sha512-HnmHZy7YY3Bdcwr+pkVKV7x91WckQCf7Q4zQuIG/b2m3MXqwRm6b83OmnirFtvc25u2YlfaEvM7Zy3aiQAyWOw==
   dependencies:
     ask-sdk-model-runtime "^1.1.0"
 
@@ -5381,7 +5381,6 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
