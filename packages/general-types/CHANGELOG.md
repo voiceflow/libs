@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.51.1](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.51.0...@voiceflow/general-types@1.51.1) (2021-07-12)
+
+
+### Bug Fixes
+
+* make nomatch type nullable ([#30](https://github.com/voiceflow/libs/issues/30)) ([70c7314](https://github.com/voiceflow/libs/commit/70c73149598482b4e6ea42c753e13eae4b49aebf))
+
+
+
+
+
 # [1.51.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.50.5...@voiceflow/general-types@1.51.0) (2021-07-10)
 
 
