@@ -3,6 +3,7 @@ import * as DFESImage from '@voiceflow/general-types/build/nodes/visual';
 import * as Capture from './capture';
 import * as Card from './card';
 import * as Command from './command';
+import * as DFESPayload from './df-es/payload';
 import * as Intent from './intent';
 import * as Interaction from './interaction';
 import * as Stream from './stream';
@@ -17,5 +18,5 @@ export type GoogleNodes = Card.Node | Stream.Node | Interaction.Node | Capture.N
 export type GoogleCommand = Command.Command | Intent.Command;
 
 // dialogflow es
-export type DialogflowESSteps = Card.Step | Command.Step | Interaction.Step | Intent.Step | Capture.Step | DFESImage.Step;
-export type DialogflowESNodes = Card.Node | Interaction.Node | Capture.Node | DFESImage.Node;
+export type DialogflowESSteps = Card.Step | Command.Step | Interaction.Step | Intent.Step | Capture.Step | DFESImage.Step | DFESPayload.Step;
+export type DialogflowESNodes = Card.Node | Interaction.Node | Capture.Node | DFESImage.Node | DFESPayload.Node;
