@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.34.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.33.0...@voiceflow/api-sdk@1.34.0) (2021-07-19)
+
+
+### Features
+
+* add flow names to programs (VF-1301) ([#32](https://github.com/voiceflow/libs/issues/32)) ([68836fb](https://github.com/voiceflow/libs/commit/68836fb83790e5da81f99e540ac6118b7e79e5f7))
+
+
+
+
+
 # [1.33.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.32.5...@voiceflow/api-sdk@1.33.0) (2021-06-30)
 
 
