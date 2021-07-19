@@ -4,8 +4,8 @@ import { defaultBaseVersionData, Locale } from '@voiceflow/general-types';
 import { GoogleCommand } from '@/nodes';
 import { Voice } from '@/types';
 
-import { defaultGoogleVersionPublishing, GoogleVersionPublishing } from './publishing';
-import { defaultGoogleVersionSettings, GoogleVersionSettings } from './settings';
+import { defaultDFESVersionPublishing, defaultGoogleVersionPublishing, DFESVersionPublishing, GoogleVersionPublishing } from './publishing';
+import { defaultDFESVersionSettings, defaultGoogleVersionSettings, DFESVersionSettings, GoogleVersionSettings } from './settings';
 
 export * from './publishing';
 export * from './settings';
@@ -16,6 +16,7 @@ export enum GoogleStage {
   REVIEW = 'REVIEW',
 }
 
+// gactions
 export interface GoogleVersionData extends StrictVersionPlatformData<GoogleVersionSettings, GoogleVersionPublishing> {
   status: {
     stage: GoogleStage;
@@ -34,4 +35,25 @@ export const defaultGoogleVersionVersionData = ({
   status: { stage },
   settings: defaultGoogleVersionSettings(settings),
   publishing: defaultGoogleVersionPublishing(publishing),
+});
+
+// dialogflow es
+export interface DFESVersionData extends StrictVersionPlatformData<DFESVersionSettings, DFESVersionPublishing> {
+  status: {
+    stage: GoogleStage;
+  };
+}
+
+export type DFESVersion = Version<DFESVersionData, GoogleCommand, Locale>;
+
+export const defaultESVersionVersionData = ({
+  status: { stage = GoogleStage.DEV } = { stage: GoogleStage.DEV },
+  settings,
+  publishing,
+  ...generalVersionData
+}: Partial<DFESVersionData>): DFESVersionData => ({
+  ...defaultBaseVersionData<Voice>(generalVersionData, { defaultPromptVoice: Voice.DEFAULT }),
+  status: { stage },
+  settings: defaultDFESVersionSettings(settings),
+  publishing: defaultDFESVersionPublishing(publishing),
 });
