@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.32.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.31.1...@voiceflow/google-types@1.32.0) (2021-07-19)
+
+
+### Features
+
+* dialogflow es types (VF-1204) ([#31](https://github.com/voiceflow/libs/issues/31)) ([b6680fe](https://github.com/voiceflow/libs/commit/b6680fe1759cbb9336f88b117720c641549507df))
+
+
+
+
+
 ## [1.31.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.31.0...@voiceflow/google-types@1.31.1) (2021-07-19)
 
 **Note:** Version bump only for package @voiceflow/google-types
