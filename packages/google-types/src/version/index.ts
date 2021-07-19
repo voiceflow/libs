@@ -1,6 +1,7 @@
 import { StrictVersionPlatformData, Version } from '@voiceflow/api-sdk';
 import { defaultBaseVersionData, Locale } from '@voiceflow/general-types';
 
+import { DFESLocale } from '@/constants';
 import { GoogleCommand } from '@/nodes';
 import { Voice } from '@/types';
 
@@ -44,7 +45,7 @@ export interface DFESVersionData extends StrictVersionPlatformData<DFESVersionSe
   };
 }
 
-export type DFESVersion = Version<DFESVersionData, GoogleCommand, Locale>;
+export type DFESVersion = Version<DFESVersionData, GoogleCommand, DFESLocale>;
 
 export const defaultESVersionVersionData = ({
   status: { stage = GoogleStage.DEV } = { stage: GoogleStage.DEV },

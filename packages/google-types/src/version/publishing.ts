@@ -1,4 +1,4 @@
-import { Category, Locale } from '@/constants';
+import { Category, DFESLocale, Locale } from '@/constants';
 
 // gactions
 export interface GoogleVersionPublishing {
@@ -67,7 +67,7 @@ export const defaultGoogleVersionPublishing = ({
 export interface DFESVersionPublishing {
   // localized settings
   voice: string;
-  locales: Locale[];
+  locales: DFESLocale[];
   displayName: string;
   developerName: string;
   pronunciation: string;
