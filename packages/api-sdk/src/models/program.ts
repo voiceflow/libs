@@ -6,6 +6,8 @@ export const SProgram = s.object({
   id: SProgramID,
   startId: SNodeID,
   skill_id: SVersionID,
+  versionID: s.optional(SVersionID),
+  name: s.optional(s.string()),
 
   lines: s.record(SNodeID, SNode),
   commands: s.array(SCommand),
