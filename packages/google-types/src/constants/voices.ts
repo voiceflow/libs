@@ -1,4 +1,4 @@
-import { Locale, VoiceLanguageCode } from './locales';
+import { DFESLocale, DFESVoiceLanguageCode, Locale, VoiceLanguageCode } from './locales';
 
 export enum VoiceType {
   STANDARD = 'standard',
@@ -76,6 +76,7 @@ export type GoogleVoice = {
   ssmlGender: string;
 };
 
+// gactions
 export const LocaleCodeToCountryLanguage: Record<Locale, VoiceLanguage> = {
   [Locale.ZH_HK]: VoiceLanguage.CHINESE_HONG_KONG,
   [Locale.ZH_TW]: VoiceLanguage.CHINESE_TAIWAN,
@@ -1124,6 +1125,1060 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, GoogleVoice[]> 
       voiceLanguage: VoiceLanguage.CHINESE_HONG_KONG,
       voiceType: [VoiceType.STANDARD],
       voiceName: [`${VoiceLanguageCode.YUQ_HK}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+};
+
+// dialogflow es
+export const DFESLocaleCodeToCountryLanguage: Record<DFESLocale, VoiceLanguage> = {
+  [DFESLocale.ZH_HK]: VoiceLanguage.CHINESE_HONG_KONG,
+  [DFESLocale.ZH_TW]: VoiceLanguage.CHINESE_TAIWAN,
+  [DFESLocale.DA_DK]: VoiceLanguage.DANISH_DENMARK,
+  [DFESLocale.NL_NL]: VoiceLanguage.DUTCH_NETHERLANDS,
+  [DFESLocale.NL_BE]: VoiceLanguage.DUTCH_BELGIUM,
+  [DFESLocale.EN_AU]: VoiceLanguage.ENGLISH_AUSTRALIA,
+  [DFESLocale.EN_CA]: VoiceLanguage.ENGLISH_CANADA,
+  [DFESLocale.EN_GB]: VoiceLanguage.ENGLISH_UK,
+  [DFESLocale.EN_IN]: VoiceLanguage.ENGLISH_INDIA,
+  [DFESLocale.EN_BE]: VoiceLanguage.ENGLISH_BELGIUM,
+  [DFESLocale.EN_SG]: VoiceLanguage.ENGLISH_SINGAPORE,
+  [DFESLocale.EN_US]: VoiceLanguage.ENGLISH_US,
+  [DFESLocale.FR_FR]: VoiceLanguage.FRENCH_FRANCE,
+  [DFESLocale.FR_CA]: VoiceLanguage.FRENCH_CANADA,
+  [DFESLocale.FR_BE]: VoiceLanguage.FRENCH_BELGIUM,
+  [DFESLocale.DE_DE]: VoiceLanguage.GERMAN_GERMANY,
+  [DFESLocale.DE_AT]: VoiceLanguage.GERMAN_AUSTRIA,
+  [DFESLocale.DE_CH]: VoiceLanguage.GERMAN_SWITZERLAND,
+  [DFESLocale.DE_BE]: VoiceLanguage.GERMAN_BELGIUM,
+  [DFESLocale.HI_IN]: VoiceLanguage.HINDI_INDIA,
+  [DFESLocale.ID_ID]: VoiceLanguage.INDONASIAN_INDONESIA,
+  [DFESLocale.IT_IT]: VoiceLanguage.ITALIAN_ITALY,
+  [DFESLocale.JA_JP]: VoiceLanguage.JAPANESE_JAPAN,
+  [DFESLocale.KO_KR]: VoiceLanguage.KOREAN_SOUTH_KOREA,
+  [DFESLocale.NO_NO]: VoiceLanguage.NORWEGIAN_NORWAY,
+  [DFESLocale.PL_PL]: VoiceLanguage.POLISH_POLAND,
+  [DFESLocale.PT_BR]: VoiceLanguage.PORTUGESE_BRAZIL,
+  [DFESLocale.RU_RU]: VoiceLanguage.RUSSIAN_RUSSIA,
+  [DFESLocale.ES_ES]: VoiceLanguage.SPANISH_SPAIN,
+  [DFESLocale.ES_419]: VoiceLanguage.SPANISH,
+  [DFESLocale.SV_SE]: VoiceLanguage.SLOVAK_SLOVAKIA,
+  [DFESLocale.TH_TH]: VoiceLanguage.THAI_THAILAND,
+  [DFESLocale.TR_TR]: VoiceLanguage.TURKISH_TURKEY,
+};
+
+export const DFESVoiceLanguageCodeToVoice: Record<DFESVoiceLanguageCode, GoogleVoice[]> = {
+  [DFESVoiceLanguageCode.EN_US]: [
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_US,
+      voiceType: [VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.EN_US}-${VoiceType.WAVENET}-A`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_US,
+      voiceType: [VoiceType.STANDARD, VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.EN_US}-${VoiceType.STANDARD}-B`, `${DFESVoiceLanguageCode.EN_US}-${VoiceType.WAVENET}-B`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_US,
+      voiceType: [VoiceType.STANDARD, VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.EN_US}-${VoiceType.STANDARD}-C`, `${DFESVoiceLanguageCode.EN_US}-${VoiceType.WAVENET}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_US,
+      voiceType: [VoiceType.STANDARD, VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.EN_US}-${VoiceType.STANDARD}-D`, `${DFESVoiceLanguageCode.EN_US}-${VoiceType.WAVENET}-D`],
+      ssmlGender: `${SSMLGender.MALE}-3`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_US,
+      voiceType: [VoiceType.STANDARD, VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.EN_US}-${VoiceType.STANDARD}-E`, `${DFESVoiceLanguageCode.EN_US}-${VoiceType.WAVENET}-E`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_US,
+      voiceType: [VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.EN_US}-${VoiceType.WAVENET}-F`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_US,
+      voiceType: [VoiceType.STANDARD, VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.EN_US}-${VoiceType.STANDARD}-G`, `${DFESVoiceLanguageCode.EN_US}-${VoiceType.WAVENET}-G`],
+      ssmlGender: `${SSMLGender.FEMALE}-4`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_US,
+      voiceType: [VoiceType.STANDARD, VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.EN_US}-${VoiceType.STANDARD}-H`, `${DFESVoiceLanguageCode.EN_US}-${VoiceType.WAVENET}-H`],
+      ssmlGender: `${SSMLGender.FEMALE}-5`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_US,
+      voiceType: [VoiceType.STANDARD, VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.EN_US}-${VoiceType.STANDARD}-I`, `${DFESVoiceLanguageCode.EN_US}-${VoiceType.WAVENET}-I`],
+      ssmlGender: `${SSMLGender.MALE}-4`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_US,
+      voiceType: [VoiceType.STANDARD, VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.EN_US}-${VoiceType.STANDARD}-J`, `${DFESVoiceLanguageCode.EN_US}-${VoiceType.WAVENET}-J`],
+      ssmlGender: `${SSMLGender.MALE}-5`,
+    },
+  ],
+  [DFESVoiceLanguageCode.DA_DK]: [
+    {
+      voiceLanguage: VoiceLanguage.DANISH_DENMARK,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.DA_DK}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.DA_DK}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DANISH_DENMARK,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.DA_DK}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.DA_DK}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DANISH_DENMARK,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.DA_DK}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.DA_DK}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DANISH_DENMARK,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.DA_DK}-${VoiceType.WAVENET}-E`, `${DFESVoiceLanguageCode.DA_DK}-${VoiceType.STANDARD}-E`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [DFESVoiceLanguageCode.DE_DE]: [
+    {
+      voiceLanguage: VoiceLanguage.GERMAN_GERMANY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.DE_DE}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.DE_DE}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.GERMAN_GERMANY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.DE_DE}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.DE_DE}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.GERMAN_GERMANY,
+      voiceType: [VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.DE_DE}-${VoiceType.WAVENET}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.GERMAN_GERMANY,
+      voiceType: [VoiceType.WAVENET],
+      voiceName: [`${DFESVoiceLanguageCode.DE_DE}-${VoiceType.WAVENET}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.GERMAN_GERMANY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.DE_DE}-${VoiceType.WAVENET}-E`, `${DFESVoiceLanguageCode.DE_DE}-${VoiceType.STANDARD}-E`],
+      ssmlGender: `${SSMLGender.MALE}-3`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.GERMAN_GERMANY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.DE_DE}-${VoiceType.WAVENET}-F`, `${DFESVoiceLanguageCode.DE_DE}-${VoiceType.STANDARD}-F`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [DFESVoiceLanguageCode.ES_ES]: [
+    {
+      voiceLanguage: VoiceLanguage.SPANISH_SPAIN,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.ES_ES}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.ES_ES}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.SPANISH_SPAIN,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.ES_ES}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.NL_NL]: [
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NL_NL}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NL_NL}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NL_NL}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NL_NL}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NL_NL}-${VoiceType.WAVENET}-E`, `${DFESVoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-E`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [DFESVoiceLanguageCode.FR_FR]: [
+    {
+      voiceLanguage: VoiceLanguage.FRENCH_FRANCE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FR_FR}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.FR_FR}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FRENCH_FRANCE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FR_FR}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.FR_FR}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FRENCH_FRANCE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FR_FR}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.FR_FR}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FRENCH_FRANCE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FR_FR}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.FR_FR}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FRENCH_FRANCE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FR_FR}-${VoiceType.WAVENET}-E`, `${DFESVoiceLanguageCode.FR_FR}-${VoiceType.STANDARD}-E`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [DFESVoiceLanguageCode.FR_CA]: [
+    {
+      voiceLanguage: VoiceLanguage.FRENCH_CANADA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FR_CA}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.FR_CA}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FRENCH_CANADA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FR_CA}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.FR_CA}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FRENCH_CANADA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FR_CA}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.FR_CA}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FRENCH_CANADA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FR_CA}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.FR_CA}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.HI_IN]: [
+    {
+      voiceLanguage: VoiceLanguage.HINDI_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.HI_IN}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.HI_IN}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.HINDI_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.HI_IN}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.HI_IN}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.HINDI_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.HI_IN}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.HI_IN}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.HINDI_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.HI_IN}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.HI_IN}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.ID_ID]: [
+    {
+      voiceLanguage: VoiceLanguage.INDONASIAN_INDONESIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.ID_ID}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.ID_ID}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.INDONASIAN_INDONESIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.ID_ID}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.ID_ID}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.INDONASIAN_INDONESIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.ID_ID}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.ID_ID}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.INDONASIAN_INDONESIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.ID_ID}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.ID_ID}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.IT_IT]: [
+    {
+      voiceLanguage: VoiceLanguage.ITALIAN_ITALY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.IT_IT}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.IT_IT}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ITALIAN_ITALY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.IT_IT}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.IT_IT}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ITALIAN_ITALY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.IT_IT}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.IT_IT}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ITALIAN_ITALY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.IT_IT}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.IT_IT}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.JA_JP]: [
+    {
+      voiceLanguage: VoiceLanguage.JAPANESE_JAPAN,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.JA_JP}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.JA_JP}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.JAPANESE_JAPAN,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.JA_JP}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.JA_JP}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.JAPANESE_JAPAN,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.JA_JP}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.JA_JP}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.JAPANESE_JAPAN,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.JA_JP}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.JA_JP}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.KO_KR]: [
+    {
+      voiceLanguage: VoiceLanguage.KOREAN_SOUTH_KOREA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KO_KR}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.KOREAN_SOUTH_KOREA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KO_KR}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.KOREAN_SOUTH_KOREA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KO_KR}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.KOREAN_SOUTH_KOREA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KO_KR}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.AR_XA]: [
+    {
+      voiceLanguage: VoiceLanguage.ARABIC,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.AR_XA}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.AR_XA}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ARABIC,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.AR_XA}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.AR_XA}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ARABIC,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.AR_XA}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.AR_XA}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ARABIC,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.AR_XA}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.BN_IN]: [
+    {
+      voiceLanguage: VoiceLanguage.BENGALI_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.BENGALI_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.CMN_CN]: [
+    {
+      voiceLanguage: VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.CMN_CN}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.CMN_CN}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.CMN_CN}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.CMN_CN}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.CMN_CN}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.CMN_CN}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.CMN_CN}-${VoiceType.STANDARD}-D`, `${DFESVoiceLanguageCode.CMN_CN}-${VoiceType.WAVENET}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.CMN_TW]: [
+    {
+      voiceLanguage: VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.CMN_TW}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.CMN_TW}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.CMN_TW}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.CMN_TW}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.CMN_TW}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.CMN_TW}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.CS_CZ]: [
+    {
+      voiceLanguage: VoiceLanguage.CZECH_CZECH_REPUBLIC,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.CS_CZ}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.CS_CZ}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.EL_GR]: [
+    {
+      voiceLanguage: VoiceLanguage.GREEK_GREECE,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EL_GR}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.EL_GR}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.EN_AU]: [
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_AUSTRALIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_AU}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.EN_AU}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_AUSTRALIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_AU}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.EN_AU}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_AUSTRALIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_AU}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.EN_AU}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_AUSTRALIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_AU}-${VoiceType.STANDARD}-D`, `${DFESVoiceLanguageCode.EN_AU}-${VoiceType.WAVENET}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.EN_GB]: [
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_UK,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_GB}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.EN_GB}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_UK,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_GB}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.EN_GB}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_UK,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_GB}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.EN_GB}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_UK,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_GB}-${VoiceType.STANDARD}-D`, `${DFESVoiceLanguageCode.EN_GB}-${VoiceType.WAVENET}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_UK,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_GB}-${VoiceType.STANDARD}-F`, `${DFESVoiceLanguageCode.EN_GB}-${VoiceType.WAVENET}-F`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [DFESVoiceLanguageCode.EN_IN]: [
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_IN}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.EN_IN}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_IN}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.EN_IN}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_IN}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.EN_IN}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.ENGLISH_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.EN_IN}-${VoiceType.STANDARD}-D`, `${DFESVoiceLanguageCode.EN_IN}-${VoiceType.WAVENET}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.FI_FI]: [
+    {
+      voiceLanguage: VoiceLanguage.FINNISH_FINLAND,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FI_FI}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.FI_FI}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.FIL_PH]: [
+    {
+      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-D`, `${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.FIL_PH]: [
+    {
+      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-D`, `${DFESVoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.GU_IN]: [
+    {
+      voiceLanguage: VoiceLanguage.GUJARATI_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.GU_IN}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.GUJARATI_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.GU_IN}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.HI_IN]: [
+    {
+      voiceLanguage: VoiceLanguage.HINDI_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.HI_IN}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.HI_IN}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.HINDI_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.HI_IN}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.HI_IN}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.HINDI_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.HI_IN}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.HI_IN}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.HINDI_INDIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.HI_IN}-${VoiceType.STANDARD}-D`, `${DFESVoiceLanguageCode.HI_IN}-${VoiceType.WAVENET}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.HU_HU]: [
+    {
+      voiceLanguage: VoiceLanguage.HUNGARIAN_HUNGARY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.HU_HU}-${VoiceType.STANDARD}-D`, `${DFESVoiceLanguageCode.HU_HU}-${VoiceType.WAVENET}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.KN_IN]: [
+    {
+      voiceLanguage: VoiceLanguage.KANNADA_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KN_IN}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.GUJARATI_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KN_IN}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.KO_KR]: [
+    {
+      voiceLanguage: VoiceLanguage.KOREAN_SOUTH_KOREA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KO_KR}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.KOREAN_SOUTH_KOREA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KO_KR}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.KOREAN_SOUTH_KOREA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KO_KR}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.KOREAN_SOUTH_KOREA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-D`, `${DFESVoiceLanguageCode.KO_KR}-${VoiceType.WAVENET}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.ML_IN]: [
+    {
+      voiceLanguage: VoiceLanguage.MALAYALAM_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.ML_IN}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.MALAYALAM_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.ML_IN}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.NB_NO]: [
+    {
+      voiceLanguage: VoiceLanguage.NORWEGIAN_NORWAY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NB_NO}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.NB_NO}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.NORWEGIAN_NORWAY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NB_NO}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.NB_NO}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.NORWEGIAN_NORWAY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NB_NO}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.NB_NO}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.NORWEGIAN_NORWAY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NB_NO}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.NB_NO}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.NORWEGIAN_NORWAY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NB_NO}-${VoiceType.WAVENET}-E`, `${DFESVoiceLanguageCode.NB_NO}-${VoiceType.STANDARD}-E`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [DFESVoiceLanguageCode.NL_NL]: [
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NL_NL}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NL_NL}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NL_NL}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NL_NL}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.NL_NL}-${VoiceType.WAVENET}-E`, `${DFESVoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-E`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [DFESVoiceLanguageCode.PL_PL]: [
+    {
+      voiceLanguage: VoiceLanguage.POLISH_POLAND,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.PL_PL}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.PL_PL}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.POLISH_POLAND,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.PL_PL}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.PL_PL}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.POLISH_POLAND,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.PL_PL}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.PL_PL}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.POLISH_POLAND,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.PL_PL}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.PL_PL}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.POLISH_POLAND,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.PL_PL}-${VoiceType.WAVENET}-E`, `${DFESVoiceLanguageCode.PL_PL}-${VoiceType.STANDARD}-E`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [DFESVoiceLanguageCode.PT_PT]: [
+    {
+      voiceLanguage: VoiceLanguage.PORTUGESE_PORTUGAL,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.PT_PT}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.PT_PT}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.PORTUGESE_PORTUGAL,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.PT_PT}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.PT_PT}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.PORTUGESE_PORTUGAL,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.PT_PT}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.PT_PT}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.PORTUGESE_PORTUGAL,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.PT_PT}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.PT_PT}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.PT_BR]: [
+    {
+      voiceLanguage: VoiceLanguage.PORTUGESE_BRAZIL,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.PT_BR}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.PT_BR}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.RU_RU]: [
+    {
+      voiceLanguage: VoiceLanguage.RUSSIAN_RUSSIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.RU_RU}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.RU_RU}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.RUSSIAN_RUSSIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.RU_RU}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.RU_RU}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.RUSSIAN_RUSSIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.RU_RU}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.RU_RU}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.RUSSIAN_RUSSIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.RU_RU}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.RU_RU}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.RUSSIAN_RUSSIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.RU_RU}-${VoiceType.WAVENET}-E`, `${DFESVoiceLanguageCode.RU_RU}-${VoiceType.STANDARD}-E`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [DFESVoiceLanguageCode.SK_SK]: [
+    {
+      voiceLanguage: VoiceLanguage.SLOVAK_SLOVAKIA,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.SK_SK}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.SK_SK}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.SV_SE]: [
+    {
+      voiceLanguage: VoiceLanguage.SWEDISH_SWEDEN,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.SV_SE}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.SV_SE}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.TA_IN]: [
+    {
+      voiceLanguage: VoiceLanguage.TAMIL_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.TA_IN}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.TAMIL_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.TA_IN}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.TE_IN]: [
+    {
+      voiceLanguage: VoiceLanguage.TELUGU_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.TE_IN}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.TELUGU_INDIA,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.TE_IN}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.TH_TH]: [
+    {
+      voiceLanguage: VoiceLanguage.THAI_THAILAND,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.TH_TH}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.TR_TR]: [
+    {
+      voiceLanguage: VoiceLanguage.TURKISH_TURKEY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.TR_TR}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.TR_TR}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.TURKISH_TURKEY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.TR_TR}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.TR_TR}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.TURKISH_TURKEY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.TR_TR}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.TR_TR}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.TURKISH_TURKEY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.TR_TR}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.TR_TR}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.FEMALE}-3`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.TURKISH_TURKEY,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.TR_TR}-${VoiceType.WAVENET}-E`, `${DFESVoiceLanguageCode.TR_TR}-${VoiceType.STANDARD}-E`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.UK_UA]: [
+    {
+      voiceLanguage: VoiceLanguage.UKRANIAN_UKRAIN,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.UK_UA}-${VoiceType.STANDARD}-A`, `${DFESVoiceLanguageCode.UK_UA}-${VoiceType.WAVENET}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+  ],
+  [DFESVoiceLanguageCode.VI_VN]: [
+    {
+      voiceLanguage: VoiceLanguage.VIETNAMESE_VIETNAM,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.VI_VN}-${VoiceType.WAVENET}-A`, `${DFESVoiceLanguageCode.VI_VN}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.VIETNAMESE_VIETNAM,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.VI_VN}-${VoiceType.WAVENET}-B`, `${DFESVoiceLanguageCode.VI_VN}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.VIETNAMESE_VIETNAM,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.VI_VN}-${VoiceType.WAVENET}-C`, `${DFESVoiceLanguageCode.VI_VN}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.VIETNAMESE_VIETNAM,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.VI_VN}-${VoiceType.WAVENET}-D`, `${DFESVoiceLanguageCode.VI_VN}-${VoiceType.STANDARD}-D`],
+      ssmlGender: `${SSMLGender.MALE}-2`,
+    },
+  ],
+  [DFESVoiceLanguageCode.YUQ_HK]: [
+    {
+      voiceLanguage: VoiceLanguage.CHINESE_HONG_KONG,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.YUQ_HK}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.CHINESE_HONG_KONG,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.YUQ_HK}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.CHINESE_HONG_KONG,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.YUQ_HK}-${VoiceType.STANDARD}-C`],
+      ssmlGender: `${SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.CHINESE_HONG_KONG,
+      voiceType: [VoiceType.STANDARD],
+      voiceName: [`${DFESVoiceLanguageCode.YUQ_HK}-${VoiceType.STANDARD}-D`],
       ssmlGender: `${SSMLGender.MALE}-2`,
     },
   ],
