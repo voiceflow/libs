@@ -25,6 +25,7 @@ export interface Node extends BaseNode {
 }
 
 export interface TraceFramePayload {
+  name?: string;
   diagramID: string;
 }
 
