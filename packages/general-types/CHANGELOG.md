@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.51.3](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.51.2...@voiceflow/general-types@1.51.3) (2021-07-29)
+
+
+### Bug Fixes
+
+* flow name (VF-1301) ([e48af5b](https://github.com/voiceflow/libs/commit/e48af5b45baae5b261b9485cb0749ea622c91166))
+
+
+
+
+
 ## [1.51.2](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.51.1...@voiceflow/general-types@1.51.2) (2021-07-19)
 
 **Note:** Version bump only for package @voiceflow/general-types
