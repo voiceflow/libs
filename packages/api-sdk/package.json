@@ -48,7 +48,7 @@
     "lint:quiet": "yarn lint --quiet",
     "lint:report": "yarn lint --format json -o sonar/report.json",
     "prepare": "npm run build",
-    "tdd": "yarn test --watch",
+    "tdd": "yarn test --watch ",
     "test": "yarn test:run",
     "test:dependencies": "depcheck",
     "test:integration": "NODE_ENV=test nyc --report-dir=nyc_coverage_integration ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.it.ts'",
