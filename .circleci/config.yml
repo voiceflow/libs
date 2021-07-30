@@ -19,7 +19,7 @@ jobs:
       - checkout
       - vfcommon/install_node_modules:
           avoid_post_install_scripts: false
-      - vfcommon/build_monorepo
+      - vfcommon/build
       - vfcommon/lint_report_monorepo
       - vfcommon/dependency_tests_monorepo:
           step_name: Dependency Tests

@@ -36,7 +36,7 @@
     "prepare": "yarn build",
     "test": "exit 0",
     "test:dependencies": "depcheck",
-    "test:integration": "exit 0",
+    "test:integration": "exit 0 ",
     "test:unit": "exit 0"
   }
 }
