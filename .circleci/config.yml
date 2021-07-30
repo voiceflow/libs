@@ -9,7 +9,7 @@ defaults:
         - /cherry-pick-rebase-pull-request-.*/
 
 orbs:
-  vfcommon: voiceflow/common@0.0.133
+  vfcommon: voiceflow/common@0.0.176
   sonarcloud: sonarsource/sonarcloud@1.0.2
 
 jobs:
@@ -19,11 +19,11 @@ jobs:
       - checkout
       - vfcommon/install_node_modules:
           avoid_post_install_scripts: false
-      - vfcommon/build
-      - vfcommon/lint_report
-      - vfcommon/dependency_tests:
+      - vfcommon/build_monorepo
+      - vfcommon/lint_report_monorepo
+      - vfcommon/dependency_tests_monorepo:
           step_name: Dependency Tests
-      - vfcommon/unit_tests
+      - vfcommon/unit_tests_monorepo
       - sonarcloud/scan
 
 workflows:
