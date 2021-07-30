@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.34.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.34.0...@voiceflow/api-sdk@1.34.1) (2021-07-30)
+
+
+### Bug Fixes
+
+* bump version ([e51d27b](https://github.com/voiceflow/libs/commit/e51d27beb76c41130ebbca30ef13f2b2f8befc80))
+* monorepo publish ([8d89d36](https://github.com/voiceflow/libs/commit/8d89d363abc84cead60b1457b08fc06f6b05b9b9))
+* sem rel messages ([a1cc384](https://github.com/voiceflow/libs/commit/a1cc38424df20c3221ccde8246a2903463f084a3))
+
+
+
+
+
 # [1.34.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.33.0...@voiceflow/api-sdk@1.34.0) (2021-07-19)
 
 
