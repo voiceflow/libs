@@ -5,8 +5,7 @@
   "version": "independent",
   "command": {
     "publish": {
-      "conventionalCommits": true,
-      "createRelease": "github"
+      "conventionalCommits": true
     }
   }
 }
