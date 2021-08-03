@@ -25,6 +25,9 @@ export type BlockID = s.StructType<typeof SBlockID>;
 export const SVariable = s.string();
 export type Variable = s.StructType<typeof SVariable>;
 
+export const STagID = s.string();
+export type TagID = s.StructType<typeof SBlockID>;
+
 export const STimestamp = s.number();
 export type Timestamp = s.StructType<typeof STimestamp>;
 

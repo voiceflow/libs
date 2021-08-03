@@ -1,7 +1,18 @@
 import * as s from 'superstruct';
 
 import { Member, SMember } from './member';
-import { BasePlatformData, SBasePlatformData, SCreatorID, SName, SPlatform, SProjectID, SPrototypeModel, STeamID, SVersionID } from './shared';
+import {
+  BasePlatformData,
+  SBasePlatformData,
+  SCreatorID,
+  SName,
+  SPlatform,
+  SProjectID,
+  SPrototypeModel,
+  STagID,
+  STeamID,
+  SVersionID,
+} from './shared';
 
 export enum ProjectPrototypeNLPType {
   LUIS = 'LUIS',
@@ -46,6 +57,11 @@ export enum ProjectPrivacy {
   PRIVATE = 'private',
 }
 
+export const SReportTag = s.object({
+  tagID: STagID,
+  label: s.string(),
+});
+
 export const SProject = s.object({
   _id: SProjectID,
   teamID: STeamID,
@@ -61,6 +77,7 @@ export const SProject = s.object({
   devVersion: s.optional(SVersionID),
   liveVersion: s.optional(SVersionID),
   platformData: SBasePlatformData,
+  reportTags: s.optional(s.record(STagID, SReportTag)),
 });
 
 export interface Project<P extends BasePlatformData, M extends BasePlatformData>
