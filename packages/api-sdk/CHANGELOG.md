@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.34.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.34.1...@voiceflow/api-sdk@1.34.2) (2021-08-03)
+
+
+### Bug Fixes
+
+* project report tags (VF-000) ([f012cee](https://github.com/voiceflow/libs/commit/f012ceea9ac287bdbc51c20b41000f7193d2d278))
+
+
+
+
+
 ## [1.34.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.34.0...@voiceflow/api-sdk@1.34.1) (2021-07-30)
 
 
