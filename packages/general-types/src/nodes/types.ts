@@ -45,6 +45,7 @@ export interface DataWithMappings {
 
 export enum TraceType {
   END = 'end',
+  TEXT = 'text',
   PATH = 'path',
   FLOW = 'flow',
   SPEAK = 'speak',
@@ -58,6 +59,7 @@ export enum TraceType {
 export type NodeID = Nullable<string>;
 
 export enum NodeType {
+  TEXT = 'text',
   SPEAK = 'speak',
   START = 'start',
   CARD = 'card',

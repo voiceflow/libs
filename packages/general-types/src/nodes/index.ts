@@ -23,6 +23,7 @@ import * as SetV2 from './setV2';
 import * as Speak from './speak';
 import * as Start from './start';
 import * as Stream from './stream';
+import * as Text from './text';
 import * as Visual from './visual';
 import * as Zapier from './zapier';
 
@@ -35,6 +36,7 @@ export type BaseSteps<V> =
   | Flow.Step
   | Start.Step
   | Speak.Step<V>
+  | Text.Step
   | Interaction.Step<V>
   | Code.Step
   | Intent.Step
@@ -61,6 +63,7 @@ export type BaseNodes =
   | Flow.Node
   | Start.Node
   | Speak.Node
+  | Text.Node
   | Interaction.Node
   | Code.Node
   | Integration.Node
