@@ -39,6 +39,7 @@ export interface Text extends BaseText {
 
 export interface Element extends BaseElement {
   type?: ElementType;
+  children: Descendant[];
   [ElementProperty.TEXT_ALIGN]?: string;
 }
 
@@ -47,9 +48,13 @@ export interface LinkElement extends Element {
   url?: string;
 }
 
+export type AnyElement = Element | LinkElement;
+
+export type Descendant = AnyElement | Text;
+
 export interface TextData {
   id: string;
-  content: Array<Element | Text>;
+  content: Descendant[];
 }
 
 export interface StepData {
