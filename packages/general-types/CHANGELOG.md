@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.53.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.52.0...@voiceflow/general-types@1.53.0) (2021-08-09)
+
+
+### Features
+
+* improve text types ([#38](https://github.com/voiceflow/libs/issues/38)) ([a50e207](https://github.com/voiceflow/libs/commit/a50e207e28b4583ad4ab514ad21e24dbeb5888f8))
+
+
+
+
+
 # [1.52.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.51.5...@voiceflow/general-types@1.52.0) (2021-08-06)
 
 
