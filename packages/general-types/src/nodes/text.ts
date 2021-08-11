@@ -66,17 +66,17 @@ export interface Step extends BaseStep<StepData> {
   type: NodeType.TEXT;
 }
 
-export interface TextNodeData {
-  id: string;
-  html: string;
-}
-
 export interface Node extends BaseNode {
   type: NodeType.TEXT;
-  texts: TextNodeData[];
+  texts: TextData[];
   nextId?: NodeID;
 }
 
-export interface TraceFrame extends BaseTraceFrame<TextNodeData> {
+export interface TextTracePayload {
+  slate: TextData;
+  text: string;
+}
+
+export interface TraceFrame extends BaseTraceFrame<TextTracePayload> {
   type: TraceType.TEXT;
 }
