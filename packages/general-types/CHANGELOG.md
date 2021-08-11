@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.53.1](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.53.0...@voiceflow/general-types@1.53.1) (2021-08-11)
+
+
+### Bug Fixes
+
+* export text trace (VF-1362) ([db0ff8a](https://github.com/voiceflow/libs/commit/db0ff8afee102a2458fb2ea998e427ead5c47462))
+
+
+
+
+
 # [1.53.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.52.0...@voiceflow/general-types@1.53.0) (2021-08-09)
 
 
