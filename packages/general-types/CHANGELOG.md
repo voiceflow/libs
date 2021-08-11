@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.53.3](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.53.2...@voiceflow/general-types@1.53.3) (2021-08-11)
+
+
+### Bug Fixes
+
+* persist slate format ([f74c752](https://github.com/voiceflow/libs/commit/f74c75261437fa2293d9d81fc4892e329c56a9d6))
+
+
+
+
+
 ## [1.53.2](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.53.1...@voiceflow/general-types@1.53.2) (2021-08-11)
 
 **Note:** Version bump only for package @voiceflow/general-types
