@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.35.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.34.3...@voiceflow/api-sdk@1.35.0) (2021-08-12)
+
+
+### Features
+
+* add patch and delete node methods (VF-1297) ([#42](https://github.com/voiceflow/libs/issues/42)) ([8aa6279](https://github.com/voiceflow/libs/commit/8aa62790016cab94c58010646d66ca8a7f4819af))
+
+
+
+
+
 ## [1.34.3](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.34.2...@voiceflow/api-sdk@1.34.3) (2021-08-11)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
