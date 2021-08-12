@@ -172,6 +172,21 @@ describe('DiagramResource', () => {
     expect(assert.args[2]).to.eql([{ type: 'type' }, resource['_nodePatchStruct']]);
   });
 
+  it('.deleteNode', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.delete.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.deleteNode('1', '2');
+
+    expect(fetch.delete.callCount).to.eql(1);
+    expect(fetch.delete.args[0]).to.eql(['diagrams/1/nodes/2']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eq(2);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+    expect(assert.args[1]).to.eql(['2', SNodeID]);
+  });
+
   it('.delete', async () => {
     const { crud, resource } = createClient();
 
