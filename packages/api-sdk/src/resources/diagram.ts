@@ -1,7 +1,7 @@
 import * as s from 'superstruct';
 
 import type Fetch from '@/fetch';
-import { BaseDiagramNode, Diagram, DiagramID, NodeID, SDiagram, SNode, SNodeID } from '@/models';
+import { BaseDiagramNode, Diagram, DiagramID, NodeID, SDiagram, SNode, SNodeID, SNodePartial } from '@/models';
 import { createPutAndPostStruct } from '@/utils';
 
 import CrudResource from './crud';
@@ -13,6 +13,8 @@ export type ModelIDKey = typeof modelIDKey;
 
 class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey, DiagramResource, 'modified'> {
   private _nodePutAndPostStruct = createPutAndPostStruct(SNode.schema, 'id', [], true);
+
+  private _nodePatchStruct = createPutAndPostStruct(SNodePartial.schema, 'id', [], true);
 
   constructor(fetch: Fetch) {
     super({
@@ -48,12 +50,31 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     return super._patch<Diagram<T>>(id, body);
   }
 
-  public async updateNode(id: DiagramID, nodeID: NodeID, body: Omit<BaseDiagramNode, 'nodeID'>): Promise<BaseDiagramNode> {
+  public async updateNode<T extends BaseDiagramNode>(id: DiagramID, nodeID: NodeID, body: Omit<T, 'nodeID'>): Promise<T> {
     this._assertModelID(id);
     s.assert(nodeID, SNodeID);
     s.assert(body, this._nodePutAndPostStruct);
 
-    const { data } = await this.fetch.put<BaseDiagramNode>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
+    const { data } = await this.fetch.put<T>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
+
+    return data;
+  }
+
+  public async patchNode<T extends BaseDiagramNode>(id: DiagramID, nodeID: NodeID, body: Partial<Omit<T, 'nodeID'>>): Promise<T> {
+    this._assertModelID(id);
+    s.assert(nodeID, SNodeID);
+    s.assert(body, this._nodePatchStruct);
+
+    const { data } = await this.fetch.patch<T>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
+
+    return data;
+  }
+
+  public async deleteNode(id: DiagramID, nodeID: NodeID): Promise<string> {
+    this._assertModelID(id);
+    s.assert(nodeID, SNodeID);
+
+    const { data } = await this.fetch.delete<string>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`);
 
     return data;
   }

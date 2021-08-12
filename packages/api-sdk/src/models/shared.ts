@@ -119,6 +119,7 @@ export const SNodeType = s.string();
 export type NodeType = s.StructType<typeof SNodeID>;
 
 export const SNode = dynamicObject({ id: SNodeID, type: SNodeType });
+export const SNodePartial = dynamicObject({ id: s.optional(SNodeID), type: s.optional(SNodeType) });
 /**
  * @deprecated
  */

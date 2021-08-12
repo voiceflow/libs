@@ -156,6 +156,37 @@ describe('DiagramResource', () => {
     expect(assert.args[2]).to.eql([{ type: 'type', data: { key: 'value' } }, resource['_nodePutAndPostStruct']]);
   });
 
+  it('.patchNode', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.patch.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.patchNode('1', '2', { type: 'type' });
+
+    expect(fetch.patch.callCount).to.eql(1);
+    expect(fetch.patch.args[0]).to.eql(['diagrams/1/nodes/2', { type: 'type' }]);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eql(3);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+    expect(assert.args[1]).to.eql(['2', SNodeID]);
+    expect(assert.args[2]).to.eql([{ type: 'type' }, resource['_nodePatchStruct']]);
+  });
+
+  it('.deleteNode', async () => {
+    const { fetch, assert, resource } = createClient();
+
+    fetch.delete.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.deleteNode('1', '2');
+
+    expect(fetch.delete.callCount).to.eql(1);
+    expect(fetch.delete.args[0]).to.eql(['diagrams/1/nodes/2']);
+    expect(data).to.eql(RESPONSE_DATA);
+    expect(assert.callCount).to.eq(2);
+    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
+    expect(assert.args[1]).to.eql(['2', SNodeID]);
+  });
+
   it('.delete', async () => {
     const { crud, resource } = createClient();
 
