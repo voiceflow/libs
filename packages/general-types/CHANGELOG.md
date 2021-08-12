@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.54.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.53.4...@voiceflow/general-types@1.54.0) (2021-08-12)
+
+
+### Features
+
+* add variable types ([#43](https://github.com/voiceflow/libs/issues/43)) ([36dfc9c](https://github.com/voiceflow/libs/commit/36dfc9c697beea5c84900b8b9fac021930178900))
+
+
+
+
+
 ## [1.53.4](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.53.3...@voiceflow/general-types@1.53.4) (2021-08-12)
 
 **Note:** Version bump only for package @voiceflow/general-types
