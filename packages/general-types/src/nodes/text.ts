@@ -22,6 +22,7 @@ export enum TextProperty {
 
 export enum ElementType {
   LINK = 'link',
+  VARIABLE = 'variable',
 }
 
 export enum ElementProperty {
@@ -38,7 +39,7 @@ export interface Text extends BaseText {
 }
 
 export interface Element extends BaseElement {
-  type?: ElementType;
+  type?: string;
   children: Descendant[];
   [ElementProperty.TEXT_ALIGN]?: string;
 }
@@ -48,7 +49,14 @@ export interface LinkElement extends Element {
   url?: string;
 }
 
-export type AnyElement = Element | LinkElement;
+export interface VariableElement extends Element {
+  type: ElementType.VARIABLE;
+  id: string;
+  name: string;
+  isSlot?: boolean;
+}
+
+export type AnyElement = Element | LinkElement | VariableElement;
 
 export type Descendant = AnyElement | Text;
 
