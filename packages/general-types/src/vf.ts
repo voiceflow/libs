@@ -1,6 +1,6 @@
 import { BaseBlock, Diagram } from '@voiceflow/api-sdk';
 
-import { GeneralSteps } from '@/nodes';
+import { GeneralSteps } from '@/node';
 import { GeneralProject } from '@/project';
 import { GeneralVersion } from '@/version';
 

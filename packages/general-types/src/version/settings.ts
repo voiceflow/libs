@@ -1,37 +1,23 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
+
 import { Nullable } from '@voiceflow/api-sdk';
+import { Version } from '@voiceflow/base-types';
 
-import { CanvasNodeVisibility, Locale, Prompt, Voice } from '@/types';
+import { Locale, Voice } from '@/constants';
+import { Prompt } from '@/types';
 
-export enum RepeatType {
-  OFF = 'OFF',
-  ALL = 'ALL',
-  DIALOG = 'DIALOG',
-}
-
-export enum SessionType {
-  RESUME = 'resume',
-  RESTART = 'restart',
-}
-
-export interface RestartSession {
-  type: SessionType.RESTART;
-}
-
-export interface BaseResumeSession<V> {
-  type: SessionType.RESUME;
+export interface BaseResumeSession<V> extends Version.ResumeSession {
   resume: Nullable<Prompt<V>>;
   follow: Nullable<Prompt<V>>;
 }
 
-export interface BaseVersionSettings<V> {
+export interface BaseVersionSettings<V> extends Version.VersionSettings {
   error: Nullable<Prompt<V>>;
-  repeat: RepeatType;
-  session: RestartSession | BaseResumeSession<V>;
+  session: Version.RestartSession | BaseResumeSession<V>;
   defaultVoice: Nullable<V>;
-  defaultCanvasNodeVisibility: Nullable<CanvasNodeVisibility>;
 }
 
-export type ResumeSession = BaseResumeSession<Voice>;
+export interface ResumeSession extends BaseResumeSession<Voice> {}
 
 export interface GeneralVersionSettings extends BaseVersionSettings<Voice> {
   locales: Locale[];
@@ -49,20 +35,13 @@ export const defaultPrompt = <V>(prompt: Nullable<Prompt<V>> | undefined, defaul
 };
 
 export const defaultBaseVersionSettings = <V>(
-  {
-    error,
-    repeat = RepeatType.ALL,
-    session = { type: SessionType.RESTART },
-    defaultVoice = null,
-    defaultCanvasNodeVisibility = null,
-  }: Partial<BaseVersionSettings<V>> = {},
+  { error, session = { type: Version.SessionType.RESTART }, defaultVoice = null, ...baseSettings }: Partial<BaseVersionSettings<V>> = {},
   { defaultPromptVoice }: { defaultPromptVoice: V }
 ): BaseVersionSettings<V> => ({
+  ...Version.defaultVersionSettings(baseSettings),
   error: defaultPrompt<V>(error, defaultVoice ?? defaultPromptVoice),
-  repeat,
   session,
   defaultVoice,
-  defaultCanvasNodeVisibility,
 });
 
 export const defaultGeneralVersionSettings = ({
