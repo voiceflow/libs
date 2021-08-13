@@ -2,9 +2,9 @@
 
 import { Nullable } from '@voiceflow/api-sdk';
 import { Node } from '@voiceflow/base-types';
+import { Prompt } from '@voiceflow/general-types';
 
 import { Voice } from '@/constants';
-import { Prompt } from '@/types';
 
 export interface StepReprompt extends Node.Utils.StepReprompt<Nullable<Prompt<Voice>>> {}
 

@@ -29,7 +29,7 @@ export interface IntentButton extends BaseButton<{ intentID: Nullable<string> }>
 // will be union in future
 export type AnyButton = IntentButton;
 
-export interface StepButtons {
+export interface StepButton {
   /**
    * @deprecated Use buttons
    */

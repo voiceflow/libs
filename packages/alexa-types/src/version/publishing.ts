@@ -1,4 +1,4 @@
-import { Locale } from '@/types';
+import { Locale } from '@/constants';
 
 export interface AlexaVersionPublishing {
   forExport: boolean;

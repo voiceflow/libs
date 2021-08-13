@@ -1,12 +1,9 @@
 import { Nullable } from '@voiceflow/api-sdk';
 
-import { StepButtons } from '@/button';
-import { NodeButtons } from '@/request';
-
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, NodeNextID } from './utils';
 
-export interface StepData extends StepButtons {
+export interface StepData {
   slot: Nullable<string>;
   variable: Nullable<string>;
   slotInputs: string[];
@@ -16,7 +13,7 @@ export interface Step<D extends StepData = StepData> extends BaseStep<D> {
   type: NodeType.CAPTURE;
 }
 
-export interface Node extends BaseNode, NodeButtons, NodeNextID {
+export interface Node extends BaseNode, NodeNextID {
   type: NodeType.CAPTURE;
   variable: string;
 }

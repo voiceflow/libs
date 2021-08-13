@@ -1,9 +1,7 @@
-import { StepButtons } from '@/button';
-
 import { NodeType } from './constants';
 import { BaseStep, BaseStepNoMatch } from './utils';
 
-export interface StepData extends StepButtons {
+export interface StepData {
   noMatches: BaseStepNoMatch;
 }
 

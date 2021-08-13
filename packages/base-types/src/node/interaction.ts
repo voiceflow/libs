@@ -1,5 +1,4 @@
-import { StepButtons } from '@/button';
-import { AnyRequestButton, NodeButtons } from '@/request';
+import { AnyRequestButton } from '@/request';
 
 import { NodeType } from './constants';
 import { BaseEvent, BaseNode, BaseNodeNoMatch, BaseStep, BaseStepNoMatch, BaseTraceFrame, NodeNextID, SlotMappings, TraceType } from './utils';
@@ -8,7 +7,7 @@ export interface Choice extends SlotMappings {
   intent: string;
 }
 
-export interface StepData extends StepButtons {
+export interface StepData {
   name: string;
   else: BaseStepNoMatch;
   choices: Choice[];
@@ -22,7 +21,7 @@ export interface NodeInteraction<E = BaseEvent> extends NodeNextID {
   event: E;
 }
 
-export interface Node<E = BaseEvent> extends BaseNode, NodeButtons, BaseNodeNoMatch {
+export interface Node<E = BaseEvent> extends BaseNode, BaseNodeNoMatch {
   type: NodeType.INTERACTION;
   interactions: NodeInteraction<E>[];
 }

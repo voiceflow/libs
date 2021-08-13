@@ -1,5 +1,6 @@
 export * from './constants';
-export * from './node';
-export * from './project';
-export * from './version';
+export * as Node from './node';
+export * as Project from './project';
+export * from './types';
+export * as Version from './version';
 export * from './vf';

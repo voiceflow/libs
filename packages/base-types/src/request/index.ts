@@ -62,7 +62,7 @@ export type IntentRequestButton = BaseRequestButton<IntentRequest>;
 
 export type AnyRequestButton = TextRequestButton | IntentRequestButton;
 
-export interface NodeButtons {
+export interface NodeButton {
   /**
    * @deprecated Use buttons
    */

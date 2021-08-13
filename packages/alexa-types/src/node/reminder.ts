@@ -1,8 +1,6 @@
-/* eslint-disable camelcase */
+import { Node } from '@voiceflow/base-types';
 
-import { NodeID } from '@voiceflow/general-types';
-
-import { BaseNode, BaseStep, NodeType } from './types';
+import { NodeType } from './constants';
 
 export enum ReminderType {
   SCHEDULED_ABSOLUTE = 'SCHEDULED_ABSOLUTE',
@@ -38,7 +36,7 @@ export interface StepData {
   reminder: Reminder;
 }
 
-export interface Step extends BaseStep<StepData> {
+export interface Step extends Node.Utils.BaseStep<StepData> {
   type: NodeType.REMINDER;
 }
 
@@ -46,9 +44,7 @@ export interface NodeReminder extends Omit<Reminder, 'name' | 'recurrenceBool' |
   recurrence?: { byDay?: string[]; freq: RecurrenceFreq };
 }
 
-export interface Node extends BaseNode {
+export interface Node extends Node.Utils.BaseNode, Node.Utils.NodeSuccessFailID {
   type: NodeType.REMINDER;
   reminder: NodeReminder;
-  fail_id?: NodeID;
-  success_id?: NodeID;
 }

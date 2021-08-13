@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 
 import { Nullable } from '@voiceflow/api-sdk';
-import { NodeID } from '@voiceflow/general-types';
+import { Node } from '@voiceflow/base-types';
 
-import { BaseNode, BaseStep, NodeType, PermissionType } from './types';
+import { NodeType, PermissionType } from './constants';
 
 export interface UserInfo {
   type: Nullable<PermissionType>;
@@ -21,21 +21,17 @@ export interface Permission {
   selected: Nullable<{ value: string }>;
 }
 
-export interface Step extends BaseStep<StepData> {
+export interface Step extends Node.Utils.BaseStep<StepData> {
   type: NodeType.USER_INFO;
 }
 
-export interface BaseTypedNode extends BaseNode {
+export interface BaseTypedNode extends Node.Utils.BaseNode {
   type: NodeType.USER_INFO;
 }
 
-export interface NextNode extends BaseNode {
-  nextId?: NodeID;
-}
+export interface NextNode extends Node.Utils.BaseNode, Node.Utils.NodeNextID {}
 
-export interface UseInfoNode extends BaseNode {
-  fail_id?: NodeID;
-  success_id?: NodeID;
+export interface UseInfoNode extends Node.Utils.BaseNode, Node.Utils.NodeSuccessFailID {
   permissions: Permission[];
 }
 

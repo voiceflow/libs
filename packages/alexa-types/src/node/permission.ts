@@ -1,20 +1,19 @@
 /* eslint-disable camelcase */
 
-import { NodeID } from '@voiceflow/general-types';
+import { Node } from '@voiceflow/base-types';
 import { v1 } from 'ask-smapi-model';
 
-import { BaseNode, BaseStep, NodeType, PermissionType } from './types';
+import { NodeType, PermissionType } from './constants';
 
 export interface StepData {
   permissions: PermissionType[];
 }
 
-export interface Step extends BaseStep<StepData> {
+export interface Step extends Node.Utils.BaseStep<StepData> {
   type: NodeType.PERMISSION;
 }
 
-export interface Node extends BaseNode {
+export interface Node extends Node.Utils.BaseNode, Node.Utils.NodeNextID {
   type: NodeType.PERMISSION;
-  nextId?: NodeID;
   permission_card: true | v1.skill.Manifest.PermissionName[];
 }

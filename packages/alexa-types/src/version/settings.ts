@@ -1,10 +1,10 @@
 import { Nullable } from '@voiceflow/api-sdk';
-import { BaseResumeSession, BaseVersionSettings, defaultBaseVersionSettings } from '@voiceflow/general-types';
+import { Version as GeneralVersion } from '@voiceflow/general-types';
 import { v1 } from 'ask-smapi-model';
 
-import { Voice } from '@/types';
+import { Voice } from '@/constants';
 
-export type ResumeSession = BaseResumeSession<Voice>;
+export type ResumeSession = GeneralVersion.BaseResumeSession<Voice>;
 
 export enum AccountLinkingType {
   IMPLICIT = 'IMPLICIT',
@@ -34,7 +34,7 @@ export interface AccountLinking {
   defaultTokenExpirationInSeconds: number;
 }
 
-export interface AlexaVersionSettings extends BaseVersionSettings<Voice> {
+export interface AlexaVersionSettings extends GeneralVersion.BaseVersionSettings<Voice> {
   events: Nullable<string>;
   permissions: string[];
   accountLinking: Nullable<AccountLinking>;
@@ -80,7 +80,7 @@ export const defaultAlexaVersionSettings = ({
   modelSensitivity = null,
   ...generalSettings
 }: Partial<AlexaVersionSettings> = {}): AlexaVersionSettings => ({
-  ...defaultBaseVersionSettings<Voice>(generalSettings, { defaultPromptVoice: Voice.ALEXA }),
+  ...GeneralVersion.defaultBaseVersionSettings<Voice>(generalSettings, { defaultPromptVoice: Voice.ALEXA }),
   events,
   permissions,
   accountLinking: defaultAccountLinking(accountLinking),

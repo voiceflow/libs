@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
-
-import { Version as BaseVersion } from '@voiceflow/api-sdk';
+import { VersionPrototype } from '@voiceflow/api-sdk';
 import { Node, Version } from '@voiceflow/base-types';
 
 import { Locale, Voice } from '@/constants';
@@ -21,11 +19,18 @@ export const defaultBaseVersionData = <V>(
   settings: defaultBaseVersionSettings<V>(settings, options),
 });
 
+export interface BaseVersion<V> extends Version.Version {
+  platformData: BaseVersionData<V>;
+}
+
 export interface GeneralVersionData extends BaseVersionData<Voice> {
   settings: GeneralVersionSettings;
 }
 
-export interface GeneralVersion extends BaseVersion<GeneralVersionData, Node.Utils.AnyCommand, Locale> {}
+export interface GeneralVersion extends BaseVersion<Voice> {
+  prototype: VersionPrototype<Node.Utils.AnyCommand, Locale>;
+  platformData: GeneralVersionData;
+}
 
 export const defaultGeneralVersionData = ({ settings, ...data }: Partial<GeneralVersionData>): GeneralVersionData => ({
   ...defaultBaseVersionData(data, { defaultPromptVoice: Voice.DEFAULT }),

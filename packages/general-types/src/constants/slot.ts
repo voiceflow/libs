@@ -1,4 +1,4 @@
-import { Language } from '@/constants';
+import { Language } from './base';
 
 export enum SlotType {
   CUSTOM = 'VF.CUSTOM',

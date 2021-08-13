@@ -1,8 +1,6 @@
 /* eslint-disable camelcase */
 
-import { NodeID, NodeType } from '@voiceflow/general-types';
-
-import { BaseNode, BaseStep } from './types';
+import { Node } from '@voiceflow/base-types';
 
 export interface StepData {
   loop: boolean;
@@ -14,19 +12,19 @@ export interface StepData {
   backgroundImage?: string;
 }
 
-export interface Step extends BaseStep<StepData> {
-  type: NodeType.STREAM;
+export interface Step extends Node.Utils.BaseStep<StepData> {
+  type: Node.Stream.Step['type'];
 }
 
-export interface Node extends BaseNode {
-  type: NodeType.STREAM;
+export interface Node extends Node.Utils.BaseNode {
+  type: Node.Stream.Node['type'];
   loop: boolean;
   play: string;
-  NEXT?: NodeID;
+  NEXT?: Node.Utils.NodeID;
   title?: string;
-  nextId?: NodeID;
+  nextId?: Node.Utils.NodeID;
   PAUSE_ID: string;
-  PREVIOUS?: NodeID;
+  PREVIOUS?: Node.Utils.NodeID;
   icon_img?: string;
   description?: string;
   background_img?: string;
