@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.35.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.35.0...@voiceflow/api-sdk@1.35.1) (2021-08-14)
+
+
+### Bug Fixes
+
+* **api-sdk:** handle bad input to `parseJWT` function (VF-000) ([#45](https://github.com/voiceflow/libs/issues/45)) ([2c8ddcd](https://github.com/voiceflow/libs/commit/2c8ddcdffcfaf4c505bb488d61f03b744e27697b))
+
+
+
+
+
 # [1.35.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.34.3...@voiceflow/api-sdk@1.35.0) (2021-08-12)
 
 
