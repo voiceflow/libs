@@ -8,6 +8,6 @@ export interface StepData<Voice> extends Node.Interaction.StepData, StepReprompt
   else: StepNoMatch<Voice>;
 }
 
-export interface Step<Voice> extends Node.Interaction.Step<StepData<Voice>> {}
+export interface Step<Data = StepData<unknown>> extends Node.Interaction.Step<Data> {}
 
 export interface Node<Event = Node.Utils.BaseEvent> extends Node.Interaction.Node<Event>, NodeNoMatch, NodeReprompt {}

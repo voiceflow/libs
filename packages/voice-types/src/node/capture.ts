@@ -6,6 +6,6 @@ import { NodeReprompt, StepReprompt } from './utils';
 
 export interface StepData<Voice> extends Node.Capture.StepData, StepReprompt<Voice> {}
 
-export interface Step<Voice> extends Node.Capture.Step<StepData<Voice>> {}
+export interface Step<Data = StepData<unknown>> extends Node.Capture.Step<Data> {}
 
 export interface Node extends Node.Capture.Node, NodeReprompt {}

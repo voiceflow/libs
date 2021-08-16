@@ -8,4 +8,4 @@ export interface StepData<Voice> extends Node.Prompt.StepData, StepReprompt<Voic
   noMatches: StepNoMatch<Voice>;
 }
 
-export interface Step<Voice> extends Node.Prompt.Step<StepData<Voice>> {}
+export interface Step<Data = StepData<unknown>> extends Node.Prompt.Step<Data> {}
