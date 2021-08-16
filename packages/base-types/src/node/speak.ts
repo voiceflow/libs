@@ -5,24 +5,24 @@ import { Nullable } from '@voiceflow/api-sdk';
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, BaseTraceFrame, NodeNextID, StepCanvasNodeVisibility, TraceType } from './utils';
 
-export interface StepDataDialog<D> {
-  dialogs: D[];
+export interface StepDataDialog<Dialog> {
+  dialogs: Dialog[];
 }
 
 export interface StepData extends StepCanvasNodeVisibility {
   randomize: boolean;
 }
 
-export interface Step<D extends StepData = StepData> extends BaseStep<D> {
+export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.SPEAK;
 }
 
-export interface SpeakNode<S> {
-  speak: S;
+export interface SpeakNode<Speak> {
+  speak: Speak;
 }
 
-export interface RandomSpeakNode<S> {
-  random_speak: S[];
+export interface RandomSpeakNode<Speak> {
+  random_speak: Speak[];
 }
 
 export interface Node extends BaseNode, NodeNextID {

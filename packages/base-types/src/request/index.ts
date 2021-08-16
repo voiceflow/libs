@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
+
 import { Chip } from '../button';
 
 export enum RequestType {
@@ -56,9 +58,9 @@ export interface BaseRequestButton<T extends BaseRequest = BaseRequest> {
   request: T;
 }
 
-export type TextRequestButton = BaseRequestButton<TextRequest>;
+export interface TextRequestButton extends BaseRequestButton<TextRequest> {}
 
-export type IntentRequestButton = BaseRequestButton<IntentRequest>;
+export interface IntentRequestButton extends BaseRequestButton<IntentRequest> {}
 
 export type AnyRequestButton = TextRequestButton | IntentRequestButton;
 

@@ -9,7 +9,7 @@
   "dependencies": {
     "@voiceflow/api-sdk": "^1.35.1",
     "@voiceflow/base-types": "^1.0.0",
-    "slate": "^0.63.0"
+    "@voiceflow/voice-types": "^1.0.0"
   },
   "files": [
     "build"

@@ -1,5 +1,9 @@
-export interface Prompt<V> {
-  desc?: string; // desc when voice is 'audio'
-  voice: V;
-  content: string;
+import { GeneralDiagram } from '@/diagram';
+import { GeneralProject } from '@/project';
+import { GeneralVersion } from '@/version';
+
+export interface VF {
+  project: GeneralProject;
+  version: GeneralVersion;
+  diagrams: GeneralDiagram[];
 }

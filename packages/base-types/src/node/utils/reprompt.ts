@@ -1,9 +1,9 @@
 import { Nullable } from '@voiceflow/api-sdk';
 
-export interface StepReprompt<R> {
-  reprompt: Nullable<R>;
+export interface StepReprompt<Prompt> {
+  reprompt: Nullable<Prompt>;
 }
 
-export interface NodeReprompt<R> {
-  reprompt?: R;
+export interface NodeReprompt<Prompt> {
+  reprompt?: Prompt;
 }

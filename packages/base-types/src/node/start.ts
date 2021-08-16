@@ -5,7 +5,7 @@ import { BaseNode, BaseStep, NodeID } from './utils';
 
 export type StepData = UnknownRecord;
 
-export interface Step<D extends StepData = StepData> extends BaseStep<D> {
+export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.START;
 }
 

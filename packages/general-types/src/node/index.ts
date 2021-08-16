@@ -10,8 +10,10 @@ export * as Interaction from './interaction';
 export * as Prompt from './prompt';
 export * as Speak from './speak';
 
-type OverloadedBaseSteps = Node.Capture.Step | Node.Interaction.Step | Node.Prompt.Step | Node.Speak.Step;
-type OverloadedBaseNodes = Node.Capture.Node | Node.Interaction.Node | Node.Speak.Node;
+export type AnyGeneralExtendedStep = Speak.Step | Prompt.Step | Capture.Step | Interaction.Step;
+export type AnyGeneralExtendedNode = Speak.Node | Capture.Node | Interaction.Node;
 
-export type GeneralSteps = Exclude<Node.AnyBaseStep, OverloadedBaseSteps> | Speak.Step | Prompt.Step | Capture.Step | Interaction.Step;
-export type GeneralNodes = Exclude<Node.AnyBaseNode, OverloadedBaseNodes> | Speak.Node | Capture.Node | Interaction.Node;
+export type AnyGeneralStep = Node.AnyCommonStep | AnyGeneralExtendedStep | Node.Visual.Step | Node.Stream.Step | Node.Directive.Step;
+export type AnyGeneralNode = Node.AnyCommonNode | AnyGeneralExtendedNode | Node.Visual.Node | Node.Stream.Node | Node.Directive.Node;
+
+export type AnyGeneralCommand = Node.AnyCommonCommand;

@@ -9,19 +9,19 @@ export enum CommandType {
   PUSH = 'push',
 }
 
-export interface TypedBaseCommand<E extends BaseEvent = BaseEvent> extends BaseCommand {
+export interface TypedBaseCommand<Event extends BaseEvent = BaseEvent> extends BaseCommand {
   type: CommandType;
-  event: E;
+  event: Event;
 }
 
-export interface JumpCommand<E extends BaseEvent = BaseEvent> extends TypedBaseCommand<E> {
+export interface JumpCommand<Event extends BaseEvent = BaseEvent> extends TypedBaseCommand<Event> {
   type: CommandType.JUMP;
   nextID: Nullable<string>;
 }
 
-export interface PushCommand<E extends BaseEvent = BaseEvent> extends TypedBaseCommand<E> {
+export interface PushCommand<Event extends BaseEvent = BaseEvent> extends TypedBaseCommand<Event> {
   type: CommandType.PUSH;
   diagramID: Nullable<string>;
 }
 
-export type AnyCommand<E extends BaseEvent = BaseEvent> = JumpCommand<E> | PushCommand<E>;
+export type AnyCommand<Event extends BaseEvent = BaseEvent> = JumpCommand<Event> | PushCommand<Event>;

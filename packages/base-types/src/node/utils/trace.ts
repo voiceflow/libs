@@ -13,13 +13,13 @@ export enum TraceType {
   VISUAL = 'visual',
 }
 
-export interface BaseTraceFramePath<E extends BaseEvent = BaseEvent> {
-  event: E;
+export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {
+  event: Event;
 }
 
-export interface BaseTraceFrame<P = any, F extends BaseTraceFramePath = BaseTraceFramePath> {
+export interface BaseTraceFrame<Payload = any, TracePath extends BaseTraceFramePath = BaseTraceFramePath> {
   type: string;
-  paths?: F[];
-  payload: P;
+  paths?: TracePath[];
+  payload: Payload;
   defaultPath?: number;
 }

@@ -25,6 +25,6 @@ export interface NodeData extends NodeSuccessFailID {
   selected_integration: IntegrationType.ZAPIER;
 }
 
-export interface Step<D extends StepData = StepData> extends BaseStep<D> {
+export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.ZAPIER;
 }

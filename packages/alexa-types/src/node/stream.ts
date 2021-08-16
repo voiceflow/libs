@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+/* eslint-disable @typescript-eslint/no-empty-interface, camelcase */
 
 import { Node } from '@voiceflow/base-types';
 
@@ -12,12 +12,9 @@ export interface StepData {
   backgroundImage?: string;
 }
 
-export interface Step extends Node.Utils.BaseStep<StepData> {
-  type: Node.Stream.Step['type'];
-}
+export interface Step extends Node.Stream.Step<StepData> {}
 
-export interface Node extends Node.Utils.BaseNode {
-  type: Node.Stream.Node['type'];
+export interface Node extends Pick<Node.Stream.Node, keyof Node.Utils.BaseNode> {
   loop: boolean;
   play: string;
   NEXT?: Node.Utils.NodeID;

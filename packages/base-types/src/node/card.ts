@@ -20,7 +20,7 @@ export interface Card {
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface StepData extends Card {}
 
-export interface Step<D extends StepData = StepData> extends BaseStep<D> {
+export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.CARD;
 }
 

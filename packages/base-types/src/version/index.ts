@@ -1,17 +1,22 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { StrictVersionPlatformData, Version as BaseVersion } from '@voiceflow/api-sdk';
+import { StrictVersionPlatformData, Version } from '@voiceflow/api-sdk';
 
-import { defaultVersionSettings, VersionSettings } from './settings';
+import { BaseVersionSettings, defaultBaseVersionSettings } from './settings';
 
 export * from './settings';
 
-export interface VersionData extends StrictVersionPlatformData<VersionSettings> {}
+export interface BaseVersionData<Prompt = unknown> extends StrictVersionPlatformData<BaseVersionSettings<Prompt>> {}
 
-export interface Version extends BaseVersion<VersionData> {}
+export interface BaseVersion<Prompt = unknown> extends Version<BaseVersionData<Prompt>> {}
 
-export const defaultVersionData = ({ slots = [], intents = [], settings, publishing = {} }: Partial<VersionData>): VersionData => ({
+export const defaultBaseVersionData = <Prompt>({
+  slots = [],
+  intents = [],
+  settings,
+  publishing = {},
+}: Partial<BaseVersionData<Prompt>>): BaseVersionData<Prompt> => ({
   slots,
   intents,
-  settings: defaultVersionSettings(settings),
+  settings: defaultBaseVersionSettings(settings),
   publishing,
 });

@@ -14,8 +14,8 @@ export interface BaseStepNoMatch {
   randomize: boolean;
 }
 
-export interface StepNoMatch<R> extends BaseStepNoMatch {
-  reprompts: R[];
+export interface StepNoMatch<Prompt> extends BaseStepNoMatch {
+  reprompts: Prompt[];
 }
 
 export interface BaseNodeNoMatch {
@@ -23,6 +23,6 @@ export interface BaseNodeNoMatch {
   randomize?: boolean;
 }
 
-export interface NodeNoMatch<N> extends BaseNodeNoMatch {
-  noMatches?: N[];
+export interface NodeNoMatch<NoMatch> extends BaseNodeNoMatch {
+  noMatches?: NoMatch[];
 }

@@ -12,7 +12,7 @@ export interface StepData extends StepCanvasNodeVisibility {
   texts: TextData[];
 }
 
-export interface Step<D extends StepData = StepData> extends BaseStep<D> {
+export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.TEXT;
 }
 

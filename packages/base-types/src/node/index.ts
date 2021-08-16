@@ -1,9 +1,6 @@
 import * as _v1 from './_v1';
 import * as Api from './api';
-import * as Capture from './capture';
-import * as Card from './card';
 import * as Code from './code';
-import * as Directive from './directive';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as General from './general';
@@ -11,18 +8,12 @@ import * as GoogleSheets from './googleSheets';
 import * as If from './if';
 import * as IfV2 from './ifV2';
 import * as Integration from './integration';
-import * as Interaction from './interaction';
 import * as Intent from './jump';
-import * as Prompt from './prompt';
 import * as Command from './push';
 import * as Random from './random';
 import * as Set from './set';
 import * as SetV2 from './setV2';
-import * as Speak from './speak';
 import * as Start from './start';
-import * as Stream from './stream';
-import * as Text from './text';
-import * as Visual from './visual';
 import * as Zapier from './zapier';
 
 export * as _v1 from './_v1';
@@ -54,18 +45,14 @@ export * as Utils from './utils';
 export * as Visual from './visual';
 export * as Zapier from './zapier';
 
-export type AnyBaseStep =
+export type AnyCommonStep =
   | Set.Step
   | SetV2.Step
-  | Capture.Step
   | Flow.Step
   | Start.Step
-  | Speak.Step
-  | Text.Step
-  | Interaction.Step
   | Code.Step
   | Intent.Step
-  | Prompt.Step
+  | Command.Step
   | Api.Step
   | Exit.Step
   | Random.Step
@@ -73,32 +60,21 @@ export type AnyBaseStep =
   | GoogleSheets.Step
   | If.Step
   | IfV2.Step
-  | Stream.Step
   | General.Step
-  | Visual.Step
-  | Command.Step
-  | Directive.Step
-  | Card.Step
   | _v1.Step;
 
-export type AnyBaseNode =
+export type AnyCommonNode =
   | Set.Node
   | SetV2.Node
-  | Capture.Node
   | Flow.Node
   | Start.Node
-  | Speak.Node
-  | Text.Node
-  | Interaction.Node
   | Code.Node
   | Integration.Node
   | Exit.Node
   | Random.Node
-  | Stream.Node
   | General.Node
-  | Visual.Node
   | If.Node
   | IfV2.Node
-  | Directive.Node
-  | Card.Node
   | _v1.Node;
+
+export type AnyCommonCommand = Intent.Command | Command.Command;

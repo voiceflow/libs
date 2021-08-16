@@ -57,7 +57,6 @@ export enum NodeType {
   PAYMENT = 'payment',
   CANCEL_PAYMENT = 'cancel_payment',
   REMINDER = 'reminder',
-  DEPRECATED = 'deprecated',
 
   // event
   EVENT = 'event',

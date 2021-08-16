@@ -1,20 +1,23 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
-import { Node } from '@voiceflow/base-types';
+import { Node as BaseNode } from '@voiceflow/base-types';
+import { Node } from '@voiceflow/voice-types';
 
-import { NodeNoMatch, NodeReprompt, StepNoMatch, StepReprompt } from './utils';
+import { Voice } from '@/constants';
 
-export interface StepData extends Node.Interaction.StepData, StepReprompt {
-  else: StepNoMatch;
-}
+export interface StepData extends Node.Interaction.StepData<Voice> {}
 
 export interface Step extends Node.Interaction.Step<StepData> {}
 
-export interface Interaction extends Node.Utils.SlotMappings {
+export interface NodeInteraction extends BaseNode.Utils.SlotMappings {
   intent: string;
   nextIdIndex?: number;
 }
 
-export interface Node extends Omit<Node.Interaction.Node, 'interactions'>, NodeNoMatch, NodeReprompt, Node.Utils.NodeNextIDs {
-  interactions: Interaction[];
+export interface Node
+  extends Omit<Node.Interaction.Node, 'interactions'>,
+    BaseNode.Utils.NodeNextIDs,
+    Node.Utils.NodeNoMatch,
+    Node.Utils.NodeReprompt {
+  interactions: NodeInteraction[];
 }

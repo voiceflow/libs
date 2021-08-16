@@ -5,20 +5,20 @@ import { BaseEvent, BaseNode, BasePort, BaseStep, NodeID } from './utils';
 // eslint-disable-next-line no-underscore-dangle
 export const _V1_STOP_TYPES = 'stopTypes';
 
-export interface StepData<B = unknown> {
+export interface StepData<Payload = unknown> {
   _v: 1;
-  payload: B;
   stop?: boolean;
+  payload: Payload;
   defaultPath?: number;
 }
 
-export interface Node<E = BaseEvent> extends BaseNode {
+export interface Node<Event = BaseEvent> extends BaseNode {
   _v: 1;
-  payload: unknown;
   stop: boolean;
+  paths: Array<{ event?: Event; nextID: Nullable<NodeID> }>;
+  payload: unknown;
   defaultPath?: number; // index starting from 0
-  paths: Array<{ event?: E; nextID: Nullable<NodeID> }>;
 }
-export interface Step<B = unknown, E = BaseEvent> extends BaseStep<StepData<B>, BasePort<{ event?: E }>[]> {
+export interface Step<Payload = unknown, Event = BaseEvent> extends BaseStep<StepData<Payload>, BasePort<{ event?: Event }>[]> {
   type: string;
 }

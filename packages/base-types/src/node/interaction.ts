@@ -13,17 +13,17 @@ export interface StepData {
   choices: Choice[];
 }
 
-export interface Step<D extends StepData = StepData> extends BaseStep<D> {
+export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.INTERACTION;
 }
 
-export interface NodeInteraction<E = BaseEvent> extends NodeNextID {
-  event: E;
+export interface NodeInteraction<Event = BaseEvent> extends NodeNextID {
+  event: Event;
 }
 
-export interface Node<E = BaseEvent> extends BaseNode, BaseNodeNoMatch {
+export interface Node<Event = BaseEvent> extends BaseNode, BaseNodeNoMatch {
   type: NodeType.INTERACTION;
-  interactions: NodeInteraction<E>[];
+  interactions: NodeInteraction<Event>[];
 }
 
 export interface TraceFramePayload {

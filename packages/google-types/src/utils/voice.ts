@@ -8,7 +8,7 @@ import {
   VoiceType,
 } from '@/constants';
 
-export const getVoiceForLanguage = (language: Language, voiceType: VoiceType) => {
+export const getVoiceForLanguage = (language: Language, voiceType: VoiceType): GoogleVoice[][] => {
   const locales = LanguageToLocale[language];
 
   return (

@@ -17,21 +17,26 @@ export interface RestartSession {
   type: SessionType.RESTART;
 }
 
-export interface ResumeSession {
+export interface ResumeSession<Prompt = unknown> {
   type: SessionType.RESUME;
+  resume: Nullable<Prompt>;
+  follow: Nullable<Prompt>;
 }
 
-export interface VersionSettings {
+export interface BaseVersionSettings<Prompt = unknown> {
+  error: Nullable<Prompt>;
   repeat: RepeatType;
-  session: RestartSession | ResumeSession;
+  session: RestartSession | ResumeSession<Prompt>;
   defaultCanvasNodeVisibility: Nullable<Utils.CanvasNodeVisibility>;
 }
 
-export const defaultVersionSettings = ({
+export const defaultBaseVersionSettings = <Prompt>({
+  error = null,
   repeat = RepeatType.ALL,
   session = { type: SessionType.RESTART },
   defaultCanvasNodeVisibility = null,
-}: Partial<VersionSettings> = {}): VersionSettings => ({
+}: Partial<BaseVersionSettings<Prompt>> = {}): BaseVersionSettings<Prompt> => ({
+  error,
   repeat,
   session,
   defaultCanvasNodeVisibility,
