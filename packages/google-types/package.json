@@ -8,8 +8,9 @@
   },
   "dependencies": {
     "@voiceflow/api-sdk": "^1.35.1",
+    "@voiceflow/base-types": "^1.0.0",
     "@voiceflow/common": "6.5.0",
-    "@voiceflow/general-types": "^1.54.1",
+    "@voiceflow/voice-types": "^1.0.0",
     "googleapis": "^60.0.1"
   },
   "files": [

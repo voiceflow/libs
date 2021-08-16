@@ -5,9 +5,12 @@ const LAUNCH_PHRASES = ['launch', 'ask', 'tell', 'load', 'begin', 'enable'];
 
 const NON_LATIN_REGIONS = ['ja-JP', 'hi-IN'];
 
-const matchesKeyword = (splitName: string[]) => (keyword: string) => splitName.find((split) => split === keyword.toLowerCase());
+const matchesKeyword =
+  (splitName: string[]) =>
+  (keyword: string): string | undefined =>
+    splitName.find((split) => split === keyword.toLowerCase());
 
-export const getInvocationNameError = (name?: string, locales: string[] = []) => {
+export const getInvocationNameError = (name?: string, locales: string[] = []): string | null => {
   if (!name?.trim()) {
     return 'Invocation name required for Alexa';
   }

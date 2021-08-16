@@ -1,0 +1,41 @@
+{
+  "name": "@voiceflow/voice-types",
+  "description": "Voiceflow voice project types",
+  "version": "1.0.0",
+  "author": "Voiceflow",
+  "bugs": {
+    "url": "https://github.com/voiceflow/libs/issues"
+  },
+  "dependencies": {
+    "@voiceflow/api-sdk": "^1.35.0",
+    "@voiceflow/base-types": "^1.0.0",
+    "slate": "^0.63.0"
+  },
+  "files": [
+    "build"
+  ],
+  "homepage": "https://github.com/voiceflow/libs#readme",
+  "keywords": [
+    "voiceflow",
+    "voiceflow-types"
+  ],
+  "license": "ISC",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voiceflow/libs.git"
+  },
+  "scripts": {
+    "build": "yarn clean && ttsc --project ./tsconfig.build.json",
+    "clean": "rimraf build",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "yarn lint --fix",
+    "lint:quiet": "yarn lint --quiet",
+    "lint:report": "yarn lint --format json -o sonar/report.json",
+    "prepare": "yarn build",
+    "test": "exit 0",
+    "test:dependencies": "depcheck",
+    "test:integration": "exit 0",
+    "test:unit": "exit 0"
+  }
+}

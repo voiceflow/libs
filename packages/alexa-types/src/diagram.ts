@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
+
 import { Diagram } from '@voiceflow/api-sdk';
 
-import { AlexaSteps } from './nodes';
+import { AnyAlexaStep } from './node';
 
-export type AlexaDiagram = Diagram<AlexaSteps>;
+export interface AlexaDiagram extends Diagram<AnyAlexaStep> {}

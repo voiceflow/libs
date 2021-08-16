@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
+
 import { Program } from '@voiceflow/api-sdk';
 
-import { GoogleNodes } from './nodes';
+import { AnyGoogleCommand, AnyGoogleNode } from './node';
 
-export type GoogleProgram = Program<GoogleNodes>;
+export interface GoogleProgram extends Program<AnyGoogleNode, AnyGoogleCommand> {}

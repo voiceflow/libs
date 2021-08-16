@@ -1,27 +1,25 @@
-import { Project, UnknownRecord } from '@voiceflow/api-sdk';
+/* eslint-disable @typescript-eslint/no-empty-interface */
+import { BasePlatformData, Project } from '@voiceflow/api-sdk';
 
-import { DFESProjectMemberData, GoogleProjectMemberData } from './member';
+import { BaseGoogleProjectMemberData, GoogleProjectMemberData } from './member';
 
 export * from './member';
 
-// gactions
-export type GoogleProjectData = UnknownRecord;
+// base is used in google-dfes types
 
-export interface GoogleProject extends Project<GoogleProjectData, GoogleProjectMemberData> {
-  platform: 'google';
-}
+export interface BaseGooglePlatformData extends BasePlatformData {}
 
-export const defaultGoogleProjectData = (projectData: Partial<GoogleProjectData> = {}): GoogleProjectData => ({
+export interface BaseGoogleProject<MemberData extends BaseGoogleProjectMemberData> extends Project<BaseGooglePlatformData, MemberData> {}
+
+export const defaultBaseGoogleProjectData = (projectData: Partial<BaseGooglePlatformData> = {}): BaseGooglePlatformData => ({
   ...projectData,
 });
 
-// dialogflow es
-export type DFESProjectData = UnknownRecord;
-
-export interface DFESProject extends Project<DFESProjectData, DFESProjectMemberData> {
-  platform: 'df-es';
+export interface GooglePlatformData extends BaseGooglePlatformData {}
+export interface GoogleProject extends BaseGoogleProject<GoogleProjectMemberData> {
+  platform: 'google';
 }
 
-export const defaultDFESProjectData = (projectData: Partial<DFESProjectData> = {}): DFESProjectData => ({
-  ...projectData,
+export const defaultGoogleProjectData = (projectData: Partial<GooglePlatformData> = {}): GooglePlatformData => ({
+  ...defaultBaseGoogleProjectData(projectData),
 });

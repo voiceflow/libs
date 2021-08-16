@@ -1,74 +1,15 @@
-import { Nullable } from '@voiceflow/api-sdk';
+import { Version } from '@voiceflow/voice-types';
 
-import { CanvasNodeVisibility, Locale, Prompt, Voice } from '@/types';
+import { Locale, Voice } from '@/constants';
 
-export enum RepeatType {
-  OFF = 'OFF',
-  ALL = 'ALL',
-  DIALOG = 'DIALOG',
-}
-
-export enum SessionType {
-  RESUME = 'resume',
-  RESTART = 'restart',
-}
-
-export interface RestartSession {
-  type: SessionType.RESTART;
-}
-
-export interface BaseResumeSession<V> {
-  type: SessionType.RESUME;
-  resume: Nullable<Prompt<V>>;
-  follow: Nullable<Prompt<V>>;
-}
-
-export interface BaseVersionSettings<V> {
-  error: Nullable<Prompt<V>>;
-  repeat: RepeatType;
-  session: RestartSession | BaseResumeSession<V>;
-  defaultVoice: Nullable<V>;
-  defaultCanvasNodeVisibility: Nullable<CanvasNodeVisibility>;
-}
-
-export type ResumeSession = BaseResumeSession<Voice>;
-
-export interface GeneralVersionSettings extends BaseVersionSettings<Voice> {
+export interface GeneralVersionSettings extends Version.VoiceVersionSettings<Voice> {
   locales: Locale[];
 }
 
-export const defaultPrompt = <V>(prompt: Nullable<Prompt<V>> | undefined, defaultVoice: V): Nullable<Prompt<V>> => {
-  if (!prompt?.content) {
-    return null;
-  }
-
-  return {
-    voice: prompt.voice || defaultVoice,
-    content: prompt.content,
-  };
-};
-
-export const defaultBaseVersionSettings = <V>(
-  {
-    error,
-    repeat = RepeatType.ALL,
-    session = { type: SessionType.RESTART },
-    defaultVoice = null,
-    defaultCanvasNodeVisibility = null,
-  }: Partial<BaseVersionSettings<V>> = {},
-  { defaultPromptVoice }: { defaultPromptVoice: V }
-): BaseVersionSettings<V> => ({
-  error: defaultPrompt<V>(error, defaultVoice ?? defaultPromptVoice),
-  repeat,
-  session,
-  defaultVoice,
-  defaultCanvasNodeVisibility,
-});
-
 export const defaultGeneralVersionSettings = ({
   locales = [Locale.EN_US],
-  ...baseSettings
+  ...voiceSettings
 }: Partial<GeneralVersionSettings> = {}): GeneralVersionSettings => ({
-  ...defaultBaseVersionSettings(baseSettings, { defaultPromptVoice: Voice.DEFAULT }),
+  ...Version.defaultVoiceVersionSettings<Voice>(voiceSettings, { defaultPromptVoice: Voice.DEFAULT }),
   locales,
 });

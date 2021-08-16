@@ -1,6 +1,6 @@
 {
   "name": "@voiceflow/general-types",
-  "description": "Vocieflwo general project types",
+  "description": "Voiceflow general project types",
   "version": "1.54.1",
   "author": "Voiceflow",
   "bugs": {
@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "@voiceflow/api-sdk": "^1.35.1",
-    "slate": "^0.63.0"
+    "@voiceflow/base-types": "^1.0.0",
+    "@voiceflow/voice-types": "^1.0.0"
   },
   "files": [
     "build"

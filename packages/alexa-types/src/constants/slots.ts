@@ -1,7 +1,7 @@
 /* eslint no-secrets/no-secrets: 0 */
 import { BuiltinSlot } from '@voiceflow/common';
 
-import { Locale as L } from '@/types';
+import { Locale as L } from './base';
 
 export enum SlotType {
   DATE = 'AMAZON.DATE',
