@@ -50,8 +50,8 @@ export type AnyAlexaOnlyNode =
   | CancelPayment.Node
   | Display.Node;
 
-export type AnyAlexaStep = Node.AnyCommonStep | AnyAlexaExtendedStep | AnyAlexaOnlyStep | Node.Directive.Step;
-export type AnyAlexaNode = Node.AnyCommonNode | AnyAlexaExtendedNode | AnyAlexaOnlyNode | Node.Directive.Node;
+export type AnyAlexaStep = Node.AnyCommonStep | AnyAlexaExtendedStep | AnyAlexaOnlyStep | Node.Directive.Step | Node.Card.Step;
+export type AnyAlexaNode = Node.AnyCommonNode | AnyAlexaExtendedNode | AnyAlexaOnlyNode | Node.Directive.Node | Node.Card.Node;
 
 export type AnyAlexaOnlyCommand = Event.Command;
 export type AnyAlexaCommand = Node.AnyCommonCommand | AnyAlexaOnlyCommand;
