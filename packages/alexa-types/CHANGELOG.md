@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.52.15](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.14...@voiceflow/alexa-types@1.52.15) (2021-08-17)
+
+
+### Bug Fixes
+
+* add card to alexa ([973b01b](https://github.com/voiceflow/libs/commit/973b01b6be4d23c2bec02b01d2ac7ba389fe8bb8))
+
+
+
+
+
 ## [1.52.14](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.13...@voiceflow/alexa-types@1.52.14) (2021-08-16)
 
 **Note:** Version bump only for package @voiceflow/alexa-types
