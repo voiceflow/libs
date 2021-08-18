@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.34.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.0...@voiceflow/google-types@1.34.1) (2021-08-18)
+
+
+### Bug Fixes
+
+* add card type to google steps/nodes ([1010a47](https://github.com/voiceflow/libs/commit/1010a4736a45bcb523d69742f14e8adbc576af3e))
+
+
+
+
+
 # [1.34.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.33.1...@voiceflow/google-types@1.34.0) (2021-08-18)
 
 
