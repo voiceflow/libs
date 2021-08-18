@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.36.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.35.1...@voiceflow/api-sdk@1.36.0) (2021-08-18)
+
+
+### Features
+
+* improve api-sdk typings ([#46](https://github.com/voiceflow/libs/issues/46)) ([f02e7f2](https://github.com/voiceflow/libs/commit/f02e7f2dc42194261303d7dd459e9176ebafc33d))
+
+
+
+
+
 ## [1.35.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.35.0...@voiceflow/api-sdk@1.35.1) (2021-08-14)
 
 
