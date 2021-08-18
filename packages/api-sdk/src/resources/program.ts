@@ -23,19 +23,29 @@ class ProgramResource extends CrudResource<typeof SProgram['schema'], ModelIDKey
 
   public async get<T extends BaseNode, C extends BaseCommand>(id: ProgramID): Promise<Program<T, C>>;
 
-  public async get(id: ProgramID, fields?: string[]) {
-    return fields ? super._getByID<Program>(id, fields) : super._getByID<Program>(id);
+  public async get<T extends Program<any, any> = Program>(id: ProgramID): Promise<T>;
+
+  public async get(id: ProgramID, fields?: string[]): Promise<Program<any, any>> {
+    return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  public async create<T extends BaseNode, C extends BaseCommand>(body: Omit<Program<T, C>, ModelIDKey>): Promise<Program<T, C>> {
-    return super._post<Program<T, C>>(body);
+  async create<T extends BaseNode, C extends BaseCommand>(body: Omit<Program<T, C>, ModelIDKey>): Promise<Program<T, C>>;
+
+  async create<T extends Omit<Program<any, any>, ModelIDKey>>(body: T): Promise<T & Pick<Program<any, any>, ModelIDKey>>;
+
+  public async create(body: Omit<Program<any, any>, ModelIDKey>): Promise<Program<any, any>> {
+    return super._post(body);
   }
 
   public async update<T extends BaseNode, C extends BaseCommand>(
     id: ProgramID,
     body: Omit<Program<T, C>, ModelIDKey>
-  ): Promise<Omit<Program<T, C>, ModelIDKey>> {
-    return super._put<Program<T, C>>(id, body);
+  ): Promise<Omit<Program<T, C>, ModelIDKey>>;
+
+  public async update<T extends Omit<Program<any, any>, ModelIDKey>>(id: ProgramID, body: T): Promise<T>;
+
+  public async update(id: ProgramID, body: Omit<Program<any, any>, ModelIDKey>): Promise<Omit<Program<any, any>, ModelIDKey>> {
+    return super._put<Program<any, any>>(id, body);
   }
 
   public async delete(id: ProgramID): Promise<ProgramID> {
