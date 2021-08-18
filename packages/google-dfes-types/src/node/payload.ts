@@ -7,11 +7,11 @@ export interface StepData {
 }
 
 export interface Step extends Node.Utils.BaseStep<StepData> {
-  type: NodeType.DF_ES_PAYLOAD;
+  type: NodeType.PAYLOAD;
 }
 
 export interface Node extends Node.Utils.BaseNode {
-  type: NodeType.DF_ES_PAYLOAD;
+  type: NodeType.PAYLOAD;
   data: string;
   nextID?: string;
 }
