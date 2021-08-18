@@ -3,6 +3,7 @@ import * as s from 'superstruct';
 import Fetch from '@/fetch';
 import { BasePlatformData, Diagram, Program, Project, SVersion, Version, VersionID, VersionPlatformData, VersionPrototype } from '@/models';
 
+import { Fields } from './base';
 import CrudResource from './crud';
 
 export const ENDPOINT = 'versions';
@@ -23,13 +24,13 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     });
   }
 
-  public async get<T extends Partial<Version<VersionPlatformData>>>(id: VersionID, fields: string[]): Promise<T>;
+  public async get<T extends Partial<Version<VersionPlatformData>>>(id: VersionID, fields: Fields): Promise<T>;
 
   public async get<P extends VersionPlatformData>(id: VersionID): Promise<Version<P>>;
 
   public async get<T extends Version<any, any, string> = Version<VersionPlatformData>>(id: VersionID): Promise<T>;
 
-  public async get(id: VersionID, fields?: string[]): Promise<Version<any, any, string>> {
+  public async get(id: VersionID, fields?: Fields): Promise<Version<any, any, string>> {
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
@@ -81,11 +82,11 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     return data;
   }
 
-  public async getPrograms<T extends Partial<Program>>(id: VersionID, fields: string[]): Promise<T[]>;
+  public async getPrograms<T extends Partial<Program>>(id: VersionID, fields: Fields): Promise<T[]>;
 
   public async getPrograms<T extends Program<any> = Program>(id: VersionID): Promise<T[]>;
 
-  public async getPrograms(id: VersionID, fields?: string[]): Promise<Program[]> {
+  public async getPrograms(id: VersionID, fields?: Fields): Promise<Program[]> {
     this._assertModelID(id);
 
     const { data } = await this.fetch.get<Program[]>(`${this._getCRUDEndpoint(id)}/programs${this._getFieldsQuery(fields)}`);
@@ -93,11 +94,11 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     return data;
   }
 
-  public async getPrototypePrograms<T extends Partial<Program>>(id: VersionID, fields: string[]): Promise<T[]>;
+  public async getPrototypePrograms<T extends Partial<Program>>(id: VersionID, fields: Fields): Promise<T[]>;
 
   public async getPrototypePrograms<T extends Program<any> = Program>(id: VersionID): Promise<T[]>;
 
-  public async getPrototypePrograms(id: VersionID, fields?: string[]): Promise<Program[]> {
+  public async getPrototypePrograms(id: VersionID, fields?: Fields): Promise<Program[]> {
     this._assertModelID(id);
 
     const { data } = await this.fetch.get<Program[]>(`${this._getCRUDEndpoint(id)}/prototype-programs${this._getFieldsQuery(fields)}`);
@@ -105,11 +106,11 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     return data;
   }
 
-  public async getDiagrams<T extends Partial<Diagram>>(id: VersionID, fields: string[]): Promise<T[]>;
+  public async getDiagrams<T extends Partial<Diagram>>(id: VersionID, fields: Fields): Promise<T[]>;
 
   public async getDiagrams<T extends Diagram<any> = Diagram>(id: VersionID): Promise<T[]>;
 
-  public async getDiagrams(id: VersionID, fields?: string[]): Promise<Diagram[]> {
+  public async getDiagrams(id: VersionID, fields?: Fields): Promise<Diagram[]> {
     this._assertModelID(id);
 
     const { data } = await this.fetch.get<Diagram[]>(`${this._getCRUDEndpoint(id)}/diagrams${this._getFieldsQuery(fields)}`);

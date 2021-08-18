@@ -3,7 +3,7 @@ import * as s from 'superstruct';
 import Fetch, { PathVariables } from '@/fetch';
 import { BasePlatformData, CreatorID, Member, ProjectID, SMember, SProjectID } from '@/models';
 
-import BaseResource from '../base';
+import BaseResource, { Fields } from '../base';
 import { ENDPOINT } from './constants';
 
 export const modelIDKey = 'creatorID';
@@ -24,13 +24,13 @@ class MemberResource extends BaseResource<typeof SMember['schema'], ModelIDKey, 
     return `${this._getEndpoint()}/${id}/members`;
   }
 
-  public async list<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: string[]): Promise<P[]>;
+  public async list<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: Fields): Promise<P[]>;
 
   public async list<P extends Member<any> = Member<BasePlatformData>>(projectID: ProjectID): Promise<P[]>;
 
   public async list<P extends BasePlatformData>(projectID: ProjectID): Promise<Member<P>[]>;
 
-  public async list(projectID: ProjectID, fields?: string[]): Promise<Member<any>[] | Partial<Member<any>>[]> {
+  public async list(projectID: ProjectID, fields?: Fields): Promise<Member<any>[] | Partial<Member<any>>[]> {
     s.assert(projectID, SProjectID);
 
     const { data } = await this.fetch.get<Member<any>[] | Partial<Member<any>>[]>(
@@ -40,13 +40,13 @@ class MemberResource extends BaseResource<typeof SMember['schema'], ModelIDKey, 
     return data;
   }
 
-  public async get<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: string[]): Promise<P>;
+  public async get<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: Fields): Promise<P>;
 
-  public async get<P extends Member<any> = Member<BasePlatformData>>(projectID: ProjectID, fields: string[]): Promise<P>;
+  public async get<P extends Member<any> = Member<BasePlatformData>>(projectID: ProjectID, fields: Fields): Promise<P>;
 
   public async get<P extends BasePlatformData>(projectID: ProjectID): Promise<Member<P>>;
 
-  public async get(projectID: ProjectID, fields?: string[]): Promise<Member<any> | Partial<Member<any>>> {
+  public async get(projectID: ProjectID, fields?: Fields): Promise<Member<any> | Partial<Member<any>>> {
     s.assert(projectID, SProjectID);
 
     const { data } = await this.fetch.get<Member<any> | Partial<Member<any>>>(

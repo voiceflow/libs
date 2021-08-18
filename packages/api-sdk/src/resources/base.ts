@@ -4,6 +4,8 @@ import type Fetch from '@/fetch';
 import type { BaseSchema, PutPostSchemeType, PutPostStruct, SchemeType } from '@/types';
 import { createPutAndPostStruct } from '@/utils';
 
+export type Fields = string[] | ReadonlyArray<string>;
+
 class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>, C extends Record<string, any>, E extends keyof SchemeType<S> = never> {
   protected readonly fetch: Fetch;
 
@@ -49,7 +51,7 @@ class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>, C extend
   }
 
   // eslint-disable-next-line class-methods-use-this
-  protected _getFieldsQuery(fields?: string[]): string {
+  protected _getFieldsQuery(fields?: Fields): string {
     return fields ? `?fields=${fields.join(',')}` : '';
   }
 

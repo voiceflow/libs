@@ -3,6 +3,7 @@ import * as s from 'superstruct';
 import type Fetch from '@/fetch';
 import { BasePlatformData, Project, ProjectID, ProjectPrototype, SProject, SWorkspaceID, Version, VersionPlatformData, WorkspaceID } from '@/models';
 
+import { Fields } from '../base';
 import CrudResource from '../crud';
 import { ENDPOINT } from './constants';
 import MemberResource from './member';
@@ -26,13 +27,13 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
     this.member = new MemberResource(fetch);
   }
 
-  public async list<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(workspaceID: WorkspaceID, fields: string[]): Promise<P[]>;
+  public async list<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(workspaceID: WorkspaceID, fields: Fields): Promise<P[]>;
 
   public async list<P extends BasePlatformData, M extends BasePlatformData>(workspaceID: WorkspaceID): Promise<Project<P, M>[]>;
 
   public async list<P extends Project<any, any> = Project<BasePlatformData, BasePlatformData>>(workspaceID: WorkspaceID): Promise<P[]>;
 
-  public async list(workspaceID: WorkspaceID, fields?: string[]): Promise<Project<any, any>[] | Partial<Project<any, any>>[]> {
+  public async list(workspaceID: WorkspaceID, fields?: Fields): Promise<Project<any, any>[] | Partial<Project<any, any>>[]> {
     s.assert(workspaceID, SWorkspaceID);
 
     const { data } = await this.fetch.get<Project<any, any>[] | Partial<Project<any, any>>[]>(

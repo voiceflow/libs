@@ -4,6 +4,7 @@ import type Fetch from '@/fetch';
 import { BaseDiagramNode, Diagram, DiagramID, NodeID, SDiagram, SNode, SNodeID, SNodePartial } from '@/models';
 import { createPutAndPostStruct } from '@/utils';
 
+import { Fields } from './base';
 import CrudResource from './crud';
 
 const ENDPOINT = 'diagrams';
@@ -26,13 +27,13 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     });
   }
 
-  public async get<T extends Partial<Diagram>>(id: DiagramID, fields: string[]): Promise<T>;
+  public async get<T extends Partial<Diagram>>(id: DiagramID, fields: Fields): Promise<T>;
 
   public async get<T extends BaseDiagramNode = BaseDiagramNode>(id: DiagramID): Promise<Diagram<T>>;
 
   public async get<T extends Diagram<any> = Diagram>(id: DiagramID): Promise<T>;
 
-  public async get(id: DiagramID, fields?: string[]): Promise<Diagram<any>> {
+  public async get(id: DiagramID, fields?: Fields): Promise<Diagram<any>> {
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
