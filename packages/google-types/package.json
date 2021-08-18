@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/google-types",
   "description": "Google service types",
-  "version": "1.32.12",
+  "version": "1.33.0",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
