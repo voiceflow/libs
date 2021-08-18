@@ -15,7 +15,7 @@ export * as Stream from './stream';
 export type AnyGoogleExtendedStep = Speak.Step | Prompt.Step | Capture.Step | Interaction.Step | Stream.Step;
 export type AnyGoogleExtendedNode = Speak.Node | Capture.Node | Interaction.Node | Stream.Node;
 
-export type AnyGoogleStep = Node.AnyCommonStep | AnyGoogleExtendedStep;
-export type AnyGoogleNode = Node.AnyCommonNode | AnyGoogleExtendedNode;
+export type AnyGoogleStep = Node.AnyCommonStep | AnyGoogleExtendedStep | Node.Card.Step;
+export type AnyGoogleNode = Node.AnyCommonNode | AnyGoogleExtendedNode | Node.Card.Node;
 
 export type AnyGoogleCommand = Node.AnyCommonCommand;
