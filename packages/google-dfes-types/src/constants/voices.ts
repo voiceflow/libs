@@ -2,8 +2,7 @@ import { Constants } from '@voiceflow/google-types';
 
 import { Locale, VoiceLanguageCode } from './locales';
 
-// dialogflow es
-export const DFESLocaleCodeToCountryLanguage: Record<Locale, Constants.VoiceLanguage> = {
+export const LocaleCodeToCountryLanguage: Record<Locale, Constants.VoiceLanguage> = {
   [Locale.ZH_HK]: Constants.VoiceLanguage.CHINESE_HONG_KONG,
   [Locale.ZH_TW]: Constants.VoiceLanguage.CHINESE_TAIWAN,
   [Locale.DA_DK]: Constants.VoiceLanguage.DANISH_DENMARK,
@@ -39,7 +38,7 @@ export const DFESLocaleCodeToCountryLanguage: Record<Locale, Constants.VoiceLang
   [Locale.TR_TR]: Constants.VoiceLanguage.TURKISH_TURKEY,
 };
 
-export const DFESVoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.GoogleVoice[]> = {
+export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.GoogleVoice[]> = {
   [VoiceLanguageCode.EN_US]: [
     {
       voiceLanguage: Constants.VoiceLanguage.ENGLISH_US,

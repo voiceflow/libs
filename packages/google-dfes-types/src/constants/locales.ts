@@ -93,7 +93,7 @@ export enum Locale {
   TR_TR = 'tr-TR',
 }
 
-export const DFESLanguageToLocale: Record<Language, Locale[]> = {
+export const LanguageToLocale: Record<Language, Locale[]> = {
   [Language.DA]: [Locale.DA_DK],
   [Language.DE]: [Locale.DE_DE, Locale.DE_AT, Locale.DE_CH, Locale.DE_BE],
   [Language.EN]: [Locale.EN_US, Locale.EN_AU, Locale.EN_CA, Locale.EN_GB, Locale.EN_IN, Locale.EN_BE, Locale.EN_SG],

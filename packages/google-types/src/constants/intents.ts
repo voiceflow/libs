@@ -9,8 +9,4 @@ export enum GoogleIntent {
   VOICEFLOW = 'VoiceFlowIntent',
 }
 
-// gactions
 export const BUILT_IN_INTENTS: BuiltinIntent[] = [];
-
-// dialogflow es
-export const DFES_BUILT_IN_INTENTS: BuiltinIntent[] = [];
