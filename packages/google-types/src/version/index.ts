@@ -51,7 +51,7 @@ export interface GoogleVersionData extends BaseGoogleVersionData {
 }
 
 export interface GoogleVersion extends BaseGoogleVersion {
-  prototype: VersionPrototype<AnyGoogleCommand, Locale>;
+  prototype?: VersionPrototype<AnyGoogleCommand, Locale>;
   platformData: GoogleVersionData;
 }
 

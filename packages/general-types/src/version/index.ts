@@ -13,7 +13,7 @@ export interface GeneralVersionData extends Version.VoiceVersionData<Voice> {
 }
 
 export interface GeneralVersion extends Version.VoiceVersion<Voice> {
-  prototype: VersionPrototype<Node.Utils.AnyCommand, Locale>;
+  prototype?: VersionPrototype<Node.Utils.AnyCommand, Locale>;
   platformData: GeneralVersionData;
 }
 

@@ -16,7 +16,7 @@ export interface GoogleDFESVersionData extends Version.BaseGoogleVersionData {
 }
 
 export interface GoogleDFESVersion extends Version.BaseGoogleVersion {
-  prototype: VersionPrototype<AnyGoogleDFESCommand, Locale>;
+  prototype?: VersionPrototype<AnyGoogleDFESCommand, Locale>;
   platformData: GoogleDFESVersionData;
 }
 

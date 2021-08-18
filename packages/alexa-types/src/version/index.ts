@@ -24,7 +24,7 @@ export interface AlexaVersionData extends Version.VoiceVersionData<Voice> {
 }
 
 export interface AlexaVersion extends Version.VoiceVersion<Voice> {
-  prototype: VersionPrototype<AnyAlexaCommand, Constants.Locale>;
+  prototype?: VersionPrototype<AnyAlexaCommand, Constants.Locale>;
   platformData: AlexaVersionData;
 }
 
