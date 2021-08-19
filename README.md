@@ -6,6 +6,26 @@
 
 Voiceflow's Libraries
 
+## API SDK
+
+Check the full description [here](packages/api-sdk/README.md)
+
+## Base Types
+
+Check the full description [here](packages/base-types/README.md)
+
+## Voice Types
+
+Check the full description [here](packages/voice-types/README.md)
+
+## Chat Types
+
+Check the full description [here](packages/chat-types/README.md)
+
+## General Types
+
+Check the full description [here](packages/general-types/README.md)
+
 ## Alexa Types
 
 Check the full description [here](packages/alexa-types/README.md)
@@ -13,11 +33,3 @@ Check the full description [here](packages/alexa-types/README.md)
 ## Google Types
 
 Check the full description [here](packages/google-types/README.md)
-
-## General Types
-
-Check the full description [here](packages/general-types/README.md)
-
-## API SDK
-
-Check the full description [here](packages/api-sdk/README.md)
