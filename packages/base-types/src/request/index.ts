@@ -1,10 +1,16 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
 import { Chip } from '../button';
+import * as NodeUtils from '../node/utils';
+import { ActionPayload } from './action';
+
+export * as Action from './action';
 
 export enum RequestType {
-  INTENT = 'intent',
   TEXT = 'text',
+  PATH = 'path',
+  ACTION = 'action',
+  INTENT = 'intent',
   LAUNCH = 'launch',
 }
 
@@ -42,7 +48,7 @@ export interface TextRequest extends BaseRequest<string> {
   type: RequestType.TEXT;
 }
 
-export interface IntentRequestPayload {
+export interface IntentRequestPayload extends ActionPayload {
   query: string; // original text input
   intent: { name: string }; // matched intent name
   entities: Entity[]; // entities matches - multiple of the same entity name may be matched
@@ -51,6 +57,16 @@ export interface IntentRequestPayload {
 
 export interface IntentRequest extends BaseRequest<IntentRequestPayload> {
   type: RequestType.INTENT;
+}
+
+export interface PathRequestPayload extends NodeUtils.NodeRequiredNextID, ActionPayload {}
+
+export interface PathRequest extends BaseRequest<PathRequestPayload> {
+  type: RequestType.PATH;
+}
+
+export interface ActionRequest extends BaseRequest<ActionPayload> {
+  type: RequestType.ACTION;
 }
 
 export interface BaseRequestButton<T extends BaseRequest = BaseRequest> {
@@ -62,7 +78,9 @@ export interface TextRequestButton extends BaseRequestButton<TextRequest> {}
 
 export interface IntentRequestButton extends BaseRequestButton<IntentRequest> {}
 
-export type AnyRequestButton = TextRequestButton | IntentRequestButton;
+export interface PathRequestButton extends BaseRequestButton<PathRequest> {}
+
+export type AnyRequestButton = TextRequestButton | IntentRequestButton | PathRequest | ActionRequest;
 
 export interface NodeButton {
   /**
@@ -74,6 +92,10 @@ export interface NodeButton {
 }
 
 export const isTextRequest = (request: BaseRequest): request is TextRequest => request.type === RequestType.TEXT;
+
+export const isPathRequest = (request: BaseRequest): request is PathRequest => request.type === RequestType.PATH;
+
+export const isActionRequest = (request: BaseRequest): request is ActionRequest => request.type === RequestType.ACTION;
 
 export const isLaunchRequest = (request: BaseRequest): request is LaunchRequest => request.type === RequestType.LAUNCH;
 

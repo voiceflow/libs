@@ -3,6 +3,7 @@ export enum NodeType {
   SPEAK = 'speak',
   START = 'start',
   CARD = 'card',
+  BUTTONS = 'buttons',
   INTERACTION = 'interaction',
 
   // logic
