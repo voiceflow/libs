@@ -18,6 +18,7 @@ import * as Zapier from './zapier';
 
 export * as _v1 from './_v1';
 export * as Api from './api';
+export * as Buttons from './buttons';
 export * as Capture from './capture';
 export * as Card from './card';
 export * as Code from './code';

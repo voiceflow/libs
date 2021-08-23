@@ -5,6 +5,10 @@ export { BaseCommand, BaseNode, BasePort, BaseStep } from '@voiceflow/api-sdk';
 
 export type NodeID = Nullable<string>;
 
+export interface DataID {
+  id: string;
+}
+
 export interface NodeNextID {
   nextId?: NodeID;
 }
