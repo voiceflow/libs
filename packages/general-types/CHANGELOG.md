@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.55.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.54.7...@voiceflow/general-types@1.55.0) (2021-08-23)
+
+
+### Features
+
+* add general buttons types ([0eee4a5](https://github.com/voiceflow/libs/commit/0eee4a58cab427ec7109ac05b2e93bab81354541))
+
+
+
+
+
 ## [1.54.7](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.54.6...@voiceflow/general-types@1.54.7) (2021-08-23)
 
 **Note:** Version bump only for package @voiceflow/general-types

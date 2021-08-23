@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/general-types",
   "description": "Voiceflow general project types",
-  "version": "1.54.7",
+  "version": "1.55.0",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
