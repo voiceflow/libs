@@ -29,12 +29,15 @@ export interface IntentButton extends BaseButton<{ intentID: Nullable<string> }>
 // will be union in future
 export type AnyButton = IntentButton;
 
-export interface StepButton {
+export interface StepButtonsLayout {
+  buttonsLayout?: Nullable<ButtonsLayout>;
+}
+
+export interface StepButton extends StepButtonsLayout {
   /**
    * @deprecated Use buttons
    */
   chips: Nullable<Chip[]>;
 
   buttons?: Nullable<AnyButton[]>;
-  buttonsLayout?: Nullable<ButtonsLayout>;
 }

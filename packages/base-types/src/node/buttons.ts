@@ -1,5 +1,6 @@
 import { Nullable } from '@voiceflow/api-sdk';
 
+import { StepButtonsLayout } from '../button';
 import { NodeType } from './constants';
 import { BaseStep, BaseStepNoMatch, DataID } from './utils';
 
@@ -16,8 +17,7 @@ export interface Button extends DataID {
   actions: ButtonAction[];
 }
 
-export interface StepData {
-  name: string;
+export interface StepData extends StepButtonsLayout {
   noMatch: BaseStepNoMatch;
   buttons: Button[];
 }
