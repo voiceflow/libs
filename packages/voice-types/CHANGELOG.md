@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@1.3.0...@voiceflow/voice-types@1.3.1) (2021-08-23)
+
+
+### Bug Fixes
+
+* add buttons to voice/chat types ([1ad5cd4](https://github.com/voiceflow/libs/commit/1ad5cd4191ddf470fd7f0ffa3d3f53a0c7e88b68))
+
+
+
+
+
 # [1.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@1.2.0...@voiceflow/voice-types@1.3.0) (2021-08-23)
 
 
