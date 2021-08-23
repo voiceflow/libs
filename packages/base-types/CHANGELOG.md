@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.2.0...@voiceflow/base-types@1.3.0) (2021-08-23)
+
+
+### Features
+
+* add buttons layout ([efcaac9](https://github.com/voiceflow/libs/commit/efcaac98846bbdd2129844726ae67d1dbd3c6bcd))
+
+
+
+
+
 # [1.2.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.1.0...@voiceflow/base-types@1.2.0) (2021-08-23)
 
 
