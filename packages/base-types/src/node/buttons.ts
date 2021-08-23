@@ -18,7 +18,7 @@ export interface Button extends DataID {
 }
 
 export interface StepData extends StepButtonsLayout {
-  noMatch: BaseStepNoMatch;
+  else: BaseStepNoMatch;
   buttons: Button[];
 }
 
