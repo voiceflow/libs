@@ -8,6 +8,7 @@ export const defaultPrompt = (prompt: Nullable<Prompt> | undefined): Nullable<Pr
   }
 
   return {
+    id: prompt.id,
     content: prompt.content,
   };
 };
