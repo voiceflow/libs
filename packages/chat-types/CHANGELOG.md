@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@1.2.3...@voiceflow/chat-types@1.3.0) (2021-08-25)
+
+
+### Features
+
+* add id to chat prompt ([c6f6354](https://github.com/voiceflow/libs/commit/c6f63546af58470e7f5bff98670db85a84f45e72))
+
+
+
+
+
 ## [1.2.3](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@1.2.2...@voiceflow/chat-types@1.2.3) (2021-08-23)
 
 **Note:** Version bump only for package @voiceflow/chat-types
