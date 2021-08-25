@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@1.3.3...@voiceflow/voice-types@1.4.0) (2021-08-25)
+
+
+### Features
+
+* chat intent input type (VF-000) ([#50](https://github.com/voiceflow/libs/issues/50)) ([d95ba80](https://github.com/voiceflow/libs/commit/d95ba808e811c28d9cdf0105e536efeab74f74f3))
+
+
+
+
+
 ## [1.3.3](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@1.3.2...@voiceflow/voice-types@1.3.3) (2021-08-23)
 
 **Note:** Version bump only for package @voiceflow/voice-types

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.37.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.36.0...@voiceflow/api-sdk@1.37.0) (2021-08-25)
+
+
+### Features
+
+* chat intent input type (VF-000) ([#50](https://github.com/voiceflow/libs/issues/50)) ([d95ba80](https://github.com/voiceflow/libs/commit/d95ba808e811c28d9cdf0105e536efeab74f74f3))
+
+
+
+
+
 # [1.36.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.35.1...@voiceflow/api-sdk@1.36.0) (2021-08-18)
 
 
