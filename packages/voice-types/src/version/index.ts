@@ -7,7 +7,7 @@ import { defaultVoiceVersionSettings, VoiceVersionSettings } from './settings';
 export * from './settings';
 
 export interface VoiceVersionData<Voice> extends Version.BaseVersionData<Prompt<Voice>> {
-  intents: Intent[];
+  intents: Intent<Voice>[];
   settings: VoiceVersionSettings<Voice>;
 }
 
