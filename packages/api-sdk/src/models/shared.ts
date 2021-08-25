@@ -47,7 +47,7 @@ export const SDiagramID = s.string();
 export type DiagramID = s.StructType<typeof SDiagramID>;
 
 export const SIntentInput = s.object({
-  text: s.string(),
+  text: s.any() as s.Struct<unknown, any>,
   slots: s.optional(s.array(s.string())),
   voice: s.optional(s.string()),
 });
