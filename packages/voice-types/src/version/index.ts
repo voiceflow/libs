@@ -1,20 +1,22 @@
 import { Version } from '@voiceflow/base-types';
 
-import { Prompt } from '@/types';
+import { Intent, Prompt } from '@/types';
 
 import { defaultVoiceVersionSettings, VoiceVersionSettings } from './settings';
 
 export * from './settings';
 
 export interface VoiceVersionData<Voice> extends Version.BaseVersionData<Prompt<Voice>> {
+  intents: Intent[];
   settings: VoiceVersionSettings<Voice>;
 }
 
 export const defaultVoiceVersionData = <Voice>(
-  { settings, ...data }: Partial<VoiceVersionData<Voice>>,
+  { intents = [], settings, ...data }: Partial<VoiceVersionData<Voice>>,
   options: { defaultPromptVoice: Voice }
 ): VoiceVersionData<Voice> => ({
   ...Version.defaultBaseVersionData<Prompt<Voice>>(data),
+  intents,
   settings: defaultVoiceVersionSettings<Voice>(settings, options),
 });
 
