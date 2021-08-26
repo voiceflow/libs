@@ -2,7 +2,7 @@ import { Nullable } from '@voiceflow/api-sdk';
 
 import { StepButtonsLayout } from '../button';
 import { NodeType } from './constants';
-import { BaseStep, BaseStepNoMatch, DataID } from './utils';
+import { BaseStep, BaseStepNoMatches, DataID } from './utils';
 
 export enum ButtonAction {
   URL = 'URL',
@@ -18,7 +18,7 @@ export interface Button extends DataID {
 }
 
 export interface StepData extends StepButtonsLayout {
-  else: BaseStepNoMatch;
+  else: BaseStepNoMatches;
   buttons: Button[];
 }
 
