@@ -21,7 +21,7 @@ export interface Node extends BaseNode, NodeNextID {
 }
 
 export interface TextTracePayload {
-  text: string;
+  message: string;
   slate: TextData;
 }
 
