@@ -1,8 +1,8 @@
 import { NodeType } from './constants';
-import { BaseStep, BaseStepNoMatches } from './utils';
+import { BaseStep, BaseStepNoMatch } from './utils';
 
 export interface StepData {
-  noMatches: BaseStepNoMatches;
+  noMatches: BaseStepNoMatch;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data, []> {

@@ -1,7 +1,7 @@
 import { AnyRequestButton } from '@/request';
 
 import { NodeType } from './constants';
-import { BaseEvent, BaseNode, BaseNodeNoMatch, BaseStep, BaseStepNoMatches, BaseTraceFrame, NodeNextID, SlotMappings, TraceType } from './utils';
+import { BaseEvent, BaseNode, BaseNodeNoMatch, BaseStep, BaseStepNoMatch, BaseTraceFrame, NodeNextID, SlotMappings, TraceType } from './utils';
 
 export interface Choice extends SlotMappings {
   intent: string;
@@ -9,7 +9,7 @@ export interface Choice extends SlotMappings {
 
 export interface StepData {
   name: string;
-  else: BaseStepNoMatches;
+  else: BaseStepNoMatch;
   choices: Choice[];
 }
 

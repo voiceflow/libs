@@ -13,12 +13,9 @@ export interface BaseStepNoMatch {
   pathName?: string;
 }
 
-export interface BaseStepNoMatches extends BaseStepNoMatch {
-  randomize?: boolean;
-}
-
-export interface StepNoMatch<Prompt> extends BaseStepNoMatches {
+export interface StepNoMatch<Prompt> extends BaseStepNoMatch {
   reprompts: Prompt[];
+  randomize?: boolean;
 }
 
 export interface BaseNodeNoMatch {
