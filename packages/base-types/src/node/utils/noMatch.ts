@@ -15,7 +15,7 @@ export interface BaseStepNoMatch {
 
 export interface StepNoMatch<Prompt> extends BaseStepNoMatch {
   reprompts: Prompt[];
-  randomize?: boolean;
+  randomize: boolean;
 }
 
 export interface BaseNodeNoMatch {
