@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.4.0...@voiceflow/base-types@1.4.1) (2021-08-27)
+
+
+### Bug Fixes
+
+* same property as speak (VF-000) ([#53](https://github.com/voiceflow/libs/issues/53)) ([99422c6](https://github.com/voiceflow/libs/commit/99422c65c3ad5e6cf91dcfb6481eb7ae6e393136))
+
+
+
+
+
 # [1.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.3.3...@voiceflow/base-types@1.4.0) (2021-08-27)
 
 
