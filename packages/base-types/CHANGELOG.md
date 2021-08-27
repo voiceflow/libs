@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.3.3...@voiceflow/base-types@1.4.0) (2021-08-27)
+
+
+### Features
+
+* creates no match base interface and adds to ifv2 (VF-1253) ([#52](https://github.com/voiceflow/libs/issues/52)) ([cbbdc62](https://github.com/voiceflow/libs/commit/cbbdc62295c890e2efaf2f0c686da05a407253f3))
+
+
+
+
+
 ## [1.3.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.3.2...@voiceflow/base-types@1.3.3) (2021-08-26)
 
 
