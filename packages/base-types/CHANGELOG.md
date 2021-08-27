@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.4.2...@voiceflow/base-types@1.4.3) (2021-08-27)
+
+
+### Bug Fixes
+
+* remove no match for legacy if (VF-000) ([a871314](https://github.com/voiceflow/libs/commit/a8713141b2182848604518e885c88f10eeba3234))
+
+
+
+
+
 ## [1.4.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.4.1...@voiceflow/base-types@1.4.2) (2021-08-27)
 
 
