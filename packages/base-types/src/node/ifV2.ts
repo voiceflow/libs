@@ -3,7 +3,7 @@ import { BaseEvent, BaseNode, BaseStep, BaseStepNoMatch, ExpressionData, NodeEls
 
 export interface StepData {
   expressions: ExpressionData[];
-  noMatch: BaseStepNoMatch;
+  noMatch?: BaseStepNoMatch;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
