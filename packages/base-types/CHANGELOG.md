@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.4.4...@voiceflow/base-types@1.5.0) (2021-08-31)
+
+
+### Features
+
+* **base-types:** adds background color to base text (VF-1255) ([#55](https://github.com/voiceflow/libs/issues/55)) ([3f245ae](https://github.com/voiceflow/libs/commit/3f245ae7aa40af7f25bd2ee16c1b530ac9a33091))
+
+
+
+
+
 ## [1.4.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.4.3...@voiceflow/base-types@1.4.4) (2021-08-28)
 
 
