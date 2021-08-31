@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.17](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@1.2.16...@voiceflow/google-dfes-types@1.2.17) (2021-08-31)
+
+
+### Bug Fixes
+
+* add agent name for df es member (VF-000) ([#54](https://github.com/voiceflow/libs/issues/54)) ([53dc1db](https://github.com/voiceflow/libs/commit/53dc1dbb49d75576f59638f108ca872f7943275c))
+
+
+
+
+
 ## [1.2.16](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@1.2.15...@voiceflow/google-dfes-types@1.2.16) (2021-08-28)
 
 **Note:** Version bump only for package @voiceflow/google-dfes-types
