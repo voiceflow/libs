@@ -8,6 +8,7 @@ export interface Color {
 }
 
 export enum TextProperty {
+  BACKGROUND_COLOR = 'backgroundColor',
   COLOR = 'color',
   ITALIC = 'italic',
   UNDERLINE = 'underline',
@@ -26,6 +27,7 @@ export enum ElementProperty {
 }
 
 export interface Text extends BaseText {
+  [TextProperty.BACKGROUND_COLOR]?: Color;
   [TextProperty.COLOR]?: Color;
   [TextProperty.ITALIC]?: boolean;
   [TextProperty.UNDERLINE]?: boolean;
