@@ -22,8 +22,8 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
       fetch,
       clazz: DiagramResource,
       schema: SDiagram.schema,
+      endpoint: ENDPOINT,
       modelIDKey,
-      resourceEndpoint: ENDPOINT,
     });
   }
 

@@ -18,8 +18,8 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
       fetch,
       clazz: VersionResource,
       schema: SVersion.schema,
+      endpoint: ENDPOINT,
       modelIDKey: '_id',
-      resourceEndpoint: ENDPOINT,
       postPutExcludedFields: ['creatorID'],
     });
   }

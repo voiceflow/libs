@@ -14,20 +14,20 @@ class APIKeyResource extends CrudResource<typeof SAPIkey['schema'], ModelIDKey, 
       fetch,
       clazz: APIKeyResource,
       schema: SAPIkey.schema,
+      endpoint: resourceEndpoint,
       modelIDKey,
-      resourceEndpoint,
     });
 
     // create and update have different requirements, skip validation for now, backend validates
     this._assertPutAndPostBody = () => null;
   }
 
-  public async get(id: string) {
+  public async get(id: string): Promise<APIKey> {
     return super._getByID<APIKey>(id);
   }
 
   public async create(workspaceID: string, body: Partial<APIKey>): Promise<APIKey & { APIKey: string }> {
-    return (await super._post({ ...body, workspaceID } as any)) as APIKey & { APIKey: string };
+    return super._post({ ...body, workspaceID } as any);
   }
 
   public async update(id: string, body: Pick<APIKey, 'name' | 'permissions' | 'scopes' | 'data'>): Promise<Partial<APIKey>> {

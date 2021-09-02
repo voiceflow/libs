@@ -35,11 +35,6 @@ class User {
 
   public email = '';
 
-  // eslint-disable-next-line class-methods-use-this
-  isAPIKey(authorization: string): boolean {
-    return authorization.startsWith('VF.');
-  }
-
   constructor(authorization: string) {
     if (!this.isAPIKey(authorization)) {
       const { id, name, email } = parseJWT<UserToken>(authorization);
@@ -48,6 +43,11 @@ class User {
       this.name = name;
       this.email = email;
     }
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  isAPIKey(authorization: string): boolean {
+    return authorization.startsWith('VF.');
   }
 }
 

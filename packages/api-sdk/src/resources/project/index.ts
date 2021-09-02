@@ -19,8 +19,8 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
       fetch,
       clazz: ProjectResource,
       schema: SProject.schema,
+      endpoint: ENDPOINT,
       modelIDKey,
-      resourceEndpoint: ENDPOINT,
       postPutExcludedFields: ['creatorID'],
     });
 

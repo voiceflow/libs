@@ -22,6 +22,10 @@ describe('UserResource', () => {
     expect(resource['email']).to.eql(SAMPLE_USER.email);
   });
 
+  it('.constructor throws error', () => {
+    expect(() => new User('')).to.throws('Invalid JWT');
+  });
+
   it('.constructor with global atob', () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
