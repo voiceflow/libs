@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.55.12](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.11...@voiceflow/general-types@1.55.12) (2021-09-03)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
 ## [1.55.11](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.10...@voiceflow/general-types@1.55.11) (2021-09-03)
 
 **Note:** Version bump only for package @voiceflow/general-types

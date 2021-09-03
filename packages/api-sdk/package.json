@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/api-sdk",
   "description": "wrapper for creator-api",
-  "version": "1.38.0",
+  "version": "1.38.1",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
