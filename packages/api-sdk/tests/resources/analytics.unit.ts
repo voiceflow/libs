@@ -39,8 +39,8 @@ describe('Analytics', () => {
     await analytics.track('Event 2', { properties: { id: 'id', value: 10 }, hashed: ['id'] });
 
     expect(fetch.post.args).to.eql([
-      ['analytics/track', { event: 'Event', hashed: undefined, properties: {}, teamhashed: undefined }],
-      ['analytics/track', { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined }],
+      ['analytics/track', { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined }],
+      ['analytics/track', { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined }],
     ]);
   });
 
@@ -49,7 +49,9 @@ describe('Analytics', () => {
 
     await analytics.identify({ traits: { id: 'id', value: 10 }, teamhashed: ['id'] });
 
-    expect(fetch.post.args).to.eql([['analytics/identify', { teamhashed: ['id'], traits: { id: 'id', value: 10 }, hashed: undefined }]]);
+    expect(fetch.post.args).to.eql([
+      ['analytics/identify', { teamhashed: ['id'], traits: { id: 'id', value: 10 }, envIDs: undefined, hashed: undefined }],
+    ]);
   });
 
   it('.identifyWorkspace', async () => {
