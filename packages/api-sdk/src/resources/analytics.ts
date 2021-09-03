@@ -5,6 +5,7 @@ import Fetcher from './fetcher';
 const ENDPOINT = 'analytics';
 
 interface HashOptions<K> {
+  envIDs?: K[];
   hashed?: K[];
   teamhashed?: K[];
 }
@@ -24,13 +25,18 @@ class Analytics extends Fetcher<Analytics> {
 
   public async track<P extends Record<string, any>, K extends keyof P>(
     event: string,
-    { hashed, teamhashed, properties = {} as P }: TrackOptions<P, K> = {}
+    { envIDs, hashed, teamhashed, properties = {} as P }: TrackOptions<P, K> = {}
   ): Promise<void> {
-    await this.fetch.post(`${this._getEndpoint()}/track`, { event, hashed, teamhashed, properties });
+    await this.fetch.post(`${this._getEndpoint()}/track`, { event, envIDs, hashed, teamhashed, properties });
   }
 
-  public async identify<T extends Record<string, any>, K extends keyof T>({ traits, hashed, teamhashed }: IdentifyOptions<T, K>): Promise<void> {
-    await this.fetch.post(`${this._getEndpoint()}/identify`, { traits, hashed, teamhashed });
+  public async identify<T extends Record<string, any>, K extends keyof T>({
+    envIDs,
+    traits,
+    hashed,
+    teamhashed,
+  }: IdentifyOptions<T, K>): Promise<void> {
+    await this.fetch.post(`${this._getEndpoint()}/identify`, { traits, envIDs, hashed, teamhashed });
   }
 
   public async identifyWorkspace<T extends { name: string }>(id: string, properties: T): Promise<void> {
