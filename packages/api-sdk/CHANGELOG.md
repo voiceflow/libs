@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.39.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.38.1...@voiceflow/api-sdk@1.39.0) (2021-09-03)
+
+
+### Bug Fixes
+
+* test ([64d1b86](https://github.com/voiceflow/libs/commit/64d1b86275ebddc664ca41c88ffc684900ad818a))
+
+
+### Features
+
+* add envIDs into analytics ([c2a8229](https://github.com/voiceflow/libs/commit/c2a8229563d930e4f4325b23d508059d0fd7d7cd))
+
+
+
+
+
 ## [1.38.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.38.0...@voiceflow/api-sdk@1.38.1) (2021-09-03)
 
 
