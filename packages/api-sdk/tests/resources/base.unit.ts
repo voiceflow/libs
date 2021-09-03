@@ -35,8 +35,8 @@ const createClient = () => {
     fetch: fetch as any,
     clazz: Resource,
     schema: schema as any,
+    endpoint: 'endpoint',
     modelIDKey: 'id',
-    resourceEndpoint: 'endpoint',
   });
 
   return {
@@ -62,7 +62,7 @@ describe('BaseResource', () => {
     expect(resource['fetch']).to.eql(fetch);
     expect(resource['clazz']).to.eql(Resource);
     expect(resource['modelIDKey']).to.eql('id');
-    expect(resource['resourceEndpoint']).to.eql('endpoint');
+    expect(resource['endpoint']).to.eql('endpoint');
     expect(resource['struct'].schema).to.eql(schema);
     expect(resource['patchStruct'].schema).to.eql(schema);
     expect(resource['patchStruct'].type).to.eql(s.partial(schema as any).type);

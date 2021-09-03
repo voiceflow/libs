@@ -32,8 +32,8 @@ const createClient = () => {
     clazz: class {},
     fetch: fetch as any,
     schema: schema as any,
+    endpoint: 'endpoint',
     modelIDKey: 'id',
-    resourceEndpoint: 'endpoint',
   });
 
   return {

@@ -15,8 +15,8 @@ class MemberResource extends BaseResource<typeof SMember['schema'], ModelIDKey, 
       fetch,
       clazz: MemberResource,
       schema: SMember.schema,
+      endpoint: ENDPOINT,
       modelIDKey,
-      resourceEndpoint: ENDPOINT,
     });
   }
 

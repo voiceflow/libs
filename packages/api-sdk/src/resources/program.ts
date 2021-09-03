@@ -15,8 +15,8 @@ class ProgramResource extends CrudResource<typeof SProgram['schema'], ModelIDKey
       fetch,
       clazz: ProgramResource,
       schema: SProgram.schema,
+      endpoint: resourceEndpoint,
       modelIDKey,
-      resourceEndpoint,
     });
   }
 
