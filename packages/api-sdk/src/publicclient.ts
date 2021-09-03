@@ -1,5 +1,5 @@
 import Fetch, { FetchConfig } from '@/fetch';
-import { APIKey, Diagram, Program, Project, PrototypeProgram, Version } from '@/resources';
+import { Analytics, APIKey, Diagram, Program, Project, PrototypeProgram, Version } from '@/resources';
 
 export type ClientOptions = {
   options?: FetchConfig;
@@ -19,6 +19,8 @@ export class PublicClient {
 
   public diagram: Diagram;
 
+  public analytics: Analytics;
+
   public apiKey: APIKey;
 
   public prototypeProgram: PrototypeProgram;
@@ -31,6 +33,7 @@ export class PublicClient {
     this.version = new Version(this.fetch);
     this.program = new Program(this.fetch);
     this.diagram = new Diagram(this.fetch);
+    this.analytics = new Analytics(this.fetch);
     this.prototypeProgram = new PrototypeProgram(this.fetch);
   }
 }
