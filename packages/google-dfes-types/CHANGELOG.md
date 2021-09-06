@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.22](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@1.2.21...@voiceflow/google-dfes-types@1.2.22) (2021-09-06)
+
+
+### Bug Fixes
+
+* swedish was mapped to slovakia (VF-1638) ([#57](https://github.com/voiceflow/libs/issues/57)) ([09b1250](https://github.com/voiceflow/libs/commit/09b1250633a9f1b089a39deec35d156d65c45cb2))
+
+
+
+
+
 ## [1.2.21](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@1.2.20...@voiceflow/google-dfes-types@1.2.21) (2021-09-03)
 
 **Note:** Version bump only for package @voiceflow/google-dfes-types
