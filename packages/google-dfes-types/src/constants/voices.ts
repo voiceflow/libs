@@ -33,7 +33,7 @@ export const LocaleCodeToCountryLanguage: Record<Locale, Constants.VoiceLanguage
   [Locale.RU_RU]: Constants.VoiceLanguage.RUSSIAN_RUSSIA,
   [Locale.ES_ES]: Constants.VoiceLanguage.SPANISH_SPAIN,
   [Locale.ES_419]: Constants.VoiceLanguage.SPANISH,
-  [Locale.SV_SE]: Constants.VoiceLanguage.SLOVAK_SLOVAKIA,
+  [Locale.SV_SE]: Constants.VoiceLanguage.SWEDISH_SWEDEN,
   [Locale.TH_TH]: Constants.VoiceLanguage.THAI_THAILAND,
   [Locale.TR_TR]: Constants.VoiceLanguage.TURKISH_TURKEY,
 };
