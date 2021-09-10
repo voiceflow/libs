@@ -33,6 +33,9 @@ export interface Entity {
   verboseValue?: VerboseValue[]; // more detailed results from LUIS
 }
 
+export interface LabelRequestPayload {
+  label?: string;
+}
 export interface BaseRequest<P = unknown> {
   type: string;
   payload: P;
@@ -45,8 +48,9 @@ export interface LaunchRequest extends BaseRequest<undefined> {
 export interface TextRequest extends BaseRequest<string> {
   type: RequestType.TEXT;
 }
+interface ActionAndLabelRequestPayload extends ActionPayload, LabelRequestPayload {}
 
-export interface IntentRequestPayload extends ActionPayload {
+export interface IntentRequestPayload extends ActionAndLabelRequestPayload {
   query: string; // original text input
   intent: { name: string }; // matched intent name
   entities: Entity[]; // entities matches - multiple of the same entity name may be matched
@@ -57,11 +61,11 @@ export interface IntentRequest extends BaseRequest<IntentRequestPayload> {
   type: RequestType.INTENT;
 }
 
-export interface GeneralRequest extends BaseRequest<ActionPayload> {
+export interface GeneralRequest extends BaseRequest<ActionAndLabelRequestPayload> {
   type: string; // the general request type is dynamic, used to m
 }
 
-export interface ActionRequest extends BaseRequest<ActionPayload> {
+export interface ActionRequest extends BaseRequest<ActionAndLabelRequestPayload> {
   type: RequestType.ACTION;
 }
 
