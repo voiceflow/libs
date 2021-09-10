@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.5.3...@voiceflow/base-types@1.6.0) (2021-09-10)
+
+
+### Features
+
+* add request label (VF-000) ([#58](https://github.com/voiceflow/libs/issues/58)) ([7eac3e9](https://github.com/voiceflow/libs/commit/7eac3e994b7f15579c79fa53d45422fa50d4b041))
+
+
+
+
+
 ## [1.5.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.5.2...@voiceflow/base-types@1.5.3) (2021-09-03)
 
 **Note:** Version bump only for package @voiceflow/base-types
