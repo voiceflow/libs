@@ -48,8 +48,9 @@ export interface LaunchRequest extends BaseRequest<undefined> {
 export interface TextRequest extends BaseRequest<string> {
   type: RequestType.TEXT;
 }
+interface ActionAndLabelRequestPayload extends ActionPayload, LabelRequestPayload {}
 
-export interface IntentRequestPayload extends ActionPayload, LabelRequestPayload {
+export interface IntentRequestPayload extends ActionAndLabelRequestPayload {
   query: string; // original text input
   intent: { name: string }; // matched intent name
   entities: Entity[]; // entities matches - multiple of the same entity name may be matched
@@ -59,8 +60,6 @@ export interface IntentRequestPayload extends ActionPayload, LabelRequestPayload
 export interface IntentRequest extends BaseRequest<IntentRequestPayload> {
   type: RequestType.INTENT;
 }
-
-interface ActionAndLabelRequestPayload extends ActionPayload, LabelRequestPayload {}
 
 export interface GeneralRequest extends BaseRequest<ActionAndLabelRequestPayload> {
   type: string; // the general request type is dynamic, used to m
