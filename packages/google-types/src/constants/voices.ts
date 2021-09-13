@@ -162,7 +162,7 @@ export const LocaleCodeToCountryLanguage: Record<Locale, VoiceLanguage> = {
   [Locale.RU_RU]: VoiceLanguage.RUSSIAN_RUSSIA,
   [Locale.ES_ES]: VoiceLanguage.SPANISH_SPAIN,
   [Locale.ES_419]: VoiceLanguage.SPANISH,
-  [Locale.SV_SE]: VoiceLanguage.SLOVAK_SLOVAKIA,
+  [Locale.SV_SE]: VoiceLanguage.SWEDISH_SWEDEN,
   [Locale.TH_TH]: VoiceLanguage.THAI_THAILAND,
   [Locale.TR_TR]: VoiceLanguage.TURKISH_TURKEY,
 };
