@@ -16,6 +16,7 @@ export { TraceFrame as TextTrace } from '@/node/text';
 export { TraceFrame as VisualTrace } from '@/node/visual';
 
 export interface DebugTracePayload {
+  type?: string;
   message: string;
 }
 
