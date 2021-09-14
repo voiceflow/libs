@@ -14,6 +14,7 @@ export enum TraceType {
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {
+  label?: string;
   event: Event;
 }
 

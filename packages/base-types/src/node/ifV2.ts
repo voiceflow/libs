@@ -1,5 +1,6 @@
+import { NodePath } from './_v1';
 import { NodeType } from './constants';
-import { BaseEvent, BaseNode, BaseStep, BaseStepNoMatch, ExpressionData, NodeElseID, NodeID } from './utils';
+import { BaseNode, BaseStep, BaseStepNoMatch, ExpressionData, NodeElseID } from './utils';
 
 export interface StepData {
   expressions: ExpressionData[];
@@ -8,11 +9,6 @@ export interface StepData {
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.IF_V2;
-}
-
-export interface NodePath {
-  event?: BaseEvent;
-  nextID: NodeID;
 }
 
 export interface NodePayload extends NodeElseID {
