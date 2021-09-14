@@ -12,10 +12,16 @@ export interface StepData<Payload = unknown> {
   defaultPath?: number;
 }
 
+export interface NodePath<Event = BaseEvent> {
+  label?: string;
+  event?: Event;
+  nextID: Nullable<NodeID>;
+}
+
 export interface Node<Event = BaseEvent> extends BaseNode {
   _v: 1;
   stop: boolean;
-  paths: Array<{ event?: Event; nextID: Nullable<NodeID> }>;
+  paths: Array<NodePath<Event>>;
   payload: unknown;
   defaultPath?: number; // index starting from 0
 }
