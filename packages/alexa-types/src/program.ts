@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import { Program } from '@voiceflow/api-sdk';
 
-import { AlexaCommand, AlexaNodes } from './nodes';
+import { AnyAlexaCommand, AnyAlexaNode } from './node';
 
-export type AlexaProgram = Program<AlexaNodes, AlexaCommand>;
+export interface AlexaProgram extends Program<AnyAlexaNode, AnyAlexaCommand> {}

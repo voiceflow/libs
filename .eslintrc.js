@@ -4,6 +4,7 @@ module.exports = {
   extends: ['@voiceflow/eslint-config'],
   rules: {
     'import/prefer-default-export': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
   },
   overrides: [
     {

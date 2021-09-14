@@ -1450,6 +1450,13 @@
   resolved "https://registry.yarnpkg.com/@voiceflow/common/-/common-6.5.0.tgz#68659641bf7e868b4594a640d63072f573b62f1e"
   integrity sha512-6czuZhUs3dGT/5IWI2ejTf/y69BmzG3/PCS0o1YoE0wxGxXPpfBUdelK9ZKCVgk6s89WnuDKYLKmgNWpln2dkw==
 
+"@voiceflow/common@^6.6.2":
+  version "6.6.2"
+  resolved "https://registry.yarnpkg.com/@voiceflow/common/-/common-6.6.2.tgz#2cbe59dc668fae3cdc2bd7ebf8a059646bff681d"
+  integrity sha512-Xx80kdTvCRq7HK3MSu0PWSsFSevIvhPWxyx1PmL2ydRL/u6c1fWFr22cl6/jaRtUceNGDe8poLx4f6X5Ilu6bg==
+  dependencies:
+    dotenv "^9.0.2"
+
 "@voiceflow/eslint-config@^3.2.2":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@voiceflow/eslint-config/-/eslint-config-3.2.2.tgz#985cac0d672ffd15f06bff9370ae494579e2bc13"
@@ -2867,6 +2874,11 @@ dot-prop@^6.0.1:
   integrity sha512-tE7ztYzXHIeyvc7N+hR3oi7FIbf/NIjVP9hmAt3yMXzrQ072/fpjGLx2GxNxGxUl5V73MEqYzioOMoVhGMJ5cA==
   dependencies:
     is-obj "^2.0.0"
+
+dotenv@^9.0.2:
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-9.0.2.tgz#dacc20160935a37dea6364aa1bef819fb9b6ab05"
+  integrity sha512-I9OvvrHp4pIARv4+x9iuewrWycX6CcZtoAu1XrzPxc5UygMJXJZYmBsynku8IkrJwgypE5DGNjDPmPRhDCptUg==
 
 duplexer@^0.1.1:
   version "0.1.2"

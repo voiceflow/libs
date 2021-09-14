@@ -1,14 +1,29 @@
 import * as s from 'superstruct';
 
-import type Fetch from '@/fetch';
 import type { BaseSchema, PutPostSchemeType, PutPostStruct, SchemeType } from '@/types';
 import { createPutAndPostStruct } from '@/utils';
 
-class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>, C extends Record<string, any>, E extends keyof SchemeType<S> = never> {
-  protected readonly fetch: Fetch;
+import Fetcher, { FetcherOptions } from './fetcher';
 
-  private readonly clazz: new (fetch: Fetch) => C;
+export type Fields = string[] | ReadonlyArray<string>;
 
+export interface BaseResourceOptions<
+  S extends BaseSchema,
+  K extends keyof SchemeType<S>,
+  C extends Record<string, any>,
+  E extends keyof SchemeType<S> = never
+> extends FetcherOptions<C> {
+  schema: S;
+  modelIDKey: K;
+  postPutExcludedFields?: E[];
+}
+
+class BaseResource<
+  S extends BaseSchema,
+  K extends keyof SchemeType<S>,
+  C extends Record<string, any>,
+  E extends keyof SchemeType<S> = never
+> extends Fetcher<C> {
   private readonly modelIDKey: K;
 
   private readonly struct: s.Struct<SchemeType<S>, S>;
@@ -17,39 +32,18 @@ class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>, C extend
 
   private readonly putAndPostStruct: PutPostStruct<S, K, E>;
 
-  private readonly resourceEndpoint: string;
+  constructor({ schema, modelIDKey, postPutExcludedFields = [], ...options }: BaseResourceOptions<S, K, C, E>) {
+    super(options);
 
-  constructor({
-    fetch,
-    clazz,
-    schema,
-    modelIDKey,
-    resourceEndpoint,
-    postPutExcludedFields = [],
-  }: {
-    fetch: Fetch;
-    clazz: new (fetch: Fetch) => C;
-    schema: S;
-    modelIDKey: K;
-    resourceEndpoint: string;
-    postPutExcludedFields?: E[];
-  }) {
-    this.fetch = fetch;
-    this.clazz = clazz;
     this.modelIDKey = modelIDKey;
-    this.resourceEndpoint = resourceEndpoint;
 
     this.struct = s.object(schema);
     this.patchStruct = s.partial(schema);
     this.putAndPostStruct = createPutAndPostStruct(schema, modelIDKey, postPutExcludedFields);
   }
 
-  protected _getEndpoint(): string {
-    return this.resourceEndpoint;
-  }
-
   // eslint-disable-next-line class-methods-use-this
-  protected _getFieldsQuery(fields?: string[]): string {
+  protected _getFieldsQuery(fields?: Fields): string {
     return fields ? `?fields=${fields.join(',')}` : '';
   }
 
@@ -63,12 +57,6 @@ class BaseResource<S extends BaseSchema, K extends keyof SchemeType<S>, C extend
 
   protected _assertPutAndPostBody(body: PutPostSchemeType<S, K, E>): void {
     s.assert(body, this.putAndPostStruct);
-  }
-
-  public options(options: Parameters<Fetch['initWithOptions']>[0]) {
-    const { clazz: Clazz } = this;
-
-    return new Clazz(this.fetch.initWithOptions(options));
   }
 }
 

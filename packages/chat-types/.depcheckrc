@@ -1,0 +1,6 @@
+{
+  "specials": ["bin"],
+  "ignores": [
+    "@types/*"
+  ]
+}

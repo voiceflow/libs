@@ -1,19 +1,18 @@
-import { BaseResumeSession, BaseVersionSettings, defaultBaseVersionSettings } from '@voiceflow/general-types';
+/* eslint-disable @typescript-eslint/no-empty-interface */
 
-import { Voice } from '@/types';
+import { Version } from '@voiceflow/voice-types';
 
-export type ResumeSession = BaseResumeSession<Voice>;
+import { Voice } from '@/constants';
 
-// gactions
-export type GoogleVersionSettings = BaseVersionSettings<Voice>;
+// base is used in google-dfes types
+export interface BaseGoogleVersionSettings extends Version.VoiceVersionSettings<Voice> {}
 
-export const defaultGoogleVersionSettings = ({ ...generalSettings }: Partial<GoogleVersionSettings> = {}): GoogleVersionSettings => ({
-  ...defaultBaseVersionSettings<Voice>(generalSettings, { defaultPromptVoice: Voice.DEFAULT }),
+export const defaultBaseGoogleVersionSettings = ({ ...voiceSettings }: Partial<BaseGoogleVersionSettings> = {}): BaseGoogleVersionSettings => ({
+  ...Version.defaultVoiceVersionSettings<Voice>(voiceSettings, { defaultPromptVoice: Voice.DEFAULT }),
 });
 
-// dialogflow es
-export type DFESVersionSettings = BaseVersionSettings<Voice>;
+export interface GoogleVersionSettings extends BaseGoogleVersionSettings {}
 
-export const defaultDFESVersionSettings = ({ ...generalSettings }: Partial<DFESVersionSettings> = {}): DFESVersionSettings => ({
-  ...defaultBaseVersionSettings<Voice>(generalSettings, { defaultPromptVoice: Voice.DEFAULT }),
+export const defaultGoogleVersionSettings = ({ ...baseGoogleSettings }: Partial<GoogleVersionSettings> = {}): GoogleVersionSettings => ({
+  ...defaultBaseGoogleVersionSettings(baseGoogleSettings),
 });

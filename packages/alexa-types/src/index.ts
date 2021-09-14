@@ -1,8 +1,8 @@
-export * from './constants';
-export * from './diagram';
-export * from './nodes';
-export * from './program';
-export * from './project';
-export * from './types';
-export * from './utils';
-export * from './version';
+export * as Constants from './constants';
+export * as Diagram from './diagram';
+export * as Node from './node';
+export * as Program from './program';
+export * as Project from './project';
+export * as Types from './types';
+export * as Utils from './utils';
+export * as Version from './version';

@@ -49,13 +49,17 @@ export type DiagramID = s.StructType<typeof SDiagramID>;
 export const SIntentInput = s.object({
   text: s.string(),
   slots: s.optional(s.array(s.string())),
+  // TODO: delete when superstrack validations will bre moved
   voice: s.optional(s.string()),
 });
-export type IntentInput = s.StructType<typeof SIntentInput>;
+export interface IntentInput extends s.StructType<typeof SIntentInput> {
+  /** @deprecated shouldn't be used */
+  voice?: string;
+}
 
 export const SIntentSlotDialog = s.object({
-  prompt: s.array(SIntentInput),
-  confirm: s.array(SIntentInput),
+  prompt: s.array(s.any() as s.Struct<unknown, any>),
+  confirm: s.array(s.any() as s.Struct<unknown, any>),
   utterances: s.array(SIntentInput),
   confirmEnabled: s.boolean(),
 });

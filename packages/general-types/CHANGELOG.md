@@ -3,6 +3,196 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.55.15](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.14...@voiceflow/general-types@1.55.15) (2021-09-13)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.14](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.13...@voiceflow/general-types@1.55.14) (2021-09-10)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.13](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.12...@voiceflow/general-types@1.55.13) (2021-09-03)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.12](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.11...@voiceflow/general-types@1.55.12) (2021-09-03)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.11](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.10...@voiceflow/general-types@1.55.11) (2021-09-03)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.10](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.9...@voiceflow/general-types@1.55.10) (2021-08-31)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.9](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.8...@voiceflow/general-types@1.55.9) (2021-08-28)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.8](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.7...@voiceflow/general-types@1.55.8) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.7](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.6...@voiceflow/general-types@1.55.7) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.6](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.5...@voiceflow/general-types@1.55.6) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.5](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.4...@voiceflow/general-types@1.55.5) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.4](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.3...@voiceflow/general-types@1.55.4) (2021-08-26)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.3](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.2...@voiceflow/general-types@1.55.3) (2021-08-25)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.2](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.1...@voiceflow/general-types@1.55.2) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.55.1](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.0...@voiceflow/general-types@1.55.1) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+# [1.55.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.54.7...@voiceflow/general-types@1.55.0) (2021-08-23)
+
+
+### Features
+
+* add general buttons types ([0eee4a5](https://github.com/voiceflow/libs/commit/0eee4a58cab427ec7109ac05b2e93bab81354541))
+
+
+
+
+
+## [1.54.7](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.54.6...@voiceflow/general-types@1.54.7) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.54.6](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.54.5...@voiceflow/general-types@1.54.6) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.54.5](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.54.4...@voiceflow/general-types@1.54.5) (2021-08-19)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.54.4](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.54.3...@voiceflow/general-types@1.54.4) (2021-08-18)
+
+
+### Bug Fixes
+
+* prototype optional ([dab313e](https://github.com/voiceflow/libs/commit/dab313e0a6c547b884d31833deadbf2ea015d862))
+
+
+
+
+
+## [1.54.3](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.54.2...@voiceflow/general-types@1.54.3) (2021-08-18)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.54.2](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.54.1...@voiceflow/general-types@1.54.2) (2021-08-16)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
+## [1.54.1](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.54.0...@voiceflow/general-types@1.54.1) (2021-08-14)
+
+**Note:** Version bump only for package @voiceflow/general-types
+
+
+
+
+
 # [1.54.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.53.4...@voiceflow/general-types@1.54.0) (2021-08-12)
 
 

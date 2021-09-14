@@ -3,7 +3,7 @@ import * as s from 'superstruct';
 import Fetch, { PathVariables } from '@/fetch';
 import { BasePlatformData, CreatorID, Member, ProjectID, SMember, SProjectID } from '@/models';
 
-import BaseResource from '../base';
+import BaseResource, { Fields } from '../base';
 import { ENDPOINT } from './constants';
 
 export const modelIDKey = 'creatorID';
@@ -15,8 +15,8 @@ class MemberResource extends BaseResource<typeof SMember['schema'], ModelIDKey, 
       fetch,
       clazz: MemberResource,
       schema: SMember.schema,
+      endpoint: ENDPOINT,
       modelIDKey,
-      resourceEndpoint: ENDPOINT,
     });
   }
 
@@ -24,44 +24,60 @@ class MemberResource extends BaseResource<typeof SMember['schema'], ModelIDKey, 
     return `${this._getEndpoint()}/${id}/members`;
   }
 
-  public async list<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: string[]): Promise<P[]>;
+  public async list<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: Fields): Promise<P[]>;
+
+  public async list<P extends Member<any> = Member<BasePlatformData>>(projectID: ProjectID): Promise<P[]>;
 
   public async list<P extends BasePlatformData>(projectID: ProjectID): Promise<Member<P>[]>;
 
-  public async list(projectID: ProjectID, fields?: string[]) {
+  public async list(projectID: ProjectID, fields?: Fields): Promise<Member<any>[] | Partial<Member<any>>[]> {
     s.assert(projectID, SProjectID);
 
-    const { data } = await this.fetch.get(`${this._getCRUDEndpoint(projectID)}${this._getFieldsQuery(fields)}`);
+    const { data } = await this.fetch.get<Member<any>[] | Partial<Member<any>>[]>(
+      `${this._getCRUDEndpoint(projectID)}${this._getFieldsQuery(fields)}`
+    );
 
     return data;
   }
 
-  public async get<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: string[]): Promise<P>;
+  public async get<P extends Partial<Member<BasePlatformData>>>(projectID: ProjectID, fields: Fields): Promise<P>;
+
+  public async get<P extends Member<any> = Member<BasePlatformData>>(projectID: ProjectID, fields: Fields): Promise<P>;
 
   public async get<P extends BasePlatformData>(projectID: ProjectID): Promise<Member<P>>;
 
-  public async get(projectID: ProjectID, fields?: string[]) {
+  public async get(projectID: ProjectID, fields?: Fields): Promise<Member<any> | Partial<Member<any>>> {
     s.assert(projectID, SProjectID);
 
-    const { data } = await this.fetch.get(`${this._getEndpoint()}/${projectID}/member${this._getFieldsQuery(fields)}`);
+    const { data } = await this.fetch.get<Member<any> | Partial<Member<any>>>(
+      `${this._getEndpoint()}/${projectID}/member${this._getFieldsQuery(fields)}`
+    );
 
     return data;
   }
 
-  public async create<P extends BasePlatformData>(projectID: ProjectID, body: Omit<Member<P>, ModelIDKey>): Promise<Member<P>> {
+  public async create<P extends BasePlatformData>(projectID: ProjectID, body: Omit<Member<P>, ModelIDKey>): Promise<Member<P>>;
+
+  public async create<P extends Omit<Member<any>, ModelIDKey>>(projectID: ProjectID, body: P): Promise<P & Pick<Member<any>, ModelIDKey>>;
+
+  public async create(projectID: ProjectID, body: Omit<Member<any>, ModelIDKey>): Promise<Member<any>> {
     s.assert(projectID, SProjectID);
     this._assertPutAndPostBody(body);
 
-    const { data } = await this.fetch.post<Member<P>>(this._getCRUDEndpoint(projectID), body);
+    const { data } = await this.fetch.post<Member<any>>(this._getCRUDEndpoint(projectID), body);
 
     return data;
   }
 
-  public async update<P extends BasePlatformData>(projectID: ProjectID, body: Omit<Member<P>, ModelIDKey>): Promise<Member<P>> {
+  public async update<P extends BasePlatformData>(projectID: ProjectID, body: Omit<Member<P>, ModelIDKey>): Promise<Member<P>>;
+
+  public async update<P extends Omit<Member<any>, ModelIDKey>>(projectID: ProjectID, body: P): Promise<P & Pick<Member<any>, ModelIDKey>>;
+
+  public async update(projectID: ProjectID, body: Omit<Member<any>, ModelIDKey>): Promise<Member<any>> {
     s.assert(projectID, SProjectID);
     this._assertPutAndPostBody(body);
 
-    const { data } = await this.fetch.put<Member<P>>(this._getCRUDEndpoint(projectID), body);
+    const { data } = await this.fetch.put<Member<any>>(this._getCRUDEndpoint(projectID), body);
 
     return data;
   }

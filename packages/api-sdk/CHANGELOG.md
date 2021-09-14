@@ -3,6 +3,88 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.39.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.38.1...@voiceflow/api-sdk@1.39.0) (2021-09-03)
+
+
+### Bug Fixes
+
+* test ([64d1b86](https://github.com/voiceflow/libs/commit/64d1b86275ebddc664ca41c88ffc684900ad818a))
+
+
+### Features
+
+* add envIDs into analytics ([c2a8229](https://github.com/voiceflow/libs/commit/c2a8229563d930e4f4325b23d508059d0fd7d7cd))
+
+
+
+
+
+## [1.38.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.38.0...@voiceflow/api-sdk@1.38.1) (2021-09-03)
+
+
+### Bug Fixes
+
+* add analytics to resources ([6415e2d](https://github.com/voiceflow/libs/commit/6415e2d32b6c7648a19be6238e56c6066112118a))
+
+
+
+
+
+# [1.38.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.37.1...@voiceflow/api-sdk@1.38.0) (2021-09-03)
+
+
+### Features
+
+* analytics resource ([#56](https://github.com/voiceflow/libs/issues/56)) ([ca79dca](https://github.com/voiceflow/libs/commit/ca79dca74446e12a6bc1efedf148b40c612ef85a))
+
+
+
+
+
+## [1.37.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.37.0...@voiceflow/api-sdk@1.37.1) (2021-08-26)
+
+
+### Bug Fixes
+
+* dm types ([#51](https://github.com/voiceflow/libs/issues/51)) ([28497cc](https://github.com/voiceflow/libs/commit/28497cc305fd11590420210c876b26a0c923bcb0))
+
+
+
+
+
+# [1.37.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.36.0...@voiceflow/api-sdk@1.37.0) (2021-08-25)
+
+
+### Features
+
+* chat intent input type (VF-000) ([#50](https://github.com/voiceflow/libs/issues/50)) ([d95ba80](https://github.com/voiceflow/libs/commit/d95ba808e811c28d9cdf0105e536efeab74f74f3))
+
+
+
+
+
+# [1.36.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.35.1...@voiceflow/api-sdk@1.36.0) (2021-08-18)
+
+
+### Features
+
+* improve api-sdk typings ([#46](https://github.com/voiceflow/libs/issues/46)) ([f02e7f2](https://github.com/voiceflow/libs/commit/f02e7f2dc42194261303d7dd459e9176ebafc33d))
+
+
+
+
+
+## [1.35.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.35.0...@voiceflow/api-sdk@1.35.1) (2021-08-14)
+
+
+### Bug Fixes
+
+* **api-sdk:** handle bad input to `parseJWT` function (VF-000) ([#45](https://github.com/voiceflow/libs/issues/45)) ([2c8ddcd](https://github.com/voiceflow/libs/commit/2c8ddcdffcfaf4c505bb488d61f03b744e27697b))
+
+
+
+
+
 # [1.35.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.34.3...@voiceflow/api-sdk@1.35.0) (2021-08-12)
 
 

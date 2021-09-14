@@ -1,9 +1,7 @@
-export * from './config';
-export * from './constants';
-export * from './nodes';
-export * from './project';
-export * from './request';
-export * from './trace';
-export * from './types';
-export * from './version';
-export * from './vf';
+export * as Constants from './constants';
+export * as Diagram from './diagram';
+export * as Node from './node';
+export * as Program from './program';
+export * as Project from './project';
+export * as Types from './types';
+export * as Version from './version';

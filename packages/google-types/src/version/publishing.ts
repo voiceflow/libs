@@ -1,10 +1,10 @@
-import { Category, DFESLocale, Locale } from '@/constants';
+import { Category, Locale } from '@/constants';
 
-// gactions
-export interface GoogleVersionPublishing {
+// base is used in google-dfes types
+
+export interface BaseGoogleVersionPublishing {
   // localized settings
   voice: string;
-  locales: Locale[];
   displayName: string;
   developerName: string;
   pronunciation: string;
@@ -33,9 +33,8 @@ export interface GoogleVersionPublishing {
   accountLinking?: any;
 }
 
-export const defaultGoogleVersionPublishing = ({
+export const defaultBaseGoogleVersionPublishing = ({
   voice = '',
-  locales = [],
   displayName = '',
   developerName = '',
   pronunciation = '',
@@ -47,9 +46,8 @@ export const defaultGoogleVersionPublishing = ({
   shortDescription = '',
   termsOfServiceUrl = '',
   sampleInvocations = [],
-}: Partial<GoogleVersionPublishing> = {}): GoogleVersionPublishing => ({
+}: Partial<BaseGoogleVersionPublishing> = {}): BaseGoogleVersionPublishing => ({
   voice,
-  locales,
   displayName,
   developerName,
   pronunciation,
@@ -63,66 +61,14 @@ export const defaultGoogleVersionPublishing = ({
   sampleInvocations,
 });
 
-// dialogflow es
-export interface DFESVersionPublishing {
-  // localized settings
-  voice: string;
-  locales: DFESLocale[];
-  displayName: string;
-  developerName: string;
-  pronunciation: string;
-  developerEmail: string;
-  smallLogoImage: string;
-  fullDescription: string;
-  privacyPolicyUrl: string;
-  shortDescription: string;
-  largeBannerImage: string;
-  termsOfServiceUrl: string;
-  sampleInvocations: string[];
-
-  // general settings
-  enabledRegions?: string[];
-  disabledRegions?: string[];
-  category?: Category;
-  usesTransactionsApi?: boolean;
-  usesDigitalPurchaseApi?: boolean;
-  usesInteractiveCanvas?: boolean;
-  usesHomeStorage?: boolean;
-  designedForFamily?: boolean;
-  containsAlcoholOrTobaccoContent?: boolean;
-  keepsMicOpen?: boolean;
-  surfaceRequirements?: any;
-  testingInstructions?: string;
-  accountLinking?: any;
+export interface GoogleVersionPublishing extends BaseGoogleVersionPublishing {
+  locales: Locale[];
 }
 
-export const defaultDFESVersionPublishing = ({
-  voice = '',
+export const defaultGoogleVersionPublishing = ({
   locales = [],
-  displayName = '',
-  developerName = '',
-  pronunciation = '',
-  smallLogoImage = '',
-  developerEmail = '',
-  fullDescription = '',
-  largeBannerImage = '',
-  privacyPolicyUrl = '',
-  shortDescription = '',
-  termsOfServiceUrl = '',
-  sampleInvocations = [],
-}: // eslint-disable-next-line sonarjs/no-identical-functions
-Partial<DFESVersionPublishing> = {}): DFESVersionPublishing => ({
-  voice,
+  ...baseGoogleVersionSettings
+}: Partial<GoogleVersionPublishing> = {}): GoogleVersionPublishing => ({
+  ...defaultBaseGoogleVersionPublishing(baseGoogleVersionSettings),
   locales,
-  displayName,
-  developerName,
-  pronunciation,
-  smallLogoImage,
-  developerEmail,
-  fullDescription,
-  largeBannerImage,
-  privacyPolicyUrl,
-  shortDescription,
-  termsOfServiceUrl,
-  sampleInvocations,
 });

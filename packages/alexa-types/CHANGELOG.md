@@ -3,6 +3,204 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.52.36](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.35...@voiceflow/alexa-types@1.52.36) (2021-09-13)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.35](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.34...@voiceflow/alexa-types@1.52.35) (2021-09-10)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.34](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.33...@voiceflow/alexa-types@1.52.34) (2021-09-03)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.33](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.32...@voiceflow/alexa-types@1.52.33) (2021-09-03)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.32](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.31...@voiceflow/alexa-types@1.52.32) (2021-09-03)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.31](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.30...@voiceflow/alexa-types@1.52.31) (2021-08-31)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.30](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.29...@voiceflow/alexa-types@1.52.30) (2021-08-28)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.29](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.28...@voiceflow/alexa-types@1.52.29) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.28](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.27...@voiceflow/alexa-types@1.52.28) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.27](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.26...@voiceflow/alexa-types@1.52.27) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.26](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.25...@voiceflow/alexa-types@1.52.26) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.25](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.24...@voiceflow/alexa-types@1.52.25) (2021-08-26)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.24](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.23...@voiceflow/alexa-types@1.52.24) (2021-08-25)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.23](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.22...@voiceflow/alexa-types@1.52.23) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.22](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.21...@voiceflow/alexa-types@1.52.22) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.21](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.20...@voiceflow/alexa-types@1.52.21) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.20](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.19...@voiceflow/alexa-types@1.52.20) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.19](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.18...@voiceflow/alexa-types@1.52.19) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.18](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.17...@voiceflow/alexa-types@1.52.18) (2021-08-19)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.17](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.16...@voiceflow/alexa-types@1.52.17) (2021-08-18)
+
+
+### Bug Fixes
+
+* prototype optional ([dab313e](https://github.com/voiceflow/libs/commit/dab313e0a6c547b884d31833deadbf2ea015d862))
+
+
+
+
+
+## [1.52.16](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.15...@voiceflow/alexa-types@1.52.16) (2021-08-18)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.15](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.14...@voiceflow/alexa-types@1.52.15) (2021-08-17)
+
+
+### Bug Fixes
+
+* add card to alexa ([973b01b](https://github.com/voiceflow/libs/commit/973b01b6be4d23c2bec02b01d2ac7ba389fe8bb8))
+
+
+
+
+
+## [1.52.14](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.13...@voiceflow/alexa-types@1.52.14) (2021-08-16)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
+## [1.52.13](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.12...@voiceflow/alexa-types@1.52.13) (2021-08-14)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
+
+
+
+
 ## [1.52.12](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@1.52.11...@voiceflow/alexa-types@1.52.12) (2021-08-12)
 
 **Note:** Version bump only for package @voiceflow/alexa-types

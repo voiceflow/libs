@@ -13,6 +13,6 @@ describe('PrototypeProgramResource', () => {
   it('uses prototype-programs endpoint', async () => {
     const resource = new PrototypeProgram(null as any);
 
-    expect(resource['resourceEndpoint']).to.eql('prototype-programs');
+    expect(resource['endpoint']).to.eql('prototype-programs');
   });
 });

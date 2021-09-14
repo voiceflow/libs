@@ -5,6 +5,11 @@ import { getWindow } from '@/utils';
 
 export const parseJWT = <S>(token: string): S => {
   const base64Url = token.split('.')[1];
+
+  if (!base64Url) {
+    throw new RangeError('Invalid JWT');
+  }
+
   const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
   const jsonPayload = decodeURIComponent(
     (getWindow()?.atob || atob)(base64)
@@ -30,11 +35,6 @@ class User {
 
   public email = '';
 
-  // eslint-disable-next-line class-methods-use-this
-  isAPIKey(authorization: string): boolean {
-    return authorization.startsWith('VF.');
-  }
-
   constructor(authorization: string) {
     if (!this.isAPIKey(authorization)) {
       const { id, name, email } = parseJWT<UserToken>(authorization);
@@ -43,6 +43,11 @@ class User {
       this.name = name;
       this.email = email;
     }
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  isAPIKey(authorization: string): boolean {
+    return authorization.startsWith('VF.');
   }
 }
 

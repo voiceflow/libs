@@ -1,23 +1,21 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
+
 import { Nullable } from '@voiceflow/api-sdk';
 
-// gactions
-export interface GoogleProjectMemberData {
+// base is used in google-dfes types
+
+export interface BaseGoogleProjectMemberData {
   /** reference to the external google project ID */
   googleProjectID: Nullable<string>;
 }
 
-export const defaultGoogleProjectMemberData = (memberData: Partial<GoogleProjectMemberData> = {}): GoogleProjectMemberData => ({
+export const defaultBaseGoogleProjectMemberData = (memberData: Partial<BaseGoogleProjectMemberData> = {}): BaseGoogleProjectMemberData => ({
   ...memberData,
   googleProjectID: null,
 });
 
-// dialogflow es
-export interface DFESProjectMemberData {
-  /** reference to the external google project ID */
-  googleProjectID: Nullable<string>;
-}
+export interface GoogleProjectMemberData extends BaseGoogleProjectMemberData {}
 
-export const defaultDFESProjectMemberData = (memberData: Partial<DFESProjectMemberData> = {}): DFESProjectMemberData => ({
-  ...memberData,
-  googleProjectID: null,
+export const defaultGoogleProjectMemberData = (memberData: Partial<GoogleProjectMemberData> = {}): GoogleProjectMemberData => ({
+  ...defaultBaseGoogleProjectMemberData(memberData),
 });

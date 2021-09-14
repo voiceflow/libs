@@ -3,6 +3,240 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.34.22](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.21...@voiceflow/google-types@1.34.22) (2021-09-13)
+
+
+### Bug Fixes
+
+* google swedish locale (VF-1638) ([b52ef5c](https://github.com/voiceflow/libs/commit/b52ef5cf21f04d37c3441037f303ce873f03de29))
+
+
+
+
+
+## [1.34.21](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.20...@voiceflow/google-types@1.34.21) (2021-09-13)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.20](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.19...@voiceflow/google-types@1.34.20) (2021-09-10)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.19](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.18...@voiceflow/google-types@1.34.19) (2021-09-03)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.18](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.17...@voiceflow/google-types@1.34.18) (2021-09-03)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.17](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.16...@voiceflow/google-types@1.34.17) (2021-09-03)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.16](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.15...@voiceflow/google-types@1.34.16) (2021-08-31)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.15](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.14...@voiceflow/google-types@1.34.15) (2021-08-28)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.14](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.13...@voiceflow/google-types@1.34.14) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.13](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.12...@voiceflow/google-types@1.34.13) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.12](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.11...@voiceflow/google-types@1.34.12) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.11](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.10...@voiceflow/google-types@1.34.11) (2021-08-27)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.10](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.9...@voiceflow/google-types@1.34.10) (2021-08-26)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.9](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.8...@voiceflow/google-types@1.34.9) (2021-08-25)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.8](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.7...@voiceflow/google-types@1.34.8) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.7](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.6...@voiceflow/google-types@1.34.7) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.6](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.5...@voiceflow/google-types@1.34.6) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.5](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.4...@voiceflow/google-types@1.34.5) (2021-08-23)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.4](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.3...@voiceflow/google-types@1.34.4) (2021-08-19)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.3](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.2...@voiceflow/google-types@1.34.3) (2021-08-18)
+
+
+### Bug Fixes
+
+* prototype optional ([dab313e](https://github.com/voiceflow/libs/commit/dab313e0a6c547b884d31833deadbf2ea015d862))
+
+
+
+
+
+## [1.34.2](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.1...@voiceflow/google-types@1.34.2) (2021-08-18)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.34.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.0...@voiceflow/google-types@1.34.1) (2021-08-18)
+
+
+### Bug Fixes
+
+* add card type to google steps/nodes ([1010a47](https://github.com/voiceflow/libs/commit/1010a4736a45bcb523d69742f14e8adbc576af3e))
+
+
+
+
+
+# [1.34.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.33.1...@voiceflow/google-types@1.34.0) (2021-08-18)
+
+
+### Features
+
+* move dfes intents and slots to dfes package, remove dfes preffix ([50ba2cc](https://github.com/voiceflow/libs/commit/50ba2cc6d133f33ba6e08eeff2c00b8ebcdb4dc9))
+
+
+
+
+
+## [1.33.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.33.0...@voiceflow/google-types@1.33.1) (2021-08-18)
+
+
+### Bug Fixes
+
+* move visuals to dfes, update payload types ([0cf6357](https://github.com/voiceflow/libs/commit/0cf635700916a48e39d7999fa2189fc0e71d18d2))
+
+
+
+
+
+# [1.33.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.32.12...@voiceflow/google-types@1.33.0) (2021-08-18)
+
+
+### Features
+
+* add visual to google types ([f29fcd9](https://github.com/voiceflow/libs/commit/f29fcd92a68d19a2a83f58c2d75cdeea9f7f0139))
+
+
+
+
+
+## [1.32.12](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.32.11...@voiceflow/google-types@1.32.12) (2021-08-16)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [1.32.11](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.32.10...@voiceflow/google-types@1.32.11) (2021-08-14)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
 ## [1.32.10](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.32.9...@voiceflow/google-types@1.32.10) (2021-08-12)
 
 **Note:** Version bump only for package @voiceflow/google-types
