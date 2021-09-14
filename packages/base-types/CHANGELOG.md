@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.6.1...@voiceflow/base-types@1.6.2) (2021-09-14)
+
+
+### Bug Fixes
+
+* label for if ports (VF-000) ([#65](https://github.com/voiceflow/libs/issues/65)) ([01239e7](https://github.com/voiceflow/libs/commit/01239e77f2d93ad2e2807f04c635c2a0f9ddc0ef))
+
+
+
+
+
 ## [1.6.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.6.0...@voiceflow/base-types@1.6.1) (2021-09-13)
 
 
