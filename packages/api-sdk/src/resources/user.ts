@@ -1,5 +1,6 @@
-import { CreatorID } from '@/models';
 import { Crypto } from '@voiceflow/common';
+
+import { CreatorID } from '@/models';
 
 export const parseJWT = <S>(token: string): S => {
   const base64Url = token.split('.')[1];

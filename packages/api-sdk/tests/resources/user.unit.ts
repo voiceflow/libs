@@ -26,14 +26,6 @@ describe('UserResource', () => {
     expect(() => new User('')).to.throws('Invalid JWT');
   });
 
-  it('.constructor with global atob', () => {
-    const resource = createResource();
-
-    expect(resource['creatorID']).to.eql(SAMPLE_USER.id);
-    expect(resource['name']).to.eql(SAMPLE_USER.name);
-    expect(resource['email']).to.eql(SAMPLE_USER.email);
-  });
-
   it('.constructor with API key', () => {
     const DEFAULT_USER = {
       creatorID: 0,
