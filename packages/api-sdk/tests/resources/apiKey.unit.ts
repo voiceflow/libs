@@ -45,7 +45,7 @@ const createClient = () => {
   };
 };
 
-describe.skip('ApiKeyResource', () => {
+describe('ApiKeyResource', () => {
   afterEach(() => {
     sinon.restore();
   });

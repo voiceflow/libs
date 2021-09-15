@@ -1294,11 +1294,6 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@types/atob@^2.1.2":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@types/atob/-/atob-2.1.2.tgz#157eb0cc46264a8c55f2273a836c7a1a644fb820"
-  integrity sha512-8GAYQ1jDRUQkSpHzJUqXwAkYFOxuWAOGLhIR4aPd/Y/yL12Q/9m7LsKpHKlfKdNE/362Hc9wPI1Yh6opDfxVJg==
-
 "@types/chai@^4.2.11":
   version "4.2.18"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.2.18.tgz#0c8e298dbff8205e2266606c1ea5fbdba29b46e4"
@@ -1454,6 +1449,13 @@
   version "6.6.2"
   resolved "https://registry.yarnpkg.com/@voiceflow/common/-/common-6.6.2.tgz#2cbe59dc668fae3cdc2bd7ebf8a059646bff681d"
   integrity sha512-Xx80kdTvCRq7HK3MSu0PWSsFSevIvhPWxyx1PmL2ydRL/u6c1fWFr22cl6/jaRtUceNGDe8poLx4f6X5Ilu6bg==
+  dependencies:
+    dotenv "^9.0.2"
+
+"@voiceflow/common@^6.7.1":
+  version "6.7.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/common/-/common-6.7.1.tgz#c6b8ad8f7a3b2008dce7146dd3d01ff4b68643c0"
+  integrity sha512-0ACgq44J5lWL5EudgEAPmlFc4aIYH8XaZNen9VZSrUHOVTVPaJBMgcf6R4QzG8b5QfLoebBewpfS5KebhqWTGg==
   dependencies:
     dotenv "^9.0.2"
 
@@ -1892,11 +1894,6 @@ at-least-node@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
-
-atob@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
-  integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 aws-sign2@~0.7.0:
   version "0.7.0"
