@@ -1,7 +1,7 @@
 import * as s from 'superstruct';
 
 import { Client } from '@/client';
-import { PublicClient, ClientOptions } from '@/publicclient';
+import { ClientOptions, PublicClient } from '@/publicclient';
 
 export type { Client } from '@/client';
 export * from '@/models';
@@ -13,7 +13,7 @@ export const SParams = s.object({
   apiEndpoint: s.string(),
 });
 
-export interface Options extends Pick<ClientOptions, 'options' | 'analyticsEncryption'> {};
+export type Options = Pick<ClientOptions, 'options' | 'analyticsEncryption'>;
 
 export interface Params extends s.StructType<typeof SParams>, Options {}
 
