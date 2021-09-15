@@ -3,13 +3,13 @@ import { Crypto } from '@voiceflow/common';
 import Fetch, { FetchConfig } from '@/fetch';
 import { Analytics, APIKey, Diagram, Program, Project, PrototypeProgram, Version } from '@/resources';
 
-export type ClientOptions = {
+export interface ClientOptions {
   options?: FetchConfig;
   clientKey: string;
   apiEndpoint: string;
   authorization?: string;
   analyticsEncryption?: Crypto.Synchronous;
-};
+}
 
 export class PublicClient {
   public fetch: Fetch;

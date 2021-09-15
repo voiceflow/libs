@@ -1,8 +1,7 @@
 import * as s from 'superstruct';
 
 import { Client } from '@/client';
-import type { FetchConfig } from '@/fetch';
-import { PublicClient } from '@/publicclient';
+import { PublicClient, ClientOptions } from '@/publicclient';
 
 export type { Client } from '@/client';
 export * from '@/models';
@@ -14,8 +13,9 @@ export const SParams = s.object({
   apiEndpoint: s.string(),
 });
 
-export type Options = { options?: FetchConfig };
-export type Params = s.StructType<typeof SParams> & Options;
+export interface Options extends Pick<ClientOptions, 'options' | 'analyticsEncryption'> {};
+
+export interface Params extends s.StructType<typeof SParams>, Options {}
 
 export const SGenerateClientParams = s.type({
   authorization: s.string(),
@@ -33,22 +33,21 @@ class ApiSDK {
     this.apiEndpoint = apiEndpoint;
   }
 
-  public generatePublicClient({ options }: Options = {}): PublicClient {
+  public generatePublicClient(options: Options = {}): PublicClient {
     return new PublicClient({
-      options,
+      ...options,
       clientKey: this.clientKey,
       apiEndpoint: this.apiEndpoint,
     });
   }
 
-  public generateClient({ authorization, options }: s.StructType<typeof SGenerateClientParams> & Options): Client {
-    s.assert({ authorization }, SGenerateClientParams);
+  public generateClient(options: s.StructType<typeof SGenerateClientParams> & Options): Client {
+    s.assert({ authorization: options.authorization }, SGenerateClientParams);
 
     return new Client({
+      ...options,
       clientKey: this.clientKey,
-      options,
       apiEndpoint: this.apiEndpoint,
-      authorization,
     });
   }
 }
