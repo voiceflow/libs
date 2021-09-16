@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.40.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.39.0...@voiceflow/api-sdk@1.40.0) (2021-09-16)
+
+
+### Features
+
+* add analytics encryption (VF-1641) ([#66](https://github.com/voiceflow/libs/issues/66)) ([8c1f0bd](https://github.com/voiceflow/libs/commit/8c1f0bde79a118c37a3e203ab8268350c8ff3dcd))
+
+
+
+
+
 # [1.39.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.38.1...@voiceflow/api-sdk@1.39.0) (2021-09-03)
 
 
