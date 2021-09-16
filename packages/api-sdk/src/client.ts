@@ -4,9 +4,9 @@ import { User } from '@/resources';
 export class Client extends PublicClient {
   public user: User;
 
-  constructor({ clientKey, apiEndpoint, authorization, options }: Omit<ClientOptions, 'authorization'> & { authorization: string }) {
-    super({ clientKey, apiEndpoint, authorization, options });
+  constructor(options: Omit<ClientOptions, 'authorization'> & { authorization: string }) {
+    super(options);
 
-    this.user = new User(authorization);
+    this.user = new User(options.authorization);
   }
 }
