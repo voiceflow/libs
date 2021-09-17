@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.56.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.18...@voiceflow/general-types@1.56.0) (2021-09-17)
+
+
+### Features
+
+* **general-types:** add PlatformType and TTSPlatformType (VF-1544) ([#67](https://github.com/voiceflow/libs/issues/67)) ([975ba1d](https://github.com/voiceflow/libs/commit/975ba1d9e3ebc9f299397b4b0e6b15830dfa45de))
+
+
+
+
+
 ## [1.55.18](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.55.17...@voiceflow/general-types@1.55.18) (2021-09-17)
 
 **Note:** Version bump only for package @voiceflow/general-types
