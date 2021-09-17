@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.40.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.40.0...@voiceflow/api-sdk@1.40.1) (2021-09-17)
+
+
+### Bug Fixes
+
+* **deps:** bump axios from 0.21.1 to 0.21.2 in /packages/api-sdk ([#59](https://github.com/voiceflow/libs/issues/59)) (VF-000) ([0e7a232](https://github.com/voiceflow/libs/commit/0e7a2328563382502e189250ff9bebe24839d1c1))
+
+
+
+
+
 # [1.40.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.39.0...@voiceflow/api-sdk@1.40.0) (2021-09-16)
 
 
