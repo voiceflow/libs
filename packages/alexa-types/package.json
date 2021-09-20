@@ -9,7 +9,7 @@
   "dependencies": {
     "@voiceflow/api-sdk": "^1.40.1",
     "@voiceflow/base-types": "^1.6.4",
-    "@voiceflow/common": "6.5.0",
+    "@voiceflow/common": "6.8.1",
     "@voiceflow/general-types": "^1.56.0",
     "@voiceflow/voice-types": "^1.4.15",
     "ask-smapi-model": "1.14.0"
