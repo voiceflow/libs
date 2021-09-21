@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.35.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.26...@voiceflow/google-types@1.35.0) (2021-09-21)
+
+
+### Features
+
+* added const for default voices (VF-000) ([#70](https://github.com/voiceflow/libs/issues/70)) ([475ec28](https://github.com/voiceflow/libs/commit/475ec28cee1a50215f572a2239dd2f70a065a7d5))
+
+
+
+
+
 ## [1.34.26](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.34.25...@voiceflow/google-types@1.34.26) (2021-09-20)
 
 
