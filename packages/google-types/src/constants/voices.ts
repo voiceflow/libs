@@ -1,4 +1,4 @@
-import { Locale, VoiceLanguageCode } from './locales';
+import { Language, Locale, VoiceLanguageCode } from './locales';
 
 export enum VoiceType {
   STANDARD = 'standard',
@@ -165,6 +165,29 @@ export const LocaleCodeToCountryLanguage: Record<Locale, VoiceLanguage> = {
   [Locale.SV_SE]: VoiceLanguage.SWEDISH_SWEDEN,
   [Locale.TH_TH]: VoiceLanguage.THAI_THAILAND,
   [Locale.TR_TR]: VoiceLanguage.TURKISH_TURKEY,
+};
+
+export const DEFAULT_LANGUAGE_VOICE_MAP = {
+  [Language.DA]: `${VoiceLanguageCode.DA_DK}-${VoiceType.STANDARD}-A`,
+  [Language.DE]: `${VoiceLanguageCode.DE_DE}-${VoiceType.STANDARD}-A`,
+  [Language.EN]: `${VoiceLanguageCode.EN_US}-${VoiceType.STANDARD}-B`,
+  [Language.ES]: `${VoiceLanguageCode.ES_ES}-${VoiceType.STANDARD}-A`,
+  [Language.FR]: `${VoiceLanguageCode.FR_FR}-${VoiceType.STANDARD}-A`,
+  [Language.HI]: `${VoiceLanguageCode.HI_IN}-${VoiceType.STANDARD}-A`,
+  [Language.HK]: `${VoiceLanguageCode.YUQ_HK}-${VoiceType.STANDARD}-A`,
+  [Language.ID]: `${VoiceLanguageCode.ID_ID}-${VoiceType.STANDARD}-A`,
+  [Language.IT]: `${VoiceLanguageCode.IT_IT}-${VoiceType.STANDARD}-A`,
+  [Language.JA]: `${VoiceLanguageCode.JA_JP}-${VoiceType.STANDARD}-A`,
+  [Language.KO]: `${VoiceLanguageCode.KO_KR}-${VoiceType.STANDARD}-A`,
+  [Language.NL]: `${VoiceLanguageCode.NL_NL}-${VoiceType.STANDARD}-B`,
+  [Language.NO]: `${VoiceLanguageCode.NB_NO}-${VoiceType.STANDARD}-A`,
+  [Language.PL]: `${VoiceLanguageCode.PL_PL}-${VoiceType.STANDARD}-A`,
+  [Language.PT]: `${VoiceLanguageCode.PT_BR}-${VoiceType.STANDARD}-A`,
+  [Language.RU]: `${VoiceLanguageCode.RU_RU}-${VoiceType.STANDARD}-A`,
+  [Language.SV]: `${VoiceLanguageCode.SV_SE}-${VoiceType.STANDARD}-A`,
+  [Language.TH]: `${VoiceLanguageCode.TH_TH}-${VoiceType.STANDARD}-A`,
+  [Language.TR]: `${VoiceLanguageCode.TR_TR}-${VoiceType.STANDARD}-A`,
+  [Language.TW]: `${VoiceLanguageCode.CMN_TW}-${VoiceType.STANDARD}-A`,
 };
 
 export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, GoogleVoice[]> = {
