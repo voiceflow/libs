@@ -6,7 +6,7 @@ export enum PlatformType {
   CHATBOT = 'chatbot',
   /** @deprecated will be removed soon™️ */
   MOBILE_APP = 'mobile_app',
-  DIALOGFLOW = 'df-es',
+  DIALOGFLOW_ES = 'dialogflow-es',
 }
 
 export enum TTSPlatformType {
