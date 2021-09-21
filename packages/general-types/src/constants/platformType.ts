@@ -4,9 +4,9 @@ export enum PlatformType {
   GENERAL = 'general',
   IVR = 'ivr',
   CHATBOT = 'chatbot',
+  DIALOGFLOW_ES = 'dialogflow_es',
   /** @deprecated will be removed soon™️ */
   MOBILE_APP = 'mobile_app',
-  DIALOGFLOW = 'df-es',
 }
 
 export enum TTSPlatformType {
