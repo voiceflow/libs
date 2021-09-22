@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.56.2](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.56.1...@voiceflow/general-types@1.56.2) (2021-09-22)
+
+
+### Bug Fixes
+
+* rename dialogflow es const (VF-1545) ([#71](https://github.com/voiceflow/libs/issues/71)) ([8e3805d](https://github.com/voiceflow/libs/commit/8e3805d08e0abcf538b3828aa62b8cb5072745a8))
+
+
+
+
+
 ## [1.56.1](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.56.0...@voiceflow/general-types@1.56.1) (2021-09-20)
 
 **Note:** Version bump only for package @voiceflow/general-types
