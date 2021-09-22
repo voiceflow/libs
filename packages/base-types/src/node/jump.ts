@@ -3,9 +3,15 @@ import { Nullable } from '@voiceflow/api-sdk';
 import { NodeType } from './constants';
 import { BaseCommand, BaseStep, NodeID, SlotMappings } from './utils';
 
+export enum IntentAvailability {
+  LOCAL = 'LOCAL',
+  GLOBAL = 'GLOBAL',
+}
+
 // called the "intent block" on creator-app
 export interface StepData extends SlotMappings {
   intent: Nullable<string>;
+  availability?: Nullable<IntentAvailability>;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
