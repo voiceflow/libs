@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.41.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.40.2...@voiceflow/api-sdk@1.41.0) (2021-09-23)
+
+
+### Features
+
+* add topics types (VF-1826) ([#72](https://github.com/voiceflow/libs/issues/72)) ([e78f6ca](https://github.com/voiceflow/libs/commit/e78f6cae2e278dc46df0d7314cc2b5fd01d24a74))
+
+
+
+
+
 ## [1.40.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.40.1...@voiceflow/api-sdk@1.40.2) (2021-09-20)
 
 
