@@ -64,7 +64,7 @@ export interface ImageStepData extends BaseStepData {
   canvasVisibility: CanvasVisibility;
   options: {
     loop: Nullable<boolean>;
-  }
+  };
 }
 
 export interface APLStepData extends BaseStepData {
