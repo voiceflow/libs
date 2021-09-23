@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
+
 import * as s from 'superstruct';
 
 import { AnyRecord } from '@/types';
@@ -98,14 +100,37 @@ export interface VersionPrototype<C extends BaseCommand = BaseCommand, L extends
   context: VersionPrototypeContext<C>;
 }
 
+export enum VersionFolderItemType {
+  FOLDER = 'FOLDER',
+  DIAGRAM = 'DIAGRAM',
+}
+
+export const sVersionFolderItemType = s.enums(Object.values(VersionFolderItemType));
+
+export const sVersionFolderItem = s.object({
+  type: sVersionFolderItemType,
+  sourceID: s.string(),
+});
+export interface VersionFolderItem extends s.StructType<typeof sVersionFolderItem> {}
+
+export const sVersionFolder = s.object({
+  id: s.string(),
+  name: s.string(),
+  items: s.array(sVersionFolderItem),
+});
+export interface VersionFolder extends s.StructType<typeof sVersionFolder> {}
+
 export const SVersion = s.object({
   _id: SVersionID,
   creatorID: SCreatorID,
   projectID: SProjectID,
 
   name: SName,
+  topics: s.optional(s.array(sVersionFolderItem)),
+  folders: s.optional(s.record(s.string(), sVersionFolder)),
   variables: s.array(SVariable),
   prototype: s.optional(SVersionPrototype),
+  components: s.optional(s.array(sVersionFolderItem)),
   platformData: SVersionPlatformData,
   rootDiagramID: SDiagramID,
 });

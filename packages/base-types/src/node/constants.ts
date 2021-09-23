@@ -23,6 +23,7 @@ export enum NodeType {
   // advanced
   INTENT = 'intent',
   FLOW = 'flow',
+  COMPONENT = 'component',
   CODE = 'code',
   EXIT = 'exit',
   PROMPT = 'prompt',
