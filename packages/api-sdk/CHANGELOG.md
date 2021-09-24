@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.42.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.41.0...@voiceflow/api-sdk@1.42.0) (2021-09-24)
+
+
+### Features
+
+* adds export project version responses api method (VF-1856) ([#74](https://github.com/voiceflow/libs/issues/74)) ([a4a38fa](https://github.com/voiceflow/libs/commit/a4a38fa6b98f9f7f0e3a5ec333cbea8999836e36))
+
+
+
+
+
 # [1.41.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.40.2...@voiceflow/api-sdk@1.41.0) (2021-09-23)
 
 
