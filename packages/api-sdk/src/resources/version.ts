@@ -1,7 +1,18 @@
 import * as s from 'superstruct';
 
 import Fetch from '@/fetch';
-import { BasePlatformData, Diagram, Program, Project, SVersion, Version, VersionID, VersionPlatformData, VersionPrototype } from '@/models';
+import {
+  BasePlatformData,
+  Diagram,
+  Program,
+  Project,
+  SVersion,
+  Version,
+  VersionDiagramResponce,
+  VersionID,
+  VersionPlatformData,
+  VersionPrototype,
+} from '@/models';
 
 import { Fields } from './base';
 import CrudResource from './crud';
@@ -147,12 +158,10 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     return data;
   }
 
-  public async exportResponses(id: VersionID): Promise<{ id: string; type: string; content: string; flow: string; step: string }[]> {
+  public async exportResponses(id: VersionID): Promise<VersionDiagramResponce[]> {
     this._assertModelID(id);
 
-    const { data } = await this.fetch.get<{ id: string; type: string; content: string; flow: string; step: string }[]>(
-      `${this._getCRUDEndpoint(id)}/export/responses`
-    );
+    const { data } = await this.fetch.get<VersionDiagramResponce[]>(`${this._getCRUDEndpoint(id)}/export/responses`);
 
     return data;
   }

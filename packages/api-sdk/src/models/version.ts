@@ -140,3 +140,11 @@ export interface Version<P extends VersionPlatformData, C extends BaseCommand = 
   prototype?: VersionPrototype<C, L>;
   platformData: P;
 }
+
+export interface VersionDiagramResponce {
+  id: string;
+  type: string;
+  flow: string;
+  step: string;
+  content: string;
+}
