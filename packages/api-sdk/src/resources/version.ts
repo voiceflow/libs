@@ -147,6 +147,16 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     return data;
   }
 
+  public async exportResponses(id: VersionID): Promise<{ id: string; type: string; content: string; flow: string; step: string }[]> {
+    this._assertModelID(id);
+
+    const { data } = await this.fetch.get<{ id: string; type: string; content: string; flow: string; step: string }[]>(
+      `${this._getCRUDEndpoint(id)}/export/responses`
+    );
+
+    return data;
+  }
+
   public async import<P extends Project<any, any> = Project<BasePlatformData, BasePlatformData>>(
     workspaceID: string,
     data: { project: P; version: Version<any>; diagrams: Record<string, Diagram<any>> }
