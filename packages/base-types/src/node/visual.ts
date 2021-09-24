@@ -62,6 +62,9 @@ export interface ImageStepData extends BaseStepData {
   frameType?: FrameType;
   dimensions: Nullable<Dimensions>;
   canvasVisibility: CanvasVisibility;
+  options?: {
+    loop: boolean;
+  };
 }
 
 export interface APLStepData extends BaseStepData {
