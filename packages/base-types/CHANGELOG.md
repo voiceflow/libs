@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.7.1...@voiceflow/base-types@1.8.0) (2021-09-24)
+
+
+### Features
+
+* add gif loop options (VF-1779) ([#73](https://github.com/voiceflow/libs/issues/73)) ([6212c52](https://github.com/voiceflow/libs/commit/6212c5229d265fec3ba341d4f7ea394f1a820b24))
+
+
+
+
+
 ## [1.7.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.7.0...@voiceflow/base-types@1.7.1) (2021-09-24)
 
 **Note:** Version bump only for package @voiceflow/base-types
