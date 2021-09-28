@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.36.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.35.3...@voiceflow/google-types@1.36.0) (2021-09-28)
+
+
+### Features
+
+* update fields and locales for dialogflow (VF-1311) ([#75](https://github.com/voiceflow/libs/issues/75)) ([96e24cb](https://github.com/voiceflow/libs/commit/96e24cb0c1968d98b13bd9fa8f87c57dd3506e5f))
+
+
+
+
+
 ## [1.35.3](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.35.2...@voiceflow/google-types@1.35.3) (2021-09-24)
 
 **Note:** Version bump only for package @voiceflow/google-types
