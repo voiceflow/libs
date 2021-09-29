@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.56.5...@voiceflow/general-types@2.0.0) (2021-09-29)
+
+
+### Features
+
+* split df es into voice and chat (VF-1892) ([#76](https://github.com/voiceflow/libs/issues/76)) ([a05fd8f](https://github.com/voiceflow/libs/commit/a05fd8f03ca59e2c32c3b45ebf0d0dac8f3ebbbe))
+
+
+### BREAKING CHANGES
+
+* df es chat and voice
+
+
+
+
+
 ## [1.56.5](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@1.56.4...@voiceflow/general-types@1.56.5) (2021-09-24)
 
 **Note:** Version bump only for package @voiceflow/general-types
