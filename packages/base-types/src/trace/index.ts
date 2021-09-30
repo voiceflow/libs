@@ -1,9 +1,9 @@
 import { TraceFrame as ExitTrace } from '@/node/exit';
 import { TraceFrame as FlowTrace } from '@/node/flow';
 import { TraceFrame as ChoiceTrace } from '@/node/interaction';
-import { TraceFrame as SpeakTrace, TraceFramePayload as SpeakTracePayload } from '@/node/speak';
+import { TraceFrame as SpeakTrace } from '@/node/speak';
 import { TraceFrame as StreamTrace } from '@/node/stream';
-import { TextTracePayload, TraceFrame as TextTrace } from '@/node/text';
+import { TraceFrame as TextTrace } from '@/node/text';
 import { BaseTraceFrame, TraceType } from '@/node/utils';
 import { TraceFrame as VisualTrace } from '@/node/visual';
 
@@ -40,18 +40,4 @@ export interface BlockTrace extends BaseTraceFrame<BlockTracePayload> {
   type: TraceType.BLOCK;
 }
 
-export interface NoReplyResponseTrace extends BaseTraceFrame<SpeakTracePayload | TextTracePayload> {
-  type: TraceType.NO_REPLY_RESPONSE;
-}
-
-export type AnyTrace =
-  | ExitTrace
-  | SpeakTrace
-  | ChoiceTrace
-  | FlowTrace
-  | StreamTrace
-  | BlockTrace
-  | DebugTrace
-  | VisualTrace
-  | TextTrace
-  | NoReplyResponseTrace;
+export type AnyTrace = ExitTrace | SpeakTrace | ChoiceTrace | FlowTrace | StreamTrace | BlockTrace | DebugTrace | VisualTrace | TextTrace;
