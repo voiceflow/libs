@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/base-types",
   "description": "Voiceflow base project types",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
