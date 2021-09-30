@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.8.0...@voiceflow/base-types@1.9.0) (2021-09-30)
+
+
+### Features
+
+* add no reply response trace (VF-1901) ([#78](https://github.com/voiceflow/libs/issues/78)) ([f73a6a2](https://github.com/voiceflow/libs/commit/f73a6a293d6113ba9d2f72104eee0c63c998f142))
+
+
+
+
+
 # [1.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.7.1...@voiceflow/base-types@1.8.0) (2021-09-24)
 
 
