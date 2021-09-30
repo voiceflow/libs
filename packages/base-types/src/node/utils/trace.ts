@@ -11,6 +11,7 @@ export enum TraceType {
   CHOICE = 'choice',
   STREAM = 'stream',
   VISUAL = 'visual',
+  NO_REPLY_RESPONSE = 'no-reply-response',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {
