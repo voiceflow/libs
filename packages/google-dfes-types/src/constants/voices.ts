@@ -2,42 +2,119 @@ import { Constants } from '@voiceflow/google-types';
 
 import { Locale, VoiceLanguageCode } from './locales';
 
-export const LocaleCodeToCountryLanguage: Record<Locale, Constants.VoiceLanguage> = {
-  [Locale.BN]: Constants.VoiceLanguage.BENGALI_INDIA,
+export const LocaleCodeToCountryLanguage: { [keyof in Locale]?: Constants.VoiceLanguage } = {
   [Locale.ZH_HK]: Constants.VoiceLanguage.CHINESE_HONG_KONG,
-  [Locale.ZH_TW]: Constants.VoiceLanguage.CHINESE_TAIWAN,
   [Locale.ZH_CN]: Constants.VoiceLanguage.MANDARIN_CHINESE,
+  [Locale.DA_DK]: Constants.VoiceLanguage.DANISH_DENMARK,
   [Locale.NL]: Constants.VoiceLanguage.DUTCH,
-  [Locale.EN]: Constants.VoiceLanguage.ENGLISH_US,
-  [Locale.FIL]: Constants.VoiceLanguage.FILIPINO_PHILIPPINES,
-  [Locale.FI]: Constants.VoiceLanguage.FINNISH_FINLAND,
-  [Locale.FR]: Constants.VoiceLanguage.FRENCH_FRANCE,
+  [Locale.EN_US]: Constants.VoiceLanguage.ENGLISH_US,
+  [Locale.EN_AU]: Constants.VoiceLanguage.ENGLISH_AUSTRALIA,
+  [Locale.EN_CA]: Constants.VoiceLanguage.ENGLISH_CANADA,
+  [Locale.EN_GB]: Constants.VoiceLanguage.ENGLISH_UK,
+  [Locale.EN_IN]: Constants.VoiceLanguage.ENGLISH_INDIA,
+  [Locale.FR_CA]: Constants.VoiceLanguage.FRENCH_CANADA,
+  [Locale.FR_FR]: Constants.VoiceLanguage.FRENCH_FRANCE,
   [Locale.DE]: Constants.VoiceLanguage.GERMAN_GERMANY,
   [Locale.HI]: Constants.VoiceLanguage.HINDI_INDIA,
   [Locale.ID]: Constants.VoiceLanguage.INDONASIAN_INDONESIA,
   [Locale.IT]: Constants.VoiceLanguage.ITALIAN_ITALY,
   [Locale.JA]: Constants.VoiceLanguage.JAPANESE_JAPAN,
   [Locale.KO]: Constants.VoiceLanguage.KOREAN_SOUTH_KOREA,
-  [Locale.MS]: Constants.VoiceLanguage.MALAYALAM_INDIA,
-  [Locale.MR]: Constants.VoiceLanguage.MARATHI,
   [Locale.NO]: Constants.VoiceLanguage.NORWEGIAN_NORWAY,
-  [Locale.PL]: Constants.VoiceLanguage.POLISH_POLAND,
-  [Locale.PT]: Constants.VoiceLanguage.PORTUGESE_PORTUGAL,
   [Locale.PT_BR]: Constants.VoiceLanguage.PORTUGESE_BRAZIL,
-  [Locale.RO]: Constants.VoiceLanguage.ROMANIAN,
+  [Locale.PT]: Constants.VoiceLanguage.PORTUGESE_PORTUGAL,
   [Locale.RU]: Constants.VoiceLanguage.RUSSIAN_RUSSIA,
-  [Locale.SI]: Constants.VoiceLanguage.SINHALA,
-  [Locale.ES]: Constants.VoiceLanguage.SPANISH,
+  [Locale.ES_ES]: Constants.VoiceLanguage.SPANISH,
   [Locale.SV]: Constants.VoiceLanguage.SWEDISH_SWEDEN,
-  [Locale.TA]: Constants.VoiceLanguage.TAMIL_INDIA,
-  [Locale.TE]: Constants.VoiceLanguage.TELUGU_INDIA,
-  [Locale.TH]: Constants.VoiceLanguage.THAI_THAILAND,
   [Locale.TR]: Constants.VoiceLanguage.TURKISH_TURKEY,
   [Locale.UK]: Constants.VoiceLanguage.UKRANIAN_UKRAIN,
-  [Locale.VI]: Constants.VoiceLanguage.VIETNAMESE_VIETNAM,
 };
 
 export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.GoogleVoice[]> = {
+  [VoiceLanguageCode.YUE_HK]: [
+    {
+      voiceLanguage: Constants.VoiceLanguage.CHINESE_HONG_KONG,
+      voiceType: [Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.YUE_HK}-${Constants.VoiceType.STANDARD}-A`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.CHINESE_HONG_KONG,
+      voiceType: [Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.YUE_HK}-${Constants.VoiceType.STANDARD}-B`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.CHINESE_HONG_KONG,
+      voiceType: [Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.YUE_HK}-${Constants.VoiceType.STANDARD}-C`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.CHINESE_HONG_KONG,
+      voiceType: [Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.YUE_HK}-${Constants.VoiceType.STANDARD}-D`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
+    },
+  ],
+  [VoiceLanguageCode.CMN_CN]: [
+    {
+      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.STANDARD}-A`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.STANDARD}-B`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.STANDARD}-C`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.STANDARD}-D`, `${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.WAVENET}-C`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
+    },
+  ],
+  [VoiceLanguageCode.NL_NL]: [
+    {
+      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-A`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-B`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-C`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-D`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-E`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-E`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
+    },
+  ],
   [VoiceLanguageCode.EN_US]: [
     {
       voiceLanguage: Constants.VoiceLanguage.ENGLISH_US,
@@ -100,6 +177,148 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.Googl
       ssmlGender: `${Constants.SSMLGender.MALE}-5`,
     },
   ],
+  [VoiceLanguageCode.EN_AU]: [
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_AUSTRALIA,
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      voiceName: [`${VoiceLanguageCode.EN_AU}-${Constants.VoiceType.STANDARD}-A`, `${VoiceLanguageCode.EN_AU}-${Constants.VoiceType.WAVENET}-A`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_AUSTRALIA,
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      voiceName: [`${VoiceLanguageCode.EN_AU}-${Constants.VoiceType.STANDARD}-B`, `${VoiceLanguageCode.EN_AU}-${Constants.VoiceType.WAVENET}-B`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_AUSTRALIA,
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      voiceName: [`${VoiceLanguageCode.EN_AU}-${Constants.VoiceType.STANDARD}-C`, `${VoiceLanguageCode.EN_AU}-${Constants.VoiceType.WAVENET}-C`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_AUSTRALIA,
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      voiceName: [`${VoiceLanguageCode.EN_AU}-${Constants.VoiceType.STANDARD}-D`, `${VoiceLanguageCode.EN_AU}-${Constants.VoiceType.WAVENET}-D`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
+    },
+  ],
+  [VoiceLanguageCode.EN_GB]: [
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_UK,
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      voiceName: [`${VoiceLanguageCode.EN_GB}-${Constants.VoiceType.STANDARD}-A`, `${VoiceLanguageCode.EN_GB}-${Constants.VoiceType.WAVENET}-A`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_UK,
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      voiceName: [`${VoiceLanguageCode.EN_GB}-${Constants.VoiceType.STANDARD}-B`, `${VoiceLanguageCode.EN_GB}-${Constants.VoiceType.WAVENET}-B`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_UK,
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      voiceName: [`${VoiceLanguageCode.EN_GB}-${Constants.VoiceType.STANDARD}-C`, `${VoiceLanguageCode.EN_GB}-${Constants.VoiceType.WAVENET}-C`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_UK,
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      voiceName: [`${VoiceLanguageCode.EN_GB}-${Constants.VoiceType.STANDARD}-D`, `${VoiceLanguageCode.EN_GB}-${Constants.VoiceType.WAVENET}-D`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_UK,
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      voiceName: [`${VoiceLanguageCode.EN_GB}-${Constants.VoiceType.STANDARD}-F`, `${VoiceLanguageCode.EN_GB}-${Constants.VoiceType.WAVENET}-F`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [VoiceLanguageCode.EN_IN]: [
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_INDIA,
+      voiceName: [`${VoiceLanguageCode.EN_IN}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.EN_IN}-${Constants.VoiceType.STANDARD}-A`],
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_INDIA,
+      voiceName: [`${VoiceLanguageCode.EN_IN}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.EN_IN}-${Constants.VoiceType.STANDARD}-B`],
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_INDIA,
+      voiceName: [`${VoiceLanguageCode.EN_IN}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.EN_IN}-${Constants.VoiceType.STANDARD}-C`],
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_INDIA,
+      voiceName: [`${VoiceLanguageCode.EN_IN}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.EN_IN}-${Constants.VoiceType.STANDARD}-D`],
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
+    },
+  ],
+  [VoiceLanguageCode.FR_FR]: [
+    {
+      voiceLanguage: Constants.VoiceLanguage.FRENCH_FRANCE,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.STANDARD}-A`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.FRENCH_FRANCE,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.STANDARD}-B`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.FRENCH_FRANCE,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.STANDARD}-C`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.FRENCH_FRANCE,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.STANDARD}-D`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.FRENCH_FRANCE,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.WAVENET}-E`, `${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.STANDARD}-E`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
+    },
+  ],
+  [VoiceLanguageCode.FR_CA]: [
+    {
+      voiceLanguage: Constants.VoiceLanguage.FRENCH_CANADA,
+      voiceName: [`${VoiceLanguageCode.FR_CA}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.FR_CA}-${Constants.VoiceType.STANDARD}-A`],
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.FRENCH_CANADA,
+      voiceName: [`${VoiceLanguageCode.FR_CA}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.FR_CA}-${Constants.VoiceType.STANDARD}-B`],
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.FRENCH_CANADA,
+      voiceName: [`${VoiceLanguageCode.FR_CA}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.FR_CA}-${Constants.VoiceType.STANDARD}-C`],
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.ENGLISH_INDIA,
+      voiceName: [`${VoiceLanguageCode.FR_CA}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.FR_CA}-${Constants.VoiceType.STANDARD}-D`],
+      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
+      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
+    },
+  ],
   [VoiceLanguageCode.DE_DE]: [
     {
       voiceLanguage: Constants.VoiceLanguage.GERMAN_GERMANY,
@@ -135,96 +354,6 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.Googl
       voiceLanguage: Constants.VoiceLanguage.GERMAN_GERMANY,
       voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
       voiceName: [`${VoiceLanguageCode.DE_DE}-${Constants.VoiceType.WAVENET}-F`, `${VoiceLanguageCode.DE_DE}-${Constants.VoiceType.STANDARD}-F`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
-    },
-  ],
-  [VoiceLanguageCode.ES_ES]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.SPANISH_SPAIN,
-      voiceType: [Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.SPANISH_SPAIN,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.SPANISH_SPAIN,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.STANDARD}-C`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.SPANISH_SPAIN,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.STANDARD}-D`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
-    },
-  ],
-  [VoiceLanguageCode.NL_NL]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-C`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-D`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-E`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-E`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
-    },
-  ],
-  [VoiceLanguageCode.FR_FR]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.FRENCH_FRANCE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.FRENCH_FRANCE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.FRENCH_FRANCE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.STANDARD}-C`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.FRENCH_FRANCE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.STANDARD}-D`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.FRENCH_FRANCE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.WAVENET}-E`, `${VoiceLanguageCode.FR_FR}-${Constants.VoiceType.STANDARD}-E`],
       ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
     },
   ],
@@ -358,178 +487,6 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.Googl
       ssmlGender: `${Constants.SSMLGender.MALE}-2`,
     },
   ],
-  [VoiceLanguageCode.BN_IN]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.BENGALI_INDIA,
-      voiceType: [Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.BN_IN}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.BENGALI_INDIA,
-      voiceType: [Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.BN_IN}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-  ],
-  [VoiceLanguageCode.CMN_CN]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.STANDARD}-C`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.STANDARD}-D`, `${VoiceLanguageCode.CMN_CN}-${Constants.VoiceType.WAVENET}-C`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-  ],
-  [VoiceLanguageCode.CMN_TW]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.CMN_TW}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.CMN_TW}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.CMN_TW}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.CMN_TW}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.MANDARIN_CHINESE,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.CMN_TW}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.CMN_TW}-${Constants.VoiceType.STANDARD}-C`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
-    },
-  ],
-  [VoiceLanguageCode.FI_FI]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.FINNISH_FINLAND,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.FI_FI}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.FI_FI}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-  ],
-  [VoiceLanguageCode.FIL_PH]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.FILIPINO_PHILIPPINES,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.FIL_PH}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.FIL_PH}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.FILIPINO_PHILIPPINES,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.FIL_PH}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.FIL_PH}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.FILIPINO_PHILIPPINES,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.FIL_PH}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.FIL_PH}-${Constants.VoiceType.STANDARD}-C`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.FILIPINO_PHILIPPINES,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.FIL_PH}-${Constants.VoiceType.STANDARD}-D`, `${VoiceLanguageCode.FIL_PH}-${Constants.VoiceType.WAVENET}-D`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
-    },
-  ],
-  [VoiceLanguageCode.HI_IN]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.HINDI_INDIA,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.HI_IN}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.HI_IN}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.HINDI_INDIA,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.HI_IN}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.HI_IN}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.HINDI_INDIA,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.HI_IN}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.HI_IN}-${Constants.VoiceType.STANDARD}-C`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.HINDI_INDIA,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.HI_IN}-${Constants.VoiceType.STANDARD}-D`, `${VoiceLanguageCode.HI_IN}-${Constants.VoiceType.WAVENET}-D`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-  ],
-  [VoiceLanguageCode.KO_KR]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.KOREAN_SOUTH_KOREA,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.KO_KR}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.KO_KR}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.KOREAN_SOUTH_KOREA,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.KO_KR}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.KO_KR}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.KOREAN_SOUTH_KOREA,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.KO_KR}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.KO_KR}-${Constants.VoiceType.STANDARD}-C`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.KOREAN_SOUTH_KOREA,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.KO_KR}-${Constants.VoiceType.STANDARD}-D`, `${VoiceLanguageCode.KO_KR}-${Constants.VoiceType.WAVENET}-D`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
-    },
-  ],
-  [VoiceLanguageCode.MS_MY]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.MALAYALAM_INDIA,
-      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
-      voiceName: [`${VoiceLanguageCode.MS_MY}-${Constants.VoiceType.STANDARD}-A`, `${VoiceLanguageCode.MS_MY}-${Constants.VoiceType.WAVENET}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.MALAYALAM_INDIA,
-      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
-      voiceName: [`${VoiceLanguageCode.MS_MY}-${Constants.VoiceType.STANDARD}-B`, `${VoiceLanguageCode.MS_MY}-${Constants.VoiceType.WAVENET}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.MALAYALAM_INDIA,
-      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
-      voiceName: [`${VoiceLanguageCode.MS_MY}-${Constants.VoiceType.STANDARD}-C`, `${VoiceLanguageCode.MS_MY}-${Constants.VoiceType.WAVENET}-C`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.MALAYALAM_INDIA,
-      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
-      voiceName: [`${VoiceLanguageCode.MS_MY}-${Constants.VoiceType.STANDARD}-D`, `${VoiceLanguageCode.MS_MY}-${Constants.VoiceType.WAVENET}-D`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
-    },
-  ],
   [VoiceLanguageCode.NB_NO]: [
     {
       voiceLanguage: Constants.VoiceLanguage.NORWEGIAN_NORWAY,
@@ -559,38 +516,6 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.Googl
       voiceLanguage: Constants.VoiceLanguage.NORWEGIAN_NORWAY,
       voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
       voiceName: [`${VoiceLanguageCode.NB_NO}-${Constants.VoiceType.WAVENET}-E`, `${VoiceLanguageCode.NB_NO}-${Constants.VoiceType.STANDARD}-E`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
-    },
-  ],
-  [VoiceLanguageCode.NL_NL]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-C`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-D`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.DUTCH_NETHERLANDS,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.WAVENET}-E`, `${VoiceLanguageCode.NL_NL}-${Constants.VoiceType.STANDARD}-E`],
       ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
     },
   ],
@@ -626,6 +551,14 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.Googl
       ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
     },
   ],
+  [VoiceLanguageCode.PT_BR]: [
+    {
+      voiceLanguage: Constants.VoiceLanguage.PORTUGESE_BRAZIL,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.PT_BR}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.PT_BR}-${Constants.VoiceType.STANDARD}-A`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
+    },
+  ],
   [VoiceLanguageCode.PT_PT]: [
     {
       voiceLanguage: Constants.VoiceLanguage.PORTUGESE_PORTUGAL,
@@ -650,22 +583,6 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.Googl
       voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
       voiceName: [`${VoiceLanguageCode.PT_PT}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.PT_PT}-${Constants.VoiceType.STANDARD}-D`],
       ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-  ],
-  [VoiceLanguageCode.PT_BR]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.PORTUGESE_BRAZIL,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.PT_BR}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.PT_BR}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-  ],
-  [VoiceLanguageCode.RO_RO]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.ROMANIAN,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.RO_RO}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.RO_RO}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
     },
   ],
   [VoiceLanguageCode.RU_RU]: [
@@ -700,47 +617,37 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.Googl
       ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
     },
   ],
+  [VoiceLanguageCode.ES_ES]: [
+    {
+      voiceLanguage: Constants.VoiceLanguage.SPANISH_SPAIN,
+      voiceType: [Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.STANDARD}-A`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.SPANISH_SPAIN,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.STANDARD}-B`],
+      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.SPANISH_SPAIN,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.STANDARD}-C`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
+    },
+    {
+      voiceLanguage: Constants.VoiceLanguage.SPANISH_SPAIN,
+      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.ES_ES}-${Constants.VoiceType.STANDARD}-D`],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
+    },
+  ],
   [VoiceLanguageCode.SV_SE]: [
     {
       voiceLanguage: Constants.VoiceLanguage.SWEDISH_SWEDEN,
       voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
       voiceName: [`${VoiceLanguageCode.SV_SE}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.SV_SE}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-  ],
-  [VoiceLanguageCode.TA_IN]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.TAMIL_INDIA,
-      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
-      voiceName: [`${VoiceLanguageCode.TA_IN}-${Constants.VoiceType.STANDARD}-A`, `${VoiceLanguageCode.TA_IN}-${Constants.VoiceType.WAVENET}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.TAMIL_INDIA,
-      voiceType: [Constants.VoiceType.STANDARD, Constants.VoiceType.WAVENET],
-      voiceName: [`${VoiceLanguageCode.TA_IN}-${Constants.VoiceType.STANDARD}-B`, `${VoiceLanguageCode.TA_IN}-${Constants.VoiceType.WAVENET}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-  ],
-  [VoiceLanguageCode.TE_IN]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.TELUGU_INDIA,
-      voiceType: [Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.TE_IN}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.TELUGU_INDIA,
-      voiceType: [Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.TE_IN}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-  ],
-  [VoiceLanguageCode.TH_TH]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.THAI_THAILAND,
-      voiceType: [Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.TH_TH}-${Constants.VoiceType.STANDARD}-A`],
       ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
     },
   ],
@@ -784,56 +691,30 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, Constants.Googl
       ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
     },
   ],
-  [VoiceLanguageCode.VI_VN]: [
+  [VoiceLanguageCode.DA_DK]: [
     {
-      voiceLanguage: Constants.VoiceLanguage.VIETNAMESE_VIETNAM,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.VI_VN}-${Constants.VoiceType.WAVENET}-A`, `${VoiceLanguageCode.VI_VN}-${Constants.VoiceType.STANDARD}-A`],
+      voiceLanguage: Constants.VoiceLanguage.DANISH_DENMARK,
+      voiceName: [`${VoiceLanguageCode.DA_DK}-${Constants.VoiceType.STANDARD}-A`, `${VoiceLanguageCode.DA_DK}-${Constants.VoiceType.WAVENET}-A`],
+      voiceType: [],
       ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
     },
     {
-      voiceLanguage: Constants.VoiceLanguage.VIETNAMESE_VIETNAM,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.VI_VN}-${Constants.VoiceType.WAVENET}-B`, `${VoiceLanguageCode.VI_VN}-${Constants.VoiceType.STANDARD}-B`],
+      voiceLanguage: Constants.VoiceLanguage.DANISH_DENMARK,
+      voiceName: [`${VoiceLanguageCode.DA_DK}-${Constants.VoiceType.STANDARD}-C`, `${VoiceLanguageCode.DA_DK}-${Constants.VoiceType.WAVENET}-C`],
+      voiceType: [],
       ssmlGender: `${Constants.SSMLGender.MALE}-1`,
     },
     {
-      voiceLanguage: Constants.VoiceLanguage.VIETNAMESE_VIETNAM,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.VI_VN}-${Constants.VoiceType.WAVENET}-C`, `${VoiceLanguageCode.VI_VN}-${Constants.VoiceType.STANDARD}-C`],
+      voiceLanguage: Constants.VoiceLanguage.DANISH_DENMARK,
+      voiceName: [`${VoiceLanguageCode.DA_DK}-${Constants.VoiceType.STANDARD}-D`, `${VoiceLanguageCode.DA_DK}-${Constants.VoiceType.WAVENET}-D`],
+      voiceType: [],
       ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
     },
     {
-      voiceLanguage: Constants.VoiceLanguage.VIETNAMESE_VIETNAM,
-      voiceType: [Constants.VoiceType.WAVENET, Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.VI_VN}-${Constants.VoiceType.WAVENET}-D`, `${VoiceLanguageCode.VI_VN}-${Constants.VoiceType.STANDARD}-D`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
-    },
-  ],
-  [VoiceLanguageCode.YUE_HK]: [
-    {
-      voiceLanguage: Constants.VoiceLanguage.CHINESE_HONG_KONG,
-      voiceType: [Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.YUE_HK}-${Constants.VoiceType.STANDARD}-A`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.CHINESE_HONG_KONG,
-      voiceType: [Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.YUE_HK}-${Constants.VoiceType.STANDARD}-B`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.CHINESE_HONG_KONG,
-      voiceType: [Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.YUE_HK}-${Constants.VoiceType.STANDARD}-C`],
-      ssmlGender: `${Constants.SSMLGender.FEMALE}-2`,
-    },
-    {
-      voiceLanguage: Constants.VoiceLanguage.CHINESE_HONG_KONG,
-      voiceType: [Constants.VoiceType.STANDARD],
-      voiceName: [`${VoiceLanguageCode.YUE_HK}-${Constants.VoiceType.STANDARD}-D`],
-      ssmlGender: `${Constants.SSMLGender.MALE}-2`,
+      voiceLanguage: Constants.VoiceLanguage.DANISH_DENMARK,
+      voiceName: [`${VoiceLanguageCode.DA_DK}-${Constants.VoiceType.STANDARD}-E`, `${VoiceLanguageCode.DA_DK}-${Constants.VoiceType.WAVENET}-E`],
+      voiceType: [],
+      ssmlGender: `${Constants.SSMLGender.FEMALE}-3`,
     },
   ],
 };
