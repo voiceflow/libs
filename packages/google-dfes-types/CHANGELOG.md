@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@1.4.1...@voiceflow/google-dfes-types@1.5.0) (2021-10-01)
+
+
+### Features
+
+* **dfes:** updates locales (VF-1614) ([#81](https://github.com/voiceflow/libs/issues/81)) ([440857c](https://github.com/voiceflow/libs/commit/440857c96d7a50a05cd39b30b8b55332b186d67e))
+
+
+
+
+
 ## [1.4.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@1.4.0...@voiceflow/google-dfes-types@1.4.1) (2021-09-30)
 
 **Note:** Version bump only for package @voiceflow/google-dfes-types
