@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
-import { Button, Node as BaseNode } from '@voiceflow/base-types';
+import { Button, Node as BaseNode, Request } from '@voiceflow/base-types';
 import { Node } from '@voiceflow/voice-types';
 
 import { Voice } from '@/constants';
+
+import { ButtonNode } from './buttons';
 
 export interface StepData extends Node.Interaction.StepData<Voice>, Button.StepButton {}
 
@@ -18,7 +20,8 @@ export interface Node
   extends Omit<Node.Interaction.Node, 'interactions'>,
     BaseNode.Utils.NodeNextIDs,
     Node.Utils.NodeNoMatch,
-    Node.Utils.NodeReprompt {
+    Node.Utils.NodeReprompt,
+    Omit<Request.NodeButton, 'buttons'> {
   interactions: NodeInteraction[];
-  buttons?: ({ name: string; nextID: string | null; type: 'PATH' | 'INTENT_PATH' } | { name: string; type: 'INTENT'; intentName: string })[];
+  buttons?: ButtonNode[];
 }
