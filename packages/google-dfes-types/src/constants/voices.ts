@@ -3,15 +3,15 @@ import { Constants } from '@voiceflow/google-types';
 import { Locale, VoiceLanguageCode } from './locales';
 
 export const LocaleCodeToCountryLanguage: Record<Locale, Constants.VoiceLanguage> = {
-  [Locale.BN]: Constants.VoiceLanguage.BENGALI_INDIA,
+  [Locale.BN_IN]: Constants.VoiceLanguage.BENGALI_INDIA,
   [Locale.ZH_HK]: Constants.VoiceLanguage.CHINESE_HONG_KONG,
   [Locale.ZH_TW]: Constants.VoiceLanguage.CHINESE_TAIWAN,
   [Locale.ZH_CN]: Constants.VoiceLanguage.MANDARIN_CHINESE,
   [Locale.NL]: Constants.VoiceLanguage.DUTCH,
-  [Locale.EN]: Constants.VoiceLanguage.ENGLISH_US,
-  [Locale.FIL]: Constants.VoiceLanguage.FILIPINO_PHILIPPINES,
-  [Locale.FI]: Constants.VoiceLanguage.FINNISH_FINLAND,
-  [Locale.FR]: Constants.VoiceLanguage.FRENCH_FRANCE,
+  [Locale.EN_US]: Constants.VoiceLanguage.ENGLISH_US,
+  [Locale.FIL_PH]: Constants.VoiceLanguage.FILIPINO_PHILIPPINES,
+  [Locale.FI_FI]: Constants.VoiceLanguage.FINNISH_FINLAND,
+  [Locale.FR_FR]: Constants.VoiceLanguage.FRENCH_FRANCE,
   [Locale.DE]: Constants.VoiceLanguage.GERMAN_GERMANY,
   [Locale.HI]: Constants.VoiceLanguage.HINDI_INDIA,
   [Locale.ID]: Constants.VoiceLanguage.INDONASIAN_INDONESIA,
