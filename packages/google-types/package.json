@@ -9,7 +9,9 @@
   "dependencies": {
     "@voiceflow/api-sdk": "^1.42.1",
     "@voiceflow/base-types": "^1.9.2",
+    "@voiceflow/chat-types": "^1.4.21",
     "@voiceflow/common": "6.8.1",
+    "@voiceflow/general-types": "^2.0.2",
     "@voiceflow/voice-types": "^1.4.22",
     "googleapis": "^60.0.1"
   },
