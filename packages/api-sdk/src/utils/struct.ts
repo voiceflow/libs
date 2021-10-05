@@ -38,3 +38,7 @@ export const createPutAndPostStruct = <S extends BaseSchema, K extends keyof Sch
     ? dynamicObject({ ...createScheme, [idKey]: s.optional(schema[idKey as string]) })
     : (s.object({ ...createScheme, [idKey]: s.optional(schema[idKey as string]) }) as any);
 };
+
+export const getWindow = () => {
+  return typeof window === 'undefined' ? null : window;
+};
