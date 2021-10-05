@@ -1,3 +1,5 @@
+import atob from 'atob';
+
 import { CreatorID } from '@/models';
 import { getWindow } from '@/utils';
 

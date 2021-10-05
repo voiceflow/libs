@@ -8,13 +8,15 @@
   },
   "dependencies": {
     "@voiceflow/common": "^6.9.3",
+    "atob": "^2.1.2",
     "axios": "^0.21.1",
-    "superstruct": "^0.10.12"
+    "superstruct": "^0.10.12",
+    "@types/chai": "^4.2.11",
+    "@types/jsonwebtoken": "^8.5.0"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
-    "@types/chai": "^4.2.11",
-    "@types/jsonwebtoken": "^8.5.0",
+    "@types/atob": "^2.1.2",
     "@types/mocha": "^8.0.0",
     "@types/sinon": "^10.0.0",
     "chai": "^4.2.0",
