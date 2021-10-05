@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.42.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.42.1...@voiceflow/api-sdk@1.42.2) (2021-10-05)
+
+
+### Bug Fixes
+
+* revert common crypto in jwt (VF-1926) ([#83](https://github.com/voiceflow/libs/issues/83)) ([f397881](https://github.com/voiceflow/libs/commit/f397881dc15807f50ddfbdff335930a9e15c341f))
+
+
+
+
+
 ## [1.42.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.42.0...@voiceflow/api-sdk@1.42.1) (2021-10-04)
 
 
