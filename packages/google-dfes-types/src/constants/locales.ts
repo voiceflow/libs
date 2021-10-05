@@ -36,8 +36,8 @@ export enum Language {
 
 export enum Locale {
   // Bengali
-  BN_BD = 'bn_bd',
-  BN_IN = 'bn_in',
+  BN_BD = 'bn-BD',
+  BN_IN = 'bn-IN',
 
   // Chinese
   ZH_HK = 'zh-HK',
@@ -54,14 +54,14 @@ export enum Locale {
   FIL_PH = 'fil-PH',
 
   // Finnish
-  FI_FI = 'fi_fi',
+  FI_FI = 'fi-FI',
 
   // English
-  EN_AU = 'en_au',
-  EN_CA = 'en_ca',
-  EN_GB = 'en_gb',
-  EN_IN = 'en_in',
-  EN_US = 'en_us',
+  EN_AU = 'en-AU',
+  EN_CA = 'en-CA',
+  EN_GB = 'en-GB',
+  EN_IN = 'en-IN',
+  EN_US = 'en-US',
 
   // French
   FR_CA = 'fr-CA',
