@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.37.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.36.3...@voiceflow/google-types@1.37.0) (2021-10-05)
+
+
+### Features
+
+* buttons df es (VF-1897) ([#80](https://github.com/voiceflow/libs/issues/80)) ([e7dc7fb](https://github.com/voiceflow/libs/commit/e7dc7fb72845ad0d00d348d739f690433ead3f0a))
+
+
+
+
+
 ## [1.36.3](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.36.2...@voiceflow/google-types@1.36.3) (2021-10-04)
 
 **Note:** Version bump only for package @voiceflow/google-types
