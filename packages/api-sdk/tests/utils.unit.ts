@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import * as s from 'superstruct';
 
-import { createPutAndPostStruct, dynamicObject, getWindow } from '@/utils';
+import { createPutAndPostStruct, dynamicObject } from '@/utils';
 
 describe('utils', () => {
   it('createPutAndPostStruct', () => {
@@ -65,19 +65,5 @@ describe('utils', () => {
     } catch (err) {
       expect(err).to.be.instanceOf(s.StructError);
     }
-  });
-
-  it('getWindow', () => {
-    expect(getWindow()).to.be.eql(null);
-
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    global.window = {};
-
-    expect(getWindow()).to.be.eql({});
-
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    global.window = undefined;
   });
 });

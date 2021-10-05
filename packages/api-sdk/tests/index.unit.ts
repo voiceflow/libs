@@ -22,7 +22,8 @@ const createSDK = () => {
   };
 };
 
-const authorization = JWT.sign({}, 'test');
+const USER_HASH = 'UserHash_16chars';
+const AUTHORIZATION = USER_HASH + JWT.sign({}, 'test');
 
 describe('ApiSDK', () => {
   afterEach(() => {
@@ -50,10 +51,10 @@ describe('ApiSDK', () => {
   it('.generateClient', () => {
     const { sdk, assert } = createSDK();
 
-    const client = sdk.generateClient({ authorization });
+    const client = sdk.generateClient({ authorization: AUTHORIZATION });
 
     expect(client).to.be.instanceOf(Client);
     expect(assert.callCount).to.eql(2);
-    expect(assert.args[1]).to.eql([{ authorization }, SGenerateClientParams]);
+    expect(assert.args[1]).to.eql([{ authorization: AUTHORIZATION }, SGenerateClientParams]);
   });
 });
