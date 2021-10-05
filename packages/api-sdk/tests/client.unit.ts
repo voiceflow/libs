@@ -7,11 +7,12 @@ import { Analytics, APIKey, Diagram, Program, Project, PrototypeProgram, User, V
 
 const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User, APIKey, Analytics];
 
+const USER_HASH = 'UserHash_16chars';
 const createClient = (authorization?: string) =>
   new Client({
     clientKey: '123qwe123',
     apiEndpoint: 'apiEndpoint',
-    authorization: authorization ?? JWT.sign({}, 'test'),
+    authorization: authorization ?? `${USER_HASH}${JWT.sign({}, 'test')}`,
   });
 
 describe('Client', () => {

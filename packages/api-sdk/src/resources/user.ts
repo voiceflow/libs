@@ -1,24 +1,20 @@
-import atob from 'atob';
+import JWT from 'jsonwebtoken';
 
 import { CreatorID } from '@/models';
-import { getWindow } from '@/utils';
 
 export const parseJWT = <S>(token: string): S => {
-  const base64Url = token.split('.')[1];
+  let user = JWT.decode(token.substring(16), { json: true });
 
-  if (!base64Url) {
+  // try again without assuming the userHash is there
+  if (!user) {
+    user = JWT.decode(token, { json: true });
+  }
+
+  if (!user) {
     throw new RangeError('Invalid JWT');
   }
 
-  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  const jsonPayload = decodeURIComponent(
-    (getWindow()?.atob || atob)(base64)
-      .split('')
-      .map((c) => `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`)
-      .join('')
-  );
-
-  return JSON.parse(jsonPayload);
+  return user as unknown as S;
 };
 
 type UserToken = {
