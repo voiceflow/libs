@@ -5,6 +5,8 @@ import { Node } from '@voiceflow/voice-types';
 
 import { Voice } from '@/constants';
 
+import { ButtonNode } from './buttons';
+
 export interface StepData extends Node.Interaction.StepData<Voice>, Button.StepButton {}
 
 export interface Step extends Node.Interaction.Step<StepData> {}
@@ -19,6 +21,7 @@ export interface Node
     BaseNode.Utils.NodeNextIDs,
     Node.Utils.NodeNoMatch,
     Node.Utils.NodeReprompt,
-    Request.NodeButton {
+    Omit<Request.NodeButton, 'buttons'> {
   interactions: NodeInteraction[];
+  buttons?: ButtonNode[];
 }
