@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.42.2...@voiceflow/api-sdk@2.0.0) (2021-10-06)
+
+
+### Performance Improvements
+
+* jwt parse token (VF-000) ([#85](https://github.com/voiceflow/libs/issues/85)) ([eda9277](https://github.com/voiceflow/libs/commit/eda9277405447180a396bf8970f1097a2b9ac572))
+
+
+### BREAKING CHANGES
+
+* use JWT to parse authentication tokens
+
+* chore: add types
+
+
+
+
+
 ## [1.42.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.42.1...@voiceflow/api-sdk@1.42.2) (2021-10-05)
 
 
