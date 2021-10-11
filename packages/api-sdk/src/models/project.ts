@@ -61,6 +61,7 @@ export const SReportTag = s.object({
   tagID: STagID,
   label: s.string(),
 });
+export type ReportTag = s.StructType<typeof SReportTag>;
 
 export const SProject = s.object({
   _id: SProjectID,

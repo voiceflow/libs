@@ -46,6 +46,12 @@ export type ProgramID = s.StructType<typeof SProgramID>;
 export const SDiagramID = s.string();
 export type DiagramID = s.StructType<typeof SDiagramID>;
 
+export const STranscriptID = s.string();
+export type TranscriptID = s.StructType<typeof STranscriptID>;
+
+export const STurnID = s.string();
+export type TurnID = s.StructType<typeof STranscriptID>;
+
 export const SIntentInput = s.object({
   text: s.string(),
   slots: s.optional(s.array(s.string())),

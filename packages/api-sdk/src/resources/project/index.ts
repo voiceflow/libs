@@ -1,7 +1,19 @@
 import * as s from 'superstruct';
 
 import type Fetch from '@/fetch';
-import { BasePlatformData, Project, ProjectID, ProjectPrototype, SProject, SWorkspaceID, Version, VersionPlatformData, WorkspaceID } from '@/models';
+import {
+  BasePlatformData,
+  Project,
+  ProjectID,
+  ProjectPrototype,
+  ReportTag,
+  SProject,
+  SWorkspaceID,
+  TagID,
+  Version,
+  VersionPlatformData,
+  WorkspaceID,
+} from '@/models';
 
 import { Fields } from '../base';
 import CrudResource from '../crud';
@@ -108,6 +120,26 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
 
     const { data } = await this.fetch.get<P>(`${this._getCRUDEndpoint(id)}/prototype`);
 
+    return data;
+  }
+
+  public async getReportTags(id: ProjectID) {
+    const { data } = await this.fetch.get(`${this._getCRUDEndpoint(id)}/tags`);
+    return data;
+  }
+
+  public async updateReportTag(id: ProjectID, tagID: TagID, body: ReportTag) {
+    const { data } = await this.fetch.patch(`${this._getCRUDEndpoint(id)}/tags/${tagID}`, body);
+    return data;
+  }
+
+  public async createReportTag(id: ProjectID, body: ReportTag) {
+    const { data } = await this.fetch.put(`${this._getCRUDEndpoint(id)}/tags`, body);
+    return data;
+  }
+
+  public async deleteReportTag(id: ProjectID, tagID: TagID) {
+    const { data } = await this.fetch.delete(`${this._getCRUDEndpoint(id)}/tags/${tagID}`);
     return data;
   }
 }
