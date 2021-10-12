@@ -24,7 +24,7 @@ export class PublicClient {
 
   public analytics: Analytics;
 
-  public transcripts: Transcript;
+  public transcript: Transcript;
 
   public apiKey: APIKey;
 
@@ -38,7 +38,7 @@ export class PublicClient {
     this.version = new Version(this.fetch);
     this.program = new Program(this.fetch);
     this.diagram = new Diagram(this.fetch);
-    this.transcripts = new Transcript(this.fetch);
+    this.transcript = new Transcript(this.fetch);
     this.analytics = new Analytics(this.fetch, { encryption: analyticsEncryption });
     this.prototypeProgram = new PrototypeProgram(this.fetch);
   }
