@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.9.4...@voiceflow/base-types@1.10.0) (2021-10-12)
+
+
+### Features
+
+* add topic command (VF-000) ([#91](https://github.com/voiceflow/libs/issues/91)) ([dce7f3d](https://github.com/voiceflow/libs/commit/dce7f3d0ed3f4c328671000e79ac18f1d89afec5))
+
+
+
+
+
 ## [1.9.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.9.3...@voiceflow/base-types@1.9.4) (2021-10-06)
 
 **Note:** Version bump only for package @voiceflow/base-types
