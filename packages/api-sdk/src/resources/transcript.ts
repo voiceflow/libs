@@ -21,9 +21,9 @@ class TranscriptResource extends CrudResource<typeof STranscript['schema'], Mode
     });
   }
 
-  public async getTranscripts(projectID: ProjectID) {
+  public async getTranscripts(projectID: ProjectID, queryParams: string) {
     s.assert(projectID, SProjectID);
-    const { data } = await this.fetch.get(`${ENDPOINT}/${projectID}`);
+    const { data } = await this.fetch.get(`${ENDPOINT}/${projectID}?${queryParams ?? ''}`);
     return data;
   }
 
@@ -65,8 +65,8 @@ class TranscriptResource extends CrudResource<typeof STranscript['schema'], Mode
     return data;
   }
 
-  public async getExport(projectID: ProjectID, transcriptID: TranscriptID) {
-    const { data } = await this.fetch.get(`${ENDPOINT}/${projectID}/${transcriptID}/export`);
+  public async getExport(projectID: ProjectID, transcriptID: TranscriptID, params: { format: string }) {
+    const { data } = await this.fetch.get(`${ENDPOINT}/${projectID}/${transcriptID}/export?${new URLSearchParams(params).toString()}\``);
     return data;
   }
 }
