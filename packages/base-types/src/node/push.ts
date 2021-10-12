@@ -20,7 +20,7 @@ export interface Step<Data = StepData> extends BaseStep<Data> {
 
 /**
  * The old implementation of commands, used only in alexa and google
- * use Node.Utils.AnyCommand|JumpCommand|PushCommand for other platforms
+ * use Node.Utils.AnyCommand for other platforms
  */
 export interface Command extends BaseCommand, Required<SlotMappings> {
   type: NodeType.COMMAND;

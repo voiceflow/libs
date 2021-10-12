@@ -7,6 +7,7 @@ import { BaseEvent } from './event';
 export enum CommandType {
   JUMP = 'jump',
   PUSH = 'push',
+  TOPIC = 'topic',
 }
 
 export interface TypedBaseCommand<Event extends BaseEvent = BaseEvent> extends BaseCommand {
@@ -24,4 +25,10 @@ export interface PushCommand<Event extends BaseEvent = BaseEvent> extends TypedB
   diagramID: Nullable<string>;
 }
 
-export type AnyCommand<Event extends BaseEvent = BaseEvent> = JumpCommand<Event> | PushCommand<Event>;
+export interface TopicCommand<Event extends BaseEvent = BaseEvent> extends TypedBaseCommand<Event> {
+  type: CommandType.TOPIC;
+  nodeID: Nullable<string>;
+  diagramID: Nullable<string>;
+}
+
+export type AnyCommand<Event extends BaseEvent = BaseEvent> = JumpCommand<Event> | PushCommand<Event> | TopicCommand<Event>;
