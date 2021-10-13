@@ -1,6 +1,7 @@
 import * as _v1 from './_v1';
 import * as Api from './api';
 import * as Code from './code';
+import * as Component from './component';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as General from './general';
@@ -22,6 +23,7 @@ export * as Buttons from './buttons';
 export * as Capture from './capture';
 export * as Card from './card';
 export * as Code from './code';
+export * as Component from './component';
 export * from './constants';
 export * as Directive from './directive';
 export * as Exit from './exit';
@@ -50,6 +52,7 @@ export type AnyCommonStep =
   | Set.Step
   | SetV2.Step
   | Flow.Step
+  | Component.Step
   | Start.Step
   | Code.Step
   | Intent.Step
