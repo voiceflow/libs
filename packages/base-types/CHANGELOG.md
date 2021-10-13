@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.10.0...@voiceflow/base-types@1.11.0) (2021-10-13)
+
+
+### Features
+
+* extend jump command, remove topic one ([c51a9f2](https://github.com/voiceflow/libs/commit/c51a9f207c650f3298004daad5194ba98e6367b3))
+
+
+
+
+
 # [1.10.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.9.4...@voiceflow/base-types@1.10.0) (2021-10-12)
 
 
