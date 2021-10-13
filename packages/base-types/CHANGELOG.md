@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.11.0...@voiceflow/base-types@1.11.1) (2021-10-13)
+
+
+### Bug Fixes
+
+* add component ([0b9edb1](https://github.com/voiceflow/libs/commit/0b9edb133f0473d863df4103f8572c42137bd897))
+
+
+
+
+
 # [1.11.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.10.0...@voiceflow/base-types@1.11.0) (2021-10-13)
 
 
