@@ -6,22 +6,10 @@ setup: true
 orbs:
   path-filtering: circleci/path-filtering@0.0.2
 
-# Reusable YAML chunks
-defaults:
-  ignore_autorebase_filters: &ignore_autorebase_filters
-    branches:
-      ignore:
-        - /rebase-pull-request-.*/
-        - /cherry-pick-rebase-pull-request-.*/
-    tags:
-      only: /^@voiceflow/(creator-app|admin-app|realtime)@[0-9]*(\.[0-9]*)*$/
-
 workflows:
   generate-config:
     jobs:
       - path-filtering/filter:
-          filters:
-            <<: *ignore_autorebase_filters
           base-revision: master
           config-path: .circleci/continue-config.yml
           mapping: |
