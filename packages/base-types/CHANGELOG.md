@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.11.1...@voiceflow/base-types@1.11.2) (2021-10-14)
+
+
+### Bug Fixes
+
+* intent jump diagramID (VF-1838) ([122f8ab](https://github.com/voiceflow/libs/commit/122f8ab451e5616225d4fb51c12021c88f480880))
+
+
+
+
+
 ## [1.11.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.11.0...@voiceflow/base-types@1.11.1) (2021-10-13)
 
 
