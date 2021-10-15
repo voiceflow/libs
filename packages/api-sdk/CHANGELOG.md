@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@2.0.0...@voiceflow/api-sdk@2.0.1) (2021-10-15)
+
+
+### Bug Fixes
+
+* **deps:** bump dependency to test circleci workflow (VF-000) ([#94](https://github.com/voiceflow/libs/issues/94)) ([c392d77](https://github.com/voiceflow/libs/commit/c392d77e2e68da76deb487f2a9c57bd89e1d73fa))
+
+
+
+
+
 # [2.0.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@1.42.2...@voiceflow/api-sdk@2.0.0) (2021-10-06)
 
 
