@@ -106,3 +106,5 @@ sonar/
 nyc_coverage*
 
 .npmrc
+
+.DS_Store
