@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.11.2...@voiceflow/base-types@1.12.0) (2021-10-15)
+
+
+### Features
+
+* add start node label ([ec8abdc](https://github.com/voiceflow/libs/commit/ec8abdc89db18dcc7d1e5a28cac349d5d1f0f4a1))
+
+
+
+
+
 ## [1.11.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.11.1...@voiceflow/base-types@1.11.2) (2021-10-14)
 
 
