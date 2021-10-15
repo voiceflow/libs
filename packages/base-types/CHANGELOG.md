@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.12.1...@voiceflow/base-types@1.12.2) (2021-10-15)
+
+
+### Bug Fixes
+
+* move model types from api-sdk to base-types (VF-1912) ([#97](https://github.com/voiceflow/libs/issues/97)) ([3ab37fe](https://github.com/voiceflow/libs/commit/3ab37fe8aa530d913883eb6cb4403a0c828b2e8e))
+
+
+
+
+
 ## [1.12.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.12.0...@voiceflow/base-types@1.12.1) (2021-10-15)
 
 **Note:** Version bump only for package @voiceflow/base-types
