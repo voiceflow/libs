@@ -1,5 +1,4 @@
-import { VersionPrototype } from '@voiceflow/api-sdk';
-import { Node } from '@voiceflow/base-types';
+import { Node, VersionPrototype } from '@voiceflow/base-types';
 import { Version } from '@voiceflow/voice-types';
 
 import { Locale, Voice } from '@/constants';

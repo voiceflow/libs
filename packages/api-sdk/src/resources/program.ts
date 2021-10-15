@@ -1,5 +1,5 @@
 import type Fetch from '@/fetch';
-import { BaseCommand, BaseNode, Program, ProgramID, SProgram } from '@/models';
+import { BaseCommand, BaseNode, Program, ProgramID } from '@voiceflow/base-types';
 
 import { Fields } from './base';
 import CrudResource from './crud';
@@ -9,14 +9,12 @@ const ENDPOINT = 'programs';
 export const modelIDKey = 'id';
 export type ModelIDKey = typeof modelIDKey;
 
-class ProgramResource extends CrudResource<typeof SProgram['schema'], ModelIDKey, ProgramResource> {
+class ProgramResource extends CrudResource<Program, ModelIDKey, ProgramResource> {
   constructor(fetch: Fetch, { resourceEndpoint = ENDPOINT }: { resourceEndpoint?: string } = {}) {
     super({
       fetch,
       clazz: ProgramResource,
-      schema: SProgram.schema,
       endpoint: resourceEndpoint,
-      modelIDKey,
     });
   }
 

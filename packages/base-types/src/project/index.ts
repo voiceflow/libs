@@ -1,4 +1,4 @@
-import { BasePlatformData, Project } from '@voiceflow/api-sdk';
+import { BasePlatformData, Project } from '../models';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface BaseProject extends Project<BasePlatformData, BasePlatformData> {}

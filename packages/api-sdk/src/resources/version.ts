@@ -1,18 +1,15 @@
-import * as s from 'superstruct';
-
 import Fetch from '@/fetch';
 import {
   BasePlatformData,
   Diagram,
   Program,
   Project,
-  SVersion,
   Version,
   VersionDiagramResponce,
   VersionID,
   VersionPlatformData,
   VersionPrototype,
-} from '@/models';
+} from '@voiceflow/base-types';
 
 import { Fields } from './base';
 import CrudResource from './crud';
@@ -21,17 +18,12 @@ export const ENDPOINT = 'versions';
 
 export type ModelKey = '_id';
 
-class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, VersionResource, 'creatorID'> {
-  _partialPlatformData = s.partial(SVersion.schema.platformData);
-
+class VersionResource extends CrudResource<Version<VersionPlatformData>, ModelKey, VersionResource, 'creatorID'> {
   constructor(fetch: Fetch) {
     super({
       fetch,
       clazz: VersionResource,
-      schema: SVersion.schema,
       endpoint: ENDPOINT,
-      modelIDKey: '_id',
-      postPutExcludedFields: ['creatorID'],
     });
   }
 
@@ -68,26 +60,18 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
   }
 
   public async updatePlatformData<P extends Partial<VersionPlatformData>>(id: VersionID, body: P): Promise<P> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/platform`, body);
 
     return data;
   }
 
   public async updatePlatformDataSettings<P extends Partial<VersionPlatformData['settings']>>(id: VersionID, body: P): Promise<P> {
-    this._assertModelID(id);
-    s.assert(body, SVersion.schema.platformData.schema.settings);
-
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/platform`, body, { path: 'settings' });
 
     return data;
   }
 
   public async updatePlatformDataPublishing<P extends Partial<VersionPlatformData['publishing']>>(id: VersionID, body: P): Promise<P> {
-    this._assertModelID(id);
-    s.assert(body, SVersion.schema.platformData.schema.publishing);
-
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/platform`, body, { path: 'publishing' });
 
     return data;
@@ -98,8 +82,6 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
   public async getPrograms<T extends Program<any> = Program>(id: VersionID): Promise<T[]>;
 
   public async getPrograms(id: VersionID, fields?: Fields): Promise<Program[]> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.get<Program[]>(`${this._getCRUDEndpoint(id)}/programs${this._getFieldsQuery(fields)}`);
 
     return data;
@@ -110,8 +92,6 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
   public async getPrototypePrograms<T extends Program<any> = Program>(id: VersionID): Promise<T[]>;
 
   public async getPrototypePrograms(id: VersionID, fields?: Fields): Promise<Program[]> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.get<Program[]>(`${this._getCRUDEndpoint(id)}/prototype-programs${this._getFieldsQuery(fields)}`);
 
     return data;
@@ -122,8 +102,6 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
   public async getDiagrams<T extends Diagram<any> = Diagram>(id: VersionID): Promise<T[]>;
 
   public async getDiagrams(id: VersionID, fields?: Fields): Promise<Diagram[]> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.get<Diagram[]>(`${this._getCRUDEndpoint(id)}/diagrams${this._getFieldsQuery(fields)}`);
 
     return data;
@@ -146,8 +124,6 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
     id: VersionID,
     options?: { programs?: boolean }
   ): Promise<{ project: Project<any, any>; version: Version<any>; diagrams: Record<string, Diagram>; programs?: Record<string, Program> }> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.get<{
       project: Project<any, any>;
       version: Version<any>;
@@ -159,8 +135,6 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
   }
 
   public async exportResponses(id: VersionID): Promise<VersionDiagramResponce[]> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.get<VersionDiagramResponce[]>(`${this._getCRUDEndpoint(id)}/export/responses`);
 
     return data;
@@ -176,8 +150,6 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
   }
 
   public async getPrototype<T extends VersionPrototype>(id: VersionID, body: { isPublic?: boolean } = {}): Promise<T> {
-    this._assertModelID(id);
-
     const query = body.isPublic ? `?isPublic=${body.isPublic}` : '';
     const { data } = await this.fetch.get<T>(`${this._getCRUDEndpoint(id)}/prototype${query}`);
 
@@ -185,33 +157,24 @@ class VersionResource extends CrudResource<typeof SVersion['schema'], ModelKey, 
   }
 
   public async updatePrototype<P extends Partial<P>>(id: VersionID, body: P): Promise<P> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/prototype`, body);
 
     return data;
   }
 
   public async updatePrototypeSettings<P extends Partial<VersionPrototype['settings']>>(id: VersionID, body: P): Promise<P> {
-    this._assertModelID(id);
-    s.assert(body, SVersion.schema.prototype.schema.settings);
-
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/prototype`, body, { path: 'settings' });
 
     return data;
   }
 
   public async checkPrototypeSharedLogin(id: VersionID, body: { password: string }): Promise<{ versionID: string }> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.put<{ versionID: string }>(`${this._getCRUDEndpoint(id)}/prototype/share/login`, body);
 
     return data;
   }
 
   public async getPrototypePlan(id: VersionID): Promise<{ plan: string }> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.get<{ plan: string }>(`${this._getCRUDEndpoint(id)}/prototype/plan`);
 
     return data;

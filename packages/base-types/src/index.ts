@@ -5,3 +5,4 @@ export * as Request from './request';
 export * as Text from './text';
 export * as Trace from './trace';
 export * as Version from './version';
+export * as Models from './models';

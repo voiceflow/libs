@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { BasePlatformData, Project } from '@voiceflow/api-sdk';
+import { BasePlatformData, Project } from '@voiceflow/base-types';
 
 import { BaseGoogleProjectMemberData, GoogleProjectMemberData } from './member';
 

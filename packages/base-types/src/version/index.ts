@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { StrictVersionPlatformData, Version } from '@voiceflow/api-sdk';
+import { StrictVersionPlatformData, Version } from '../models';
 
 import { BaseVersionSettings, defaultBaseVersionSettings } from './settings';
 

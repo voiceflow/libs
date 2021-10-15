@@ -1,7 +1,5 @@
-import * as s from 'superstruct';
-
 import type Fetch from '@/fetch';
-import { BasePlatformData, Project, ProjectID, ProjectPrototype, SProject, SWorkspaceID, Version, VersionPlatformData, WorkspaceID } from '@/models';
+import { BasePlatformData, Project, ProjectID, ProjectPrototype, Version, VersionPlatformData, WorkspaceID } from '@voiceflow/base-types';
 
 import { Fields } from '../base';
 import CrudResource from '../crud';
@@ -11,17 +9,14 @@ import MemberResource from './member';
 export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
-class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey, ProjectResource, 'creatorID'> {
+class ProjectResource extends CrudResource<Project<BasePlatformData, BasePlatformData>, ModelIDKey, ProjectResource, 'creatorID'> {
   public member: MemberResource;
 
   constructor(fetch: Fetch) {
     super({
       fetch,
       clazz: ProjectResource,
-      schema: SProject.schema,
       endpoint: ENDPOINT,
-      modelIDKey,
-      postPutExcludedFields: ['creatorID'],
     });
 
     this.member = new MemberResource(fetch);
@@ -34,8 +29,6 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
   public async list<P extends Project<any, any> = Project<BasePlatformData, BasePlatformData>>(workspaceID: WorkspaceID): Promise<P[]>;
 
   public async list(workspaceID: WorkspaceID, fields?: Fields): Promise<Project<any, any>[] | Partial<Project<any, any>>[]> {
-    s.assert(workspaceID, SWorkspaceID);
-
     const { data } = await this.fetch.get<Project<any, any>[] | Partial<Project<any, any>>[]>(
       `workspaces/${workspaceID}/projects${this._getFieldsQuery(fields)}`
     );
@@ -81,9 +74,6 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
   }
 
   public async updatePlatformData<P extends Partial<BasePlatformData>>(id: ProjectID, body: P): Promise<P> {
-    this._assertModelID(id);
-    s.assert(body, SProject.schema.platformData);
-
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/platform`, body);
 
     return data;
@@ -96,16 +86,12 @@ class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey
   public async getVersions<P extends VersionPlatformData>(id: ProjectID): Promise<Version<P>[]>;
 
   public async getVersions(id: ProjectID, fields?: string[]): Promise<Version<any>[]> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.get<Version<any>[]>(`${this._getCRUDEndpoint(id)}/versions${this._getFieldsQuery(fields)}`);
 
     return data;
   }
 
   public async getPrototype<P extends ProjectPrototype>(id: ProjectID): Promise<P> {
-    this._assertModelID(id);
-
     const { data } = await this.fetch.get<P>(`${this._getCRUDEndpoint(id)}/prototype`);
 
     return data;

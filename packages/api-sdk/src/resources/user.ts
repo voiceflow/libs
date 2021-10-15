@@ -1,6 +1,6 @@
 import JWT from 'jsonwebtoken';
 
-import { CreatorID } from '@/models';
+import { CreatorID } from '@voiceflow/base-types';
 
 export const parseJWT = <S>(token: string): S => {
   let user = JWT.decode(token.substring(16), { json: true });

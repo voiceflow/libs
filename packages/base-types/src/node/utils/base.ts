@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import { Nullable } from '@voiceflow/api-sdk';
 
-export { BaseCommand, BaseNode, BasePort, BaseStep } from '@voiceflow/api-sdk';
+export { BaseCommand, BaseNode, BasePort, BaseStep } from '../../models';
 
 export type NodeID = Nullable<string>;
 

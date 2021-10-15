@@ -83,59 +83,6 @@ describe('BaseResource', () => {
     expect(resource['_getFieldsQuery'](['key', 'key2'])).to.eql('?fields=key,key2');
   });
 
-  it('._assertModelID', () => {
-    const { schema, assert, resource } = createClient();
-
-    resource['_assertModelID']('1');
-
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', schema.id]);
-  });
-
-  it('._assertPatchBody', () => {
-    const { assert, resource } = createClient();
-
-    resource['_assertPatchBody']({
-      array: ['', 'q'],
-      number: 0,
-    });
-
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql([
-      {
-        array: ['', 'q'],
-        number: 0,
-      },
-      resource['patchStruct'],
-    ]);
-  });
-
-  it('._assertPutAndPostBody', () => {
-    const { assert, resource } = createClient();
-
-    resource['_assertPutAndPostBody']({
-      array: ['', 'q'],
-      number: 0,
-      object: {
-        string: '',
-        boolean: false,
-      },
-    });
-
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql([
-      {
-        array: ['', 'q'],
-        number: 0,
-        object: {
-          string: '',
-          boolean: false,
-        },
-      },
-      resource['putAndPostStruct'],
-    ]);
-  });
-
   it('.options', () => {
     const { fetch, resource, Resource } = createClient();
 

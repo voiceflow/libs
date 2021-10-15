@@ -1,8 +1,5 @@
-import * as s from 'superstruct';
-
 import type Fetch from '@/fetch';
-import { BaseDiagramNode, Diagram, DiagramID, NodeID, SDiagram, SNode, SNodeID, SNodePartial } from '@/models';
-import { createPutAndPostStruct } from '@/utils';
+import { BaseDiagramNode, Diagram, DiagramID, NodeID } from '@voiceflow/base-types';
 
 import { Fields } from './base';
 import CrudResource from './crud';
@@ -12,18 +9,12 @@ const ENDPOINT = 'diagrams';
 export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
-class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey, DiagramResource, 'modified'> {
-  private _nodePutAndPostStruct = createPutAndPostStruct(SNode.schema, 'id', [], true);
-
-  private _nodePatchStruct = createPutAndPostStruct(SNodePartial.schema, 'id', [], true);
-
+class DiagramResource extends CrudResource<Diagram, ModelIDKey, DiagramResource, 'modified'> {
   constructor(fetch: Fetch) {
     super({
       fetch,
       clazz: DiagramResource,
-      schema: SDiagram.schema,
       endpoint: ENDPOINT,
-      modelIDKey,
     });
   }
 
@@ -66,10 +57,6 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     nodeID: NodeID,
     body: T
   ): Promise<T & Pick<BaseDiagramNode, 'nodeID'>> {
-    this._assertModelID(id);
-    s.assert(nodeID, SNodeID);
-    s.assert(body, this._nodePutAndPostStruct);
-
     const { data } = await this.fetch.put<T & Pick<BaseDiagramNode, 'nodeID'>>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
 
     return data;
@@ -80,19 +67,12 @@ class DiagramResource extends CrudResource<typeof SDiagram['schema'], ModelIDKey
     nodeID: NodeID,
     body: Partial<T>
   ): Promise<T & Pick<BaseDiagramNode, 'nodeID'>> {
-    this._assertModelID(id);
-    s.assert(nodeID, SNodeID);
-    s.assert(body, this._nodePatchStruct);
-
     const { data } = await this.fetch.patch<T & Pick<BaseDiagramNode, 'nodeID'>>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
 
     return data;
   }
 
   public async deleteNode(id: DiagramID, nodeID: NodeID): Promise<string> {
-    this._assertModelID(id);
-    s.assert(nodeID, SNodeID);
-
     const { data } = await this.fetch.delete<string>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`);
 
     return data;

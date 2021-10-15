@@ -1,4 +1,4 @@
-import { VersionPrototype } from '@voiceflow/api-sdk';
+import { VersionPrototype } from '@voiceflow/base-types';
 import { Constants } from '@voiceflow/general-types';
 import { Version } from '@voiceflow/voice-types';
 

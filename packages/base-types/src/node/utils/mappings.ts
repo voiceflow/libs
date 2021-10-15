@@ -1,4 +1,4 @@
-import { SlotMapping } from '@voiceflow/api-sdk';
+import { SlotMapping } from '../../models';
 
 export interface SlotMappings {
   mappings?: SlotMapping[];

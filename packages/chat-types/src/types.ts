@@ -1,19 +1,18 @@
-import type * as ApiSDK from '@voiceflow/api-sdk';
-import { Node as BaseNode, Text } from '@voiceflow/base-types';
+import { Node as BaseNode, Text, IntentSlotDialog as _IntentSlotDialog, IntentSlot as _IntentSlot, Intent as _Intent } from '@voiceflow/base-types';
 
 export interface Prompt extends BaseNode.Utils.DataID {
   content: Text.SlateTextValue;
 }
 
-export interface IntentSlotDialog extends ApiSDK.IntentSlotDialog {
+export interface IntentSlotDialog extends _IntentSlotDialog {
   prompt: Prompt[];
   confirm: Prompt[];
 }
 
-export interface IntentSlot extends ApiSDK.IntentSlot {
+export interface IntentSlot extends _IntentSlot {
   dialog: IntentSlotDialog;
 }
 
-export interface Intent extends ApiSDK.Intent {
+export interface Intent extends _Intent {
   slots?: IntentSlot[];
 }

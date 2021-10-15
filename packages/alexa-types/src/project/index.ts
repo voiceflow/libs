@@ -1,4 +1,4 @@
-import { Member } from '@voiceflow/api-sdk';
+import { Member } from '@voiceflow/base-types';
 import { Project } from '@voiceflow/voice-types';
 
 import { AlexaProjectMemberData } from './member';

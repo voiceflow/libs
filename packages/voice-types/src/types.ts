@@ -1,4 +1,4 @@
-import type * as ApiSDK from '@voiceflow/api-sdk';
+import { IntentSlotDialog as _IntentSlotDialog, IntentSlot as _IntentSlot, Intent as _Intent } from '@voiceflow/base-types';
 
 export interface Prompt<Voice> {
   desc?: string; // desc when voice is 'audio'
@@ -12,15 +12,15 @@ export interface IntentPrompt<Voice> {
   voice?: Voice;
 }
 
-export interface IntentSlotDialog<Voice> extends ApiSDK.IntentSlotDialog {
+export interface IntentSlotDialog<Voice> extends _IntentSlotDialog {
   prompt: IntentPrompt<Voice>[];
   confirm: IntentPrompt<Voice>[];
 }
 
-export interface IntentSlot<Voice> extends ApiSDK.IntentSlot {
+export interface IntentSlot<Voice> extends _IntentSlot {
   dialog: IntentSlotDialog<Voice>;
 }
 
-export interface Intent<Voice> extends ApiSDK.Intent {
+export interface Intent<Voice> extends _Intent {
   slots?: IntentSlot<Voice>[];
 }
