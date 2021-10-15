@@ -24,7 +24,7 @@
     "sinon": "^10.0.0",
     "source-map-support": "^0.5.19",
     "ts-mocha": "^7.0.0",
-    "tsconfig-paths": "^3.9.0"
+    "tsconfig-paths": "^3.10.0"
   },
   "files": [
     "build/"
