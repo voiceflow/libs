@@ -10,7 +10,7 @@ orbs:
 defaults:
   tag_filters: &tag_filters
     tags:
-      only: /^@voiceflow/.*@[0-9]*(\.[0-9]*)*$/
+      only: /^@voiceflow\/.*@[0-9]*(\.[0-9]*)*$/
 
 workflows:
   generate-config:
