@@ -1,9 +1,9 @@
-import { UnknownRecord } from '@voiceflow/api-sdk';
-
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, NodeID } from './utils';
 
-export type StepData = UnknownRecord;
+export interface StepData {
+  label?: string;
+}
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.START;
