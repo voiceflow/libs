@@ -1,4 +1,4 @@
-import { Nullable } from '@voiceflow/api-sdk';
+import { Nullable } from '@/models/utils';
 
 import { StepButtonsLayout } from '../button';
 import { NodeType } from './constants';

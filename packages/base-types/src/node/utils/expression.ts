@@ -1,4 +1,4 @@
-import { Nullable } from '@voiceflow/api-sdk';
+import { Nullable } from '@/models/utils';
 
 export enum ExpressionType {
   EQUALS = 'equals',

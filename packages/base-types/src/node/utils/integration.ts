@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 
-import { Nullable } from '@voiceflow/api-sdk';
+import { Nullable } from '@/models/utils';
 
 export enum IntegrationType {
   ZAPIER = 'Zapier',

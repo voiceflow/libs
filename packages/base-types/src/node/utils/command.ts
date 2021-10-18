@@ -1,4 +1,4 @@
-import { Nullable } from '@voiceflow/api-sdk';
+import { Nullable } from '@/models/utils';
 
 import { BaseCommand } from './base';
 import { BaseEvent } from './event';

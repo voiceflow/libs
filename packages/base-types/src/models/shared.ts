@@ -54,7 +54,7 @@ export type Intent = {
   name: string;
   slots?: IntentSlot[];
   inputs: IntentInput[];
-  builtIn: boolean;
+  builtIn?: boolean;
   _platform?: string;
 };
 
