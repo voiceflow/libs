@@ -4,4 +4,5 @@ export * from './member';
 export * from './program';
 export * from './project';
 export * from './shared';
+export * from './utils';
 export * from './version';
