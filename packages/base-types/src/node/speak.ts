@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 
-import { Nullable } from '@voiceflow/api-sdk';
+import { Nullable } from '@/models/utils';
 
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, BaseTraceFrame, NodeNextID, StepCanvasNodeVisibility, TraceType } from './utils';

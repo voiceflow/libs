@@ -1,4 +1,4 @@
-import { UnknownRecord } from '@voiceflow/api-sdk';
+import { UnknownRecord } from '@/models/utils';
 
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, BaseTraceFrame, TraceType } from './utils';
