@@ -1,4 +1,4 @@
-import { Member } from '@voiceflow/api-sdk';
+import { Models } from '@voiceflow/base-types';
 import { Project } from '@voiceflow/voice-types';
 
 import { AlexaProjectMemberData } from './member';
@@ -12,7 +12,7 @@ export interface AlexaProjectData {
 }
 
 export interface AlexaProject extends Project.VoiceProject {
-  members: Member<AlexaProjectMemberData>[];
+  members: Models.Member<AlexaProjectMemberData>[];
   platform: 'alexa';
   platformData: AlexaProjectData;
 }

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { BaseBlock, Diagram } from '@voiceflow/api-sdk';
+import { Models } from '@voiceflow/base-types';
 
 import { AnyGoogleStep } from './node';
 
-export interface GoogleDiagram extends Diagram<BaseBlock | AnyGoogleStep> {}
+export interface GoogleDiagram extends Models.Diagram<Models.BaseBlock | AnyGoogleStep> {}

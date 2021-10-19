@@ -1,4 +1,4 @@
-import { VersionPrototype } from '@voiceflow/api-sdk';
+import { Models } from '@voiceflow/base-types';
 import { Version } from '@voiceflow/voice-types';
 
 import { Locale, Voice } from '@/constants';
@@ -51,7 +51,7 @@ export interface GoogleVersionData extends BaseGoogleVersionData {
 }
 
 export interface GoogleVersion extends BaseGoogleVersion {
-  prototype?: VersionPrototype<AnyGoogleCommand, Locale>;
+  prototype?: Models.VersionPrototype<AnyGoogleCommand, Locale>;
   platformData: GoogleVersionData;
 }
 

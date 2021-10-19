@@ -1,4 +1,4 @@
-import { VersionPrototype } from '@voiceflow/api-sdk';
+import { Models } from '@voiceflow/base-types';
 import { Constants } from '@voiceflow/general-types';
 import { Version } from '@voiceflow/voice-types';
 
@@ -24,7 +24,7 @@ export interface AlexaVersionData extends Version.VoiceVersionData<Voice> {
 }
 
 export interface AlexaVersion extends Version.VoiceVersion<Voice> {
-  prototype?: VersionPrototype<AnyAlexaCommand, Constants.Locale>;
+  prototype?: Models.VersionPrototype<AnyAlexaCommand, Constants.Locale>;
   platformData: AlexaVersionData;
 }
 

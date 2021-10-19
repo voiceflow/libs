@@ -1,5 +1,4 @@
-import { VersionPrototype } from '@voiceflow/api-sdk';
-import { Node } from '@voiceflow/base-types';
+import { Models, Node } from '@voiceflow/base-types';
 import { Version } from '@voiceflow/voice-types';
 
 import { Locale, Voice } from '@/constants';
@@ -13,7 +12,7 @@ export interface GeneralVersionData extends Version.VoiceVersionData<Voice> {
 }
 
 export interface GeneralVersion extends Version.VoiceVersion<Voice> {
-  prototype?: VersionPrototype<Node.Utils.AnyCommand, Locale>;
+  prototype?: Models.VersionPrototype<Node.Utils.AnyCommand, Locale>;
   platformData: GeneralVersionData;
 }
 
