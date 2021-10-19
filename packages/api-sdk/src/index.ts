@@ -4,7 +4,6 @@ import { Client } from '@/client';
 import { ClientOptions, PublicClient } from '@/publicclient';
 
 export type { Client } from '@/client';
-export * from '@/models';
 export type { PublicClient } from '@/publicclient';
 export type { AnyRecord, ArrayElement, Flatten, Nullable, UnknownRecord } from '@/types';
 

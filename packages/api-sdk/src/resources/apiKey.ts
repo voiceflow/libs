@@ -1,5 +1,6 @@
+import { Models } from '@voiceflow/base-types';
+
 import type Fetch from '@/fetch';
-import { APIKey, SAPIkey } from '@/models';
 
 import CrudResource from './crud';
 
@@ -7,23 +8,19 @@ const ENDPOINT = 'api-keys';
 
 export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
+type APIKey = Models.APIKey;
 
-class APIKeyResource extends CrudResource<typeof SAPIkey['schema'], ModelIDKey, APIKeyResource> {
+class APIKeyResource extends CrudResource<APIKey, ModelIDKey, APIKeyResource> {
   constructor(fetch: Fetch, { resourceEndpoint = ENDPOINT }: { resourceEndpoint?: string } = {}) {
     super({
       fetch,
       clazz: APIKeyResource,
-      schema: SAPIkey.schema,
       endpoint: resourceEndpoint,
-      modelIDKey,
     });
-
-    // create and update have different requirements, skip validation for now, backend validates
-    this._assertPutAndPostBody = () => null;
   }
 
   public async get(id: string): Promise<APIKey> {
-    return super._getByID<APIKey>(id);
+    return super._getByID<Models.APIKey>(id);
   }
 
   public async create(workspaceID: string, body: Partial<APIKey>): Promise<APIKey & { APIKey: string }> {

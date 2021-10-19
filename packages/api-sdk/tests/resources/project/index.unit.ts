@@ -167,8 +167,6 @@ describe('ProjectResource', () => {
     expect(fetch.patch.args[0]).to.eql(['projects/1/platform', body]);
     expect(data).to.eql(RESPONSE_DATA);
     expect(assert.callCount).to.eql(2);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
-    expect(assert.args[1]).to.eql([{ settings: { key: 'value' }, publishing: {} }, resource['struct'].schema.platformData]);
   });
 
   it('.getVersions', async () => {
@@ -181,8 +179,6 @@ describe('ProjectResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['projects/1/versions']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.getVersions fields', async () => {
@@ -195,8 +191,6 @@ describe('ProjectResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['projects/1/versions?fields=name,variables']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.getPrototype', async () => {
@@ -209,7 +203,5 @@ describe('ProjectResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['projects/1/prototype']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 });
