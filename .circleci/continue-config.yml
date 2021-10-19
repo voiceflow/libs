@@ -5,15 +5,6 @@ parameters:
     type: boolean
     default: false
 
-
-# Reusable YAML chunks
-defaults:
-  autorebase_filters: &autorebase_filters
-    branches:
-      ignore:
-        - /rebase-pull-request-.*/
-        - /cherry-pick-rebase-pull-request-.*/
-
 orbs:
   vfcommon: voiceflow/common@0.0.193
   sonarcloud: sonarsource/sonarcloud@1.0.2
@@ -43,8 +34,6 @@ workflows:
     jobs:
       - build-and-test:
           context: dev-test
-          filters:
-            <<: *autorebase_filters
 
       - vfcommon/release_monorepo:
           avoid_post_install_scripts: false
