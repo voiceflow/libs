@@ -15,6 +15,7 @@ export enum SlotType {
   AGE = 'VF.AGE',
   PERCENTAGE = 'VF.PERCENTAGE',
   ORDINAL = 'VF.ORDINAL',
+  CURRENCY = 'VF.CURRENCY',
 }
 
 interface SubList {
@@ -149,6 +150,25 @@ export const SlotTypes: ObjectKeys = {
       label: 'Age',
       values: ['20 days old', 'nineteen years old', '4 weeks old', '8 months old', '45 years-old', 'one month old'],
     },
+    {
+      name: SlotType.CURRENCY,
+      label: 'Currency',
+      values: [
+        '5 dollars',
+        '1 dollar',
+        'one dollar',
+        '$8',
+        '6 canadian dollars',
+        'seven pennies',
+        '9 pounds',
+        '15 pesos',
+        'Four para',
+        '87 ruples',
+        'thirty rupees',
+        '£12.34',
+        '34.2$',
+      ],
+    },
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -186,6 +206,11 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Nummer'),
     PERCENTAGE('Prozentsatz'),
     ORDINAL('Ordinalzahl'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Währung',
+      values: ['7 $', '23 Dollar', 'dreißig USD', '87 yuan', '11 pfund', '55£', '£5.99', 'neunzehn Pesos'],
+    },
   ],
   [Language.FR]: [
     {
@@ -218,6 +243,11 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Nombre'),
     PERCENTAGE('Pourcentage'),
     ORDINAL('Nombre ordinal'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Monnaie',
+      values: ['un dollar', '3 dollars', '5$', '£12.09', '33 pence', 'Sept sou', '6 livres', 'douze pesos', 'trois francs', '7 dollars canadien'],
+    },
   ],
   [Language.PT]: [
     {
@@ -264,6 +294,11 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Número'),
     PERCENTAGE('Porcentagem'),
     ORDINAL('Número ordinal'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Monnaie',
+      values: ['1 dólar', 'quatro pesos', '€6.01', '5€', '11.02 francos'],
+    },
   ],
   [Language.ES]: [
     {
@@ -311,6 +346,11 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Número'),
     PERCENTAGE('Porcentaje'),
     ORDINAL('Número ordinal'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Moneda',
+      values: ['5 dólares', '1 peso', '3.2 libras', 'Tres rublos', '1 peso dominicano', '4.5 dólares canadienses', '3.5€', '€9', 'tres euros'],
+    },
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -328,6 +368,11 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('数字'),
     PERCENTAGE('百分比'),
     ORDINAL('序数词'),
+    {
+      name: SlotType.CURRENCY,
+      label: '貨幣',
+      values: ['5 欧元', '1比索', '9便士', '八便士', '8 美元', '8加元', '12 人民币'],
+    },
   ],
   [Language.JA]: [
     EMAIL,
@@ -340,6 +385,11 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('数'),
     PERCENTAGE('パーセンテージ'),
     ORDINAL('序数'),
+    {
+      name: SlotType.CURRENCY,
+      label: '通貨',
+      values: ['88ドル', '123人民元', '7ペンス', '87ペソ', '5カナダ・ドル', '44シリング'],
+    },
   ],
   [Language.NL]: [
     EMAIL,
@@ -373,6 +423,11 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Aantal'),
     PERCENTAGE('Percentage'),
     ORDINAL('Rangtelwoord'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Valuta',
+      values: ['8 euro', 'negen cent', '4 japanse yen', 'vier pesos', '11 centen', '33 pence', '5 dollar', '0.12 bitcoin', 'drieëntwintig pond'],
+    },
   ],
   [Language.IT]: [
     EMAIL,
@@ -415,6 +470,11 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Numero'),
     PERCENTAGE('Percentuale'),
     ORDINAL('Numero ordinale'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Valuta',
+      values: ['5 dollari', '9.10 dollari canadesi', '6 sterline', '$4.1', 'quattro pence', '24 pesos', '84 £', '£99.12'],
+    },
   ],
   [Language.KO]: [EMAIL, PHONENUMBER],
 };
