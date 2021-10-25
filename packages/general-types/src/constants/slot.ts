@@ -96,6 +96,7 @@ export const SlotTypes: ObjectKeys = {
     PHONENUMBER,
     NUMBER('Number'),
     PERCENTAGE('Percentage'),
+    ORDINAL('Ordinal'),
     {
       name: SlotType.NATOAPCO,
       label: 'NATO/APCO',
@@ -184,6 +185,7 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Nummer'),
     PERCENTAGE('Prozentsatz'),
+    ORDINAL('Ordinalzahl'),
   ],
   [Language.FR]: [
     {
@@ -215,6 +217,7 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Nombre'),
     PERCENTAGE('Pourcentage'),
+    ORDINAL('Nombre ordinal'),
   ],
   [Language.PT]: [
     {
@@ -260,6 +263,7 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Número'),
     PERCENTAGE('Porcentagem'),
+    ORDINAL('Número ordinal'),
   ],
   [Language.ES]: [
     {
@@ -306,6 +310,7 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Número'),
     PERCENTAGE('Porcentaje'),
+    ORDINAL('Número ordinal'),
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -322,6 +327,7 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('数字'),
     PERCENTAGE('百分比'),
+    ORDINAL('序数词'),
   ],
   [Language.JA]: [
     EMAIL,
@@ -333,6 +339,7 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('数'),
     PERCENTAGE('パーセンテージ'),
+    ORDINAL('序数'),
   ],
   [Language.NL]: [
     EMAIL,
@@ -365,6 +372,7 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Aantal'),
     PERCENTAGE('Percentage'),
+    ORDINAL('Rangtelwoord'),
   ],
   [Language.IT]: [
     EMAIL,
@@ -406,6 +414,7 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Numero'),
     PERCENTAGE('Percentuale'),
+    ORDINAL('Numero ordinale'),
   ],
-  [Language.KO]: [EMAIL, PHONENUMBER, PERCENTAGE('백분율')],
+  [Language.KO]: [EMAIL, PHONENUMBER],
 };
