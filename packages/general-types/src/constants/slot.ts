@@ -17,6 +17,7 @@ export enum SlotType {
   ORDINAL = 'VF.ORDINAL',
   CURRENCY = 'VF.CURRENCY',
   GEOGRAPHY = 'VF.GEOGRAPHY',
+  URL = 'VF.URL',
 }
 
 interface SubList {
@@ -65,6 +66,12 @@ const ORDINAL = (label: string): SlotTypeValue => ({
   values: ['first', 'second', 'third', 'next', 'last', 'previous'],
 });
 
+const URL = (label: string): SlotTypeValue => ({
+  name: SlotType.URL,
+  label,
+  values: ['https://www.luis.ai'],
+});
+
 export const SlotTypes: ObjectKeys = {
   [Language.EN]: [
     {
@@ -103,6 +110,7 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Number'),
     PERCENTAGE('Percentage'),
     ORDINAL('Ordinal'),
+    URL('URL'),
     {
       name: SlotType.NATOAPCO,
       label: 'NATO/APCO',
@@ -211,6 +219,7 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Nummer'),
     PERCENTAGE('Prozentsatz'),
     ORDINAL('Ordinalzahl'),
+    URL('URL'),
     {
       name: SlotType.CURRENCY,
       label: 'Währung',
@@ -248,6 +257,7 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Nombre'),
     PERCENTAGE('Pourcentage'),
     ORDINAL('Nombre ordinal'),
+    URL('URL'),
     {
       name: SlotType.CURRENCY,
       label: 'Monnaie',
@@ -299,6 +309,7 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Número'),
     PERCENTAGE('Porcentagem'),
     ORDINAL('Número ordinal'),
+    URL('URL'),
     {
       name: SlotType.CURRENCY,
       label: 'Monnaie',
@@ -351,6 +362,7 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Número'),
     PERCENTAGE('Porcentaje'),
     ORDINAL('Número ordinal'),
+    URL('URL'),
     {
       name: SlotType.CURRENCY,
       label: 'Moneda',
@@ -373,6 +385,7 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('数字'),
     PERCENTAGE('百分比'),
     ORDINAL('序数词'),
+    URL('网址'),
     {
       name: SlotType.CURRENCY,
       label: '貨幣',
@@ -390,6 +403,7 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('数'),
     PERCENTAGE('パーセンテージ'),
     ORDINAL('序数'),
+    URL('URL'),
     {
       name: SlotType.CURRENCY,
       label: '通貨',
@@ -428,6 +442,7 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Aantal'),
     PERCENTAGE('Percentage'),
     ORDINAL('Rangtelwoord'),
+    URL('URL'),
     {
       name: SlotType.CURRENCY,
       label: 'Valuta',
@@ -475,11 +490,12 @@ export const SlotTypes: ObjectKeys = {
     NUMBER('Numero'),
     PERCENTAGE('Percentuale'),
     ORDINAL('Numero ordinale'),
+    URL('URL'),
     {
       name: SlotType.CURRENCY,
       label: 'Valuta',
       values: ['5 dollari', '9.10 dollari canadesi', '6 sterline', '$4.1', 'quattro pence', '24 pesos', '84 £', '£99.12'],
     },
   ],
-  [Language.KO]: [EMAIL, PHONENUMBER],
+  [Language.KO]: [EMAIL, PHONENUMBER, URL('URL')],
 };
