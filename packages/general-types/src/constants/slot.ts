@@ -31,8 +31,6 @@ export interface SlotTypeValue {
 
 type ObjectKeys = Record<string, Array<SlotTypeValue>>;
 
-const NUMBERS = ['-43', '0', '35.5', '8', '520', '23599', '325', '15', '84730909029', '6947'];
-
 const EMAIL: SlotTypeValue = {
   name: SlotType.EMAIL,
   label: 'Email',
@@ -46,6 +44,12 @@ const PHONENUMBER: SlotTypeValue = {
   values: ['1 (800) 642-7676', '123-456-7890', '647 126 3928', '360 392-1293', '906-459-2349', '2018073710', '4791945491'],
 };
 
+const NUMBER = (label: string): SlotTypeValue => ({
+  name: SlotType.NUMBER,
+  label,
+  values: ['-43', '0', '35.5', '8', '520', '23599', '325', '15', '84730909029', '6947'],
+});
+
 const PERCENTAGE = (label: string): SlotTypeValue => ({
   name: SlotType.PERCENTAGE,
   label,
@@ -54,11 +58,6 @@ const PERCENTAGE = (label: string): SlotTypeValue => ({
 
 export const SlotTypes: ObjectKeys = {
   [Language.EN]: [
-    {
-      name: SlotType.NUMBER,
-      label: 'Number',
-      values: NUMBERS,
-    },
     {
       name: SlotType.NAME,
       label: 'Name',
@@ -87,6 +86,7 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
+    NUMBER('Number'),
     PERCENTAGE('Percentage'),
     {
       name: SlotType.NATOAPCO,
@@ -148,11 +148,6 @@ export const SlotTypes: ObjectKeys = {
   ],
   [Language.DE]: [
     {
-      name: SlotType.NUMBER,
-      label: 'Nummer',
-      values: NUMBERS,
-    },
-    {
       name: SlotType.NAME,
       label: 'Name',
       values: [
@@ -179,14 +174,10 @@ export const SlotTypes: ObjectKeys = {
       label: 'Alter',
       values: ['7 Jahre alt', 'acht Mondate alt', '3 wochen alt', 'neun Tage alt', 'einen tag alt', '1 Jahr alt'],
     },
+    NUMBER('Nummer'),
     PERCENTAGE('Prozentsatz'),
   ],
   [Language.FR]: [
-    {
-      name: SlotType.NUMBER,
-      label: 'Nombre',
-      values: NUMBERS,
-    },
     {
       name: SlotType.NAME,
       label: 'Name',
@@ -214,14 +205,10 @@ export const SlotTypes: ObjectKeys = {
         'un jour',
       ],
     },
+    NUMBER('Nombre'),
     PERCENTAGE('Pourcentage'),
   ],
   [Language.PT]: [
-    {
-      name: SlotType.NUMBER,
-      label: 'Número',
-      values: NUMBERS,
-    },
     {
       name: SlotType.NAME,
       label: 'Nombre',
@@ -263,14 +250,10 @@ export const SlotTypes: ObjectKeys = {
         '1 dia',
       ],
     },
+    NUMBER('Número'),
     PERCENTAGE('Porcentagem'),
   ],
   [Language.ES]: [
-    {
-      name: SlotType.NUMBER,
-      label: 'Número',
-      values: NUMBERS,
-    },
     {
       name: SlotType.NAME,
       label: 'Nombre',
@@ -313,6 +296,7 @@ export const SlotTypes: ObjectKeys = {
         'un día',
       ],
     },
+    NUMBER('Número'),
     PERCENTAGE('Porcentaje'),
     // {
     //   name: SlotType.COLOR,
@@ -321,11 +305,6 @@ export const SlotTypes: ObjectKeys = {
     // },
   ],
   [Language.ZH]: [
-    {
-      name: SlotType.NUMBER,
-      label: '数字',
-      values: NUMBERS,
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -333,14 +312,10 @@ export const SlotTypes: ObjectKeys = {
       label: '岁',
       values: ['一岁', '3岁', '5周岁', '7个月大', '9月大', '8周大', '21天大', '1天大'],
     },
+    NUMBER('数字'),
     PERCENTAGE('百分比'),
   ],
   [Language.JA]: [
-    {
-      name: SlotType.NUMBER,
-      label: '数',
-      values: NUMBERS,
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -348,14 +323,10 @@ export const SlotTypes: ObjectKeys = {
       label: '歳',
       values: ['1歳', '一歳', '2歳', '4ヶ月', '3週間', '6週', '5日間', '9日齢', '10日大'],
     },
+    NUMBER('数'),
     PERCENTAGE('パーセンテージ'),
   ],
   [Language.NL]: [
-    {
-      name: SlotType.NUMBER,
-      label: 'Aantal',
-      values: NUMBERS,
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -384,14 +355,10 @@ export const SlotTypes: ObjectKeys = {
         'negen dagen',
       ],
     },
+    NUMBER('Aantal'),
     PERCENTAGE('Percentage'),
   ],
   [Language.IT]: [
-    {
-      name: SlotType.NUMBER,
-      label: 'Numero',
-      values: NUMBERS,
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -429,6 +396,7 @@ export const SlotTypes: ObjectKeys = {
         '1 giorno',
       ],
     },
+    NUMBER('Numero'),
     PERCENTAGE('Percentuale'),
   ],
   [Language.KO]: [EMAIL, PHONENUMBER, PERCENTAGE('백분율')],
