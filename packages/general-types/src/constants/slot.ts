@@ -12,6 +12,7 @@ export enum SlotType {
   EMAIL = 'VF.EMAIL',
   NATOAPCO = 'VF.NATOAPCO',
   PHONENUMBER = 'VF.PHONENUMBER',
+  AGE = 'VF.AGE',
 }
 
 interface SubList {
@@ -126,6 +127,11 @@ export const SlotTypes: ObjectKeys = {
         { canonicalForm: '.', list: ['Decimal', 'Point', 'Stop'] },
       ],
     },
+    {
+      name: SlotType.AGE,
+      label: 'Age',
+      values: ['20 days old', 'nineteen years old', '4 weeks old', '8 months old', '45 years-old', 'one month old'],
+    },
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -160,6 +166,11 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
+    {
+      name: SlotType.AGE,
+      label: 'Alter',
+      values: ['7 Jahre alt', 'acht Mondate alt', '3 wochen alt', 'neun Tage alt', 'einen tag alt', '1 Jahr alt'],
+    },
   ],
   [Language.FR]: [
     {
@@ -174,6 +185,26 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
+    {
+      name: SlotType.AGE,
+      label: 'Âge',
+      values: [
+        '3 ans',
+        'Trois ans',
+        "2 mois d'âge",
+        "six mois d'age",
+        '8 mois',
+        'huit mois',
+        'une semaine',
+        '1 semaine',
+        '3 semaines',
+        "sept semaines d'âge",
+        "9 semaines d'age",
+        '18 jours',
+        'quarante jours',
+        'un jour',
+      ],
+    },
   ],
   [Language.PT]: [
     {
@@ -203,6 +234,25 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
+    {
+      name: SlotType.AGE,
+      label: 'Idade',
+      values: [
+        '3 anos',
+        '3 anos de idade',
+        '1 ano',
+        'uma ano',
+        '6 meses',
+        '1 mes',
+        'um mês',
+        '7 semanas',
+        'uma semana',
+        '1 semana',
+        'quatro dias',
+        '15 dias',
+        '1 dia',
+      ],
+    },
   ],
   [Language.ES]: [
     {
@@ -232,6 +282,26 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
+    {
+      name: SlotType.AGE,
+      label: 'Edad',
+      values: [
+        '3 años',
+        '1 año',
+        'un año',
+        '6 meses',
+        '6 meses de edad',
+        '1 mes',
+        'um mês',
+        '7 semanas',
+        'un semana',
+        '1 semana',
+        'quatro dias',
+        '15 días',
+        '1 dia de edad',
+        'un día',
+      ],
+    },
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -246,6 +316,11 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
+    {
+      name: SlotType.AGE,
+      label: '岁',
+      values: ['一岁', '3岁', '5周岁', '7个月大', '9月大', '8周大', '21天大', '1天大'],
+    },
   ],
   [Language.JA]: [
     {
@@ -255,6 +330,11 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
+    {
+      name: SlotType.AGE,
+      label: '歳',
+      values: ['1歳', '一歳', '2歳', '4ヶ月', '3週間', '6週', '5日間', '9日齢', '10日大'],
+    },
   ],
   [Language.NL]: [
     {
@@ -264,6 +344,32 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
+    {
+      name: SlotType.AGE,
+      label: 'Leeftijd',
+      values: [
+        'twintig jaar oud',
+        '19 dagen old',
+        'negentien dagen oud',
+        '4 week oud',
+        '8 maand oud',
+        '1 jaar oud',
+        '3 jaar',
+        '4 levensjaren',
+        '30 jarige leeftijd',
+        '45-jarige leeftijd',
+        '2-jarige',
+        '5 jarige',
+        '6 maand oud',
+        'twee maanden',
+        'vier weken oud',
+        '5 week',
+        'zeven weken',
+        '6 dag oud',
+        '7 dag',
+        'negen dagen',
+      ],
+    },
   ],
   [Language.IT]: [
     {
@@ -273,6 +379,41 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
+    {
+      name: SlotType.AGE,
+      label: 'Età',
+      values: [
+        '8 anni di età',
+        'sette anni',
+        'un anno di età',
+        "11 anni d'età",
+        "1 anno d'età",
+        "di nove anni d'età",
+        '4 anni',
+        '1 anno',
+        '8 mesi di età',
+        'sette mesi',
+        'un mese di età',
+        "11 mesi d'età",
+        "1 mese d'età",
+        "di nove mesi d'età",
+        '1 mese',
+        '8 settimane di età',
+        'sette settimane',
+        'un settimana di età',
+        "11 settimane d'età",
+        "1 settimana d'età",
+        "di nove settimane d'età",
+        '1 settimana',
+        '8 giorni di età',
+        'sette giorni',
+        'un giorno di età',
+        "11 giorni d'età",
+        "1 giorno d'età",
+        "di nove giorni d'età",
+        '1 giorno',
+      ],
+    },
   ],
   [Language.KO]: [EMAIL, PHONENUMBER],
 };
