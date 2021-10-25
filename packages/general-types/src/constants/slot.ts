@@ -16,6 +16,7 @@ export enum SlotType {
   PERCENTAGE = 'VF.PERCENTAGE',
   ORDINAL = 'VF.ORDINAL',
   CURRENCY = 'VF.CURRENCY',
+  GEOGRAPHY = 'VF.GEOGRAPHY',
 }
 
 interface SubList {
@@ -58,7 +59,6 @@ const PERCENTAGE = (label: string): SlotTypeValue => ({
   values: ['3 1/2', '2%'],
 });
 
-// TODO: use this
 const ORDINAL = (label: string): SlotTypeValue => ({
   name: SlotType.ORDINAL,
   label,
@@ -92,6 +92,11 @@ export const SlotTypes: ObjectKeys = {
         'amanda',
         'sam',
       ],
+    },
+    {
+      name: SlotType.GEOGRAPHY,
+      label: 'Geography',
+      values: ['the sphinx', 'gizah', 'egypt', 'africa', 'texas'],
     },
     EMAIL,
     PHONENUMBER,
