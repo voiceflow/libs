@@ -14,6 +14,7 @@ export enum SlotType {
   PHONENUMBER = 'VF.PHONENUMBER',
   AGE = 'VF.AGE',
   PERCENTAGE = 'VF.PERCENTAGE',
+  ORDINAL = 'VF.ORDINAL',
 }
 
 interface SubList {
@@ -54,6 +55,13 @@ const PERCENTAGE = (label: string): SlotTypeValue => ({
   name: SlotType.PERCENTAGE,
   label,
   values: ['3 1/2', '2%'],
+});
+
+// TODO: use this
+const ORDINAL = (label: string): SlotTypeValue => ({
+  name: SlotType.ORDINAL,
+  label,
+  values: ['first', 'second', 'third', 'next', 'last', 'previous'],
 });
 
 export const SlotTypes: ObjectKeys = {
