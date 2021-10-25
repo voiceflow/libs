@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@2.0.14...@voiceflow/general-types@2.1.0) (2021-10-25)
+
+
+### Features
+
+* add `Percentage` prebuilt entity as a slot type (VF-168) ([#105](https://github.com/voiceflow/libs/issues/105)) ([9b68550](https://github.com/voiceflow/libs/commit/9b68550999125c52442fd102ada11a9c4496a5a8))
+
+
+
+
+
 ## [2.0.14](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@2.0.13...@voiceflow/general-types@2.0.14) (2021-10-25)
 
 
