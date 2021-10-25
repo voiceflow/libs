@@ -46,11 +46,11 @@ const PHONENUMBER: SlotTypeValue = {
   values: ['1 (800) 642-7676', '123-456-7890', '647 126 3928', '360 392-1293', '906-459-2349', '2018073710', '4791945491'],
 };
 
-const PERCENTAGE: SlotTypeValue = {
+const PERCENTAGE = (label: string): SlotTypeValue => ({
   name: SlotType.PERCENTAGE,
-  label: 'Percentage',
+  label,
   values: ['3 1/2', '2%'],
-};
+});
 
 export const SlotTypes: ObjectKeys = {
   [Language.EN]: [
@@ -87,7 +87,7 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
-    PERCENTAGE,
+    PERCENTAGE('Percentage'),
     {
       name: SlotType.NATOAPCO,
       label: 'NATO/APCO',
@@ -179,6 +179,7 @@ export const SlotTypes: ObjectKeys = {
       label: 'Alter',
       values: ['7 Jahre alt', 'acht Mondate alt', '3 wochen alt', 'neun Tage alt', 'einen tag alt', '1 Jahr alt'],
     },
+    PERCENTAGE('Prozentsatz'),
   ],
   [Language.FR]: [
     {
@@ -213,6 +214,7 @@ export const SlotTypes: ObjectKeys = {
         'un jour',
       ],
     },
+    PERCENTAGE('Pourcentage'),
   ],
   [Language.PT]: [
     {
@@ -261,6 +263,7 @@ export const SlotTypes: ObjectKeys = {
         '1 dia',
       ],
     },
+    PERCENTAGE('Porcentagem'),
   ],
   [Language.ES]: [
     {
@@ -310,6 +313,7 @@ export const SlotTypes: ObjectKeys = {
         'un día',
       ],
     },
+    PERCENTAGE('Porcentaje'),
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -329,6 +333,7 @@ export const SlotTypes: ObjectKeys = {
       label: '岁',
       values: ['一岁', '3岁', '5周岁', '7个月大', '9月大', '8周大', '21天大', '1天大'],
     },
+    PERCENTAGE('百分比'),
   ],
   [Language.JA]: [
     {
@@ -343,6 +348,7 @@ export const SlotTypes: ObjectKeys = {
       label: '歳',
       values: ['1歳', '一歳', '2歳', '4ヶ月', '3週間', '6週', '5日間', '9日齢', '10日大'],
     },
+    PERCENTAGE('パーセンテージ'),
   ],
   [Language.NL]: [
     {
@@ -378,6 +384,7 @@ export const SlotTypes: ObjectKeys = {
         'negen dagen',
       ],
     },
+    PERCENTAGE('Percentage'),
   ],
   [Language.IT]: [
     {
@@ -422,6 +429,7 @@ export const SlotTypes: ObjectKeys = {
         '1 giorno',
       ],
     },
+    PERCENTAGE('Percentuale'),
   ],
-  [Language.KO]: [EMAIL, PHONENUMBER],
+  [Language.KO]: [EMAIL, PHONENUMBER, PERCENTAGE('백분율')],
 };
