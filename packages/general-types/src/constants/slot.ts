@@ -13,6 +13,7 @@ export enum SlotType {
   NATOAPCO = 'VF.NATOAPCO',
   PHONENUMBER = 'VF.PHONENUMBER',
   AGE = 'VF.AGE',
+  PERCENTAGE = 'VF.PERCENTAGE',
 }
 
 interface SubList {
@@ -43,6 +44,12 @@ const PHONENUMBER: SlotTypeValue = {
   name: SlotType.PHONENUMBER,
   label: 'Phone Number',
   values: ['1 (800) 642-7676', '123-456-7890', '647 126 3928', '360 392-1293', '906-459-2349', '2018073710', '4791945491'],
+};
+
+const PERCENTAGE: SlotTypeValue = {
+  name: SlotType.PERCENTAGE,
+  label: 'Percentage',
+  values: ['3 1/2', '2%'],
 };
 
 export const SlotTypes: ObjectKeys = {
@@ -80,6 +87,7 @@ export const SlotTypes: ObjectKeys = {
     },
     EMAIL,
     PHONENUMBER,
+    PERCENTAGE,
     {
       name: SlotType.NATOAPCO,
       label: 'NATO/APCO',
