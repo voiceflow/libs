@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.14](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@2.0.13...@voiceflow/general-types@2.0.14) (2021-10-25)
+
+
+### Bug Fixes
+
+* add age slottype (VF-164) ([#103](https://github.com/voiceflow/libs/issues/103)) ([66b9506](https://github.com/voiceflow/libs/commit/66b9506fefeda8eda5faf3e3f2898e6768bc4415))
+
+
+
+
+
 ## [2.0.13](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@2.0.12...@voiceflow/general-types@2.0.13) (2021-10-18)
 
 **Note:** Version bump only for package @voiceflow/general-types
