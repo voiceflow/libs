@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@1.5.13...@voiceflow/google-dfes-types@1.6.0) (2021-10-25)
+
+
+### Features
+
+* add triggerPhrase property to publishing for dfes (VF-2032) ([#104](https://github.com/voiceflow/libs/issues/104)) ([b06606f](https://github.com/voiceflow/libs/commit/b06606fd0010bda262ada074c34b7e3fcfc39b36))
+
+
+
+
+
 ## [1.5.13](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@1.5.12...@voiceflow/google-dfes-types@1.5.13) (2021-10-25)
 
 **Note:** Version bump only for package @voiceflow/google-dfes-types
