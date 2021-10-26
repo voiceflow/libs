@@ -121,6 +121,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Percentage'),
     ORDINAL('Ordinal'),
     URL('URL'),
+    KEYPHRASE('Key Phrase'),
     {
       name: SlotType.NATOAPCO,
       label: 'NATO/APCO',
@@ -207,7 +208,6 @@ export const SlotTypes: ObjectKeys = {
       label: 'Temperature',
       values: ['30 degrees', '215 kelvin', '56 f', '33°f', '22 degrees celsius', '102 degs farenheit'],
     },
-    KEYPHRASE('Key Phrase'),
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -246,6 +246,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Prozentsatz'),
     ORDINAL('Ordinalzahl'),
     URL('URL'),
+    KEYPHRASE('Schlüsselsatz'),
     {
       name: SlotType.CURRENCY,
       label: 'Währung',
@@ -266,7 +267,6 @@ export const SlotTypes: ObjectKeys = {
       label: 'Temperatur',
       values: ['30 Grad', '215 Kelvin', '56 f', '33°f', '22 Grad Celsius', '102 Grad Fahrenheit'],
     },
-    KEYPHRASE('Schlüsselsatz'),
   ],
   [Language.FR]: [
     {
@@ -300,6 +300,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Pourcentage'),
     ORDINAL('Nombre ordinal'),
     URL('URL'),
+    KEYPHRASE('Phrase clé'),
     {
       name: SlotType.CURRENCY,
       label: 'Monnaie',
@@ -320,7 +321,6 @@ export const SlotTypes: ObjectKeys = {
       label: 'Température',
       values: ['30 degrés', '215 kelvin', '56 f', '33°f', '22 degrés Celsius', '102 degs farenheit'],
     },
-    KEYPHRASE('Phrase clé'),
   ],
   [Language.PT]: [
     {
@@ -368,6 +368,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Porcentagem'),
     ORDINAL('Número ordinal'),
     URL('URL'),
+    KEYPHRASE('Frase chave'),
     {
       name: SlotType.CURRENCY,
       label: 'Monnaie',
@@ -388,7 +389,6 @@ export const SlotTypes: ObjectKeys = {
       label: 'Temperatura',
       values: ['30 graus', ' 215 Kelvin', '56 f', '33 ° f', '22 graus Celsius', '102 degs farenheit'],
     },
-    KEYPHRASE('Frase chave'),
   ],
   [Language.ES]: [
     {
@@ -437,6 +437,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Porcentaje'),
     ORDINAL('Número ordinal'),
     URL('URL'),
+    KEYPHRASE('Frase clave'),
     {
       name: SlotType.CURRENCY,
       label: 'Moneda',
@@ -447,7 +448,6 @@ export const SlotTypes: ObjectKeys = {
       label: 'Fecha y Hora',
       values: ['2 de Mayo', '2 de mayo de 2015', 'Martes a jueves', 'De 18h a 19h', '8:00AM', '8:30 PM'],
     },
-    KEYPHRASE('Frase clave'),
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -499,6 +499,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('パーセンテージ'),
     ORDINAL('序数'),
     URL('URL'),
+    KEYPHRASE('キーフレーズ'),
     {
       name: SlotType.CURRENCY,
       label: '通貨',
@@ -514,7 +515,6 @@ export const SlotTypes: ObjectKeys = {
       label: '温度',
       values: ['30度', '215ケルビン', '56 f', '33°f', '22℃', '102度華氏'],
     },
-    KEYPHRASE('キーフレーズ'),
   ],
   [Language.NL]: [
     EMAIL,
@@ -549,6 +549,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Percentage'),
     ORDINAL('Rangtelwoord'),
     URL('URL'),
+    KEYPHRASE('Sleutelwoord'),
     {
       name: SlotType.CURRENCY,
       label: 'Valuta',
@@ -564,7 +565,6 @@ export const SlotTypes: ObjectKeys = {
       label: 'Temperatuur',
       values: ['30 graden', '215 kelvin', '56 f', '33°f', '22 graden Celsius', '102 graden farenheit'],
     },
-    KEYPHRASE('Sleutelwoord'),
   ],
   [Language.IT]: [
     EMAIL,
@@ -608,6 +608,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Percentuale'),
     ORDINAL('Numero ordinale'),
     URL('URL'),
+    KEYPHRASE('Frase chiave'),
     {
       name: SlotType.CURRENCY,
       label: 'Valuta',
@@ -623,7 +624,6 @@ export const SlotTypes: ObjectKeys = {
       label: 'Temperatura',
       values: ['30 gradi', '215 kelvin', '56 f', '33°f', '22 gradi Celsius', '102 gradi fanheit'],
     },
-    KEYPHRASE('Frase chiave'),
   ],
   [Language.KO]: [EMAIL, PHONENUMBER, URL('URL'), KEYPHRASE('핵심 문구')],
 };
