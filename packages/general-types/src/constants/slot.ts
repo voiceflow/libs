@@ -2,26 +2,22 @@ import { Language } from './base';
 
 export enum SlotType {
   CUSTOM = 'VF.CUSTOM',
-  // Luis Slots - not associated yet
-  // DATE = 'VF.DATE',
-  // TIME = 'VF.TIME',
-  NUMBER = 'VF.NUMBER',
-  // COLOR = 'VF.COLOR',
-  // COUNTRY = 'VF.COUNTRY',
-  NAME = 'VF.NAME',
-  EMAIL = 'VF.EMAIL',
-  NATOAPCO = 'VF.NATOAPCO',
-  PHONENUMBER = 'VF.PHONENUMBER',
+
   AGE = 'VF.AGE',
-  PERCENTAGE = 'VF.PERCENTAGE',
-  ORDINAL = 'VF.ORDINAL',
   CURRENCY = 'VF.CURRENCY',
-  GEOGRAPHY = 'VF.GEOGRAPHY',
-  URL = 'VF.URL',
   DATETIME = 'VF.DATETIME',
   DIMENSION = 'VF.DIMENSION',
-  TEMPERATURE = 'VF.TEMPERATURE',
+  EMAIL = 'VF.EMAIL',
+  GEOGRAPHY = 'VF.GEOGRAPHY',
   KEY_PHRASE = 'VF.KEY_PHRASE',
+  NAME = 'VF.NAME',
+  NATOAPCO = 'VF.NATOAPCO',
+  NUMBER = 'VF.NUMBER',
+  ORDINAL = 'VF.ORDINAL',
+  PERCENTAGE = 'VF.PERCENTAGE',
+  PHONENUMBER = 'VF.PHONENUMBER',
+  TEMPERATURE = 'VF.TEMPERATURE',
+  URL = 'VF.URL',
 }
 
 interface SubList {
@@ -208,11 +204,6 @@ export const SlotTypes: ObjectKeys = {
       label: 'Temperature',
       values: ['30 degrees', '215 kelvin', '56 f', '33°f', '22 degrees celsius', '102 degs farenheit'],
     },
-    // {
-    //   name: SlotType.COLOR,
-    //   label: 'Color',
-    //   values: ['white', 'blue', 'green', 'black', 'brown', 'yellow', 'red', 'maroon', 'cyan', 'orange'],
-    // },
   ],
   [Language.DE]: [
     {
@@ -448,11 +439,6 @@ export const SlotTypes: ObjectKeys = {
       label: 'Fecha y Hora',
       values: ['2 de Mayo', '2 de mayo de 2015', 'Martes a jueves', 'De 18h a 19h', '8:00AM', '8:30 PM'],
     },
-    // {
-    //   name: SlotType.COLOR,
-    //   label: 'Color',
-    //   values: ['negro', 'blanco', 'rojo', 'azul', 'verde', 'marrón', 'verde', 'naranja', 'amarillo', 'cian', 'violeta'],
-    // },
   ],
   [Language.ZH]: [
     EMAIL,
