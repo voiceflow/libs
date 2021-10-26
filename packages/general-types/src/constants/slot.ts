@@ -18,6 +18,7 @@ export enum SlotType {
   CURRENCY = 'VF.CURRENCY',
   GEOGRAPHY = 'VF.GEOGRAPHY',
   URL = 'VF.URL',
+  DATETIME = 'VF.DATETIME',
 }
 
 interface SubList {
@@ -182,6 +183,11 @@ export const SlotTypes: ObjectKeys = {
         '34.2$',
       ],
     },
+    {
+      name: SlotType.DATETIME,
+      label: 'Datetime',
+      values: ['May 2nd', 'May 25th, 2025', 'Tuesday to Thursday', 'From 6pm to 7pm', '8am', '8:30 pm'],
+    },
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -225,6 +231,11 @@ export const SlotTypes: ObjectKeys = {
       label: 'Währung',
       values: ['7 $', '23 Dollar', 'dreißig USD', '87 yuan', '11 pfund', '55£', '£5.99', 'neunzehn Pesos'],
     },
+    {
+      name: SlotType.DATETIME,
+      label: 'Datum (und Uhrzeit',
+      values: ['2. Mai', '25. Mai 2025', 'Dienstag bis Donnerstag', 'Von 18 bis 19 Uhr', '8 Uhr morgens', '20:30 Uhr'],
+    },
   ],
   [Language.FR]: [
     {
@@ -262,6 +273,11 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.CURRENCY,
       label: 'Monnaie',
       values: ['un dollar', '3 dollars', '5$', '£12.09', '33 pence', 'Sept sou', '6 livres', 'douze pesos', 'trois francs', '7 dollars canadien'],
+    },
+    {
+      name: SlotType.DATETIME,
+      label: "Date et l'Heure",
+      values: ['2 mai', '2 mai 2025', 'du mardi au jeudi', 'De 18h à 19h', '8h00', '20h30'],
     },
   ],
   [Language.PT]: [
@@ -314,6 +330,11 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.CURRENCY,
       label: 'Monnaie',
       values: ['1 dólar', 'quatro pesos', '€6.01', '5€', '11.02 francos'],
+    },
+    {
+      name: SlotType.DATETIME,
+      label: 'Data e Hora',
+      values: ['2 de maio', '2 de maio de 2015', 'Terça a quinta', 'Das 18h às 19h', '8 horas da manhã', '20:30'],
     },
   ],
   [Language.ES]: [
@@ -368,6 +389,11 @@ export const SlotTypes: ObjectKeys = {
       label: 'Moneda',
       values: ['5 dólares', '1 peso', '3.2 libras', 'Tres rublos', '1 peso dominicano', '4.5 dólares canadienses', '3.5€', '€9', 'tres euros'],
     },
+    {
+      name: SlotType.DATETIME,
+      label: 'Fecha y Hora',
+      values: ['2 de Mayo', '2 de mayo de 2015', 'Martes a jueves', 'De 18h a 19h', '8:00AM', '8:30 PM'],
+    },
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -390,6 +416,11 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.CURRENCY,
       label: '貨幣',
       values: ['5 欧元', '1比索', '9便士', '八便士', '8 美元', '8加元', '12 人民币'],
+    },
+    {
+      name: SlotType.DATETIME,
+      label: '日期和时间',
+      values: ['May 2nd', '2015 年 5 月 2 日', '周二至周四', '从下午 6 点到晚上 7 点', '早上八点', '晚上 8:30'],
     },
   ],
   [Language.JA]: [
