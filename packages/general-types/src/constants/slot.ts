@@ -19,6 +19,7 @@ export enum SlotType {
   GEOGRAPHY = 'VF.GEOGRAPHY',
   URL = 'VF.URL',
   DATETIME = 'VF.DATETIME',
+  DIMENSION = 'VF.DIMENSION',
 }
 
 interface SubList {
@@ -188,6 +189,11 @@ export const SlotTypes: ObjectKeys = {
       label: 'Datetime',
       values: ['May 2nd', 'May 25th, 2025', 'Tuesday to Thursday', 'From 6pm to 7pm', '8am', '8:30 pm'],
     },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimension',
+      values: ['10 1/2 miles', '10.5 kilometers', '0.3 mm', '5 feet', '6 yards'],
+    },
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -236,6 +242,11 @@ export const SlotTypes: ObjectKeys = {
       label: 'Datum (und Uhrzeit',
       values: ['2. Mai', '25. Mai 2025', 'Dienstag bis Donnerstag', 'Von 18 bis 19 Uhr', '8 Uhr morgens', '20:30 Uhr'],
     },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimension',
+      values: ['10 1/2 Meilen', '10,5 Kilometer', '0,3 mm', '5 Fuß', '6 Yards'],
+    },
   ],
   [Language.FR]: [
     {
@@ -278,6 +289,11 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.DATETIME,
       label: "Date et l'Heure",
       values: ['2 mai', '2 mai 2025', 'du mardi au jeudi', 'De 18h à 19h', '8h00', '20h30'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimension',
+      values: ['10 1/2 miles', '10,5 kilomètres', '0,3 mm', '5 pieds', '6 yards'],
     },
   ],
   [Language.PT]: [
@@ -335,6 +351,11 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.DATETIME,
       label: 'Data e Hora',
       values: ['2 de maio', '2 de maio de 2015', 'Terça a quinta', 'Das 18h às 19h', '8 horas da manhã', '20:30'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimensão',
+      values: ['10 1/2 milhas ', '10,5 quilômetros', '0,3 mm', '5 pés', '6 jardas'],
     },
   ],
   [Language.ES]: [
@@ -422,6 +443,11 @@ export const SlotTypes: ObjectKeys = {
       label: '日期和时间',
       values: ['May 2nd', '2015 年 5 月 2 日', '周二至周四', '从下午 6 点到晚上 7 点', '早上八点', '晚上 8:30'],
     },
+    {
+      name: SlotType.DIMENSION,
+      label: '尺寸',
+      values: ['10 1/2 英里', '10.5 公里', '0.3 毫米', '5 英尺', '6 码'],
+    },
   ],
   [Language.JA]: [
     EMAIL,
@@ -439,6 +465,11 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.CURRENCY,
       label: '通貨',
       values: ['88ドル', '123人民元', '7ペンス', '87ペソ', '5カナダ・ドル', '44シリング'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: '寸法',
+      values: ['101/2マイル', '10.5キロメートル', '0.3 mm', '5フィート', '6ヤード'],
     },
   ],
   [Language.NL]: [
@@ -478,6 +509,11 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.CURRENCY,
       label: 'Valuta',
       values: ['8 euro', 'negen cent', '4 japanse yen', 'vier pesos', '11 centen', '33 pence', '5 dollar', '0.12 bitcoin', 'drieëntwintig pond'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Afmeting',
+      values: ['10 1/2 mijl', '10,5 kilometer', '0,3 mm', '5 voet', '6 yards'],
     },
   ],
   [Language.IT]: [
@@ -526,6 +562,11 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.CURRENCY,
       label: 'Valuta',
       values: ['5 dollari', '9.10 dollari canadesi', '6 sterline', '$4.1', 'quattro pence', '24 pesos', '84 £', '£99.12'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimensione',
+      values: ['10 1/2 miglia', '10,5 chilometri', '0,3 mm', '5 piedi', '6 iarde'],
     },
   ],
   [Language.KO]: [EMAIL, PHONENUMBER, URL('URL')],
