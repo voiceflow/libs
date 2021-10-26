@@ -76,7 +76,7 @@ const URL = (label: string): SlotTypeValue => ({
   values: ['https://www.luis.ai'],
 });
 
-const KEYPHRASE = (label: string): SlotTypeValue => ({
+const KEY_PHRASE = (label: string): SlotTypeValue => ({
   name: SlotType.KEY_PHRASE,
   label,
   values: ['target group'],
@@ -121,7 +121,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Percentage'),
     ORDINAL('Ordinal'),
     URL('URL'),
-    KEYPHRASE('Key Phrase'),
+    KEY_PHRASE('Key Phrase'),
     {
       name: SlotType.NATOAPCO,
       label: 'NATO/APCO',
@@ -246,7 +246,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Prozentsatz'),
     ORDINAL('Ordinalzahl'),
     URL('URL'),
-    KEYPHRASE('Schlüsselsatz'),
+    KEY_PHRASE('Schlüsselsatz'),
     {
       name: SlotType.CURRENCY,
       label: 'Währung',
@@ -300,7 +300,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Pourcentage'),
     ORDINAL('Nombre ordinal'),
     URL('URL'),
-    KEYPHRASE('Phrase clé'),
+    KEY_PHRASE('Phrase clé'),
     {
       name: SlotType.CURRENCY,
       label: 'Monnaie',
@@ -368,7 +368,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Porcentagem'),
     ORDINAL('Número ordinal'),
     URL('URL'),
-    KEYPHRASE('Frase chave'),
+    KEY_PHRASE('Frase chave'),
     {
       name: SlotType.CURRENCY,
       label: 'Monnaie',
@@ -437,7 +437,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Porcentaje'),
     ORDINAL('Número ordinal'),
     URL('URL'),
-    KEYPHRASE('Frase clave'),
+    KEY_PHRASE('Frase clave'),
     {
       name: SlotType.CURRENCY,
       label: 'Moneda',
@@ -499,7 +499,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('パーセンテージ'),
     ORDINAL('序数'),
     URL('URL'),
-    KEYPHRASE('キーフレーズ'),
+    KEY_PHRASE('キーフレーズ'),
     {
       name: SlotType.CURRENCY,
       label: '通貨',
@@ -549,7 +549,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Percentage'),
     ORDINAL('Rangtelwoord'),
     URL('URL'),
-    KEYPHRASE('Sleutelwoord'),
+    KEY_PHRASE('Sleutelwoord'),
     {
       name: SlotType.CURRENCY,
       label: 'Valuta',
@@ -608,7 +608,7 @@ export const SlotTypes: ObjectKeys = {
     PERCENTAGE('Percentuale'),
     ORDINAL('Numero ordinale'),
     URL('URL'),
-    KEYPHRASE('Frase chiave'),
+    KEY_PHRASE('Frase chiave'),
     {
       name: SlotType.CURRENCY,
       label: 'Valuta',
@@ -625,5 +625,5 @@ export const SlotTypes: ObjectKeys = {
       values: ['30 gradi', '215 kelvin', '56 f', '33°f', '22 gradi Celsius', '102 gradi fanheit'],
     },
   ],
-  [Language.KO]: [EMAIL, PHONENUMBER, URL('URL'), KEYPHRASE('핵심 문구')],
+  [Language.KO]: [EMAIL, PHONENUMBER, URL('URL'), KEY_PHRASE('핵심 문구')],
 };
