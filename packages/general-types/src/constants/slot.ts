@@ -21,7 +21,7 @@ export enum SlotType {
   DATETIME = 'VF.DATETIME',
   DIMENSION = 'VF.DIMENSION',
   TEMPERATURE = 'VF.TEMPERATURE',
-  KEY_PHRASE = 'VF.KEYPHRASE',
+  KEY_PHRASE = 'VF.KEY_PHRASE',
 }
 
 interface SubList {
