@@ -20,6 +20,8 @@ export enum SlotType {
   URL = 'VF.URL',
   DATETIME = 'VF.DATETIME',
   DIMENSION = 'VF.DIMENSION',
+  TEMPERATURE = 'VF.TEMPERATURE',
+  KEY_PHRASE = 'VF.KEYPHRASE',
 }
 
 interface SubList {
@@ -72,6 +74,12 @@ const URL = (label: string): SlotTypeValue => ({
   name: SlotType.URL,
   label,
   values: ['https://www.luis.ai'],
+});
+
+const KEYPHRASE = (label: string): SlotTypeValue => ({
+  name: SlotType.KEY_PHRASE,
+  label,
+  values: ['target group'],
 });
 
 export const SlotTypes: ObjectKeys = {
@@ -194,6 +202,12 @@ export const SlotTypes: ObjectKeys = {
       label: 'Dimension',
       values: ['10 1/2 miles', '10.5 kilometers', '0.3 mm', '5 feet', '6 yards'],
     },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperature',
+      values: ['30 degrees', '215 kelvin', '56 f', '33°f', '22 degrees celsius', '102 degs farenheit'],
+    },
+    KEYPHRASE('Key Phrase'),
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -247,6 +261,12 @@ export const SlotTypes: ObjectKeys = {
       label: 'Dimension',
       values: ['10 1/2 Meilen', '10,5 Kilometer', '0,3 mm', '5 Fuß', '6 Yards'],
     },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperatur',
+      values: ['30 Grad', '215 Kelvin', '56 f', '33°f', '22 Grad Celsius', '102 Grad Fahrenheit'],
+    },
+    KEYPHRASE('Schlüsselsatz'),
   ],
   [Language.FR]: [
     {
@@ -295,6 +315,12 @@ export const SlotTypes: ObjectKeys = {
       label: 'Dimension',
       values: ['10 1/2 miles', '10,5 kilomètres', '0,3 mm', '5 pieds', '6 yards'],
     },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Température',
+      values: ['30 degrés', '215 kelvin', '56 f', '33°f', '22 degrés Celsius', '102 degs farenheit'],
+    },
+    KEYPHRASE('Phrase clé'),
   ],
   [Language.PT]: [
     {
@@ -357,6 +383,12 @@ export const SlotTypes: ObjectKeys = {
       label: 'Dimensão',
       values: ['10 1/2 milhas ', '10,5 quilômetros', '0,3 mm', '5 pés', '6 jardas'],
     },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperatura',
+      values: ['30 graus', ' 215 Kelvin', '56 f', '33 ° f', '22 graus Celsius', '102 degs farenheit'],
+    },
+    KEYPHRASE('Frase chave'),
   ],
   [Language.ES]: [
     {
@@ -415,6 +447,7 @@ export const SlotTypes: ObjectKeys = {
       label: 'Fecha y Hora',
       values: ['2 de Mayo', '2 de mayo de 2015', 'Martes a jueves', 'De 18h a 19h', '8:00AM', '8:30 PM'],
     },
+    KEYPHRASE('Frase clave'),
     // {
     //   name: SlotType.COLOR,
     //   label: 'Color',
@@ -448,6 +481,11 @@ export const SlotTypes: ObjectKeys = {
       label: '尺寸',
       values: ['10 1/2 英里', '10.5 公里', '0.3 毫米', '5 英尺', '6 码'],
     },
+    {
+      name: SlotType.TEMPERATURE,
+      label: '温度',
+      values: ['30 度', '215 开尔文', '56 f', '33°f', '22 摄氏度', '华氏 102 度'],
+    },
   ],
   [Language.JA]: [
     EMAIL,
@@ -471,6 +509,12 @@ export const SlotTypes: ObjectKeys = {
       label: '寸法',
       values: ['101/2マイル', '10.5キロメートル', '0.3 mm', '5フィート', '6ヤード'],
     },
+    {
+      name: SlotType.TEMPERATURE,
+      label: '温度',
+      values: ['30度', '215ケルビン', '56 f', '33°f', '22℃', '102度華氏'],
+    },
+    KEYPHRASE('キーフレーズ'),
   ],
   [Language.NL]: [
     EMAIL,
@@ -515,6 +559,12 @@ export const SlotTypes: ObjectKeys = {
       label: 'Afmeting',
       values: ['10 1/2 mijl', '10,5 kilometer', '0,3 mm', '5 voet', '6 yards'],
     },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperatuur',
+      values: ['30 graden', '215 kelvin', '56 f', '33°f', '22 graden Celsius', '102 graden farenheit'],
+    },
+    KEYPHRASE('Sleutelwoord'),
   ],
   [Language.IT]: [
     EMAIL,
@@ -568,6 +618,12 @@ export const SlotTypes: ObjectKeys = {
       label: 'Dimensione',
       values: ['10 1/2 miglia', '10,5 chilometri', '0,3 mm', '5 piedi', '6 iarde'],
     },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperatura',
+      values: ['30 gradi', '215 kelvin', '56 f', '33°f', '22 gradi Celsius', '102 gradi fanheit'],
+    },
+    KEYPHRASE('Frase chiave'),
   ],
-  [Language.KO]: [EMAIL, PHONENUMBER, URL('URL')],
+  [Language.KO]: [EMAIL, PHONENUMBER, URL('URL'), KEYPHRASE('핵심 문구')],
 };
