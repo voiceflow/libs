@@ -1,4 +1,4 @@
-import { Nullable } from '@/models/utils';
+import { Nullable } from '@/utils';
 
 import { BaseEvent, BaseNode, BasePort, BaseStep, NodeID } from './utils';
 

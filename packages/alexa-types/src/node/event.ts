@@ -1,5 +1,4 @@
-import { Nullable } from '@voiceflow/api-sdk';
-import { Node } from '@voiceflow/base-types';
+import { Node, Nullable } from '@voiceflow/base-types';
 
 import { NodeType } from './constants';
 

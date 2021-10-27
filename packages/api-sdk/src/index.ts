@@ -5,7 +5,7 @@ import { ClientOptions, PublicClient } from '@/publicclient';
 
 export type { Client } from '@/client';
 export type { PublicClient } from '@/publicclient';
-export type { AnyRecord, ArrayElement, Flatten, Nullable, UnknownRecord } from '@/types';
+export type { ArrayElement, Flatten } from '@/types';
 
 export const SParams = s.object({
   clientKey: s.string(),

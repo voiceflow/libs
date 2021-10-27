@@ -1,5 +1,5 @@
+import { AnyRecord, Nullable } from '../utils';
 import { BaseCommand, CreatorID, DiagramID, Intent, Name, Platform, ProjectID, PrototypeModel, Slot, Variable, VersionID } from './shared';
-import { AnyRecord, Nullable } from './utils';
 
 export type VersionPlatformDataSettings = Record<string, any>;
 

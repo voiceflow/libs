@@ -10,10 +10,12 @@ import MemberResource from './member';
 export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
-type BasePlatformData = Models.BasePlatformData;
-type WorkspaceID = Models.WorkspaceID;
-
-class ProjectResource extends CrudResource<Models.Project<BasePlatformData, BasePlatformData>, ModelIDKey, ProjectResource, 'creatorID'> {
+class ProjectResource extends CrudResource<
+  Models.Project<Models.BasePlatformData, Models.BasePlatformData>,
+  ModelIDKey,
+  ProjectResource,
+  'creatorID'
+> {
   public member: MemberResource;
 
   constructor(fetch: Fetch) {
@@ -26,13 +28,20 @@ class ProjectResource extends CrudResource<Models.Project<BasePlatformData, Base
     this.member = new MemberResource(fetch);
   }
 
-  public async list<P extends Partial<Models.Project<BasePlatformData, BasePlatformData>>>(workspaceID: WorkspaceID, fields: Fields): Promise<P[]>;
+  public async list<P extends Partial<Models.Project<Models.BasePlatformData, Models.BasePlatformData>>>(
+    workspaceID: Models.WorkspaceID,
+    fields: Fields
+  ): Promise<P[]>;
 
-  public async list<P extends BasePlatformData, M extends BasePlatformData>(workspaceID: WorkspaceID): Promise<Models.Project<P, M>[]>;
+  public async list<P extends Models.BasePlatformData, M extends Models.BasePlatformData>(
+    workspaceID: Models.WorkspaceID
+  ): Promise<Models.Project<P, M>[]>;
 
-  public async list<P extends Models.Project<any, any> = Models.Project<BasePlatformData, BasePlatformData>>(workspaceID: WorkspaceID): Promise<P[]>;
+  public async list<P extends Models.Project<any, any> = Models.Project<Models.BasePlatformData, Models.BasePlatformData>>(
+    workspaceID: Models.WorkspaceID
+  ): Promise<P[]>;
 
-  public async list(workspaceID: WorkspaceID, fields?: Fields): Promise<Models.Project<any, any>[] | Partial<Models.Project<any, any>>[]> {
+  public async list(workspaceID: Models.WorkspaceID, fields?: Fields): Promise<Models.Project<any, any>[] | Partial<Models.Project<any, any>>[]> {
     const { data } = await this.fetch.get<Models.Project<any, any>[] | Partial<Models.Project<any, any>>[]>(
       `workspaces/${workspaceID}/projects${this._getFieldsQuery(fields)}`
     );
@@ -40,17 +49,22 @@ class ProjectResource extends CrudResource<Models.Project<BasePlatformData, Base
     return data;
   }
 
-  public async get<P extends Partial<Models.Project<BasePlatformData, BasePlatformData>>>(id: Models.ProjectID, fields: string[]): Promise<P>;
+  public async get<P extends Partial<Models.Project<Models.BasePlatformData, Models.BasePlatformData>>>(
+    id: Models.ProjectID,
+    fields: string[]
+  ): Promise<P>;
 
-  public async get<P extends BasePlatformData, M extends BasePlatformData>(id: Models.ProjectID): Promise<Models.Project<P, M>>;
+  public async get<P extends Models.BasePlatformData, M extends Models.BasePlatformData>(id: Models.ProjectID): Promise<Models.Project<P, M>>;
 
-  public async get<P extends Models.Project<any, any> = Models.Project<BasePlatformData, BasePlatformData>>(id: Models.ProjectID): Promise<P>;
+  public async get<P extends Models.Project<any, any> = Models.Project<Models.BasePlatformData, Models.BasePlatformData>>(
+    id: Models.ProjectID
+  ): Promise<P>;
 
   public async get(id: Models.ProjectID, fields?: string[]): Promise<Models.Project<any, any> | Partial<Models.Project<any, any>>> {
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  public async create<P extends BasePlatformData, M extends BasePlatformData>(
+  public async create<P extends Models.BasePlatformData, M extends Models.BasePlatformData>(
     body: Omit<Models.Project<P, M>, ModelIDKey | 'creatorID'>
   ): Promise<Models.Project<P, M>>;
 
@@ -62,7 +76,7 @@ class ProjectResource extends CrudResource<Models.Project<BasePlatformData, Base
     return super._post(body);
   }
 
-  public async update<P extends BasePlatformData, M extends BasePlatformData>(
+  public async update<P extends Models.BasePlatformData, M extends Models.BasePlatformData>(
     id: Models.ProjectID,
     body: Partial<Models.Project<P, M>>
   ): Promise<Partial<Models.Project<P, M>>>;
@@ -77,7 +91,7 @@ class ProjectResource extends CrudResource<Models.Project<BasePlatformData, Base
     return super._delete(id);
   }
 
-  public async updatePlatformData<P extends Partial<BasePlatformData>>(id: Models.ProjectID, body: P): Promise<P> {
+  public async updatePlatformData<P extends Partial<Models.BasePlatformData>>(id: Models.ProjectID, body: P): Promise<P> {
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/platform`, body);
 
     return data;

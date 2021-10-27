@@ -1,10 +1,3 @@
-import { Models } from '@voiceflow/base-types';
-
-export type Nullable<T> = Models.Nullable<T>;
-export type AnyRecord = Models.AnyRecord;
-
-export type UnknownRecord = Models.UnknownRecord;
-
 export type ArrayElement<A> = A extends readonly (infer T)[] ? T : never;
 
 export type BaseSchema = Record<string, any>;

@@ -5,7 +5,7 @@ export type Fields = string[] | ReadonlyArray<string>;
 export type BaseResourceOptions<C extends Record<string, any>> = FetcherOptions<C>;
 
 class BaseResource<C extends Record<string, any>> extends Fetcher<C> {
-  constructor({ ...options }: BaseResourceOptions<C>) {
+  constructor(options: BaseResourceOptions<C>) {
     super(options);
   }
 

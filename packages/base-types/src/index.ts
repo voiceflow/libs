@@ -5,4 +5,5 @@ export * as Project from './project';
 export * as Request from './request';
 export * as Text from './text';
 export * as Trace from './trace';
+export * from './utils';
 export * as Version from './version';

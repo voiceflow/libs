@@ -1,4 +1,4 @@
-import { Nullable } from '@/models/utils';
+import { Nullable } from '@/utils';
 
 export enum ExpressionType {
   EQUALS = 'equals',

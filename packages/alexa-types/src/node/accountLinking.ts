@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 
-import { UnknownRecord } from '@voiceflow/api-sdk';
-import { Node } from '@voiceflow/base-types';
+import { Node, UnknownRecord } from '@voiceflow/base-types';
 
 import { NodeType } from './constants';
 
