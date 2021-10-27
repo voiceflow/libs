@@ -1,4 +1,4 @@
-import { Nullable } from '@voiceflow/api-sdk';
+import { Nullable } from '@voiceflow/base-types';
 import { Version } from '@voiceflow/voice-types';
 import { v1 } from 'ask-smapi-model';
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
-import { BaseBlock, Diagram } from '@voiceflow/api-sdk';
+import { Models } from '@voiceflow/base-types';
 
 import { AnyGeneralStep } from './node';
 
-export interface GeneralDiagram extends Diagram<BaseBlock | AnyGeneralStep> {}
+export interface GeneralDiagram extends Models.Diagram<Models.BaseBlock | AnyGeneralStep> {}

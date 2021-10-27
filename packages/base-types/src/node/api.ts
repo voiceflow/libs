@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { Nullable } from '@/models/utils';
+import { Nullable } from '@/utils';
 
 import { NodeType } from './constants';
 import { BaseStep, IntegrationType, NodeSuccessFailID } from './utils';

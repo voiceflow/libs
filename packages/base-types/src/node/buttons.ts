@@ -1,4 +1,4 @@
-import { Nullable } from '@/models/utils';
+import { Nullable } from '@/utils';
 
 import { StepButtonsLayout } from '../button';
 import { NodeType } from './constants';

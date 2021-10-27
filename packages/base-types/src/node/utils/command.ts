@@ -1,4 +1,4 @@
-import { Nullable } from '@/models/utils';
+import { Nullable } from '@/utils';
 
 import { BaseCommand } from './base';
 import { BaseEvent } from './event';

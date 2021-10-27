@@ -1,7 +1,6 @@
 /* eslint-disable dot-notation */
 import { expect } from 'chai';
 import sinon from 'sinon';
-import * as s from 'superstruct';
 
 import { APIKey } from '@/resources';
 import Crud from '@/resources/crud';
@@ -9,8 +8,6 @@ import Crud from '@/resources/crud';
 const RESPONSE_DATA = { field1: '1', field2: { subfield: [1, 10] } };
 
 const createClient = () => {
-  const assert = sinon.stub(s, 'assert');
-
   const fetch = {
     get: sinon.stub(),
     post: sinon.stub(),
@@ -40,7 +37,6 @@ const createClient = () => {
   return {
     crud,
     fetch,
-    assert,
     resource,
   };
 };

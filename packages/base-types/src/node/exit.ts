@@ -1,4 +1,4 @@
-import { UnknownRecord } from '@/models/utils';
+import { UnknownRecord } from '@/utils';
 
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, BaseTraceFrame, TraceType } from './utils';

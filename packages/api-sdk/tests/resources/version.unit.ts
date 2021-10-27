@@ -1,7 +1,6 @@
 /* eslint-disable dot-notation */
 import { expect } from 'chai';
 import sinon from 'sinon';
-import * as s from 'superstruct';
 
 import { Version } from '@/resources';
 import Crud from '@/resources/crud';
@@ -9,8 +8,6 @@ import Crud from '@/resources/crud';
 const RESPONSE_DATA = { field1: '1', field2: { subfield: [1, 10] } };
 
 const createClient = () => {
-  const assert = sinon.stub(s, 'assert');
-
   const fetch = {
     get: sinon.stub(),
     post: sinon.stub(),
@@ -40,7 +37,6 @@ const createClient = () => {
   return {
     crud,
     fetch,
-    assert,
     resource,
   };
 };
@@ -132,7 +128,7 @@ describe('VersionResource', () => {
   });
 
   it('.updatePlatformData', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.patch.resolves({ data: RESPONSE_DATA });
 
@@ -148,12 +144,10 @@ describe('VersionResource', () => {
     expect(fetch.patch.callCount).to.eql(1);
     expect(fetch.patch.args[0]).to.eql(['versions/1/platform', body]);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.updatePlatformDataSettings', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.patch.resolves({ data: RESPONSE_DATA });
 
@@ -164,13 +158,10 @@ describe('VersionResource', () => {
     expect(fetch.patch.callCount).to.eql(1);
     expect(fetch.patch.args[0]).to.eql(['versions/1/platform', body, { path: 'settings' }]);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(2);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
-    expect(assert.args[1]).to.eql([{ key: 'value' }, resource['struct'].schema.platformData.schema.settings]);
   });
 
   it('.updatePlatformDataPublishing', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.patch.resolves({ data: RESPONSE_DATA });
 
@@ -181,13 +172,10 @@ describe('VersionResource', () => {
     expect(fetch.patch.callCount).to.eql(1);
     expect(fetch.patch.args[0]).to.eql(['versions/1/platform', body, { path: 'publishing' }]);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(2);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
-    expect(assert.args[1]).to.eql([{ key: 'value' }, resource['struct'].schema.platformData.schema.publishing]);
   });
 
   it('.getPrograms', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.get.resolves({ data: RESPONSE_DATA });
 
@@ -196,12 +184,10 @@ describe('VersionResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/programs']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.getPrograms fields', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.get.resolves({ data: RESPONSE_DATA });
 
@@ -210,12 +196,10 @@ describe('VersionResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/programs?fields=id,variables']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.getPrototypePrograms', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.get.resolves({ data: RESPONSE_DATA });
 
@@ -224,12 +208,10 @@ describe('VersionResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/prototype-programs']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.getPrototypePrograms fields', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.get.resolves({ data: RESPONSE_DATA });
 
@@ -238,12 +220,10 @@ describe('VersionResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/prototype-programs?fields=id,variables']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.getDiagrams', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.get.resolves({ data: RESPONSE_DATA });
 
@@ -252,12 +232,10 @@ describe('VersionResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/diagrams']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.getDiagrams fields', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.get.resolves({ data: RESPONSE_DATA });
 
@@ -266,12 +244,10 @@ describe('VersionResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/diagrams?fields=_id,name']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.export', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.get.resolves({ data: RESPONSE_DATA });
 
@@ -280,12 +256,10 @@ describe('VersionResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/export']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.export programs', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.get.resolves({ data: RESPONSE_DATA });
 
@@ -294,8 +268,6 @@ describe('VersionResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['versions/1/export?programs=1']);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.import', async () => {
@@ -312,7 +284,7 @@ describe('VersionResource', () => {
 
   describe('.getPrototype', async () => {
     it('returns correctly', async () => {
-      const { fetch, assert, resource } = createClient();
+      const { fetch, resource } = createClient();
 
       fetch.get.resolves({ data: RESPONSE_DATA });
 
@@ -321,8 +293,6 @@ describe('VersionResource', () => {
       expect(fetch.get.callCount).to.eql(1);
       expect(fetch.get.args[0]).to.eql(['versions/1/prototype']);
       expect(data).to.eql(RESPONSE_DATA);
-      expect(assert.callCount).to.eql(1);
-      expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
     });
 
     it('attaches isPublic query parameter', async () => {
@@ -338,7 +308,7 @@ describe('VersionResource', () => {
   });
 
   it('.updatePrototype', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.patch.resolves({ data: RESPONSE_DATA });
 
@@ -353,12 +323,10 @@ describe('VersionResource', () => {
     expect(fetch.patch.callCount).to.eql(1);
     expect(fetch.patch.args[0]).to.eql(['versions/1/prototype', body]);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('.updatePrototypeSettings', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.patch.resolves({ data: RESPONSE_DATA });
 
@@ -369,13 +337,10 @@ describe('VersionResource', () => {
     expect(fetch.patch.callCount).to.eql(1);
     expect(fetch.patch.args[0]).to.eql(['versions/1/prototype', body, { path: 'settings' }]);
     expect(data).to.eql(RESPONSE_DATA);
-    expect(assert.callCount).to.eql(2);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
-    expect(assert.args[1]).to.eql([{ layout: 'value' }, resource['struct'].schema.prototype.schema.settings]);
   });
 
   it('checkPrototypeSharedLogin', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     const response = { data: 'dummy' };
 
@@ -389,12 +354,10 @@ describe('VersionResource', () => {
     expect(fetch.put.callCount).to.eql(1);
     expect(fetch.put.args[0]).to.eql(['versions/1/prototype/share/login', body]);
     expect(data).to.eql(response.data);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
   });
 
   it('getPrototypePlan', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     const response = { data: 'dummy' };
 
@@ -404,8 +367,6 @@ describe('VersionResource', () => {
 
     const data = await resource.getPrototypePlan(versionID);
 
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', resource['struct'].schema._id]);
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql([`versions/${versionID}/prototype/plan`]);
     expect(data).to.eql(response.data);

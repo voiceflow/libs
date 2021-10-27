@@ -1,5 +1,4 @@
-import { Nullable } from '@voiceflow/api-sdk';
-import { Version } from '@voiceflow/base-types';
+import { Nullable, Version } from '@voiceflow/base-types';
 
 import { Prompt } from '@/types';
 import { defaultPrompt } from '@/utils';

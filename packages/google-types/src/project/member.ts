@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
-import { Nullable } from '@voiceflow/api-sdk';
+import { Nullable } from '@voiceflow/base-types';
 
 // base is used in google-dfes types
 

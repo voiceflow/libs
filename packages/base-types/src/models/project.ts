@@ -48,7 +48,7 @@ export interface Project<P extends BasePlatformData, M extends BasePlatformData>
   image?: string;
   privacy?: ProjectPrivacy.PRIVATE | ProjectPrivacy.PUBLIC;
   platform: Platform;
-  linkType?: 'CURVED' | 'STRAIGHT';
+  linkType?: ProjectLinkType;
   prototype?: ProjectPrototype;
   devVersion?: VersionID;
   liveVersion?: VersionID;

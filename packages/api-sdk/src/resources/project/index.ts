@@ -1,7 +1,6 @@
-import * as s from 'superstruct';
+import { Models } from '@voiceflow/base-types';
 
 import type Fetch from '@/fetch';
-import { BasePlatformData, Project, ProjectID, ProjectPrototype, SProject, SWorkspaceID, Version, VersionPlatformData, WorkspaceID } from '@/models';
 
 import { Fields } from '../base';
 import CrudResource from '../crud';
@@ -11,101 +10,106 @@ import MemberResource from './member';
 export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
-class ProjectResource extends CrudResource<typeof SProject['schema'], ModelIDKey, ProjectResource, 'creatorID'> {
+class ProjectResource extends CrudResource<
+  Models.Project<Models.BasePlatformData, Models.BasePlatformData>,
+  ModelIDKey,
+  ProjectResource,
+  'creatorID'
+> {
   public member: MemberResource;
 
   constructor(fetch: Fetch) {
     super({
       fetch,
       clazz: ProjectResource,
-      schema: SProject.schema,
       endpoint: ENDPOINT,
-      modelIDKey,
-      postPutExcludedFields: ['creatorID'],
     });
 
     this.member = new MemberResource(fetch);
   }
 
-  public async list<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(workspaceID: WorkspaceID, fields: Fields): Promise<P[]>;
+  public async list<P extends Partial<Models.Project<Models.BasePlatformData, Models.BasePlatformData>>>(
+    workspaceID: Models.WorkspaceID,
+    fields: Fields
+  ): Promise<P[]>;
 
-  public async list<P extends BasePlatformData, M extends BasePlatformData>(workspaceID: WorkspaceID): Promise<Project<P, M>[]>;
+  public async list<P extends Models.BasePlatformData, M extends Models.BasePlatformData>(
+    workspaceID: Models.WorkspaceID
+  ): Promise<Models.Project<P, M>[]>;
 
-  public async list<P extends Project<any, any> = Project<BasePlatformData, BasePlatformData>>(workspaceID: WorkspaceID): Promise<P[]>;
+  public async list<P extends Models.Project<any, any> = Models.Project<Models.BasePlatformData, Models.BasePlatformData>>(
+    workspaceID: Models.WorkspaceID
+  ): Promise<P[]>;
 
-  public async list(workspaceID: WorkspaceID, fields?: Fields): Promise<Project<any, any>[] | Partial<Project<any, any>>[]> {
-    s.assert(workspaceID, SWorkspaceID);
-
-    const { data } = await this.fetch.get<Project<any, any>[] | Partial<Project<any, any>>[]>(
+  public async list(workspaceID: Models.WorkspaceID, fields?: Fields): Promise<Models.Project<any, any>[] | Partial<Models.Project<any, any>>[]> {
+    const { data } = await this.fetch.get<Models.Project<any, any>[] | Partial<Models.Project<any, any>>[]>(
       `workspaces/${workspaceID}/projects${this._getFieldsQuery(fields)}`
     );
 
     return data;
   }
 
-  public async get<P extends Partial<Project<BasePlatformData, BasePlatformData>>>(id: ProjectID, fields: string[]): Promise<P>;
+  public async get<P extends Partial<Models.Project<Models.BasePlatformData, Models.BasePlatformData>>>(
+    id: Models.ProjectID,
+    fields: string[]
+  ): Promise<P>;
 
-  public async get<P extends BasePlatformData, M extends BasePlatformData>(id: ProjectID): Promise<Project<P, M>>;
+  public async get<P extends Models.BasePlatformData, M extends Models.BasePlatformData>(id: Models.ProjectID): Promise<Models.Project<P, M>>;
 
-  public async get<P extends Project<any, any> = Project<BasePlatformData, BasePlatformData>>(id: ProjectID): Promise<P>;
+  public async get<P extends Models.Project<any, any> = Models.Project<Models.BasePlatformData, Models.BasePlatformData>>(
+    id: Models.ProjectID
+  ): Promise<P>;
 
-  public async get(id: ProjectID, fields?: string[]): Promise<Project<any, any> | Partial<Project<any, any>>> {
+  public async get(id: Models.ProjectID, fields?: string[]): Promise<Models.Project<any, any> | Partial<Models.Project<any, any>>> {
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  public async create<P extends BasePlatformData, M extends BasePlatformData>(
-    body: Omit<Project<P, M>, ModelIDKey | 'creatorID'>
-  ): Promise<Project<P, M>>;
+  public async create<P extends Models.BasePlatformData, M extends Models.BasePlatformData>(
+    body: Omit<Models.Project<P, M>, ModelIDKey | 'creatorID'>
+  ): Promise<Models.Project<P, M>>;
 
-  public async create<P extends Omit<Project<any, any>, ModelIDKey | 'creatorID'>>(
+  public async create<P extends Omit<Models.Project<any, any>, ModelIDKey | 'creatorID'>>(
     body: P
-  ): Promise<P & Pick<Project<any, any>, ModelIDKey | 'creatorID'>>;
+  ): Promise<P & Pick<Models.Project<any, any>, ModelIDKey | 'creatorID'>>;
 
-  public async create(body: Omit<Project<any, any>, ModelIDKey | 'creatorID'>): Promise<Project<any, any>> {
+  public async create(body: Omit<Models.Project<any, any>, ModelIDKey | 'creatorID'>): Promise<Models.Project<any, any>> {
     return super._post(body);
   }
 
-  public async update<P extends BasePlatformData, M extends BasePlatformData>(
-    id: ProjectID,
-    body: Partial<Project<P, M>>
-  ): Promise<Partial<Project<P, M>>>;
+  public async update<P extends Models.BasePlatformData, M extends Models.BasePlatformData>(
+    id: Models.ProjectID,
+    body: Partial<Models.Project<P, M>>
+  ): Promise<Partial<Models.Project<P, M>>>;
 
-  public async update<P extends Partial<Project<any, any>>>(id: ProjectID, body: P): Promise<P>;
+  public async update<P extends Partial<Models.Project<any, any>>>(id: Models.ProjectID, body: P): Promise<P>;
 
-  public async update(id: ProjectID, body: Partial<Project<any, any>>): Promise<Partial<Project<any, any>>> {
+  public async update(id: Models.ProjectID, body: Partial<Models.Project<any, any>>): Promise<Partial<Models.Project<any, any>>> {
     return super._patch(id, body);
   }
 
-  public async delete(id: ProjectID): Promise<ProjectID> {
+  public async delete(id: Models.ProjectID): Promise<Models.ProjectID> {
     return super._delete(id);
   }
 
-  public async updatePlatformData<P extends Partial<BasePlatformData>>(id: ProjectID, body: P): Promise<P> {
-    this._assertModelID(id);
-    s.assert(body, SProject.schema.platformData);
-
+  public async updatePlatformData<P extends Partial<Models.BasePlatformData>>(id: Models.ProjectID, body: P): Promise<P> {
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/platform`, body);
 
     return data;
   }
 
-  public async getVersions<P extends Partial<Version<VersionPlatformData>>>(id: ProjectID, fields: string[]): Promise<P[]>;
+  public async getVersions<P extends Partial<Models.Version<Models.VersionPlatformData>>>(id: Models.ProjectID, fields: string[]): Promise<P[]>;
 
-  public async getVersions<P extends Version<any> = Version<VersionPlatformData>>(id: ProjectID): Promise<P[]>;
+  public async getVersions<P extends Models.Version<any> = Models.Version<Models.VersionPlatformData>>(id: Models.ProjectID): Promise<P[]>;
 
-  public async getVersions<P extends VersionPlatformData>(id: ProjectID): Promise<Version<P>[]>;
+  public async getVersions<P extends Models.VersionPlatformData>(id: Models.ProjectID): Promise<Models.Version<P>[]>;
 
-  public async getVersions(id: ProjectID, fields?: string[]): Promise<Version<any>[]> {
-    this._assertModelID(id);
-
-    const { data } = await this.fetch.get<Version<any>[]>(`${this._getCRUDEndpoint(id)}/versions${this._getFieldsQuery(fields)}`);
+  public async getVersions(id: Models.ProjectID, fields?: string[]): Promise<Models.Version<any>[]> {
+    const { data } = await this.fetch.get<Models.Version<any>[]>(`${this._getCRUDEndpoint(id)}/versions${this._getFieldsQuery(fields)}`);
 
     return data;
   }
 
-  public async getPrototype<P extends ProjectPrototype>(id: ProjectID): Promise<P> {
-    this._assertModelID(id);
-
+  public async getPrototype<P extends Models.ProjectPrototype>(id: Models.ProjectID): Promise<P> {
     const { data } = await this.fetch.get<P>(`${this._getCRUDEndpoint(id)}/prototype`);
 
     return data;

@@ -1,4 +1,4 @@
-import { VersionPrototype } from '@voiceflow/api-sdk';
+import { Models } from '@voiceflow/base-types';
 import { Version } from '@voiceflow/google-types';
 
 import { Locale } from '@/constants';
@@ -16,7 +16,7 @@ export interface GoogleDFESVersionData extends Version.BaseGoogleVersionData {
 }
 
 export interface GoogleDFESVersion extends Version.BaseGoogleVersion {
-  prototype?: VersionPrototype<AnyGoogleDFESCommand, Locale>;
+  prototype?: Models.VersionPrototype<AnyGoogleDFESCommand, Locale>;
   platformData: GoogleDFESVersionData;
 }
 

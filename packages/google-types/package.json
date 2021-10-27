@@ -7,7 +7,6 @@
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/api-sdk": "^2.0.1",
     "@voiceflow/base-types": "^1.12.3",
     "@voiceflow/chat-types": "^1.4.32",
     "@voiceflow/common": "6.9.3",

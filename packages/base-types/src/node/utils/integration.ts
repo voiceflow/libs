@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 
-import { Nullable } from '@/models/utils';
+import { Nullable } from '@/utils';
 
 export enum IntegrationType {
   ZAPIER = 'Zapier',

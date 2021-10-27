@@ -2,7 +2,6 @@
 
 import { expect } from 'chai';
 import sinon from 'sinon';
-import * as s from 'superstruct';
 
 import CrudResource from '@/resources/crud';
 
@@ -12,14 +11,6 @@ const RESPONSE_DATA = {
 };
 
 const createClient = () => {
-  const assert = sinon.stub(s, 'assert');
-
-  const schema = {
-    id: s.string(),
-    key: s.string(),
-    optional: s.optional(s.string()),
-  };
-
   const fetch = {
     get: sinon.stub(),
     post: sinon.stub(),
@@ -28,18 +19,15 @@ const createClient = () => {
     delete: sinon.stub(),
   };
 
-  const resource = new CrudResource<typeof schema, 'id', any, 'id'>({
+  const resource = new CrudResource<{ id: string; key: string; optional?: string }, 'id', any, 'id'>({
     clazz: class {},
     fetch: fetch as any,
-    schema: schema as any,
     endpoint: 'endpoint',
     modelIDKey: 'id',
   });
 
   return {
     fetch,
-    schema,
-    assert,
     resource,
   };
 };
@@ -86,7 +74,7 @@ describe('CrudResource', () => {
   });
 
   it('._getByID', async () => {
-    const { fetch, schema, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.get.resolves(RESPONSE_DATA);
 
@@ -95,12 +83,10 @@ describe('CrudResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['endpoint/1']);
     expect(data).to.eql(RESPONSE_DATA.data);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', schema.id]);
   });
 
   it('._getByID fields', async () => {
-    const { fetch, schema, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.get.resolves(RESPONSE_DATA);
 
@@ -109,12 +95,10 @@ describe('CrudResource', () => {
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['endpoint/1?fields=key,optional']);
     expect(data).to.eql(RESPONSE_DATA.data);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', schema.id]);
   });
 
   it('._post', async () => {
-    const { fetch, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.post.resolves(RESPONSE_DATA);
 
@@ -123,12 +107,10 @@ describe('CrudResource', () => {
     expect(fetch.post.callCount).to.eql(1);
     expect(fetch.post.args[0]).to.eql(['endpoint', { key: 'value' }]);
     expect(data).to.eql(RESPONSE_DATA.data);
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql([{ key: 'value' }, resource['putAndPostStruct']]);
   });
 
   it('._put', async () => {
-    const { fetch, schema, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.put.resolves(RESPONSE_DATA);
 
@@ -137,13 +119,10 @@ describe('CrudResource', () => {
     expect(fetch.put.callCount).to.eql(1);
     expect(fetch.put.args[0]).to.eql(['endpoint/1', { key: 'value' }]);
     expect(data).to.eql(RESPONSE_DATA.data);
-    expect(assert.callCount).to.eql(2);
-    expect(assert.args[0]).to.eql(['1', schema.id]);
-    expect(assert.args[1]).to.eql([{ key: 'value' }, resource['putAndPostStruct']]);
   });
 
   it('._patch', async () => {
-    const { fetch, schema, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.patch.resolves(RESPONSE_DATA);
 
@@ -152,13 +131,10 @@ describe('CrudResource', () => {
     expect(fetch.patch.callCount).to.eql(1);
     expect(fetch.patch.args[0]).to.eql(['endpoint/1', { optional: 'value' }]);
     expect(data).to.eql(RESPONSE_DATA.data);
-    expect(assert.callCount).to.eql(2);
-    expect(assert.args[0]).to.eql(['1', schema.id]);
-    expect(assert.args[1]).to.eql([{ optional: 'value' }, resource['patchStruct']]);
   });
 
   it('._delete', async () => {
-    const { fetch, schema, assert, resource } = createClient();
+    const { fetch, resource } = createClient();
 
     fetch.delete.resolves(RESPONSE_DATA);
 
@@ -167,7 +143,5 @@ describe('CrudResource', () => {
     expect(fetch.delete.callCount).to.eql(1);
     expect(fetch.delete.args[0]).to.eql(['endpoint/1']);
     expect(data).to.eql('1');
-    expect(assert.callCount).to.eql(1);
-    expect(assert.args[0]).to.eql(['1', schema.id]);
   });
 });
