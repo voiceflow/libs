@@ -5,13 +5,17 @@ import { BaseEvent, BaseNode, BaseNodeNoMatch, BaseStep, BaseStepNoMatch, BaseTr
 
 export enum ChoiceAction {
   PATH = 'PATH',
-  INTENT = 'INTENT',
+  GO_TO = 'GO_TO',
+}
+
+export interface ChoiceGoTo {
+  intentID: string;
 }
 
 export interface Choice extends SlotMappings {
+  goTo?: ChoiceGoTo;
   intent: string;
   action?: ChoiceAction;
-  goToIntent?: string;
 }
 
 export interface StepData {
