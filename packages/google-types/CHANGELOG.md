@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.37.13...@voiceflow/google-types@2.0.0) (2021-10-27)
+
+
+### Features
+
+* remove validations and use model in base types (VF-1912) ([#101](https://github.com/voiceflow/libs/issues/101)) ([f3100c5](https://github.com/voiceflow/libs/commit/f3100c5a741727825cd59095840d3857ce225efe))
+
+
+### BREAKING CHANGES
+
+* move model types ,AnyRecord,Nullable,UnknownRecord from api-sdk to base-types
+
+* fix: unused deps
+
+* fix: sonarcloud
+
+
+
+
+
 ## [1.37.13](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@1.37.12...@voiceflow/google-types@1.37.13) (2021-10-25)
 
 **Note:** Version bump only for package @voiceflow/google-types

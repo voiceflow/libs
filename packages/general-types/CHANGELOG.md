@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@2.1.0...@voiceflow/general-types@3.0.0) (2021-10-27)
+
+
+### Features
+
+* remove validations and use model in base types (VF-1912) ([#101](https://github.com/voiceflow/libs/issues/101)) ([f3100c5](https://github.com/voiceflow/libs/commit/f3100c5a741727825cd59095840d3857ce225efe))
+
+
+### BREAKING CHANGES
+
+* move model types ,AnyRecord,Nullable,UnknownRecord from api-sdk to base-types
+
+* fix: unused deps
+
+* fix: sonarcloud
+
+
+
+
+
 # [2.1.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@2.0.14...@voiceflow/general-types@2.1.0) (2021-10-25)
 
 
