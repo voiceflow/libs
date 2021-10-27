@@ -57,7 +57,7 @@ const NUMBER = (label: string): SlotTypeValue => ({
 const PERCENTAGE = (label: string): SlotTypeValue => ({
   name: SlotType.PERCENTAGE,
   label,
-  values: ['3 1/2', '2%'],
+  values: ['3 1/2', '2%', '5 %'],
 });
 
 const ORDINAL = (label: string): SlotTypeValue => ({
@@ -69,13 +69,13 @@ const ORDINAL = (label: string): SlotTypeValue => ({
 const URL = (label: string): SlotTypeValue => ({
   name: SlotType.URL,
   label,
-  values: ['https://www.luis.ai'],
+  values: ['https://www.luis.ai', 'www.google.ca', 'voiceflow.com', 'dev.voiceflow.com', 'http://www.something.io'],
 });
 
 const KEY_PHRASE = (label: string): SlotTypeValue => ({
   name: SlotType.KEY_PHRASE,
   label,
-  values: ['target group'],
+  values: ['educational requirements', 'development', 'food', 'wonderful staff', 'extravagant'],
 });
 
 export const SlotTypes: ObjectKeys = {
@@ -192,12 +192,12 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DATETIME,
       label: 'Datetime',
-      values: ['May 2nd', 'May 25th, 2025', 'Tuesday to Thursday', 'From 6pm to 7pm', '8am', '8:30 pm'],
+      values: ['May 2nd', 'May 25th, 2025', 'Tuesday to Thursday', 'From 6pm to 7pm', '6:30 pm to 7 pm', '8am', '8:30 pm', '9 am', '10:12 am'],
     },
     {
       name: SlotType.DIMENSION,
       label: 'Dimension',
-      values: ['10 1/2 miles', '10.5 kilometers', '0.3 mm', '5 feet', '6 yards'],
+      values: ['10 1/2 miles', '10.5 kilometers', '0.3 mm', '5 feet', '6 yards', '10m'],
     },
     {
       name: SlotType.TEMPERATURE,
