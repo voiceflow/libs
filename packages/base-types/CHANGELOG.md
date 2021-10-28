@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.0.0...@voiceflow/base-types@2.1.0) (2021-10-28)
+
+
+### Features
+
+* add goto into choice (VF-000) ([#109](https://github.com/voiceflow/libs/issues/109)) ([fe2cb72](https://github.com/voiceflow/libs/commit/fe2cb7251beee9496ef55596c987e1e16d7d7200))
+
+
+
+
+
 # [2.0.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@1.12.3...@voiceflow/base-types@2.0.0) (2021-10-27)
 
 
