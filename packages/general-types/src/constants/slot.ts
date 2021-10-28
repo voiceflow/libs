@@ -251,7 +251,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Dimension',
-      values: ['10 1/2 Meilen', '10,5 Kilometer', '0,3 mm', '5 Fuß', '6 Yards'],
+      values: ['10 1/2 Meilen', '10,5 Kilometer', '0,3 mm', '5 Fuß', '6 Yards', '6m'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -305,7 +305,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Dimension',
-      values: ['10 1/2 miles', '10,5 kilomètres', '0,3 mm', '5 pieds', '6 yards'],
+      values: ['10 1/2 miles', '10,5 kilomètres', '0,3 mm', '5 pieds', '6 yards', '6m'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -373,7 +373,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Dimensão',
-      values: ['10 1/2 milhas ', '10,5 quilômetros', '0,3 mm', '5 pés', '6 jardas'],
+      values: ['10 1/2 milhas ', '10,5 quilômetros', '0,3 mm', '5 pés', '6 jardas', '6m'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -465,7 +465,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: '尺寸',
-      values: ['10 1/2 英里', '10.5 公里', '0.3 毫米', '5 英尺', '6 码'],
+      values: ['10 1/2 英里', '10.5 公里', '0.3 毫米', '5 英尺', '6 码', '7毫米'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -544,7 +544,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Afmeting',
-      values: ['10 1/2 mijl', '10,5 kilometer', '0,3 mm', '5 voet', '6 yards'],
+      values: ['10 1/2 mijl', '10,5 kilometer', '0,3 mm', '5 voet', '6 yards', '7m'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -603,7 +603,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Dimensione',
-      values: ['10 1/2 miglia', '10,5 chilometri', '0,3 mm', '5 piedi', '6 iarde'],
+      values: ['10 1/2 miglia', '10,5 chilometri', '0,3 mm', '5 piedi', '6 iarde', '8m'],
     },
     {
       name: SlotType.TEMPERATURE,
