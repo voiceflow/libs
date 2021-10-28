@@ -3,8 +3,19 @@ import { AnyRequestButton } from '@/request';
 import { NodeType } from './constants';
 import { BaseEvent, BaseNode, BaseNodeNoMatch, BaseStep, BaseStepNoMatch, BaseTraceFrame, NodeNextID, SlotMappings, TraceType } from './utils';
 
+export enum ChoiceAction {
+  PATH = 'PATH',
+  GO_TO = 'GO_TO',
+}
+
+export interface ChoiceGoTo {
+  intentID: string;
+}
+
 export interface Choice extends SlotMappings {
+  goTo?: ChoiceGoTo;
   intent: string;
+  action?: ChoiceAction;
 }
 
 export interface StepData {
