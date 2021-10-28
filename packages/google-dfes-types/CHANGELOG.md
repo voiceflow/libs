@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.0.1...@voiceflow/google-dfes-types@2.1.0) (2021-10-28)
+
+
+### Features
+
+* **google-dfes-types:** adds agent name to publishing data (VF-2118) ([#110](https://github.com/voiceflow/libs/issues/110)) ([6d217d6](https://github.com/voiceflow/libs/commit/6d217d6aaff2d26903238d32419fd4dd72bed6f1))
+
+
+
+
+
 ## [2.0.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.0.0...@voiceflow/google-dfes-types@2.0.1) (2021-10-28)
 
 **Note:** Version bump only for package @voiceflow/google-dfes-types
