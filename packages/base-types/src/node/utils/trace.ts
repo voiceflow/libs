@@ -11,6 +11,7 @@ export enum TraceType {
   CHOICE = 'choice',
   STREAM = 'stream',
   VISUAL = 'visual',
+  GOTO = 'goto',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {

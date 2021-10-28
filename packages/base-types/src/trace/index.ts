@@ -6,6 +6,7 @@ import { TraceFrame as StreamTrace } from '@/node/stream';
 import { TraceFrame as TextTrace } from '@/node/text';
 import { BaseTraceFrame, TraceType } from '@/node/utils';
 import { TraceFrame as VisualTrace } from '@/node/visual';
+import { IntentRequest } from '@/request';
 
 export { TraceFrame as ExitTrace } from '@/node/exit';
 export { TraceFrame as FlowTrace } from '@/node/flow';
@@ -30,6 +31,14 @@ export interface PathTracePayload {
 
 export interface PathTrace extends BaseTraceFrame<PathTracePayload> {
   type: TraceType.PATH;
+}
+
+export interface GoToTracePayload {
+  request: IntentRequest;
+}
+
+export interface GoToTrace extends BaseTraceFrame<GoToTracePayload> {
+  type: TraceType.GOTO;
 }
 
 export interface BlockTracePayload {
