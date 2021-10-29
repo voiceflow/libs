@@ -1,18 +1,23 @@
 import { Models } from '@voiceflow/base-types';
 import jwtDecode from 'jwt-decode';
 
-export const parseJWT = <S>(token: string): S => {
-  let user = jwtDecode(token.substring(16));
+const decodeJWT = <S>(token: string): S | null => {
+  try {
+    return jwtDecode(token) as S;
+  } catch {
+    return null;
+  }
+};
 
+export const parseJWT = <S>(token: string): S => {
+  let user = decodeJWT(token.substring(16));
   // try again without assuming the userHash is there
   if (!user) {
-    user = jwtDecode(token);
+    user = decodeJWT(token);
   }
-
   if (!user) {
     throw new RangeError('Invalid JWT');
   }
-
   return user as unknown as S;
 };
 
