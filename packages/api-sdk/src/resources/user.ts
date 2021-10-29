@@ -1,12 +1,12 @@
 import { Models } from '@voiceflow/base-types';
-import JWT from 'jsonwebtoken';
+import jwtDecode from 'jwt-decode';
 
 export const parseJWT = <S>(token: string): S => {
-  let user = JWT.decode(token.substring(16), { json: true });
+  let user = jwtDecode(token.substring(16));
 
   // try again without assuming the userHash is there
   if (!user) {
-    user = JWT.decode(token, { json: true });
+    user = jwtDecode(token);
   }
 
   if (!user) {

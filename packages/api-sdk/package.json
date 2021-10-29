@@ -7,19 +7,20 @@
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@types/jsonwebtoken": "^8.5.0",
     "@voiceflow/base-types": "^2.1.0",
     "@voiceflow/common": "6.9.3",
     "axios": "^0.21.1",
-    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
     "superstruct": "^0.10.12"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.11",
+    "@types/jsonwebtoken": "^8.5.0",
     "@types/mocha": "^8.0.0",
     "@types/sinon": "^10.0.0",
     "chai": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
     "mocha": "^8.0.1",
     "nyc": "^15.1.0",
     "sinon": "^10.0.0",
