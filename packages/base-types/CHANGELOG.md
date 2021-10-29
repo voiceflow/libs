@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.1.1...@voiceflow/base-types@2.1.2) (2021-10-29)
+
+
+### Bug Fixes
+
+* make goto intentID nullable (VF-000) ([72b70e0](https://github.com/voiceflow/libs/commit/72b70e0e6be48184ae7aa3fb3c7e63bddf637d37))
+
+
+
+
+
 ## [2.1.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.1.0...@voiceflow/base-types@2.1.1) (2021-10-29)
 
 
