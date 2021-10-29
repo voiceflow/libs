@@ -9,7 +9,7 @@ export enum ChoiceAction {
 }
 
 export interface ChoiceGoTo {
-  intentID: string;
+  intentID: string | null;
 }
 
 export interface Choice extends SlotMappings {
