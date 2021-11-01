@@ -188,6 +188,18 @@ describe('ProjectResource', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
+  it('.getVersionsV2', async () => {
+    const { fetch, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getVersionsV2<{ name: string; variables: string[] }>('1');
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['projects/1/projectVersions?offset=0&limit=10']);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
   it('.getPrototype', async () => {
     const { fetch, resource } = createClient();
 
