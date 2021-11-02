@@ -193,10 +193,34 @@ describe('ProjectResource', () => {
 
     fetch.get.resolves({ data: RESPONSE_DATA });
 
-    const data = await resource.getVersionsV2<{ name: string; variables: string[] }>('1');
+    const data = await resource.getVersionsV2('1');
 
     expect(fetch.get.callCount).to.eql(1);
     expect(fetch.get.args[0]).to.eql(['projects/1/projectVersions?offset=0&limit=10']);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
+  it('.getVersionsV2 offset', async () => {
+    const { fetch, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getVersionsV2('1', { offset: 2 });
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['projects/1/projectVersions?offset=2&limit=10']);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
+  it('.getVersionsV2 limit', async () => {
+    const { fetch, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getVersionsV2('1', { limit: 5 });
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['projects/1/projectVersions?offset=2&limit=5']);
     expect(data).to.eql(RESPONSE_DATA);
   });
 
