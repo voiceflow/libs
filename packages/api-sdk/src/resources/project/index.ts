@@ -114,11 +114,8 @@ class ProjectResource extends CrudResource<
     options?: { offset?: number; limit?: number }
   ): Promise<Models.Version<P>[]>;
 
-  public async getVersionsV2(
-    id: Models.ProjectID,
-    options: { offset?: number; limit?: number } = { offset: 0, limit: 10 }
-  ): Promise<Models.Version<any>[]> {
-    const { offset, limit } = options;
+  public async getVersionsV2(id: Models.ProjectID, options: { offset?: number; limit?: number } = {}): Promise<Models.Version<any>[]> {
+    const { offset = 0, limit = 10 } = options;
     const { data } = await this.fetch.get<Models.Version<any>[]>(`${this._getCRUDEndpoint(id)}/projectVersions?offset=${offset}&limit=${limit}`);
 
     return data;
