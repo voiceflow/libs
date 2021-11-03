@@ -6,5 +6,5 @@ export * from './expression';
 export * from './integration';
 export * from './mappings';
 export * from './noMatch';
-export * from './reprompt';
+export * from './noReply';
 export * from './trace';

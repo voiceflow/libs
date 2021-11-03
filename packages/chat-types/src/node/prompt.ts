@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
-import { Button, Node } from '@voiceflow/base-types';
+import { Button, Node, Nullable } from '@voiceflow/base-types';
 
-import { StepNoMatch, StepReprompt } from './utils';
+import { StepNoMatch, StepNoReply, StepReprompt } from './utils';
 
-export interface StepData extends Node.Prompt.StepData, StepReprompt, Button.StepButton {
+export interface StepData extends Node.Prompt.StepData, Button.StepButton, StepReprompt {
+  noReply?: Nullable<StepNoReply>;
   noMatches: StepNoMatch;
 }
 

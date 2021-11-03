@@ -19,12 +19,7 @@ export interface NodeInteraction extends BaseNode.Utils.SlotMappings {
   };
 }
 
-export interface Node
-  extends Omit<Node.Interaction.Node, 'interactions'>,
-    BaseNode.Utils.NodeNextIDs,
-    Node.Utils.NodeNoMatch,
-    Node.Utils.NodeReprompt,
-    Omit<Request.NodeButton, 'buttons'> {
-  interactions: NodeInteraction[];
+export interface Node extends Omit<Node.Interaction.Node, 'interactions'>, Omit<Request.NodeButton, 'buttons'> {
   buttons?: ButtonNode[];
+  interactions: NodeInteraction[];
 }

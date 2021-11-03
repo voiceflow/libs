@@ -1,7 +1,10 @@
+import { Nullable } from '@/utils';
+
 import { NodeType } from './constants';
-import { BaseStep, BaseStepNoMatch } from './utils';
+import { BaseStep, BaseStepNoMatch, BaseStepNoReply } from './utils';
 
 export interface StepData {
+  noReply?: Nullable<BaseStepNoReply>;
   noMatches: BaseStepNoMatch;
 }
 

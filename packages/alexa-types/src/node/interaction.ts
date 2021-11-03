@@ -9,18 +9,16 @@ export interface StepData extends Node.Interaction.StepData<Voice> {}
 
 export interface Step extends Node.Interaction.Step<StepData> {}
 
+export interface NodeGoTo {
+  intentName: string;
+}
+
 export interface NodeInteraction extends BaseNode.Utils.SlotMappings {
   intent: string;
   nextIdIndex?: number;
-  goTo?: {
-    intentName: string;
-  };
+  goTo?: NodeGoTo;
 }
 
-export interface Node
-  extends Omit<Node.Interaction.Node, 'interactions'>,
-    BaseNode.Utils.NodeNextIDs,
-    Node.Utils.NodeNoMatch,
-    Node.Utils.NodeReprompt {
+export interface Node extends Omit<Node.Interaction.Node, 'interactions'> {
   interactions: NodeInteraction[];
 }

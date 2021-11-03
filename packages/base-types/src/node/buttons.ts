@@ -2,7 +2,7 @@ import { Nullable } from '@/utils';
 
 import { StepButtonsLayout } from '../button';
 import { NodeType } from './constants';
-import { BaseStep, BaseStepNoMatch, DataID } from './utils';
+import { BaseStep, BaseStepNoMatch, BaseStepNoReply, DataID } from './utils';
 
 export enum ButtonAction {
   URL = 'URL',
@@ -20,6 +20,7 @@ export interface Button extends DataID {
 export interface StepData extends StepButtonsLayout {
   else: BaseStepNoMatch;
   buttons: Button[];
+  noReply?: Nullable<BaseStepNoReply>;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
