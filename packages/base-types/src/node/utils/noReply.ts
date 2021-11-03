@@ -11,10 +11,10 @@ export interface BaseStepNoReply {
   types: NoReplyType[];
   timeout?: number;
   pathName?: string;
+  randomize: boolean;
 }
 
 export interface StepNoReply<Prompt> extends BaseStepNoReply {
-  randomize: boolean;
   reprompts?: Prompt[];
 }
 
