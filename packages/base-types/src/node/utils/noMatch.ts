@@ -13,6 +13,7 @@ export enum NoMatchType {
 export interface BaseStepNoMatch {
   types?: NoMatchType[];
   pathName?: string;
+  randomize: boolean;
 
   /**
    * @deprecated use types instead
@@ -21,7 +22,6 @@ export interface BaseStepNoMatch {
 }
 
 export interface StepNoMatch<Prompt> extends BaseStepNoMatch {
-  randomize: boolean;
   reprompts: Prompt[];
 }
 
