@@ -67,10 +67,10 @@ export enum Voice {
 export const DEFAULT_LOCALE_VOICE_MAP = {
   [Locale.DE_DE]: Voice.MARLENE,
   [Locale.EN_AU]: Voice.NICOLE,
-  [Locale.EN_CA]: Voice.JOANNA,
+  [Locale.EN_CA]: Voice.ALEXA,
   [Locale.EN_GB]: Voice.AMY,
   [Locale.EN_IN]: Voice.ADITI,
-  [Locale.EN_US]: Voice.JOANNA,
+  [Locale.EN_US]: Voice.ALEXA,
   [Locale.ES_ES]: Voice.CONCHITA,
   [Locale.ES_MX]: Voice.MIA,
   [Locale.ES_US]: Voice.PENELOPE,
