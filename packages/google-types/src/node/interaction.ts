@@ -14,6 +14,9 @@ export interface Step extends Node.Interaction.Step<StepData> {}
 export interface NodeInteraction extends BaseNode.Utils.SlotMappings {
   intent: string;
   nextIdIndex?: number;
+  goTo?: {
+    intentName: string;
+  };
 }
 
 export interface Node
