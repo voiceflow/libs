@@ -37,7 +37,7 @@ export interface StepReprompt<Prompt> {
   /**
    * @deprecated use noReply instead
    */
-  reprompt: Nullable<Prompt>;
+  reprompt?: Nullable<Prompt>;
 }
 
 /**
