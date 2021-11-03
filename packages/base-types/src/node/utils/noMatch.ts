@@ -18,7 +18,7 @@ export interface BaseStepNoMatch {
   /**
    * @deprecated use types instead
    */
-  type: Nullable<NoMatchType>;
+  type?: Nullable<NoMatchType>;
 }
 
 export interface StepNoMatch<Prompt> extends BaseStepNoMatch {
