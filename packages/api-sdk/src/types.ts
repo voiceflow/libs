@@ -1,4 +1,5 @@
-export type ArrayElement<A> = A extends readonly (infer T)[] ? T : never;
+/** @deprecated Use `T[number]` instead of `ArrayElement<T>` */
+export type ArrayElement<A> = A extends ArrayLike<unknown> ? A[number] : never;
 
 export type BaseSchema = Record<string, any>;
 
