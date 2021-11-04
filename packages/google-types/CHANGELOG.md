@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.0.3...@voiceflow/google-types@2.1.0) (2021-11-04)
+
+
+### Features
+
+* goto google actions ([#117](https://github.com/voiceflow/libs/issues/117)) ([f552ff0](https://github.com/voiceflow/libs/commit/f552ff02f06400eee3b02bab684e77f00d49e733))
+
+
+
+
+
 ## [2.0.3](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.0.2...@voiceflow/google-types@2.0.3) (2021-10-29)
 
 **Note:** Version bump only for package @voiceflow/google-types

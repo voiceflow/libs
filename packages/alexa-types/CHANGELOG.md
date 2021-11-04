@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.0.4...@voiceflow/alexa-types@2.0.5) (2021-11-04)
+
+
+### Bug Fixes
+
+* eng default alexa voice (VF-2090) ([#116](https://github.com/voiceflow/libs/issues/116)) ([fb3ac18](https://github.com/voiceflow/libs/commit/fb3ac18c0a2f64276d22ca12b281d3817b67e1fb))
+
+
+
+
+
 ## [2.0.4](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.0.3...@voiceflow/alexa-types@2.0.4) (2021-11-01)
 
 
