@@ -1,4 +1,4 @@
-import { Language } from './base';
+import { Language, Locale } from './base';
 
 export enum SlotType {
   CUSTOM = 'VF.CUSTOM',
@@ -206,26 +206,6 @@ export const SlotTypes: ObjectKeys = {
     },
   ],
   [Language.DE]: [
-    {
-      name: SlotType.NAME,
-      label: 'Name',
-      values: [
-        'Schmidt',
-        'Müller',
-        'Daniel',
-        'Michael',
-        'Lucas',
-        'Michelle',
-        'Laura',
-        'Lisa',
-        'Christina',
-        'Sabrina',
-        'Julia',
-        'Alexander',
-        'Hans',
-        'Nicole',
-      ],
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -260,11 +240,6 @@ export const SlotTypes: ObjectKeys = {
     },
   ],
   [Language.FR]: [
-    {
-      name: SlotType.NAME,
-      label: 'Name',
-      values: ['Martin', 'Thomas', 'Jacques', 'Jean', 'Pierre', 'Marie', 'Nicolas', 'Emma', 'Louise', 'Alice', 'Hugo', 'Liam', 'Mohamed', 'Lea'],
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -314,26 +289,6 @@ export const SlotTypes: ObjectKeys = {
     },
   ],
   [Language.PT]: [
-    {
-      name: SlotType.NAME,
-      label: 'Nombre',
-      values: [
-        'alejandro',
-        'xavier',
-        'savannah',
-        'santiago',
-        'sofia',
-        'camila',
-        'mateo',
-        'nicolas',
-        'samuel',
-        'valeria',
-        'lucas',
-        'diego',
-        'juan',
-        'isabella',
-      ],
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -382,26 +337,6 @@ export const SlotTypes: ObjectKeys = {
     },
   ],
   [Language.ES]: [
-    {
-      name: SlotType.NAME,
-      label: 'Nombre',
-      values: [
-        'alejandro',
-        'xavier',
-        'savannah',
-        'santiago',
-        'sofia',
-        'camila',
-        'mateo',
-        'nicolas',
-        'samuel',
-        'valeria',
-        'lucas',
-        'diego',
-        'juan',
-        'isabella',
-      ],
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -439,6 +374,16 @@ export const SlotTypes: ObjectKeys = {
       label: 'Fecha y Hora',
       values: ['2 de Mayo', '2 de mayo de 2015', 'Martes a jueves', 'De 18h a 19h', '8:00AM', '8:30 PM'],
     },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimensión',
+      values: ['10 1/2 millas', '10.5 kilómetros', '0,3 mm', '5 pies', '6 yardas', '10 m'],
+    },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperatura',
+      values: ['30 grados', '215 kelvin', '56 f', '33°f', '22 grados celsius', '102 grados farenheit'],
+    },
   ],
   [Language.ZH]: [
     EMAIL,
@@ -470,7 +415,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.TEMPERATURE,
       label: '温度',
-      values: ['30 度', '215 开尔文', '56 f', '33°f', '22 摄氏度', '华氏 102 度'],
+      values: ['30 度', '215 开尔文', '56 f', '33°f', '22 摄氏度', '华氏 102 度', '34.1摄氏度'],
     },
   ],
   [Language.JA]: [
@@ -612,4 +557,7 @@ export const SlotTypes: ObjectKeys = {
     },
   ],
   [Language.KO]: [EMAIL, PHONENUMBER, URL('URL'), KEY_PHRASE('핵심 문구')],
+  // Mexico Spanish has much less built in entities than Spain Spanish.
+  // There is a case in getSlotTypes in realtime-sdk for this
+  [Locale.ES_MX]: [EMAIL, NUMBER('Número'), URL('URL'), KEY_PHRASE('Frase clave')],
 };
