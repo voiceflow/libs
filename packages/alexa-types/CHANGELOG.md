@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.7](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.0.6...@voiceflow/alexa-types@2.0.7) (2021-11-08)
+
+
+### Bug Fixes
+
+* remove cristiano voice (VF-2164) ([#121](https://github.com/voiceflow/libs/issues/121)) ([0a483f1](https://github.com/voiceflow/libs/commit/0a483f1db338135dbb97ef35bf54ed7354bd4651))
+
+
+
+
+
 ## [2.0.6](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.0.5...@voiceflow/alexa-types@2.0.6) (2021-11-08)
 
 **Note:** Version bump only for package @voiceflow/alexa-types
