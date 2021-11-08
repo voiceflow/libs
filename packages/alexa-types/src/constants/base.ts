@@ -58,7 +58,6 @@ export enum Voice {
   VITORIA = 'Vitoria',
   LUPE = 'Lupe',
   MIGUEL = 'Miguel',
-  CRISTIANO = 'Cristiano',
   CAMILA = 'Camila',
   RICARDO = 'Ricardo',
   BIANCA = 'Bianca',
@@ -125,6 +124,6 @@ export const REGIONAL_VOICE = [
   },
   {
     label: 'Portuguese',
-    options: [Voice.VITORIA, Voice.CRISTIANO, Voice.CAMILA, Voice.RICARDO],
+    options: [Voice.VITORIA, Voice.CAMILA, Voice.RICARDO],
   },
 ];
