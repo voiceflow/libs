@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.1.2...@voiceflow/base-types@2.1.3) (2021-11-08)
+
+
+### Bug Fixes
+
+* if types ([#120](https://github.com/voiceflow/libs/issues/120)) ([7673c5d](https://github.com/voiceflow/libs/commit/7673c5db57f8a78ae8ba7310a998eb261e46eac1))
+
+
+
+
+
 ## [2.1.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.1.1...@voiceflow/base-types@2.1.2) (2021-10-29)
 
 
