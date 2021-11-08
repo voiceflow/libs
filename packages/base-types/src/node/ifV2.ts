@@ -1,10 +1,20 @@
 import { NodePath } from './_v1';
 import { NodeType } from './constants';
-import { BaseNode, BaseStep, BaseStepNoMatch, ExpressionData, NodeElseID } from './utils';
+import { BaseNode, BaseStep, ExpressionData, NodeElseID } from './utils';
+
+export enum IfNoMatchType {
+  PATH = 'path',
+  NONE = 'none',
+}
+
+export interface IfNoMatch {
+  type: IfNoMatchType;
+  pathName?: string;
+}
 
 export interface StepData {
   expressions: ExpressionData[];
-  noMatch?: BaseStepNoMatch;
+  noMatch?: IfNoMatch;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {

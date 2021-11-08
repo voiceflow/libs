@@ -124,11 +124,20 @@ export interface BaseBlock<D extends AnyRecord = AnyRecord> extends BaseDiagramN
   coords: [number, number];
 }
 
+export enum PortType {
+  FAIL = 'fail',
+  NEXT = 'next',
+  PAUSE = 'pause',
+  NO_REPLY = 'no-reply',
+  NO_MATCH = 'else',
+  PREVIOUS = 'previous',
+}
+
 export interface BasePort<PD extends AnyRecord = AnyRecord> {
-  type: string;
-  target: Nullable<string>;
-  data?: PD;
   id: string;
+  type: string | PortType;
+  data?: PD;
+  target: Nullable<string>;
 }
 
 // [BasePort, ...BasePort[]] means one or more ports
