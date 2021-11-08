@@ -11,11 +11,11 @@ export enum NoMatchType {
 export interface BaseStepNoMatch {
   type: Nullable<NoMatchType>;
   pathName?: string;
+  randomize: boolean;
 }
 
 export interface StepNoMatch<Prompt> extends BaseStepNoMatch {
   reprompts: Prompt[];
-  randomize: boolean;
 }
 
 export interface BaseNodeNoMatch {
