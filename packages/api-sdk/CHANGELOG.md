@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.1.1...@voiceflow/api-sdk@3.1.2) (2021-11-09)
+
+
+### Bug Fixes
+
+* deprecate `ArrayElement` (VF-000) ([#118](https://github.com/voiceflow/libs/issues/118)) ([b7db534](https://github.com/voiceflow/libs/commit/b7db53416c370ea07e5cd2e373722cb7a56f6d3a))
+
+
+
+
+
 ## [3.1.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.1.0...@voiceflow/api-sdk@3.1.1) (2021-11-08)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
