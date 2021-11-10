@@ -197,7 +197,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Dimension',
-      values: ['10 1/2 miles', '10.5 kilometers', '0.3 mm', '5 feet', '6 yards', '10m'],
+      values: ['10 1/2 miles', '10.5 kilometers', '0.3 mm', '5 feet', '6 yards', '10m', '25 m/s'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -231,7 +231,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Dimension',
-      values: ['10 1/2 Meilen', '10,5 Kilometer', '0,3 mm', '5 Fuß', '6 Yards', '6m'],
+      values: ['10 1/2 Meilen', '10,5 Kilometer', '0,3 mm', '5 Fuß', '6 Yards', '6m', '25 m/s'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -280,7 +280,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Dimension',
-      values: ['10 1/2 miles', '10,5 kilomètres', '0,3 mm', '5 pieds', '6 yards', '6m'],
+      values: ['10 1/2 miles', '10,5 kilomètres', '0,3 mm', '5 pieds', '6 yards', '6m', '25 m/s'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -328,7 +328,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Dimensão',
-      values: ['10 1/2 milhas ', '10,5 quilômetros', '0,3 mm', '5 pés', '6 jardas', '6m'],
+      values: ['10 1/2 milhas ', '10,5 quilômetros', '0,3 mm', '5 pés', '6 jardas', '6m', '25 m/s'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -377,7 +377,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Dimensión',
-      values: ['10 1/2 millas', '10.5 kilómetros', '0,3 mm', '5 pies', '6 yardas', '10 m'],
+      values: ['10 1/2 millas', '10.5 kilómetros', '0,3 mm', '5 pies', '6 yardas', '10 m', '25 m/s'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -489,7 +489,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Afmeting',
-      values: ['10 1/2 mijl', '10,5 kilometer', '0,3 mm', '5 voet', '6 yards', '7m'],
+      values: ['10 1/2 mijl', '10,5 kilometer', '0,3 mm', '5 voet', '6 yards', '7m', '25 m/s'],
     },
     {
       name: SlotType.TEMPERATURE,
@@ -548,7 +548,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DIMENSION,
       label: 'Dimensione',
-      values: ['10 1/2 miglia', '10,5 chilometri', '0,3 mm', '5 piedi', '6 iarde', '8m'],
+      values: ['10 1/2 miglia', '10,5 chilometri', '0,3 mm', '5 piedi', '6 iarde', '8m', '25 m/s'],
     },
     {
       name: SlotType.TEMPERATURE,
