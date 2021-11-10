@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@3.0.4...@voiceflow/general-types@3.1.0) (2021-11-10)
+
+
+### Features
+
+* more slot types (VF-159) ([#107](https://github.com/voiceflow/libs/issues/107)) ([0ee7975](https://github.com/voiceflow/libs/commit/0ee797535ef216e99496e27649333715565ccd06))
+
+
+
+
+
 ## [3.0.4](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@3.0.3...@voiceflow/general-types@3.0.4) (2021-11-08)
 
 **Note:** Version bump only for package @voiceflow/general-types
