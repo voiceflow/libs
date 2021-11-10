@@ -1,19 +1,23 @@
-import { Language } from './base';
+import { Language, Locale } from './base';
 
 export enum SlotType {
   CUSTOM = 'VF.CUSTOM',
-  // Luis Slots - not associated yet
-  // DATE = 'VF.DATE',
-  // TIME = 'VF.TIME',
-  NUMBER = 'VF.NUMBER',
-  // COLOR = 'VF.COLOR',
-  // COUNTRY = 'VF.COUNTRY',
-  NAME = 'VF.NAME',
-  EMAIL = 'VF.EMAIL',
-  NATOAPCO = 'VF.NATOAPCO',
-  PHONENUMBER = 'VF.PHONENUMBER',
+
   AGE = 'VF.AGE',
+  CURRENCY = 'VF.CURRENCY',
+  DATETIME = 'VF.DATETIME',
+  DIMENSION = 'VF.DIMENSION',
+  EMAIL = 'VF.EMAIL',
+  GEOGRAPHY = 'VF.GEOGRAPHY',
+  KEY_PHRASE = 'VF.KEY_PHRASE',
+  NAME = 'VF.NAME',
+  NATOAPCO = 'VF.NATOAPCO',
+  NUMBER = 'VF.NUMBER',
+  ORDINAL = 'VF.ORDINAL',
   PERCENTAGE = 'VF.PERCENTAGE',
+  PHONENUMBER = 'VF.PHONENUMBER',
+  TEMPERATURE = 'VF.TEMPERATURE',
+  URL = 'VF.URL',
 }
 
 interface SubList {
@@ -53,7 +57,25 @@ const NUMBER = (label: string): SlotTypeValue => ({
 const PERCENTAGE = (label: string): SlotTypeValue => ({
   name: SlotType.PERCENTAGE,
   label,
-  values: ['3 1/2', '2%'],
+  values: ['3 1/2', '2%', '5 %'],
+});
+
+const ORDINAL = (label: string): SlotTypeValue => ({
+  name: SlotType.ORDINAL,
+  label,
+  values: ['first', 'second', 'third', 'next', 'last', 'previous'],
+});
+
+const URL = (label: string): SlotTypeValue => ({
+  name: SlotType.URL,
+  label,
+  values: ['https://www.luis.ai', 'www.google.ca', 'voiceflow.com', 'dev.voiceflow.com', 'http://www.something.io'],
+});
+
+const KEY_PHRASE = (label: string): SlotTypeValue => ({
+  name: SlotType.KEY_PHRASE,
+  label,
+  values: ['educational requirements', 'development', 'food', 'wonderful staff', 'extravagant'],
 });
 
 export const SlotTypes: ObjectKeys = {
@@ -84,10 +106,18 @@ export const SlotTypes: ObjectKeys = {
         'sam',
       ],
     },
+    {
+      name: SlotType.GEOGRAPHY,
+      label: 'Geography',
+      values: ['the sphinx', 'gizah', 'egypt', 'africa', 'texas'],
+    },
     EMAIL,
     PHONENUMBER,
     NUMBER('Number'),
     PERCENTAGE('Percentage'),
+    ORDINAL('Ordinal'),
+    URL('URL'),
+    KEY_PHRASE('Key Phrase'),
     {
       name: SlotType.NATOAPCO,
       label: 'NATO/APCO',
@@ -140,33 +170,42 @@ export const SlotTypes: ObjectKeys = {
       label: 'Age',
       values: ['20 days old', 'nineteen years old', '4 weeks old', '8 months old', '45 years-old', 'one month old'],
     },
-    // {
-    //   name: SlotType.COLOR,
-    //   label: 'Color',
-    //   values: ['white', 'blue', 'green', 'black', 'brown', 'yellow', 'red', 'maroon', 'cyan', 'orange'],
-    // },
-  ],
-  [Language.DE]: [
     {
-      name: SlotType.NAME,
-      label: 'Name',
+      name: SlotType.CURRENCY,
+      label: 'Currency',
       values: [
-        'Schmidt',
-        'Müller',
-        'Daniel',
-        'Michael',
-        'Lucas',
-        'Michelle',
-        'Laura',
-        'Lisa',
-        'Christina',
-        'Sabrina',
-        'Julia',
-        'Alexander',
-        'Hans',
-        'Nicole',
+        '5 dollars',
+        '1 dollar',
+        'one dollar',
+        '$8',
+        '6 canadian dollars',
+        'seven pennies',
+        '9 pounds',
+        '15 pesos',
+        'Four para',
+        '87 ruples',
+        'thirty rupees',
+        '£12.34',
+        '34.2$',
       ],
     },
+    {
+      name: SlotType.DATETIME,
+      label: 'Datetime',
+      values: ['May 2nd', 'May 25th, 2025', 'Tuesday to Thursday', 'From 6pm to 7pm', '6:30 pm to 7 pm', '8am', '8:30 pm', '9 am', '10:12 am'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimension',
+      values: ['10 1/2 miles', '10.5 kilometers', '0.3 mm', '5 feet', '6 yards', '10m', '25 m/s'],
+    },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperature',
+      values: ['30 degrees', '215 kelvin', '56 f', '33°f', '22 degrees celsius', '102 degs farenheit'],
+    },
+  ],
+  [Language.DE]: [
     EMAIL,
     PHONENUMBER,
     {
@@ -176,13 +215,31 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Nummer'),
     PERCENTAGE('Prozentsatz'),
+    ORDINAL('Ordinalzahl'),
+    URL('URL'),
+    KEY_PHRASE('Schlüsselsatz'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Währung',
+      values: ['7 $', '23 Dollar', 'dreißig USD', '87 yuan', '11 pfund', '55£', '£5.99', 'neunzehn Pesos'],
+    },
+    {
+      name: SlotType.DATETIME,
+      label: 'Datum (und Uhrzeit',
+      values: ['2. Mai', '25. Mai 2025', 'Dienstag bis Donnerstag', 'Von 18 bis 19 Uhr', '8 Uhr morgens', '20:30 Uhr'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimension',
+      values: ['10 1/2 Meilen', '10,5 Kilometer', '0,3 mm', '5 Fuß', '6 Yards', '6m', '25 m/s'],
+    },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperatur',
+      values: ['30 Grad', '215 Kelvin', '56 f', '33°f', '22 Grad Celsius', '102 Grad Fahrenheit'],
+    },
   ],
   [Language.FR]: [
-    {
-      name: SlotType.NAME,
-      label: 'Name',
-      values: ['Martin', 'Thomas', 'Jacques', 'Jean', 'Pierre', 'Marie', 'Nicolas', 'Emma', 'Louise', 'Alice', 'Hugo', 'Liam', 'Mohamed', 'Lea'],
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -207,28 +264,31 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Nombre'),
     PERCENTAGE('Pourcentage'),
+    ORDINAL('Nombre ordinal'),
+    URL('URL'),
+    KEY_PHRASE('Phrase clé'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Monnaie',
+      values: ['un dollar', '3 dollars', '5$', '£12.09', '33 pence', 'Sept sou', '6 livres', 'douze pesos', 'trois francs', '7 dollars canadien'],
+    },
+    {
+      name: SlotType.DATETIME,
+      label: "Date et l'Heure",
+      values: ['2 mai', '2 mai 2025', 'du mardi au jeudi', 'De 18h à 19h', '8h00', '20h30'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimension',
+      values: ['10 1/2 miles', '10,5 kilomètres', '0,3 mm', '5 pieds', '6 yards', '6m', '25 m/s'],
+    },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Température',
+      values: ['30 degrés', '215 kelvin', '56 f', '33°f', '22 degrés Celsius', '102 degs farenheit'],
+    },
   ],
   [Language.PT]: [
-    {
-      name: SlotType.NAME,
-      label: 'Nombre',
-      values: [
-        'alejandro',
-        'xavier',
-        'savannah',
-        'santiago',
-        'sofia',
-        'camila',
-        'mateo',
-        'nicolas',
-        'samuel',
-        'valeria',
-        'lucas',
-        'diego',
-        'juan',
-        'isabella',
-      ],
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -252,28 +312,31 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Número'),
     PERCENTAGE('Porcentagem'),
+    ORDINAL('Número ordinal'),
+    URL('URL'),
+    KEY_PHRASE('Frase chave'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Monnaie',
+      values: ['1 dólar', 'quatro pesos', '€6.01', '5€', '11.02 francos'],
+    },
+    {
+      name: SlotType.DATETIME,
+      label: 'Data e Hora',
+      values: ['2 de maio', '2 de maio de 2015', 'Terça a quinta', 'Das 18h às 19h', '8 horas da manhã', '20:30'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimensão',
+      values: ['10 1/2 milhas ', '10,5 quilômetros', '0,3 mm', '5 pés', '6 jardas', '6m', '25 m/s'],
+    },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperatura',
+      values: ['30 graus', ' 215 Kelvin', '56 f', '33 ° f', '22 graus Celsius', '102 degs farenheit'],
+    },
   ],
   [Language.ES]: [
-    {
-      name: SlotType.NAME,
-      label: 'Nombre',
-      values: [
-        'alejandro',
-        'xavier',
-        'savannah',
-        'santiago',
-        'sofia',
-        'camila',
-        'mateo',
-        'nicolas',
-        'samuel',
-        'valeria',
-        'lucas',
-        'diego',
-        'juan',
-        'isabella',
-      ],
-    },
     EMAIL,
     PHONENUMBER,
     {
@@ -298,11 +361,29 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Número'),
     PERCENTAGE('Porcentaje'),
-    // {
-    //   name: SlotType.COLOR,
-    //   label: 'Color',
-    //   values: ['negro', 'blanco', 'rojo', 'azul', 'verde', 'marrón', 'verde', 'naranja', 'amarillo', 'cian', 'violeta'],
-    // },
+    ORDINAL('Número ordinal'),
+    URL('URL'),
+    KEY_PHRASE('Frase clave'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Moneda',
+      values: ['5 dólares', '1 peso', '3.2 libras', 'Tres rublos', '1 peso dominicano', '4.5 dólares canadienses', '3.5€', '€9', 'tres euros'],
+    },
+    {
+      name: SlotType.DATETIME,
+      label: 'Fecha y Hora',
+      values: ['2 de Mayo', '2 de mayo de 2015', 'Martes a jueves', 'De 18h a 19h', '8:00AM', '8:30 PM'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimensión',
+      values: ['10 1/2 millas', '10.5 kilómetros', '0,3 mm', '5 pies', '6 yardas', '10 m', '25 m/s'],
+    },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperatura',
+      values: ['30 grados', '215 kelvin', '56 f', '33°f', '22 grados celsius', '102 grados farenheit'],
+    },
   ],
   [Language.ZH]: [
     EMAIL,
@@ -314,6 +395,28 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('数字'),
     PERCENTAGE('百分比'),
+    ORDINAL('序数词'),
+    URL('网址'),
+    {
+      name: SlotType.CURRENCY,
+      label: '貨幣',
+      values: ['5 欧元', '1比索', '9便士', '八便士', '8 美元', '8加元', '12 人民币'],
+    },
+    {
+      name: SlotType.DATETIME,
+      label: '日期和时间',
+      values: ['May 2nd', '2015 年 5 月 2 日', '周二至周四', '从下午 6 点到晚上 7 点', '早上八点', '晚上 8:30'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: '尺寸',
+      values: ['10 1/2 英里', '10.5 公里', '0.3 毫米', '5 英尺', '6 码', '7毫米'],
+    },
+    {
+      name: SlotType.TEMPERATURE,
+      label: '温度',
+      values: ['30 度', '215 开尔文', '56 f', '33°f', '22 摄氏度', '华氏 102 度', '34.1摄氏度'],
+    },
   ],
   [Language.JA]: [
     EMAIL,
@@ -325,6 +428,24 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('数'),
     PERCENTAGE('パーセンテージ'),
+    ORDINAL('序数'),
+    URL('URL'),
+    KEY_PHRASE('キーフレーズ'),
+    {
+      name: SlotType.CURRENCY,
+      label: '通貨',
+      values: ['88ドル', '123人民元', '7ペンス', '87ペソ', '5カナダ・ドル', '44シリング'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: '寸法',
+      values: ['101/2マイル', '10.5キロメートル', '0.3 mm', '5フィート', '6ヤード'],
+    },
+    {
+      name: SlotType.TEMPERATURE,
+      label: '温度',
+      values: ['30度', '215ケルビン', '56 f', '33°f', '22℃', '102度華氏'],
+    },
   ],
   [Language.NL]: [
     EMAIL,
@@ -357,6 +478,24 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Aantal'),
     PERCENTAGE('Percentage'),
+    ORDINAL('Rangtelwoord'),
+    URL('URL'),
+    KEY_PHRASE('Sleutelwoord'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Valuta',
+      values: ['8 euro', 'negen cent', '4 japanse yen', 'vier pesos', '11 centen', '33 pence', '5 dollar', '0.12 bitcoin', 'drieëntwintig pond'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Afmeting',
+      values: ['10 1/2 mijl', '10,5 kilometer', '0,3 mm', '5 voet', '6 yards', '7m', '25 m/s'],
+    },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperatuur',
+      values: ['30 graden', '215 kelvin', '56 f', '33°f', '22 graden Celsius', '102 graden farenheit'],
+    },
   ],
   [Language.IT]: [
     EMAIL,
@@ -398,6 +537,27 @@ export const SlotTypes: ObjectKeys = {
     },
     NUMBER('Numero'),
     PERCENTAGE('Percentuale'),
+    ORDINAL('Numero ordinale'),
+    URL('URL'),
+    KEY_PHRASE('Frase chiave'),
+    {
+      name: SlotType.CURRENCY,
+      label: 'Valuta',
+      values: ['5 dollari', '9.10 dollari canadesi', '6 sterline', '$4.1', 'quattro pence', '24 pesos', '84 £', '£99.12'],
+    },
+    {
+      name: SlotType.DIMENSION,
+      label: 'Dimensione',
+      values: ['10 1/2 miglia', '10,5 chilometri', '0,3 mm', '5 piedi', '6 iarde', '8m', '25 m/s'],
+    },
+    {
+      name: SlotType.TEMPERATURE,
+      label: 'Temperatura',
+      values: ['30 gradi', '215 kelvin', '56 f', '33°f', '22 gradi Celsius', '102 gradi fanheit'],
+    },
   ],
-  [Language.KO]: [EMAIL, PHONENUMBER, PERCENTAGE('백분율')],
+  [Language.KO]: [EMAIL, PHONENUMBER, URL('URL'), KEY_PHRASE('핵심 문구')],
+  // Mexico Spanish has much less built in entities than Spain Spanish.
+  // There is a case in getSlotTypes in realtime-sdk for this
+  [Locale.ES_MX]: [EMAIL, NUMBER('Número'), URL('URL'), KEY_PHRASE('Frase clave')],
 };
