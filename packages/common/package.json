@@ -6,11 +6,6 @@
   "bugs": {
     "url": "https://github.com/voiceflow/common/issues"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
   "dependencies": {
     "@types/crypto-js": "^4.0.2",
     "bson-objectid": "^2.0.1",
@@ -22,8 +17,6 @@
     "typescript-fsa": "3.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.18",
     "@types/chai-as-promised": "^7.1.4",
     "@types/lodash": "^4.14.176",
@@ -31,26 +24,14 @@
     "@types/node": "^15.3.1",
     "@types/number-to-words": "1.2.0",
     "@types/sinon": "^10.0.0",
-    "@voiceflow/commitlint-config": "^1.1.0",
-    "@voiceflow/eslint-config": "^3.2.2",
-    "@voiceflow/git-branch-check": "^1.2.0",
-    "@voiceflow/prettier-config": "^1.0.5",
     "@zerollup/ts-transform-paths": "^1.7.18",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
-    "commitizen": "^4.2.4",
-    "cz-conventional-changelog": "^3.2.0",
     "depcheck": "^1.4.1",
-    "eslint": "^7.26.0",
-    "eslint-output": "^3.0.1",
-    "fixpack": "^4.0.0",
-    "husky": "^4.2.5",
     "lint-staged": "^11.0.0",
     "mocha": "^8.4.0",
     "nyc": "^15.1.0",
-    "prettier": "^2.3.0",
     "rimraf": "^3.0.2",
-    "source-map-support": "^0.5.19",
     "ts-mocha": "^8.0.0",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
@@ -60,7 +41,7 @@
   "files": [
     "build/"
   ],
-  "homepage": "https://github.com/voiceflow/common#readme",
+  "homepage": "https://github.com/voiceflow/libs#readme",
   "keywords": [
     "voiceflow"
   ],
@@ -69,7 +50,7 @@
   "prettier": "@voiceflow/prettier-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voiceflow/common.git"
+    "url": "git+https://github.com/voiceflow/libs.git"
   },
   "scripts": {
     "build": "npm run clean && ttsc --project ./tsconfig.build.json",
