@@ -36,16 +36,16 @@
     "clean:artifacts": "lerna run clean --parallel",
     "clean:root": "rimraf node_modules",
     "commit": "cz",
-    "lint": "lerna run lint --concurrency=4 --parallel",
-    "lint:fix": "lerna run lint:fix --concurrency=4 --parallel",
-    "lint:quiet": "lerna run lint:quiet --concurrency=4 --parallel",
-    "lint:report": "lerna run lint:report --concurrency=4 --parallel",
+    "lint": "lerna run lint --concurrency=9 --parallel",
+    "lint:fix": "lerna run lint:fix --concurrency=9 --parallel",
+    "lint:quiet": "lerna run lint:quiet --concurrency=9 --parallel",
+    "lint:report": "lerna run lint:report --concurrency=9 --parallel",
     "postinstall": "yarn bootstrap",
-    "test": "lerna run test --concurrency=4 --parallel",
-    "test:dependencies": "lerna run test:dependencies --concurrency=4 --parallel",
-    "test:integration": "lerna run test:integration --concurrency=4 --parallel",
-    "test:run": "lerna run test:run --concurrency=4 --parallel",
-    "test:unit": "lerna run test:unit --concurrency=4 --parallel"
+    "test": "lerna run test --concurrency=9 --parallel",
+    "test:dependencies": "lerna run test:dependencies --concurrency=9 --parallel",
+    "test:integration": "lerna run test:integration --concurrency=9 --parallel",
+    "test:run": "lerna run test:run --concurrency=9 --parallel",
+    "test:unit": "lerna run test:unit --concurrency=9 --parallel"
   },
   "workspaces": [
     "packages/*"
