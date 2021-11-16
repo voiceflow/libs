@@ -17,6 +17,7 @@
     "cz-conventional-changelog": "^3.2.0",
     "depcheck": "^1.4.1",
     "eslint": "^7.4.0",
+    "eslint-output": "^3.0.1",
     "fixpack": "^4.0.0",
     "husky": "^4.3.8",
     "lerna": "^4.0.0",
