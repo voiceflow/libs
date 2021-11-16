@@ -17,6 +17,7 @@
     "typescript-fsa": "3.0.0"
   },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.18",
     "@types/chai-as-promised": "^7.1.4",
     "@types/lodash": "^4.14.176",
@@ -47,7 +48,6 @@
   ],
   "license": "ISC",
   "main": "build/index.js",
-  "prettier": "@voiceflow/prettier-config",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voiceflow/libs.git"
