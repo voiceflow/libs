@@ -43,6 +43,7 @@ export interface Project<P extends BasePlatformData, M extends BasePlatformData>
   _id: ProjectID;
   teamID: TeamID;
   creatorID: CreatorID;
+  _version?: number;
 
   name: Name;
   image?: string;
