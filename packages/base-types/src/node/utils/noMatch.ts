@@ -31,7 +31,7 @@ export interface BaseNodeNoMatch {
 }
 
 export interface NodeNoMatch<NoMatch> extends BaseNodeNoMatch {
-  noMatches?: NoMatch[];
+  prompts?: NoMatch[];
 }
 
 // TODO: remove deprecated types when fully migrating data into a new format

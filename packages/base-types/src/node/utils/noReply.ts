@@ -25,7 +25,7 @@ export interface BaseNodeNoReply {
 }
 
 export interface NodeNoReply<NoReply> extends BaseNodeNoReply {
-  noReplies?: NoReply[];
+  prompts?: NoReply[];
 }
 
 // TODO: remove deprecated types when fully migrating to StepNoReply/NodeNoReply
