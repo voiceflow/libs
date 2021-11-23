@@ -19,7 +19,7 @@ export interface StepNoReply<Prompt> extends BaseStepNoReply {
 }
 
 export interface BaseNodeNoReply {
-  elseId?: NodeID;
+  nodeID?: NodeID;
   timeout?: number;
   randomize?: boolean;
 }

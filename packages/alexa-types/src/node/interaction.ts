@@ -14,11 +14,11 @@ export interface NodeGoTo {
 }
 
 export interface NodeInteraction extends BaseNode.Utils.SlotMappings {
+  goTo?: NodeGoTo;
   intent: string;
   nextIdIndex?: number;
-  goTo?: NodeGoTo;
 }
 
-export interface Node extends Omit<Node.Interaction.Node, 'interactions'> {
+export interface Node extends Omit<Node.Interaction.Node, 'interactions'>, BaseNode.Utils.NodeNextIDs {
   interactions: NodeInteraction[];
 }

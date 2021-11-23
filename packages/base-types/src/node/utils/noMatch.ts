@@ -26,7 +26,7 @@ export interface StepNoMatch<Prompt> extends BaseStepNoMatch {
 }
 
 export interface BaseNodeNoMatch {
-  elseId?: NodeID;
+  nodeID?: NodeID;
   randomize?: boolean;
 }
 
