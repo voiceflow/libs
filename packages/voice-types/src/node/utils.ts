@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
-import { Node } from '@voiceflow/base-types';
+import { Node, Nullable } from '@voiceflow/base-types';
 
 import { Prompt } from '@/types';
 
@@ -28,3 +28,11 @@ export interface NodeReprompt extends Node.Utils.NodeReprompt<string> {}
  * @deprecated use NodeNoMatch instead
  */
 export interface DeprecatedNodeNoMatch extends Node.Utils.DeprecatedNodeNoMatch<string> {}
+
+export interface NoMatchNode extends Node.Utils.BaseNode, DeprecatedNodeNoMatch {
+  noMatch?: Nullable<NodeNoMatch>;
+}
+
+export interface NoReplyNode extends Node.Utils.BaseNode, NodeReprompt {
+  noReply?: Nullable<NodeNoReply>;
+}
