@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/common",
   "description": "Junk drawer of utility functions",
-  "version": "7.8.1",
+  "version": "7.9.0",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/common/issues"
