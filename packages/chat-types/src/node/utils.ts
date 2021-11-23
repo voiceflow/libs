@@ -22,7 +22,7 @@ export interface StepReprompt extends Node.Utils.StepReprompt<Prompt> {}
 /**
  * @deprecated use NodeNoReply instead
  */
-export interface NodeReprompt extends Node.Utils.NodeReprompt<Prompt> {}
+export interface NodeReprompt extends Node.Utils.NodeReprompt<Text.SlateTextValue> {}
 
 /**
  * @deprecated use NodeNoMatch instead
