@@ -49,4 +49,12 @@ export interface BlockTrace extends BaseTraceFrame<BlockTracePayload> {
   type: TraceType.BLOCK;
 }
 
+export interface NoReplyTracePayload {
+  timeout: number;
+}
+
+export interface NoReplyTrace extends BaseTraceFrame<NoReplyTracePayload> {
+  type: TraceType.NO_REPLY;
+}
+
 export type AnyTrace = ExitTrace | SpeakTrace | ChoiceTrace | FlowTrace | StreamTrace | BlockTrace | DebugTrace | VisualTrace | TextTrace;
