@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.2.3...@voiceflow/api-sdk@3.3.0) (2021-11-24)
+
+
+### Features
+
+* update noReply/noMatch types (VF-2014) ([#115](https://github.com/voiceflow/libs/issues/115)) ([abdd6b4](https://github.com/voiceflow/libs/commit/abdd6b4f301b48a2c1bca6402b88692b170fc4b2))
+
+
+
+
+
 ## [3.2.3](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.2.2...@voiceflow/api-sdk@3.2.3) (2021-11-23)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
