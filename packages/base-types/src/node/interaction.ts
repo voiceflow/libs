@@ -1,7 +1,21 @@
 import { AnyRequestButton } from '@/request';
+import { Nullable } from '@/utils';
 
 import { NodeType } from './constants';
-import { BaseEvent, BaseNode, BaseNodeNoMatch, BaseStep, BaseStepNoMatch, BaseTraceFrame, NodeNextID, SlotMappings, TraceType } from './utils';
+import {
+  BaseEvent,
+  BaseNode,
+  BaseNodeNoMatch,
+  BaseNodeNoReply,
+  BaseStep,
+  BaseStepNoMatch,
+  BaseStepNoReply,
+  BaseTraceFrame,
+  DeprecatedBaseNodeNoMatch,
+  NodeNextID,
+  SlotMappings,
+  TraceType,
+} from './utils';
 
 export enum ChoiceAction {
   PATH = 'PATH',
@@ -22,6 +36,7 @@ export interface StepData {
   name: string;
   else: BaseStepNoMatch;
   choices: Choice[];
+  noReply?: Nullable<BaseStepNoReply>;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
@@ -32,8 +47,10 @@ export interface NodeInteraction<Event = BaseEvent> extends NodeNextID {
   event: Event;
 }
 
-export interface Node<Event = BaseEvent> extends BaseNode, BaseNodeNoMatch {
+export interface Node<Event = BaseEvent> extends BaseNode, DeprecatedBaseNodeNoMatch {
   type: NodeType.INTERACTION;
+  noMatch?: Nullable<BaseNodeNoMatch>;
+  noReply?: Nullable<BaseNodeNoReply>;
   interactions: NodeInteraction<Event>[];
 }
 

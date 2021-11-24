@@ -4,7 +4,7 @@
   "version": "7.9.0",
   "author": "Voiceflow",
   "bugs": {
-    "url": "https://github.com/voiceflow/common/issues"
+    "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
     "@types/crypto-js": "^4.0.2",
@@ -47,13 +47,16 @@
     "voiceflow"
   ],
   "license": "ISC",
-  "main": "build/index.js",
+  "main": "build/common/index.js",
+  "module": "build/esm/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voiceflow/libs.git"
   },
   "scripts": {
-    "build": "npm run clean && ttsc --project ./tsconfig.build.json",
+    "build": "yarn clean && yarn build:cjs && yarn build:esm",
+    "build:cjs": "ttsc --project ./tsconfig.build.json",
+    "build:esm": "ttsc --project ./tsconfig.build.json --module esnext --outDir ./build/esm",
     "clean": "rimraf build",
     "commit": "cz",
     "eslint-output": "eslint-output",
@@ -69,6 +72,5 @@
     "test:run": "NODE_ENV=test nyc ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.{unit,it}.ts'",
     "test:single": "NODE_ENV=test ts-mocha --paths --config config/tests/mocharc.yml",
     "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
-  },
-  "types": "build/index.d.ts"
+  }
 }

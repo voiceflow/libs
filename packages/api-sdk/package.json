@@ -36,19 +36,22 @@
     "voiceflow"
   ],
   "license": "ISC",
-  "main": "build/index.js",
+  "main": "build/common/index.js",
+  "module": "build/esm/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voiceflow/libs.git"
   },
   "scripts": {
-    "build": "npm run clean && ttsc --project ./tsconfig.build.json",
+    "build": "yarn clean && yarn build:cjs && yarn build:esm",
+    "build:cjs": "ttsc --project ./tsconfig.build.json",
+    "build:esm": "ttsc --project ./tsconfig.build.json --module esnext --outDir ./build/esm",
     "clean": "rimraf build",
     "lint": "eslint \"src/**/*.{ts,js}\" \"tests/**/*.{ts,js}\"",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
     "lint:report": "yarn lint --format json -o sonar/report.json",
-    "prepare": "npm run build",
+    "prepare": "yarn build",
     "tdd": "yarn test --watch",
     "test": "yarn test:run",
     "test:dependencies": "depcheck",
@@ -56,6 +59,5 @@
     "test:run": "NODE_ENV=test nyc ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.{unit,it}.ts'",
     "test:single": "NODE_ENV=test ts-mocha --paths --config ./config/tests/.mocharc.json",
     "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.unit.ts'"
-  },
-  "types": "build/index.d.ts"
+  }
 }

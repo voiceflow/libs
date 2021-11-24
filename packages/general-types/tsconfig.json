@@ -1,17 +1,12 @@
 {
   "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
-    "outDir": "./build",
+    "outDir": "./build/common",
     "baseUrl": "./src",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "compileOnSave": false,
-  "exclude": [
-    "node_modules/**",
-    "build/**"
-  ]
+  "exclude": ["node_modules/**", "build/**"]
 }

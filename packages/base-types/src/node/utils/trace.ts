@@ -5,13 +5,14 @@ export enum TraceType {
   TEXT = 'text',
   PATH = 'path',
   FLOW = 'flow',
+  GOTO = 'goto',
   SPEAK = 'speak',
   BLOCK = 'block',
   DEBUG = 'debug',
   CHOICE = 'choice',
   STREAM = 'stream',
   VISUAL = 'visual',
-  GOTO = 'goto',
+  NO_REPLY = 'no-reply',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {

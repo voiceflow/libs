@@ -1,21 +1,13 @@
 {
   "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
-    "lib": [
-      "es2017",
-      "DOM"
-    ],
-    "outDir": "./build",
+    "lib": ["es2017", "DOM"],
+    "outDir": "./build/common",
     "baseUrl": "./src",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "compileOnSave": false,
-  "exclude": [
-    "node_modules/**",
-    "build/**"
-  ]
+  "exclude": ["node_modules/**", "build/**"]
 }

@@ -8,9 +8,5 @@
       }
     ]
   },
-  "exclude": [
-    "node_modules/**",
-    "build/**",
-    "tests/**"
-  ]
+  "exclude": ["node_modules/**", "build/**", "tests/**"]
 }
