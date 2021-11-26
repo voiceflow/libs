@@ -84,10 +84,11 @@ export interface Version<P extends VersionPlatformData, C extends BaseCommand = 
   platformData: P;
 }
 
-export interface VersionDiagramResponce {
-  id: string;
-  type: string;
-  flow: string;
-  step: string;
-  content: string;
+export interface VersionDiagramResponse {
+  blockID: string;
+  blockName: string;
+  diagramID: string;
+  blockColor: string;
+  diagramName: string;
+  blockContent: string;
 }

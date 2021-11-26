@@ -136,8 +136,8 @@ class VersionResource extends CrudResource<Models.Version<Models.VersionPlatform
     return data;
   }
 
-  public async exportResponses(id: Models.VersionID): Promise<Models.VersionDiagramResponce[]> {
-    const { data } = await this.fetch.get<Models.VersionDiagramResponce[]>(`${this._getCRUDEndpoint(id)}/export/responses`);
+  public async exportResponses(id: Models.VersionID): Promise<Models.VersionDiagramResponse[]> {
+    const { data } = await this.fetch.get<Models.VersionDiagramResponse[]>(`${this._getCRUDEndpoint(id)}/export/responses`);
 
     return data;
   }
