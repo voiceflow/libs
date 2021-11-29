@@ -127,18 +127,18 @@ class ProjectResource extends CrudResource<
     return data;
   }
 
-  public async getReportTags(id: Models.ProjectID) {
-    const { data } = await this.fetch.get(`${this._getCRUDEndpoint(id)}/tags`);
+  public async getReportTags(id: Models.ProjectID): Promise<Models.ReportTag[]> {
+    const { data } = await this.fetch.get<Models.ReportTag[]>(`${this._getCRUDEndpoint(id)}/tags`);
     return data;
   }
 
-  public async updateReportTag(id: Models.ProjectID, tagID: Models.TagID, body: Models.ReportTag) {
-    const { data } = await this.fetch.patch(`${this._getCRUDEndpoint(id)}/tags/${tagID}`, body);
+  public async updateReportTag(id: Models.ProjectID, tagID: Models.TagID, body: Models.ReportTag ): Promise<Models.ReportTag[]> {
+    const { data } = await this.fetch.patch<Models.ReportTag[]>(`${this._getCRUDEndpoint(id)}/tags/${tagID}`, body);
     return data;
   }
 
-  public async createReportTag(id: Models.ProjectID, body: Models.ReportTag) {
-    const { data } = await this.fetch.put(`${this._getCRUDEndpoint(id)}/tags`, body);
+  public async createReportTag(id: Models.ProjectID, body: Omit<Models.ReportTag, 'tagID'> & { tagID?: string }): Promise<Models.ReportTag> {
+    const { data } = await this.fetch.put<Models.ReportTag>(`${this._getCRUDEndpoint(id)}/tags`, body);
     return data;
   }
 
