@@ -126,6 +126,26 @@ class ProjectResource extends CrudResource<
 
     return data;
   }
+
+  public async getReportTags(id: Models.ProjectID) {
+    const { data } = await this.fetch.get(`${this._getCRUDEndpoint(id)}/tags`);
+    return data;
+  }
+
+  public async updateReportTag(id: Models.ProjectID, tagID: string, body: any) {
+    const { data } = await this.fetch.patch(`${this._getCRUDEndpoint(id)}/tags/${tagID}`, body);
+    return data;
+  }
+
+  public async createReportTag(id: Models.ProjectID, body: any) {
+    const { data } = await this.fetch.put(`${this._getCRUDEndpoint(id)}/tags`, body);
+    return data;
+  }
+
+  public async deleteReportTag(id: Models.ProjectID, tagID: string) {
+    const { data } = await this.fetch.delete(`${this._getCRUDEndpoint(id)}/tags/${tagID}`);
+    return data;
+  }
 }
 
 export default ProjectResource;
