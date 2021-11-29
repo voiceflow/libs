@@ -29,6 +29,10 @@ export type ProgramID = string;
 
 export type DiagramID = string;
 
+export type TranscriptID = string;
+
+export type TurnID = string;
+
 export interface IntentInput {
   text: string;
   slots?: string[];
