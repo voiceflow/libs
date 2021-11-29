@@ -18,8 +18,8 @@ class TranscriptResource extends CrudResource<Models.Transcript, ModelIDKey, Tra
     });
   }
 
-  public async getTranscripts(projectID: Models.ProjectID, queryParams: string) {
-    const { data } = await this.fetch.get(`${ENDPOINT}/${projectID}?${queryParams ?? ''}`);
+  public async getTranscripts(projectID: Models.ProjectID, queryParams?: string): Promise<Models.Transcript[]> {
+    const { data } = await this.fetch.get<Models.Transcript[]>(`${ENDPOINT}/${projectID}?${queryParams ?? ''}`);
     return data;
   }
 
@@ -29,7 +29,8 @@ class TranscriptResource extends CrudResource<Models.Transcript, ModelIDKey, Tra
   }
 
   public async create(body: Omit<Models.Transcript, '_id'>): Promise<Models.Transcript> {
-    return super._post<Models.Transcript>(body);
+    const { data } = await this.fetch.put<Models.Transcript>(`${ENDPOINT}`, body);
+    return data;
   }
 
   public async addUtteranceTo(projectID: Models.ProjectID, transcriptID: Models.TranscriptID, body: { turnID: Models.TurnID; intentID: string; utteranceCount: number }) {
@@ -37,7 +38,7 @@ class TranscriptResource extends CrudResource<Models.Transcript, ModelIDKey, Tra
     return data;
   }
 
-  public async update(projectID: Models.ProjectID, transcriptID: Models.TranscriptID, body: Partial<Models.Transcript>): Promise<Models.Transcript> {
+  public async update(projectID: Models.ProjectID, transcriptID: Models.TranscriptID, body: Partial<Models.Transcript>): Promise<Partial<Models.Transcript>> {
     const { data } = await this.fetch.patch<Models.Transcript>(`${ENDPOINT}/${projectID}/${transcriptID}`, body);
     return data;
   }
@@ -60,8 +61,8 @@ class TranscriptResource extends CrudResource<Models.Transcript, ModelIDKey, Tra
     return data;
   }
 
-  public async getExport(projectID: Models.ProjectID, transcriptID: Models.TranscriptID, params: { format: string }) {
-    const { data } = await this.fetch.get(`${ENDPOINT}/${projectID}/${transcriptID}/export?${new URLSearchParams(params).toString()}\``);
+  public async getExport(projectID: Models.ProjectID, transcriptID: Models.TranscriptID, params: { format: string }): Promise<BlobPart> {
+    const { data } = await this.fetch.get<BlobPart>(`${ENDPOINT}/${projectID}/${transcriptID}/export?${new URLSearchParams(params).toString()}\``);
     return data;
   }
 }
