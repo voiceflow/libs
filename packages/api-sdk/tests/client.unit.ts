@@ -3,9 +3,9 @@ import JWT from 'jsonwebtoken';
 
 import { Client } from '@/client';
 import Fetch from '@/fetch';
-import { Analytics, APIKey, Diagram, Program, Project, PrototypeProgram, User, Version } from '@/resources';
+import { Analytics, APIKey, Diagram, Program, Project, PrototypeProgram, User, Version, Transcript } from '@/resources';
 
-const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User, APIKey, Analytics];
+const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User, APIKey, Analytics, Transcript];
 
 const USER_HASH = 'UserHash_16chars';
 const createClient = (authorization?: string) =>
