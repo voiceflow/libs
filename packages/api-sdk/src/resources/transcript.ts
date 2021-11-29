@@ -40,7 +40,7 @@ class TranscriptResource extends CrudResource<Models.Transcript, ModelIDKey, Tra
     transcriptID: Models.TranscriptID,
     body: { turnID: Models.TurnID; intentID: string; utteranceCount: number }
   ) {
-    const { data } = await this.fetch.post(`${ENDPOINT}/${projectID}/${transcriptID}/annotation/utteranceAddedTo`, body);
+    const { data } = await this.fetch.put(`${ENDPOINT}/${projectID}/${transcriptID}/annotation/utteranceAddedTo`, body);
     return data;
   }
 
