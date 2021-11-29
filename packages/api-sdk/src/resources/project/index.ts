@@ -127,8 +127,8 @@ class ProjectResource extends CrudResource<
     return data;
   }
 
-  public async getReportTags(id: Models.ProjectID): Promise<Models.ReportTag[]> {
-    const { data } = await this.fetch.get<Models.ReportTag[]>(`${this._getCRUDEndpoint(id)}/tags`);
+  public async getReportTags(id: Models.ProjectID): Promise<Record<string, Models.ReportTag>> {
+    const { data } = await this.fetch.get<Record<string, Models.ReportTag>>(`${this._getCRUDEndpoint(id)}/tags`);
     return data;
   }
 

@@ -53,7 +53,7 @@ class TranscriptResource extends CrudResource<Models.Transcript, ModelIDKey, Tra
   }
 
   public async attachReportTag(projectID: Models.ProjectID, transcriptID: Models.TranscriptID, reportTagID: string) {
-    return this.fetch.post<Models.TranscriptID>(`${ENDPOINT}/${projectID}/${transcriptID}/report_tag/${reportTagID}`);
+    return this.fetch.put<Models.TranscriptID>(`${ENDPOINT}/${projectID}/${transcriptID}/report_tag/${reportTagID}`);
   }
 
   public async getDialog(projectID: Models.ProjectID, transcriptID: Models.TranscriptID) {
