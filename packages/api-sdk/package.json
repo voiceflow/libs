@@ -1,13 +1,13 @@
 {
   "name": "@voiceflow/api-sdk",
   "description": "wrapper for creator-api",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/base-types": "^2.3.1",
+    "@voiceflow/base-types": "^2.3.2",
     "@voiceflow/common": "^7.10.0",
     "axios": "^0.21.1",
     "jwt-decode": "^3.1.2",

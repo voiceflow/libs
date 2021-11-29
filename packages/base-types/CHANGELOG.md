@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.3.1...@voiceflow/base-types@2.3.2) (2021-11-29)
+
+
+### Bug Fixes
+
+* intent on capture node (VF-000) ([#126](https://github.com/voiceflow/libs/issues/126)) ([11f15ee](https://github.com/voiceflow/libs/commit/11f15eed557f53e404676993ced2e39bde4c5122))
+
+
+
+
+
 ## [2.3.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.3.0...@voiceflow/base-types@2.3.1) (2021-11-26)
 
 
