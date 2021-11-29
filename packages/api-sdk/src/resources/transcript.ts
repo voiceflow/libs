@@ -28,17 +28,27 @@ class TranscriptResource extends CrudResource<Models.Transcript, ModelIDKey, Tra
     return data;
   }
 
-  public async create(body: Omit<Models.Transcript & { versionID: Models.VersionID }, '_id'|'creatorID'|'createdAt'|'reportTags'> ): Promise<Models.Transcript> {
+  public async create(
+    body: Omit<Models.Transcript & { versionID: Models.VersionID }, '_id' | 'creatorID' | 'createdAt' | 'reportTags'>
+  ): Promise<Models.Transcript> {
     const { data } = await this.fetch.put<Models.Transcript>(`${ENDPOINT}`, body);
     return data;
   }
 
-  public async addUtteranceTo(projectID: Models.ProjectID, transcriptID: Models.TranscriptID, body: { turnID: Models.TurnID; intentID: string; utteranceCount: number }) {
+  public async addUtteranceTo(
+    projectID: Models.ProjectID,
+    transcriptID: Models.TranscriptID,
+    body: { turnID: Models.TurnID; intentID: string; utteranceCount: number }
+  ) {
     const { data } = await this.fetch.post(`${ENDPOINT}/${projectID}/${transcriptID}/annotation/utteranceAddedTo`, body);
     return data;
   }
 
-  public async update(projectID: Models.ProjectID, transcriptID: Models.TranscriptID, body: { data: Partial<Models.Transcript & Partial<{ notes: string }>>}): Promise<Partial<Models.Transcript>> {
+  public async update(
+    projectID: Models.ProjectID,
+    transcriptID: Models.TranscriptID,
+    body: { data: Partial<Models.Transcript & Partial<{ notes: string }>> }
+  ): Promise<Partial<Models.Transcript>> {
     const { data } = await this.fetch.patch<Models.Transcript>(`${ENDPOINT}/${projectID}/${transcriptID}`, body);
     return data;
   }

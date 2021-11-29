@@ -132,7 +132,7 @@ class ProjectResource extends CrudResource<
     return data;
   }
 
-  public async updateReportTag(id: Models.ProjectID, tagID: Models.TagID, body: Models.ReportTag ): Promise<Models.ReportTag[]> {
+  public async updateReportTag(id: Models.ProjectID, tagID: Models.TagID, body: Models.ReportTag): Promise<Models.ReportTag[]> {
     const { data } = await this.fetch.patch<Models.ReportTag[]>(`${this._getCRUDEndpoint(id)}/tags/${tagID}`, body);
     return data;
   }
