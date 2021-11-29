@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.3.2...@voiceflow/base-types@2.4.0) (2021-11-29)
+
+
+### Features
+
+* transcript models (VF-000) ([#127](https://github.com/voiceflow/libs/issues/127)) ([2722e04](https://github.com/voiceflow/libs/commit/2722e0475f41db231177e136cbda837e2ace5f35))
+
+
+
+
+
 ## [2.3.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.3.1...@voiceflow/base-types@2.3.2) (2021-11-29)
 
 
