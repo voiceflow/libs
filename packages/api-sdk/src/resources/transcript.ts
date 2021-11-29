@@ -38,7 +38,7 @@ class TranscriptResource extends CrudResource<Models.Transcript, ModelIDKey, Tra
     return data;
   }
 
-  public async update(projectID: Models.ProjectID, transcriptID: Models.TranscriptID, body: Partial<Models.Transcript>): Promise<Partial<Models.Transcript>> {
+  public async update(projectID: Models.ProjectID, transcriptID: Models.TranscriptID, body: { data: Partial<Models.Transcript & Partial<{ notes: string }>>}): Promise<Partial<Models.Transcript>> {
     const { data } = await this.fetch.patch<Models.Transcript>(`${ENDPOINT}/${projectID}/${transcriptID}`, body);
     return data;
   }
