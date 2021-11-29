@@ -28,7 +28,7 @@ class TranscriptResource extends CrudResource<Models.Transcript, ModelIDKey, Tra
     return data;
   }
 
-  public async create(body: Omit<Models.Transcript, '_id'>): Promise<Models.Transcript> {
+  public async create(body: Omit<Models.Transcript & { versionID: Models.VersionID }, '_id'|'creatorID'|'createdAt'|'reportTags'> ): Promise<Models.Transcript> {
     const { data } = await this.fetch.put<Models.Transcript>(`${ENDPOINT}`, body);
     return data;
   }
