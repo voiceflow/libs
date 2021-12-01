@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.4.0...@voiceflow/base-types@2.4.1) (2021-12-01)
+
+
+### Bug Fixes
+
+* pass slot data in capture (VF-000) ([#129](https://github.com/voiceflow/libs/issues/129)) ([aa72a10](https://github.com/voiceflow/libs/commit/aa72a103ebd8493881bc820357bf4a016ade1c4f))
+
+
+
+
+
 # [2.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.3.2...@voiceflow/base-types@2.4.0) (2021-11-29)
 
 
