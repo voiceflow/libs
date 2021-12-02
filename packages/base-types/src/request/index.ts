@@ -10,6 +10,7 @@ export enum RequestType {
   ACTION = 'action',
   INTENT = 'intent',
   LAUNCH = 'launch',
+  NO_REPLY = 'no-reply',
 }
 
 export interface RequestConfig {
@@ -43,6 +44,10 @@ export interface BaseRequest<P = unknown> {
 
 export interface LaunchRequest extends BaseRequest<undefined> {
   type: RequestType.LAUNCH;
+}
+
+export interface NoReplyRequest extends BaseRequest<undefined> {
+  type: RequestType.NO_REPLY;
 }
 
 export interface TextRequest extends BaseRequest<string> {
@@ -98,6 +103,8 @@ export const isTextRequest = (request: BaseRequest): request is TextRequest => r
 export const isActionRequest = (request: BaseRequest): request is ActionRequest => request.type === RequestType.ACTION;
 
 export const isLaunchRequest = (request: BaseRequest): request is LaunchRequest => request.type === RequestType.LAUNCH;
+
+export const isNoReplyRequest = (request: BaseRequest): request is NoReplyRequest => request.type === RequestType.NO_REPLY;
 
 export const isIntentRequest = (request: BaseRequest): request is IntentRequest => request.type === RequestType.INTENT;
 
