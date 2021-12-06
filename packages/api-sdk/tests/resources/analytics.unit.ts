@@ -7,7 +7,7 @@ import Analytics from '@/resources/analytics';
 
 const createClient = (encrypted = false) => {
   const fetch = {
-    post: sinon.stub(),
+    post: sinon.stub().resolves(undefined),
   };
 
   const encryption = {
