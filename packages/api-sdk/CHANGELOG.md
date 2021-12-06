@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.6](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.3.5...@voiceflow/api-sdk@3.3.6) (2021-12-06)
+
+
+### Bug Fixes
+
+* track is sync return promise (VF-000) ([#131](https://github.com/voiceflow/libs/issues/131)) ([86510fd](https://github.com/voiceflow/libs/commit/86510fdfc376977934a63eac429e0edc5a7316d3))
+
+
+
+
+
 ## [3.3.5](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.3.4...@voiceflow/api-sdk@3.3.5) (2021-12-02)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
