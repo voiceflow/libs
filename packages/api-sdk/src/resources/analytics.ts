@@ -56,8 +56,11 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
   ): Promise<void> {
     const payload = { event, envIDs, hashed, teamhashed, properties };
 
-    // can not have async execution on FE beforeunload process thread
-    return this.fetch.post(`${this._getEndpoint()}/track`, this.shouldEncrypt ? this.encryptedPayload(payload) : payload).then(() => undefined);
+    // can not have async execution on FE window.addEventListener('beforeunload', ...) process thread
+    if (this.shouldEncrypt) {
+      return this.fetch.post(`${this._getEndpoint()}`, this.encryptedPayload(payload)).then(() => undefined);
+    }
+    return this.fetch.post(`${this._getEndpoint()}/track`, payload).then(() => undefined);
   }
 
   public async identify<T extends Record<string, any>, K extends keyof T>({
