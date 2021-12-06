@@ -50,17 +50,17 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
     return this.shouldEncrypt ? ENCRYPTED_ENDPOINT : ENDPOINT;
   }
 
-  public async track<P extends Record<string, any>, K extends keyof P>(
+  public track<P extends Record<string, any>, K extends keyof P>(
     event: string,
     { envIDs, hashed, teamhashed, properties = {} as P }: TrackOptions<P, K> = {}
   ): Promise<void> {
     const payload = { event, envIDs, hashed, teamhashed, properties };
 
+    // can not have async execution on FE window.addEventListener('beforeunload', ...) process thread
     if (this.shouldEncrypt) {
-      await this.fetch.post(`${this._getEndpoint()}`, this.encryptedPayload(payload));
-    } else {
-      await this.fetch.post(`${this._getEndpoint()}/track`, payload);
+      return this.fetch.post(`${this._getEndpoint()}`, this.encryptedPayload(payload)).then(() => undefined);
     }
+    return this.fetch.post(`${this._getEndpoint()}/track`, payload).then(() => undefined);
   }
 
   public async identify<T extends Record<string, any>, K extends keyof T>({
