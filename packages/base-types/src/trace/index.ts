@@ -14,8 +14,8 @@ export { TraceFrame as ChoiceTrace } from '@/node/interaction';
 export { TraceFrame as SpeakTrace } from '@/node/speak';
 export { TraceFrame as StreamTrace } from '@/node/stream';
 export { TraceFrame as TextTrace } from '@/node/text';
-export { TraceFrame as VisualTrace } from '@/node/visual';
 export { TraceType } from '@/node/utils/trace';
+export { TraceFrame as VisualTrace } from '@/node/visual';
 
 export interface DebugTracePayload {
   type?: string;
