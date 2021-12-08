@@ -15,7 +15,7 @@ export { TraceFrame as SpeakTrace } from '@/node/speak';
 export { TraceFrame as StreamTrace } from '@/node/stream';
 export { TraceFrame as TextTrace } from '@/node/text';
 export { TraceFrame as VisualTrace } from '@/node/visual';
-export { TraceType } from '@/node/trace';
+export { TraceType } from '@/node/utils/trace';
 
 export interface DebugTracePayload {
   type?: string;
