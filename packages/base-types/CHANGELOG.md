@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.4.2...@voiceflow/base-types@2.5.0) (2021-12-08)
+
+
+### Features
+
+* export TraceType In Trace (VF-000) ([#133](https://github.com/voiceflow/libs/issues/133)) ([4ccbbc6](https://github.com/voiceflow/libs/commit/4ccbbc6347d23dcb75919bf83c6246c6a50d2ed0))
+
+
+
+
+
 ## [2.4.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.4.1...@voiceflow/base-types@2.4.2) (2021-12-02)
 
 
