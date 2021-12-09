@@ -25,10 +25,6 @@ export interface Compose {
 export const compose: Compose =
   (...transforms: Transform[]) =>
   <T extends object>(value: T): T => {
-    if (transforms.length === 0) {
-      return value;
-    }
-
     if (transforms.length === 1) {
       return transforms[0](value);
     }
@@ -54,10 +50,6 @@ type ChainCallback<A extends any[]> = (...args: A) => void;
 export const chain =
   <A extends any[]>(...fns: Array<Nullish<ChainCallback<A>>>) =>
   (...args: A): void => {
-    if (fns.length === 0) {
-      return;
-    }
-
     // perf optimization, most of the time we have one or two functions
     if (fns.length === 1) {
       fns[0]?.(...args);
@@ -77,10 +69,6 @@ export const chainVoid =
 export const chainAsync =
   <A extends any[]>(...fns: Array<Nullish<ChainCallback<A>>>) =>
   async (...args: A): Promise<void> => {
-    if (fns.length === 0) {
-      return;
-    }
-
     // perf optimization, most of the time we have one or two functions
     if (fns.length === 1) {
       await fns[0]?.(...args);
