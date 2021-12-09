@@ -108,8 +108,3 @@ export const withEffect =
 
     return value;
   };
-
-export const withStaticEffect =
-  <T>(callback: (value: T) => void, value: T) =>
-  (): void =>
-    callback(value);
