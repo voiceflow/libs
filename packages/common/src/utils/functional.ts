@@ -48,7 +48,7 @@ export const stringify = (value: any): string => (typeof value === 'string' ? va
 type ChainCallback<A extends any[]> = (...args: A) => void;
 
 export const chain =
-  <A extends any[]>(...fns: Array<Nullish<ChainCallback<A>>>) =>
+  <A extends any[]>(...fns: [Nullish<ChainCallback<A>>, ...Array<Nullish<ChainCallback<A>>>]) =>
   (...args: A): void => {
     // perf optimization, most of the time we have one or two functions
     if (fns.length === 1) {
@@ -62,12 +62,12 @@ export const chain =
   };
 
 export const chainVoid =
-  (...fns: Array<Nullish<VoidFunction>>) =>
+  (...fns: [Nullish<VoidFunction>, ...Array<Nullish<VoidFunction>>]) =>
   (): void =>
     chain(...fns)();
 
 export const chainAsync =
-  <A extends any[]>(...fns: Array<Nullish<ChainCallback<A>>>) =>
+  <A extends any[]>(...fns: [Nullish<ChainCallback<A>>, ...Array<Nullish<ChainCallback<A>>>]) =>
   async (...args: A): Promise<void> => {
     // perf optimization, most of the time we have one or two functions
     if (fns.length === 1) {
@@ -85,7 +85,7 @@ export const chainAsync =
   };
 
 export const chainVoidAsync =
-  (...fns: Array<Nullish<VoidFunction>>) =>
+  (...fns: [Nullish<VoidFunction>, ...Array<Nullish<VoidFunction>>]) =>
   (): Promise<void> =>
     chainAsync(...fns)();
 
