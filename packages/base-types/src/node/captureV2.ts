@@ -14,17 +14,18 @@ export interface BaseCaptureData {
   noMatch?: Nullable<BaseStepNoMatch>;
 }
 
-export interface IntentCapture extends BaseCaptureData {
+export interface IntentCaptureData extends BaseCaptureData {
   type: CaptureType.INTENT;
   intent?: Nullable<Intent>;
 }
 
-export interface QueryCapture extends BaseCaptureData {
+export interface QueryCaptureData extends BaseCaptureData {
   type: CaptureType.QUERY;
   variable: Nullable<string>;
 }
 
-export interface Step<Data = IntentCapture | QueryCapture> extends BaseStep<Data> {
+export type StepData = IntentCaptureData | QueryCaptureData;
+export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.CAPTURE_V2;
 }
 
