@@ -24,8 +24,17 @@ export interface Compose {
 
 export const compose: Compose =
   (...transforms: Transform[]) =>
-  <T extends object>(value: T): T =>
-    [...transforms].reverse().reduce((acc, transform) => transform(acc), value);
+  <T extends object>(value: T): T => {
+    if (transforms.length === 1) {
+      return transforms[0](value);
+    }
+
+    if (transforms.length === 2) {
+      return transforms[0](transforms[1](value));
+    }
+
+    return transforms.reduceRight((acc, transform) => transform(acc), value);
+  };
 
 export type VoidFunction = () => void;
 
@@ -39,33 +48,50 @@ export const stringify = (value: any): string => (typeof value === 'string' ? va
 type ChainCallback<A extends any[]> = (...args: A) => void;
 
 export const chain =
-  <A extends any[]>(...fns: Array<Nullish<ChainCallback<A>>>) =>
-  (...args: A): void =>
-    fns.forEach((fn) => fn?.(...args));
+  <A extends any[]>(...fns: [Nullish<ChainCallback<A>>, ...Array<Nullish<ChainCallback<A>>>]) =>
+  (...args: A): void => {
+    // perf optimization, most of the time we have one or two functions
+    if (fns.length === 1) {
+      fns[0]?.(...args);
+    } else if (fns.length === 2) {
+      fns[0]?.(...args);
+      fns[1]?.(...args);
+    } else {
+      fns.forEach((fn) => fn?.(...args));
+    }
+  };
 
 export const chainVoid =
-  (...fns: Array<Nullish<VoidFunction>>) =>
+  (...fns: [Nullish<VoidFunction>, ...Array<Nullish<VoidFunction>>]) =>
   (): void =>
     chain(...fns)();
 
 export const chainAsync =
-  <A extends any[]>(...fns: Array<Nullish<ChainCallback<A>>>) =>
+  <A extends any[]>(...fns: [Nullish<ChainCallback<A>>, ...Array<Nullish<ChainCallback<A>>>]) =>
   async (...args: A): Promise<void> => {
-    // eslint-disable-next-line no-restricted-syntax
-    for (const fn of fns) {
-      // eslint-disable-next-line no-await-in-loop
-      await fn?.(...args);
+    // perf optimization, most of the time we have one or two functions
+    if (fns.length === 1) {
+      await fns[0]?.(...args);
+    } else if (fns.length === 2) {
+      await fns[0]?.(...args);
+      await fns[1]?.(...args);
+    } else {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const fn of fns) {
+        // eslint-disable-next-line no-await-in-loop
+        await fn?.(...args);
+      }
     }
   };
 
 export const chainVoidAsync =
-  (...fns: Array<Nullish<VoidFunction>>) =>
+  (...fns: [Nullish<VoidFunction>, ...Array<Nullish<VoidFunction>>]) =>
   (): Promise<void> =>
     chainAsync(...fns)();
 
 export const withEffect =
   <T>(callback: (value: T) => void) =>
-  (value: T) => {
+  (value: T): T => {
     callback(value);
 
     return value;
