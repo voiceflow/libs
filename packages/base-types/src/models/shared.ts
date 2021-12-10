@@ -40,29 +40,29 @@ export interface IntentInput {
   voice?: string;
 }
 
-export type IntentSlotDialog = {
+export interface IntentSlotDialog {
   prompt: any[];
   confirm: any[];
   utterances: IntentInput[];
   confirmEnabled: boolean;
-};
+}
 
-export type IntentSlot = {
+export interface IntentSlot {
   id: string;
   dialog: IntentSlotDialog;
   required: boolean;
-};
+}
 
-export type Intent = {
+export interface Intent {
   key: string;
   name: string;
   slots?: IntentSlot[];
   inputs: IntentInput[];
   builtIn?: boolean;
   _platform?: string;
-};
+}
 
-export type Slot = {
+export interface Slot {
   key: string;
   name: string;
   type: {
@@ -70,17 +70,17 @@ export type Slot = {
   };
   color?: string;
   inputs: string[];
-};
+}
 
-export type SlotMapping = {
+export interface SlotMapping {
   slot: Nullable<string>;
   variable: Nullable<Variable>;
-};
+}
 
-export type CommandMapping = {
+export interface CommandMapping {
   slot: string;
   variable: Variable;
-};
+}
 
 /**
  * @deprecated
@@ -153,7 +153,7 @@ export type BaseStep<D extends AnyRecord = AnyRecord, P = [BasePort, ...BasePort
 
 export type BasePlatformData = AnyRecord;
 
-export type PrototypeModel = {
+export interface PrototypeModel {
   slots: Slot[];
   intents: Intent[];
-};
+}
