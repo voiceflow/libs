@@ -13,6 +13,7 @@ export enum NodeType {
   IF_V2 = 'ifV2',
   RANDOM = 'random',
   CAPTURE = 'capture',
+  CAPTURE_V2 = 'captureV2',
 
   // integrations
   API = 'api',

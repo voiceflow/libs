@@ -17,7 +17,6 @@ export interface Step<Data = StepData> extends BaseStep<Data> {
 export interface Node extends BaseNode, NodeNextID {
   type: NodeType.CAPTURE;
   intent?: string;
-  slots?: string[];
   noReply?: Nullable<BaseNodeNoReply>;
   variable: string;
 }
