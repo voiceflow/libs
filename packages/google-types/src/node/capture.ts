@@ -9,8 +9,10 @@ import { ButtonNode } from './buttons';
 
 export interface StepData extends Node.Capture.StepData<Voice>, Button.StepButton {}
 
+/** @deprecated */
 export interface Step extends Node.Capture.Step<StepData> {}
 
+/** @deprecated */
 export interface Node extends Node.Capture.Node {
   buttons?: ButtonNode[];
 }

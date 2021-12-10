@@ -10,10 +10,12 @@ export interface StepData {
   slotInputs: string[];
 }
 
+/** @deprecated */
 export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.CAPTURE;
 }
 
+/** @deprecated */
 export interface Node extends BaseNode, NodeNextID {
   type: NodeType.CAPTURE;
   intent?: string;

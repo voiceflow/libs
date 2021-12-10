@@ -8,8 +8,10 @@ export interface StepData extends Node.Capture.StepData, Button.StepButton, Step
   noReply?: Nullable<StepNoReply>;
 }
 
+/** @deprecated */
 export interface Step<Data = StepData> extends Node.Capture.Step<Data> {}
 
+/** @deprecated */
 export interface Node extends Node.Capture.Node, Request.NodeButton, NodeReprompt {
   noReply?: Nullable<NodeNoReply>;
 }
