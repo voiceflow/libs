@@ -83,13 +83,8 @@ describe('Analytics', () => {
     await Promise.resolve();
 
     expect(fetch.post.args).to.eql([
-      [
-        'analytics/batch-track',
-        [
-          { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined },
-          { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
-        ],
-      ],
+      ['analytics/track', { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined }],
+      ['analytics/track', { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined }],
     ]);
   });
 
