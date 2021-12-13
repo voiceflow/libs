@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    // Compiler options
+    "lib": ["es2021"],
+    "module": "commonjs",
+    "target": "es2021",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+
+    // Output options
+    "outDir": "./build",
+    "declaration": true,
+    "sourceMap": true,
+
+    // Strictness checks
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Imports
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["src", "typings", "tests"],
+  "exclude": ["node_modules"]
+}
