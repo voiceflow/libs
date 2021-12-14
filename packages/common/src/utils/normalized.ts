@@ -1,6 +1,6 @@
 import { Normalized } from '@/types';
 
-import { findUnion, withoutValue } from './array';
+import { withoutValue } from './array';
 import { stringify } from './functional';
 import { hasProperty } from './object';
 
