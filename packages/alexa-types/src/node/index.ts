@@ -3,6 +3,7 @@ import { Node } from '@voiceflow/base-types';
 import * as AccountLinking from './accountLinking';
 import * as CancelPayment from './cancelPayment';
 import * as Capture from './capture';
+import * as CaptureV2 from './captureV2';
 import * as Display from './display';
 import * as Event from './event';
 import * as Interaction from './interaction';
@@ -17,6 +18,7 @@ import * as UserInfo from './userInfo';
 export * as AccountLinking from './accountLinking';
 export * as CancelPayment from './cancelPayment';
 export * as Capture from './capture';
+export * as CaptureV2 from './captureV2';
 export * from './constants';
 export * as Display from './display';
 export * as Event from './event';
@@ -29,8 +31,8 @@ export * as Speak from './speak';
 export * as Stream from './stream';
 export * as UserInfo from './userInfo';
 
-export type AnyAlexaExtendedStep = Speak.Step | Prompt.Step | Capture.Step | Interaction.Step | Stream.Step;
-export type AnyAlexaExtendedNode = Speak.Node | Capture.Node | Interaction.Node | Stream.Node;
+export type AnyAlexaExtendedStep = Speak.Step | Prompt.Step | Capture.Step | CaptureV2.Step | Interaction.Step | Stream.Step;
+export type AnyAlexaExtendedNode = Speak.Node | Capture.Node | CaptureV2.Node | Interaction.Node | Stream.Node;
 
 export type AnyAlexaOnlyStep =
   | AccountLinking.Step

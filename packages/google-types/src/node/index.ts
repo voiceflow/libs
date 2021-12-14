@@ -2,6 +2,7 @@ import { Node } from '@voiceflow/base-types';
 
 import * as Buttons from './buttons';
 import * as Capture from './capture';
+import * as CaptureV2 from './captureV2';
 import * as Interaction from './interaction';
 import * as Prompt from './prompt';
 import * as Speak from './speak';
@@ -9,13 +10,14 @@ import * as Stream from './stream';
 
 export * as Buttons from './buttons';
 export * as Capture from './capture';
+export * as CaptureV2 from './captureV2';
 export * as Interaction from './interaction';
 export * as Prompt from './prompt';
 export * as Speak from './speak';
 export * as Stream from './stream';
 
-export type AnyGoogleExtendedStep = Speak.Step | Prompt.Step | Capture.Step | Interaction.Step | Stream.Step | Buttons.Step;
-export type AnyGoogleExtendedNode = Speak.Node | Capture.Node | Interaction.Node | Stream.Node;
+export type AnyGoogleExtendedStep = Speak.Step | Prompt.Step | Capture.Step | CaptureV2.Step | Interaction.Step | Stream.Step | Buttons.Step;
+export type AnyGoogleExtendedNode = Speak.Node | Capture.Node | CaptureV2.Node | Interaction.Node | Stream.Node;
 
 export type AnyGoogleStep = Node.AnyCommonStep | AnyGoogleExtendedStep | Node.Card.Step;
 export type AnyGoogleNode = Node.AnyCommonNode | AnyGoogleExtendedNode | Node.Card.Node;
