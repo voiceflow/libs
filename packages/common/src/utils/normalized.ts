@@ -70,6 +70,9 @@ export const safeGetNormalizedByKey: SafeGetNormalizedByKey = <T>({ byKey }: Nor
 
 export const getAllNormalizedByKeys = <T>({ byKey }: Normalized<T>, keys: string[]) => keys.map((key) => byKey[key]);
 
+export const safeGetAllNormalizedByKeys = <T>({ allKeys, byKey }: Normalized<T>, keys: string[]): T[] =>
+  allKeys.filter((key) => keys.includes(key)).map((key) => byKey[key]);
+
 export const updateNormalizedByKey = <T, N extends Normalized<T>>({ byKey, ...rest }: N, key: string, obj: T) =>
   ({
     ...rest,
