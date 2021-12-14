@@ -74,6 +74,50 @@ describe('Analytics', () => {
     ]);
   });
 
+  it('.batchTrack without batching', async () => {
+    const { fetch, analytics } = createClient();
+
+    analytics.batchTrack('Event');
+    analytics.batchTrack('Event 2', { properties: { id: 'id', value: 10 }, hashed: ['id'] });
+
+    await Promise.resolve();
+
+    expect(fetch.post.args).to.eql([
+      ['analytics/track', { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined }],
+      ['analytics/track', { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined }],
+    ]);
+  });
+
+  it('.batchTrack with batching', async () => {
+    const { fetch, analytics } = createClient();
+    analytics.setBatching(true);
+    analytics.batchTrack('Event');
+    analytics.batchTrack('Event 2', { properties: { id: 'id', value: 10 }, hashed: ['id'] });
+
+    await Promise.resolve();
+
+    expect(fetch.post.args).to.eql([
+      [
+        'analytics/batch-track',
+        [
+          { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined },
+          { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
+        ],
+      ],
+    ]);
+  });
+
+  it('.batchTrack encrypted with batching', async () => {
+    const { fetch, analytics } = createClient(true);
+    analytics.setBatching(true);
+    analytics.batchTrack('Event');
+    analytics.batchTrack('Event 2', { properties: { id: 'id', value: 10 }, hashed: ['id'] });
+
+    await Promise.resolve();
+
+    expect(fetch.post.args).to.eql([['vf-ping/batch', { message: 'message' }]]);
+  });
+
   it('.identify', async () => {
     const { fetch, analytics } = createClient();
 
