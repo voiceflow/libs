@@ -1,6 +1,6 @@
 import { Normalized } from '@/types';
 
-import { withoutValue } from './array';
+import { findUnion, withoutValue } from './array';
 import { stringify } from './functional';
 import { hasProperty } from './object';
 
@@ -69,6 +69,9 @@ export const safeGetNormalizedByKey: SafeGetNormalizedByKey = <T>({ byKey }: Nor
   hasProperty(byKey, key) ? byKey[key] : null;
 
 export const getAllNormalizedByKeys = <T>({ byKey }: Normalized<T>, keys: string[]) => keys.map((key) => byKey[key]);
+
+export const safeGetAllNormalizedByKeys = <T>({ allKeys, byKey }: Normalized<T>, keys: string[]): T[] =>
+  allKeys.filter((key) => keys.includes(key)).map((key) => byKey[key]);
 
 export const updateNormalizedByKey = <T, N extends Normalized<T>>({ byKey, ...rest }: N, key: string, obj: T) =>
   ({
