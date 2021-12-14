@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.8](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@3.2.7...@voiceflow/general-types@3.2.8) (2021-12-14)
+
+
+### Bug Fixes
+
+* capture v2 (VF-2456) ([#135](https://github.com/voiceflow/libs/issues/135)) ([2da7c31](https://github.com/voiceflow/libs/commit/2da7c31e639972a08b67a8469b23b9dcb5599ce9))
+
+
+
+
+
 ## [3.2.7](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@3.2.6...@voiceflow/general-types@3.2.7) (2021-12-10)
 
 **Note:** Version bump only for package @voiceflow/general-types

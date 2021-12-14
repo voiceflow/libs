@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.10](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.3.9...@voiceflow/google-types@2.3.10) (2021-12-14)
+
+
+### Bug Fixes
+
+* capture v2 (VF-2456) ([#135](https://github.com/voiceflow/libs/issues/135)) ([2da7c31](https://github.com/voiceflow/libs/commit/2da7c31e639972a08b67a8469b23b9dcb5599ce9))
+
+
+
+
+
 ## [2.3.9](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.3.8...@voiceflow/google-types@2.3.9) (2021-12-14)
 
 **Note:** Version bump only for package @voiceflow/google-types
