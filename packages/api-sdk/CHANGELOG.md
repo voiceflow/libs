@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.3.9...@voiceflow/api-sdk@3.4.0) (2021-12-14)
+
+
+### Features
+
+* support batch for segment tracking (VF-2464) ([#137](https://github.com/voiceflow/libs/issues/137)) ([0ec19e2](https://github.com/voiceflow/libs/commit/0ec19e2047b44cf3070d8b4b5ec51fa74a9fc2e1))
+
+
+
+
+
 ## [3.3.9](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.3.8...@voiceflow/api-sdk@3.3.9) (2021-12-10)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
