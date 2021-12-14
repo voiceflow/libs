@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.12.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.11.0...@voiceflow/common@7.12.0) (2021-12-14)
+
+
+### Features
+
+* add safe normalized get all ([#139](https://github.com/voiceflow/libs/issues/139)) ([ee1ff19](https://github.com/voiceflow/libs/commit/ee1ff194d9a573f6865e959f79d7e2a48477a5c9))
+
+
+
+
+
 # [7.11.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.10.0...@voiceflow/common@7.11.0) (2021-12-10)
 
 
