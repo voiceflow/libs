@@ -37,7 +37,7 @@ export interface Node extends BaseNode, NodeNextID {
     name: string;
     entities?: string[];
   };
-  variable: string;
+  variable?: string;
   noReply?: Nullable<BaseNodeNoReply>;
   noMatch?: Nullable<BaseNodeNoMatch>;
 }

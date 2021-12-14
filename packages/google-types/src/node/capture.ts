@@ -7,6 +7,7 @@ import { Voice } from '@/constants';
 
 import { ButtonNode } from './buttons';
 
+/** @deprecated */
 export interface StepData extends Node.Capture.StepData<Voice>, Button.StepButton {}
 
 /** @deprecated */

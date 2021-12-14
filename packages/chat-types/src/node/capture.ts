@@ -4,6 +4,7 @@ import { Button, Node, Nullable, Request } from '@voiceflow/base-types';
 
 import { NodeNoReply, NodeReprompt, StepNoReply, StepReprompt } from './utils';
 
+/** @deprecated */
 export interface StepData extends Node.Capture.StepData, Button.StepButton, StepReprompt {
   noReply?: Nullable<StepNoReply>;
 }

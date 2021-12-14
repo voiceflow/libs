@@ -3,6 +3,7 @@ import { Nullable } from '@/utils';
 import { NodeType } from './constants';
 import { BaseNode, BaseNodeNoReply, BaseStep, BaseStepNoReply, NodeNextID } from './utils';
 
+/** @deprecated */
 export interface StepData {
   slot: Nullable<string>;
   noReply?: Nullable<BaseStepNoReply>;
