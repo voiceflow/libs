@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.5.2...@voiceflow/base-types@2.5.3) (2021-12-15)
+
+
+### Bug Fixes
+
+* reintroduce slots functionality (VF-2456) ([5478381](https://github.com/voiceflow/libs/commit/547838120ed9f288cadf646ff0a67adedceb77de))
+
+
+
+
+
 ## [2.5.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.5.1...@voiceflow/base-types@2.5.2) (2021-12-14)
 
 
