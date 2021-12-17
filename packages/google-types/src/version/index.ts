@@ -27,6 +27,7 @@ export interface BaseGoogleVersionData extends Version.VoiceVersionData<Voice> {
   status: { stage: GoogleStage };
   settings: BaseGoogleVersionSettings;
   publishing: BaseGoogleVersionPublishing;
+  modelVersion: 1;
 }
 
 export interface BaseGoogleVersion extends Version.VoiceVersion<Voice> {
@@ -43,6 +44,7 @@ export const defaultBaseGoogleVersionData = ({
   status: { stage },
   settings: defaultBaseGoogleVersionSettings(settings),
   publishing: defaultBaseGoogleVersionPublishing(publishing),
+  modelVersion: 1,
 });
 
 export interface GoogleVersionData extends BaseGoogleVersionData {
