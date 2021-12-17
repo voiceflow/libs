@@ -20,6 +20,7 @@ export enum NodeType {
   ZAPIER = 'zapier',
   INTEGRATIONS = 'integrations',
   GOOGLE_SHEETS = 'google_sheets',
+  TWILIO = 'twilio',
 
   // advanced
   INTENT = 'intent',

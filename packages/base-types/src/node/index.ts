@@ -15,6 +15,7 @@ import * as Random from './random';
 import * as Set from './set';
 import * as SetV2 from './setV2';
 import * as Start from './start';
+import * as Twilio from './twilio';
 import * as Zapier from './zapier';
 
 export * as _v1 from './_v1';
@@ -45,6 +46,7 @@ export * as Speak from './speak';
 export * as Start from './start';
 export * as Stream from './stream';
 export * as Text from './text';
+export * as Twilio from './twilio';
 export * as Utils from './utils';
 export * as Visual from './visual';
 export * as Zapier from './zapier';
@@ -66,7 +68,8 @@ export type AnyCommonStep =
   | If.Step
   | IfV2.Step
   | General.Step
-  | _v1.Step;
+  | _v1.Step
+  | Twilio.Step;
 
 export type AnyCommonNode =
   | Set.Node

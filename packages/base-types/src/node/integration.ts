@@ -1,6 +1,7 @@
 import { NodeData as APINodeData } from './api';
 import { NodeType } from './constants';
 import { NodeData as GoogleSheetsNodeData } from './googleSheets';
+import { NodeData as TwilioNodeData } from './twilio';
 import { BaseNode } from './utils';
 import { NodeData as ZapierNodeData } from './zapier';
 
@@ -16,4 +17,8 @@ export interface GoogleSheetsNode extends BaseNode, GoogleSheetsNodeData {
   type: NodeType.INTEGRATIONS;
 }
 
-export type Node = ApiNode | ZapierNode | GoogleSheetsNode;
+export interface TwilioNode extends BaseNode, TwilioNodeData {
+  type: NodeType.INTEGRATIONS;
+}
+
+export type Node = ApiNode | ZapierNode | GoogleSheetsNode | TwilioNode;

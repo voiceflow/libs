@@ -6,6 +6,7 @@ export enum IntegrationType {
   ZAPIER = 'Zapier',
   CUSTOM_API = 'Custom API',
   GOOGLE_SHEETS = 'Google Sheets',
+  TWILIO = 'Twilio',
 }
 
 export enum IntegrationPlatform {
