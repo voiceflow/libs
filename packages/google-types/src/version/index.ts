@@ -27,7 +27,7 @@ export interface BaseGoogleVersionData extends Version.VoiceVersionData<Voice> {
   status: { stage: GoogleStage };
   settings: BaseGoogleVersionSettings;
   publishing: BaseGoogleVersionPublishing;
-  modelVersion: number;
+  modelVersion: 1;
 }
 
 export interface BaseGoogleVersion extends Version.VoiceVersion<Voice> {
