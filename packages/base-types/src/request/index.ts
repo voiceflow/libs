@@ -18,6 +18,7 @@ export interface RequestConfig {
   stopAll?: boolean;
   stripSSML?: boolean;
   stopTypes?: string[];
+  selfDelegate?: boolean;
   excludeTypes?: string[];
 }
 
