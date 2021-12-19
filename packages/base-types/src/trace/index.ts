@@ -60,12 +60,13 @@ export interface NoReplyTrace extends BaseTraceFrame<NoReplyTracePayload> {
 
 export type AnyTrace =
   | ExitTrace
-  | SpeakTrace
-  | ChoiceTrace
+  | TextTrace
+  | GoToTrace
   | FlowTrace
-  | StreamTrace
+  | SpeakTrace
   | BlockTrace
   | DebugTrace
+  | ChoiceTrace
+  | StreamTrace
   | VisualTrace
-  | TextTrace
   | NoReplyTrace;
