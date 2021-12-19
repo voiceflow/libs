@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.5.4...@voiceflow/base-types@2.5.5) (2021-12-19)
+
+
+### Bug Fixes
+
+* selfDelegate config (VF-000) ([9da5007](https://github.com/voiceflow/libs/commit/9da5007b97822587b7b64c891b0faed067995e43))
+
+
+
+
+
 ## [2.5.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.5.3...@voiceflow/base-types@2.5.4) (2021-12-19)
 
 
