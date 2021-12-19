@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.5.3...@voiceflow/base-types@2.5.4) (2021-12-19)
+
+
+### Bug Fixes
+
+* add goto to anytrace (VF-000) ([9833669](https://github.com/voiceflow/libs/commit/983366919ff05204ab22f05a6b478d79f9020ba0))
+
+
+
+
+
 ## [2.5.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.5.2...@voiceflow/base-types@2.5.3) (2021-12-15)
 
 
