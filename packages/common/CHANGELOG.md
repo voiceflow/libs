@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.12.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.12.0...@voiceflow/common@7.12.1) (2022-01-03)
+
+
+### Bug Fixes
+
+* filterAndRemoveLastValue (VF-000) ([ee55d99](https://github.com/voiceflow/libs/commit/ee55d9963b2f491696ab8643e78f166b9c6134e3))
+
+
+
+
+
 # [7.12.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.11.0...@voiceflow/common@7.12.0) (2021-12-14)
 
 
