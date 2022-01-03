@@ -114,3 +114,14 @@ export const isNotNullish = <T>(value: T): value is NonNullable<T> => value !== 
 
 /** @deprecated Use `array.filter(isNotNullish)` instead. */
 export const filterOutNullish = <T>(items: readonly T[]): Array<NonNullable<T>> => items.filter(isNotNullish);
+
+// mostly just saves us needing to traverse an array twice
+export const filterAndGetLastRemovedValue = <T>(list: T[], filterFunc: (item: T) => boolean): [T[], T | null] => {
+  let lastItem: T | null = null;
+  const filteredList = list.filter((a) => {
+    if (filterFunc(a)) return true;
+    lastItem = a;
+    return false;
+  });
+  return [filteredList, lastItem];
+};
