@@ -34,26 +34,28 @@
     "ttypescript": "^1.5.10",
     "typescript": "^4.2.4"
   },
+  "engines": {
+    "node": ">=16"
+  },
   "files": [
     "build/"
   ],
   "homepage": "https://github.com/voiceflow/libs#readme",
   "keywords": [
-    "voiceflow",
     "metrics",
-    "opentelemetry"
+    "opentelemetry",
+    "voiceflow"
   ],
-  "engines": {
-    "node": ">=16"
-  },
   "license": "ISC",
   "main": "build/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voiceflow/libs.git"
   },
   "scripts": {
-    "prebuild": "yarn clean",
     "build": "ttsc --project ./tsconfig.build.json",
     "clean": "rimraf build",
     "commit": "cz",
@@ -62,6 +64,7 @@
     "lint:output": "yarn run eslint-output --quiet \"**/*.{js,ts}\"",
     "lint:quiet": "yarn lint --quiet",
     "lint:report": "yarn lint:output",
+    "prebuild": "yarn clean",
     "tdd": "yarn test --watch",
     "test": "yarn test:run",
     "test:dependencies": "depcheck",
