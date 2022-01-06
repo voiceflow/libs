@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.13.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.12.1...@voiceflow/common@7.13.0) (2022-01-06)
+
+
+### Features
+
+* add custom async error type ([#144](https://github.com/voiceflow/libs/issues/144)) ([cbf0d01](https://github.com/voiceflow/libs/commit/cbf0d01f1715cad65b2377123c3bcf5f3d3c9cd7))
+
+
+
+
+
 ## [7.12.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.12.0...@voiceflow/common@7.12.1) (2022-01-03)
 
 
