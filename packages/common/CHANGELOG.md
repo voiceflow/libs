@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.13.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.13.0...@voiceflow/common@7.13.1) (2022-01-06)
+
+
+### Bug Fixes
+
+* avoid recursive call on async action creation (VF-000) ([#145](https://github.com/voiceflow/libs/issues/145)) ([16c1efa](https://github.com/voiceflow/libs/commit/16c1efac09fe6c10e1d1974abb7069d7dd89be8e))
+
+
+
+
+
 # [7.13.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.12.1...@voiceflow/common@7.13.0) (2022-01-06)
 
 
