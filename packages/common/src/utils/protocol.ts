@@ -5,12 +5,10 @@ export interface AsyncError<C extends number = never> {
   code?: C;
 }
 
-const actionFactory = actionCreatorFactory();
+export const createAction = actionCreatorFactory();
 
-export const createAction = Object.assign(actionFactory, {
-  async: <P, R, E extends AsyncError = AsyncError>(type: string, commonMeta?: Meta): AsyncActionCreators<P, R, E> =>
-    actionFactory.async(type, commonMeta),
-});
+export const createAsyncAction = <P, R, E extends AsyncError = AsyncError>(type: string, commonMeta?: Meta): AsyncActionCreators<P, R, E> =>
+  createAction.async(type, commonMeta);
 
 export const typeFactory =
   (...parts: string[]) =>
