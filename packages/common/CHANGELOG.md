@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.13.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.13.1...@voiceflow/common@7.13.2) (2022-01-06)
+
+
+### Bug Fixes
+
+* widen type of async action error ([96711d8](https://github.com/voiceflow/libs/commit/96711d81ef16a5e9b245b9a3f003428ebee7ff4d))
+
+
+
+
+
 ## [7.13.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.13.0...@voiceflow/common@7.13.1) (2022-01-06)
 
 
