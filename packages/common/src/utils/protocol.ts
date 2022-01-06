@@ -7,7 +7,7 @@ export interface AsyncError<C extends number = never> {
 
 export const createAction = actionCreatorFactory();
 
-export const createAsyncAction = <P, R, E extends AsyncError = AsyncError>(type: string, commonMeta?: Meta): AsyncActionCreators<P, R, E> =>
+export const createAsyncAction = <P, R, E extends AsyncError<number> = AsyncError>(type: string, commonMeta?: Meta): AsyncActionCreators<P, R, E> =>
   createAction.async(type, commonMeta);
 
 export const typeFactory =
