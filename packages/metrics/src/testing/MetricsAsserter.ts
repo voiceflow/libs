@@ -41,7 +41,7 @@ type TestingConfig = Pick<Config, 'SERVICE_NAME'>;
 const DEFAULT_SERVICE_NAME = `test-${Math.random().toString(36).slice(2)}`;
 
 export class MetricsAsserter<M extends Metrics> {
-  constructor(private readonly MetricsClient: (...args: any[]) => M) {}
+  constructor(private readonly MetricsClient: (config: Config) => M) {}
 
   /**
    * Assert that a metrics endpoint matches a regular expression(s).
