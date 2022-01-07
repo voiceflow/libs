@@ -64,7 +64,7 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
     return this.shouldEncrypt ? ENCRYPTED_ENDPOINT : ENDPOINT;
   }
 
-  private async _enqueue(payload: Record<string, unknown>) {
+  private async _enqueue(payload: Record<string, unknown>): Promise<void> {
     this.queue.push(payload);
 
     if (this.batchPromise) {
@@ -101,16 +101,15 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
   public track<P extends Record<string, any>, K extends keyof P>(
     event: string,
     { envIDs, hashed, teamhashed, properties = {} as P }: TrackOptions<P, K> = {}
-  ): void {
+  ): Promise<void> {
     if (!event) {
-      return;
+      return Promise.resolve();
     }
 
     if (this.batching) {
-      this._enqueue({ event, envIDs, hashed, teamhashed, properties });
-    } else {
-      this._send(event, { envIDs, hashed, teamhashed, properties });
+      return this._enqueue({ event, envIDs, hashed, teamhashed, properties });
     }
+    return this._send(event, { envIDs, hashed, teamhashed, properties });
   }
 
   private _send<P extends Record<string, any>, K extends keyof P>(
