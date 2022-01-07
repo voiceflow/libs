@@ -98,7 +98,7 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
       });
   }
 
-  public batchTrack<P extends Record<string, any>, K extends keyof P>(
+  public track<P extends Record<string, any>, K extends keyof P>(
     event: string,
     { envIDs, hashed, teamhashed, properties = {} as P }: TrackOptions<P, K> = {}
   ): void {
@@ -109,11 +109,11 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
     if (this.batching) {
       this._enqueue({ event, envIDs, hashed, teamhashed, properties });
     } else {
-      this.track(event, { envIDs, hashed, teamhashed, properties });
+      this._send(event, { envIDs, hashed, teamhashed, properties });
     }
   }
 
-  public track<P extends Record<string, any>, K extends keyof P>(
+  private _send<P extends Record<string, any>, K extends keyof P>(
     event: string,
     { envIDs, hashed, teamhashed, properties = {} as P }: TrackOptions<P, K> = {}
   ): Promise<void> {
