@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/voiceflow/libs/compare/@voiceflow/metrics@1.1.2...@voiceflow/metrics@1.1.3) (2022-01-07)
+
+
+### Bug Fixes
+
+* improve typings of configs in `MetricsAsserter` (VF-000) ([#148](https://github.com/voiceflow/libs/issues/148)) ([a5ab6cf](https://github.com/voiceflow/libs/commit/a5ab6cfb02f75be7683e1e1bbaeadffe14bd828a))
+
+
+
+
+
 ## [1.1.2](https://github.com/voiceflow/libs/compare/@voiceflow/metrics@1.1.1...@voiceflow/metrics@1.1.2) (2022-01-07)
 
 
