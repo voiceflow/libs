@@ -27,6 +27,10 @@ export interface ProjectPrototype {
   trainedModel?: PrototypeModel;
   lastTrainedTime?: number;
   nlp?: ProjectPrototypeNLP;
+  messageDelay: {
+    durationSeconds: number;
+    enabled: boolean;
+  };
 }
 
 export enum ProjectPrivacy {
