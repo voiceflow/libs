@@ -73,7 +73,7 @@ class Fetch {
     return { data, status };
   }
 
-  public setOptions({ headers }: FetchConfig) {
+  public setOptions({ headers }: FetchConfig): void {
     const { clientKey, authorization, ...defaultHeaders } = this.axios.defaults.headers.common;
 
     this.axios.defaults.headers.common = {
@@ -84,7 +84,7 @@ class Fetch {
     };
   }
 
-  public initWithOptions({ headers }: FetchConfig) {
+  public initWithOptions({ headers }: FetchConfig): Fetch {
     const { clientKey, authorization, ...defaultHeaders } = this.axios.defaults.headers.common;
 
     return new Fetch({
