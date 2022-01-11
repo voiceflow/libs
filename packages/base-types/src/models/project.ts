@@ -27,7 +27,7 @@ export interface ProjectPrototype {
   trainedModel?: PrototypeModel;
   lastTrainedTime?: number;
   nlp?: ProjectPrototypeNLP;
-  delay: {
+  messageDelay: {
     duration: number;
     enabled: boolean;
   };
