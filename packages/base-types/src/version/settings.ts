@@ -28,8 +28,6 @@ export interface BaseVersionSettings<Prompt = unknown> {
   repeat: RepeatType;
   session: RestartSession | ResumeSession<Prompt>;
   defaultCanvasNodeVisibility: Nullable<Utils.CanvasNodeVisibility>;
-  testToolMessageDelay: number;
-  testToolMessageDelayEnabled: boolean;
 }
 
 export const defaultBaseVersionSettings = <Prompt>({
@@ -37,13 +35,9 @@ export const defaultBaseVersionSettings = <Prompt>({
   repeat = RepeatType.ALL,
   session = { type: SessionType.RESTART },
   defaultCanvasNodeVisibility = null,
-  testToolMessageDelay = 0,
-  testToolMessageDelayEnabled = true,
 }: Partial<BaseVersionSettings<Prompt>> = {}): BaseVersionSettings<Prompt> => ({
   error,
   repeat,
   session,
   defaultCanvasNodeVisibility,
-  testToolMessageDelay,
-  testToolMessageDelayEnabled,
 });
