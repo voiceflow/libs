@@ -193,9 +193,11 @@ describe('Fetch', () => {
       defaults: {
         baseURL: 'https://example.com/',
         headers: {
-          key: 'val',
-          clientKey: CLIENT_KEY,
-          authorization: AUTHORIZATION,
+          common: {
+            key: 'val',
+            clientKey: CLIENT_KEY,
+            authorization: AUTHORIZATION,
+          },
         },
       },
     });
@@ -225,9 +227,11 @@ describe('Fetch', () => {
       defaults: {
         baseURL: 'https://example.com/',
         headers: {
-          key: 'val',
-          clientKey: CLIENT_KEY,
-          authorization: AUTHORIZATION,
+          common: {
+            key: 'val',
+            clientKey: CLIENT_KEY,
+            authorization: AUTHORIZATION,
+          },
         },
       },
     });
@@ -237,10 +241,12 @@ describe('Fetch', () => {
     expect(fetch['axios'].defaults).to.eql({
       baseURL: 'https://example.com/',
       headers: {
-        key: 'val',
-        key2: 'val2',
-        clientKey: CLIENT_KEY,
-        authorization: AUTHORIZATION,
+        common: {
+          key: 'val',
+          key2: 'val2',
+          clientKey: CLIENT_KEY,
+          authorization: AUTHORIZATION,
+        },
       },
     });
   });
