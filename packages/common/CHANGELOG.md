@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.13.3](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.13.2...@voiceflow/common@7.13.3) (2022-01-11)
+
+**Note:** Version bump only for package @voiceflow/common
+
+
+
+
+
 ## [7.13.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.13.1...@voiceflow/common@7.13.2) (2022-01-06)
 
 
