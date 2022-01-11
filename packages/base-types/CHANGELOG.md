@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.5.5...@voiceflow/base-types@2.6.0) (2022-01-11)
+
+
+### Features
+
+* add props for message delay (VF-000) ([#149](https://github.com/voiceflow/libs/issues/149)) ([7b8e7e6](https://github.com/voiceflow/libs/commit/7b8e7e62d569f704d30ad2d34fd34879f33974f2))
+
+
+
+
+
 ## [2.5.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.5.4...@voiceflow/base-types@2.5.5) (2021-12-19)
 
 
