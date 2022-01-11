@@ -74,9 +74,9 @@ class Fetch {
   }
 
   public setOptions({ headers }: FetchConfig) {
-    const { clientKey, authorization, ...defaultHeaders } = this.axios.defaults.headers;
+    const { clientKey, authorization, ...defaultHeaders } = this.axios.defaults.headers.common;
 
-    this.axios.defaults.headers = {
+    this.axios.defaults.headers.common = {
       ...defaultHeaders,
       ...headers,
       clientKey,
@@ -85,7 +85,7 @@ class Fetch {
   }
 
   public initWithOptions({ headers }: FetchConfig) {
-    const { clientKey, authorization, ...defaultHeaders } = this.axios.defaults.headers;
+    const { clientKey, authorization, ...defaultHeaders } = this.axios.defaults.headers.common;
 
     return new Fetch({
       options: { headers: { ...defaultHeaders, ...headers } },
