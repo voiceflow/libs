@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.6.0...@voiceflow/base-types@2.6.1) (2022-01-11)
+
+
+### Bug Fixes
+
+* optional prop (VF-000) ([#155](https://github.com/voiceflow/libs/issues/155)) ([69c607e](https://github.com/voiceflow/libs/commit/69c607ee5cb76e91d9a9e01ae890876e66f3804c))
+
+
+
+
+
 # [2.6.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.5.5...@voiceflow/base-types@2.6.0) (2022-01-11)
 
 
