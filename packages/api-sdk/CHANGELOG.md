@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.4.12...@voiceflow/api-sdk@3.5.0) (2022-01-13)
+
+
+### Features
+
+* merge batchTrack and track methods into track  (VF-2464) ([#146](https://github.com/voiceflow/libs/issues/146)) ([cb0d2ee](https://github.com/voiceflow/libs/commit/cb0d2ee750d72e938a46e29740a8597cb1e4bfcc))
+
+
+
+
+
 ## [3.4.12](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.4.11...@voiceflow/api-sdk@3.4.12) (2022-01-11)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
