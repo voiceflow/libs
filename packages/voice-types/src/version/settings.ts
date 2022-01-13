@@ -9,7 +9,7 @@ export interface VoiceVersionSettings<Voice> extends Version.BaseVersionSettings
 }
 
 export const defaultVoiceVersionSettings = <Voice>(
-  { error, defaultVoice = null, ...baseSettings }: Partial<VoiceVersionSettings<Voice>> = {},
+  { error, defaultVoice = null, ...baseSettings }: Partial<VoiceVersionSettings<Voice>>,
   { defaultPromptVoice }: { defaultPromptVoice: Voice }
 ): VoiceVersionSettings<Voice> => ({
   ...Version.defaultBaseVersionSettings<Prompt<Voice>>(baseSettings),

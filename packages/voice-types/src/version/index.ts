@@ -17,7 +17,7 @@ export const defaultVoiceVersionData = <Voice>(
 ): VoiceVersionData<Voice> => ({
   ...Version.defaultBaseVersionData<Prompt<Voice>>(data),
   intents,
-  settings: defaultVoiceVersionSettings<Voice>(settings, options),
+  settings: defaultVoiceVersionSettings<Voice>(settings ?? {}, options),
 });
 
 export interface VoiceVersion<Voice> extends Version.BaseVersion<Prompt<Voice>> {
