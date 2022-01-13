@@ -1,4 +1,4 @@
-export type BuiltinIntent = {
+export interface BuiltinIntent {
   name: string;
   slots: string[];
-};
+}
