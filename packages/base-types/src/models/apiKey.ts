@@ -1,6 +1,6 @@
 import { APIKeyID, CreatorID, ProjectID, WorkspaceID } from './shared';
 
-export type APIKey = {
+export interface APIKey {
   _id: APIKeyID;
 
   workspaceID: WorkspaceID;
@@ -11,4 +11,4 @@ export type APIKey = {
   permissions: string[];
   scopes: string[];
   data?: Record<string, any>;
-};
+}

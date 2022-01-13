@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
-
 import { Node } from '@voiceflow/base-types';
 
 export interface Step extends Node.Visual.Step<Node.Visual.ImageStepData> {}

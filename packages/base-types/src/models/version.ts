@@ -36,7 +36,7 @@ export interface VersionPrototypeData<L extends string> {
   locales: L[];
 }
 
-export type VersionPrototypeSettings = {
+export interface VersionPrototypeSettings {
   layout?: string;
   brandColor?: string;
   brandImage?: string;
@@ -44,7 +44,7 @@ export type VersionPrototypeSettings = {
   password?: string;
   hasPassword?: boolean;
   buttons?: string;
-};
+}
 
 export interface VersionPrototype<C extends BaseCommand = BaseCommand, L extends string = string> {
   model: PrototypeModel;

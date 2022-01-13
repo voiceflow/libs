@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-
 import { Nullable } from '@/utils';
 
 import { NodeType } from './constants';

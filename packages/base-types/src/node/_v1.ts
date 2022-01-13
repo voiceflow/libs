@@ -2,7 +2,6 @@ import { Nullable } from '@/utils';
 
 import { BaseEvent, BaseNode, BasePort, BaseStep, NodeID } from './utils';
 
-// eslint-disable-next-line no-underscore-dangle
 export const _V1_STOP_TYPES = 'stopTypes';
 
 export interface StepData<Payload = unknown> {

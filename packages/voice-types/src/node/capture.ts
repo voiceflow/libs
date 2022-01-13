@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
-
 import { Node, Nullable } from '@voiceflow/base-types';
 
 import { NodeNoReply, NodeReprompt, StepNoReply, StepReprompt } from './utils';

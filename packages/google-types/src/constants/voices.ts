@@ -73,12 +73,12 @@ export enum VoiceLanguage {
   VIETNAMESE_VIETNAM = 'Vietnamese (Vietnam)',
 }
 
-export type GoogleVoice = {
+export interface GoogleVoice {
   voiceLanguage: VoiceLanguage;
   voiceType: VoiceType[];
   voiceName: string[];
   ssmlGender: string;
-};
+}
 
 export enum Voice {
   DEFAULT = 'default', // not a real voice (default no voice)

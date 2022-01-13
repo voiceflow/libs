@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface, camelcase */
-
 import { Node } from '@voiceflow/base-types';
 
 export interface StepData {

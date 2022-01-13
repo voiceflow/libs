@@ -10,7 +10,7 @@ const decodeJWT = <S>(token: string): S | null => {
 };
 
 export const parseJWT = <S>(token: string): S => {
-  let user = decodeJWT(token.substring(16));
+  let user = decodeJWT(token.slice(16));
   // try again without assuming the userHash is there
   if (!user) {
     user = decodeJWT(token);
@@ -21,12 +21,12 @@ export const parseJWT = <S>(token: string): S => {
   return user as unknown as S;
 };
 
-type UserToken = {
+interface UserToken {
   id: number;
   name: string;
   email: string;
   admin: number;
-};
+}
 
 class User {
   public creatorID: Models.CreatorID = 0;
@@ -45,7 +45,6 @@ class User {
     }
   }
 
-  // eslint-disable-next-line class-methods-use-this
   isAPIKey(authorization: string): boolean {
     return authorization.startsWith('VF.');
   }

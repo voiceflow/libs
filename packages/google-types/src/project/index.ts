@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
 import { Models } from '@voiceflow/base-types';
 
 import { BaseGoogleProjectMemberData, GoogleProjectMemberData } from './member';

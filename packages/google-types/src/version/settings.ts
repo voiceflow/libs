@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
-
 import { Version } from '@voiceflow/voice-types';
 
 import { Voice } from '@/constants';

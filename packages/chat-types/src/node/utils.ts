@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
-
 import { Node, Nullable, Text } from '@voiceflow/base-types';
 
 import { Prompt } from '@/types';
