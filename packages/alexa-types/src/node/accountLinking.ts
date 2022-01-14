@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-
 import { Node, UnknownRecord } from '@voiceflow/base-types';
 
 import { NodeType } from './constants';

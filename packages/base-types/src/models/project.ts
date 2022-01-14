@@ -37,10 +37,10 @@ export enum ProjectPrivacy {
   PRIVATE = 'private',
 }
 
-export type ReportTag = {
+export interface ReportTag {
   tagID: TagID;
   label: string;
-};
+}
 
 export interface Project<P extends BasePlatformData, M extends BasePlatformData> {
   _id: ProjectID;

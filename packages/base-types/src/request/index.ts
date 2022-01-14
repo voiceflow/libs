@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
-
 import type { Chip } from '../button';
 import { ActionPayload } from './action';
 

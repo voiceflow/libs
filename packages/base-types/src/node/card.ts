@@ -17,7 +17,7 @@ export interface Card {
   text: string;
   image?: CardImage;
 }
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
+
 export interface StepData extends Card {}
 
 export interface Step<Data = StepData> extends BaseStep<Data> {

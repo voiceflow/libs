@@ -52,7 +52,7 @@ export const transformStringVariableToNumber = (str: string | number | null): nu
   return Number.isNaN(number) ? str : number;
 };
 
-export const deepVariableSubstitution = <T extends any>(bodyData: T, variableMap: Record<string, unknown>): T => {
+export const deepVariableSubstitution = <T>(bodyData: T, variableMap: Record<string, unknown>): T => {
   const _recurse = (subCollection: any, modifier?: (variable: unknown) => unknown): any => {
     if (!subCollection) {
       return subCollection;

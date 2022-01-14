@@ -8,7 +8,7 @@
   "devDependencies": {
     "@commitlint/cli": "16.0.2",
     "@voiceflow/commitlint-config": "2.0.0",
-    "@voiceflow/eslint-config": "3.2.2",
+    "@voiceflow/eslint-config": "6.0.0",
     "@voiceflow/git-branch-check": "1.2.0",
     "@voiceflow/prettier-config": "1.0.5",
     "@voiceflow/tsconfig": "1.0.0",
@@ -16,7 +16,7 @@
     "commitizen": "4.2.4",
     "cz-conventional-changelog": "3.3.0",
     "depcheck": "^1.4.1",
-    "eslint": "^7.4.0",
+    "eslint": "^8.6.0",
     "eslint-output": "^3.0.1",
     "fixpack": "^4.0.0",
     "husky": "^4.3.8",

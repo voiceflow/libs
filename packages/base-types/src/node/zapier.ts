@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-
 import { NodeType } from './constants';
 import { BaseStep, IntegrationType, IntegrationUser, NodeSuccessFailID } from './utils';
 

@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-
 import { Node } from '@voiceflow/base-types';
 import { v1 } from 'ask-smapi-model';
 

@@ -1,20 +1,20 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-export type FetchConfig = {
+export interface FetchConfig {
   headers?: Record<string, string>;
-};
+}
 
-type FetchOptions = {
+interface FetchOptions {
   options?: FetchConfig;
   clientKey: string;
   apiEndpoint: string;
   authorization?: string;
-};
+}
 
-type FetchReturnType<T> = {
+interface FetchReturnType<T> {
   data: T;
   status: number;
-};
+}
 
 export type PathVariables = Record<string, string | number>;
 
@@ -31,31 +31,31 @@ class Fetch {
     this.axios = axios.create(config);
   }
 
-  public async get<T extends unknown>(url: string): Promise<FetchReturnType<T>> {
+  public async get<T>(url: string): Promise<FetchReturnType<T>> {
     const { data, status } = await this.axios.get<T>(url);
 
     return { data, status };
   }
 
-  public async post<T extends unknown>(url: string, body?: unknown): Promise<FetchReturnType<T>> {
+  public async post<T>(url: string, body?: unknown): Promise<FetchReturnType<T>> {
     const { data, status } = await this.axios.post<T>(url, body);
 
     return { data, status };
   }
 
-  public async put<T extends unknown>(url: string, body?: unknown): Promise<FetchReturnType<T>> {
+  public async put<T>(url: string, body?: unknown): Promise<FetchReturnType<T>> {
     const { data, status } = await this.axios.put<T>(url, body);
 
     return { data, status };
   }
 
-  public async patch<T extends unknown>(url: string, body: unknown, query?: Record<string, string>): Promise<FetchReturnType<T>> {
+  public async patch<T>(url: string, body: unknown, query?: Record<string, string>): Promise<FetchReturnType<T>> {
     const { data, status } = await this.axios.patch<T>(url, body, query ? { params: query } : undefined);
 
     return { data, status };
   }
 
-  public async delete<T extends unknown>(url: string): Promise<FetchReturnType<T>> {
+  public async delete<T>(url: string): Promise<FetchReturnType<T>> {
     const { data, status } = await this.axios.delete<T>(url);
 
     return { data, status };
@@ -67,7 +67,7 @@ class Fetch {
    * // return Promise<number>
    * fetch.granularPatch<number>('/endpoint', 'vendors[$vendorID].skillID', 5678, { vendorID: "234" })
    */
-  public async granularPatch<T extends unknown>(url: string, path: string, value?: T, pathVariables?: PathVariables): Promise<FetchReturnType<T>> {
+  public async granularPatch<T>(url: string, path: string, value?: T, pathVariables?: PathVariables): Promise<FetchReturnType<T>> {
     const { data, status } = await this.axios.patch<T>(url, { path, value, pathVariables });
 
     return { data, status };

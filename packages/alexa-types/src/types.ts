@@ -1,5 +1,3 @@
-/* eslint-disable camelcase, @typescript-eslint/no-empty-interface */
-
 import { v1 } from 'ask-smapi-model';
 
 export interface AmazonProfile {

@@ -9,7 +9,6 @@ class BaseResource<C extends Record<string, any>> extends Fetcher<C> {
     super(options);
   }
 
-  // eslint-disable-next-line class-methods-use-this
   protected _getFieldsQuery(fields?: Fields): string {
     return fields ? `?fields=${fields.join(',')}` : '';
   }

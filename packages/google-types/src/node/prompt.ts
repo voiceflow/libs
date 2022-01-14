@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
-
 import { Button } from '@voiceflow/base-types';
 import { Node } from '@voiceflow/voice-types';
 

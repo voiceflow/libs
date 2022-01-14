@@ -3,7 +3,7 @@ import { BaseCommand, BaseNode, NodeID, ProgramID, Variable, VersionID } from '.
 export interface Program<N extends BaseNode = BaseNode, C extends BaseCommand = BaseCommand> {
   id: ProgramID;
   startId: NodeID;
-  skill_id: VersionID; // eslint-disable-line camelcase
+  skill_id: VersionID;
   name?: string;
   variables: Variable[];
   lines: Record<NodeID, N>;

@@ -1,9 +1,9 @@
-export type BuiltinSlot<T extends string, L extends string = string> = {
+export interface BuiltinSlot<T extends string, L extends string = string> {
   type: T;
   label: string;
   locales?: L[];
   immutable?: boolean;
-};
+}
 
 export const CUSTOM_SLOT_TYPE = 'Custom';
 export const LOWER_CASE_CUSTOM_SLOT_TYPE = CUSTOM_SLOT_TYPE.toLowerCase();
