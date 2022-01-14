@@ -23,13 +23,12 @@ export interface ProjectPrototypeLuis extends ProjectPrototypeNLPBase {
 export type ProjectPrototypeNLP = ProjectPrototypeLuis;
 
 export interface ProjectPrototype {
-  data: Record<string, any>;
+  data?: Record<string, any>;
   trainedModel?: PrototypeModel;
   lastTrainedTime?: number;
   nlp?: ProjectPrototypeNLP;
   messageDelay?: {
-    durationSeconds: number;
-    enabled: boolean;
+    durationMilliseconds: number;
   };
 }
 

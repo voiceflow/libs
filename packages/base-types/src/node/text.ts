@@ -5,7 +5,7 @@ import { BaseNode, BaseStep, BaseTraceFrame, DataID, NodeNextID, StepCanvasNodeV
 
 export interface TextData extends DataID {
   content: SlateTextValue;
-  messageDelaySeconds?: number;
+  messageDelayMilliseconds?: number;
 }
 
 export interface StepData extends StepCanvasNodeVisibility {
