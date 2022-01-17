@@ -15,4 +15,7 @@ export const defaultGeneralVersionSettings = ({
 }: Partial<GeneralVersionSettings> = {}): GeneralVersionSettings => ({
   ...Version.defaultVoiceVersionSettings<Voice>(voiceSettings, { defaultPromptVoice: Voice.DEFAULT }),
   locales,
+  messageDelay: {
+    durationMilliseconds: 1000,
+  },
 });
