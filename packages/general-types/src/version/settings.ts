@@ -4,6 +4,9 @@ import { Locale, Voice } from '@/constants';
 
 export interface GeneralVersionSettings extends Version.VoiceVersionSettings<Voice> {
   locales: Locale[];
+  messageDelay?: {
+    durationMilliseconds: number;
+  };
 }
 
 export const defaultGeneralVersionSettings = ({
