@@ -108,3 +108,5 @@ nyc_coverage*
 .npmrc
 
 .DS_Store
+
+.idea/
