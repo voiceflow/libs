@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.16](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@3.2.15...@voiceflow/general-types@3.2.16) (2022-01-17)
+
+
+### Bug Fixes
+
+* move delay to general setting types (VF-000) ([#160](https://github.com/voiceflow/libs/issues/160)) ([806088e](https://github.com/voiceflow/libs/commit/806088e51ba7d06a2641963e3076991928f7a199))
+
+
+
+
+
 ## [3.2.15](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@3.2.14...@voiceflow/general-types@3.2.15) (2022-01-14)
 
 **Note:** Version bump only for package @voiceflow/general-types
