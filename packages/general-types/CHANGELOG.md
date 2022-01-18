@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.18](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@3.2.17...@voiceflow/general-types@3.2.18) (2022-01-18)
+
+
+### Bug Fixes
+
+* move to chat types (VF-000) ([#162](https://github.com/voiceflow/libs/issues/162)) ([dd54f63](https://github.com/voiceflow/libs/commit/dd54f631c9a6887174d51ce1b3f265f1ad3bafd8))
+
+
+
+
+
 ## [3.2.17](https://github.com/voiceflow/libs/compare/@voiceflow/general-types@3.2.16...@voiceflow/general-types@3.2.17) (2022-01-18)
 
 **Note:** Version bump only for package @voiceflow/general-types
