@@ -34,6 +34,9 @@ export interface VersionPrototypeContext<C extends BaseCommand = BaseCommand> {
 export interface VersionPrototypeData<L extends string> {
   name: string;
   locales: L[];
+  messageDelay?: {
+    durationMilliseconds: number;
+  };
 }
 
 export interface VersionPrototypeSettings {
