@@ -15,7 +15,7 @@ describe('hash()', () => {
     //   expect(MurmurHash.hash('hello', 0)).to.eql('1480907334');
 
     // from https://github.com/jonahsnider/murmurhash-wasm/blob/main/test/murmur-hash3/hash-32.test.ts
-    expect(MurmurHash.hash(buf_left.toString(), 0)).to.eql(buf_right.toString());
-    expect(MurmurHash.hash(buf_left_two.toString(), 0)).to.eql(buf_right_two.toString());
+    expect(MurmurHash.hash(buf_left.toString('hex'), 0)).to.eql(buf_right.toString('hex'));
+    expect(MurmurHash.hash(buf_left_two.toString('hex'), 0)).to.eql(buf_right_two.toString('hex'));
   });
 });
