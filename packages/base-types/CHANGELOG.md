@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.7.2...@voiceflow/base-types@2.7.3) (2022-01-18)
+
+
+### Bug Fixes
+
+* getProto return data type update (VF-000) ([#161](https://github.com/voiceflow/libs/issues/161)) ([becd373](https://github.com/voiceflow/libs/commit/becd373cfb9686955a9546995f4a961df558142f))
+
+
+
+
+
 ## [2.7.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.7.1...@voiceflow/base-types@2.7.2) (2022-01-17)
 
 
