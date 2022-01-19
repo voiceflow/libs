@@ -13,6 +13,7 @@
     "cuid": "^2.1.8",
     "dayjs": "^1.10.7",
     "lodash": "^4.17.21",
+    "murmurhash-wasm": "^1.2.2",
     "number-to-words": "^1.2.4",
     "typescript-fsa": "3.0.0"
   },
