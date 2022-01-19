@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.7.3...@voiceflow/base-types@2.7.4) (2022-01-19)
+
+
+### Bug Fixes
+
+* downgrade slate (VF-000) ([#164](https://github.com/voiceflow/libs/issues/164)) ([6691f01](https://github.com/voiceflow/libs/commit/6691f01a964103d9c95ac66f6587df904fc5bdbd))
+
+
+
+
+
 ## [2.7.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.7.2...@voiceflow/base-types@2.7.3) (2022-01-18)
 
 
