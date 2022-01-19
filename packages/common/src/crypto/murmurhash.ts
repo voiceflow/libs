@@ -8,7 +8,7 @@ export class MurmurHash {
 
     let ret = ''; // store the return value
 
-    for (let i = 0; i < hex.length - 1; i++) {
+    for (let i = 0; i < hex.length; i++) {
       // loop through the hex value and convert numbers to alphabet
       let sub = hex.slice(i, i + 1);
       if (sub.charCodeAt(0) > 47 && sub.charCodeAt(0) < 58) {
