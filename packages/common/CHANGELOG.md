@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.14.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.13.4...@voiceflow/common@7.14.0) (2022-01-19)
+
+
+### Features
+
+* add `hex2abc` function (VF-000) ([#167](https://github.com/voiceflow/libs/issues/167)) ([318c5d4](https://github.com/voiceflow/libs/commit/318c5d41bf204d7414c301558615d4d71642e8f8))
+
+
+
+
+
 ## [7.13.4](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.13.3...@voiceflow/common@7.13.4) (2022-01-14)
 
 **Note:** Version bump only for package @voiceflow/common
