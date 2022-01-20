@@ -58,6 +58,14 @@ export interface NoReplyTrace extends BaseTraceFrame<NoReplyTracePayload> {
   type: TraceType.NO_REPLY;
 }
 
+export interface EntityFillingTracePayload {
+  entityToFill: string;
+  intent: IntentRequest;
+}
+export interface EntityFillingTrace extends BaseTraceFrame<EntityFillingTracePayload> {
+  type: TraceType.ENTITY_FILLING;
+}
+
 export type AnyTrace =
   | ExitTrace
   | TextTrace
@@ -69,4 +77,5 @@ export type AnyTrace =
   | ChoiceTrace
   | StreamTrace
   | VisualTrace
-  | NoReplyTrace;
+  | NoReplyTrace
+  | EntityFillingTrace;
