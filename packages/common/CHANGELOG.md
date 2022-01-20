@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.15.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.15.0...@voiceflow/common@7.15.1) (2022-01-20)
+
+
+### Bug Fixes
+
+* added murmurhash export ([#169](https://github.com/voiceflow/libs/issues/169)) ([06ade96](https://github.com/voiceflow/libs/commit/06ade96be821453327dd09a60593c5df3542b1ee))
+
+
+
+
+
 # [7.15.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.14.0...@voiceflow/common@7.15.0) (2022-01-20)
 
 
