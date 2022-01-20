@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.7.4...@voiceflow/base-types@2.7.5) (2022-01-20)
+
+
+### Bug Fixes
+
+* entity filling trace (VF-2728) ([#168](https://github.com/voiceflow/libs/issues/168)) ([499cfda](https://github.com/voiceflow/libs/commit/499cfda127eb8b6938de6db8c72aec909f9a48cf))
+
+
+
+
+
 ## [2.7.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.7.3...@voiceflow/base-types@2.7.4) (2022-01-19)
 
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.30](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.3.29...@voiceflow/google-dfes-types@2.3.30) (2022-01-20)
+
+**Note:** Version bump only for package @voiceflow/google-dfes-types
+
+
+
+
+
 ## [2.3.29](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.3.28...@voiceflow/google-dfes-types@2.3.29) (2022-01-19)
 
 **Note:** Version bump only for package @voiceflow/google-dfes-types

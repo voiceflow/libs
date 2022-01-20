@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.15.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.14.0...@voiceflow/common@7.15.0) (2022-01-20)
+
+
+### Features
+
+* added a murmurhash3 hash method to common (VF-2617) ([#163](https://github.com/voiceflow/libs/issues/163)) ([29b47dc](https://github.com/voiceflow/libs/commit/29b47dc2b5c7eaa92ba68e0fa45d71755fee443e))
+
+
+
+
+
 # [7.14.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.13.4...@voiceflow/common@7.14.0) (2022-01-19)
 
 
