@@ -3,7 +3,7 @@ import { MurmurHash3 } from 'murmurhash-wasm';
 import { hex2abc } from '@/crypto/hex2abc';
 
 export class MurmurHash {
-  public static hash(key: string, seed: number): string {
+  public static hash(key: string, seed = 0): string {
     const hash = MurmurHash3.hash32(key, seed);
     const value = hash.readUInt32BE();
     const hex = value.toString(16);
