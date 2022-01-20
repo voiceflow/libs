@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.15.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.15.1...@voiceflow/common@7.15.2) (2022-01-20)
+
+
+### Bug Fixes
+
+* updated murmurhash version, changed hash function and test file name (VF-2617) ([#170](https://github.com/voiceflow/libs/issues/170)) ([3faf037](https://github.com/voiceflow/libs/commit/3faf037a1ffc53c233ea0bc70a285b4b5d7bc9c7))
+
+
+
+
+
 ## [7.15.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.15.0...@voiceflow/common@7.15.1) (2022-01-20)
 
 
