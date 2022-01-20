@@ -13,6 +13,7 @@ export enum TraceType {
   STREAM = 'stream',
   VISUAL = 'visual',
   NO_REPLY = 'no-reply',
+  ENTITY_FILLING = 'entity-filling',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {
