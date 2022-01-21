@@ -1,7 +1,19 @@
 import { Version } from '@voiceflow/google-types';
 
-export interface GoogleDFESVersionSettings extends Version.BaseGoogleVersionSettings {}
+interface MessageDelay {
+  durationMilliseconds: number;
+}
 
-export const defaultGoogleDFESVersionSettings = ({ ...generalSettings }: Partial<GoogleDFESVersionSettings> = {}): GoogleDFESVersionSettings => ({
+export interface GoogleDFESVersionSettings extends Version.BaseGoogleVersionSettings {
+  messageDelay?: MessageDelay;
+}
+
+const defaultMessageDelay = ({ durationMilliseconds = 1500 }: Partial<MessageDelay> = {}) => ({ durationMilliseconds });
+
+export const defaultGoogleDFESVersionSettings = ({
+  messageDelay,
+  ...generalSettings
+}: Partial<GoogleDFESVersionSettings> = {}): GoogleDFESVersionSettings => ({
   ...Version.defaultBaseGoogleVersionSettings(generalSettings),
+  messageDelay: defaultMessageDelay(messageDelay),
 });
