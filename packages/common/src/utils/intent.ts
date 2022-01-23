@@ -156,3 +156,30 @@ export const utteranceEntityPermutations = (
 
   return newUtterances;
 };
+
+const ALPHANUMERIC_REGEXP = /[\dA-Za-z{}]/;
+// some NLP/NLU models do not allow entity classifications without a space seperator: 'I work at {startupName}flow' => 'I work at {startupName} flow'
+export const injectUtteranceSpaces = (utterance: string): string => {
+  let spacesAdded = 0;
+
+  let newUtterance = utterance ? utterance.trim() : '';
+  const matchedEntities = [...utterance.matchAll(VF_ENTITY_REGEXP)];
+  matchedEntities.forEach((entity) => {
+    let index = entity.index! + spacesAdded;
+
+    // Check if space should be added before slot
+    if (index > 0 && utterance[index - 1].match(ALPHANUMERIC_REGEXP)) {
+      newUtterance = `${utterance.slice(0, index)} ${utterance.slice(index)}`;
+      ++spacesAdded;
+      ++index;
+    }
+
+    // Check if space should be added after slot
+    if (index + entity[0].length < utterance.length - 1 && utterance[index + entity[0].length].match(ALPHANUMERIC_REGEXP)) {
+      newUtterance = `${utterance.slice(0, index + entity[0].length)} ${utterance.slice(index + entity[0].length)}`;
+      ++spacesAdded;
+    }
+  });
+
+  return newUtterance;
+};
