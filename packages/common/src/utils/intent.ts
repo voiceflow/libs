@@ -51,7 +51,6 @@ export const getSlotType = (slots: BuiltinSlot<string, string>[], slot: { name: 
 };
 
 export const VF_ENTITY_REGEXP = /{{\[(\w{1,32})]\.(\w{1,32})}}/gi;
-const VF_ENTITY_REGEXP_LOCAL = new RegExp(VF_ENTITY_REGEXP, '');
 
 export interface JSONEntity {
   startPos: number;
@@ -63,6 +62,24 @@ export interface JSONUtterance {
   entities?: JSONEntity[];
 }
 
+// extension of the String.prototype.replace format
+const continuousReplace = (text: string, regex: RegExp, replacer: (substring: string, ...args: any[]) => string): string => {
+  // regex without any global flags (g or i)
+  const localRegex = new RegExp(regex, '');
+  let temp: string | undefined;
+  let current = text;
+
+  // keep replacing until there is nothing else to replace (local replaces one instance at a time, this is important to keep positional offset data)
+  while (temp !== current) {
+    temp = current;
+    current = current.replace(localRegex, replacer);
+  }
+  return current;
+};
+
+// spread all synonyms into string array ['car, automobile', 'plane, jet'] => ['car', 'automobile', 'plane', 'jet']
+const getAllSamples = (inputs: string[] = []) => inputs.flatMap((input) => input.split(',')).filter((sample) => !!sample.trim());
+
 export const utteranceEntityPermutations = (
   utterances: string[],
   entitiesByID: Record<string, { inputs: string[]; name: string }>,
@@ -70,7 +87,7 @@ export const utteranceEntityPermutations = (
   // eslint-disable-next-line sonarjs/cognitive-complexity
 ): JSONUtterance[] => {
   const newUtterances: JSONUtterance[] = [];
-  const unusedEntities: Record<string, { utterances: string[]; samples: string[] }> = {};
+  const entityRef: Record<string, { utterances: string[]; samples: string[] }> = {};
 
   const addNewUtterance = (utterance: string) => {
     if (!utterance?.trim()) return;
@@ -78,72 +95,63 @@ export const utteranceEntityPermutations = (
     const entities: JSONEntity[] = [];
 
     // Find all occurences of {entityName} in training utterances
-    let temp: string | undefined;
-    let current = utterance;
+    const text = continuousReplace(utterance, VF_ENTITY_REGEXP, (_match: string, entityName: string, entityID: string, offset: number) => {
+      const entity = entitiesByID[entityID];
+      if (!entity) return entityName;
 
-    // keep replacing until there is nothing to replace (local replaces one instance at a time, this is important to keep positional data)
-    while (temp !== current) {
-      temp = utterance;
-      current = current.replace(VF_ENTITY_REGEXP_LOCAL, (_match: string, entityName: string, entityID: string, offset: number) => {
-        const entity = entitiesByID[entityID];
-        if (!entity) return entityName;
+      const sample = (entityRef[entityID]?.samples.shift() || _sample(getAllSamples(entity?.inputs)) || entityName).trim();
+      if (!entityRef[entityID]?.samples?.length) delete entityRef[entityID];
 
-        const sample = (unusedEntities[entityID]?.samples.shift() || _sample(entity?.inputs?.join(',')?.split(',')) || entityName).trim();
-        if (!unusedEntities[entityID]?.samples?.length) delete unusedEntities[entityID];
-
-        // This module should additionally create one full training utterance with positional entity (startPos, endPos, entityName).
-        const startPos = offset || 0;
-        const endPos = startPos + sample.length - 1;
-        entities.push({
-          startPos,
-          endPos,
-          entity: entity.name,
-        });
-
-        // Replace the entities with the sample value
-        return sample;
+      // This module should additionally create one full training utterance with positional entity (startPos, endPos, entityName).
+      const startPos = offset || 0;
+      const endPos = startPos + sample.length - 1;
+      entities.push({
+        startPos,
+        endPos,
+        entity: entity.name,
       });
-    }
+
+      // Replace the entities with the sample value
+      return sample;
+    });
 
     newUtterances.push({
-      text: utterance,
+      text,
       entities,
     });
   };
 
-  // try to ensure every single entity utterance is implemented within an intent
-  let i = 0;
-
   // find all the entities referenced by this intent
   // first pass over all utterances guarantees every utterance used
   utterances.forEach((utterance) => {
-    // find all the entities used in each utterance
+    // find all the entities used in this utterance
     const entityMatches = [...utterance.matchAll(VF_ENTITY_REGEXP)];
     entityMatches.forEach((match) => {
       const entityID = match[2];
-      // if this entity hasn't been visited before, create samples for it
-      if (!unusedEntities[entityID]) {
-        unusedEntities[entityID] = { samples: [], utterances: [] };
+      // if this entity hasn't been visited before, initialize the ref and populate samples with all synonyms of the entity
+      if (!entityRef[entityID]) {
+        entityRef[entityID] = { samples: [], utterances: [] };
         const entity = entitiesByID[entityID];
         if (entity) {
-          entity.inputs.forEach((input) => input.split(',').forEach((sample) => unusedEntities[entityID].samples.push(sample)));
+          entityRef[entityID].samples.push(...getAllSamples(entity.inputs));
         }
       }
 
-      unusedEntities[entityID].utterances.push(utterance);
+      entityRef[entityID].utterances.push(utterance);
     });
 
     addNewUtterance(utterance);
-    i++;
   });
 
-  while (Object.keys(unusedEntities).length > 0 && i < limit) {
-    const entityID = Object.keys(unusedEntities)[0];
-    const _utterances = unusedEntities[entityID]?.utterances;
-    if (!_utterances) delete unusedEntities[entityID];
+  while (Object.keys(entityRef).length > 0 && newUtterances.length < limit) {
+    const entityID = Object.keys(entityRef)[0];
+    const utterancesUsingEntity = entityRef[entityID]?.utterances;
 
-    addNewUtterance(_utterances[i % _utterances.length]);
-    i++;
+    if (utterancesUsingEntity?.length) {
+      addNewUtterance(utterancesUsingEntity[newUtterances.length % utterancesUsingEntity.length]);
+    } else {
+      delete entityRef[entityID];
+    }
   }
 
   return newUtterances;
