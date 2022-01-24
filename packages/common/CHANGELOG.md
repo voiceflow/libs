@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.15.3](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.15.2...@voiceflow/common@7.15.3) (2022-01-24)
+
+
+### Bug Fixes
+
+* utterance permutations (VF-000) ([#172](https://github.com/voiceflow/libs/issues/172)) ([c65566f](https://github.com/voiceflow/libs/commit/c65566ff0dcb826b941527ac8c8b190ef87c9c07))
+
+
+
+
+
 ## [7.15.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.15.1...@voiceflow/common@7.15.2) (2022-01-20)
 
 
