@@ -10,6 +10,7 @@ export * as number from './number';
 export * as object from './object';
 export * as promise from './promise';
 export * as protocol from './protocol';
+export * as slot from './slot';
 export * as string from './string';
 export * as time from './time';
 export * as timezones from './timezones';

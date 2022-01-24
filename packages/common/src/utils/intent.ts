@@ -2,6 +2,8 @@ import _sample from 'lodash/sample';
 
 import { BuiltinSlot, LOWER_CASE_CUSTOM_SLOT_TYPE, SLOT_REGEXP, SPACE_REGEXP } from '@/constants';
 
+import { getAllSamples } from './slot';
+
 export const formatIntentName = (name: string): string => {
   if (!name) {
     return name;
@@ -76,9 +78,6 @@ const continuousReplace = (text: string, regex: RegExp, replacer: (substring: st
   }
   return current;
 };
-
-// spread all synonyms into string array ['car, automobile', 'plane, jet'] => ['car', 'automobile', 'plane', 'jet']
-const getAllSamples = (inputs: string[] = []) => inputs.flatMap((input) => input.split(',')).filter((sample) => !!sample.trim());
 
 export const utteranceEntityPermutations = (
   utterances: string[],
@@ -183,3 +182,6 @@ export const injectUtteranceSpaces = (originalUtterance: string): string => {
 
   return utterance;
 };
+
+// VF.HELP -> help
+export const cleanVFIntentName = (intentName: string) => (intentName.startsWith('VF.') ? intentName.slice(3).toLowerCase() : intentName);
