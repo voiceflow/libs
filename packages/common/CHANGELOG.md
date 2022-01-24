@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.15.4](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.15.3...@voiceflow/common@7.15.4) (2022-01-24)
+
+
+### Bug Fixes
+
+* mapping and utilities (VF-2613) ([#175](https://github.com/voiceflow/libs/issues/175)) ([2d2e59d](https://github.com/voiceflow/libs/commit/2d2e59da6cd2076ed2b157d47731d521c0e78b7d))
+
+
+
+
+
 ## [7.15.3](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.15.2...@voiceflow/common@7.15.3) (2022-01-24)
 
 
