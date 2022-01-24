@@ -1,0 +1,64 @@
+{
+  "slots": [
+    {
+      "key": "4i3h3mmi",
+      "name": "slotmans",
+      "type": {
+        "value": "custom"
+      },
+      "color": "#4F9ED1",
+      "inputs": ["tyler", "john", "scott", "michael", "william", "andy", "peter", "frank", "igor", "steven", "jessica"]
+    }
+  ],
+  "intents": [
+    {
+      "key": "3sb53sup",
+      "name": "name_intent",
+      "slots": [
+        {
+          "id": "4i3h3mmi",
+          "dialog": {
+            "prompt": [
+              {
+                "text": "",
+                "slots": []
+              }
+            ],
+            "confirm": [
+              {
+                "text": "",
+                "slots": []
+              }
+            ],
+            "utterances": [
+              {
+                "text": "{{[name].4i3h3mmi}} ",
+                "slots": ["4i3h3mmi"]
+              }
+            ],
+            "confirmEnabled": false
+          },
+          "required": false
+        }
+      ],
+      "inputs": [
+        {
+          "text": "It's {{[slotmans].4i3h3mmi}}",
+          "slots": ["4i3h3mmi"]
+        },
+        {
+          "text": "I'm {{[slotmans].4i3h3mmi}}",
+          "slots": ["4i3h3mmi"]
+        },
+        {
+          "text": "{{[slotmans].4i3h3mmi}}",
+          "slots": ["4i3h3mmi"]
+        },
+        {
+          "text": "my name is {{[slotmans].4i3h3mmi}}",
+          "slots": ["4i3h3mmi"]
+        }
+      ]
+    }
+  ]
+}
