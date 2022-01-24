@@ -4,14 +4,6 @@ import { Locale } from './base';
 import { AmazonIntent } from './intents';
 import { SlotType } from './slots';
 
-export const AMAZON_TOKEN_PREFIX = 't_';
-
-export enum IntentPrefix {
-  AMAZON = 'AMAZON',
-  CUSTOM = 'CUSTOM',
-  CAPTURE = 'CAPTURE',
-}
-
 export const AmazonToGeneralIntentMap: Partial<Record<AmazonIntent, General.IntentName>> = {
   [AmazonIntent.NO]: General.IntentName.NO,
   [AmazonIntent.YES]: General.IntentName.YES,

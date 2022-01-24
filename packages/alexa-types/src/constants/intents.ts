@@ -34,6 +34,12 @@ export enum AmazonIntent {
   VOICEFLOW = 'VoiceFlowIntent',
 }
 
+export enum IntentPrefix {
+  AMAZON = 'AMAZON',
+  CUSTOM = 'CUSTOM',
+  CAPTURE = 'CAPTURE',
+}
+
 export interface AlexaDefaultIntent extends Constants.DefaultIntent {
   keep?: string[];
 }
