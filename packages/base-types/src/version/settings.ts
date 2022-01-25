@@ -41,3 +41,9 @@ export const defaultBaseVersionSettings = <Prompt>({
   session,
   defaultCanvasNodeVisibility,
 });
+
+export interface MessageDelay {
+  durationMilliseconds: number;
+}
+
+export const defaultMessageDelay = ({ durationMilliseconds = 1500 }: Partial<MessageDelay> = {}) => ({ durationMilliseconds });
