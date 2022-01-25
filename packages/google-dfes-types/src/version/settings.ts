@@ -1,8 +1,8 @@
-import { defaultMessageDelay, MessageDelay } from '@voiceflow/base-types';
+import { Version as BaseVersion } from '@voiceflow/base-types';
 import { Version } from '@voiceflow/google-types';
 
 export interface GoogleDFESVersionSettings extends Version.BaseGoogleVersionSettings {
-  messageDelay?: MessageDelay;
+  messageDelay?: BaseVersion.MessageDelay;
 }
 
 export const defaultGoogleDFESVersionSettings = ({
@@ -10,5 +10,5 @@ export const defaultGoogleDFESVersionSettings = ({
   ...generalSettings
 }: Partial<GoogleDFESVersionSettings> = {}): GoogleDFESVersionSettings => ({
   ...Version.defaultBaseGoogleVersionSettings(generalSettings),
-  messageDelay: defaultMessageDelay(messageDelay),
+  messageDelay: BaseVersion.defaultMessageDelay(messageDelay),
 });
