@@ -1,4 +1,4 @@
-import { Version as BaseVersion } from '@voiceflow/base-types';
+import { Version as ChatVersion } from '@voiceflow/chat-types';
 import { Version } from '@voiceflow/google-types';
 
 export interface GoogleDFESVersionSettings extends Version.BaseGoogleVersionSettings {
@@ -10,5 +10,5 @@ export const defaultGoogleDFESVersionSettings = ({
   ...generalSettings
 }: Partial<GoogleDFESVersionSettings> = {}): GoogleDFESVersionSettings => ({
   ...Version.defaultBaseGoogleVersionSettings(generalSettings),
-  messageDelay: BaseVersion.defaultMessageDelay(messageDelay),
+  messageDelay: ChatVersion.defaultMessageDelay(messageDelay),
 });
