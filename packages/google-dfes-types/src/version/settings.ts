@@ -2,7 +2,7 @@ import { Version as ChatVersion } from '@voiceflow/chat-types';
 import { Version } from '@voiceflow/google-types';
 
 export interface GoogleDFESVersionSettings extends Version.BaseGoogleVersionSettings {
-  messageDelay?: BaseVersion.MessageDelay;
+  messageDelay?: ChatVersion.MessageDelay;
 }
 
 export const defaultGoogleDFESVersionSettings = ({
