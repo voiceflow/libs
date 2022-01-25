@@ -5,6 +5,7 @@ export interface GoogleDFESVersionSettings extends Version.BaseGoogleVersionSett
   messageDelay?: ChatVersion.MessageDelay;
 }
 
+// Message delay will get filtered out on the FE for DFVoice Projects
 export const defaultGoogleDFESVersionSettings = ({
   messageDelay,
   ...generalSettings
