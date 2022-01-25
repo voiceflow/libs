@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.3.34...@voiceflow/google-dfes-types@2.4.0) (2022-01-25)
+
+
+### Features
+
+* add message delay to google dfes  (VF-000) ([#174](https://github.com/voiceflow/libs/issues/174)) ([0deb92c](https://github.com/voiceflow/libs/commit/0deb92c2dfb4537ac4b4509ba029cee7d7b2ded6))
+
+
+
+
+
 ## [2.3.34](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.3.33...@voiceflow/google-dfes-types@2.3.34) (2022-01-24)
 
 **Note:** Version bump only for package @voiceflow/google-dfes-types
