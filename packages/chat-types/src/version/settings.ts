@@ -3,13 +3,13 @@ import { Version } from '@voiceflow/base-types';
 import { Prompt } from '@/types';
 import { defaultPrompt } from '@/utils';
 
-export interface ChatVersionSettings extends Version.BaseVersionSettings<Prompt> {
-  session: Version.RestartSession | Version.ResumeSession<Prompt>;
-  messageDelay?: Version.MessageDelay;
-}
-
 export interface MessageDelay {
   durationMilliseconds: number;
+}
+
+export interface ChatVersionSettings extends Version.BaseVersionSettings<Prompt> {
+  session: Version.RestartSession | Version.ResumeSession<Prompt>;
+  messageDelay?: MessageDelay;
 }
 
 export const defaultMessageDelay = ({ durationMilliseconds = 1500 }: Partial<MessageDelay> = {}) => ({ durationMilliseconds });
