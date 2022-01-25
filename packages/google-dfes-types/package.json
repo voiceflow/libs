@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@voiceflow/base-types": "^2.7.5",
+    "@voiceflow/chat-types": "^2.1.21",
     "@voiceflow/common": "^7.15.4",
     "@voiceflow/google-types": "^2.3.34"
   },
