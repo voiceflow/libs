@@ -2,6 +2,8 @@ import { Nullish } from '@/types';
 
 export const unique = <T>(items: T[]): T[] => Array.from(new Set(items));
 
+export const prepend = <T>(items: T[], item: T): T[] => unique([item, ...items]);
+
 export const without = <T>(items: T[], index: number): T[] => (index < 0 ? items : [...items.slice(0, index), ...items.slice(index + 1)]);
 
 export const withoutValue = <T>(items: T[], value: T): T[] => without(items, items.indexOf(value));

@@ -8,6 +8,7 @@ import {
   insertAll,
   isNotNullish,
   isNullish,
+  prepend,
   replace,
   tail,
   toggleMembership,
@@ -21,6 +22,12 @@ describe('Utils | array', () => {
   describe('unique()', () => {
     it('return an array containing one instance of each value from the array passed to it', () => {
       expect(unique([1, 1, 2, 0, 1, 4, 3, 1, 9, 9, 2])).to.eql([1, 2, 0, 4, 3, 9]);
+    });
+  });
+
+  describe('prepend()', () => {
+    it('return an array with a value added to the start of it', () => {
+      expect(prepend([1, 2, 3], 0)).to.eql([0, 1, 2, 3]);
     });
   });
 
