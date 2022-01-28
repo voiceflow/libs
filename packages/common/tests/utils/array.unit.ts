@@ -28,6 +28,7 @@ describe('Utils | array', () => {
   describe('prepend()', () => {
     it('return an array with a value added to the start of it', () => {
       expect(prepend([1, 2, 3], 0)).to.eql([0, 1, 2, 3]);
+      expect(prepend([1, 2, 3], 4)).to.eql([4, 1, 2, 3]);
     });
   });
 
