@@ -12,7 +12,7 @@
     "@voiceflow/common": "^7.15.4",
     "@voiceflow/general-types": "^3.2.20",
     "@voiceflow/voice-types": "^2.1.19",
-    "googleapis": "^60.0.1"
+    "googleapis": "92.0.0"
   },
   "files": [
     "build"
