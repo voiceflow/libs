@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.17.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.16.0...@voiceflow/common@7.17.0) (2022-02-01)
+
+
+### Features
+
+* added export line in constants file for dm (VF-2810) ([#182](https://github.com/voiceflow/libs/issues/182)) ([6009d8f](https://github.com/voiceflow/libs/commit/6009d8f84584b292a4cb8de31347deb0e74d32af))
+
+
+
+
+
 # [7.16.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.15.4...@voiceflow/common@7.16.0) (2022-02-01)
 
 
