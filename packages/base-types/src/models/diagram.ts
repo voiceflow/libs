@@ -18,7 +18,6 @@ export interface Diagram<N extends BaseDiagramNode = BaseDiagramNode> {
   offsetX: number;
   offsetY: number;
   zoom: number;
-  intentStepIDs?: string[];
 
   children: DiagramID[];
 
