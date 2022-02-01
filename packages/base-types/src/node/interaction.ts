@@ -23,7 +23,8 @@ export enum ChoiceAction {
 }
 
 export interface ChoiceGoTo {
-  intentID: string | null;
+  intentID: Nullable<string>;
+  diagramID?: Nullable<string>;
 }
 
 export interface Choice extends SlotMappings {
