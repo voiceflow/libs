@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.16.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.15.4...@voiceflow/common@7.16.0) (2022-02-01)
+
+
+### Features
+
+* adding a 'dm_' variable to constants (VF-2810) ([#180](https://github.com/voiceflow/libs/issues/180)) ([75574a2](https://github.com/voiceflow/libs/commit/75574a25d92bb72700080021a80305bfa04cb237))
+
+
+
+
+
 ## [7.15.4](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.15.3...@voiceflow/common@7.15.4) (2022-01-24)
 
 

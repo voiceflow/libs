@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/google-types",
   "description": "Google service types",
-  "version": "2.3.35",
+  "version": "2.3.36",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
@@ -9,7 +9,7 @@
   "dependencies": {
     "@voiceflow/base-types": "^2.7.5",
     "@voiceflow/chat-types": "^2.2.0",
-    "@voiceflow/common": "^7.15.4",
+    "@voiceflow/common": "^7.16.0",
     "@voiceflow/general-types": "^3.2.20",
     "@voiceflow/voice-types": "^2.1.19",
     "googleapis": "92.0.0"
