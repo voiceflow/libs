@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.7.5...@voiceflow/base-types@2.8.0) (2022-02-02)
+
+
+### Features
+
+* add diagramID to go-to intent (VF-000) ([#179](https://github.com/voiceflow/libs/issues/179)) ([efbed61](https://github.com/voiceflow/libs/commit/efbed616f69c6b581efe8facde62da3ddf4e7c0f))
+
+
+
+
+
 ## [2.7.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.7.4...@voiceflow/base-types@2.7.5) (2022-01-20)
 
 
