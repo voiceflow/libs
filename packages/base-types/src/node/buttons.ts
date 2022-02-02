@@ -15,6 +15,7 @@ export interface Button extends DataID {
   name: string;
   intent?: Nullable<string>;
   actions: ButtonAction[];
+  diagramID?: Nullable<string>;
 }
 
 export interface StepData extends StepButtonsLayout {
