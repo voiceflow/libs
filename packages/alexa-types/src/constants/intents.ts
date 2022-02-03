@@ -40,7 +40,7 @@ export enum IntentPrefix {
   CAPTURE = 'CAPTURE',
 }
 
-export interface AlexaDefaultIntent extends VoiceflowConstants.DefaultIntent {
+export interface DefaultIntent extends VoiceflowConstants.DefaultIntent {
   keep?: string[];
 }
 
@@ -184,7 +184,7 @@ export const BUILT_IN_INTENTS: BuiltinIntent[] = [
   },
 ];
 
-export const DEFAULT_INTENTS: Record<string, { defaults: AlexaDefaultIntent[]; builtIns: AlexaDefaultIntent[] }> = {
+export const DEFAULT_INTENTS: Record<string, { defaults: DefaultIntent[]; builtIns: DefaultIntent[] }> = {
   // English (AU,CA,US,UK,IN)
   en: {
     defaults: [
@@ -633,7 +633,7 @@ export const DEFAULT_INTENTS: Record<string, { defaults: AlexaDefaultIntent[]; b
   },
 };
 
-export const CATCH_ALL_INTENT: Record<string, AlexaDefaultIntent> = {
+export const CATCH_ALL_INTENT: Record<string, DefaultIntent> = {
   en: {
     name: 'VoiceFlowIntent',
     samples: ['voice flow'],

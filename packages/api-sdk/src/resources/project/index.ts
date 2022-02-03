@@ -40,13 +40,13 @@ class ProjectResource extends CrudResource<BaseModels.Project.Model<AnyRecord, A
     return data;
   }
 
-  public async get<P extends Partial<BaseModels.Project.Model<AnyRecord, AnyRecord>>>(id: string, fields: string[]): Promise<P>;
+  public async get<P extends Partial<BaseModels.Project.Model<AnyRecord, AnyRecord>>>(id: string, fields: Fields): Promise<P>;
 
   public async get<P extends AnyRecord, M extends AnyRecord>(id: string): Promise<BaseModels.Project.Model<P, M>>;
 
   public async get<P extends BaseModels.Project.Model<any, any> = BaseModels.Project.Model<AnyRecord, AnyRecord>>(id: string): Promise<P>;
 
-  public async get(id: string, fields?: string[]): Promise<BaseModels.Project.Model<any, any> | Partial<BaseModels.Project.Model<any, any>>> {
+  public async get(id: string, fields?: Fields): Promise<BaseModels.Project.Model<any, any> | Partial<BaseModels.Project.Model<any, any>>> {
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
@@ -83,7 +83,7 @@ class ProjectResource extends CrudResource<BaseModels.Project.Model<AnyRecord, A
     return data;
   }
 
-  public async getVersions<P extends Partial<BaseModels.Version.Model<BaseModels.Version.PlatformData>>>(id: string, fields: string[]): Promise<P[]>;
+  public async getVersions<P extends Partial<BaseModels.Version.Model<BaseModels.Version.PlatformData>>>(id: string, fields: Fields): Promise<P[]>;
 
   public async getVersions<P extends BaseModels.Version.Model<any> = BaseModels.Version.Model<BaseModels.Version.PlatformData>>(
     id: string
@@ -91,7 +91,7 @@ class ProjectResource extends CrudResource<BaseModels.Project.Model<AnyRecord, A
 
   public async getVersions<P extends BaseModels.Version.PlatformData>(id: string): Promise<BaseModels.Version.Model<P>[]>;
 
-  public async getVersions(id: string, fields?: string[]): Promise<BaseModels.Version.Model<any>[]> {
+  public async getVersions(id: string, fields?: Fields): Promise<BaseModels.Version.Model<any>[]> {
     const { data } = await this.fetch.get<BaseModels.Version.Model<any>[]>(`${this._getCRUDEndpoint(id)}/versions${this._getFieldsQuery(fields)}`);
 
     return data;

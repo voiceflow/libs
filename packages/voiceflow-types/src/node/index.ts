@@ -8,7 +8,7 @@ import * as Prompt from './prompt';
 import * as Speak from './speak';
 
 export * as Buttons from './buttons';
-export * as Capture from './capture/voice';
+export * as Capture from './capture';
 export * as CaptureV2 from './captureV2';
 export * as Interaction from './interaction';
 export * as Prompt from './prompt';

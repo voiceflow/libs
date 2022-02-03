@@ -1675,6 +1675,14 @@
     eslint-plugin-xss "^0.1.9"
     eslint-plugin-you-dont-need-lodash-underscore "^6.12.0"
 
+"@voiceflow/general-types@^3.2.21":
+  version "3.2.21"
+  resolved "https://registry.yarnpkg.com/@voiceflow/general-types/-/general-types-3.2.21.tgz#56c53c4d17fe3b34be11d59d955af626d6bed583"
+  integrity sha512-X1nQd9iK+DFVsHGdQTbJwz9YCDaaohzA31T1b1zGzxOe02QrMbE077MmcliO+QleBsQ5HWGWwAIB04WsUYJFxg==
+  dependencies:
+    "@voiceflow/base-types" "^2.8.0"
+    "@voiceflow/voice-types" "^2.1.20"
+
 "@voiceflow/git-branch-check@1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@voiceflow/git-branch-check/-/git-branch-check-1.2.0.tgz#773e07c5e4558283b8f94a0e7e05b88e637bc3d0"

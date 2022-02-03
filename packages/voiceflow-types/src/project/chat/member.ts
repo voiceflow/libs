@@ -5,3 +5,11 @@ export interface SharedChatMemberPlatformData extends ChatProject.MemberPlatform
 
 // voiceflow-chat only data
 export interface ChatMemberPlatformData extends SharedChatMemberPlatformData {}
+
+export const defaultSharedChatMemberPlatformData = (data: Partial<SharedChatMemberPlatformData> = {}): SharedChatMemberPlatformData => ({
+  ...data,
+});
+
+export const defaultChatMemberPlatformData = (data: Partial<ChatMemberPlatformData> = {}): ChatMemberPlatformData => ({
+  ...defaultSharedChatMemberPlatformData(data),
+});

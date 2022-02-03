@@ -1,13 +1,13 @@
 import { VoiceProject } from '@voiceflow/voice-types';
 
 import { MemberPlatformData } from './member';
-import { AlexaProduct } from './product';
+import { Product } from './product';
 
 export * from './member';
 export * from './product';
 
 export interface PlatformData {
-  products: Record<string, AlexaProduct>;
+  products: Record<string, Product>;
 }
 
 export interface Project extends VoiceProject.Project<MemberPlatformData> {

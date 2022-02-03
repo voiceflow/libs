@@ -13,14 +13,14 @@ export * from './settings';
 
 // shared only across voiceflow types
 
-export enum AlexaStage {
+export enum Stage {
   DEV = 'DEV',
   LIVE = 'LIVE',
   REVIEW = 'REVIEW',
 }
 
 export interface PlatformData extends VoiceVersion.PlatformData<Voice> {
-  status: { stage: AlexaStage };
+  status: { stage: Stage };
   settings: Settings;
   publishing: Publishing;
 }
@@ -30,7 +30,7 @@ export interface Version extends VoiceVersion.Version<Voice, BaseModels.Version.
 }
 
 export const defaultPlatformData = ({
-  status: { stage = AlexaStage.DEV } = { stage: AlexaStage.DEV },
+  status: { stage = Stage.DEV } = { stage: Stage.DEV },
   settings,
   publishing,
   ...generalVersionData

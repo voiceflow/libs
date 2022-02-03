@@ -5,3 +5,11 @@ export interface SharedVoiceMemberPlatformData extends VoiceProject.MemberPlatfo
 
 // voiceflow-voice only data
 export interface VoiceMemberPlatformData extends SharedVoiceMemberPlatformData {}
+
+export const defaultSharedVoiceMemberPlatformData = (data: Partial<SharedVoiceMemberPlatformData> = {}): SharedVoiceMemberPlatformData => ({
+  ...data,
+});
+
+export const defaultVoiceMemberPlatformData = (data: Partial<VoiceMemberPlatformData> = {}): VoiceMemberPlatformData => ({
+  ...defaultSharedVoiceMemberPlatformData(data),
+});
