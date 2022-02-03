@@ -47,7 +47,7 @@ export interface VersionPerType {
 
 export type Version = VersionPerType[SupportedProjectType];
 export type Settings = SettingsPerType[SupportedProjectType];
-export type Publishing = SettingsPerType[SupportedProjectType];
+export type Publishing = PublishingPerType[SupportedProjectType];
 export type PlatformData = PlatformDataPerType[SupportedProjectType];
 
 export const defaultPlatformData = <T extends SupportedProjectType>(
