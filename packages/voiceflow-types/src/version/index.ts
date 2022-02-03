@@ -1,3 +1,5 @@
+import { DeepPartialByKey } from '@voiceflow/base-types';
+
 import { ProjectType } from '@/constants';
 
 import { SupportedProjectType } from '../project';
@@ -27,23 +29,26 @@ export type Version = VersionPerType[SupportedProjectType];
 export type Settings = SettingsPerType[SupportedProjectType];
 export type PlatformData = PlatformDataPerType[SupportedProjectType];
 
-export const defaultPlatformData = <T extends SupportedProjectType>(type: T, platformData: PlatformDataPerType[T]) => {
+export const defaultPlatformData = <T extends SupportedProjectType>(
+  type: T,
+  platformData: DeepPartialByKey<PlatformDataPerType[T], 'settings'>
+): PlatformDataPerType[T] => {
   switch (type) {
     case ProjectType.CHAT:
-      return defaultChatPlatformData(platformData as ChatPlatformData);
+      return defaultChatPlatformData(platformData as DeepPartialByKey<ChatPlatformData, 'settings'>) as PlatformDataPerType[T];
     case ProjectType.VOICE:
-      return defaultVoicePlatformData(platformData as VoicePlatformData);
+      return defaultVoicePlatformData(platformData as DeepPartialByKey<VoicePlatformData, 'settings'>) as PlatformDataPerType[T];
     default:
       throw new Error(`Unknown project type: ${type}`);
   }
 };
 
-export const defaultSettings = <T extends SupportedProjectType>(type: T, platformData: SettingsPerType[T]) => {
+export const defaultSettings = <T extends SupportedProjectType>(type: T, platformData: Partial<SettingsPerType[T]>): SettingsPerType[T] => {
   switch (type) {
     case ProjectType.CHAT:
-      return defaultChatSettings(platformData as ChatSettings);
+      return defaultChatSettings(platformData as Partial<ChatSettings>) as SettingsPerType[T];
     case ProjectType.VOICE:
-      return defaultVoiceSettings(platformData as VoiceSettings);
+      return defaultVoiceSettings(platformData as Partial<VoiceSettings>) as SettingsPerType[T];
     default:
       throw new Error(`Unknown project type: ${type}`);
   }

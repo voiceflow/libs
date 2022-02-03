@@ -1,3 +1,4 @@
+import { DeepPartialByKey } from '@voiceflow/base-types';
 import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
 import { SupportedProjectType } from '../project';
@@ -49,34 +50,37 @@ export type Settings = SettingsPerType[SupportedProjectType];
 export type Publishing = SettingsPerType[SupportedProjectType];
 export type PlatformData = PlatformDataPerType[SupportedProjectType];
 
-export const defaultPlatformData = <T extends SupportedProjectType>(type: T, platformData: PlatformDataPerType[T]) => {
+export const defaultPlatformData = <T extends SupportedProjectType>(
+  type: T,
+  platformData: DeepPartialByKey<PlatformDataPerType[T], 'settings' | 'publishing'>
+): PlatformDataPerType[T] => {
   switch (type) {
     case VoiceflowConstants.ProjectType.CHAT:
-      return defaultChatPlatformData(platformData as ChatPlatformData);
+      return defaultChatPlatformData(platformData as DeepPartialByKey<ChatPlatformData, 'settings' | 'publishing'>) as PlatformDataPerType[T];
     case VoiceflowConstants.ProjectType.VOICE:
-      return defaultVoicePlatformData(platformData as VoicePlatformData);
+      return defaultVoicePlatformData(platformData as DeepPartialByKey<VoicePlatformData, 'settings' | 'publishing'>) as PlatformDataPerType[T];
     default:
       throw new Error(`Unknown project type: ${type}`);
   }
 };
 
-export const defaultSettings = <T extends SupportedProjectType>(type: T, platformData: SettingsPerType[T]) => {
+export const defaultSettings = <T extends SupportedProjectType>(type: T, platformData: Partial<SettingsPerType[T]>): SettingsPerType[T] => {
   switch (type) {
     case VoiceflowConstants.ProjectType.CHAT:
-      return defaultChatSettings(platformData as ChatSettings);
+      return defaultChatSettings(platformData as Partial<ChatSettings>) as SettingsPerType[T];
     case VoiceflowConstants.ProjectType.VOICE:
-      return defaultVoiceSettings(platformData as VoiceSettings);
+      return defaultVoiceSettings(platformData as Partial<VoiceSettings>) as SettingsPerType[T];
     default:
       throw new Error(`Unknown project type: ${type}`);
   }
 };
 
-export const defaultPublishing = <T extends SupportedProjectType>(type: T, platformData: PublishingPerType[T]) => {
+export const defaultPublishing = <T extends SupportedProjectType>(type: T, platformData: Partial<PublishingPerType[T]>): PublishingPerType[T] => {
   switch (type) {
     case VoiceflowConstants.ProjectType.CHAT:
-      return defaultChatPublishing(platformData as ChatPublishing);
+      return defaultChatPublishing(platformData as Partial<ChatPublishing>) as PublishingPerType[T];
     case VoiceflowConstants.ProjectType.VOICE:
-      return defaultVoicePublishing(platformData as VoicePublishing);
+      return defaultVoicePublishing(platformData as Partial<VoicePublishing>) as PublishingPerType[T];
     default:
       throw new Error(`Unknown project type: ${type}`);
   }

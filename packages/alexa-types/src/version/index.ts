@@ -1,4 +1,4 @@
-import { BaseModels } from '@voiceflow/base-types';
+import { BaseModels, DeepPartialByKey } from '@voiceflow/base-types';
 import { VoiceVersion } from '@voiceflow/voice-types';
 import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
@@ -34,7 +34,7 @@ export const defaultPlatformData = ({
   settings,
   publishing,
   ...generalVersionData
-}: Partial<PlatformData>): PlatformData => ({
+}: DeepPartialByKey<PlatformData, 'publishing' | 'settings'>): PlatformData => ({
   ...VoiceVersion.defaultPlatformData<Voice>(generalVersionData, { defaultPromptVoice: Voice.ALEXA }),
   status: { stage },
   settings: defaultSettings(settings),
