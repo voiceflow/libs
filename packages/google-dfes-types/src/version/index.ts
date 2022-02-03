@@ -1,31 +1,33 @@
-import { Models } from '@voiceflow/base-types';
-import { Version } from '@voiceflow/google-types';
+import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
-import { Locale } from '@/constants';
-import { AnyGoogleDFESCommand } from '@/node';
+import { SupportedProjectType } from '../project';
+import { ChatPlatformData, ChatVersion, defaultChatPlatformData } from './chat';
+import { defaultVoicePlatformData, VoicePlatformData, VoiceVersion } from './voice';
 
-import { defaultGoogleDFESVersionPublishing, GoogleDFESVersionPublishing } from './publishing';
-import { defaultGoogleDFESVersionSettings, GoogleDFESVersionSettings } from './settings';
+export * from './base';
+export * from './chat';
+export * from './voice';
 
-export * from './publishing';
-export * from './settings';
-
-export interface GoogleDFESVersionData extends Version.BaseGoogleVersionData {
-  settings: GoogleDFESVersionSettings;
-  publishing: GoogleDFESVersionPublishing;
+export interface PlatformDataPerType {
+  [VoiceflowConstants.ProjectType.CHAT]: ChatPlatformData;
+  [VoiceflowConstants.ProjectType.VOICE]: VoicePlatformData;
 }
 
-export interface GoogleDFESVersion extends Version.BaseGoogleVersion {
-  prototype?: Models.VersionPrototype<AnyGoogleDFESCommand, Locale>;
-  platformData: GoogleDFESVersionData;
+export interface VersionPerType {
+  [VoiceflowConstants.ProjectType.CHAT]: ChatVersion;
+  [VoiceflowConstants.ProjectType.VOICE]: VoiceVersion;
 }
 
-export const defaultGoogleDFESVersionVersionData = ({
-  settings,
-  publishing,
-  ...baseGoogleVersionData
-}: Partial<GoogleDFESVersionData>): GoogleDFESVersionData => ({
-  ...Version.defaultBaseGoogleVersionData(baseGoogleVersionData),
-  settings: defaultGoogleDFESVersionSettings(settings),
-  publishing: defaultGoogleDFESVersionPublishing(publishing),
-});
+export type Version = VersionPerType[SupportedProjectType];
+export type PlatformData = PlatformDataPerType[SupportedProjectType];
+
+export const defaultPlatformData = <T extends SupportedProjectType>(type: T, platformData: PlatformDataPerType[T]) => {
+  switch (type) {
+    case VoiceflowConstants.ProjectType.CHAT:
+      return defaultChatPlatformData(platformData as ChatPlatformData);
+    case VoiceflowConstants.ProjectType.VOICE:
+      return defaultVoicePlatformData(platformData as VoicePlatformData);
+    default:
+      throw new Error(`Unknown project type: ${type}`);
+  }
+};

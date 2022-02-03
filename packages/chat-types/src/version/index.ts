@@ -1,22 +1,23 @@
-import { Version } from '@voiceflow/base-types';
+import { BaseModels, BaseVersion, DeepPartialByKey } from '@voiceflow/base-types';
 
-import { Intent, Prompt } from '@/types';
+import { Intent, Prompt } from '@/models';
 
-import { ChatVersionSettings, defaultChatVersionSettings } from './settings';
+import { defaultSettings, Settings } from './settings';
 
 export * from './settings';
 
-export interface ChatVersionData extends Version.BaseVersionData<Prompt> {
+export interface PlatformData extends BaseVersion.PlatformData<Prompt> {
   intents: Intent[];
-  settings: ChatVersionSettings;
+  settings: Settings;
 }
 
-export const defaultChatVersionData = ({ intents = [], settings, ...data }: Partial<ChatVersionData>): ChatVersionData => ({
-  ...Version.defaultBaseVersionData<Prompt>(data),
+export interface Version<Prototype extends BaseModels.Version.Prototype = BaseModels.Version.Prototype>
+  extends BaseVersion.Version<Prompt, Prototype> {
+  platformData: PlatformData;
+}
+
+export const defaultPlatformData = ({ intents = [], settings = {}, ...data }: DeepPartialByKey<PlatformData, 'settings'>): PlatformData => ({
+  ...BaseVersion.defaultPlatformData<Prompt>(data),
   intents,
-  settings: defaultChatVersionSettings(settings),
+  settings: defaultSettings(settings),
 });
-
-export interface ChatVersion extends Version.BaseVersion<Prompt> {
-  platformData: ChatVersionData;
-}

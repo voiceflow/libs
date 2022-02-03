@@ -1,4 +1,4 @@
-import { Node } from '@voiceflow/base-types';
+import { BaseNode } from '@voiceflow/base-types';
 
 import { NodeType } from './constants';
 
@@ -36,7 +36,7 @@ export interface StepData {
   reminder: Reminder;
 }
 
-export interface Step extends Node.Utils.BaseStep<StepData> {
+export interface Step extends BaseNode.Utils.BaseStep<StepData> {
   type: NodeType.REMINDER;
 }
 
@@ -44,7 +44,7 @@ export interface NodeReminder extends Omit<Reminder, 'name' | 'recurrenceBool' |
   recurrence?: { byDay?: string[]; freq: RecurrenceFreq };
 }
 
-export interface Node extends Node.Utils.BaseNode, Node.Utils.NodeSuccessFailID {
+export interface Node extends BaseNode.Utils.BaseNode, BaseNode.Utils.NodeSuccessFailID {
   type: NodeType.REMINDER;
   reminder: NodeReminder;
 }

@@ -1,4 +1,4 @@
-import { Models } from '@voiceflow/base-types';
+import { BaseModels } from '@voiceflow/base-types';
 
 import type Fetch from '@/fetch';
 
@@ -10,7 +10,7 @@ const ENDPOINT = 'programs';
 export const modelIDKey = 'id';
 export type ModelIDKey = typeof modelIDKey;
 
-class ProgramResource extends CrudResource<Models.Program, ModelIDKey, ProgramResource> {
+class ProgramResource extends CrudResource<BaseModels.Program.Model, ModelIDKey, ProgramResource> {
   constructor(fetch: Fetch, { resourceEndpoint = ENDPOINT }: { resourceEndpoint?: string } = {}) {
     super({
       fetch,
@@ -19,36 +19,43 @@ class ProgramResource extends CrudResource<Models.Program, ModelIDKey, ProgramRe
     });
   }
 
-  public async get<T extends Partial<Models.Program>>(id: Models.ProgramID, fields: Fields): Promise<T>;
+  public async get<T extends Partial<BaseModels.Program.Model>>(id: string, fields: Fields): Promise<T>;
 
-  public async get<T extends Models.BaseNode, C extends Models.BaseCommand>(id: Models.ProgramID): Promise<Models.Program<T, C>>;
+  public async get<T extends BaseModels.BaseNode, C extends BaseModels.BaseCommand>(id: string): Promise<BaseModels.Program.Model<T, C>>;
 
-  public async get<T extends Models.Program<any, any> = Models.Program>(id: Models.ProgramID): Promise<T>;
+  public async get<T extends BaseModels.Program.Model<any, any> = BaseModels.Program.Model>(id: string): Promise<T>;
 
-  public async get(id: Models.ProgramID, fields?: Fields): Promise<Models.Program<any, any>> {
+  public async get(id: string, fields?: Fields): Promise<BaseModels.Program.Model<any, any>> {
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
-  async create<T extends Models.BaseNode, C extends Models.BaseCommand>(body: Omit<Models.Program<T, C>, ModelIDKey>): Promise<Models.Program<T, C>>;
+  async create<T extends BaseModels.BaseNode, C extends BaseModels.BaseCommand>(
+    body: Omit<BaseModels.Program.Model<T, C>, ModelIDKey>
+  ): Promise<BaseModels.Program.Model<T, C>>;
 
-  async create<T extends Omit<Models.Program<any, any>, ModelIDKey>>(body: T): Promise<T & Pick<Models.Program<any, any>, ModelIDKey>>;
+  async create<T extends Omit<BaseModels.Program.Model<any, any>, ModelIDKey>>(
+    body: T
+  ): Promise<T & Pick<BaseModels.Program.Model<any, any>, ModelIDKey>>;
 
-  public async create(body: Omit<Models.Program<any, any>, ModelIDKey>): Promise<Models.Program<any, any>> {
+  public async create(body: Omit<BaseModels.Program.Model<any, any>, ModelIDKey>): Promise<BaseModels.Program.Model<any, any>> {
     return super._post(body);
   }
 
-  public async update<T extends Models.BaseNode, C extends Models.BaseCommand>(
-    id: Models.ProgramID,
-    body: Omit<Models.Program<T, C>, ModelIDKey>
-  ): Promise<Omit<Models.Program<T, C>, ModelIDKey>>;
+  public async update<T extends BaseModels.BaseNode, C extends BaseModels.BaseCommand>(
+    id: string,
+    body: Omit<BaseModels.Program.Model<T, C>, ModelIDKey>
+  ): Promise<Omit<BaseModels.Program.Model<T, C>, ModelIDKey>>;
 
-  public async update<T extends Omit<Models.Program<any, any>, ModelIDKey>>(id: Models.ProgramID, body: T): Promise<T>;
+  public async update<T extends Omit<BaseModels.Program.Model<any, any>, ModelIDKey>>(id: string, body: T): Promise<T>;
 
-  public async update(id: Models.ProgramID, body: Omit<Models.Program<any, any>, ModelIDKey>): Promise<Omit<Models.Program<any, any>, ModelIDKey>> {
-    return super._put<Models.Program<any, any>>(id, body);
+  public async update(
+    id: string,
+    body: Omit<BaseModels.Program.Model<any, any>, ModelIDKey>
+  ): Promise<Omit<BaseModels.Program.Model<any, any>, ModelIDKey>> {
+    return super._put<BaseModels.Program.Model<any, any>>(id, body);
   }
 
-  public async delete(id: Models.ProgramID): Promise<Models.ProgramID> {
+  public async delete(id: string): Promise<string> {
     return super._delete(id);
   }
 }

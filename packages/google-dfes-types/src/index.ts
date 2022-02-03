@@ -1,6 +1,6 @@
-export * as Constants from './constants';
-export * as Diagram from './diagram';
-export * as Node from './node';
-export * as Program from './program';
-export * as Project from './project';
-export * as Version from './version';
+export * as DFESConstants from './constants';
+export * as DFESDiagram from './diagram';
+export * as DFESNode from './node';
+export * as DFESProgram from './program';
+export * as DFESProject from './project';
+export * as DFESVersion from './version';

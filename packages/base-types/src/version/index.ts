@@ -1,21 +1,25 @@
-import { StrictVersionPlatformData, Version } from '@/models';
+import { Version as VersionModels } from '@/models';
+import { DeepPartialByKey } from '@/utils';
 
-import { BaseVersionSettings, defaultBaseVersionSettings } from './settings';
+import { defaultSettings, Settings } from './settings';
 
 export * from './settings';
 
-export interface BaseVersionData<Prompt = unknown> extends StrictVersionPlatformData<BaseVersionSettings<Prompt>> {}
+export interface PlatformData<Prompt = unknown> extends VersionModels.PlatformData<Settings<Prompt>> {}
 
-export interface BaseVersion<Prompt = unknown> extends Version<BaseVersionData<Prompt>> {}
+export interface Version<Prompt = unknown, Prototype extends VersionModels.Prototype = VersionModels.Prototype>
+  extends VersionModels.Model<PlatformData<Prompt>> {
+  prototype?: Prototype;
+}
 
-export const defaultBaseVersionData = <Prompt>({
+export const defaultPlatformData = <Prompt>({
   slots = [],
   intents = [],
-  settings,
+  settings = {},
   publishing = {},
-}: Partial<BaseVersionData<Prompt>>): BaseVersionData<Prompt> => ({
+}: DeepPartialByKey<PlatformData<Prompt>, 'settings'>): PlatformData<Prompt> => ({
   slots,
   intents,
-  settings: defaultBaseVersionSettings(settings),
+  settings: defaultSettings(settings),
   publishing,
 });

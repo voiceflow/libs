@@ -1,23 +1,22 @@
-import { Models } from '@voiceflow/base-types';
-import { Project } from '@voiceflow/voice-types';
+import { VoiceProject } from '@voiceflow/voice-types';
 
-import { AlexaProjectMemberData } from './member';
+import { MemberPlatformData } from './member';
 import { AlexaProduct } from './product';
 
 export * from './member';
 export * from './product';
 
-export interface AlexaProjectData {
+export interface PlatformData {
   products: Record<string, AlexaProduct>;
 }
 
-export interface AlexaProject extends Project.VoiceProject {
-  members: Models.Member<AlexaProjectMemberData>[];
+export interface Project extends VoiceProject.Project<MemberPlatformData> {
+  type: 'voice';
   platform: 'alexa';
-  platformData: AlexaProjectData;
+  platformData: PlatformData;
 }
 
-export const defaultAlexaProjectData = ({ products = {}, ...data }: Partial<AlexaProjectData> = {}): AlexaProjectData => ({
-  ...Project.defaultVoiceProjectData(data),
+export const defaultPlatformData = ({ products = {}, ...data }: Partial<PlatformData> = {}): PlatformData => ({
+  ...VoiceProject.defaultPlatformData(data),
   products,
 });

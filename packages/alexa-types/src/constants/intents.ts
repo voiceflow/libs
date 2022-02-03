@@ -1,5 +1,5 @@
 import { BuiltinIntent } from '@voiceflow/common';
-import { Constants } from '@voiceflow/general-types';
+import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 import { v1 } from 'ask-smapi-model';
 
 export type InterfaceType = v1.skill.Manifest.Interface['type'];
@@ -40,7 +40,7 @@ export enum IntentPrefix {
   CAPTURE = 'CAPTURE',
 }
 
-export interface AlexaDefaultIntent extends Constants.DefaultIntent {
+export interface AlexaDefaultIntent extends VoiceflowConstants.DefaultIntent {
   keep?: string[];
 }
 

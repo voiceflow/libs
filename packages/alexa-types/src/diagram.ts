@@ -1,5 +1,5 @@
-import { Models } from '@voiceflow/base-types';
+import { BaseModels } from '@voiceflow/base-types';
 
-import { AnyAlexaStep } from './node';
+import { AnyStep } from './node';
 
-export interface AlexaDiagram extends Models.Diagram<AnyAlexaStep> {}
+export interface Diagram extends BaseModels.Diagram.Model<AnyStep> {}

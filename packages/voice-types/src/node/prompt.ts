@@ -1,10 +1,10 @@
-import { Node, Nullable } from '@voiceflow/base-types';
+import { BaseNode, Nullable } from '@voiceflow/base-types';
 
 import { StepNoMatch, StepNoReply, StepReprompt } from './utils';
 
-export interface StepData<Voice> extends Node.Prompt.StepData, StepReprompt<Voice> {
+export interface StepData<Voice> extends BaseNode.Prompt.StepData, StepReprompt<Voice> {
   noReply?: Nullable<StepNoReply<Voice>>;
   noMatches: StepNoMatch<Voice>;
 }
 
-export interface Step<Data = StepData<unknown>> extends Node.Prompt.Step<Data> {}
+export interface Step<Data = StepData<unknown>> extends BaseNode.Prompt.Step<Data> {}

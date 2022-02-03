@@ -1,11 +1,12 @@
-import { BaseCommand, BaseNode, NodeID, ProgramID, Variable, VersionID } from './shared';
+import { BaseCommand, BaseNode, Variable } from './base';
 
-export interface Program<N extends BaseNode = BaseNode, C extends BaseCommand = BaseCommand> {
-  id: ProgramID;
-  startId: NodeID;
-  skill_id: VersionID;
+export interface Model<Node extends BaseNode = BaseNode, Command extends BaseCommand = BaseCommand> {
+  id: string;
+  startId: string;
+  skill_id: string;
+
   name?: string;
+  lines: Record<string, Node>;
+  commands: Command[];
   variables: Variable[];
-  lines: Record<NodeID, N>;
-  commands: C[];
 }

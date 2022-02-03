@@ -1,9 +1,9 @@
-export * as Button from './button';
-export * as Models from './models';
-export * as Node from './node';
-export * as Project from './project';
-export * as Request from './request';
-export * as Text from './text';
-export * as Trace from './trace';
+export * as BaseButton from './button';
+export * as BaseModels from './models';
+export * as BaseNode from './node';
+export * as BaseProject from './project';
+export * as BaseRequest from './request';
+export * as BaseText from './text';
+export * as BaseTrace from './trace';
 export * from './utils';
-export * as Version from './version';
+export * as BaseVersion from './version';

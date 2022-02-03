@@ -23,7 +23,7 @@ class Fetcher<Client, Options = undefined> {
 
   constructor({ fetch, clazz, endpoint, clazzOptions }: FetcherOptions<Client, Options>) {
     this.fetch = fetch;
-    this.clazz = clazz;
+    this.clazz = clazz as Clazz<Client, Options>;
     this.endpoint = endpoint;
     this.clazzOptions = clazzOptions as Options;
   }

@@ -1,5 +1,5 @@
-import { Models } from '@voiceflow/base-types';
+import { BaseModels } from '@voiceflow/base-types';
 
-import { AnyGoogleDFESCommand, AnyGoogleDFESNode } from './node';
+import { AnyCommand, AnyNode } from './node';
 
-export interface GoogleProgram extends Models.Program<AnyGoogleDFESNode, AnyGoogleDFESCommand> {}
+export interface Program extends BaseModels.Program.Model<AnyNode, AnyCommand> {}

@@ -1,64 +1,33 @@
-import { Models } from '@voiceflow/base-types';
-import { Version } from '@voiceflow/voice-types';
+import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
-import { Locale, Voice } from '@/constants';
-import { AnyGoogleCommand } from '@/node';
+import { SupportedProjectType } from '../project';
+import { ChatPlatformData, ChatVersion, defaultChatPlatformData } from './chat';
+import { defaultVoicePlatformData, VoicePlatformData, VoiceVersion } from './voice';
 
-import {
-  BaseGoogleVersionPublishing,
-  defaultBaseGoogleVersionPublishing,
-  defaultGoogleVersionPublishing,
-  GoogleVersionPublishing,
-} from './publishing';
-import { BaseGoogleVersionSettings, defaultBaseGoogleVersionSettings, defaultGoogleVersionSettings, GoogleVersionSettings } from './settings';
+export * from './base';
+export * from './chat';
+export * from './voice';
 
-export * from './publishing';
-export * from './settings';
-
-export enum GoogleStage {
-  DEV = 'DEV',
-  LIVE = 'LIVE',
-  REVIEW = 'REVIEW',
+export interface PlatformDataPerType {
+  [VoiceflowConstants.ProjectType.CHAT]: ChatPlatformData;
+  [VoiceflowConstants.ProjectType.VOICE]: VoicePlatformData;
 }
 
-// base is used in google-dfes types
-
-export interface BaseGoogleVersionData extends Version.VoiceVersionData<Voice> {
-  status: { stage: GoogleStage };
-  settings: BaseGoogleVersionSettings;
-  publishing: BaseGoogleVersionPublishing;
-  modelVersion: 1;
+export interface VersionPerType {
+  [VoiceflowConstants.ProjectType.CHAT]: ChatVersion;
+  [VoiceflowConstants.ProjectType.VOICE]: VoiceVersion;
 }
 
-export interface BaseGoogleVersion extends Version.VoiceVersion<Voice> {
-  platformData: BaseGoogleVersionData;
-}
+export type Version = VersionPerType[SupportedProjectType];
+export type PlatformData = PlatformDataPerType[SupportedProjectType];
 
-export const defaultBaseGoogleVersionData = ({
-  status: { stage = GoogleStage.DEV } = { stage: GoogleStage.DEV },
-  settings,
-  publishing,
-  ...voiceVersionData
-}: Partial<BaseGoogleVersionData>): BaseGoogleVersionData => ({
-  ...Version.defaultVoiceVersionData<Voice>(voiceVersionData, { defaultPromptVoice: Voice.DEFAULT }),
-  status: { stage },
-  settings: defaultBaseGoogleVersionSettings(settings),
-  publishing: defaultBaseGoogleVersionPublishing(publishing),
-  modelVersion: 1,
-});
-
-export interface GoogleVersionData extends BaseGoogleVersionData {
-  settings: GoogleVersionSettings;
-  publishing: GoogleVersionPublishing;
-}
-
-export interface GoogleVersion extends BaseGoogleVersion {
-  prototype?: Models.VersionPrototype<AnyGoogleCommand, Locale>;
-  platformData: GoogleVersionData;
-}
-
-export const defaultGoogleVersionData = ({ settings, publishing, ...baseGoogleVersionData }: Partial<GoogleVersionData>): GoogleVersionData => ({
-  ...defaultBaseGoogleVersionData(baseGoogleVersionData),
-  settings: defaultGoogleVersionSettings(settings),
-  publishing: defaultGoogleVersionPublishing(publishing),
-});
+export const defaultPlatformData = <T extends SupportedProjectType>(type: T, platformData: PlatformDataPerType[T]) => {
+  switch (type) {
+    case VoiceflowConstants.ProjectType.CHAT:
+      return defaultChatPlatformData(platformData as ChatPlatformData);
+    case VoiceflowConstants.ProjectType.VOICE:
+      return defaultVoicePlatformData(platformData as VoicePlatformData);
+    default:
+      throw new Error(`Unknown project type: ${type}`);
+  }
+};
