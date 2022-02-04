@@ -80,6 +80,8 @@ workflows:
           requires:
             - build-base-types
             - build-voice-types
+            - build-general-types
+            - build-common
 
 
       - vfcommon/install_and_build:
