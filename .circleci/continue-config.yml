@@ -126,6 +126,11 @@ workflows:
           force_execute: true
           package: google-dfes-types
           container_folder_to_copy: packages/google-dfes-types/build
+          requires:
+            - build-base-types
+            - build-google-types
+            - build-chat-types
+            - build-commmon
 
       - vfcommon/install_and_build:
           context: dev-test
