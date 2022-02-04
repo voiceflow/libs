@@ -62,12 +62,47 @@ workflows:
           context: dev-test
           avoid_post_install_scripts: false
           attach_workspace: true
+          name: build-api-sdk
+          force_execute: true
+          package: api-sdk
+          container_folder_to_copy: packages/api-sdk/build
+          requires:
+            - build-base-types
+            - build-common
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          attach_workspace: true
           name: build-voice-types
           force_execute: true
           package: voice-types
           container_folder_to_copy: packages/voice-types/build
           requires:
             - build-base-types
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          attach_workspace: true
+          name: build-chat-types
+          force_execute: true
+          package: chat-types
+          container_folder_to_copy: packages/chat-types/build
+          requires:
+            - build-base-types
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          attach_workspace: true
+          name: build-general-types
+          force_execute: true
+          package: general-types
+          container_folder_to_copy: packages/general-types/build
+          requires:
+            - build-base-types
+            - build-voice-types
 
       - vfcommon/install_and_build:
           context: dev-test
@@ -103,30 +138,6 @@ workflows:
           context: dev-test
           avoid_post_install_scripts: false
           attach_workspace: true
-          name: build-general-types
-          force_execute: true
-          package: general-types
-          container_folder_to_copy: packages/general-types/build
-          requires:
-            - build-base-types
-            - build-voice-types
-
-
-      - vfcommon/install_and_build:
-          context: dev-test
-          avoid_post_install_scripts: false
-          attach_workspace: true
-          name: build-chat-types
-          force_execute: true
-          package: chat-types
-          container_folder_to_copy: packages/chat-types/build
-          requires:
-            - build-base-types
-
-      - vfcommon/install_and_build:
-          context: dev-test
-          avoid_post_install_scripts: false
-          attach_workspace: true
           name: build-google-dfes-types
           force_execute: true
           package: google-dfes-types
@@ -137,23 +148,16 @@ workflows:
             - build-chat-types
             - build-common
 
-      - vfcommon/install_and_build:
-          context: dev-test
-          avoid_post_install_scripts: false
-          attach_workspace: true
-          name: build-api-sdk
-          force_execute: true
-          package: api-sdk
-          container_folder_to_copy: packages/api-sdk/build
-          requires:
-            - build-base-types
-            - build-common
-
-
 
       - test:
           context: dev-test
+
+      - vfcommon/monorepo_release:
+          avoid_post_install_scripts: false
+          ssh_key: "94:fb:dc:e2:30:96:9d:61:f5:6f:95:c2:32:20:f7:37"
+          context: dev-test
           requires:
+            - test
             - build-alexa-types
             - build-api-sdk
             - build-base-types
@@ -164,13 +168,6 @@ workflows:
             - build-google-types
             - build-metrics
             - build-voice-types
-
-      - vfcommon/monorepo_release:
-          avoid_post_install_scripts: false
-          ssh_key: "94:fb:dc:e2:30:96:9d:61:f5:6f:95:c2:32:20:f7:37"
-          context: dev-test
-          requires:
-            - test
           filters:
             branches:
               only: master
