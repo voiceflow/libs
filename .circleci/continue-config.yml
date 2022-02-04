@@ -6,25 +6,26 @@ parameters:
     default: false
 
 orbs:
-  vfcommon: voiceflow/common@0.0.270
+  vfcommon: voiceflow/common@0.0.275
   sonarcloud: sonarsource/sonarcloud@1.0.2
 
 jobs:
-  build-and-test:
+  test:
     executor: vfcommon/default-executor
     steps:
       - checkout
       - vfcommon/install_node_modules:
           avoid_post_install_scripts: false
-      - vfcommon/build
-      - vfcommon/lint_report_monorepo:
+      - attach_workspace:
+          at: ~/voiceflow
+      - vfcommon/monorepo_lint_report:
           force_execution: << pipeline.parameters.build-all >>
           run_on_root: << pipeline.parameters.build-all >>
-      - vfcommon/dependency_tests_monorepo:
+      - vfcommon/monorepo_dependency_tests:
           force_execution: << pipeline.parameters.build-all >>
           run_on_root: << pipeline.parameters.build-all >>
           step_name: Dependency Tests
-      - vfcommon/unit_tests_monorepo:
+      - vfcommon/monorepo_unit_tests:
           force_execution: << pipeline.parameters.build-all >>
           run_on_root: << pipeline.parameters.build-all >>
       - sonarcloud/scan
@@ -32,15 +33,107 @@ jobs:
 workflows:
   test-and-release:
     jobs:
-      - build-and-test:
-          context: dev-test
 
-      - vfcommon/release_monorepo:
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          name: build-alexa-types
+          force_execute: true
+          package: alexa-types
+          container_folder_to_copy: packages/alexa-types/build
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          name: build-google-types
+          force_execute: true
+          package: google-types
+          container_folder_to_copy: packages/google-types/build
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          name: build-general-types
+          force_execute: true
+          package: general-types
+          container_folder_to_copy: packages/general-types/build
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          name: build-base-types
+          force_execute: true
+          package: base-types
+          container_folder_to_copy: packages/base-types/build
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          name: build-chat-types
+          force_execute: true
+          package: chat-types
+          container_folder_to_copy: packages/chat-types/build
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          name: build-voice-types
+          force_execute: true
+          package: voice-types
+          container_folder_to_copy: packages/voice-types/build
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          name: build-google-dfes-types
+          force_execute: true
+          package: google-dfes-types
+          container_folder_to_copy: packages/google-dfes-types/build
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          name: build-api-sdk
+          force_execute: true
+          package: api-sdk
+          container_folder_to_copy: packages/api-sdk/build
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          name: build-common
+          force_execute: true
+          package: common
+          container_folder_to_copy: packages/common/build
+
+      - vfcommon/install_and_build:
+          context: dev-test
+          avoid_post_install_scripts: false
+          name: build-metrics
+          force_execute: true
+          package: metrics
+          container_folder_to_copy: packages/metrics/build
+
+      - test:
+          context: dev-test
+          requires:
+            - build-alexa-types
+            - build-api-sdk
+            - build-base-types
+            - build-chat-types
+            - build-common
+            - build-general-types
+            - build-google-dfes-types
+            - build-google-types
+            - build-metrics
+            - build-voice-types
+
+      - vfcommon/monorepo_release:
           avoid_post_install_scripts: false
           ssh_key: "94:fb:dc:e2:30:96:9d:61:f5:6f:95:c2:32:20:f7:37"
           context: dev-test
           requires:
-            - build-and-test
+            - test
           filters:
             branches:
               only: master
