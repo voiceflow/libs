@@ -110,3 +110,5 @@ nyc_coverage*
 .DS_Store
 
 .idea/
+
+packages/**/yarn.lock
