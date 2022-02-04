@@ -6,7 +6,7 @@ parameters:
     default: false
 
 orbs:
-  vfcommon: voiceflow/common@dev:f41d8a8
+  vfcommon: voiceflow/common@dev:73288f2
   sonarcloud: sonarsource/sonarcloud@1.0.2
 
 jobs:
