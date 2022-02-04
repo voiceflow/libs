@@ -95,6 +95,9 @@ workflows:
           requires:
             - build-base-types
             - build-voice-types
+            - build-general-types
+            - build-chat-types
+            - build-common
 
       - vfcommon/install_and_build:
           context: dev-test
