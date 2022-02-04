@@ -11,6 +11,13 @@
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
   "eslint.packageManager": "yarn",
+  "eslint.options": {
+    "rules": {
+      "no-use-before-define": "off",
+      "prettier/prettier": "off",
+      "simple-import-sort/imports": "off"
+    }
+  },
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
