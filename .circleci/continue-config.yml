@@ -130,7 +130,7 @@ workflows:
             - build-base-types
             - build-google-types
             - build-chat-types
-            - build-commmon
+            - build-common
 
       - vfcommon/install_and_build:
           context: dev-test
