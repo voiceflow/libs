@@ -4,4 +4,5 @@ export * as VoiceflowModels from './models';
 export * as VoiceflowNode from './node';
 export * as VoiceflowProgram from './program';
 export * as VoiceflowProject from './project';
+export * as VoiceflowUtils from './utils';
 export * as VoiceflowVersion from './version';

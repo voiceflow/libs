@@ -1,4 +1,4 @@
-import { Nullable } from '@/utils';
+import { Nullable } from '@/types';
 
 export { BaseCommand, BaseNode, BasePort, BaseStep } from '@/models';
 

@@ -1,4 +1,4 @@
-import { AnyRecord } from '@/utils';
+import { AnyRecord } from '@/types';
 
 import { ProjectNLP, PrototypeModel } from '../base';
 

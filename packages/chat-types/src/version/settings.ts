@@ -1,7 +1,7 @@
 import { BaseModels, BaseVersion } from '@voiceflow/base-types';
 
 import { Prompt } from '@/models';
-import { defaultPrompt } from '@/utils';
+import { prompt } from '@/utils';
 
 export interface Settings extends BaseVersion.Settings<Prompt> {
   session: BaseVersion.Session<Prompt>;
@@ -14,6 +14,6 @@ export const defaultMessageDelay = ({ durationMilliseconds = 1500 }: Partial<Bas
 
 export const defaultSettings = ({ error, messageDelay, ...baseSettings }: Partial<Settings> = {}): Settings => ({
   ...BaseVersion.defaultSettings<Prompt>(baseSettings),
-  error: defaultPrompt(error),
+  error: prompt.defaultPrompt(error),
   messageDelay: defaultMessageDelay(messageDelay),
 });

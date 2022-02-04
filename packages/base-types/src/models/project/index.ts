@@ -1,4 +1,4 @@
-import { AnyRecord } from '@/utils';
+import { AnyRecord } from '@/types';
 
 import { Member } from './member';
 import { Prototype } from './prototype';

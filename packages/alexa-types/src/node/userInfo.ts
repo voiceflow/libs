@@ -26,9 +26,9 @@ export interface BaseTypedNode extends BaseNode.Utils.BaseNode {
   type: NodeType.USER_INFO;
 }
 
-export interface NextNode extends BaseNode.Utils.BaseNode, BaseNode.Utils.NodeNextID {}
+export interface NextNode extends BaseTypedNode, BaseNode.Utils.NodeNextID {}
 
-export interface UseInfoNode extends BaseNode.Utils.BaseNode, BaseNode.Utils.NodeSuccessFailID {
+export interface UseInfoNode extends BaseTypedNode, BaseNode.Utils.NodeSuccessFailID {
   permissions: Permission[];
 }
 

@@ -1,7 +1,7 @@
 import { BaseVersion, Nullable } from '@voiceflow/base-types';
 
 import { Prompt } from '@/models';
-import { defaultPrompt } from '@/utils';
+import { prompt } from '@/utils';
 
 export interface Settings<Voice> extends BaseVersion.Settings<Prompt<Voice>> {
   session: BaseVersion.Session<Prompt<Voice>>;
@@ -17,6 +17,6 @@ export const defaultSettings = <Voice>(
   { defaultPromptVoice }: DefaultSettingsParams<Voice>
 ): Settings<Voice> => ({
   ...BaseVersion.defaultSettings<Prompt<Voice>>(baseSettings),
-  error: defaultPrompt<Voice>(error, defaultVoice ?? defaultPromptVoice),
+  error: prompt.defaultPrompt<Voice>(error, defaultVoice ?? defaultPromptVoice),
   defaultVoice,
 });

@@ -1,5 +1,5 @@
 import { Project as ProjectModels } from '@/models';
-import { AnyRecord } from '@/utils';
+import { AnyRecord } from '@/types';
 
 export interface PlatformData extends AnyRecord {}
 
