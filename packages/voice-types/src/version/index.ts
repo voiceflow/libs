@@ -1,7 +1,6 @@
 import { BaseModels, BaseVersion, DeepPartialByKey } from '@voiceflow/base-types';
 
-import { Intent, Prompt } from '@/models';
-
+import { Intent, Prompt } from '../models';
 import { defaultSettings, DefaultSettingsParams, Settings } from './settings';
 
 export * from './settings';

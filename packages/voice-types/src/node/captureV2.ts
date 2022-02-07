@@ -1,7 +1,6 @@
 import { BaseNode, Nullable } from '@voiceflow/base-types';
 
-import { Intent } from '@/models';
-
+import { Intent } from '../models';
 import { NodeNoMatch, NodeNoReply, StepNoMatch, StepNoReply } from './utils';
 
 export interface IntentCapture<Voice> extends BaseNode.CaptureV2.IntentCapture {

@@ -1,6 +1,6 @@
 import { BaseNode, BaseUtils } from '@voiceflow/base-types';
 
-import * as Node from '@/node';
+import * as Node from '../node';
 
 export const isSpeak = BaseUtils.node.createNodeTypeguard<Node.Speak.Node>(BaseNode.NodeType.SPEAK);
 export const isCapture = BaseUtils.node.createNodeTypeguard<Node.Capture.Node>(BaseNode.NodeType.CAPTURE);

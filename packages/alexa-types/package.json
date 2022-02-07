@@ -23,6 +23,7 @@
   ],
   "license": "ISC",
   "main": "build/common/index.js",
+  "types": "build/index.d.ts",
   "module": "build/esm/index.js",
   "repository": {
     "type": "git",

@@ -2,7 +2,7 @@
   "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
     "lib": ["es2017", "DOM"],
-    "outDir": "./build/common",
+    "outDir": "./build",
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"]
