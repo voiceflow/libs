@@ -36,7 +36,3 @@ export type Struct = Record<string, unknown>;
  * @see https://github.com/typescript-eslint/typescript-eslint/issues/2063#issuecomment-675156492
  */
 export type EmptyObject = Record<never, never>;
-
-export type ArrayElem<A> = A extends Array<infer Elem> ? Elem : never;
-
-export const inferUnion = <T>(array: T): Array<ArrayElem<T>> => array as any as Array<ArrayElem<T>>;
