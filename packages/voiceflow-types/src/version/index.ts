@@ -29,6 +29,8 @@ export type Version = VersionPerType[SupportedProjectType];
 export type Settings = SettingsPerType[SupportedProjectType];
 export type PlatformData = PlatformDataPerType[SupportedProjectType];
 
+export type Intent = PlatformData['intents'] extends (infer I)[] ? I : never;
+
 export const defaultPlatformData = <T extends SupportedProjectType>(
   type: T,
   platformData: DeepPartialByKey<PlatformDataPerType[T], 'settings'>
