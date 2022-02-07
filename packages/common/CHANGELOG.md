@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.18.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.18.0...@voiceflow/common@7.18.1) (2022-02-07)
+
+
+### Bug Fixes
+
+* typescript build (VF-000) ([e057406](https://github.com/voiceflow/libs/commit/e057406930641e68500d2c87b55c8abbf939bb59))
+* update typescript (VF-000) ([#185](https://github.com/voiceflow/libs/issues/185)) ([09645cc](https://github.com/voiceflow/libs/commit/09645cc96202e05e3722d358cbc4dc1d97058209))
+
+
+
+
+
 # [7.18.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.17.0...@voiceflow/common@7.18.0) (2022-02-07)
 
 
