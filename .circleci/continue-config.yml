@@ -39,6 +39,7 @@ workflows:
           avoid_post_install_scripts: false
           name: build
           force_execute: true
+          package: all
           add_yarn_lock_file_to_packages: true
           container_folder_to_copy: "" #Copy all
 

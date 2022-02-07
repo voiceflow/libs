@@ -37,6 +37,7 @@
     "bootstrap": "lerna bootstrap --no-ci",
     "build": "lerna run build  --stream",
     "build:alexa-types": "yarn --cwd packages/alexa-types build",
+    "build:all": "yarn build",
     "build:api-sdk": "yarn --cwd packages/api-sdk build",
     "build:base-types": "yarn --cwd packages/base-types build",
     "build:chat-types": "yarn --cwd packages/chat-types build",
