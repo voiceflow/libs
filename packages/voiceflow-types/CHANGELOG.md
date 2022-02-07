@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.2](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.3.1...@voiceflow/voiceflow-types@3.3.2) (2022-02-07)
+
+
+### Bug Fixes
+
+* union types generic (VF-000) ([#186](https://github.com/voiceflow/libs/issues/186)) ([bdc6825](https://github.com/voiceflow/libs/commit/bdc6825c709af78d6f124e8e71667109045c2030))
+
+
+
+
+
 ## [3.3.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.3.0...@voiceflow/voiceflow-types@3.3.1) (2022-02-07)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
