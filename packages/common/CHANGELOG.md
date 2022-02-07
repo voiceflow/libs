@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.19.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.17.0...@voiceflow/common@7.19.0) (2022-02-07)
+
+
+### Features
+
+* shared types (VF-000) ([#177](https://github.com/voiceflow/libs/issues/177)) ([375d0c1](https://github.com/voiceflow/libs/commit/375d0c1d0e2ac58c0117feda85a439f2701a336d)), closes [#185](https://github.com/voiceflow/libs/issues/185) [#186](https://github.com/voiceflow/libs/issues/186)
+
+
+
+
+
 ## [7.18.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.18.1...@voiceflow/common@7.18.2) (2022-02-07)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/voiceflow/libs/compare/@voiceflow/metrics@1.1.6...@voiceflow/metrics@1.2.0) (2022-02-07)
+
+
+### Features
+
+* shared types (VF-000) ([#177](https://github.com/voiceflow/libs/issues/177)) ([375d0c1](https://github.com/voiceflow/libs/commit/375d0c1d0e2ac58c0117feda85a439f2701a336d)), closes [#185](https://github.com/voiceflow/libs/issues/185) [#186](https://github.com/voiceflow/libs/issues/186)
+
+
+
+
+
 ## [1.1.7](https://github.com/voiceflow/libs/compare/@voiceflow/metrics@1.1.6...@voiceflow/metrics@1.1.7) (2022-02-07)
 
 
