@@ -6,7 +6,7 @@ parameters:
     default: false
 
 orbs:
-  vfcommon: voiceflow/common@dev:926c1b0
+  vfcommon: voiceflow/common@dev:b9f9761
   sonarcloud: sonarsource/sonarcloud@1.0.2
 
 jobs:
@@ -40,7 +40,7 @@ workflows:
           name: build
           force_execute: true
           package: all
-          add_yarn_lock_file_to_packages: true
+          build_all_packages_together: true
           container_folder_to_copy: "" #Copy all
 
       - test:
