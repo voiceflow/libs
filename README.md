@@ -22,9 +22,9 @@ Check the full description [here](packages/voice-types/README.md)
 
 Check the full description [here](packages/chat-types/README.md)
 
-## General Types
+## Voiceflow Types
 
-Check the full description [here](packages/general-types/README.md)
+Check the full description [here](packages/voiceflow-types/README.md)
 
 ## Alexa Types
 

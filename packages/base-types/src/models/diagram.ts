@@ -1,4 +1,4 @@
-import { BaseDiagramNode, CreatorID, DiagramID, Name, NodeID, Timestamp, Variable, VersionID } from './shared';
+import { BaseDiagramNode, Variable } from './base';
 
 export enum DiagramType {
   TOPIC = 'TOPIC',
@@ -6,23 +6,19 @@ export enum DiagramType {
   COMPONENT = 'COMPONENT',
 }
 
-export interface Diagram<N extends BaseDiagramNode = BaseDiagramNode> {
-  _id: DiagramID;
+export interface Model<Node extends BaseDiagramNode = BaseDiagramNode> {
+  _id: string;
+  versionID: string;
+  creatorID: number;
 
-  name: Name;
+  name: string;
   type?: DiagramType;
-  versionID: VersionID;
-  creatorID: CreatorID;
-  variables: Variable[];
-
+  zoom: number;
+  nodes: Record<string, Node>;
   offsetX: number;
   offsetY: number;
-  zoom: number;
+  modified: number;
+  children: string[];
+  variables: Variable[];
   intentStepIDs?: string[];
-
-  children: DiagramID[];
-
-  modified: Timestamp;
-
-  nodes: Record<NodeID, N>;
 }

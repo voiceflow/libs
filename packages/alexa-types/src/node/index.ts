@@ -1,4 +1,4 @@
-import { Node } from '@voiceflow/base-types';
+import { BaseNode } from '@voiceflow/base-types';
 
 import * as AccountLinking from './accountLinking';
 import * as CancelPayment from './cancelPayment';
@@ -31,10 +31,10 @@ export * as Speak from './speak';
 export * as Stream from './stream';
 export * as UserInfo from './userInfo';
 
-export type AnyAlexaExtendedStep = Speak.Step | Prompt.Step | Capture.Step | CaptureV2.Step | Interaction.Step | Stream.Step;
-export type AnyAlexaExtendedNode = Speak.Node | Capture.Node | CaptureV2.Node | Interaction.Node | Stream.Node;
+export type AnyExtendedStep = Speak.Step | Prompt.Step | Capture.Step | CaptureV2.Step | Interaction.Step | Stream.Step;
+export type AnyExtendedNode = Speak.Node | Capture.Node | CaptureV2.Node | Interaction.Node | Stream.Node;
 
-export type AnyAlexaOnlyStep =
+export type AnyOnlyStep =
   | AccountLinking.Step
   | Permission.Step
   | Reminder.Step
@@ -43,17 +43,10 @@ export type AnyAlexaOnlyStep =
   | Payment.Step
   | CancelPayment.Step
   | Display.Step;
-export type AnyAlexaOnlyNode =
-  | AccountLinking.Node
-  | Permission.Node
-  | Reminder.Node
-  | UserInfo.Node
-  | Payment.Node
-  | CancelPayment.Node
-  | Display.Node;
+export type AnyOnlyNode = AccountLinking.Node | Permission.Node | Reminder.Node | UserInfo.Node | Payment.Node | CancelPayment.Node | Display.Node;
 
-export type AnyAlexaStep = Node.AnyCommonStep | AnyAlexaExtendedStep | AnyAlexaOnlyStep | Node.Directive.Step | Node.Card.Step;
-export type AnyAlexaNode = Node.AnyCommonNode | AnyAlexaExtendedNode | AnyAlexaOnlyNode | Node.Directive.Node | Node.Card.Node;
+export type AnyStep = BaseNode.AnyCommonStep | AnyExtendedStep | AnyOnlyStep | BaseNode.Directive.Step | BaseNode.Card.Step;
+export type AnyNode = BaseNode.AnyCommonNode | AnyExtendedNode | AnyOnlyNode | BaseNode.Directive.Node | BaseNode.Card.Node;
 
-export type AnyAlexaOnlyCommand = Event.Command;
-export type AnyAlexaCommand = Node.AnyCommonCommand | AnyAlexaOnlyCommand;
+export type AnyOnlyCommand = Event.Command;
+export type AnyCommand = BaseNode.AnyCommonCommand | AnyOnlyCommand;

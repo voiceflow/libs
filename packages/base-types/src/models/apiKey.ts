@@ -1,14 +1,13 @@
-import { APIKeyID, CreatorID, ProjectID, WorkspaceID } from './shared';
+import { AnyRecord } from '@/types';
 
-export interface APIKey {
-  _id: APIKeyID;
-
-  workspaceID: WorkspaceID;
-  creatorID: CreatorID;
-  projectID?: ProjectID;
+export interface Model<Data extends AnyRecord = AnyRecord> {
+  _id: string;
+  creatorID: number;
+  projectID?: string;
+  workspaceID: string;
 
   name: string;
-  permissions: string[];
+  data?: Data;
   scopes: string[];
-  data?: Record<string, any>;
+  permissions: string[];
 }

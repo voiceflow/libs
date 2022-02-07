@@ -1,36 +1,36 @@
-import { Node, Nullable } from '@voiceflow/base-types';
+import { BaseNode, Nullable } from '@voiceflow/base-types';
 
-import { Prompt } from '@/types';
+import { Prompt } from '@/models';
 
-export interface StepNoReply<Voice> extends Node.Utils.StepNoReply<Prompt<Voice>> {}
+export interface StepNoReply<Voice> extends BaseNode.Utils.StepNoReply<Prompt<Voice>> {}
 
-export interface NodeNoReply extends Node.Utils.NodeNoReply<string> {}
+export interface NodeNoReply extends BaseNode.Utils.NodeNoReply<string> {}
 
-export interface StepNoMatch<Voice> extends Node.Utils.StepNoMatch<Prompt<Voice>> {}
+export interface StepNoMatch<Voice> extends BaseNode.Utils.StepNoMatch<Prompt<Voice>> {}
 
-export interface NodeNoMatch extends Node.Utils.NodeNoMatch<string> {}
+export interface NodeNoMatch extends BaseNode.Utils.NodeNoMatch<string> {}
 
 // TODO: remove deprecated types when fully migrating to StepNoReply/NodeNoReply/NodeNoMatch
 
 /**
  * @deprecated use StepNoReply instead
  */
-export interface StepReprompt<Voice> extends Node.Utils.StepReprompt<Prompt<Voice>> {}
+export interface StepReprompt<Voice> extends BaseNode.Utils.StepReprompt<Prompt<Voice>> {}
 
 /**
  * @deprecated use NodeNoReply instead
  */
-export interface NodeReprompt extends Node.Utils.NodeReprompt<string> {}
+export interface NodeReprompt extends BaseNode.Utils.NodeReprompt<string> {}
 
 /**
  * @deprecated use NodeNoMatch instead
  */
-export interface DeprecatedNodeNoMatch extends Node.Utils.DeprecatedNodeNoMatch<string> {}
+export interface DeprecatedNodeNoMatch extends BaseNode.Utils.DeprecatedNodeNoMatch<string> {}
 
-export interface NoMatchNode extends Node.Utils.BaseNode, DeprecatedNodeNoMatch {
+export interface NoMatchNode extends BaseNode.Utils.BaseNode, DeprecatedNodeNoMatch {
   noMatch?: Nullable<NodeNoMatch>;
 }
 
-export interface NoReplyNode extends Node.Utils.BaseNode, NodeReprompt {
+export interface NoReplyNode extends BaseNode.Utils.BaseNode, NodeReprompt {
   noReply?: Nullable<NodeNoReply>;
 }

@@ -125,3 +125,6 @@ export const filterAndGetLastRemovedValue = <T>(list: T[], filterFunc: (item: T)
   });
   return [filteredList, lastItem];
 };
+
+export type UnionArrays<A> = Array<A extends Array<infer Elem> ? Elem : never>;
+export const inferUnion = <T>(array: T): UnionArrays<T> => array as any as UnionArrays<T>;

@@ -1,14 +1,13 @@
-import { CreatorID, ProjectID, Timestamp, TranscriptID } from './shared';
-
-export interface Transcript {
-  _id: TranscriptID;
+export interface Model {
+  _id: string;
   sessionID: string;
-  createdAt: Timestamp;
+  creatorID: number;
+  projectID: string;
+
+  os: string;
   unread: boolean;
   device: string;
-  os: string;
   browser: string;
+  createdAt: number;
   reportTags: string[];
-  creatorID: CreatorID;
-  projectID: ProjectID;
 }

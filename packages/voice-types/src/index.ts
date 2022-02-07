@@ -1,4 +1,5 @@
-export * as Node from './node';
-export * as Project from './project';
-export * as Types from './types';
-export * as Version from './version';
+export * as VoiceModels from './models';
+export * as VoiceNode from './node';
+export * as VoiceProject from './project';
+export * as VoiceUtils from './utils';
+export * as VoiceVersion from './version';

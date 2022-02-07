@@ -1,4 +1,4 @@
-import { Nullable } from '@/utils';
+import { Nullable } from '@/types';
 
 import { NodeType } from './constants';
 import { BaseNode, BaseNodeNoReply, BaseStep, BaseStepNoReply, NodeNextID } from './utils';

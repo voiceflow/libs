@@ -1,5 +1,5 @@
 import { Nullable } from '@voiceflow/base-types';
-import { Version } from '@voiceflow/voice-types';
+import { VoiceVersion } from '@voiceflow/voice-types';
 import { v1 } from 'ask-smapi-model';
 
 import { Voice } from '@/constants';
@@ -32,7 +32,7 @@ export interface AccountLinking {
   defaultTokenExpirationInSeconds: number;
 }
 
-export interface AlexaVersionSettings extends Version.VoiceVersionSettings<Voice> {
+export interface Settings extends VoiceVersion.Settings<Voice> {
   events: Nullable<string>;
   permissions: string[];
   accountLinking: Nullable<AccountLinking>;
@@ -70,15 +70,15 @@ export const defaultAccountLinking = (accountLinking?: Nullable<Partial<AccountL
   };
 };
 
-export const defaultAlexaVersionSettings = ({
+export const defaultSettings = ({
   events = null,
   permissions = [],
   accountLinking,
   customInterface = false,
   modelSensitivity = null,
   ...voiceSettings
-}: Partial<AlexaVersionSettings> = {}): AlexaVersionSettings => ({
-  ...Version.defaultVoiceVersionSettings<Voice>(voiceSettings, { defaultPromptVoice: Voice.ALEXA }),
+}: Partial<Settings> = {}): Settings => ({
+  ...VoiceVersion.defaultSettings<Voice>(voiceSettings, { defaultPromptVoice: Voice.ALEXA }),
   events,
   permissions,
   accountLinking: defaultAccountLinking(accountLinking),

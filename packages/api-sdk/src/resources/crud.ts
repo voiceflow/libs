@@ -1,9 +1,11 @@
-import type { BaseSchema, PutPostType, SchemeType } from '@/types';
+import type { AnyRecord } from '@voiceflow/base-types';
+
+import type { PutPostType, SchemeType } from '@/types';
 
 import BaseResource, { Fields } from './base';
 
 class CrudResource<
-  S extends BaseSchema,
+  S extends AnyRecord,
   K extends keyof SchemeType<S>,
   C extends Record<string, any>,
   E extends keyof SchemeType<S> = never

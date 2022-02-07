@@ -1,25 +1,26 @@
-import { Version } from '@voiceflow/base-types';
+import { BaseModels, BaseVersion, DeepPartialByKey } from '@voiceflow/base-types';
 
-import { Intent, Prompt } from '@/types';
+import { Intent, Prompt } from '@/models';
 
-import { defaultVoiceVersionSettings, VoiceVersionSettings } from './settings';
+import { defaultSettings, DefaultSettingsParams, Settings } from './settings';
 
 export * from './settings';
 
-export interface VoiceVersionData<Voice> extends Version.BaseVersionData<Prompt<Voice>> {
+export interface PlatformData<Voice> extends BaseVersion.PlatformData<Prompt<Voice>> {
   intents: Intent<Voice>[];
-  settings: VoiceVersionSettings<Voice>;
+  settings: Settings<Voice>;
 }
 
-export const defaultVoiceVersionData = <Voice>(
-  { intents = [], settings, ...data }: Partial<VoiceVersionData<Voice>>,
-  options: { defaultPromptVoice: Voice }
-): VoiceVersionData<Voice> => ({
-  ...Version.defaultBaseVersionData<Prompt<Voice>>(data),
+export interface Version<Voice, Prototype extends BaseModels.Version.Prototype = BaseModels.Version.Prototype>
+  extends BaseVersion.Version<Prompt<Voice>, Prototype> {
+  platformData: PlatformData<Voice>;
+}
+
+export const defaultPlatformData = <Voice>(
+  { intents = [], settings = {}, ...data }: DeepPartialByKey<PlatformData<Voice>, 'settings'>,
+  params: DefaultSettingsParams<Voice>
+): PlatformData<Voice> => ({
+  ...BaseVersion.defaultPlatformData<Prompt<Voice>>(data),
   intents,
-  settings: defaultVoiceVersionSettings<Voice>(settings ?? {}, options),
+  settings: defaultSettings<Voice>(settings, params),
 });
-
-export interface VoiceVersion<Voice> extends Version.BaseVersion<Prompt<Voice>> {
-  platformData: VoiceVersionData<Voice>;
-}

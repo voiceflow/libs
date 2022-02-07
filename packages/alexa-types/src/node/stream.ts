@@ -1,4 +1,4 @@
-import { Node } from '@voiceflow/base-types';
+import { BaseNode } from '@voiceflow/base-types';
 
 export interface StepData {
   loop: boolean;
@@ -10,16 +10,16 @@ export interface StepData {
   backgroundImage?: string;
 }
 
-export interface Step extends Node.Stream.Step<StepData> {}
+export interface Step extends BaseNode.Stream.Step<StepData> {}
 
-export interface Node extends Pick<Node.Stream.Node, keyof Node.Utils.BaseNode> {
+export interface Node extends Pick<BaseNode.Stream.Node, keyof BaseNode.Utils.BaseNode> {
   loop: boolean;
   play: string;
-  NEXT?: Node.Utils.NodeID;
+  NEXT?: BaseNode.Utils.NodeID;
   title?: string;
-  nextId?: Node.Utils.NodeID;
+  nextId?: BaseNode.Utils.NodeID;
   PAUSE_ID: string;
-  PREVIOUS?: Node.Utils.NodeID;
+  PREVIOUS?: BaseNode.Utils.NodeID;
   icon_img?: string;
   description?: string;
   background_img?: string;
