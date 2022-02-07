@@ -1,4 +1,4 @@
-import { Nullable } from '@/utils';
+import { Nullable } from '@/types';
 
 import { Utils } from '../node';
 
@@ -23,19 +23,21 @@ export interface ResumeSession<Prompt = unknown> {
   follow: Nullable<Prompt>;
 }
 
-export interface BaseVersionSettings<Prompt = unknown> {
+export type Session<Prompt = unknown> = RestartSession | ResumeSession<Prompt>;
+
+export interface Settings<Prompt = unknown> {
   error: Nullable<Prompt>;
   repeat: RepeatType;
-  session: RestartSession | ResumeSession<Prompt>;
+  session: Session<Prompt>;
   defaultCanvasNodeVisibility: Nullable<Utils.CanvasNodeVisibility>;
 }
 
-export const defaultBaseVersionSettings = <Prompt>({
+export const defaultSettings = <Prompt>({
   error = null,
   repeat = RepeatType.ALL,
   session = { type: SessionType.RESTART },
   defaultCanvasNodeVisibility = null,
-}: Partial<BaseVersionSettings<Prompt>> = {}): BaseVersionSettings<Prompt> => ({
+}: Partial<Settings<Prompt>> = {}): Settings<Prompt> => ({
   error,
   repeat,
   session,

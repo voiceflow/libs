@@ -1,0 +1,44 @@
+{
+  "name": "@voiceflow/voiceflow-types",
+  "description": "Voiceflow 'voiceflow' project types",
+  "version": "3.2.21",
+  "author": "Voiceflow",
+  "bugs": {
+    "url": "https://github.com/voiceflow/libs/issues"
+  },
+  "dependencies": {
+    "@voiceflow/base-types": "^2.7.5",
+    "@voiceflow/chat-types": "^2.2.0",
+    "@voiceflow/voice-types": "^2.1.19"
+  },
+  "files": [
+    "build"
+  ],
+  "homepage": "https://github.com/voiceflow/libs#readme",
+  "keywords": [
+    "voiceflow",
+    "voiceflow-types"
+  ],
+  "license": "ISC",
+  "main": "build/common/index.js",
+  "module": "build/esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voiceflow/libs.git"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn build:cjs && yarn build:esm",
+    "build:cjs": "ttsc --project ./tsconfig.build.json",
+    "build:esm": "ttsc --project ./tsconfig.build.json --module esnext --outDir ./build/esm",
+    "clean": "rimraf build",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "yarn lint --fix",
+    "lint:quiet": "yarn lint --quiet",
+    "lint:report": "yarn lint --format json -o sonar/report.json",
+    "prepare": "yarn build",
+    "test": "exit 0",
+    "test:dependencies": "depcheck",
+    "test:integration": "exit 0",
+    "test:unit": "exit 0"
+  }
+}

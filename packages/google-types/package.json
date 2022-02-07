@@ -10,8 +10,8 @@
     "@voiceflow/base-types": "^2.8.0",
     "@voiceflow/chat-types": "^2.2.1",
     "@voiceflow/common": "^7.17.0",
-    "@voiceflow/general-types": "^3.2.21",
     "@voiceflow/voice-types": "^2.1.20",
+    "@voiceflow/voiceflow-types": "^3.2.21",
     "googleapis": "92.0.0"
   },
   "files": [

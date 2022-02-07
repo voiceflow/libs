@@ -1,8 +1,8 @@
-export * as Constants from './constants';
-export * as Diagram from './diagram';
-export * as Node from './node';
-export * as Program from './program';
-export * as Project from './project';
-export * as Types from './types';
-export * as Utils from './utils';
-export * as Version from './version';
+export * as GoogleConstants from './constants';
+export * as GoogleDiagram from './diagram';
+export * as GoogleModels from './models';
+export * as GoogleNode from './node';
+export * as GoogleProgram from './program';
+export * as GoogleProject from './project';
+export * as GoogleUtils from './utils';
+export * as GoogleVersion from './version';

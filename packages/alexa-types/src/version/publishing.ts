@@ -1,6 +1,6 @@
 import { Locale } from '@/constants';
 
-export interface AlexaVersionPublishing {
+export interface Publishing {
   forExport: boolean;
   hasAds: boolean;
   summary: string;
@@ -21,7 +21,7 @@ export interface AlexaVersionPublishing {
   updatesDescription?: string;
 }
 
-export const defaultAlexaVersionPublishing = ({
+export const defaultPublishing = ({
   invocationName = '',
   hasPurchase = false,
   forExport = true,
@@ -40,7 +40,7 @@ export const defaultAlexaVersionPublishing = ({
   category = '',
   locales = [Locale.EN_US],
   updatesDescription,
-}: Partial<AlexaVersionPublishing> = {}): AlexaVersionPublishing => ({
+}: Partial<Publishing> = {}): Publishing => ({
   summary,
   invocations,
   smallIcon,

@@ -1,13 +1,13 @@
-import { Node } from '@voiceflow/base-types';
+import { BaseNode } from '@voiceflow/base-types';
 
-import { Prompt } from '@/types';
+import { Prompt } from '@/models';
 
-export interface StepData<Voice> extends Node.Speak.StepData, Node.Speak.StepDataDialog<Prompt<Voice>> {}
+export interface StepData<Voice> extends BaseNode.Speak.StepData, BaseNode.Speak.StepDataDialog<Prompt<Voice>> {}
 
-export interface Step<Data = StepData<unknown>> extends Node.Speak.Step<Data> {}
+export interface Step<Data = StepData<unknown>> extends BaseNode.Speak.Step<Data> {}
 
-export interface SpeakNode extends Node.Speak.Node, Node.Speak.SpeakNode<string> {}
+export interface SpeakNode extends BaseNode.Speak.Node, BaseNode.Speak.SpeakNode<string> {}
 
-export interface RandomSpeakNode extends Node.Speak.Node, Node.Speak.RandomSpeakNode<string> {}
+export interface RandomSpeakNode extends BaseNode.Speak.Node, BaseNode.Speak.RandomSpeakNode<string> {}
 
 export type Node = SpeakNode | RandomSpeakNode;

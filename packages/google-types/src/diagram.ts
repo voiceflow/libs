@@ -1,5 +1,5 @@
-import { Models } from '@voiceflow/base-types';
+import { BaseModels } from '@voiceflow/base-types';
 
-import { AnyGoogleStep } from './node';
+import { AnyStep } from './node';
 
-export interface GoogleDiagram extends Models.Diagram<Models.BaseBlock | AnyGoogleStep> {}
+export interface Diagram extends BaseModels.Diagram.Model<BaseModels.BaseBlock | AnyStep> {}

@@ -9,8 +9,8 @@
   "dependencies": {
     "@voiceflow/base-types": "^2.8.0",
     "@voiceflow/common": "^7.17.0",
-    "@voiceflow/general-types": "^3.2.21",
     "@voiceflow/voice-types": "^2.1.20",
+    "@voiceflow/voiceflow-types": "^3.2.21",
     "ask-smapi-model": "1.14.0"
   },
   "files": [

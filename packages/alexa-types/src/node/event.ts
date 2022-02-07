@@ -1,4 +1,4 @@
-import { Node, Nullable } from '@voiceflow/base-types';
+import { BaseNode, Nullable } from '@voiceflow/base-types';
 
 import { NodeType } from './constants';
 
@@ -12,13 +12,13 @@ export interface StepData {
   requestName: string;
 }
 
-export interface Step extends Node.Utils.BaseStep<StepData> {
+export interface Step extends BaseNode.Utils.BaseStep<StepData> {
   type: NodeType.EVENT;
 }
 
-export interface Command extends Node.Utils.BaseCommand {
+export interface Command extends BaseNode.Utils.BaseCommand {
   type: NodeType.EVENT;
-  next?: Node.Utils.NodeID;
+  next?: BaseNode.Utils.NodeID;
   event: string;
   mappings: Mapping[];
 }

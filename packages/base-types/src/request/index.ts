@@ -36,9 +36,9 @@ export interface Entity {
 export interface LabelRequestPayload {
   label?: string;
 }
-export interface BaseRequest<P = unknown> {
+export interface BaseRequest<Payload = unknown> {
   type: string;
-  payload: P;
+  payload: Payload;
 }
 
 export interface LaunchRequest extends BaseRequest<undefined> {

@@ -1,24 +1,57 @@
-import { Models } from '@voiceflow/base-types';
+import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
-import { BaseGoogleProjectMemberData, GoogleProjectMemberData } from './member';
+import { ChatMemberPlatformData, ChatPlatformData, ChatProject, defaultChatMemberPlatformData, defaultChatPlatformData } from './chat';
+import { defaultVoiceMemberPlatformData, defaultVoicePlatformData, VoiceMemberPlatformData, VoicePlatformData, VoiceProject } from './voice';
 
-export * from './member';
+export * from './base';
+export * from './chat';
+export * from './voice';
 
-// base is used in google-dfes types
+export type SupportedProjectType = VoiceflowConstants.ProjectType.CHAT | VoiceflowConstants.ProjectType.VOICE;
 
-export interface BaseGooglePlatformData extends Models.BasePlatformData {}
-
-export interface BaseGoogleProject<MemberData extends BaseGoogleProjectMemberData> extends Models.Project<BaseGooglePlatformData, MemberData> {}
-
-export const defaultBaseGoogleProjectData = (projectData: Partial<BaseGooglePlatformData> = {}): BaseGooglePlatformData => ({
-  ...projectData,
-});
-
-export interface GooglePlatformData extends BaseGooglePlatformData {}
-export interface GoogleProject extends BaseGoogleProject<GoogleProjectMemberData> {
-  platform: 'google';
+export interface PlatformDataPerType {
+  [VoiceflowConstants.ProjectType.CHAT]: ChatPlatformData;
+  [VoiceflowConstants.ProjectType.VOICE]: VoicePlatformData;
 }
 
-export const defaultGoogleProjectData = (projectData: Partial<GooglePlatformData> = {}): GooglePlatformData => ({
-  ...defaultBaseGoogleProjectData(projectData),
-});
+export interface ProjectPerType {
+  [VoiceflowConstants.ProjectType.CHAT]: ChatProject;
+  [VoiceflowConstants.ProjectType.VOICE]: VoiceProject;
+}
+
+export interface MemberPlatformDataPerType {
+  [VoiceflowConstants.ProjectType.CHAT]: ChatMemberPlatformData;
+  [VoiceflowConstants.ProjectType.VOICE]: VoiceMemberPlatformData;
+}
+
+export type Project = ProjectPerType[SupportedProjectType];
+export type PlatformData = PlatformDataPerType[SupportedProjectType];
+export type MemberPlatformData = MemberPlatformDataPerType[SupportedProjectType];
+
+export const defaultPlatformData = <T extends SupportedProjectType>(
+  type: T,
+  platformData: Partial<PlatformDataPerType[T]>
+): PlatformDataPerType[T] => {
+  switch (type) {
+    case VoiceflowConstants.ProjectType.CHAT:
+      return defaultChatPlatformData(platformData as Partial<ChatPlatformData>) as PlatformDataPerType[T];
+    case VoiceflowConstants.ProjectType.VOICE:
+      return defaultVoicePlatformData(platformData as Partial<VoicePlatformData>) as PlatformDataPerType[T];
+    default:
+      throw new Error(`Unknown project type: ${type}`);
+  }
+};
+
+export const defaultMemberPlatformData = <T extends SupportedProjectType>(
+  type: T,
+  platformData: Partial<MemberPlatformDataPerType[T]>
+): MemberPlatformDataPerType[T] => {
+  switch (type) {
+    case VoiceflowConstants.ProjectType.CHAT:
+      return defaultChatMemberPlatformData(platformData as Partial<ChatMemberPlatformData>) as MemberPlatformDataPerType[T];
+    case VoiceflowConstants.ProjectType.VOICE:
+      return defaultVoiceMemberPlatformData(platformData as Partial<VoiceMemberPlatformData>) as MemberPlatformDataPerType[T];
+    default:
+      throw new Error(`Unknown project type: ${type}`);
+  }
+};

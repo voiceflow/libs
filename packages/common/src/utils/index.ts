@@ -14,6 +14,7 @@ export * as slot from './slot';
 export * as string from './string';
 export * as time from './time';
 export * as timezones from './timezones';
+export * as typeguard from './typeguard';
 export * as variables from './variables';
 
 // TODO: Remove these exports once we migrate all utils in other repos.

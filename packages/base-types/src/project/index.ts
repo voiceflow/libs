@@ -1,5 +1,10 @@
-import { BasePlatformData, Project } from '@/models';
+import { Project as ProjectModels } from '@/models';
+import { AnyRecord } from '@/types';
 
-export interface BaseProject extends Project<BasePlatformData, BasePlatformData> {}
+export interface PlatformData extends AnyRecord {}
 
-export const defaultBaseProjectData = (data: Partial<BasePlatformData> = {}): BasePlatformData => ({ ...data });
+export interface MemberPlatformData extends AnyRecord {}
+
+export interface Project extends ProjectModels.Model<PlatformData, MemberPlatformData> {}
+
+export const defaultPlatformData = (data: Partial<PlatformData> = {}): PlatformData => ({ ...data });
