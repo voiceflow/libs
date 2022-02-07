@@ -1,16 +1,16 @@
 {
   "name": "@voiceflow/alexa-types",
   "description": "Alexa service types",
-  "version": "2.2.35",
+  "version": "2.3.0",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/base-types": "^2.8.0",
-    "@voiceflow/common": "^7.17.0",
-    "@voiceflow/voice-types": "^2.1.20",
-    "@voiceflow/voiceflow-types": "^3.2.21",
+    "@voiceflow/base-types": "^2.9.0",
+    "@voiceflow/common": "^7.18.0",
+    "@voiceflow/voice-types": "^2.2.0",
+    "@voiceflow/voiceflow-types": "^3.3.0",
     "ask-smapi-model": "1.14.0"
   },
   "files": [

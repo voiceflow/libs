@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.5.14...@voiceflow/api-sdk@3.6.0) (2022-02-07)
+
+
+### Features
+
+* shared types (VF-000) ([#177](https://github.com/voiceflow/libs/issues/177)) ([3e1a206](https://github.com/voiceflow/libs/commit/3e1a2062599fea4c8b4961afcad25699742dd34f))
+
+
+
+
+
 ## [3.5.14](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.5.13...@voiceflow/api-sdk@3.5.14) (2022-02-02)
 
 **Note:** Version bump only for package @voiceflow/api-sdk

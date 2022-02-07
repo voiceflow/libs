@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.1.20...@voiceflow/voice-types@2.2.0) (2022-02-07)
+
+
+### Features
+
+* shared types (VF-000) ([#177](https://github.com/voiceflow/libs/issues/177)) ([3e1a206](https://github.com/voiceflow/libs/commit/3e1a2062599fea4c8b4961afcad25699742dd34f))
+
+
+
+
+
 ## [2.1.20](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.1.19...@voiceflow/voice-types@2.1.20) (2022-02-02)
 
 **Note:** Version bump only for package @voiceflow/voice-types
