@@ -18,7 +18,7 @@
     "voiceflow-types"
   ],
   "license": "ISC",
-  "main": "build/common/index.js",
+  "main": "build/index.js",
   "types": "build/index.d.ts",
   "module": "build/esm/index.js",
   "repository": {
