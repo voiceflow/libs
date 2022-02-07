@@ -1,4 +1,4 @@
-import { Node, Nullable } from '@voiceflow/base-types';
+import { BaseNode, Nullable } from '@voiceflow/base-types';
 
 import { NodeType, PermissionType } from './constants';
 
@@ -18,17 +18,17 @@ export interface Permission {
   selected: Nullable<{ value: string }>;
 }
 
-export interface Step extends Node.Utils.BaseStep<StepData> {
+export interface Step extends BaseNode.Utils.BaseStep<StepData> {
   type: NodeType.USER_INFO;
 }
 
-export interface BaseTypedNode extends Node.Utils.BaseNode {
+export interface BaseTypedNode extends BaseNode.Utils.BaseNode {
   type: NodeType.USER_INFO;
 }
 
-export interface NextNode extends Node.Utils.BaseNode, Node.Utils.NodeNextID {}
+export interface NextNode extends BaseTypedNode, BaseNode.Utils.NodeNextID {}
 
-export interface UseInfoNode extends Node.Utils.BaseNode, Node.Utils.NodeSuccessFailID {
+export interface UseInfoNode extends BaseTypedNode, BaseNode.Utils.NodeSuccessFailID {
   permissions: Permission[];
 }
 

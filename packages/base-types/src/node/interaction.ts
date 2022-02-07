@@ -1,5 +1,5 @@
 import { AnyRequestButton } from '@/request';
-import { Nullable } from '@/utils';
+import { Nullable } from '@/types';
 
 import { NodeType } from './constants';
 import {

@@ -1,5 +1,5 @@
-import { Node as BaseNode } from '@voiceflow/base-types';
-import { Node } from '@voiceflow/google-types';
+import { BaseNode } from '@voiceflow/base-types';
+import { GoogleNode } from '@voiceflow/google-types';
 
 import * as Payload from './payload';
 import * as Visual from './visual';
@@ -8,10 +8,10 @@ export * from './constants';
 export * as Payload from './payload';
 export * as Visual from './visual';
 
-export type AnyGoogleDFESOnlyStep = Payload.Step | Visual.Step;
-export type AnyGoogleDFESOnlyNode = Payload.Node | Visual.Node;
+export type AnyOnlyStep = Payload.Step | Visual.Step;
+export type AnyOnlyNode = Payload.Node | Visual.Node;
 
-export type AnyGoogleDFESStep = BaseNode.AnyCommonStep | Exclude<Node.AnyGoogleExtendedStep, Node.Stream.Step> | AnyGoogleDFESOnlyStep;
-export type AnyGoogleDFESNode = BaseNode.AnyCommonNode | Exclude<Node.AnyGoogleExtendedNode, Node.Stream.Node> | AnyGoogleDFESOnlyNode;
+export type AnyStep = BaseNode.AnyCommonStep | Exclude<GoogleNode.AnyExtendedStep, GoogleNode.Stream.Step> | AnyOnlyStep;
+export type AnyNode = BaseNode.AnyCommonNode | Exclude<GoogleNode.AnyExtendedNode, GoogleNode.Stream.Node> | AnyOnlyNode;
 
-export type AnyGoogleDFESCommand = Node.AnyGoogleCommand;
+export type AnyCommand = GoogleNode.AnyCommand;

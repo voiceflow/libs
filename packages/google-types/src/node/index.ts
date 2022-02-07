@@ -1,4 +1,4 @@
-import { Node } from '@voiceflow/base-types';
+import { BaseNode } from '@voiceflow/base-types';
 
 import * as Buttons from './buttons';
 import * as Capture from './capture';
@@ -16,10 +16,10 @@ export * as Prompt from './prompt';
 export * as Speak from './speak';
 export * as Stream from './stream';
 
-export type AnyGoogleExtendedStep = Speak.Step | Prompt.Step | Capture.Step | CaptureV2.Step | Interaction.Step | Stream.Step | Buttons.Step;
-export type AnyGoogleExtendedNode = Speak.Node | Capture.Node | CaptureV2.Node | Interaction.Node | Stream.Node;
+export type AnyExtendedStep = Speak.Step | Prompt.Step | Capture.Step | CaptureV2.Step | Interaction.Step | Stream.Step | Buttons.Step;
+export type AnyExtendedNode = Speak.Node | Capture.Node | CaptureV2.Node | Interaction.Node | Stream.Node;
 
-export type AnyGoogleStep = Node.AnyCommonStep | AnyGoogleExtendedStep | Node.Card.Step;
-export type AnyGoogleNode = Node.AnyCommonNode | AnyGoogleExtendedNode | Node.Card.Node;
+export type AnyStep = BaseNode.AnyCommonStep | AnyExtendedStep | BaseNode.Card.Step;
+export type AnyNode = BaseNode.AnyCommonNode | AnyExtendedNode | BaseNode.Card.Node;
 
-export type AnyGoogleCommand = Node.AnyCommonCommand;
+export type AnyCommand = BaseNode.AnyCommonCommand;

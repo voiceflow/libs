@@ -2,9 +2,9 @@ export enum ActionType {
   OPEN_URL = 'open_url',
 }
 
-export interface BaseAction<P = unknown> {
+export interface BaseAction<Payload = unknown> {
   type: string;
-  payload: P;
+  payload: Payload;
 }
 
 export interface OpenURLActionPayload {

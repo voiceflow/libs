@@ -1,4 +1,4 @@
-import { Models } from '@voiceflow/base-types';
+import { BaseModels } from '@voiceflow/base-types';
 
 import type Fetch from '@/fetch';
 
@@ -9,7 +9,7 @@ const ENDPOINT = 'api-keys';
 export const modelIDKey = '_id';
 export type ModelIDKey = typeof modelIDKey;
 
-class APIKeyResource extends CrudResource<Models.APIKey, ModelIDKey, APIKeyResource> {
+class APIKeyResource extends CrudResource<BaseModels.ApiKey.Model, ModelIDKey, APIKeyResource> {
   constructor(fetch: Fetch, { resourceEndpoint = ENDPOINT }: { resourceEndpoint?: string } = {}) {
     super({
       fetch,
@@ -18,16 +18,19 @@ class APIKeyResource extends CrudResource<Models.APIKey, ModelIDKey, APIKeyResou
     });
   }
 
-  public async get(id: string): Promise<Models.APIKey> {
-    return super._getByID<Models.APIKey>(id);
+  public async get(id: string): Promise<BaseModels.ApiKey.Model> {
+    return super._getByID<BaseModels.ApiKey.Model>(id);
   }
 
-  public async create(workspaceID: string, body: Partial<Models.APIKey>): Promise<Models.APIKey & { APIKey: string }> {
+  public async create(workspaceID: string, body: Partial<BaseModels.ApiKey.Model>): Promise<BaseModels.ApiKey.Model & { APIKey: string }> {
     return super._post({ ...body, workspaceID } as any);
   }
 
-  public async update(id: string, body: Pick<Models.APIKey, 'name' | 'permissions' | 'scopes' | 'data'>): Promise<Partial<Models.APIKey>> {
-    return super._put(id, body as Models.APIKey);
+  public async update(
+    id: string,
+    body: Pick<BaseModels.ApiKey.Model, 'name' | 'permissions' | 'scopes' | 'data'>
+  ): Promise<Partial<BaseModels.ApiKey.Model>> {
+    return super._put(id, body as BaseModels.ApiKey.Model);
   }
 
   public async delete(id: string): Promise<string> {

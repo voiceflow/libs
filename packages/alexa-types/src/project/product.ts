@@ -41,7 +41,7 @@ export interface PublishingLocale {
 }
 
 // products in sql
-export interface AlexaProduct {
+export interface Product {
   name: string;
   type: ProductType;
   version: '1.0';

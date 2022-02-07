@@ -1,4 +1,4 @@
-import { Node } from '@voiceflow/base-types';
+import { BaseNode } from '@voiceflow/base-types';
 
 import { NodeType } from './constants';
 
@@ -6,11 +6,11 @@ export interface StepData {
   data: string;
 }
 
-export interface Step extends Node.Utils.BaseStep<StepData> {
+export interface Step extends BaseNode.Utils.BaseStep<StepData> {
   type: NodeType.PAYLOAD;
 }
 
-export interface Node extends Node.Utils.BaseNode {
+export interface Node extends BaseNode.Utils.BaseNode {
   type: NodeType.PAYLOAD;
   data: string;
   nextID?: string;

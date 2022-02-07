@@ -1,41 +1,42 @@
-import { Models } from '@voiceflow/base-types';
-import { Constants } from '@voiceflow/general-types';
-import { Version } from '@voiceflow/voice-types';
+import { BaseModels, DeepPartialByKey } from '@voiceflow/base-types';
+import { VoiceVersion } from '@voiceflow/voice-types';
+import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
 import { Voice } from '@/constants';
-import { AnyAlexaCommand } from '@/node';
+import { AnyCommand } from '@/node';
 
-import { AlexaVersionPublishing, defaultAlexaVersionPublishing } from './publishing';
-import { AlexaVersionSettings, defaultAlexaVersionSettings } from './settings';
+import { defaultPublishing, Publishing } from './publishing';
+import { defaultSettings, Settings } from './settings';
 
 export * from './publishing';
 export * from './settings';
 
-export enum AlexaStage {
+// shared only across voiceflow types
+
+export enum Stage {
   DEV = 'DEV',
   LIVE = 'LIVE',
   REVIEW = 'REVIEW',
 }
 
-export interface AlexaVersionData extends Version.VoiceVersionData<Voice> {
-  status: { stage: AlexaStage };
-  settings: AlexaVersionSettings;
-  publishing: AlexaVersionPublishing;
+export interface PlatformData extends VoiceVersion.PlatformData<Voice> {
+  status: { stage: Stage };
+  settings: Settings;
+  publishing: Publishing;
 }
 
-export interface AlexaVersion extends Version.VoiceVersion<Voice> {
-  prototype?: Models.VersionPrototype<AnyAlexaCommand, Constants.Locale>;
-  platformData: AlexaVersionData;
+export interface Version extends VoiceVersion.Version<Voice, BaseModels.Version.Prototype<AnyCommand, VoiceflowConstants.Locale>> {
+  platformData: PlatformData;
 }
 
-export const defaultAlexaVersionData = ({
-  status: { stage = AlexaStage.DEV } = { stage: AlexaStage.DEV },
+export const defaultPlatformData = ({
+  status: { stage = Stage.DEV } = { stage: Stage.DEV },
   settings,
   publishing,
   ...generalVersionData
-}: Partial<AlexaVersionData>): AlexaVersionData => ({
-  ...Version.defaultVoiceVersionData<Voice>(generalVersionData, { defaultPromptVoice: Voice.ALEXA }),
+}: DeepPartialByKey<PlatformData, 'publishing' | 'settings'>): PlatformData => ({
+  ...VoiceVersion.defaultPlatformData<Voice>(generalVersionData, { defaultPromptVoice: Voice.ALEXA }),
   status: { stage },
-  settings: defaultAlexaVersionSettings(settings),
-  publishing: defaultAlexaVersionPublishing(publishing),
+  settings: defaultSettings(settings),
+  publishing: defaultPublishing(publishing),
 });

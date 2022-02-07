@@ -8,13 +8,17 @@ export const getKeys = <T>(obj: T): (keyof T)[] => Object.keys(obj) as (keyof T)
 export const pick = <T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> =>
   keys.reduce((acc, key) => Object.assign(acc, { [key]: obj[key] }), {} as Pick<T, K>);
 
-export const hasProperty = <T, K extends keyof T>(obj: T, key: K | string): obj is T & Record<K, unknown> =>
+export const hasProperty = <T, K extends keyof T | string>(obj: T, key: K): obj is T & Record<K, unknown> =>
   Object.prototype.hasOwnProperty.call(obj, key);
 
-export const getIn = <T, K extends keyof T>(rawObj: T, key: K | string | string[], def?: any, index = 0): rawObj is T & Record<K, unknown> => {
+export const getIn = <T, K extends keyof T | string>(rawObj: T, key: K | K[], def?: any, index = 0): rawObj is T & Record<K, unknown> => {
   const path = _toPath(key);
   let obj: any = rawObj;
   let i = index;
+
+  if (path.length === 1) {
+    return obj[path[0]];
+  }
 
   while (obj && i < path.length) {
     obj = obj[path[i++]];

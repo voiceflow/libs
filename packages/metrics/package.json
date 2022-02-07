@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/metrics",
   "description": "Helpers for exposing server-side metrics",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
@@ -29,10 +29,10 @@
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
     "ts-mocha": "^8.0.0",
-    "ts-node": "^9.1.1",
-    "tsconfig-paths": "^3.9.0",
-    "ttypescript": "^1.5.10",
-    "typescript": "^4.2.4"
+    "ts-node": "10.5.0",
+    "tsconfig-paths": "3.12.0",
+    "ttypescript": "1.5.13",
+    "typescript": "4.4.4"
   },
   "engines": {
     "node": ">=16"

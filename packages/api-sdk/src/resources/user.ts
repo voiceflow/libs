@@ -1,4 +1,3 @@
-import { Models } from '@voiceflow/base-types';
 import jwtDecode from 'jwt-decode';
 
 const decodeJWT = <S>(token: string): S | null => {
@@ -29,7 +28,7 @@ interface UserToken {
 }
 
 class User {
-  public creatorID: Models.CreatorID = 0;
+  public creatorID = 0;
 
   public name = '';
 
