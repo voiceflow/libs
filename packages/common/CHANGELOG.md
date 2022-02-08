@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.19.3](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.19.2...@voiceflow/common@7.19.3) (2022-02-08)
+
+
+### Bug Fixes
+
+* fix types on inferUnion function ([#187](https://github.com/voiceflow/libs/issues/187)) ([7016607](https://github.com/voiceflow/libs/commit/701660780b325aac45e045fca4c8458d94e29c6b))
+
+
+
+
+
 ## [7.19.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.19.1...@voiceflow/common@7.19.2) (2022-02-08)
 
 **Note:** Version bump only for package @voiceflow/common
