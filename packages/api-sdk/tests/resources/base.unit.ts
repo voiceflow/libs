@@ -1,9 +1,8 @@
 /* eslint-disable dot-notation */
 
+import BaseResource from '@api-sdk/resources/base';
 import { expect } from 'chai';
 import sinon from 'sinon';
-
-import BaseResource from '@/resources/base';
 
 const createClient = () => {
   const fetch = {

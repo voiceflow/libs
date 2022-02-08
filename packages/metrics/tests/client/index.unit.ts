@@ -1,5 +1,5 @@
-import MetricsClient from '@/client';
-import * as VFMetrics from '@/index';
+import MetricsClient from '@metrics/client';
+import * as VFMetrics from '@metrics/index';
 
 const metricsAsserter = new VFMetrics.Testing.MetricsAsserter(MetricsClient);
 

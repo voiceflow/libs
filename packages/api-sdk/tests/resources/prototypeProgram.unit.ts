@@ -1,7 +1,6 @@
 /* eslint-disable dot-notation */
+import { Program, PrototypeProgram } from '@api-sdk/resources';
 import { expect } from 'chai';
-
-import { Program, PrototypeProgram } from '@/resources';
 
 describe('PrototypeProgramResource', () => {
   it('instance of ProgramResource', async () => {

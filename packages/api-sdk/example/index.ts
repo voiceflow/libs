@@ -1,4 +1,4 @@
-import ApiSDK from '@/index';
+import ApiSDK from '@api-sdk/.';
 
 const main = async () => {
   const apiSdk = new ApiSDK({ clientKey: 'mock', apiEndpoint: 'https://localhost:8080' });

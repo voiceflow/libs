@@ -1,9 +1,8 @@
 /* eslint-disable dot-notation */
 
+import Analytics from '@api-sdk/resources/analytics';
 import { expect } from 'chai';
 import sinon from 'sinon';
-
-import Analytics from '@/resources/analytics';
 
 const createClient = (encrypted = false) => {
   const fetch = {
