@@ -1,4 +1,4 @@
-import { AnyRecord, Nullable } from '@/types';
+import { AnyRecord, Nullable } from '@base-types/types';
 
 import { BaseCommand, PrototypeModel } from '../base';
 

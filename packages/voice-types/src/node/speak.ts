@@ -1,6 +1,5 @@
+import { Prompt } from '@voice-types/models';
 import { BaseNode } from '@voiceflow/base-types';
-
-import { Prompt } from '@/models';
 
 export interface StepData<Voice> extends BaseNode.Speak.StepData, BaseNode.Speak.StepDataDialog<Prompt<Voice>> {}
 

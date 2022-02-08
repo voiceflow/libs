@@ -1,4 +1,4 @@
-import { Nullable } from '@/types';
+import { Nullable } from '@base-types/types';
 
 import { StepButtonsLayout } from '../button';
 import { NodeType } from './constants';

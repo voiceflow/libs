@@ -1,8 +1,7 @@
 /* eslint-disable dot-notation */
+import Member from '@api-sdk/resources/project/member';
 import { expect } from 'chai';
 import sinon from 'sinon';
-
-import Member from '@/resources/project/member';
 
 const RESPONSE_DATA = { field1: '1', field2: { subfield: [1, 10] } };
 

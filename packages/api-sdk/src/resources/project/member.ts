@@ -1,6 +1,5 @@
+import Fetch, { PathVariables } from '@api-sdk/fetch';
 import { AnyRecord, BaseModels } from '@voiceflow/base-types';
-
-import Fetch, { PathVariables } from '@/fetch';
 
 import BaseResource, { Fields } from '../base';
 import { ENDPOINT } from './constants';

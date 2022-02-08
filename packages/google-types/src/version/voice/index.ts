@@ -1,7 +1,6 @@
+import { Voice } from '@google-types/constants';
 import { DeepPartialByKey } from '@voiceflow/base-types';
 import { VoiceVersion } from '@voiceflow/voice-types';
-
-import { Voice } from '@/constants';
 
 import { BasePrototype, defaultSharedBasePlatformData, SharedBasePlatformData } from '../base';
 import { defaultSharedVoicePublishing, defaultVoicePublishing, SharedVoicePublishing, VoicePublishing } from './publishing';

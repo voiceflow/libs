@@ -1,4 +1,4 @@
-import { AnyRecord } from '@/types';
+import { AnyRecord } from '@base-types/types';
 
 import { BaseCommand, Intent, Slot, Variable } from '../base';
 import { Prototype } from './prototype';

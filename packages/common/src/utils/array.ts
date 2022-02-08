@@ -1,4 +1,4 @@
-import { Nullish } from '@/types';
+import { Nullish } from '@common/types';
 
 export const unique = <T>(items: T[]): T[] => Array.from(new Set(items));
 

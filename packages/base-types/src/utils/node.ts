@@ -1,7 +1,6 @@
+import * as BaseModels from '@base-types/models';
+import * as Node from '@base-types/node';
 import { Utils } from '@voiceflow/common';
-
-import * as BaseModels from '@/models';
-import * as Node from '@/node';
 
 export const createNodeTypeguard = Utils.typeguard.createTypedTypeguardCreator<BaseModels.BaseNode>();
 

@@ -1,4 +1,4 @@
-import { Nullable } from '@/types';
+import { Nullable } from '@base-types/types';
 
 import { BaseEvent, BaseNode, BasePort, BaseStep, NodeID } from './utils';
 

@@ -1,4 +1,4 @@
-import { IntentRequest } from '@/request';
+import { IntentRequest } from '@base-types/request';
 
 import { SlotMappings } from './mappings';
 

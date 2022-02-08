@@ -1,6 +1,5 @@
+import { Voice } from '@google-types/constants';
 import { VoiceNode } from '@voiceflow/voice-types';
-
-import { Voice } from '@/constants';
 
 export interface VoiceStepData extends VoiceNode.CaptureV2.StepData<Voice> {}
 

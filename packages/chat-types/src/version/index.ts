@@ -1,6 +1,5 @@
+import { Intent, Prompt } from '@chat-types/models';
 import { BaseModels, BaseVersion, DeepPartialByKey } from '@voiceflow/base-types';
-
-import { Intent, Prompt } from '@/models';
 
 import { defaultSettings, Settings } from './settings';
 

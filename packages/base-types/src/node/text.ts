@@ -1,4 +1,4 @@
-import { SlateTextValue } from '@/text';
+import { SlateTextValue } from '@base-types/text';
 
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, BaseTraceFrame, DataID, NodeNextID, StepCanvasNodeVisibility, TraceType } from './utils';

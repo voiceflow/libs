@@ -1,4 +1,4 @@
-import { AnyRecord } from '@/types';
+import { AnyRecord } from '@base-types/types';
 
 export interface Model<Data extends AnyRecord = AnyRecord> {
   _id: string;

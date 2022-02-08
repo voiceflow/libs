@@ -1,21 +1,21 @@
-import { TraceFrame as ExitTrace } from '@/node/exit';
-import { TraceFrame as FlowTrace } from '@/node/flow';
-import { TraceFrame as ChoiceTrace } from '@/node/interaction';
-import { TraceFrame as SpeakTrace } from '@/node/speak';
-import { TraceFrame as StreamTrace } from '@/node/stream';
-import { TraceFrame as TextTrace } from '@/node/text';
-import { BaseTraceFrame, TraceType } from '@/node/utils';
-import { TraceFrame as VisualTrace } from '@/node/visual';
-import { IntentRequest } from '@/request';
+import { TraceFrame as ExitTrace } from '@base-types/node/exit';
+import { TraceFrame as FlowTrace } from '@base-types/node/flow';
+import { TraceFrame as ChoiceTrace } from '@base-types/node/interaction';
+import { TraceFrame as SpeakTrace } from '@base-types/node/speak';
+import { TraceFrame as StreamTrace } from '@base-types/node/stream';
+import { TraceFrame as TextTrace } from '@base-types/node/text';
+import { BaseTraceFrame, TraceType } from '@base-types/node/utils';
+import { TraceFrame as VisualTrace } from '@base-types/node/visual';
+import { IntentRequest } from '@base-types/request';
 
-export { TraceFrame as ExitTrace } from '@/node/exit';
-export { TraceFrame as FlowTrace } from '@/node/flow';
-export { TraceFrame as ChoiceTrace } from '@/node/interaction';
-export { TraceFrame as SpeakTrace } from '@/node/speak';
-export { TraceFrame as StreamTrace } from '@/node/stream';
-export { TraceFrame as TextTrace } from '@/node/text';
-export { TraceType } from '@/node/utils/trace';
-export { TraceFrame as VisualTrace } from '@/node/visual';
+export { TraceFrame as ExitTrace } from '@base-types/node/exit';
+export { TraceFrame as FlowTrace } from '@base-types/node/flow';
+export { TraceFrame as ChoiceTrace } from '@base-types/node/interaction';
+export { TraceFrame as SpeakTrace } from '@base-types/node/speak';
+export { TraceFrame as StreamTrace } from '@base-types/node/stream';
+export { TraceFrame as TextTrace } from '@base-types/node/text';
+export { TraceType } from '@base-types/node/utils/trace';
+export { TraceFrame as VisualTrace } from '@base-types/node/visual';
 
 export interface DebugTracePayload {
   type?: string;

@@ -2,15 +2,22 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
+    "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "build/common",
+    "paths": {
+      "@google-dfes-types/*": [
+        "src/*"
+      ]
+    },
     "plugins": [
       {
         "transform": "@zerollup/ts-transform-paths"
       }
     ]
   },
-  "exclude": [
-    "node_modules/**",
-    "build/**",
-    "tests/**"
+  "include": [
+    "src/**/*",
+    "typings/**/*"
   ]
 }

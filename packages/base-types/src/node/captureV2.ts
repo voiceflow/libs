@@ -1,5 +1,5 @@
-import { Intent } from '@/models';
-import { Nullable } from '@/types';
+import { Intent } from '@base-types/models';
+import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
 import { BaseNode, BaseNodeNoMatch, BaseNodeNoReply, BaseStep, BaseStepNoMatch, BaseStepNoReply, NodeNextID } from './utils';

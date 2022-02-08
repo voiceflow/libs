@@ -1,8 +1,7 @@
+import { Voice } from '@alexa-types/constants';
 import { Nullable } from '@voiceflow/base-types';
 import { VoiceVersion } from '@voiceflow/voice-types';
 import { v1 } from 'ask-smapi-model';
-
-import { Voice } from '@/constants';
 
 export enum AccountLinkingType {
   IMPLICIT = 'IMPLICIT',

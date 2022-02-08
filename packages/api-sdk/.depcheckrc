@@ -2,6 +2,7 @@
   "specials": ["bin", "istanbul"],
   "ignores": [
     "@types/*",
+    "@api-sdk/*",
     "source-map-support"
   ]
 }

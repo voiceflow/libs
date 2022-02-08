@@ -7,7 +7,7 @@
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/common": "^7.19.0",
+    "@voiceflow/common": "7.19.0",
     "slate": "0.63.0"
   },
   "files": [

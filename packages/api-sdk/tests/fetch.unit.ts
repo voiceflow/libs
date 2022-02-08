@@ -1,10 +1,9 @@
 /* eslint-disable dot-notation */
 
+import Fetch, { FetchConfig } from '@api-sdk/fetch';
 import baseAxios from 'axios';
 import { expect } from 'chai';
 import sinon from 'sinon';
-
-import Fetch, { FetchConfig } from '@/fetch';
 
 const CLIENT_KEY = '123qwe123';
 const AUTHORIZATION = 'qwe123qwe';

@@ -1,9 +1,8 @@
+import { Client } from '@api-sdk/client';
+import Fetch from '@api-sdk/fetch';
+import { Analytics, APIKey, Diagram, Program, Project, PrototypeProgram, User, Version } from '@api-sdk/resources';
 import { expect } from 'chai';
 import JWT from 'jsonwebtoken';
-
-import { Client } from '@/client';
-import Fetch from '@/fetch';
-import { Analytics, APIKey, Diagram, Program, Project, PrototypeProgram, User, Version } from '@/resources';
 
 const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User, APIKey, Analytics];
 

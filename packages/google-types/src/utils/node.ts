@@ -1,6 +1,5 @@
+import * as Node from '@google-types/node';
 import { BaseNode, BaseUtils } from '@voiceflow/base-types';
-
-import * as Node from '@/node';
 
 export const isSpeak = BaseUtils.node.createNodeTypeguard<Node.Speak.Node>(BaseNode.NodeType.SPEAK);
 export const isStream = BaseUtils.node.createNodeTypeguard<Node.Stream.Node>(BaseNode.NodeType.STREAM);
