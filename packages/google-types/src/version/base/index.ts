@@ -1,7 +1,6 @@
+import { Locale } from '@google-types/constants';
+import { AnyCommand } from '@google-types/node';
 import { BaseModels, DeepPartialByKey } from '@voiceflow/base-types';
-
-import { Locale } from '@/constants';
-import { AnyCommand } from '@/node';
 
 import { defaultSharedBasePublishing, SharedBasePublishing } from './publishing';
 

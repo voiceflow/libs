@@ -1,6 +1,5 @@
+import { MurmurHash } from '@common/crypto/murmurhash';
 import { expect } from 'chai';
-
-import { MurmurHash } from '@/crypto/murmurhash';
 
 // for second test check (4 byte chunk)
 // const buf_left = Buffer.of(0xff, 0xff, 0xff, 0xff);

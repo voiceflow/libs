@@ -1,6 +1,5 @@
+import type { PutPostType, SchemeType } from '@api-sdk/types';
 import type { AnyRecord } from '@voiceflow/base-types';
-
-import type { PutPostType, SchemeType } from '@/types';
 
 import BaseResource, { Fields } from './base';
 

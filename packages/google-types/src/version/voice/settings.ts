@@ -1,6 +1,5 @@
+import { Voice } from '@google-types/constants';
 import { VoiceVersion } from '@voiceflow/voice-types';
-
-import { Voice } from '@/constants';
 
 export interface SharedVoiceSettings extends VoiceVersion.Settings<Voice> {}
 

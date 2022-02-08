@@ -1,4 +1,4 @@
-import { Category, Locale } from '@/constants';
+import { Category, Locale } from '@google-types/constants';
 
 // shared across google and dfes types
 export interface SharedBasePublishing {

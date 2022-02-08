@@ -1,6 +1,5 @@
 import { ChatProject } from '@voiceflow/chat-types';
-
-import { PlatformType, ProjectType } from '@/constants';
+import { PlatformType, ProjectType } from '@voiceflow-types/constants';
 
 import { ChatMemberPlatformData } from './member';
 

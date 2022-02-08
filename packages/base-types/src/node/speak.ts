@@ -1,4 +1,4 @@
-import { Nullable } from '@/types';
+import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, BaseTraceFrame, NodeNextID, StepCanvasNodeVisibility, TraceType } from './utils';

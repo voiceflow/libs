@@ -1,7 +1,6 @@
+import { Voice } from '@google-types/constants';
 import { BaseButton } from '@voiceflow/base-types';
 import { VoiceNode } from '@voiceflow/voice-types';
-
-import { Voice } from '@/constants';
 
 export interface VoiceStepData extends VoiceNode.Prompt.StepData<Voice>, BaseButton.StepButton {}
 

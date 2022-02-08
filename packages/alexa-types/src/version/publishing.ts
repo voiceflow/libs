@@ -1,4 +1,4 @@
-import { Locale } from '@/constants';
+import { Locale } from '@alexa-types/constants';
 
 export interface Publishing {
   forExport: boolean;

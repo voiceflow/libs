@@ -1,4 +1,4 @@
-import { AnyRecord } from '@/types';
+import { AnyRecord } from '@base-types/types';
 
 import { Member } from './member';
 import { Prototype } from './prototype';

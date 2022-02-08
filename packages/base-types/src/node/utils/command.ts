@@ -1,4 +1,4 @@
-import { Nullable } from '@/types';
+import { Nullable } from '@base-types/types';
 
 import { BaseCommand } from './base';
 import { BaseEvent } from './event';

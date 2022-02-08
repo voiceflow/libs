@@ -1,6 +1,5 @@
+import { injectUtteranceSpaces, utteranceEntityPermutations } from '@common/utils/intent';
 import { expect } from 'chai';
-
-import { injectUtteranceSpaces, utteranceEntityPermutations } from '@/utils/intent';
 
 import * as data from '../fixtures/name.json';
 

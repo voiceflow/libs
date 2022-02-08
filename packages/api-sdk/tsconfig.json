@@ -1,13 +1,26 @@
 {
   "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
-    "lib": ["es2017", "DOM"],
-    "outDir": "./build/common",
-    "baseUrl": "./src",
+    "baseUrl": "..",
     "paths": {
-      "@/*": ["./*"]
+      // only used to fix intra-monorepo resolution
+      "@common/*": [
+        "common/src/*"
+      ],
+      "@voiceflow/base-types": [
+        "base-types/src"
+      ],
+      // only used to fix intra-monorepo resolution
+      "@base-types/*": [
+        "base-types/src/*"
+      ],
+      "@api-sdk/*": [
+        "api-sdk/src/*"
+      ]
     }
   },
-  "compileOnSave": false,
-  "exclude": ["node_modules/**", "build/**"]
+  "exclude": [
+    "node_modules/**/*",
+    "build/**/*"
+  ]
 }

@@ -1,9 +1,8 @@
+import { Voice } from '@alexa-types/constants';
+import { AnyCommand } from '@alexa-types/node';
 import { BaseModels, DeepPartialByKey } from '@voiceflow/base-types';
 import { VoiceVersion } from '@voiceflow/voice-types';
 import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
-
-import { Voice } from '@/constants';
-import { AnyCommand } from '@/node';
 
 import { defaultPublishing, Publishing } from './publishing';
 import { defaultSettings, Settings } from './settings';

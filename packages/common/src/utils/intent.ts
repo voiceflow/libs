@@ -1,6 +1,5 @@
+import { BuiltinSlot, LOWER_CASE_CUSTOM_SLOT_TYPE, SLOT_REGEXP, SPACE_REGEXP } from '@common/constants';
 import _sample from 'lodash/sample';
-
-import { BuiltinSlot, LOWER_CASE_CUSTOM_SLOT_TYPE, SLOT_REGEXP, SPACE_REGEXP } from '@/constants';
 
 import { getAllSamples } from './slot';
 

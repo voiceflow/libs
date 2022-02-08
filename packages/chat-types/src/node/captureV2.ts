@@ -1,6 +1,5 @@
+import { Intent } from '@chat-types/models';
 import { BaseNode, Nullable } from '@voiceflow/base-types';
-
-import { Intent } from '@/models';
 
 import { NodeNoMatch, NodeNoReply, StepNoMatch, StepNoReply } from './utils';
 

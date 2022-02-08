@@ -1,6 +1,5 @@
+import { Channel, createChannel, typeFactory } from '@common/utils/protocol';
 import { expect } from 'chai';
-
-import { Channel, createChannel, typeFactory } from '@/utils/protocol';
 
 describe('Utils | protocol', () => {
   describe('typeFactory()', () => {

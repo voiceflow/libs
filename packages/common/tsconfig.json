@@ -1,38 +1,18 @@
 {
+  "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
-    "target": "es2017",
-    "moduleResolution": "node",
-    "module": "commonjs",
-    "declaration": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
-    /* Strictness Checks */
-    "alwaysStrict": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "noFallthroughCasesInSwitch": true,
-    "strictPropertyInitialization": true,
-    /* Debugging Options */
-    "traceResolution": false,
-    "listEmittedFiles": false,
-    "listFiles": false,
-    "pretty": true,
-    "lib": ["es2020"],
-    "outDir": "./build/common",
-    "baseUrl": "./src",
+    "lib": [
+      "es2020"
+    ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@common/*": [
+        "src/*"
+      ]
     }
   },
-  "compileOnSave": false,
-  "include": ["src/**/*.ts", "typings/**/*.d.ts", "tests/**/*.ts"],
-  "exclude": ["node_modules/**"]
+  "exclude": [
+    "node_modules/**/*",
+    "build/**/*"
+  ]
 }
