@@ -1,4 +1,4 @@
-import { Nullish } from '@common/types';
+import { ArrayUnionToIntersection, Nullish } from '@common/types';
 
 export const unique = <T>(items: T[]): T[] => Array.from(new Set(items));
 
@@ -126,5 +126,4 @@ export const filterAndGetLastRemovedValue = <T>(list: T[], filterFunc: (item: T)
   return [filteredList, lastItem];
 };
 
-export type UnionArrays<A> = Array<A extends Array<infer Elem> ? Elem : never>;
-export const inferUnion = <T>(array: T): UnionArrays<T> => array as any as UnionArrays<T>;
+export const inferUnion = <T extends ArrayLike<unknown>>(array: T): ArrayUnionToIntersection<T> => array as unknown as ArrayUnionToIntersection<T>;
