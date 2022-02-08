@@ -64,7 +64,6 @@
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
     "lint:report": "eslint-output --quiet \"**/*.{js,ts}\"",
-    "prepare": "npm run build",
     "tdd": "yarn test --watch",
     "test": "yarn test:run",
     "test:dependencies": "depcheck",
