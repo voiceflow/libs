@@ -1,6 +1,7 @@
 {
   "specials": ["bin"],
   "ignores": [
+    "@google-types/*",
     "@types/*"
   ]
 }

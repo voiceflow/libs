@@ -1,6 +1,7 @@
 {
   "specials": ["bin"],
   "ignores": [
+    "@alexa-types/*",
     "@types/*"
   ]
 }

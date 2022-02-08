@@ -1,6 +1,7 @@
 {
   "specials": ["bin"],
   "ignores": [
+    "@voiceflow-types/*",
     "@types/*"
   ]
 }
