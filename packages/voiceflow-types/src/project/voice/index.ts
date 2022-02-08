@@ -1,6 +1,5 @@
 import { VoiceProject } from '@voiceflow/voice-types';
-
-import { PlatformType, ProjectType } from '@/constants';
+import { PlatformType, ProjectType } from '@voiceflow-types/constants';
 
 import { VoiceMemberPlatformData } from './member';
 

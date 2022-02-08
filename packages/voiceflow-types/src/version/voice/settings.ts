@@ -1,6 +1,5 @@
 import { VoiceVersion } from '@voiceflow/voice-types';
-
-import { Voice } from '@/constants';
+import { Voice } from '@voiceflow-types/constants';
 
 import { BaseSettings, defaultBaseSettings } from '../base';
 

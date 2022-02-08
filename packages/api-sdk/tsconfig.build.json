@@ -2,16 +2,22 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
+    "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "build/common",
+    "paths": {
+      "@api-sdk/*": [
+        "src/*"
+      ]
+    },
     "plugins": [
       {
         "transform": "@zerollup/ts-transform-paths"
       }
     ]
   },
-  "exclude": [
-    "node_modules/**",
-    "build/**",
-    "example/**",
-    "tests/**"
+  "include": [
+    "src/**/*",
+    "typings/**/*"
   ]
 }

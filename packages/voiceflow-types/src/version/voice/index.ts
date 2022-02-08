@@ -1,7 +1,6 @@
 import { DeepPartialByKey } from '@voiceflow/base-types';
 import { VoiceVersion } from '@voiceflow/voice-types';
-
-import { Voice } from '@/constants';
+import { Voice } from '@voiceflow-types/constants';
 
 import { BasePrototype } from '../base';
 import { defaultSharedVoiceSettings, defaultVoiceSettings, SharedVoiceSettings, VoiceSettings } from './settings';

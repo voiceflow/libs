@@ -1,9 +1,8 @@
 /* eslint-disable dot-notation */
 
+import CrudResource from '@api-sdk/resources/crud';
 import { expect } from 'chai';
 import sinon from 'sinon';
-
-import CrudResource from '@/resources/crud';
 
 const RESPONSE_DATA = {
   data: { field1: '1', field2: { subfield: [1, 10] } },

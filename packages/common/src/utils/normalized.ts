@@ -1,4 +1,4 @@
-import { Normalized } from '@/types';
+import { Normalized } from '@common/types';
 
 import { withoutValue } from './array';
 import { stringify } from './functional';

@@ -1,12 +1,11 @@
 /* eslint-disable dot-notation */
+import { Client } from '@api-sdk/client';
+import ApiSDK, { SGenerateClientParams, SParams } from '@api-sdk/index';
+import { PublicClient } from '@api-sdk/publicclient';
 import { expect } from 'chai';
 import JWT from 'jsonwebtoken';
 import sinon from 'sinon';
 import * as s from 'superstruct';
-
-import { Client } from '@/client';
-import ApiSDK, { SGenerateClientParams, SParams } from '@/index';
-import { PublicClient } from '@/publicclient';
 
 const createSDK = () => {
   const assert = sinon.stub(s, 'assert');

@@ -1,4 +1,4 @@
-import { ProjectType } from '@/constants';
+import { ProjectType } from '@voiceflow-types/constants';
 
 import { ChatMemberPlatformData, ChatPlatformData, ChatProject, defaultChatMemberPlatformData, defaultChatPlatformData } from './chat';
 import { defaultVoiceMemberPlatformData, defaultVoicePlatformData, VoiceMemberPlatformData, VoicePlatformData, VoiceProject } from './voice';

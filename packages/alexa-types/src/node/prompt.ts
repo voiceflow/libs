@@ -1,6 +1,5 @@
+import { Voice } from '@alexa-types/constants';
 import { VoiceNode } from '@voiceflow/voice-types';
-
-import { Voice } from '@/constants';
 
 export interface StepData extends VoiceNode.Prompt.StepData<Voice> {}
 

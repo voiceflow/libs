@@ -1,11 +1,10 @@
 /* eslint-disable max-classes-per-file */
 
+import type { Metrics as BaseMetrics } from '@metrics/client';
 import axios from 'axios';
 import { expect } from 'chai';
 import { setTimeout as sleep } from 'timers/promises';
 import types from 'util/types';
-
-import type { Metrics as BaseMetrics } from '@/client';
 
 import { BaseConfig, createBaseConfig } from './createBaseConfig';
 

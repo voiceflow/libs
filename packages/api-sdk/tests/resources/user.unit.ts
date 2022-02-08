@@ -1,8 +1,7 @@
 /* eslint-disable dot-notation */
+import { User } from '@api-sdk/resources';
 import { expect } from 'chai';
 import JWT from 'jsonwebtoken';
-
-import { User } from '@/resources';
 
 const USER_HASH = 'UserHash_16chars';
 const SAMPLE_USER = {

@@ -1,6 +1,5 @@
 import { BaseNode, BaseUtils } from '@voiceflow/base-types';
-
-import * as Node from '@/node';
+import * as Node from '@voiceflow-types/node';
 
 export const isSpeak = BaseUtils.step.createStepTypeguard<Node.Speak.Step>(BaseNode.NodeType.SPEAK);
 export const isPrompt = BaseUtils.step.createStepTypeguard<Node.Prompt.Step>(BaseNode.NodeType.PROMPT);

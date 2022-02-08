@@ -1,5 +1,5 @@
-import { Version as VersionModels } from '@/models';
-import { DeepPartialByKey } from '@/types';
+import { Version as VersionModels } from '@base-types/models';
+import { DeepPartialByKey } from '@base-types/types';
 
 import { defaultSettings, Settings } from './settings';
 

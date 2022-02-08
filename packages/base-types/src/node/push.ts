@@ -1,4 +1,4 @@
-import { Nullable } from '@/types';
+import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
 import { BaseCommand, BasePort, BaseStep, NodeID, SlotMappings } from './utils';

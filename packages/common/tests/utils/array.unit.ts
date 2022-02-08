@@ -1,5 +1,3 @@
-import { expect } from 'chai';
-
 import {
   append,
   filterOutNullish,
@@ -15,7 +13,8 @@ import {
   without,
   withoutValue,
   withoutValues,
-} from '@/utils/array';
+} from '@common/utils/array';
+import { expect } from 'chai';
 
 describe('Utils | array', () => {
   describe('unique()', () => {

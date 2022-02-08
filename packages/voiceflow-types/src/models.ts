@@ -1,6 +1,6 @@
-import { Diagram } from '@/diagram';
-import { Project } from '@/project';
-import { Version } from '@/version';
+import { Diagram } from '@voiceflow-types/diagram';
+import { Project } from '@voiceflow-types/project';
+import { Version } from '@voiceflow-types/version';
 
 export interface VF {
   project: Project;

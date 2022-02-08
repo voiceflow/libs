@@ -1,7 +1,6 @@
+import { Prompt } from '@chat-types/models';
+import { prompt } from '@chat-types/utils';
 import { BaseModels, BaseVersion } from '@voiceflow/base-types';
-
-import { Prompt } from '@/models';
-import { prompt } from '@/utils';
 
 export interface Settings extends BaseVersion.Settings<Prompt> {
   session: BaseVersion.Session<Prompt>;

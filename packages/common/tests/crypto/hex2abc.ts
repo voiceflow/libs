@@ -1,6 +1,5 @@
+import { hex2abc } from '@common/crypto/hex2abc';
 import { expect } from 'chai';
-
-import { hex2abc } from '@/crypto/hex2abc';
 
 describe('hex2abc()', () => {
   it('works', () => {

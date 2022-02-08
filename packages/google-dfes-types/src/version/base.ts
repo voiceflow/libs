@@ -1,7 +1,6 @@
+import { Locale } from '@google-dfes-types/constants';
+import { AnyCommand } from '@google-dfes-types/node';
 import { BaseModels } from '@voiceflow/base-types';
-
-import { Locale } from '@/constants';
-import { AnyCommand } from '@/node';
 
 export interface BasePrototype extends BaseModels.Version.Prototype<AnyCommand, Locale> {}
 

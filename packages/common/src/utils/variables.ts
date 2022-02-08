@@ -1,4 +1,4 @@
-import { READABLE_VARIABLE_REGEXP } from '@/constants';
+import { READABLE_VARIABLE_REGEXP } from '@common/constants';
 
 export const variableReplacer = (
   match: string,

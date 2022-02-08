@@ -1,6 +1,5 @@
 import { DeepPartialByKey } from '@voiceflow/base-types';
-
-import { ProjectType } from '@/constants';
+import { ProjectType } from '@voiceflow-types/constants';
 
 import { SupportedProjectType } from '../project';
 import { ChatPlatformData, ChatSettings, ChatVersion, defaultChatPlatformData, defaultChatSettings } from './chat';
