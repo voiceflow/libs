@@ -10,6 +10,7 @@
     "ttypescript"
   ],
   "ignores": [
+    "@common/*",
     "@commitlint/*",
     "@types/*",
     "@voiceflow/commitlint-config",

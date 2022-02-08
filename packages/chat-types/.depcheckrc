@@ -1,6 +1,7 @@
 {
   "specials": ["bin"],
   "ignores": [
+    "@chat-types/*",
     "@types/*"
   ]
 }
