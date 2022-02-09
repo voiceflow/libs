@@ -8,4 +8,4 @@ export type Step = ChatStep | VoiceStep;
 
 export type StepData = ChatStepData | VoiceStepData;
 
-export type Node = ChatNgoode | VoiceNode;
+export type Node = ChatNode | VoiceNode;
