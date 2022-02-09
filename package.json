@@ -60,7 +60,7 @@
     "test:dependencies": "lerna run test:dependencies  --parallel",
     "test:integration": "lerna run test:integration  --parallel",
     "test:run": "lerna run test:run  --parallel",
-    "test:unit": "lerna run test:unit  --parallel"
+    "test:unit": "lerna run test:unit  --parallel "
   },
   "workspaces": [
     "packages/*"
