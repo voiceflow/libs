@@ -9,11 +9,7 @@ export interface StepData extends BaseNode.Interaction.StepData, BaseButton.Step
 
 export interface Step<Data = StepData> extends BaseNode.Interaction.Step<Data> {}
 
-export interface Node<Event = BaseNode.Utils.BaseEvent>
-  extends BaseNode.Interaction.Node<Event>,
-    BaseRequest.NodeButton,
-    DeprecatedNodeNoMatch,
-    NodeReprompt {
+export interface Node extends BaseNode.Interaction.Node, BaseRequest.NodeButton, DeprecatedNodeNoMatch, NodeReprompt {
   noMatch?: Nullable<NodeNoMatch>;
   noReply?: Nullable<NodeNoReply>;
 }

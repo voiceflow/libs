@@ -15,6 +15,9 @@ export enum NodeType {
   CAPTURE = 'capture',
   CAPTURE_V2 = 'captureV2',
 
+  // navigation
+  GOTO = 'goTo',
+
   // integrations
   API = 'api',
   ZAPIER = 'zapier',
