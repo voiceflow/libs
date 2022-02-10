@@ -30,6 +30,11 @@ export type NullableRecord<T extends object> = { [K in keyof T]: Nullable<T[K]> 
 export type NonNullishRecord<T extends object> = Required<{ [K in keyof T]: NonNullable<T[K]> }>;
 
 export type Struct = Record<string, unknown>;
+export type AnyRecord = Record<string, any>;
+
+export type DeepPartial<T> = {
+  [P in keyof T]?: T extends object ? DeepPartial<T[P]> : T;
+};
 
 /**
  * An object with no keys or values.

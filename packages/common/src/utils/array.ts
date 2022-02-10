@@ -1,4 +1,4 @@
-import { ArrayUnionToIntersection, Nullish } from '@common/types';
+import { AnyRecord, ArrayUnionToIntersection, Nullish } from '@common/types';
 
 export const unique = <T>(items: T[]): T[] => Array.from(new Set(items));
 
@@ -62,6 +62,9 @@ export const separate = <T>(items: T[], predicate: (item: T, index: number) => b
     [[], []]
   );
 
+export const createMap = <T extends AnyRecord, K extends string | number = string>(array: T[], getKey: (value: T) => string) =>
+  array.reduce<Record<K, T>>((acc, item) => Object.assign(acc, { [getKey(item)]: item }), {} as Record<K, T>);
+
 export const findUnion = <T>(lhs: T[], rhs: T[]): { rhsOnly: T[]; lhsOnly: T[]; union: T[] } => {
   const unique = new Set([...lhs, ...rhs]);
 
@@ -116,13 +119,17 @@ export const isNotNullish = <T>(value: T): value is NonNullable<T> => value !== 
 export const filterOutNullish = <T>(items: readonly T[]): Array<NonNullable<T>> => items.filter(isNotNullish);
 
 // mostly just saves us needing to traverse an array twice
-export const filterAndGetLastRemovedValue = <T>(list: T[], filterFunc: (item: T) => boolean): [T[], T | null] => {
+export const filterAndGetLastRemovedValue = <T>(list: T[], filter: (item: T) => boolean): [T[], T | null] => {
   let lastItem: T | null = null;
+
   const filteredList = list.filter((a) => {
-    if (filterFunc(a)) return true;
+    if (filter(a)) return true;
+
     lastItem = a;
+
     return false;
   });
+
   return [filteredList, lastItem];
 };
 

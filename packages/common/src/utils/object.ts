@@ -1,7 +1,19 @@
+import { AnyRecord, DeepPartial, Struct } from '@common/types';
 import _cloneDeep from 'lodash/cloneDeep';
 import _isObject from 'lodash/isObject';
 import _toPath from 'lodash/toPath';
 import _transform from 'lodash/transform';
+
+export const selectField =
+  <K extends string | number>(field: K) =>
+  <T extends { [key in K]: any }>(obj: T): T[K] =>
+    obj[field];
+
+export const selectID = selectField('id');
+export const selectKey = selectField('key');
+export const selectValue = selectField('value');
+
+export const isObject = (obj: unknown): obj is Struct => obj !== null && typeof obj === 'object';
 
 export const getKeys = <T>(obj: T): (keyof T)[] => Object.keys(obj) as (keyof T)[];
 
@@ -27,7 +39,7 @@ export const getIn = <T, K extends keyof T | string>(rawObj: T, key: K | K[], de
   return obj === undefined ? def : obj;
 };
 
-export const setIn = (obj: Record<string, unknown>, path: any, value: any) => {
+export const setIn = (obj: AnyRecord, path: any, value: any) => {
   const res = {};
   const pathArray = _toPath(path);
   let resVal: any = res;
@@ -69,33 +81,47 @@ export const setIn = (obj: Record<string, unknown>, path: any, value: any) => {
   return result;
 };
 
-export const filterEntries = (obj: Record<string, any>, predicate: any) =>
-  Object.entries(obj).reduce<any>((acc, [key, value]) => {
+export const filterEntries = <T extends AnyRecord>(obj: T, predicate: (key: keyof T, value: T[keyof T]) => boolean): Partial<T> =>
+  Object.entries(obj).reduce<Partial<T>>((acc, [key, value]) => {
     if (predicate(key, value)) {
-      acc[key] = value;
+      acc[key as keyof T] = value;
     }
 
     return acc;
   }, {});
 
-export const getDiff = (object: Record<string, any>, base: Record<string, any>) => {
-  const changes = (object: Record<string, any>, base: Record<string, any>) =>
-    _transform(object, (result, value, key) => {
-      if (value !== base[key]) {
-        // eslint-disable-next-line no-param-reassign
-        (result as any)[key] = _isObject(value) && _isObject(base[key]) ? changes(value, base[key]) : value;
+const defaultCompare = <T>(left: T, right: T): boolean => left === right;
+
+export const getDiff = <S extends AnyRecord>(object: S, base: S, compare = defaultCompare): DeepPartial<S> => {
+  const changes = <T extends AnyRecord>(object: T, base: T) =>
+    _transform<T, DeepPartial<T>>(object, (result, value, key) => {
+      if (!compare(value, base[key])) {
+        if (_isObject(value) && _isObject(base[key])) {
+          // eslint-disable-next-line no-param-reassign
+          result[key] = changes(value, base[key]) as T extends object ? DeepPartial<T[keyof T]> : T;
+
+          if (Object.keys(result[key] ?? {}).length === 0) {
+            // eslint-disable-next-line no-param-reassign
+            delete result[key];
+          }
+        } else {
+          // eslint-disable-next-line no-param-reassign
+          result[key] = value;
+        }
       }
     });
+
   return changes(object, base);
 };
 
-export const getTopLevelDiff = (object: any, base: any) => {
-  const changes = (object: any, base: any) =>
-    _transform(object, (result, value, key) => {
-      if (value !== base[key]) {
+export const getTopLevelDiff = <S extends AnyRecord>(object: S, base: S, compare = defaultCompare): Partial<S> => {
+  const changes = (object: S, base: S) =>
+    _transform<S, Partial<S>>(object, (result, value, key) => {
+      if (!compare(value, base[key])) {
         // eslint-disable-next-line no-param-reassign
-        (result as any)[key] = value;
+        result[key] = value;
       }
     });
+
   return changes(object, base);
 };
