@@ -4,14 +4,14 @@ import _isObject from 'lodash/isObject';
 import _toPath from 'lodash/toPath';
 import _transform from 'lodash/transform';
 
-export const selectFields =
+export const selectField =
   <K extends string | number>(field: K) =>
   <T extends { [key in K]: any }>(obj: T): T[K] =>
     obj[field];
 
-export const selectID = selectFields('id');
-export const selectKey = selectFields('key');
-export const selectValue = selectFields('value');
+export const selectID = selectField('id');
+export const selectKey = selectField('key');
+export const selectValue = selectField('value');
 
 export const isObject = (obj: unknown): obj is Struct => obj !== null && typeof obj === 'object';
 
