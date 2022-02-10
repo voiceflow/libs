@@ -1,4 +1,4 @@
-import { BaseButton, BaseRequest } from '@voiceflow/base-types';
+import { BaseButton, BaseNode, BaseRequest } from '@voiceflow/base-types';
 import { VoiceNode } from '@voiceflow/voice-types';
 import { Voice } from '@voiceflow-types/constants';
 
@@ -6,4 +6,4 @@ export interface VoiceStepData extends VoiceNode.Interaction.StepData<Voice>, Ba
 
 export interface VoiceStep extends VoiceNode.Interaction.Step<VoiceStepData> {}
 
-export interface VoiceNode extends VoiceNode.Interaction.Node, BaseRequest.NodeButton {}
+export interface VoiceNode<Event = BaseNode.Utils.BaseEvent> extends VoiceNode.Interaction.Node<Event>, BaseRequest.NodeButton {}
