@@ -6,6 +6,7 @@ import * as Exit from './exit';
 import * as Flow from './flow';
 import * as General from './general';
 import * as GoogleSheets from './googleSheets';
+import * as GoTo from './goTo';
 import * as If from './if';
 import * as IfV2 from './ifV2';
 import * as Integration from './integration';
@@ -31,6 +32,7 @@ export * as Exit from './exit';
 export * as Flow from './flow';
 export * as General from './general';
 export * as GoogleSheets from './googleSheets';
+export * as GoTo from './goTo';
 export * as If from './if';
 export * as IfV2 from './ifV2';
 export * as Integration from './integration';
@@ -80,6 +82,7 @@ export type AnyCommonNode =
   | General.Node
   | If.Node
   | IfV2.Node
+  | GoTo.Node
   | _v1.Node;
 
 export type AnyCommonCommand = Intent.Command | Command.Command;

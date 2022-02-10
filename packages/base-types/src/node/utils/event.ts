@@ -1,5 +1,3 @@
-import { IntentRequest } from '@base-types/request';
-
 import { SlotMappings } from './mappings';
 
 // BUILT IN EVENTS
@@ -16,13 +14,8 @@ export interface BaseEvent {
  */
 export type Event<T extends string = string, D = unknown> = { type: T } & D;
 
-export interface IntentEventGoTo {
-  request: IntentRequest;
-}
-
 export interface IntentEvent extends BaseEvent, SlotMappings {
   type: EventType.INTENT;
-  goTo?: IntentEventGoTo;
   intent: string;
 }
 

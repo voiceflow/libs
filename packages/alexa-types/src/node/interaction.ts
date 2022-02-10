@@ -5,13 +5,7 @@ import { VoiceNode } from '@voiceflow/voice-types';
 export interface StepData extends VoiceNode.Interaction.StepData<Voice> {}
 
 export interface Step extends VoiceNode.Interaction.Step<StepData> {}
-
-export interface NodeGoTo {
-  intentName: string;
-}
-
 export interface NodeInteraction extends BaseNode.Utils.SlotMappings {
-  goTo?: NodeGoTo;
   intent: string;
   nextIdIndex?: number;
 }
