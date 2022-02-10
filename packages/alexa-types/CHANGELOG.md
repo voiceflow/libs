@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.4.3...@voiceflow/alexa-types@2.5.0) (2022-02-10)
+
+
+### Features
+
+* goto node (VF-2887) ([#190](https://github.com/voiceflow/libs/issues/190)) ([8846463](https://github.com/voiceflow/libs/commit/884646396f923b2affdfe1ec2c191e542e378fdd))
+
+
+
+
+
 ## [2.4.3](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.4.2...@voiceflow/alexa-types@2.4.3) (2022-02-08)
 
 **Note:** Version bump only for package @voiceflow/alexa-types
