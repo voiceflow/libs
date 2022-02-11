@@ -12,7 +12,7 @@ export const objectID = (): string => new ObjectId().toHexString();
 export const remapObjectIDs = <T extends Readonly<EmptyObject>>(object: T, lookupMap: Record<string, string> | Map<string, string>): T => {
   const map: ReadonlyMap<string, string> = lookupMap instanceof Map ? lookupMap : new Map(Object.entries(lookupMap));
 
-  const withUpdatedValues = deepMap(object, (value, key) => {
+  const withUpdatedValues = deepMap(object, (value) => {
     let newValue = value;
 
     if (typeof value === 'string' && map.has(value)) {
