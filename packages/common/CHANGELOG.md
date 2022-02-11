@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.20.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.20.0...@voiceflow/common@7.20.1) (2022-02-11)
+
+
+### Bug Fixes
+
+* make all packages public on npm registry (VF-000) ([#194](https://github.com/voiceflow/libs/issues/194)) ([1b7c1d0](https://github.com/voiceflow/libs/commit/1b7c1d017adbd8695b3cf6e9921bae1de3cdbee8))
+
+
+
+
+
 # [7.20.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.19.3...@voiceflow/common@7.20.0) (2022-02-10)
 
 

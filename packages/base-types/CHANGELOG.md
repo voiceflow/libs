@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.11.1...@voiceflow/base-types@2.11.2) (2022-02-11)
+
+
+### Bug Fixes
+
+* make all packages public on npm registry (VF-000) ([#194](https://github.com/voiceflow/libs/issues/194)) ([1b7c1d0](https://github.com/voiceflow/libs/commit/1b7c1d017adbd8695b3cf6e9921bae1de3cdbee8))
+
+
+
+
+
 ## [2.11.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.11.0...@voiceflow/base-types@2.11.1) (2022-02-10)
 
 **Note:** Version bump only for package @voiceflow/base-types
