@@ -25,6 +25,9 @@
   "license": "ISC",
   "main": "build/common/index.js",
   "module": "build/esm/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voiceflow/libs.git"
