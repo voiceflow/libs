@@ -52,20 +52,54 @@ describe('Analytics', () => {
   it('.track', async () => {
     const { fetch, analytics } = createClient();
 
+    await analytics.track('');
     await analytics.track('Event');
     await analytics.track('Event 2', { properties: { id: 'id', value: 10 }, hashed: ['id'] });
 
     expect(fetch.post.args).to.eql([
-      ['analytics/track', { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined }],
-      ['analytics/track', { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined }],
+      ['analytics/private-track', { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined }],
+      [
+        'analytics/private-track',
+        { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
+      ],
     ]);
   });
 
   it('.track encrypted', async () => {
     const { fetch, analytics } = createClient(true);
 
+    await analytics.track('');
     await analytics.track('Event');
     await analytics.track('Event 2', { properties: { id: 'id', value: 10 }, hashed: ['id'] });
+
+    expect(fetch.post.args).to.eql([
+      ['vf-ping/private', { message: 'message' }],
+      ['vf-ping/private', { message: 'message' }],
+    ]);
+  });
+
+  it('.trackPublic', async () => {
+    const { fetch, analytics } = createClient();
+
+    await analytics.trackPublic('');
+    await analytics.trackPublic('Event');
+    await analytics.trackPublic('Event 2', { anonymousID: '1', properties: { id: 'id', value: 10 }, hashed: ['id'] });
+
+    expect(fetch.post.args).to.eql([
+      ['analytics/track', { event: 'Event', anonymousID: undefined, envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined }],
+      [
+        'analytics/track',
+        { event: 'Event 2', anonymousID: '1', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
+      ],
+    ]);
+  });
+
+  it('.trackPublic encrypted', async () => {
+    const { fetch, analytics } = createClient(true);
+
+    await analytics.trackPublic('');
+    await analytics.trackPublic('Event');
+    await analytics.trackPublic('Event 2', { anonymousID: '1', properties: { id: 'id', value: 10 }, hashed: ['id'] });
 
     expect(fetch.post.args).to.eql([
       ['vf-ping', { message: 'message' }],
@@ -75,7 +109,10 @@ describe('Analytics', () => {
 
   it('.track with batching', async () => {
     const { fetch, analytics } = createClient();
+
     analytics.setBatching(true);
+
+    analytics.track('');
     analytics.track('Event');
     analytics.track('Event 2', { properties: { id: 'id', value: 10 }, hashed: ['id'] });
 
@@ -83,7 +120,7 @@ describe('Analytics', () => {
 
     expect(fetch.post.args).to.eql([
       [
-        'analytics/batch-track',
+        'analytics/private-batch-track',
         [
           { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined },
           { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
@@ -94,13 +131,93 @@ describe('Analytics', () => {
 
   it('.track encrypted with batching', async () => {
     const { fetch, analytics } = createClient(true);
+
     analytics.setBatching(true);
+
+    analytics.track('');
     analytics.track('Event');
     analytics.track('Event 2', { properties: { id: 'id', value: 10 }, hashed: ['id'] });
 
     await Promise.resolve();
 
+    expect(fetch.post.args).to.eql([['vf-ping/private-batch', { message: 'message' }]]);
+  });
+
+  it('.trackPublic with batching', async () => {
+    const { fetch, analytics } = createClient();
+
+    analytics.setBatching(true);
+
+    analytics.trackPublic('');
+    analytics.trackPublic('Event');
+    analytics.trackPublic('Event 2', { anonymousID: '1', properties: { id: 'id', value: 10 }, hashed: ['id'] });
+
+    await Promise.resolve();
+
+    expect(fetch.post.args).to.eql([
+      [
+        'analytics/batch-track',
+        [
+          { event: 'Event', anonymousID: undefined, envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined },
+          { event: 'Event 2', anonymousID: '1', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
+        ],
+      ],
+    ]);
+  });
+
+  it('.trackPublic encrypted with batching', async () => {
+    const { fetch, analytics } = createClient(true);
+
+    analytics.setBatching(true);
+
+    analytics.trackPublic('');
+    analytics.trackPublic('Event');
+    analytics.trackPublic('Event 2', { anonymousID: '1', properties: { id: 'id', value: 10 }, hashed: ['id'] });
+
+    await Promise.resolve();
+
     expect(fetch.post.args).to.eql([['vf-ping/batch', { message: 'message' }]]);
+  });
+
+  it('.flush', async () => {
+    const { fetch, analytics } = createClient();
+
+    analytics.setBatching(true);
+
+    analytics.track('');
+    analytics.track('Event');
+    analytics.track('Event 2', { properties: { id: 'id', value: 10 }, hashed: ['id'] });
+
+    analytics.flush();
+
+    expect(fetch.post.args).to.eql([
+      [
+        'analytics/private-batch-track',
+        [
+          { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined },
+          { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
+        ],
+      ],
+    ]);
+  });
+
+  it('.flush handle error', async () => {
+    const { fetch, analytics } = createClient();
+
+    analytics.setBatching(true);
+
+    analytics.track('');
+    analytics.track('Event');
+    analytics.track('Event 2', { properties: { id: 'id', value: 10 }, hashed: ['id'] });
+
+    fetch.post.rejects(new Error('error'));
+
+    await analytics.flush();
+
+    expect(analytics['privateQueue']['queue']).to.eql([
+      { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined },
+      { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
+    ]);
   });
 
   it('.identify', async () => {
