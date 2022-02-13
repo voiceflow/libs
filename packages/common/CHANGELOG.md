@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.20.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.20.1...@voiceflow/common@7.20.2) (2022-02-13)
+
+
+### Bug Fixes
+
+* dep check dependency ([2f6cb51](https://github.com/voiceflow/libs/commit/2f6cb51f802dcf63e8e8c4cb7a6a8005ff318d08))
+* remap object id strings (VF-2914) ([#192](https://github.com/voiceflow/libs/issues/192)) ([c9884b9](https://github.com/voiceflow/libs/commit/c9884b96b6a24af07eff8e1c7fb7f877846dbb24))
+
+
+
+
+
 ## [7.20.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.20.0...@voiceflow/common@7.20.1) (2022-02-11)
 
 
