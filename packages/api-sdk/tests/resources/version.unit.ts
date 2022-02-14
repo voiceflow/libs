@@ -269,6 +269,18 @@ describe('VersionResource', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
+  it('.exportResponses', async () => {
+    const { fetch, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.exportResponses('1');
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/1/export/responses']);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
   it('.import', async () => {
     const { fetch, resource } = createClient();
 
