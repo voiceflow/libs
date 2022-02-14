@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.7.7...@voiceflow/api-sdk@3.8.0) (2022-02-14)
+
+
+### Features
+
+* add public/private analytics (VF-2754) ([#193](https://github.com/voiceflow/libs/issues/193)) ([837640c](https://github.com/voiceflow/libs/commit/837640c8cbb7df82edc7061cd19b37c3171abc54))
+
+
+
+
+
 ## [3.7.7](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.7.6...@voiceflow/api-sdk@3.7.7) (2022-02-13)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
