@@ -65,25 +65,30 @@ export const separate = <T>(items: T[], predicate: (item: T, index: number) => b
 export const createMap = <T extends AnyRecord, K extends string | number = string>(array: T[], getKey: (value: T) => string) =>
   array.reduce<Record<K, T>>((acc, item) => Object.assign(acc, { [getKey(item)]: item }), {} as Record<K, T>);
 
+export const createPrimitiveMap = <T extends string | number | symbol>(array: T[]): Record<T, T> =>
+  array.reduce<Record<T, T>>((acc, item) => Object.assign(acc, { [item]: item }), {} as Record<T, T>);
+
 export const findUnion = <T>(lhs: T[], rhs: T[]): { rhsOnly: T[]; lhsOnly: T[]; union: T[] } => {
-  const unique = new Set([...lhs, ...rhs]);
+  const lMap = new Map(lhs.map((item) => [item, true]));
+  const rMap = new Map(rhs.map((item) => [item, true]));
+  const unionMap = new Map([...lMap.entries(), ...rMap.entries()]);
 
-  return Array.from(unique).reduce<{ lhsOnly: T[]; rhsOnly: T[]; union: T[] }>(
-    (acc, item) => {
-      if (lhs.includes(item)) {
-        if (rhs.includes(item)) {
-          acc.union.push(item);
-        } else {
-          acc.lhsOnly.push(item);
-        }
+  const result = { rhsOnly: [] as T[], lhsOnly: [] as T[], union: [] as T[] };
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [item] of unionMap) {
+    if (lMap.has(item)) {
+      if (rMap.has(item)) {
+        result.union.push(item);
       } else {
-        acc.rhsOnly.push(item);
+        result.lhsOnly.push(item);
       }
+    } else {
+      result.rhsOnly.push(item);
+    }
+  }
 
-      return acc;
-    },
-    { rhsOnly: [], lhsOnly: [], union: [] }
-  );
+  return result;
 };
 
 export const diff = <T>(lhs: T[], rhs: T[]): T[] => {
