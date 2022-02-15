@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.11.3...@voiceflow/base-types@2.12.0) (2022-02-15)
+
+
+### Features
+
+* add type guards for elements (VF-000) ([#197](https://github.com/voiceflow/libs/issues/197)) ([27d514b](https://github.com/voiceflow/libs/commit/27d514b983d89fef4301f7724d2c42fd0a43928c))
+
+
+
+
+
 ## [2.11.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.11.2...@voiceflow/base-types@2.11.3) (2022-02-13)
 
 **Note:** Version bump only for package @voiceflow/base-types

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.8.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.8.0...@voiceflow/api-sdk@3.8.1) (2022-02-15)
+
+**Note:** Version bump only for package @voiceflow/api-sdk
+
+
+
+
+
 # [3.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.7.7...@voiceflow/api-sdk@3.8.0) (2022-02-14)
 
 
