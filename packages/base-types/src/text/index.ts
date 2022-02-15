@@ -59,3 +59,11 @@ export type AnyElement = Element | LinkElement | VariableElement;
 export type Descendant = AnyElement | Text;
 
 export type SlateTextValue = Descendant[];
+
+export const isVariableElement = (element: Element): element is VariableElement => {
+  return element.type === ElementType.VARIABLE;
+};
+
+export const isLinkElement = (element: Element): element is LinkElement => {
+  return element.type === ElementType.LINK;
+};
