@@ -81,7 +81,7 @@ export const findUnion = <T>(lhs: T[], rhs: T[]): { rhsOnly: T[]; lhsOnly: T[]; 
   // using sets instead of arrays since .has is O(1)
   const lSet = new Set(lhs);
   const rSet = new Set(rhs);
-  const unionSet = new Set([...lSet, ...rSet]);
+  const unionSet = new Set([...lhs, ...rhs]);
 
   const result = { rhsOnly: [] as T[], lhsOnly: [] as T[], union: [] as T[] };
 
