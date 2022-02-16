@@ -41,3 +41,5 @@ export enum NodeType {
   DIRECTIVE = 'directive',
   DEPRECATED = 'deprecated',
 }
+
+export const RUNTIME_ONLY_NODES = [NodeType.GOTO] as const;

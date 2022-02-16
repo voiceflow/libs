@@ -8,6 +8,7 @@ export const isV1 = (node: BaseModels.BaseNode): node is Node._v1.Node => Utils.
 export const isIf = createNodeTypeguard<Node.If.Node>(Node.NodeType.IF);
 export const isSet = createNodeTypeguard<Node.Set.Node>(Node.NodeType.SET);
 export const isText = createNodeTypeguard<Node.Text.Node>(Node.NodeType.TEXT);
+export const isGoTo = createNodeTypeguard<Node.GoTo.Node>(Node.NodeType.GOTO);
 export const isCard = createNodeTypeguard<Node.Card.Node>(Node.NodeType.CARD);
 export const isIfV2 = createNodeTypeguard<Node.IfV2.Node>(Node.NodeType.IF_V2);
 export const isFlow = createNodeTypeguard<Node.Flow.Node>(Node.NodeType.FLOW);
