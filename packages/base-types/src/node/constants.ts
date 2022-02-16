@@ -42,4 +42,4 @@ export enum NodeType {
   DEPRECATED = 'deprecated',
 }
 
-export const RUNTIME_ONLY_NODES = [NodeType.GOTO];
+export const RUNTIME_ONLY_NODES = [NodeType.GOTO] as const;
