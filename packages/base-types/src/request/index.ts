@@ -39,6 +39,7 @@ export interface LabelRequestPayload {
 export interface BaseRequest<Payload = unknown> {
   type: string;
   payload: Payload;
+  diagramID?: string; // particular topic to match against
 }
 
 export interface LaunchRequest extends BaseRequest<undefined> {
@@ -59,7 +60,6 @@ export interface IntentRequestPayload extends ActionAndLabelRequestPayload {
   intent: { name: string }; // matched intent name
   entities: Entity[]; // entities matches - multiple of the same entity name may be matched
   confidence?: number; // 0-1 confidence of match;
-  diagramID?: string; // particular topic to match against
 }
 
 export interface IntentRequest extends BaseRequest<IntentRequestPayload> {
