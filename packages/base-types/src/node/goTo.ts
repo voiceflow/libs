@@ -7,6 +7,5 @@ import { BaseNode, BaseNodeNoMatch } from './utils';
 export interface Node extends BaseNode {
   type: NodeType.GOTO;
   request: IntentRequest;
-  diagramID?: Nullable<string>;
   noMatch?: Nullable<BaseNodeNoMatch>;
 }
