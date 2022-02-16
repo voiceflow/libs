@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.12.1...@voiceflow/base-types@2.13.0) (2022-02-16)
+
+
+### Features
+
+* add runtime only node list (VF-000) ([#199](https://github.com/voiceflow/libs/issues/199)) ([5f14481](https://github.com/voiceflow/libs/commit/5f1448169693a7d1d221e672e503a39bfcb5f479))
+
+
+
+
+
 ## [2.12.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.12.0...@voiceflow/base-types@2.12.1) (2022-02-16)
 
 **Note:** Version bump only for package @voiceflow/base-types
