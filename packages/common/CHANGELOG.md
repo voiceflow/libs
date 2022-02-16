@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.21.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.20.2...@voiceflow/common@7.21.0) (2022-02-16)
+
+
+### Features
+
+* reimplement deepMap and deepMapKeys to fix vite build (VF-000) ([#196](https://github.com/voiceflow/libs/issues/196)) ([fd1998f](https://github.com/voiceflow/libs/commit/fd1998fe5939783677a048f2c272e07ab5bad93d))
+
+
+
+
+
 ## [7.20.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.20.1...@voiceflow/common@7.20.2) (2022-02-13)
 
 
