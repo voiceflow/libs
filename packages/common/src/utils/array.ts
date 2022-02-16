@@ -1,4 +1,4 @@
-import { AnyRecord, ArrayUnionToIntersection, Nullish } from '@common/types';
+import { AnyRecord, ArrayUnionToIntersection, Nullish, PrimitiveMap } from '@common/types';
 
 export const unique = <T>(items: T[]): T[] => Array.from(new Set(items));
 
@@ -62,28 +62,43 @@ export const separate = <T>(items: T[], predicate: (item: T, index: number) => b
     [[], []]
   );
 
-export const createMap = <T extends AnyRecord, K extends string | number = string>(array: T[], getKey: (value: T) => string) =>
-  array.reduce<Record<K, T>>((acc, item) => Object.assign(acc, { [getKey(item)]: item }), {} as Record<K, T>);
+interface CreateEntries {
+  <T extends PropertyKey>(array: readonly T[]): Array<readonly [T, T]>;
+  <T extends AnyRecord, K extends PropertyKey = string>(array: readonly T[], getKey: (value: T) => K): Array<readonly [K, T]>;
+}
+
+interface CreateMap {
+  <T extends PropertyKey>(array: readonly T[]): PrimitiveMap<T>;
+  <T extends AnyRecord, K extends PropertyKey = string>(array: readonly T[], getKey: (value: T) => K): Record<K, T>;
+}
+
+export const createEntries: CreateEntries = (array: readonly unknown[], getKey = (value: unknown) => value) =>
+  array.map((item) => [getKey(item), item] as const);
+
+export const createMap: CreateMap = (array: readonly any[], getKey = (value: any) => value) => Object.fromEntries(createEntries(array, getKey));
 
 export const findUnion = <T>(lhs: T[], rhs: T[]): { rhsOnly: T[]; lhsOnly: T[]; union: T[] } => {
-  const unique = new Set([...lhs, ...rhs]);
+  // using sets instead of arrays since .has is O(1)
+  const lSet = new Set(lhs);
+  const rSet = new Set(rhs);
+  const unionSet = new Set([...lhs, ...rhs]);
 
-  return Array.from(unique).reduce<{ lhsOnly: T[]; rhsOnly: T[]; union: T[] }>(
-    (acc, item) => {
-      if (lhs.includes(item)) {
-        if (rhs.includes(item)) {
-          acc.union.push(item);
-        } else {
-          acc.lhsOnly.push(item);
-        }
+  const result = { rhsOnly: [] as T[], lhsOnly: [] as T[], union: [] as T[] };
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const item of unionSet) {
+    if (lSet.has(item)) {
+      if (rSet.has(item)) {
+        result.union.push(item);
       } else {
-        acc.rhsOnly.push(item);
+        result.lhsOnly.push(item);
       }
+    } else {
+      result.rhsOnly.push(item);
+    }
+  }
 
-      return acc;
-    },
-    { rhsOnly: [], lhsOnly: [], union: [] }
-  );
+  return result;
 };
 
 export const diff = <T>(lhs: T[], rhs: T[]): T[] => {

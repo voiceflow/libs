@@ -52,3 +52,5 @@ export type SafeArray<Element, Original> = Original extends Array<Element>
   : never;
 
 export type ArrayUnionToIntersection<T extends ArrayLike<unknown>> = SafeArray<T[number], T>;
+
+export type PrimitiveMap<T extends PropertyKey> = { [P in T]: P };

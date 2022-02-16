@@ -1,5 +1,7 @@
 import { Nullish } from '../types';
 
+export const isFunction = <T extends (...args: any[]) => any = (...args: any[]) => any>(value: unknown): value is T => typeof value === 'function';
+
 export type Transform<T = any, R = T> = (value: T) => R;
 
 export interface Compose {
@@ -37,8 +39,7 @@ export const compose: Compose =
 
 export type VoidFunction = () => void;
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-export const noop: VoidFunction = () => {};
+export const noop: VoidFunction = () => undefined;
 
 export const identity = <T>(value: T): T => value;
 

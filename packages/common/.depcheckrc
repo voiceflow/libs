@@ -15,7 +15,6 @@
     "@types/*",
     "@voiceflow/commitlint-config",
     "@voiceflow/git-branch-check",
-    "es6-weak-map",
     "fixpack",
     "husky",
     "lint-staged",

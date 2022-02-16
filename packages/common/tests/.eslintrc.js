@@ -10,4 +10,8 @@ module.exports = {
     'sonarjs/no-duplicate-string': 'off',
     'eslint-comments/disable-enable-pair': 'off',
   },
+  env: {
+    node: true,
+    mocha: true,
+  },
 };

@@ -1,9 +1,8 @@
 import ObjectId from 'bson-objectid';
 import cuid from 'cuid';
-import deepMap from 'deep-map';
-import deepMapKeys from 'deep-map-keys';
 
 import { EmptyObject } from '../types';
+import { deepMap, deepMapKeys } from './object';
 
 export { cuid };
 
@@ -16,6 +15,7 @@ export const remapObjectIDs = <T extends Readonly<EmptyObject>>(object: T, looku
     if (typeof value === 'string' && map.has(value)) {
       return map.get(value)!;
     }
+
     return value;
   };
 
