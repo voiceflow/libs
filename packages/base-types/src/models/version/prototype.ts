@@ -36,7 +36,7 @@ export interface PrototypeSettings {
   brandColor?: string;
   brandImage?: string;
   hasPassword?: boolean;
-  buttonsOnly: boolean;
+  buttonsOnly?: boolean;
 }
 
 export interface Prototype<Command extends BaseCommand = BaseCommand, Locale extends string = string> {
