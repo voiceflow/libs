@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.13.1...@voiceflow/base-types@2.14.0) (2022-02-18)
+
+
+### Features
+
+* added buttonsOnly flag to PrototypeSettings (VF-2946) ([#201](https://github.com/voiceflow/libs/issues/201)) ([a4ebccc](https://github.com/voiceflow/libs/commit/a4ebcccf8fc56dd90f3c37f97eb2e2fc4bd1872e))
+
+
+
+
+
 ## [2.13.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.13.0...@voiceflow/base-types@2.13.1) (2022-02-16)
 
 
