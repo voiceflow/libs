@@ -1,12 +1,11 @@
 import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
-import { BaseNode, BaseNodeNoReply, BaseStep, BaseStepNoReply, NodeNextID } from './utils';
+import { BaseNode, BaseNoReplyNodeData, BaseNoReplyStepData, BaseStep, NodeNextID } from './utils';
 
 /** @deprecated */
-export interface StepData {
+export interface StepData extends BaseNoReplyStepData {
   slot: Nullable<string>;
-  noReply?: Nullable<BaseStepNoReply>;
   variable: Nullable<string>;
   slotInputs: string[];
 }
@@ -17,10 +16,9 @@ export interface Step<Data = StepData> extends BaseStep<Data> {
 }
 
 /** @deprecated */
-export interface Node extends BaseNode, NodeNextID {
+export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData {
   type: NodeType.CAPTURE;
   intent?: string;
   slots?: string[];
-  noReply?: Nullable<BaseNodeNoReply>;
   variable: string;
 }

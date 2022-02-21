@@ -1,11 +1,11 @@
-import { Nullable } from '@base-types/types';
-
 import { NodeType } from './constants';
-import { BaseStep, BaseStepNoMatch, BaseStepNoReply } from './utils';
+import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepNoMatch } from './utils';
 
-export interface StepData {
-  noReply?: Nullable<BaseStepNoReply>;
-  noMatches: BaseStepNoMatch;
+export interface StepData extends BaseNoReplyStepData, BaseNoMatchStepData {
+  /**
+   * @deprecated use noMatch instead
+   */
+  noMatches?: BaseStepNoMatch;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data, []> {

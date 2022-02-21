@@ -3,8 +3,13 @@ import { BaseButton, BaseNode, BaseRequest, Nullable } from '@voiceflow/base-typ
 import { DeprecatedNodeNoMatch, NodeNoMatch, NodeNoReply, NodeReprompt, StepNoMatch, StepNoReply, StepReprompt } from './utils';
 
 export interface StepData extends BaseNode.Interaction.StepData, BaseButton.StepButton, StepReprompt {
-  else: StepNoMatch;
+  noMatch?: Nullable<StepNoMatch>;
   noReply?: Nullable<StepNoReply>;
+
+  /**
+   * @deprecated use noMatch instead
+   */
+  else?: StepNoMatch;
 }
 
 export interface Step<Data = StepData> extends BaseNode.Interaction.Step<Data> {}

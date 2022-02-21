@@ -14,6 +14,10 @@ export interface BaseStepNoReply {
   randomize: boolean;
 }
 
+export interface BaseNoReplyStepData {
+  noReply?: Nullable<BaseStepNoReply>;
+}
+
 export interface StepNoReply<Prompt> extends BaseStepNoReply {
   reprompts?: Prompt[];
 }
@@ -22,6 +26,10 @@ export interface BaseNodeNoReply {
   nodeID?: NodeID;
   timeout?: number;
   randomize?: boolean;
+}
+
+export interface BaseNoReplyNodeData {
+  noReply?: Nullable<BaseNodeNoReply>;
 }
 
 export interface NodeNoReply<NoReply> extends BaseNodeNoReply {

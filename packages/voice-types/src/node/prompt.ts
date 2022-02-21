@@ -4,7 +4,12 @@ import { StepNoMatch, StepNoReply, StepReprompt } from './utils';
 
 export interface StepData<Voice> extends BaseNode.Prompt.StepData, StepReprompt<Voice> {
   noReply?: Nullable<StepNoReply<Voice>>;
-  noMatches: StepNoMatch<Voice>;
+  noMatch?: Nullable<StepNoMatch<Voice>>;
+
+  /**
+   * @deprecated use noMatch instead
+   */
+  noMatches?: StepNoMatch<Voice>;
 }
 
 export interface Step<Data = StepData<unknown>> extends BaseNode.Prompt.Step<Data> {}
