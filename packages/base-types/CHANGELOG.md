@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.14.0...@voiceflow/base-types@2.15.0) (2022-02-21)
+
+
+### Features
+
+* Add variableState to api-sdk and to base-types (VF-2609) ([#202](https://github.com/voiceflow/libs/issues/202)) ([28be033](https://github.com/voiceflow/libs/commit/28be0333bf1ed4ac0391d74d2c86688ccf15a477))
+
+
+
+
+
 # [2.14.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.13.1...@voiceflow/base-types@2.14.0) (2022-02-18)
 
 
