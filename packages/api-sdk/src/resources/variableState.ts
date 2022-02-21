@@ -17,7 +17,9 @@ class VariableStateResource extends CrudResource<BaseModels.VariableState.Model,
     });
   }
 
-  public async get<T extends Partial<BaseModels.VariableState.Model>>(id: string, fields?: Fields): Promise<T>;
+  public async get<T extends Partial<BaseModels.VariableState.Model>>(id: string, fields: Fields): Promise<T>;
+
+  public async get<T extends BaseModels.VariableState.Model = BaseModels.VariableState.Model>(id: string): Promise<T>;
 
   public async get<T extends BaseModels.VariableState.Model = BaseModels.VariableState.Model>(id: string): Promise<T>;
 
