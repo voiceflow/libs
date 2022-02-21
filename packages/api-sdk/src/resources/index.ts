@@ -5,4 +5,5 @@ export { default as Program } from './program';
 export { default as Project } from './project';
 export { default as PrototypeProgram } from './prototypeProgram';
 export { default as User } from './user';
+export { default as VariableState } from './variableState';
 export { default as Version } from './version';

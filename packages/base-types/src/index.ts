@@ -17,3 +17,4 @@ export * as Utils from './utils';
 export * as BaseUtils from './utils';
 export * as Version from './version';
 export * as BaseVersion from './version';
+export * as VariableState from './version';
