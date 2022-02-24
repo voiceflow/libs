@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.3.13...@voiceflow/voice-types@2.4.0) (2022-02-24)
+
+
+### Features
+
+* add intent scope, standardize noMatch (VF-000) ([#203](https://github.com/voiceflow/libs/issues/203)) ([f77ac0b](https://github.com/voiceflow/libs/commit/f77ac0befb2cf456f910792a734da1dd560966fb))
+
+
+
+
+
 ## [2.3.13](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.3.12...@voiceflow/voice-types@2.3.13) (2022-02-21)
 
 **Note:** Version bump only for package @voiceflow/voice-types
