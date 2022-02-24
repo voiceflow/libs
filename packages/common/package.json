@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@types/crypto-js": "^4.0.2",
+    "@voiceflow/base-types": "^2.16.1",
+    "@voiceflow/voiceflow-types": "^3.4.15",
     "bson-objectid": "^2.0.1",
     "crypto-js": "^4.1.1",
     "cuid": "^2.1.8",
