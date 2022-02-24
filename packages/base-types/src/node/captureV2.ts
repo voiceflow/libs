@@ -2,17 +2,24 @@ import { Intent } from '@base-types/models';
 import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
-import { BaseNode, BaseNodeNoMatch, BaseNodeNoReply, BaseStep, BaseStepNoMatch, BaseStepNoReply, NodeNextID } from './utils';
+import {
+  BaseNode,
+  BaseNoMatchNodeData,
+  BaseNoMatchStepData,
+  BaseNoReplyNodeData,
+  BaseNoReplyStepData,
+  BaseStep,
+  NodeIntentScope,
+  NodeNextID,
+  StepIntentScope,
+} from './utils';
 
 export enum CaptureType {
   INTENT = 'intent',
   QUERY = 'query', // capture everything the user says
 }
 
-export interface BaseCaptureData {
-  noReply?: Nullable<BaseStepNoReply>;
-  noMatch?: Nullable<BaseStepNoMatch>;
-}
+export interface BaseCaptureData extends BaseNoReplyStepData, StepIntentScope, BaseNoMatchStepData {}
 
 export interface IntentCapture {
   type: CaptureType.INTENT;
@@ -31,13 +38,13 @@ export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.CAPTURE_V2;
 }
 
-export interface Node extends BaseNode, NodeNextID {
+export interface NodeIntent {
+  name: string;
+  entities?: string[];
+}
+
+export interface Node extends BaseNode, NodeNextID, NodeIntentScope, BaseNoReplyNodeData, BaseNoMatchNodeData {
   type: NodeType.CAPTURE_V2;
-  intent?: {
-    name: string;
-    entities?: string[];
-  };
+  intent?: NodeIntent;
   variable?: string;
-  noReply?: Nullable<BaseNodeNoReply>;
-  noMatch?: Nullable<BaseNodeNoMatch>;
 }

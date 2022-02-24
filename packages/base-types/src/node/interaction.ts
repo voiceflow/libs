@@ -5,15 +5,18 @@ import { NodeType } from './constants';
 import {
   BaseEvent,
   BaseNode,
-  BaseNodeNoMatch,
-  BaseNodeNoReply,
+  BaseNoMatchNodeData,
+  BaseNoMatchStepData,
+  BaseNoReplyNodeData,
+  BaseNoReplyStepData,
   BaseStep,
   BaseStepNoMatch,
-  BaseStepNoReply,
   BaseTraceFrame,
   DeprecatedBaseNodeNoMatch,
+  NodeIntentScope,
   NodeNextID,
   SlotMappings,
+  StepIntentScope,
   TraceType,
 } from './utils';
 
@@ -33,11 +36,14 @@ export interface Choice extends SlotMappings {
   action?: ChoiceAction;
 }
 
-export interface StepData {
+export interface StepData extends BaseNoReplyStepData, StepIntentScope, BaseNoMatchStepData {
   name: string;
-  else: BaseStepNoMatch;
   choices: Choice[];
-  noReply?: Nullable<BaseStepNoReply>;
+
+  /**
+   * @deprecated use noMatch instead
+   */
+  else?: BaseStepNoMatch;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
@@ -48,10 +54,8 @@ export interface NodeInteraction<Event = BaseEvent> extends NodeNextID {
   event: Event;
 }
 
-export interface Node<Event = BaseEvent> extends BaseNode, DeprecatedBaseNodeNoMatch {
+export interface Node<Event = BaseEvent> extends BaseNode, DeprecatedBaseNodeNoMatch, BaseNoReplyNodeData, NodeIntentScope, BaseNoMatchNodeData {
   type: NodeType.INTERACTION;
-  noMatch?: Nullable<BaseNodeNoMatch>;
-  noReply?: Nullable<BaseNodeNoReply>;
   interactions: NodeInteraction<Event>[];
 }
 

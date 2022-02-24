@@ -1,11 +1,9 @@
 import { IntentRequest } from '@base-types/request';
-import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
-import { BaseNode, BaseNodeNoMatch } from './utils';
+import { BaseNode, BaseNoMatchNodeData } from './utils';
 
-export interface Node extends BaseNode {
+export interface Node extends BaseNode, BaseNoMatchNodeData {
   type: NodeType.GOTO;
   request: IntentRequest;
-  noMatch?: Nullable<BaseNodeNoMatch>;
 }

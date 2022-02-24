@@ -2,7 +2,7 @@ import { Nullable } from '@base-types/types';
 
 import { StepButtonsLayout } from '../button';
 import { NodeType } from './constants';
-import { BaseStep, BaseStepNoMatch, BaseStepNoReply, DataID } from './utils';
+import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepNoMatch, DataID, StepIntentScope } from './utils';
 
 export enum ButtonAction {
   URL = 'URL',
@@ -18,10 +18,13 @@ export interface Button extends DataID {
   diagramID?: Nullable<string>;
 }
 
-export interface StepData extends StepButtonsLayout {
-  else: BaseStepNoMatch;
+export interface StepData extends StepButtonsLayout, BaseNoReplyStepData, StepIntentScope, BaseNoMatchStepData {
   buttons: Button[];
-  noReply?: Nullable<BaseStepNoReply>;
+
+  /**
+   * @deprecated use noMatch instead
+   */
+  else?: BaseStepNoMatch;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {

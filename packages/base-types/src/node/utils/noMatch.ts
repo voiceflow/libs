@@ -25,9 +25,17 @@ export interface StepNoMatch<Prompt> extends BaseStepNoMatch {
   reprompts: Prompt[];
 }
 
+export interface BaseNoMatchStepData {
+  noMatch?: Nullable<BaseStepNoMatch>;
+}
+
 export interface BaseNodeNoMatch {
   nodeID?: NodeID;
   randomize?: boolean;
+}
+
+export interface BaseNoMatchNodeData {
+  noMatch?: Nullable<BaseNodeNoMatch>;
 }
 
 export interface NodeNoMatch<NoMatch> extends BaseNodeNoMatch {
