@@ -21,8 +21,6 @@ class VariableStateResource extends CrudResource<BaseModels.VariableState.Model,
 
   public async get<T extends BaseModels.VariableState.Model = BaseModels.VariableState.Model>(id: string): Promise<T>;
 
-  public async get<T extends BaseModels.VariableState.Model = BaseModels.VariableState.Model>(id: string): Promise<T>;
-
   public async get(id: string, fields?: Fields): Promise<BaseModels.VariableState.Model> {
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
