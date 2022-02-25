@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.16.2...@voiceflow/base-types@2.16.3) (2022-02-25)
+
+
+### Bug Fixes
+
+* bump slate (VF-000) ([#206](https://github.com/voiceflow/libs/issues/206)) ([ed87341](https://github.com/voiceflow/libs/commit/ed873417b8f8e99dd10ca7e3efa1dd6b00db8edb))
+
+
+
+
+
 ## [2.16.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.16.1...@voiceflow/base-types@2.16.2) (2022-02-25)
 
 
