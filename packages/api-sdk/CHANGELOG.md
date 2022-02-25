@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.9.3](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.9.2...@voiceflow/api-sdk@3.9.3) (2022-02-25)
+
+
+### Bug Fixes
+
+* expose variable state resource in api-sdk (VF-2609) ([#205](https://github.com/voiceflow/libs/issues/205)) ([62afee4](https://github.com/voiceflow/libs/commit/62afee4986987a2f9bc00283b690ea73c031193a))
+
+
+
+
+
 ## [3.9.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.9.1...@voiceflow/api-sdk@3.9.2) (2022-02-24)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
