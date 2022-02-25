@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.18](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.4.17...@voiceflow/voiceflow-types@3.4.18) (2022-02-25)
+
+
+### Bug Fixes
+
+* update vf file types (VF-000) ([#207](https://github.com/voiceflow/libs/issues/207)) ([d9daa08](https://github.com/voiceflow/libs/commit/d9daa0892447c91ff1e6e2c158d135b5e49c944a))
+
+
+
+
+
 ## [3.4.17](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.4.16...@voiceflow/voiceflow-types@3.4.17) (2022-02-25)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
