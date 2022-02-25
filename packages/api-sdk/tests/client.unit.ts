@@ -1,10 +1,10 @@
 import { Client } from '@api-sdk/client';
 import Fetch from '@api-sdk/fetch';
-import { Analytics, APIKey, Diagram, Program, Project, PrototypeProgram, User, Version } from '@api-sdk/resources';
+import { Analytics, APIKey, Diagram, Program, Project, PrototypeProgram, User, VariableState, Version } from '@api-sdk/resources';
 import { expect } from 'chai';
 import JWT from 'jsonwebtoken';
 
-const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User, APIKey, Analytics];
+const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User, APIKey, Analytics, VariableState];
 
 const USER_HASH = 'UserHash_16chars';
 const createClient = (authorization?: string) =>
