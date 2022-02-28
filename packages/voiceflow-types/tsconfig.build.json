@@ -13,7 +13,8 @@
       }
     ],
     "traceResolution": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": []
   },
-  "include": ["src/**/*", "typings/**/*"]
+  "include": ["src", "typings"]
 }

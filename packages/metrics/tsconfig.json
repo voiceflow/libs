@@ -10,8 +10,8 @@
     "paths": {
       "@metrics/*": ["src/*"]
     },
-    "types": []
+    "types": ["mocha"]
   },
-  "include": ["src", "typings"],
+  "include": ["src", "tests", "typings"],
   "exclude": ["**/node_modules", "**/.*/"]
 }

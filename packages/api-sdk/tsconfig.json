@@ -14,8 +14,8 @@
       "@common/*": ["../common/src/*"],
       "@base-types/*": ["../base-types/src/*"]
     },
-    "types": []
+    "types": ["mocha"]
   },
-  "include": ["src", "typings"],
+  "include": ["src", "tests", "typings"],
   "exclude": ["**/node_modules", "**/.*/"]
 }

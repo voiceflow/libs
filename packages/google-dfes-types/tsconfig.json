@@ -23,8 +23,8 @@
       "@google-types/*": ["../google-types/src/*"],
       "@voiceflow-types/*": ["../voiceflow-types/src/*"]
     },
-    "types": []
+    "types": ["mocha"]
   },
-  "include": ["src", "typings"],
-  "exclude": ["../../node_modules", "**/node_modules", "**/.*/"]
+  "include": ["src", "tests", "typings"],
+  "exclude": ["**/node_modules", "**/.*/"]
 }

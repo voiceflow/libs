@@ -19,8 +19,8 @@
       "@voice-types/*": ["../voice-types/src/*"],
       "@voiceflow-types/*": ["../voiceflow-types/src/*"]
     },
-    "types": []
+    "types": ["mocha"]
   },
-  "include": ["src", "typings"],
+  "include": ["src", "tests", "typings"],
   "exclude": ["**/node_modules", "**/.*/"]
 }

@@ -18,8 +18,8 @@
       "@voice-types/*": ["voice-types/src/*"],
       "@voiceflow/chat-types": ["chat-types/src"]
     },
-    "types": []
+    "types": ["mocha"]
   },
-  "include": ["src", "typings"],
+  "include": ["src", "tests", "typings"],
   "exclude": ["**/node_modules", "**/.*/"]
 }
