@@ -1,0 +1,8 @@
+{
+  "specials": [
+    "mocha"
+  ],
+  "ignores": [
+    "mocha"
+  ]
+}

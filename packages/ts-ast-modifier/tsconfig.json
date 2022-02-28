@@ -1,0 +1,11 @@
+{
+  "extends": "@voiceflow/tsconfig",
+  "compilerOptions": {
+    "baseUrl": "..",
+    "paths": {}
+  },
+  "exclude": [
+    "node_modules/**/*",
+    "build/**/*"
+  ]
+}

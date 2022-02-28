@@ -1,0 +1,15 @@
+require:
+  - source-map-support/register
+
+timeout: 4000
+exit: true
+recursive: true
+
+watchFiles:
+  - test/**/*
+  - src/**/*
+watchExtensions:
+  - js
+  - jsx
+  - ts
+  - tsx

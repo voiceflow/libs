@@ -1,0 +1,54 @@
+{
+  "name": "@voiceflow/ts-ast-modifier",
+  "description": "Typescript AST morphing for Voiceflow projects",
+  "version": "0.1.0",
+  "author": "Voiceflow",
+  "bin": "build/common/bin.js",
+  "bugs": {
+    "url": "https://github.com/voiceflow/libs/issues"
+  },
+  "dependencies": {
+    "@types/chai": "^4.3.0",
+    "chai": "^4.3.6",
+    "ts-morph": "^13.0.3"
+  },
+  "devDependencies": {
+    "@types/mocha": "^9.1.0",
+    "mocha": "^9.2.1"
+  },
+  "files": [
+    "build"
+  ],
+  "homepage": "https://github.com/voiceflow/libs#readme",
+  "keywords": [
+    "voiceflow"
+  ],
+  "license": "ISC",
+  "main": "build/common/index.js",
+  "module": "build/esm/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voiceflow/libs.git"
+  },
+  "scripts": {
+    "bin": "node build/common/bin.js",
+    "build": "yarn clean && yarn build:cjs && yarn build:esm",
+    "build:cjs": "ttsc --project ./tsconfig.build.json",
+    "build:esm": "ttsc --project ./tsconfig.build.json --module esnext --outDir ./build/esm",
+    "clean": "rimraf build",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "yarn lint --fix",
+    "lint:quiet": "yarn lint --quiet",
+    "lint:report": "yarn lint --format json -o sonar/report.json",
+    "test": "yarn test:run",
+    "test:dependencies": "depcheck",
+    "test:integration": "NODE_ENV=test nyc --report-dir nyc_coverage_integration ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.it.ts'",
+    "test:run": "NODE_ENV=test nyc ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.{unit,it}.ts'",
+    "test:single": "NODE_ENV=test ts-mocha --paths --config config/tests/mocharc.yml",
+    "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
+  },
+  "types": "build/esm/index.d.ts"
+}
