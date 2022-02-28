@@ -2,22 +2,18 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "baseUrl": ".",
     "rootDir": "src",
     "outDir": "build/common",
     "paths": {
-      "@voiceflow-types/*": [
-        "src/*"
-      ]
+      "@voiceflow-types/*": ["src/*"]
     },
     "plugins": [
       {
         "transform": "@zerollup/ts-transform-paths"
       }
-    ]
+    ],
+    "traceResolution": false,
+    "skipLibCheck": true
   },
-  "include": [
-    "src/**/*",
-    "typings/**/*"
-  ]
+  "include": ["src/**/*", "typings/**/*"]
 }

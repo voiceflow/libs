@@ -1,10 +1,11 @@
+import { PartialRecord } from '@voiceflow/common';
 import { GoogleConstants } from '@voiceflow/google-types';
 
 import { Locale, VoiceLanguageCode } from './locales';
 
 const { VoiceLanguage, VoiceType, SSMLGender } = GoogleConstants;
 
-export const LocaleCodeToCountryLanguage: { [keyof in Locale]?: GoogleConstants.VoiceLanguage } = {
+export const LocaleCodeToCountryLanguage: PartialRecord<Locale, GoogleConstants.VoiceLanguage> = {
   [Locale.ZH_HK]: VoiceLanguage.CHINESE_HONG_KONG,
   [Locale.ZH_CN]: VoiceLanguage.MANDARIN_CHINESE,
   [Locale.DA_DK]: VoiceLanguage.DANISH_DENMARK,

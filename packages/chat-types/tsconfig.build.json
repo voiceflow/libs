@@ -2,22 +2,17 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "baseUrl": ".",
     "rootDir": "src",
     "outDir": "build/common",
     "paths": {
-      "@chat-types/*": [
-        "src/*"
-      ]
+      "@chat-types/*": ["src/*"]
     },
     "plugins": [
       {
         "transform": "@zerollup/ts-transform-paths"
       }
-    ]
-  },
-  "include": [
-    "src/**/*",
-    "typings/**/*"
-  ]
+    ],
+    "traceResolution": false,
+    "skipLibCheck": true
+  }
 }

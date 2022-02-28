@@ -1,41 +1,17 @@
 {
+  "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
-    // Compiler options
-    "lib": [
-      "es2021"
-    ],
+    "lib": ["es2021"],
     "module": "commonjs",
     "target": "es2021",
-    "experimentalDecorators": true,
-    "skipLibCheck": true,
-    // Output options
-    "outDir": "./build",
-    "declaration": true,
-    "sourceMap": true,
-    // Strictness checks
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
-    // Imports
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
+    "sourceMap": false,
     "paths": {
-      "@metrics/*": [
-        "./*"
-      ]
-    }
+      "@metrics/*": ["src/*"]
+    },
+    "types": []
   },
-  "include": [
-    "src",
-    "typings",
-    "tests"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "typings"],
+  "exclude": ["**/node_modules", "**/.*/"]
 }

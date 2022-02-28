@@ -1,18 +1,15 @@
 {
   "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
-    "lib": [
-      "es2020"
-    ],
+    "lib": ["es2020"],
+    "strict": true,
     "baseUrl": ".",
+    "sourceMap": false,
     "paths": {
-      "@common/*": [
-        "src/*"
-      ]
-    }
+      "@common/*": ["common/src/*"]
+    },
+    "types": []
   },
-  "exclude": [
-    "node_modules/**/*",
-    "build/**/*"
-  ]
+  "include": ["src", "typings"],
+  "exclude": ["**/node_modules", "**/.*/"]
 }

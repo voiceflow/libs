@@ -25,9 +25,11 @@ export type WithRequired<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K
 
 export type Writeable<T> = { -readonly [P in keyof T]: T[P] };
 
-export type NullableRecord<T extends object> = { [K in keyof T]: Nullable<T[K]> };
+export type PartialRecord<K extends PropertyKey, T> = Partial<Record<K, T>>;
 
-export type NonNullishRecord<T extends object> = Required<{ [K in keyof T]: NonNullable<T[K]> }>;
+export type NullableRecord<T> = { [K in keyof T]: Nullable<T[K]> };
+
+export type NonNullishRecord<T> = Required<{ [K in keyof T]: NonNullable<T[K]> }>;
 
 export type Struct = Record<string, unknown>;
 export type AnyRecord = Record<string, any>;
