@@ -111,6 +111,6 @@ export enum Language {
   TR = 'tr',
 }
 
-const LanguageValues = new Set(Object.values(Language));
+const LanguageValues: ReadonlySet<Language> = new Set(Object.values(Language));
 
 export const isVoiceflowLanguage = (lang: any): lang is Language => LanguageValues.has(lang);
