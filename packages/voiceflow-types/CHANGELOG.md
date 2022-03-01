@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.5.0...@voiceflow/voiceflow-types@3.6.0) (2022-03-01)
+
+
+### Features
+
+* addtional guards and helpers (VF-3049) ([#211](https://github.com/voiceflow/libs/issues/211)) ([11d66c2](https://github.com/voiceflow/libs/commit/11d66c21b5c739a541152199f40825d5baeb3b57))
+
+
+
+
+
 # [3.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.4.18...@voiceflow/voiceflow-types@3.5.0) (2022-03-01)
 
 
