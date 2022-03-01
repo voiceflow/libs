@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.8.0...@voiceflow/google-types@2.9.0) (2022-03-01)
+
+
+### Features
+
+* added a google types typeguard function for google-service (VF-2440) ([#209](https://github.com/voiceflow/libs/issues/209)) ([0e0f467](https://github.com/voiceflow/libs/commit/0e0f467cfb5a0905578793777fd03aa0d530f61c))
+
+
+
+
+
 # [2.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.7.0...@voiceflow/google-types@2.8.0) (2022-03-01)
 
 
