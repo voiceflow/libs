@@ -110,3 +110,7 @@ export enum Language {
   // Turkish
   TR = 'tr',
 }
+
+const LanguageValues = new Set(Object.values(Language));
+
+export const isVoiceflowLanguage = (lang: any): lang is Language => LanguageValues.has(lang);
