@@ -16,7 +16,7 @@ export enum GoogleStatusIntent {
 }
 
 // check that intent is in the GoogleIntent enum, returning boolean
-export const isGoogleIntent = (intent: any): intent is GoogleIntent => Object.values(GoogleIntent).includes(intent);
+export const isGoogleIntent = (intent: any): intent is GoogleIntent => Object.prototype.hasOwnProperty.call(GoogleIntent, intent);
 export interface DefaultIntent extends VoiceflowConstants.DefaultIntent {
   keep?: string[];
 }
