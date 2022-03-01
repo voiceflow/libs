@@ -15,7 +15,7 @@ export enum GoogleStatusIntent {
   MEDIA_FAIL = 'actions.intent.MEDIA_STATUS_FAILED',
 }
 
-const IntentSet: ReadonlySet<any> = new Set(Object.values(GoogleIntent));
+const IntentSet: ReadonlySet<GoogleIntent> = new Set(Object.values(GoogleIntent));
 
 // check that intent is in the GoogleIntent enum, returning boolean
 export const isGoogleIntent = (intent: any): intent is GoogleIntent => IntentSet.has(intent);
