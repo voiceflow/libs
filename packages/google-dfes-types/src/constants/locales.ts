@@ -1,3 +1,5 @@
+import { PartialRecord } from '@voiceflow/common';
+
 export enum Language {
   BN = 'bn',
   DA = 'da',
@@ -207,7 +209,7 @@ export enum VoiceLanguageCode {
   DA_DK = 'da-DK',
 }
 
-export const LocaleToVoiceLanguageCode: { [keyof in Locale]?: VoiceLanguageCode } = {
+export const LocaleToVoiceLanguageCode: PartialRecord<Locale, VoiceLanguageCode> = {
   [Locale.ZH_HK]: VoiceLanguageCode.YUE_HK,
   [Locale.ZH_CN]: VoiceLanguageCode.CMN_CN,
   [Locale.DA_DK]: VoiceLanguageCode.DA_DK,

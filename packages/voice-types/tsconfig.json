@@ -1,26 +1,21 @@
 {
   "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
-    "baseUrl": "..",
+    "lib": ["es2020"],
+    "strict": true,
+    "baseUrl": ".",
+    "sourceMap": false,
     "paths": {
+      "@voice-types/*": ["voice-types/src/*"],
+
+      "@voiceflow/base-types": ["base-types/src"],
+
       // only used to fix intra-monorepo resolution
-      "@common/*": [
-        "common/src/*"
-      ],
-      "@voiceflow/base-types": [
-        "base-types/src"
-      ],
-      // only used to fix intra-monorepo resolution
-      "@base-types/*": [
-        "base-types/src/*"
-      ],
-      "@voice-types/*": [
-        "voice-types/src/*"
-      ]
-    }
+      "@common/*": ["common/src/*"],
+      "@base-types/*": ["base-types/src/*"]
+    },
+    "types": ["mocha"]
   },
-  "exclude": [
-    "node_modules/**/*",
-    "build/**/*"
-  ]
+  "include": ["src", "tests", "typings"],
+  "exclude": ["**/node_modules", "**/.*/"]
 }

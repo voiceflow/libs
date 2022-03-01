@@ -1,57 +1,30 @@
 {
   "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
-    "baseUrl": "..",
+    "lib": ["es2020"],
+    "strict": true,
+    "baseUrl": ".",
+    "sourceMap": false,
     "paths": {
-      "@voiceflow/common": [
-        "common/src"
-      ],
+      "@google-dfes-types/*": ["src/*"],
+
+      "@voiceflow/common": ["../common/src"],
+      "@voiceflow/base-types": ["../base-types/src"],
+      "@voiceflow/chat-types": ["../chat-types/src"],
+      "@voiceflow/voice-types": ["../voice-types/src"],
+      "@voiceflow/google-types": ["../google-types/src"],
+      "@voiceflow/voiceflow-types": ["../voiceflow-types/src"],
+
       // only used to fix intra-monorepo resolution
-      "@common/*": [
-        "common/src/*"
-      ],
-      "@voiceflow/base-types": [
-        "base-types/src"
-      ],
-      // only used to fix intra-monorepo resolution
-      "@base-types/*": [
-        "base-types/src/*"
-      ],
-      "@voiceflow/chat-types": [
-        "chat-types/src"
-      ],
-      // only used to fix intra-monorepo resolution
-      "@chat-types/*": [
-        "chat-types/src/*"
-      ],
-      "@voiceflow/voice-types": [
-        "voice-types/src"
-      ],
-      // only used to fix intra-monorepo resolution
-      "@voice-types/*": [
-        "voice-types/src/*"
-      ],
-      "@voiceflow/voiceflow-types": [
-        "voiceflow-types/src"
-      ],
-      // only used to fix intra-monorepo resolution
-      "@voiceflow-types/*": [
-        "voiceflow-types/src/*"
-      ],
-      "@voiceflow/google-types": [
-        "google-types/src"
-      ],
-      // only used to fix intra-monorepo resolution
-      "@google-types/*": [
-        "google-types/src/*"
-      ],
-      "@google-dfes-types/*": [
-        "google-dfes-types/src/*"
-      ]
-    }
+      "@common/*": ["../common/src/*"],
+      "@base-types/*": ["../base-types/src/*"],
+      "@chat-types/*": ["../chat-types/src/*"],
+      "@voice-types/*": ["../voice-types/src/*"],
+      "@google-types/*": ["../google-types/src/*"],
+      "@voiceflow-types/*": ["../voiceflow-types/src/*"]
+    },
+    "types": ["mocha"]
   },
-  "exclude": [
-    "node_modules/**/*",
-    "build/**/*"
-  ]
+  "include": ["src", "tests", "typings"],
+  "exclude": ["**/node_modules", "**/.*/"]
 }
