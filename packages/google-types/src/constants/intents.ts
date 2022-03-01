@@ -14,6 +14,9 @@ export enum GoogleStatusIntent {
   MEDIA_FINISH = 'actions.intent.MEDIA_STATUS_FINISHED',
   MEDIA_FAIL = 'actions.intent.MEDIA_STATUS_FAILED',
 }
+
+// check that intent is in the GoogleIntent enum, returning boolean
+export const isGoogleIntent = (intent: any): intent is GoogleIntent => Object.values(GoogleIntent).includes(intent);
 export interface DefaultIntent extends VoiceflowConstants.DefaultIntent {
   keep?: string[];
 }
