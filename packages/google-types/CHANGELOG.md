@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.9.0...@voiceflow/google-types@2.9.1) (2022-03-01)
+
+
+### Bug Fixes
+
+* small improvement to typeguard function (VF-2440) ([#210](https://github.com/voiceflow/libs/issues/210)) ([0a985b8](https://github.com/voiceflow/libs/commit/0a985b8a593d7e00db9bffcd706d8933b7bd2186))
+
+
+
+
+
 # [2.9.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.8.0...@voiceflow/google-types@2.9.0) (2022-03-01)
 
 
