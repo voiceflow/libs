@@ -6,7 +6,7 @@
     "baseUrl": ".",
     "sourceMap": false,
     "paths": {
-      "@common/*": ["common/src/*"]
+      "@common/*": ["src/*"]
     },
     "types": ["mocha"]
   },

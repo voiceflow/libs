@@ -4,9 +4,6 @@
     "declaration": true,
     "rootDir": "src",
     "outDir": "build/common",
-    "paths": {
-      "@common/*": ["src/*"]
-    },
     "plugins": [
       {
         "transform": "@zerollup/ts-transform-paths"
