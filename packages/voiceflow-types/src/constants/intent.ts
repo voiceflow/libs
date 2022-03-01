@@ -20,6 +20,9 @@ export interface DefaultIntent {
   samples: string[];
 }
 
+export const findDefaultIntent = (language: Language, name: string): DefaultIntent | undefined =>
+  DEFAULT_INTENTS_MAP?.[language]?.find((intent) => intent.name === name);
+
 export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
   // English (AU,CA,US,UK,IN)
   [Language.EN]: [
