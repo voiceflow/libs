@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.7.0...@voiceflow/google-types@2.8.0) (2022-03-01)
+
+
+### Features
+
+* added google intents to google-types constants (VF-2440) ([#198](https://github.com/voiceflow/libs/issues/198)) ([47ab78f](https://github.com/voiceflow/libs/commit/47ab78f6fed5f98e0f3a9cfd0eba9fb843ecc0c9))
+
+
+
+
+
 # [2.7.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.6.14...@voiceflow/google-types@2.7.0) (2022-03-01)
 
 
