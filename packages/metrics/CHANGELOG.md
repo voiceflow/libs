@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/metrics@1.2.1...@voiceflow/metrics@1.3.0) (2022-03-01)
+
+
+### Features
+
+* reduce build time (VF-2968) ([#208](https://github.com/voiceflow/libs/issues/208)) ([aa2a41c](https://github.com/voiceflow/libs/commit/aa2a41c777f80f58e0f452551f18b1c967c545cb))
+
+
+
+
+
 ## [1.2.1](https://github.com/voiceflow/libs/compare/@voiceflow/metrics@1.2.0...@voiceflow/metrics@1.2.1) (2022-02-08)
 
 **Note:** Version bump only for package @voiceflow/metrics

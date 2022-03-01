@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.4.18...@voiceflow/voiceflow-types@3.5.0) (2022-03-01)
+
+
+### Features
+
+* reduce build time (VF-2968) ([#208](https://github.com/voiceflow/libs/issues/208)) ([aa2a41c](https://github.com/voiceflow/libs/commit/aa2a41c777f80f58e0f452551f18b1c967c545cb))
+
+
+
+
+
 ## [3.4.18](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.4.17...@voiceflow/voiceflow-types@3.4.18) (2022-02-25)
 
 
