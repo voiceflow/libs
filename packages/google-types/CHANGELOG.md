@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.5](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.9.4...@voiceflow/google-types@2.9.5) (2022-03-02)
+
+
+### Bug Fixes
+
+* added additional utterances for google intent projcets (VF-2440) ([#215](https://github.com/voiceflow/libs/issues/215)) ([3f3298a](https://github.com/voiceflow/libs/commit/3f3298a19d02fc1e3778f6bd80280fa5d9303c30))
+
+
+
+
+
 ## [2.9.4](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.9.3...@voiceflow/google-types@2.9.4) (2022-03-01)
 
 
