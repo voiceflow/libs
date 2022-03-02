@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/voiceflow/libs/compare/@voiceflow/metrics@1.3.0...@voiceflow/metrics@1.3.1) (2022-03-02)
+
+
+### Bug Fixes
+
+* **metrics:** fix entrypoint (VF-000) ([#213](https://github.com/voiceflow/libs/issues/213)) ([2266378](https://github.com/voiceflow/libs/commit/22663781ea8f476d11256d051f339eb95811a001)), closes [#208](https://github.com/voiceflow/libs/issues/208)
+
+
+
+
+
 # [1.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/metrics@1.2.1...@voiceflow/metrics@1.3.0) (2022-03-01)
 
 
