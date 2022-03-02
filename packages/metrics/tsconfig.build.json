@@ -3,7 +3,7 @@
   "compilerOptions": {
     "declaration": true,
     "rootDir": "src",
-    "outDir": "build/common",
+    "outDir": "build",
     "plugins": [
       {
         "transform": "@zerollup/ts-transform-paths"

@@ -71,5 +71,6 @@
     "test:run": "NODE_ENV=test nyc ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.{unit,it}.ts'",
     "test:single": "NODE_ENV=test ts-mocha --paths --config config/tests/mocharc.yml",
     "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
-  }
+  },
+  "types": "build/index.d.ts"
 }
