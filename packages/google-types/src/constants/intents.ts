@@ -60,18 +60,28 @@ export const DEFAULT_INTENTS: Record<string, { defaults: DefaultIntent[]; builtI
     defaults: [
       {
         name: GoogleIntent.YES,
-        samples: ['yes', 'yea', 'ok', 'okay', 'yup', 'ya', 'sure'],
+        samples: ['yes', 'yeah', 'yeah sure', 'yea', 'ok', 'okay', 'yup', 'ya', 'sure'],
         keep: ['yes'],
       },
       {
         name: GoogleIntent.NO,
-        samples: ['no', 'nope', 'nay', 'nah', 'no way', 'negative'],
+        samples: ['no', 'never mind', 'not yet', "no don't bother", 'nope', 'nay', 'nah', 'no way', 'negative'],
       },
     ],
     builtIns: [
       {
         name: GoogleIntent.REPEAT,
-        samples: ['repeat', 'again', 'say again'],
+        samples: [
+          'repeat',
+          'repeat please',
+          'please repeat',
+          'again',
+          'say again',
+          'can you repeat that',
+          'tell me what that was again',
+          'what did you say',
+          'say that one more time',
+        ],
       },
     ],
   },
