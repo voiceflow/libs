@@ -1,6 +1,7 @@
 {
   "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
+    "declarationMap": true,
     "baseUrl": "..",
     "paths": {
       "@voiceflow/common": [

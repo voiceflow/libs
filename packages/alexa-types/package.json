@@ -35,14 +35,17 @@
     "build": "yarn clean && yarn build:cjs && yarn build:esm",
     "build:cjs": "ttsc --project ./tsconfig.build.json",
     "build:esm": "ttsc --project ./tsconfig.build.json --module esnext --outDir ./build/esm",
+    "check:api": "api-extractor run --local",
     "clean": "rimraf build",
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
     "lint:report": "yarn lint --format json -o sonar/report.json",
+    "precheck:api": "yarn workspace @voiceflow/ts-ast-modifier run bin ./tsconfig.json './build/**/*.dts'",
     "test": "exit 0",
     "test:dependencies": "depcheck",
     "test:integration": "exit 0",
     "test:unit": "exit 0"
-  }
+  },
+  "types": "build/esm/index.d.ts"
 }

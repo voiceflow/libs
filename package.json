@@ -5,6 +5,9 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "dependencies": {
+    "@microsoft/api-extractor": "^7.19.4"
+  },
   "devDependencies": {
     "@commitlint/cli": "16.0.2",
     "@voiceflow/commitlint-config": "2.0.0",
