@@ -10,6 +10,7 @@
     "ttypescript"
   ],
   "ignores": [
+    "@nestjs-timeout/*",
     "@commitlint/*",
     "@types/*",
     "@voiceflow/commitlint-config",
