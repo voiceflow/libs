@@ -44,5 +44,6 @@
     "test:dependencies": "depcheck",
     "test:integration": "exit 0",
     "test:unit": "exit 0"
-  }
+  },
+  "types": "build/common/index.d.ts"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "@voiceflow/ts-ast-modifier",
-  "description": "Typescript AST morphing for Voiceflow projects",
+  "name": "@voiceflow/api-check",
+  "description": "",
   "version": "0.1.0",
   "author": "Voiceflow",
   "bin": "build/common/bin.js",
@@ -8,8 +8,10 @@
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
+    "@microsoft/api-extractor": "^7.19.4",
     "@types/chai": "^4.3.0",
     "chai": "^4.3.6",
+    "commander": "^9.0.0",
     "ts-morph": "^13.0.3"
   },
   "devDependencies": {

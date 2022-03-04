@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { Project } from 'ts-morph';
 
-import { exportStarToImportStarExport } from '../../src/modifiers';
+import { exportStarToImportStarExport } from '../src/morph';
 
 describe('exportStarToImportStarExport', () => {
   let project: Project;
