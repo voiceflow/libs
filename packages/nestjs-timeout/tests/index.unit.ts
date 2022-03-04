@@ -1,6 +1,6 @@
 import * as pkg from '@nestjs-timeout/index';
-import { TimeoutInterceptor } from '@nestjs-timeout/timeout/timeout.interceptor';
-import { TimeoutModule } from '@nestjs-timeout/timeout/timeout.module';
+import { TimeoutInterceptor } from '@nestjs-timeout/timeout.interceptor';
+import { TimeoutModule } from '@nestjs-timeout/timeout.module';
 import { expect } from 'chai';
 
 describe('index', () => {
