@@ -1,4 +1,4 @@
-import { TimeoutModule } from '@nestjs-timeout/timeout/timeout.module';
+import { TimeoutModule } from '@nestjs-timeout/timeout.module';
 import { expect } from 'chai';
 
 describe('TimeoutModule', () => {

@@ -1,2 +1,2 @@
-export { TimeoutInterceptor } from './timeout/timeout.interceptor';
-export { TimeoutModule } from './timeout/timeout.module';
+export { TimeoutInterceptor } from './timeout.interceptor';
+export { TimeoutModule } from './timeout.module';

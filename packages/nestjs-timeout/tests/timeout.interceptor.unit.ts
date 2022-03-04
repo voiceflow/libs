@@ -1,4 +1,4 @@
-import { TimeoutInterceptor } from '@nestjs-timeout/timeout/timeout.interceptor';
+import { TimeoutInterceptor } from '@nestjs-timeout/timeout.interceptor';
 import { expect } from 'chai';
 
 describe('TimeoutInterceptor', () => {
