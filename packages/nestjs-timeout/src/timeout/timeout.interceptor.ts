@@ -6,7 +6,7 @@ import { catchError, timeout } from 'rxjs/operators';
  * An interceptor that throws an error if a request takes longer than the provided timeout.
  */
 // Adapted from https://stackoverflow.com/a/66852766/10808983
-export class TimeoutInterceptor<T> implements NestInterceptor {
+export class TimeoutInterceptor<T> implements NestInterceptor<T, T> {
   /**
    * Create a new {@link TimeoutInterceptor}.
    * @param timeoutMs - The number of milliseconds before a request times out
