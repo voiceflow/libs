@@ -1,4 +1,4 @@
-# NestJS Timeout
+# NestJS Common
 
 Reusable utilities for NestJS apps & libraries.
 
