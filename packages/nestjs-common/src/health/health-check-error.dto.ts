@@ -8,7 +8,7 @@ type PlainError = Pick<Error, keyof Error>;
 /**
  * A health-check compatible plain object to represent an error that occurred.
  */
-export class HealthCheckError<T = unknown> {
+export class HealthCheckErrorDto<T = unknown> {
   readonly error: PlainError | null;
 
   readonly rawError: T;

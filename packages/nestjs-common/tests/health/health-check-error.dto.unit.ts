@@ -1,10 +1,10 @@
-import { HealthCheckError } from '@nestjs-common/health/health-check-error.dto';
+import { HealthCheckErrorDto } from '@nestjs-common/health/health-check-error.dto';
 import { expect } from 'chai';
 
-describe('HealthCheckError', () => {
+describe('HealthCheckErrorDto', () => {
   it('works with Error instances', () => {
     const error = new Error('test');
-    const healthCheckError = new HealthCheckError(error);
+    const healthCheckError = new HealthCheckErrorDto(error);
 
     expect(healthCheckError.error).to.deep.equal({
       name: 'Error',
@@ -18,7 +18,7 @@ describe('HealthCheckError', () => {
     const error = {
       key: 'value',
     };
-    const healthCheckError = new HealthCheckError(error);
+    const healthCheckError = new HealthCheckErrorDto(error);
 
     expect(healthCheckError.error).to.eq(null);
     expect(healthCheckError.rawError).to.eq(error);
