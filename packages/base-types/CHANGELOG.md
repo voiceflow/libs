@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.17.0...@voiceflow/base-types@2.17.1) (2022-03-08)
+
+
+### Bug Fixes
+
+* prototype type (VF-3038) ([#221](https://github.com/voiceflow/libs/issues/221)) ([1d917b0](https://github.com/voiceflow/libs/commit/1d917b0f6586cd36e48ec2a0e6cfc6b408fea607))
+
+
+
+
+
 # [2.17.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.16.3...@voiceflow/base-types@2.17.0) (2022-03-01)
 
 
