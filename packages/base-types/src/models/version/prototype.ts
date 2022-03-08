@@ -41,6 +41,7 @@ export interface PrototypeSettings {
 }
 
 export interface Prototype<Command extends BaseCommand = BaseCommand, Locale extends string = string> {
+  type: string;
   data: PrototypeData<Locale>;
   model: PrototypeModel;
   context: PrototypeContext<Command>;
