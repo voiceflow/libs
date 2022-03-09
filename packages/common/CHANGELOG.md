@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.22.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.22.0...@voiceflow/common@7.22.1) (2022-03-09)
+
+
+### Bug Fixes
+
+* lock dayjs version (VF-3038) ([880585e](https://github.com/voiceflow/libs/commit/880585e6b4582fc7087c40c80c88b7c0e6863518))
+
+
+
+
+
 # [7.22.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.21.0...@voiceflow/common@7.22.0) (2022-03-01)
 
 
