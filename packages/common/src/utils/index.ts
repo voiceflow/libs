@@ -4,6 +4,7 @@ export * as functional from './functional';
 export { generate, generateHash } from './generate';
 export * as id from './id';
 export * as intent from './intent';
+export * as map from './map';
 export * as mathjs from './mathjs';
 export * as normalized from './normalized';
 export * as number from './number';
