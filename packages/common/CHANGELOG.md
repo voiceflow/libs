@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.24.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.23.0...@voiceflow/common@7.24.0) (2022-03-17)
+
+
+### Features
+
+* allow function as default value for map get (VF-000) ([#225](https://github.com/voiceflow/libs/issues/225)) ([64eb1e5](https://github.com/voiceflow/libs/commit/64eb1e5cd4ee8ce1492d7a47ecd8e559addd9cd9))
+
+
+
+
+
 # [7.23.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.22.1...@voiceflow/common@7.23.0) (2022-03-16)
 
 
