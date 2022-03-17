@@ -1,7 +1,7 @@
 export enum PlatformType {
   ALEXA = 'alexa',
   GOOGLE = 'google',
-  VOICEFLOW = 'general',
+  VOICEFLOW = 'voiceflow',
   DIALOGFLOW_ES = 'df-es',
 
   /** @deprecated use VOICEFLOW instead */
