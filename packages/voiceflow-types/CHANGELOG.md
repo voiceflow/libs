@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.6.3...@voiceflow/voiceflow-types@3.7.0) (2022-03-17)
+
+
+### Features
+
+* breaking platform type (VF-3162) ([#224](https://github.com/voiceflow/libs/issues/224)) ([91f3f9b](https://github.com/voiceflow/libs/commit/91f3f9b05fb855b885a5faedf28df9d65d1e4055)), closes [/github.com/voiceflow/creator-app/blob/066720d00d3e5c9d8c7fdbfc94d774e970764b53/packages/realtime-sdk/src/constants/platform.ts#L48-L56](https://github.com//github.com/voiceflow/creator-app/blob/066720d00d3e5c9d8c7fdbfc94d774e970764b53/packages/realtime-sdk/src/constants/platform.ts/issues/L48-L56)
+
+
+
+
+
 ## [3.6.3](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.6.2...@voiceflow/voiceflow-types@3.6.3) (2022-03-16)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
