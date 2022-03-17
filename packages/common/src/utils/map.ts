@@ -1,4 +1,4 @@
-const isDefaultValueAFunction = <V>(value: unknown): value is () => V => typeof value === 'function';
+import { isFunction } from './functional';
 
 export function getOrDefault<K, V>(map: Map<K, V>, key: K, defaultValue: V): V;
 export function getOrDefault<K, V>(map: Map<K, V>, key: K, getDefaultValue: () => V): V;
@@ -8,7 +8,7 @@ export function getOrDefault<K, V>(map: Map<K, V>, key: K, getDefaultValue: () =
  */
 export function getOrDefault<K, V>(map: Map<K, V>, key: K, defaultValue: V | (() => V)): V {
   if (!map.has(key)) {
-    const value = isDefaultValueAFunction(defaultValue) ? defaultValue() : defaultValue;
+    const value = isFunction(defaultValue) ? defaultValue() : defaultValue;
     map.set(key, value);
     return value;
   }
