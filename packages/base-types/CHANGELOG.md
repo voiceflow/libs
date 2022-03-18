@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.18.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.17.4...@voiceflow/base-types@2.18.0) (2022-03-18)
+
+
+### Features
+
+* expose api key types and guards (VF-000) ([#226](https://github.com/voiceflow/libs/issues/226)) ([d59cce9](https://github.com/voiceflow/libs/commit/d59cce982a004711a8a0990b1b8e6704b9ea7e28))
+
+
+
+
+
 ## [2.17.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.17.3...@voiceflow/base-types@2.17.4) (2022-03-17)
 
 **Note:** Version bump only for package @voiceflow/base-types
