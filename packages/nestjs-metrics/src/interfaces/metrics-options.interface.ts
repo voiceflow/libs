@@ -6,13 +6,8 @@ export interface MetricsOptions {
   readonly port: number;
 }
 
-export interface MetricsOptionsFactory {
-  createMetricsOptions: () => PromiseLike<MetricsOptions> | MetricsOptions;
-}
-
-export interface MetricsModuleAsyncOptions extends Omit<ModuleMetadata, 'useExisting' | 'useClass' | 'useFactory' | 'inject'> {
-  useExisting?: Type<MetricsOptionsFactory>;
-  useClass?: Type<MetricsOptionsFactory>;
+export interface MetricsModuleAsyncOptions extends Pick<ModuleMetadata, 'providers' | 'imports'> {
+  useClass?: Type<MetricsOptions>;
   useFactory?: (...args: any[]) => PromiseLike<MetricsOptions> | MetricsOptions;
   inject?: any[];
 }
