@@ -18,7 +18,7 @@ export class MetricsService implements OnApplicationShutdown {
 
   private readonly upDownCounters: Map<string, UpDownCounter> = new Map();
 
-  constructor(@Inject(Providers.OPTIONS) config: MetricsOptions) {
+  constructor(@Inject(Providers.METRICS_OPTIONS) config: MetricsOptions) {
     this.exporter = new PrometheusExporter({ port: config.port });
 
     const meterProvider = new MeterProvider({

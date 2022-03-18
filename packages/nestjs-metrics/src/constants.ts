@@ -1,3 +1,3 @@
 export const Providers = {
-  OPTIONS: Symbol('@voiceflow/nestjs-metrics options'),
+  METRICS_OPTIONS: Symbol('@voiceflow/nestjs-metrics MetricsOptions'),
 } as const;

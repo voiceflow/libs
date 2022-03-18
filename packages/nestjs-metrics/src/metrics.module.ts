@@ -10,8 +10,8 @@ export class MetricsModule {
     return {
       global: true,
       module: MetricsModule,
-      providers: [{ provide: Providers.OPTIONS, useValue: options }, MetricsService],
-      exports: [MetricsService, Providers.OPTIONS],
+      providers: [{ provide: Providers.METRICS_OPTIONS, useValue: options }, MetricsService],
+      exports: [MetricsService, Providers.METRICS_OPTIONS],
     };
   }
 
@@ -23,14 +23,14 @@ export class MetricsModule {
         imports: options.imports,
         providers: [
           {
-            provide: Providers.OPTIONS,
+            provide: Providers.METRICS_OPTIONS,
             useFactory: options.useFactory,
             inject: options.inject ?? [],
           },
           MetricsService,
           ...(options.providers ?? []),
         ],
-        exports: [MetricsService, Providers.OPTIONS],
+        exports: [MetricsService, Providers.METRICS_OPTIONS],
       };
     }
 
@@ -41,14 +41,14 @@ export class MetricsModule {
         imports: options.imports,
         providers: [
           {
-            provide: Providers.OPTIONS,
+            provide: Providers.METRICS_OPTIONS,
             useClass: options.useClass,
             inject: options.inject ?? [],
           },
           MetricsService,
           ...(options.providers ?? []),
         ],
-        exports: [MetricsService, Providers.OPTIONS],
+        exports: [MetricsService, Providers.METRICS_OPTIONS],
       };
     }
 
