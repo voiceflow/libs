@@ -1,5 +1,5 @@
-import { ClientOptions, PublicClient } from '@api-sdk/publicclient';
-import { User } from '@api-sdk/resources';
+import { ClientOptions, PublicClient } from './public-Client';
+import { User } from './resources';
 
 export class Client extends PublicClient {
   public user: User;

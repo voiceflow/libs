@@ -1,8 +1,10 @@
 import { AnyRecord } from '@base-types/types';
 
 import { BaseCommand, Intent, Slot, Variable } from '../base';
+import { BaseNote } from './note';
 import { Prototype } from './prototype';
 
+export * from './note';
 export * from './prototype';
 
 export interface PlatformData<Settings extends AnyRecord = AnyRecord, Publishing extends AnyRecord = AnyRecord> {
@@ -45,6 +47,7 @@ export interface Model<_PlatformData extends PlatformData, Command extends BaseC
   rootDiagramID: string;
 
   name: string;
+  notes?: Record<string, BaseNote>;
   topics?: FolderItem[];
   folders?: Record<string, Folder>;
   variables: Variable[];
