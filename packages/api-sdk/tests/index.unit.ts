@@ -1,7 +1,7 @@
 /* eslint-disable dot-notation */
 import { Client } from '@api-sdk/client';
 import ApiSDK, { SGenerateClientParams, SParams } from '@api-sdk/index';
-import { PublicClient } from '@api-sdk/publicclient';
+import { PublicClient } from '@api-sdk/publicClient';
 import { expect } from 'chai';
 import JWT from 'jsonwebtoken';
 import sinon from 'sinon';
