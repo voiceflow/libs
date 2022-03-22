@@ -1,10 +1,10 @@
 import * as s from 'superstruct';
 
 import { Client } from './client';
-import { ClientOptions, PublicClient } from './public-Client';
+import { ClientOptions, PublicClient } from './publicClient';
 
 export type { Client } from './client';
-export type { PublicClient } from './public-Client';
+export type { PublicClient } from './publicClient';
 export type { Flatten } from './types';
 
 export const SParams = s.object({

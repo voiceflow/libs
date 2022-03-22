@@ -1,4 +1,4 @@
-import { ClientOptions, PublicClient } from './public-Client';
+import { ClientOptions, PublicClient } from './publicClient';
 import { User } from './resources';
 
 export class Client extends PublicClient {
