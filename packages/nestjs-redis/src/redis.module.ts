@@ -1,9 +1,9 @@
 import { DynamicModule, Module } from '@nestjs/common';
 
 import { Providers } from './constants';
-import { RedisService } from './redis.service';
+import { RedisConnection, RedisModuleAsyncOptions } from './interfaces/options.interface';
 import { RedisHealthIndicator } from './redis.health';
-import { RedisModuleAsyncOptions, RedisConnection } from './interfaces/options.interface';
+import { RedisService } from './redis.service';
 
 @Module({})
 export class RedisModule {

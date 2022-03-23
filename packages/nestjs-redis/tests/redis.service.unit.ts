@@ -1,16 +1,15 @@
-import { expect } from 'chai';
-import { Test, TestingModule } from '@nestjs/testing';
 import { Provider } from '@nestjs/common';
-
-import { RedisService } from '@nestjs-redis/redis.service';
+import { Test, TestingModule } from '@nestjs/testing';
 import { Providers } from '@nestjs-redis/constants';
 import { RedisConnection, RedisOptions } from '@nestjs-redis/interfaces/options.interface';
+import { RedisService } from '@nestjs-redis/redis.service';
+import { expect } from 'chai';
 
 describe('RedisService', () => {
-  it('exists providing a connection', async () => {
+  it('works providing a connection', async () => {
     const connectionProvider: Provider<RedisConnection> = {
       provide: Providers.REDIS_CONNECTION,
-      useValue: {} as RedisConnection
+      useValue: {} as RedisConnection,
     };
 
     const module: TestingModule = await Test.createTestingModule({
@@ -18,30 +17,26 @@ describe('RedisService', () => {
     }).compile();
 
     const service = module.get<RedisService>(RedisService);
-    expect(service).to.exist;
+    expect(service).to.be.instanceOf(RedisService);
   });
 
-  it('exists providing a configuration', async () => {
+  it('works providing a configuration', async () => {
     const optionsProvider: Provider<RedisOptions> = {
       provide: Providers.REDIS_OPTIONS,
       useValue: {
         host: '',
         port: 0,
         ioredis: {
-          lazyConnect: true
-        }
-      }
+          lazyConnect: true,
+        },
+      },
     };
 
     const module: TestingModule = await Test.createTestingModule({
-      providers: [
-        optionsProvider,
-        RedisService.connectionFactory,
-        RedisService
-      ],
+      providers: [optionsProvider, RedisService.connectionFactory, RedisService],
     }).compile();
 
     const service = module.get<RedisService>(RedisService);
-    expect(service).to.exist;
+    expect(service).to.be.instanceOf(RedisService);
   });
 });
