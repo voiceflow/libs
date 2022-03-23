@@ -12,5 +12,6 @@ export interface RedisOptions {
 export interface RedisModuleAsyncOptions extends Pick<ModuleMetadata, 'providers' | 'imports'> {
   useClass?: Type<RedisOptions>;
   useFactory?: (...args: any[]) => PromiseLike<RedisOptions> | RedisOptions;
+  useValue?: RedisOptions;
   inject?: any[];
 }

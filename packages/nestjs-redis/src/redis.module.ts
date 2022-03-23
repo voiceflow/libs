@@ -12,7 +12,7 @@ export class RedisModule {
       global: true,
       module: RedisModule,
       providers: [{ provide: Providers.REDIS_CONNECTION, useValue: connection }, RedisService, RedisHealthIndicator],
-      exports: [RedisHealthIndicator, RedisService, Providers.REDIS_OPTIONS],
+      exports: [RedisHealthIndicator, RedisService],
     };
   }
 
@@ -33,7 +33,7 @@ export class RedisModule {
           RedisHealthIndicator,
           ...(options.providers ?? []),
         ],
-        exports: [RedisHealthIndicator, RedisService, Providers.REDIS_OPTIONS],
+        exports: [RedisHealthIndicator, RedisService],
       };
     }
 
@@ -53,10 +53,30 @@ export class RedisModule {
           RedisHealthIndicator,
           ...(options.providers ?? []),
         ],
-        exports: [RedisHealthIndicator, RedisService, Providers.REDIS_OPTIONS],
+        exports: [RedisHealthIndicator, RedisService],
       };
     }
 
-    throw new RangeError('Expected a useExisting, useFactory, or useClass value to be present in the options');
+    if (options.useValue) {
+      return {
+        global: true,
+        module: RedisModule,
+        imports: options.imports,
+        providers: [
+          {
+            provide: Providers.REDIS_OPTIONS,
+            useValue: options.useValue,
+            inject: options.inject ?? [],
+          },
+          RedisService.connectionFactory,
+          RedisService,
+          RedisHealthIndicator,
+          ...(options.providers ?? []),
+        ],
+        exports: [RedisHealthIndicator, RedisService],
+      };
+    }
+
+    throw new RangeError('Expected a useValue, useFactory, or useClass value to be present in the options');
   }
 }
