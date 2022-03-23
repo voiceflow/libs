@@ -4,8 +4,7 @@ import { Provider } from '@nestjs/common';
 
 import { RedisService } from '@nestjs-redis/redis.service';
 import { Providers } from '@nestjs-redis/constants';
-import { RedisConnection } from '@nestjs-redis/interfaces/connection.interface';
-import { RedisOptions } from '@nestjs-redis/interfaces/options.interface';
+import { RedisConnection, RedisOptions } from '@nestjs-redis/interfaces/options.interface';
 
 describe('RedisService', () => {
   it('exists providing a connection', async () => {

@@ -3,15 +3,15 @@ import { DynamicModule, Module } from '@nestjs/common';
 import { Providers } from './constants';
 import { RedisService } from './redis.service';
 import { RedisHealthIndicator } from './redis.health';
-import { RedisModuleAsyncOptions, RedisOptions } from './interfaces/options.interface';
+import { RedisModuleAsyncOptions, RedisConnection } from './interfaces/options.interface';
 
 @Module({})
 export class RedisModule {
-  static forRoot(options: RedisOptions): DynamicModule {
+  static forRoot(connection: RedisConnection): DynamicModule {
     return {
       global: true,
       module: RedisModule,
-      providers: [{ provide: Providers.REDIS_OPTIONS, useValue: options }, RedisService, RedisHealthIndicator],
+      providers: [{ provide: Providers.REDIS_CONNECTION, useValue: connection }, RedisService, RedisHealthIndicator],
       exports: [RedisHealthIndicator, RedisService, Providers.REDIS_OPTIONS],
     };
   }
@@ -28,6 +28,7 @@ export class RedisModule {
             useFactory: options.useFactory,
             inject: options.inject ?? [],
           },
+          RedisService.connectionFactory,
           RedisService,
           RedisHealthIndicator,
           ...(options.providers ?? []),
@@ -47,6 +48,7 @@ export class RedisModule {
             useClass: options.useClass,
             inject: options.inject ?? [],
           },
+          RedisService.connectionFactory,
           RedisService,
           RedisHealthIndicator,
           ...(options.providers ?? []),
