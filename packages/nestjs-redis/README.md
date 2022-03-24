@@ -18,6 +18,8 @@ The redis module can be setup in a couple different ways using `forRootAsync`:
 - A class implementing `RedisOptions` can be provided using `useClass`.
 
 ```ts
+import { RedisModule, RedisService, RedisOptions } from '@voiceflow/nestjs-redis';
+
 @Module({
   imports: [
     RedisModule.forRootAsync({
@@ -50,3 +52,5 @@ const redisConnection = new IORedis(...);
 })
 export class AppModule {}
 ```
+
+Once the `RedisModule` is globally registered, `RedisService` can be injected in other providers without having to import `RedisModule` again.
