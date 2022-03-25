@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.19.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.18.0...@voiceflow/base-types@2.19.0) (2022-03-25)
+
+
+### Features
+
+* add notes (VF-3209) ([#228](https://github.com/voiceflow/libs/issues/228)) ([29c63ec](https://github.com/voiceflow/libs/commit/29c63ececea829ae1761785ce483e69e7ebd4f02))
+
+
+
+
+
 # [2.18.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.17.4...@voiceflow/base-types@2.18.0) (2022-03-18)
 
 
