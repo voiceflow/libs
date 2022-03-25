@@ -1,6 +1,7 @@
 export { default as Analytics } from './analytics';
 export { default as APIKey } from './apiKey';
 export { default as Diagram } from './diagram';
+export { default as Note } from './note';
 export { default as Program } from './program';
 export { default as Project } from './project';
 export { default as PrototypeProgram } from './prototypeProgram';

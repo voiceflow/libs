@@ -1,10 +1,11 @@
-import { Client } from '@api-sdk/client';
-import { ClientOptions, PublicClient } from '@api-sdk/publicclient';
 import * as s from 'superstruct';
 
-export type { Client } from '@api-sdk/client';
-export type { PublicClient } from '@api-sdk/publicclient';
-export type { Flatten } from '@api-sdk/types';
+import { Client } from './client';
+import { ClientOptions, PublicClient } from './publicClient';
+
+export type { Client } from './client';
+export type { PublicClient } from './publicClient';
+export type { Flatten } from './types';
 
 export const SParams = s.object({
   clientKey: s.string(),
