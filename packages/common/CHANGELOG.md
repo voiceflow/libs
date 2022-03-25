@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.25.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.24.0...@voiceflow/common@7.25.0) (2022-03-25)
+
+
+### Features
+
+* **common:** add `toArray()` function (VF-000) ([#231](https://github.com/voiceflow/libs/issues/231)) ([6740a40](https://github.com/voiceflow/libs/commit/6740a40f25f045f440a5cf0efd91eb6c90e27075))
+
+
+
+
+
 # [7.24.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.23.0...@voiceflow/common@7.24.0) (2022-03-17)
 
 
