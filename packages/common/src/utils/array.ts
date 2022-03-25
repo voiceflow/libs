@@ -149,3 +149,5 @@ export const filterAndGetLastRemovedValue = <T>(list: T[], filter: (item: T) => 
 };
 
 export const inferUnion = <T extends ArrayLike<unknown>>(array: T): ArrayUnionToIntersection<T> => array as unknown as ArrayUnionToIntersection<T>;
+
+export const toArray = <T>(valueOrArray: T | T[]): T[] => (Array.isArray(valueOrArray) ? valueOrArray : [valueOrArray]);

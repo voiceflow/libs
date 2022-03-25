@@ -8,6 +8,7 @@ import {
   isNullish,
   replace,
   tail,
+  toArray,
   toggleMembership,
   unique,
   without,
@@ -130,6 +131,20 @@ describe('Utils | array', () => {
       expect(isNotNullish(null)).to.eql(false);
       expect(isNotNullish(undefined)).to.eql(false);
       expect(isNotNullish(0)).to.eql(true);
+    });
+  });
+
+  describe('toArray()', () => {
+    it('works with arrays', () => {
+      const value = [1];
+
+      expect(toArray(value)).to.eql([1]);
+    });
+
+    it('works with non-arrays', () => {
+      const value = 1;
+
+      expect(toArray(value)).to.eql([1]);
     });
   });
 });
