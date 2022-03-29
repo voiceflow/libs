@@ -2,6 +2,8 @@ export const SPACE_REGEXP = / /g;
 
 export const SLOT_REGEXP = /{{\[([^ .[\]{}]*?)]\.([^ .[\]{}]*?)}}/g;
 
+export const SLOT_ANNOTATION_SIMPLE_REGEX = /{([^ .[\]{}]+?)}/g;
+
 export const IS_VARIABLE_REGEXP = /^{.*}$/;
 
 export const READABLE_VARIABLE_REGEXP = /{(\w{1,64})}/g;
