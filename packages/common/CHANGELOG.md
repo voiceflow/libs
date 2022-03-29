@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.25.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.25.0...@voiceflow/common@7.25.1) (2022-03-29)
+
+
+### Bug Fixes
+
+* moving slot annotation regex (VF-3190) ([#233](https://github.com/voiceflow/libs/issues/233)) ([82abcfe](https://github.com/voiceflow/libs/commit/82abcfe3a99fdafec292ff04f1a0e6fd6809ea59))
+
+
+
+
+
 # [7.25.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.24.0...@voiceflow/common@7.25.0) (2022-03-25)
 
 
