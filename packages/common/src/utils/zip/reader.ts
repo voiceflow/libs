@@ -1,6 +1,5 @@
 import JSZip from 'jszip';
 
-import { ZipEntry } from './entry';
 import { isZipFile } from './guard';
 
 const DEFAULT_MAX_FILE_COUNT = 10000;
@@ -28,6 +27,11 @@ export interface ZipReaderConfig {
    * If the depth exceeds this number, then these deeper zip files will be returned instead of extracted.
    */
   maxZipRecursionDepth: number;
+}
+
+export interface ZipEntry {
+  name: string;
+  content: Uint8Array;
 }
 
 export class ZipReader {
@@ -62,19 +66,22 @@ export class ZipReader {
       }
 
       // eslint-disable-next-line no-await-in-loop
-      const entry = await ZipEntry.from(obj);
+      const content = await obj.async('uint8array');
 
-      totalSize += entry.size;
+      totalSize += content.byteLength;
       if (totalSize > this.config.maxUnzipSizeBytes) {
         throw new Error(`Total file size exceeded maximum (${this.config.maxUnzipSizeBytes} bytes)`);
       }
 
-      if (currentDepth < maxDepth && isZipFile(entry.content)) {
+      if (currentDepth < maxDepth && isZipFile(content)) {
         // eslint-disable-next-line no-await-in-loop
-        const zip = await JSZip.loadAsync(entry.content);
+        const zip = await JSZip.loadAsync(content);
         yield* this.getFilesRecursively(zip, maxDepth, currentDepth + 1);
       } else {
-        yield entry;
+        yield {
+          name: obj.name,
+          content
+        };
       }
     }
   }
