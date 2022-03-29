@@ -17,6 +17,7 @@ export * as time from './time';
 export * as timezones from './timezones';
 export * as typeguard from './typeguard';
 export * as variables from './variables';
+export * as zip from './zip';
 
 // TODO: Remove these exports once we migrate all utils in other repos.
 export * from './intent';
