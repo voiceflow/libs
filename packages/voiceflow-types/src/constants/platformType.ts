@@ -3,6 +3,12 @@ export enum PlatformType {
   GOOGLE = 'google',
   VOICEFLOW = 'voiceflow',
   DIALOGFLOW_ES = 'df-es',
+  LUIS = 'luis',
+  RASA = 'rasa',
+  WATSON = 'watson',
+  LEX = 'lex',
+  EINSTEIN = 'einstein',
+  NUANCE_MIX = 'nuance-mix',
 
   /** @deprecated use VOICEFLOW instead */
   IVR = 'ivr',
