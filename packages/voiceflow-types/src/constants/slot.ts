@@ -168,7 +168,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.AGE,
       label: 'Age',
-      values: ['20 days old', 'nineteen years old', '4 weeks old', '8 months old', '45 years-old', 'one month old'],
+      values: ['25', '20 days old', 'nineteen years old', '4 weeks old', '8 months old', '45 years-old', 'one month old'],
     },
     {
       name: SlotType.CURRENCY,
@@ -211,7 +211,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.AGE,
       label: 'Alter',
-      values: ['7 Jahre alt', 'acht Mondate alt', '3 wochen alt', 'neun Tage alt', 'einen tag alt', '1 Jahr alt'],
+      values: ['25', '7 Jahre alt', 'acht Mondate alt', '3 wochen alt', 'neun Tage alt', 'einen tag alt', '1 Jahr alt'],
     },
     NUMBER('Nummer'),
     PERCENTAGE('Prozentsatz'),
@@ -246,6 +246,7 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.AGE,
       label: 'Âge',
       values: [
+        '25',
         '3 ans',
         'Trois ans',
         "2 mois d'âge",
@@ -295,6 +296,7 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.AGE,
       label: 'Idade',
       values: [
+        '25',
         '3 anos',
         '3 anos de idade',
         '1 ano',
@@ -343,6 +345,7 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.AGE,
       label: 'Edad',
       values: [
+        '25',
         '3 años',
         '1 año',
         'un año',
@@ -391,7 +394,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.AGE,
       label: '岁',
-      values: ['一岁', '3岁', '5周岁', '7个月大', '9月大', '8周大', '21天大', '1天大'],
+      values: ['25', '一岁', '3岁', '5周岁', '7个月大', '9月大', '8周大', '21天大', '1天大'],
     },
     NUMBER('数字'),
     PERCENTAGE('百分比'),
@@ -424,7 +427,7 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.AGE,
       label: '歳',
-      values: ['1歳', '一歳', '2歳', '4ヶ月', '3週間', '6週', '5日間', '9日齢', '10日大'],
+      values: ['25', '1歳', '一歳', '2歳', '4ヶ月', '3週間', '6週', '5日間', '9日齢', '10日大'],
     },
     NUMBER('数'),
     PERCENTAGE('パーセンテージ'),
@@ -454,6 +457,7 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.AGE,
       label: 'Leeftijd',
       values: [
+        '25',
         'twintig jaar oud',
         '19 dagen old',
         'negentien dagen oud',
@@ -504,6 +508,7 @@ export const SlotTypes: ObjectKeys = {
       name: SlotType.AGE,
       label: 'Età',
       values: [
+        '25',
         '8 anni di età',
         'sette anni',
         'un anno di età',
