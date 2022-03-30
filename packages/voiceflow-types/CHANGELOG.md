@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.7.5...@voiceflow/voiceflow-types@3.8.0) (2022-03-30)
+
+
+### Features
+
+* added new platform types (VF-2989) ([#235](https://github.com/voiceflow/libs/issues/235)) ([2a94d18](https://github.com/voiceflow/libs/commit/2a94d184323f2028c3e73e56ddee2110af283e32))
+
+
+
+
+
 ## [3.7.5](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.7.4...@voiceflow/voiceflow-types@3.7.5) (2022-03-29)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
