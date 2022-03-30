@@ -1,7 +1,7 @@
 import { AnyRequestButton } from '@base-types/request';
 import { Nullable } from '@base-types/types';
 
-import { NodeType } from './constants';
+import { NodeType, PortType } from './constants';
 import {
   BaseEvent,
   BaseNode,
@@ -9,8 +9,11 @@ import {
   BaseNoMatchStepData,
   BaseNoReplyNodeData,
   BaseNoReplyStepData,
+  BasePort,
+  BasePortList,
   BaseStep,
   BaseStepNoMatch,
+  BaseStepPorts,
   BaseTraceFrame,
   DeprecatedBaseNodeNoMatch,
   NodeIntentScope,
@@ -46,7 +49,9 @@ export interface StepData extends BaseNoReplyStepData, StepIntentScope, BaseNoMa
   else?: BaseStepNoMatch;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export type StepPorts = BaseStepPorts<{ [PortType.NEXT]: BasePort; [PortType.NO_MATCH]?: BasePort; [PortType.NO_REPLY]?: BasePort }, BasePort[]>;
+
+export interface Step<Data = StepData> extends BaseStep<Data, BasePortList, StepPorts> {
   type: NodeType.INTERACTION;
 }
 

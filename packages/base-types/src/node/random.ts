@@ -1,5 +1,7 @@
+import { EmptyRecord } from '@base-types/types';
+
 import { NodeType } from './constants';
-import { BaseNode, BaseStep, NodeNextIDs } from './utils';
+import { BaseNode, BasePort, BasePortList, BaseStep, BaseStepPorts, NodeNextIDs } from './utils';
 
 export enum RandomType {
   DEFAULT = 1,
@@ -11,7 +13,9 @@ export interface StepData {
   noDuplicates: boolean;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export type StepPorts = BaseStepPorts<EmptyRecord, BasePort[]>;
+
+export interface Step<Data = StepData> extends BaseStep<Data, BasePortList, StepPorts> {
   type: NodeType.RANDOM;
 }
 

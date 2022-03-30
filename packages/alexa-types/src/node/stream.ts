@@ -10,7 +10,17 @@ export interface StepData {
   backgroundImage?: string;
 }
 
-export interface Step extends BaseNode.Stream.Step<StepData> {}
+export interface StepPorts
+  extends BaseNode.Utils.BaseStepPorts<
+    {
+      [BaseNode.PortType.NEXT]: BaseNode.Utils.BasePort;
+      [BaseNode.PortType.FAIL]: BaseNode.Utils.BasePort;
+      [BaseNode.PortType.PAUSE]?: BaseNode.Utils.BasePort;
+    },
+    []
+  > {}
+
+export interface Step extends BaseNode.Stream.Step<StepData, StepPorts> {}
 
 export interface Node extends Pick<BaseNode.Stream.Node, keyof BaseNode.Utils.BaseNode> {
   loop: boolean;

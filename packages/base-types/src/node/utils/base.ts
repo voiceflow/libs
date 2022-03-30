@@ -1,6 +1,16 @@
 import { Nullable } from '@base-types/types';
 
-export { BaseCommand, BaseNode, BasePort, BaseStep } from '@base-types/models';
+export {
+  BaseCommand,
+  BaseNode,
+  BasePort,
+  BasePortList,
+  BaseStep,
+  BaseStepPorts,
+  EmptyStepPorts,
+  NextStepPorts,
+  SuccessFailStepPorts,
+} from '@base-types/models';
 
 export type NodeID = Nullable<string>;
 

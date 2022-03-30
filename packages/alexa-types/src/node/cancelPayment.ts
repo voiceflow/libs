@@ -6,7 +6,9 @@ export interface StepData {
   productID: string;
 }
 
-export interface Step extends BaseNode.Utils.BaseStep<StepData> {
+export type StepPorts = BaseNode.Utils.SuccessFailStepPorts;
+
+export interface Step extends BaseNode.Utils.BaseStep<StepData, BaseNode.Utils.BasePortList, StepPorts> {
   type: NodeType.CANCEL_PAYMENT;
 }
 

@@ -1,14 +1,17 @@
 import { Intent } from '@base-types/models';
 import { Nullable } from '@base-types/types';
 
-import { NodeType } from './constants';
+import { NodeType, PortType } from './constants';
 import {
   BaseNode,
   BaseNoMatchNodeData,
   BaseNoMatchStepData,
   BaseNoReplyNodeData,
   BaseNoReplyStepData,
+  BasePort,
+  BasePortList,
   BaseStep,
+  BaseStepPorts,
   NodeIntentScope,
   NodeNextID,
   StepIntentScope,
@@ -34,7 +37,10 @@ export interface QueryCapture {
 export interface StepData extends BaseCaptureData {
   capture: IntentCapture | QueryCapture;
 }
-export interface Step<Data = StepData> extends BaseStep<Data> {
+
+export interface StepPorts extends BaseStepPorts<{ [PortType.NEXT]: BasePort; [PortType.NO_MATCH]?: BasePort; [PortType.NO_REPLY]?: BasePort }, []> {}
+
+export interface Step<Data = StepData> extends BaseStep<Data, BasePortList, StepPorts> {
   type: NodeType.CAPTURE_V2;
 }
 

@@ -1,6 +1,6 @@
 import { Nullable } from '@base-types/types';
 
-import { BaseEvent, BaseNode, BasePort, BaseStep, NodeID } from './utils';
+import { BaseEvent, BaseNode, BasePort, BaseStep, BaseStepPorts, NodeID } from './utils';
 
 export const _V1_STOP_TYPES = 'stopTypes';
 
@@ -24,6 +24,12 @@ export interface Node<Event = BaseEvent> extends BaseNode {
   payload: unknown;
   defaultPath?: number; // index starting from 0
 }
-export interface Step<Payload = unknown, Event = BaseEvent> extends BaseStep<StepData<Payload>, BasePort<{ event?: Event }>[]> {
+
+export interface Step<Payload = unknown, Event = BaseEvent>
+  extends BaseStep<
+    StepData<Payload>,
+    BasePort<{ event?: Event }>[],
+    BaseStepPorts<Record<string, BasePort<{ event?: Event }>>, BasePort<{ event?: Event }>[]>
+  > {
   type: string;
 }

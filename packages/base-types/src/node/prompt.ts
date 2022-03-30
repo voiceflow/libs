@@ -1,5 +1,5 @@
 import { NodeType } from './constants';
-import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepNoMatch } from './utils';
+import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepNoMatch, EmptyStepPorts } from './utils';
 
 export interface StepData extends BaseNoReplyStepData, BaseNoMatchStepData {
   /**
@@ -8,6 +8,8 @@ export interface StepData extends BaseNoReplyStepData, BaseNoMatchStepData {
   noMatches?: BaseStepNoMatch;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data, []> {
+export type StepPorts = EmptyStepPorts;
+
+export interface Step<Data = StepData> extends BaseStep<Data, [], StepPorts> {
   type: NodeType.PROMPT;
 }

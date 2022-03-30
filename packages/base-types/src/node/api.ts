@@ -1,7 +1,7 @@
 import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
-import { BaseStep, IntegrationType, NodeSuccessFailID } from './utils';
+import { BasePortList, BaseStep, IntegrationType, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
 
 export interface APIKeyVal {
   key: string;
@@ -48,6 +48,8 @@ export interface StepData {
   selectedIntegration: IntegrationType.CUSTOM_API;
 }
 
+export type StepPorts = SuccessFailStepPorts;
+
 export interface NodeData extends NodeSuccessFailID {
   action_data: {
     url: string;
@@ -64,6 +66,6 @@ export interface NodeData extends NodeSuccessFailID {
   selected_integration: IntegrationType.CUSTOM_API;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export interface Step<Data = StepData> extends BaseStep<Data, BasePortList, StepPorts> {
   type: NodeType.API;
 }

@@ -36,7 +36,9 @@ export interface StepData {
   reminder: Reminder;
 }
 
-export interface Step extends BaseNode.Utils.BaseStep<StepData> {
+export type StepPorts = BaseNode.Utils.SuccessFailStepPorts;
+
+export interface Step extends BaseNode.Utils.BaseStep<StepData, BaseNode.Utils.BasePortList, StepPorts> {
   type: NodeType.REMINDER;
 }
 

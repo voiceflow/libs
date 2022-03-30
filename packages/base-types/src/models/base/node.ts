@@ -1,4 +1,6 @@
-import { AnyRecord, Nullable } from '@base-types/types';
+import { AnyRecord } from '@base-types/types';
+
+import { BasePortList, NextStepPorts } from './port';
 
 /**
  * @deprecated use BaseNode instead
@@ -32,25 +34,14 @@ export interface BaseBlock<D extends AnyRecord = AnyRecord> extends BaseDiagramN
   coords: Point;
 }
 
-export enum PortType {
-  FAIL = 'fail',
-  NEXT = 'next',
-  PAUSE = 'pause',
-  NO_REPLY = 'no-reply',
-  NO_MATCH = 'else',
-  PREVIOUS = 'previous',
-}
+export type StepOnlyData<P, P2> =
+  | {
+      ports: P;
+      portsV2: never;
+    }
+  | {
+      ports: never;
+      portsV2: P2;
+    };
 
-export interface BasePort<PD extends AnyRecord = AnyRecord> {
-  id: string;
-  type: string | PortType;
-  data?: PD;
-  target: Nullable<string>;
-}
-
-// [BasePort, ...BasePort[]] means one or more ports
-export interface StepOnlyData<P = [BasePort, ...BasePort[]]> {
-  ports: P;
-}
-
-export interface BaseStep<D extends AnyRecord = AnyRecord, P = [BasePort, ...BasePort[]]> extends BaseDiagramNode<D & StepOnlyData<P>> {}
+export interface BaseStep<D extends AnyRecord = AnyRecord, P = BasePortList, P2 = NextStepPorts> extends BaseDiagramNode<D & StepOnlyData<P, P2>> {}
