@@ -1,5 +1,7 @@
+import { BasePort, BasePortList, PortType } from '@base-types/models';
+
 import { NodeType } from './constants';
-import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepNoMatch, EmptyStepPorts } from './utils';
+import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepNoMatch, BaseStepPorts } from './utils';
 
 export interface StepData extends BaseNoReplyStepData, BaseNoMatchStepData {
   /**
@@ -8,8 +10,8 @@ export interface StepData extends BaseNoReplyStepData, BaseNoMatchStepData {
   noMatches?: BaseStepNoMatch;
 }
 
-export type StepPorts = EmptyStepPorts;
+export type StepPorts = BaseStepPorts<{ [PortType.NO_MATCH]?: BasePort; [PortType.NO_REPLY]?: BasePort }, []>;
 
-export interface Step<Data = StepData> extends BaseStep<Data, [], StepPorts> {
+export interface Step<Data = StepData> extends BaseStep<Data, BasePortList, StepPorts> {
   type: NodeType.PROMPT;
 }

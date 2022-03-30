@@ -1,5 +1,13 @@
-import { PortType } from '@base-types/node/constants';
 import { AnyRecord, EmptyRecord, Nullable } from '@base-types/types';
+
+export enum PortType {
+  FAIL = 'fail',
+  NEXT = 'next',
+  PAUSE = 'pause',
+  NO_REPLY = 'no-reply',
+  NO_MATCH = 'else',
+  PREVIOUS = 'previous',
+}
 
 export interface BasePort<PD extends AnyRecord = AnyRecord> {
   id: string;

@@ -1,7 +1,8 @@
+import { PortType } from '@base-types/models';
 import { AnyRequestButton } from '@base-types/request';
 import { Nullable } from '@base-types/types';
 
-import { NodeType, PortType } from './constants';
+import { NodeType } from './constants';
 import {
   BaseEvent,
   BaseNode,

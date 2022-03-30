@@ -1,6 +1,6 @@
-import { EmptyRecord } from '@base-types/types';
+import { PortType } from '@base-types/models';
 
-import { NodeType, PortType } from './constants';
+import { NodeType } from './constants';
 import { BaseNode, BasePort, BasePortList, BaseStep, BaseStepPorts, BaseTraceFrame, NodeID, TraceType } from './utils';
 
 export interface StepData {
@@ -15,7 +15,8 @@ export enum TraceStreamAction {
   PAUSE = 'PAUSE',
 }
 
-export interface StepPorts<BP extends Record<string, BasePort> = EmptyRecord> extends BaseStepPorts<{ [PortType.NEXT]: BasePort } & BP, []> {}
+export interface StepPorts<BP extends Record<string, BasePort> = { [PortType.PREVIOUS]?: BasePort; [PortType.PAUSE]?: BasePort }>
+  extends BaseStepPorts<{ [PortType.NEXT]: BasePort } & BP, []> {}
 
 export interface Step<Data = StepData, Ports = StepPorts> extends BaseStep<Data, BasePortList, Ports> {
   type: NodeType.STREAM;

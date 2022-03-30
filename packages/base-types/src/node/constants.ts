@@ -43,12 +43,3 @@ export enum NodeType {
 }
 
 export const RUNTIME_ONLY_NODES = [NodeType.GOTO] as const;
-
-export enum PortType {
-  FAIL = 'fail',
-  NEXT = 'next',
-  PAUSE = 'pause',
-  NO_REPLY = 'no-reply',
-  NO_MATCH = 'else',
-  PREVIOUS = 'previous',
-}

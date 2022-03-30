@@ -37,10 +37,10 @@ export interface BaseBlock<D extends AnyRecord = AnyRecord> extends BaseDiagramN
 export type StepOnlyData<P, P2> =
   | {
       ports: P;
-      portsV2: never;
+      portsV2?: never;
     }
   | {
-      ports: never;
+      ports?: never;
       portsV2: P2;
     };
 

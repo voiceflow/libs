@@ -1,4 +1,4 @@
-import { BaseNode } from '@voiceflow/base-types';
+import { BaseModels, BaseNode } from '@voiceflow/base-types';
 
 export interface StepData {
   loop: boolean;
@@ -13,9 +13,8 @@ export interface StepData {
 export interface StepPorts
   extends BaseNode.Utils.BaseStepPorts<
     {
-      [BaseNode.PortType.NEXT]: BaseNode.Utils.BasePort;
-      [BaseNode.PortType.FAIL]: BaseNode.Utils.BasePort;
-      [BaseNode.PortType.PAUSE]?: BaseNode.Utils.BasePort;
+      [BaseModels.PortType.PREVIOUS]: BaseNode.Utils.BasePort;
+      [BaseModels.PortType.PAUSE]?: BaseNode.Utils.BasePort;
     },
     []
   > {}

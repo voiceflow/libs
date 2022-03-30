@@ -1,7 +1,7 @@
-import { Intent } from '@base-types/models';
+import { Intent, PortType } from '@base-types/models';
 import { Nullable } from '@base-types/types';
 
-import { NodeType, PortType } from './constants';
+import { NodeType } from './constants';
 import {
   BaseNode,
   BaseNoMatchNodeData,

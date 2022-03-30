@@ -1,5 +1,7 @@
+import { PortType } from '@base-types/models';
+
 import { NodePath } from './_v1';
-import { NodeType, PortType } from './constants';
+import { NodeType } from './constants';
 import { BaseNode, BasePort, BasePortList, BaseStep, BaseStepPorts, ExpressionData, NodeElseID } from './utils';
 
 export enum IfNoMatchType {
