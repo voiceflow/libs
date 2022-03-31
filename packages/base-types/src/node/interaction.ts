@@ -50,7 +50,7 @@ export interface StepData extends BaseNoReplyStepData, StepIntentScope, BaseNoMa
   else?: BaseStepNoMatch;
 }
 
-export type StepPorts = BaseStepPorts<{ [PortType.NEXT]: BasePort; [PortType.NO_MATCH]?: BasePort; [PortType.NO_REPLY]?: BasePort }, BasePort[]>;
+export type StepPorts = BaseStepPorts<{ [PortType.NO_MATCH]?: BasePort; [PortType.NO_REPLY]?: BasePort }, BasePort[]>;
 
 export interface Step<Data = StepData> extends BaseStep<Data, BasePortList, StepPorts> {
   type: NodeType.INTERACTION;
