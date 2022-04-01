@@ -6,6 +6,7 @@
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
   },
+  "dependencies": {},
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@nestjs/common": "^8.4.3",
@@ -70,6 +71,5 @@
     "test:single": "NODE_ENV=test ts-mocha --paths --config config/tests/mocharc.yml",
     "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
   },
-  "types": "build/index.d.ts",
-  "dependencies": {}
+  "types": "build/index.d.ts"
 }
