@@ -6,8 +6,11 @@
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
   },
+  "dependencies": {},
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@nestjs/common": "^8.4.3",
+    "@nestjs/config": "^2.0.0",
     "@types/chai": "4.3.0",
     "@types/chai-as-promised": "^7.1.4",
     "@types/mocha": "^8.2.2",
@@ -40,6 +43,10 @@
   ],
   "license": "ISC",
   "main": "build/index.js",
+  "peerDependencies": {
+    "@nestjs/common": "^8.4.3",
+    "@nestjs/config": "^2.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
