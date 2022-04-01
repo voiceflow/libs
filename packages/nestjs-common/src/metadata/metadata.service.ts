@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 
 import { ServiceMetadata } from './interfaces/service-metadata.interface';
 
-/** Implements {@link ServiceMetadata} by reading environment variables from that follow Voiceflow Dockerfile convention. */
+/** Implements {@link ServiceMetadata} by reading environment variables that follow Voiceflow Dockerfile convention. */
 @Injectable()
 export class MetadataService implements ServiceMetadata {
   readonly metadata: { version: string; buildNumber: string; gitSha: string };
