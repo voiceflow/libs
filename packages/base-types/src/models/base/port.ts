@@ -1,4 +1,4 @@
-import { AnyRecord, EmptyRecord, Nullable } from '@base-types/types';
+import { EmptyRecord, Nullable } from '@base-types/types';
 
 export enum PortType {
   FAIL = 'fail',
@@ -9,24 +9,48 @@ export enum PortType {
   PREVIOUS = 'previous',
 }
 
-export interface BasePort<PD extends AnyRecord = AnyRecord> {
+export interface BasePort {
   id: string;
   type: string | PortType;
-  data?: PD;
   target: Nullable<string>;
 }
 
-export interface BaseStepPorts<BP extends Record<string, BasePort> = Record<string, BasePort>, DP extends BasePort[] = BasePort[]> {
-  builtIn: BP;
-  dynamic: DP;
+export interface BaseStepPorts<Builtin extends Partial<Record<PortType, BasePort>>, Dynamic extends BasePort[] = BasePort[]> {
+  builtIn: Builtin;
+  dynamic: Dynamic;
 }
+
+export interface BuiltInNextPort {
+  [PortType.NEXT]: BasePort;
+}
+
+export interface BuiltInFailPort {
+  [PortType.NEXT]: BasePort;
+}
+
+export interface BuiltInNoMatchPort {
+  [PortType.NO_MATCH]?: BasePort;
+}
+
+export interface BuiltInNoReplyPort {
+  [PortType.NO_REPLY]?: BasePort;
+}
+
+export interface BuiltInNextFailPorts extends BuiltInNextPort, BuiltInFailPort {}
+
+export interface BuiltInNoMatchNoReplyPorts extends BuiltInNoMatchPort, BuiltInNoReplyPort {}
 
 export interface EmptyStepPorts extends BaseStepPorts<EmptyRecord, []> {}
 
-export interface NextStepPorts<DP extends BasePort[] = []> extends BaseStepPorts<{ [PortType.NEXT]: BasePort }, DP> {}
+export interface NextStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNextPort, Dynamic> {}
 
-export interface SuccessFailStepPorts<DP extends BasePort[] = []>
-  extends BaseStepPorts<{ [PortType.NEXT]: BasePort; [PortType.FAIL]: BasePort }, DP> {}
+export interface SuccessFailStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNextFailPorts, Dynamic> {}
 
-// [BasePort, ...BasePort[]] means one or more ports
-export type BasePortList = [BasePort, ...BasePort[]];
+export interface DynamicOnlyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<EmptyRecord, Dynamic> {}
+
+export interface NoMatchNoReplyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNoMatchNoReplyPorts, Dynamic> {}
+
+/**
+ * @deprecated
+ */
+export type BasePortList<Port extends BasePort = BasePort> = [Port, ...Port[]];

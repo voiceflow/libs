@@ -1,4 +1,4 @@
-import { BaseNode, EmptyRecord } from '@voiceflow/base-types';
+import { BaseNode } from '@voiceflow/base-types';
 
 export interface StepData {
   loop: boolean;
@@ -9,7 +9,7 @@ export interface StepData {
   backgroundImage?: string;
 }
 
-export interface StepPorts extends BaseNode.Stream.StepPorts<EmptyRecord> {}
+export interface StepPorts extends BaseNode.Stream.StepPorts<BaseNode.Stream.StepBaseBuiltInPorts> {}
 
 export interface Step extends BaseNode.Stream.Step<StepData, StepPorts> {}
 

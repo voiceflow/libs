@@ -1,13 +1,13 @@
 import { NodeType } from './constants';
-import { BaseNode, BasePortList, BaseStep, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
+import { BaseNode, BaseStep, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
 
 export interface StepData {
   code: string;
 }
 
-export type StepPorts = SuccessFailStepPorts;
+export interface StepPorts extends SuccessFailStepPorts<[]> {}
 
-export interface Step<Data = StepData> extends BaseStep<Data, BasePortList, StepPorts> {
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.CODE;
 }
 
