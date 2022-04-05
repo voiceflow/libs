@@ -10,11 +10,12 @@ export interface StepData {
   backgroundImage?: string;
 }
 
-export interface StepPorts
-  extends BaseNode.Stream.StepPorts<{
-    [BaseModels.PortType.PREVIOUS]: BaseNode.Utils.BasePort;
-    [BaseModels.PortType.PAUSE]?: BaseNode.Utils.BasePort;
-  }> {}
+export interface StepBuiltInPorts extends BaseNode.Stream.StepBaseBuiltInPorts {
+  [BaseModels.PortType.PAUSE]?: BaseNode.Utils.BasePort;
+  [BaseModels.PortType.PREVIOUS]: BaseNode.Utils.BasePort;
+}
+
+export interface StepPorts extends BaseNode.Stream.StepPorts<StepBuiltInPorts> {}
 
 export interface Step extends BaseNode.Stream.Step<StepData, StepPorts> {}
 

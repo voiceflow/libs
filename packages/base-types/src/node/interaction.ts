@@ -1,4 +1,3 @@
-import { PortType } from '@base-types/models';
 import { AnyRequestButton } from '@base-types/request';
 import { Nullable } from '@base-types/types';
 
@@ -10,15 +9,13 @@ import {
   BaseNoMatchStepData,
   BaseNoReplyNodeData,
   BaseNoReplyStepData,
-  BasePort,
-  BasePortList,
   BaseStep,
   BaseStepNoMatch,
-  BaseStepPorts,
   BaseTraceFrame,
   DeprecatedBaseNodeNoMatch,
   NodeIntentScope,
   NodeNextID,
+  NoMatchNoReplyStepPorts,
   SlotMappings,
   StepIntentScope,
   TraceType,
@@ -50,9 +47,9 @@ export interface StepData extends BaseNoReplyStepData, StepIntentScope, BaseNoMa
   else?: BaseStepNoMatch;
 }
 
-export type StepPorts = BaseStepPorts<{ [PortType.NO_MATCH]?: BasePort; [PortType.NO_REPLY]?: BasePort }, BasePort[]>;
+export interface StepPorts extends NoMatchNoReplyStepPorts {}
 
-export interface Step<Data = StepData> extends BaseStep<Data, BasePortList, StepPorts> {
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.INTERACTION;
 }
 

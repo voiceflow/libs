@@ -9,7 +9,7 @@ export interface NodeData {
   end: true;
 }
 
-export type StepPorts = EmptyStepPorts;
+export interface StepPorts extends EmptyStepPorts {}
 
 export interface Step<Data = StepData> extends BaseStep<Data, [], StepPorts> {
   type: NodeType.EXIT;

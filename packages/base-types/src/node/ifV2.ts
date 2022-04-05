@@ -1,8 +1,6 @@
-import { PortType } from '@base-types/models';
-
 import { NodePath } from './_v1';
 import { NodeType } from './constants';
-import { BaseNode, BasePort, BasePortList, BaseStep, BaseStepPorts, ExpressionData, NodeElseID } from './utils';
+import { BaseNode, BaseStep, BaseStepPorts, BuiltInNoMatchPort, ExpressionData, NodeElseID } from './utils';
 
 export enum IfNoMatchType {
   PATH = 'path',
@@ -19,9 +17,9 @@ export interface StepData {
   noMatch?: IfNoMatch;
 }
 
-export interface StepPorts extends BaseStepPorts<{ [PortType.NO_MATCH]?: BasePort }, BasePort[]> {}
+export interface StepPorts extends BaseStepPorts<BuiltInNoMatchPort> {}
 
-export interface Step<Data = StepData> extends BaseStep<Data, BasePortList, StepPorts> {
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.IF_V2;
 }
 

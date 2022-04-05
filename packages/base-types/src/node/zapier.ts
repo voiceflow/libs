@@ -1,5 +1,5 @@
 import { NodeType } from './constants';
-import { BasePortList, BaseStep, IntegrationType, IntegrationUser, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
+import { BaseStep, IntegrationType, IntegrationUser, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
 
 export enum ZapierActionType {
   START_A_ZAP = 'Start a Zap',
@@ -12,7 +12,7 @@ export interface StepData {
   selectedIntegration: IntegrationType.ZAPIER;
 }
 
-export type StepPorts = SuccessFailStepPorts;
+export interface StepPorts extends SuccessFailStepPorts<[]> {}
 
 export interface ActionData {
   user?: IntegrationUser;
@@ -25,6 +25,6 @@ export interface NodeData extends NodeSuccessFailID {
   selected_integration: IntegrationType.ZAPIER;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data, BasePortList, StepPorts> {
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.ZAPIER;
 }

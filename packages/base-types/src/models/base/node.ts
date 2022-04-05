@@ -34,14 +34,7 @@ export interface BaseBlock<D extends AnyRecord = AnyRecord> extends BaseDiagramN
   coords: Point;
 }
 
-export type StepOnlyData<P, P2> =
-  | {
-      ports: P;
-      portsV2?: never;
-    }
-  | {
-      ports?: never;
-      portsV2: P2;
-    };
+export type StepOnlyData<Ports, PortsOld> = { ports?: never; portsV2: Ports } | { ports: PortsOld; portsV2?: never };
 
-export interface BaseStep<D extends AnyRecord = AnyRecord, P = BasePortList, P2 = NextStepPorts> extends BaseDiagramNode<D & StepOnlyData<P, P2>> {}
+export interface BaseStep<Data extends AnyRecord = AnyRecord, Ports = NextStepPorts, PortsOld = BasePortList>
+  extends BaseDiagramNode<Data & StepOnlyData<Ports, PortsOld>> {}

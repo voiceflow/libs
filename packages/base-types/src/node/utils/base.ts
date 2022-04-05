@@ -7,8 +7,16 @@ export {
   BasePortList,
   BaseStep,
   BaseStepPorts,
+  BuiltInFailPort,
+  BuiltInNextFailPorts,
+  BuiltInNextPort,
+  BuiltInNoMatchNoReplyPorts,
+  BuiltInNoMatchPort,
+  BuiltInNoReplyPort,
+  DynamicOnlyStepPorts,
   EmptyStepPorts,
   NextStepPorts,
+  NoMatchNoReplyStepPorts,
   SuccessFailStepPorts,
 } from '@base-types/models';
 
