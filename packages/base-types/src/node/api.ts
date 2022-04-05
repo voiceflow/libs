@@ -48,7 +48,7 @@ export interface StepData {
   selectedIntegration: IntegrationType.CUSTOM_API;
 }
 
-export interface StepPorts extends SuccessFailStepPorts {}
+export interface StepPorts extends SuccessFailStepPorts<[]> {}
 
 export interface NodeData extends NodeSuccessFailID {
   action_data: {
@@ -66,6 +66,6 @@ export interface NodeData extends NodeSuccessFailID {
   selected_integration: IntegrationType.CUSTOM_API;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data, StepPorts, []> {
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.API;
 }

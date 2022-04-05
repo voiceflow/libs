@@ -12,7 +12,7 @@ export interface StepData {
   selectedIntegration: IntegrationType.ZAPIER;
 }
 
-export interface StepPorts extends SuccessFailStepPorts {}
+export interface StepPorts extends SuccessFailStepPorts<[]> {}
 
 export interface ActionData {
   user?: IntegrationUser;
