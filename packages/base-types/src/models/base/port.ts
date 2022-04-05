@@ -25,7 +25,7 @@ export interface BuiltInNextPort {
 }
 
 export interface BuiltInFailPort {
-  [PortType.NEXT]: BasePort;
+  [PortType.FAIL]: BasePort;
 }
 
 export interface BuiltInNoMatchPort {
