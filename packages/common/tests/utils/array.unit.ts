@@ -12,7 +12,7 @@ import {
   toArray,
   toggleMembership,
   unique,
-  upsert,
+  mergeByIdentifier,
   without,
   withoutValue,
   withoutValues,
@@ -202,7 +202,7 @@ describe('Utils | array', () => {
         },
       ];
 
-      const result = upsert(
+      const result = mergeByIdentifier(
         array1,
         array2,
         (x) => x.key.toString(),

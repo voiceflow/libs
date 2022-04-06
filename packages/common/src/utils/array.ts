@@ -159,7 +159,7 @@ export const toArray = <T>(valueOrArray: T | T[]): T[] => (Array.isArray(valueOr
  * @param identify Function returning how to identify an item in the array
  * @param merge Function given two matching item identifiers, returning a single merged result
  */
-export const upsert = <T>(
+export const mergeByIdentifier = <T>(
   items: T[],
   newItems: T[],
   identify: (item: T, index: number) => string,
