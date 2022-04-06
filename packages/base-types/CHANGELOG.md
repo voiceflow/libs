@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.20.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.19.2...@voiceflow/base-types@2.20.0) (2022-04-06)
+
+
+### Features
+
+* add support for new port schema (VF-3082) ([#236](https://github.com/voiceflow/libs/issues/236)) ([b7e3b0a](https://github.com/voiceflow/libs/commit/b7e3b0a3b987c94fa26ed4b19bc636a99d7db2bf))
+
+
+
+
+
 ## [2.19.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.19.1...@voiceflow/base-types@2.19.2) (2022-03-29)
 
 **Note:** Version bump only for package @voiceflow/base-types

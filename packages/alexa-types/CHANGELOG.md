@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.6.11...@voiceflow/alexa-types@2.7.0) (2022-04-06)
+
+
+### Features
+
+* add support for new port schema (VF-3082) ([#236](https://github.com/voiceflow/libs/issues/236)) ([b7e3b0a](https://github.com/voiceflow/libs/commit/b7e3b0a3b987c94fa26ed4b19bc636a99d7db2bf))
+
+
+
+
+
 ## [2.6.11](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.6.10...@voiceflow/alexa-types@2.6.11) (2022-03-30)
 
 **Note:** Version bump only for package @voiceflow/alexa-types

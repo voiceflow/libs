@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.9.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.8.0...@voiceflow/voiceflow-types@3.9.0) (2022-04-06)
+
+
+### Features
+
+* add support for new port schema (VF-3082) ([#236](https://github.com/voiceflow/libs/issues/236)) ([b7e3b0a](https://github.com/voiceflow/libs/commit/b7e3b0a3b987c94fa26ed4b19bc636a99d7db2bf))
+
+
+
+
+
 # [3.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.7.5...@voiceflow/voiceflow-types@3.8.0) (2022-03-30)
 
 
