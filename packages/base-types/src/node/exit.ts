@@ -1,7 +1,7 @@
 import { UnknownRecord } from '@base-types/types';
 
 import { NodeType } from './constants';
-import { BaseNode, BaseStep, BaseTraceFrame, TraceType } from './utils';
+import { BaseNode, BaseStep, BaseTraceFrame, EmptyStepPorts, TraceType } from './utils';
 
 export type StepData = UnknownRecord;
 
@@ -9,7 +9,9 @@ export interface NodeData {
   end: true;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export interface StepPorts extends EmptyStepPorts {}
+
+export interface Step<Data = StepData> extends BaseStep<Data, [], StepPorts> {
   type: NodeType.EXIT;
 }
 

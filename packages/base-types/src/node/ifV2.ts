@@ -1,6 +1,6 @@
 import { NodePath } from './_v1';
 import { NodeType } from './constants';
-import { BaseNode, BaseStep, ExpressionData, NodeElseID } from './utils';
+import { BaseNode, BaseStep, BaseStepPorts, BuiltInNoMatchPort, ExpressionData, NodeElseID } from './utils';
 
 export enum IfNoMatchType {
   PATH = 'path',
@@ -17,7 +17,9 @@ export interface StepData {
   noMatch?: IfNoMatch;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export interface StepPorts extends BaseStepPorts<BuiltInNoMatchPort> {}
+
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.IF_V2;
 }
 

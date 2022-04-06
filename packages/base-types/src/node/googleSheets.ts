@@ -1,7 +1,7 @@
 import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
-import { BaseStep, IntegrationType, IntegrationUser, NodeSuccessFailID } from './utils';
+import { BaseStep, IntegrationType, IntegrationUser, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
 
 export enum GoogleSheetsActionType {
   CREATE_DATA = 'Create Data',
@@ -40,7 +40,9 @@ export interface StepData {
   selectedIntegration: IntegrationType.GOOGLE_SHEETS;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export interface StepPorts extends SuccessFailStepPorts<[]> {}
+
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.GOOGLE_SHEETS;
 }
 

@@ -1,11 +1,13 @@
 import { NodeType } from './constants';
-import { BaseNode, BaseStep, Expression, NodeElseID, NodeNextIDs } from './utils';
+import { BaseNode, BaseStep, BaseStepPorts, BuiltInNoMatchPort, Expression, NodeElseID, NodeNextIDs } from './utils';
 
 export interface StepData {
   expressions: Expression[];
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export interface StepPorts extends BaseStepPorts<BuiltInNoMatchPort> {}
+
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.IF;
 }
 

@@ -15,6 +15,7 @@ import {
   DeprecatedBaseNodeNoMatch,
   NodeIntentScope,
   NodeNextID,
+  NoMatchNoReplyStepPorts,
   SlotMappings,
   StepIntentScope,
   TraceType,
@@ -46,7 +47,9 @@ export interface StepData extends BaseNoReplyStepData, StepIntentScope, BaseNoMa
   else?: BaseStepNoMatch;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export interface StepPorts extends NoMatchNoReplyStepPorts {}
+
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.INTERACTION;
 }
 

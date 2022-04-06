@@ -2,7 +2,7 @@ import { Nullable } from '@base-types/types';
 
 import { StepButtonsLayout } from '../button';
 import { NodeType } from './constants';
-import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepNoMatch, DataID, StepIntentScope } from './utils';
+import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepNoMatch, DataID, NoMatchNoReplyStepPorts, StepIntentScope } from './utils';
 
 export enum ButtonAction {
   URL = 'URL',
@@ -27,6 +27,8 @@ export interface StepData extends StepButtonsLayout, BaseNoReplyStepData, StepIn
   else?: BaseStepNoMatch;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export interface StepPorts extends NoMatchNoReplyStepPorts {}
+
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.BUTTONS;
 }

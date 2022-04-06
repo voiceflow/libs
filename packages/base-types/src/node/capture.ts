@@ -1,7 +1,16 @@
 import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
-import { BaseNode, BaseNoReplyNodeData, BaseNoReplyStepData, BaseStep, NodeNextID } from './utils';
+import {
+  BaseNode,
+  BaseNoReplyNodeData,
+  BaseNoReplyStepData,
+  BaseStep,
+  BaseStepPorts,
+  BuiltInNextPort,
+  BuiltInNoReplyPort,
+  NodeNextID,
+} from './utils';
 
 /** @deprecated */
 export interface StepData extends BaseNoReplyStepData {
@@ -10,8 +19,13 @@ export interface StepData extends BaseNoReplyStepData {
   slotInputs: string[];
 }
 
+export interface StepBuiltInPorts extends BuiltInNextPort, BuiltInNoReplyPort {}
+
 /** @deprecated */
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export interface StepPorts extends BaseStepPorts<StepBuiltInPorts, []> {}
+
+/** @deprecated */
+export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.CAPTURE;
 }
 
