@@ -15,8 +15,3 @@ export const getUniqueSamples = (input: string) => _uniqBy(input.split(','), (sa
 
 // spread all synonyms into string array ['car, automobile', 'plane, jet'] => ['car', 'automobile', 'plane', 'jet']
 export const getAllSamples = (inputs: string[] = []) => inputs.flatMap((input) => input.split(',')).filter((sample) => !!sample.trim());
-
-export const getValueWithSynonyms = (input: string): [string, string[]] => {
-  const [value, ...synonyms] = input.split(',').map((str) => str.trim());
-  return [value, synonyms];
-};

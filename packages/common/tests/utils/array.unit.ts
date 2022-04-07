@@ -6,13 +6,13 @@ import {
   insertAll,
   isNotNullish,
   isNullish,
+  mergeByIdentifier,
   reorder,
   replace,
   tail,
   toArray,
   toggleMembership,
   unique,
-  mergeByIdentifier,
   without,
   withoutValue,
   withoutValues,
@@ -178,11 +178,10 @@ describe('Utils | array', () => {
 
       expect(reorder(array, 8, 1)).to.eql([1, 9, 2, 3, 4, 5, 6, 7, 8, 10]);
       expect(reorder(array, 7, 2)).to.eql([1, 2, 8, 3, 4, 5, 6, 7, 9, 10]);
-
     });
   });
 
-  describe('upsert()', () => {
+  describe('mergeByIdentifier()', () => {
     it('test', () => {
       const array1 = [
         {
@@ -209,7 +208,7 @@ describe('Utils | array', () => {
         (a, b) => ({
           ...a,
           value: [...a.value, ...b.value],
-        }),
+        })
       );
 
       expect(result).to.eql([
