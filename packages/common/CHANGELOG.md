@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.25.3](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.25.2...@voiceflow/common@7.25.3) (2022-04-07)
+
+
+### Bug Fixes
+
+* write tests for Utils.array.reorder (VF-000) ([#242](https://github.com/voiceflow/libs/issues/242)) ([2ce42f8](https://github.com/voiceflow/libs/commit/2ce42f84d248ab1d2cda1efb32485c6934f592e5))
+
+
+
+
+
 ## [7.25.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.25.1...@voiceflow/common@7.25.2) (2022-04-07)
 
 
