@@ -27,6 +27,8 @@ export enum APIMethod {
   DELETE = 'DELETE',
 }
 
+export const lowercaseAPIMethod = <T extends APIMethod>(method: T): Lowercase<T> => method.toLowerCase() as Lowercase<T>;
+
 export enum APIActionType {
   GET = 'Make a GET Request',
   PUT = 'Make a PUT Request',
