@@ -1,6 +1,6 @@
 import { AnyRecord } from '@base-types/types';
 
-import { BasePortList, NextStepPorts } from './port';
+import { AnyBaseStepPorts, BasePortList, NextStepPorts } from './port';
 
 /**
  * @deprecated use BaseNode instead
@@ -38,3 +38,5 @@ export type StepOnlyData<Ports, PortsOld> = { ports?: never; portsV2: Ports } | 
 
 export interface BaseStep<Data extends AnyRecord = AnyRecord, Ports = NextStepPorts, PortsOld = BasePortList>
   extends BaseDiagramNode<Data & StepOnlyData<Ports, PortsOld>> {}
+
+export interface AnyBaseStep extends BaseStep<AnyRecord, AnyBaseStepPorts> {}

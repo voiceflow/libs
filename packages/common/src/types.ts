@@ -56,3 +56,11 @@ export type SafeArray<Element, Original> = Original extends Array<Element>
 export type ArrayUnionToIntersection<T extends ArrayLike<unknown>> = SafeArray<T[number], T>;
 
 export type PrimitiveMap<T extends PropertyKey> = { [P in T]: P };
+
+export type Join<T extends any[]> = T extends [AnyRecord, ...infer R] ? T[0] & Join<R> : {};
+
+export type Tuple<T1, T2> = [T1, T2];
+export type TupleFirst<T> = T extends Tuple<infer R, any> ? R : never;
+export type TupleSecond<T> = T extends Tuple<any, infer R> ? R : never;
+
+export type Pair<T> = Tuple<T, T>;
