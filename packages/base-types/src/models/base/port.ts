@@ -20,6 +20,8 @@ export interface BaseStepPorts<Builtin extends Partial<Record<PortType, BasePort
   dynamic: Dynamic;
 }
 
+export interface AnyBaseStepPorts extends BaseStepPorts<Record<string, BasePort>, BasePort[]> {}
+
 export interface BuiltInNextPort {
   [PortType.NEXT]: BasePort;
 }
