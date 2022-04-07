@@ -6,6 +6,7 @@ import {
   insertAll,
   isNotNullish,
   isNullish,
+  reorder,
   replace,
   tail,
   toArray,
@@ -145,6 +146,37 @@ describe('Utils | array', () => {
       const value = 1;
 
       expect(toArray(value)).to.eql([1]);
+    });
+  });
+
+  describe('reorder()', () => {
+    it('should do nothing if from index goes outside array', () => {
+      const array = [1, 2, 3];
+      expect(reorder(array, -1, 1)).to.eql(array);
+      expect(reorder(array, 3, 1)).to.eql(array);
+    });
+    it('should set as first item if toIndex is zero or lower than 0', () => {
+      const array = [1, 2, 3];
+
+      expect(reorder(array, 2, -1)).to.eql([3, 1, 2]);
+      expect(reorder(array, 2, 0)).to.eql([3, 1, 2]);
+    });
+    it('should set as last item if toIndex is the last or greater than last', () => {
+      const array = [1, 2, 3];
+
+      expect(reorder(array, 0, 2)).to.eql([2, 3, 1]);
+      expect(reorder(array, 0, 3)).to.eql([2, 3, 1]);
+    });
+
+    it('should reorder moving forward or backward', () => {
+      const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      expect(reorder(array, 1, 2)).to.eql([1, 3, 2, 4, 5, 6, 7, 8, 9, 10]);
+      expect(reorder(array, 2, 3)).to.eql([1, 2, 4, 3, 5, 6, 7, 8, 9, 10]);
+      expect(reorder(array, 2, 8)).to.eql([1, 2, 4, 5, 6, 7, 8, 9, 3, 10]);
+
+      expect(reorder(array, 8, 1)).to.eql([1, 9, 2, 3, 4, 5, 6, 7, 8, 10]);
+      expect(reorder(array, 7, 2)).to.eql([1, 2, 8, 3, 4, 5, 6, 7, 9, 10]);
     });
   });
 });
