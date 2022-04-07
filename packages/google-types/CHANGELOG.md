@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.10.0...@voiceflow/google-types@2.10.1) (2022-04-07)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
 # [2.10.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.9.15...@voiceflow/google-types@2.10.0) (2022-04-06)
 
 

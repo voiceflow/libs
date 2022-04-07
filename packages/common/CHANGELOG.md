@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.25.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.25.1...@voiceflow/common@7.25.2) (2022-04-07)
+
+
+### Bug Fixes
+
+* expose tuple types (VF-3082) ([#241](https://github.com/voiceflow/libs/issues/241)) ([f6bb230](https://github.com/voiceflow/libs/commit/f6bb230e6edc12a1ccc960928954b9944d49b85c)), closes [voiceflow/general-service#295](https://github.com/voiceflow/general-service/issues/295)
+
+
+
+
+
 ## [7.25.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.25.0...@voiceflow/common@7.25.1) (2022-03-29)
 
 
