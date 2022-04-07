@@ -37,7 +37,7 @@ export const reorder = <T>(items: T[], fromIndex: number, toIndex: number): T[] 
     return items;
   }
 
-  if (toIndex < 0) {
+  if (toIndex <= 0) {
     return [items[fromIndex], ...without(items, fromIndex)];
   }
 
