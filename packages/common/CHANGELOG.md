@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.26.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.25.3...@voiceflow/common@7.26.0) (2022-04-08)
+
+
+### Features
+
+* array merge utility method (VF-000) ([#243](https://github.com/voiceflow/libs/issues/243)) ([60bf56d](https://github.com/voiceflow/libs/commit/60bf56de2d43c2f3c305df272f88a3a009219c6b))
+* slot annotation map utility (VF-000) ([#244](https://github.com/voiceflow/libs/issues/244)) ([1c32f11](https://github.com/voiceflow/libs/commit/1c32f114aa5ef4e227a4adbdffe006eef722ea01))
+
+
+
+
+
 ## [7.25.3](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.25.2...@voiceflow/common@7.25.3) (2022-04-07)
 
 
