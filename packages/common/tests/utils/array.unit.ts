@@ -6,6 +6,7 @@ import {
   insertAll,
   isNotNullish,
   isNullish,
+  mergeByIdentifier,
   reorder,
   replace,
   tail,
@@ -177,6 +178,49 @@ describe('Utils | array', () => {
 
       expect(reorder(array, 8, 1)).to.eql([1, 9, 2, 3, 4, 5, 6, 7, 8, 10]);
       expect(reorder(array, 7, 2)).to.eql([1, 2, 8, 3, 4, 5, 6, 7, 9, 10]);
+    });
+  });
+
+  describe('mergeByIdentifier()', () => {
+    it('test', () => {
+      const array1 = [
+        {
+          key: 1,
+          value: [1, 2],
+        },
+      ];
+
+      const array2 = [
+        {
+          key: 1,
+          value: [3],
+        },
+        {
+          key: 2,
+          value: [4, 5],
+        },
+      ];
+
+      const result = mergeByIdentifier(
+        array1,
+        array2,
+        (x) => x.key.toString(),
+        (a, b) => ({
+          ...a,
+          value: [...a.value, ...b.value],
+        })
+      );
+
+      expect(result).to.eql([
+        {
+          key: 1,
+          value: [1, 2, 3],
+        },
+        {
+          key: 2,
+          value: [4, 5],
+        },
+      ]);
     });
   });
 });

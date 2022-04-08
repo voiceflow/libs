@@ -151,3 +151,51 @@ export const filterAndGetLastRemovedValue = <T>(list: T[], filter: (item: T) => 
 export const inferUnion = <T extends ArrayLike<unknown>>(array: T): ArrayUnionToIntersection<T> => array as unknown as ArrayUnionToIntersection<T>;
 
 export const toArray = <T>(valueOrArray: T | T[]): T[] => (Array.isArray(valueOrArray) ? valueOrArray : [valueOrArray]);
+
+/**
+ * Merge together two arrays, if two items have the same identity based on the {@link identify} function
+ * they will be merged together using the {@link merge} function provided.
+ * @param items Array of items as a starting base.
+ * @param newItems Array of items to merge in.
+ * @param identify Function returning how to identify an item in the array
+ * @param merge Function given two matching item identifiers, returning a single merged result
+ * @example
+ * const existingItems = [{a: 1, b: [1, 2, 3]}, {a: 2, b: [4]}];
+ * const newItems = [{a: 1, b: [5]}, {a: 3, b: [6, 7]}];
+ *
+ * const items = mergeByIdentifier(
+ *   existingItems,
+ *   newItems,
+ *   (item) => item.a,
+ *   (existingItem, newItem) => {
+ *     return {
+ *       ...existingItem,
+ *       b: [...existingItem.b, ...newItem.b]
+ *     }
+ *   }
+ * );
+ *
+ * items == [{a: 1, b: [1, 2, 3, 5]}, {a: 2, b: [4]}, {a: 3, b: [6, 7]}];
+ */
+export const mergeByIdentifier = <T>(
+  items: T[],
+  newItems: T[],
+  identify: (item: T, index: number) => string,
+  merge: (item1: T, item2: T) => T
+): T[] => {
+  const newItemsMap = new Map(newItems.map((newItem, i) => [identify(newItem, i), newItem]));
+
+  const result = items.map((item, i) => {
+    const itemIdentity = identify(item, i);
+
+    const matchingNewItem = newItemsMap.get(itemIdentity);
+    if (matchingNewItem) {
+      newItemsMap.delete(itemIdentity);
+
+      return merge(item, matchingNewItem);
+    }
+    return item;
+  });
+
+  return result.concat(Array.from(newItemsMap.values()));
+};
