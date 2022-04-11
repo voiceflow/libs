@@ -40,6 +40,7 @@ export interface Folder {
 
 export interface Model<_PlatformData extends PlatformData, Command extends BaseCommand = BaseCommand, Locale extends string = string> {
   _id: string;
+  _version?: number;
   creatorID: number;
   projectID: string;
   rootDiagramID: string;
