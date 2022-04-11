@@ -188,6 +188,11 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
 
     return data;
   }
+
+  public async reorderTopics<P extends { fromID: string; toIndex: number }>(id: string, body: P): Promise<string> {
+    const { data } = await this.fetch.patch<string>(`${this._getCRUDEndpoint(id)}/topics/reorder`, body);
+    return data;
+  }
 }
 
 export default VersionResource;
