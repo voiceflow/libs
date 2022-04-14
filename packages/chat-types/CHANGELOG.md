@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.13](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.6.12...@voiceflow/chat-types@2.6.13) (2022-04-14)
+
+
+### Bug Fixes
+
+* reduce message delay default (VF-000) ([#240](https://github.com/voiceflow/libs/issues/240)) ([8faef67](https://github.com/voiceflow/libs/commit/8faef67912d8c71be62735bf2842be5431d31ad1))
+
+
+
+
+
 ## [2.6.12](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.6.11...@voiceflow/chat-types@2.6.12) (2022-04-08)
 
 **Note:** Version bump only for package @voiceflow/chat-types
