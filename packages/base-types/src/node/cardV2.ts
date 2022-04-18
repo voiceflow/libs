@@ -17,26 +17,16 @@ export declare enum CardLayout {
   LIST = 'List',
 }
 
-export enum CardButtonAction {
-  URL = 'URL',
-  PATH = 'PATH',
-  INTENT = 'INTENT',
-}
-
 export interface CardButton extends DataID {
-  url?: Nullable<string>;
   name: string;
   intent?: Nullable<string>;
-  actions: CardButtonAction[];
-  diagramID?: Nullable<string>;
 }
 
 export interface Card extends DataID {
-  imageUrl?: Nullable<string>;
+  imageUrl: string | null;
   title: string;
   description: string;
   buttons: CardButton[];
-  diagramID?: Nullable<string>;
 }
 
 export interface StepPorts extends NoMatchNoReplyStepPorts {}
