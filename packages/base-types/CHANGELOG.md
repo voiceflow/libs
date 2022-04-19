@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.23.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.23.0...@voiceflow/base-types@2.23.1) (2022-04-19)
+
+
+### Bug Fixes
+
+* fix cardV2 type enum definition (VF-3351) ([#250](https://github.com/voiceflow/libs/issues/250)) ([67c8396](https://github.com/voiceflow/libs/commit/67c8396ade9eb066102acd1cd257df470c31a2a5))
+
+
+
+
+
 # [2.23.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.22.0...@voiceflow/base-types@2.23.0) (2022-04-19)
 
 
