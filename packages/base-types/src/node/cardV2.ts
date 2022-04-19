@@ -12,7 +12,7 @@ import {
   NoMatchNoReplyStepPorts,
 } from './utils';
 
-export declare enum CardLayout {
+export enum CardLayout {
   CAROUSEL = 'Carousel',
   LIST = 'List',
 }
