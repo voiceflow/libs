@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.6.14...@voiceflow/chat-types@2.7.0) (2022-04-19)
+
+
+### Features
+
+* add types for CardV2 (VF-3351) ([#249](https://github.com/voiceflow/libs/issues/249)) ([2a90fcf](https://github.com/voiceflow/libs/commit/2a90fcf6ffde296f79aa0f948f81115f70f366ce))
+
+
+
+
+
 ## [2.6.14](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.6.13...@voiceflow/chat-types@2.6.14) (2022-04-14)
 
 **Note:** Version bump only for package @voiceflow/chat-types
