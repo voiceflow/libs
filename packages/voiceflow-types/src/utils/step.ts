@@ -6,3 +6,4 @@ export const isPrompt = BaseUtils.step.createStepTypeguard<Node.Prompt.Step>(Bas
 export const isButtons = BaseUtils.step.createStepTypeguard<Node.Buttons.Step>(BaseNode.NodeType.BUTTONS);
 export const isCapture = BaseUtils.step.createStepTypeguard<Node.Capture.Step>(BaseNode.NodeType.CAPTURE);
 export const isCaptureV2 = BaseUtils.step.createStepTypeguard<Node.CaptureV2.Step>(BaseNode.NodeType.CAPTURE_V2);
+export const isCardV2 = BaseUtils.step.createStepTypeguard<Node.CardV2.Step>(BaseNode.NodeType.CARDV2);
