@@ -1,4 +1,4 @@
-import { VoiceflowConstants } from '../..';
+import { VoiceflowConstants } from '..';
 
 export enum BuiltInLuisSlotType {
   /** @see https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-reference-prebuilt-age */
