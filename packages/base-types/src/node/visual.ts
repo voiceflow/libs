@@ -87,7 +87,7 @@ export interface Step<Data = StepData> extends BaseStep<Data> {
 
 export interface Node extends BaseNode, NodeNextID {
   type: NodeType.VISUAL;
-  data: StepData;
+  data: ImageStepData;
 }
 
 export interface TraceFrame extends BaseTraceFrame<StepData> {
