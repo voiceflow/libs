@@ -1,4 +1,4 @@
-import { VoiceflowConstants } from '..';
+import { SlotType } from '../constants';
 
 export enum BuiltInLuisSlotType {
   /** @see https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-reference-prebuilt-age */
@@ -40,24 +40,24 @@ export enum BuiltInLuisSlotType {
 }
 
 // Maps general type to Luis compatible format
-export const GENERAL_SLOT_TYPE_TO_LUIS: ReadonlyMap<VoiceflowConstants.SlotType, BuiltInLuisSlotType> = new Map([
-  [VoiceflowConstants.SlotType.AGE, BuiltInLuisSlotType.AGE],
-  [VoiceflowConstants.SlotType.CURRENCY, BuiltInLuisSlotType.CURRENCY],
-  [VoiceflowConstants.SlotType.DATETIME, BuiltInLuisSlotType.DATETIME_V2],
-  [VoiceflowConstants.SlotType.DIMENSION, BuiltInLuisSlotType.DIMENSION],
-  [VoiceflowConstants.SlotType.EMAIL, BuiltInLuisSlotType.EMAIL],
-  [VoiceflowConstants.SlotType.GEOGRAPHY, BuiltInLuisSlotType.GEOGRAPHY_V2],
-  [VoiceflowConstants.SlotType.KEY_PHRASE, BuiltInLuisSlotType.KEY_PHRASE],
-  [VoiceflowConstants.SlotType.NAME, BuiltInLuisSlotType.PERSON_NAME],
-  [VoiceflowConstants.SlotType.NUMBER, BuiltInLuisSlotType.NUMBER],
-  [VoiceflowConstants.SlotType.ORDINAL, BuiltInLuisSlotType.ORDINAL],
+export const GENERAL_SLOT_TYPE_TO_LUIS: ReadonlyMap<SlotType, BuiltInLuisSlotType> = new Map([
+  [SlotType.AGE, BuiltInLuisSlotType.AGE],
+  [SlotType.CURRENCY, BuiltInLuisSlotType.CURRENCY],
+  [SlotType.DATETIME, BuiltInLuisSlotType.DATETIME_V2],
+  [SlotType.DIMENSION, BuiltInLuisSlotType.DIMENSION],
+  [SlotType.EMAIL, BuiltInLuisSlotType.EMAIL],
+  [SlotType.GEOGRAPHY, BuiltInLuisSlotType.GEOGRAPHY_V2],
+  [SlotType.KEY_PHRASE, BuiltInLuisSlotType.KEY_PHRASE],
+  [SlotType.NAME, BuiltInLuisSlotType.PERSON_NAME],
+  [SlotType.NUMBER, BuiltInLuisSlotType.NUMBER],
+  [SlotType.ORDINAL, BuiltInLuisSlotType.ORDINAL],
   // ORDINAL_V2 doesn't exist in VoiceflowConstants.SlotType currently, might get modified in the future once ORDINAL_V2 gets better language support on LUIS
   // eslint-disable-next-line no-secrets/no-secrets
   // [VoiceflowConstants.SlotType.ORDINAL_V2, BuiltInLuisSlotType.ORDINAL_V2],
-  [VoiceflowConstants.SlotType.PERCENTAGE, BuiltInLuisSlotType.PERCENTAGE],
-  [VoiceflowConstants.SlotType.PHONENUMBER, BuiltInLuisSlotType.PHONENUMBER],
-  [VoiceflowConstants.SlotType.TEMPERATURE, BuiltInLuisSlotType.TEMPERATURE],
-  [VoiceflowConstants.SlotType.URL, BuiltInLuisSlotType.URL],
+  [SlotType.PERCENTAGE, BuiltInLuisSlotType.PERCENTAGE],
+  [SlotType.PHONENUMBER, BuiltInLuisSlotType.PHONENUMBER],
+  [SlotType.TEMPERATURE, BuiltInLuisSlotType.TEMPERATURE],
+  [SlotType.URL, BuiltInLuisSlotType.URL],
 ]);
 
 export interface LuisFeature {

@@ -1,1 +1,1 @@
-export * as Luis from './types';
+export * as Node from './types';
