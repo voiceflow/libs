@@ -1,5 +1,6 @@
 export * as VoiceflowConstants from './constants';
 export * as VoiceflowDiagram from './diagram';
+export * as Luis from './luis';
 export * as VoiceflowModels from './models';
 export * as VoiceflowNode from './node';
 export * as VoiceflowProgram from './program';
