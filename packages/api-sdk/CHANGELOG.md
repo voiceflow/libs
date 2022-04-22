@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.12.4](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.12.3...@voiceflow/api-sdk@3.12.4) (2022-04-22)
+
+**Note:** Version bump only for package @voiceflow/api-sdk
+
+
+
+
+
+## [3.12.3](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.12.2...@voiceflow/api-sdk@3.12.3) (2022-04-19)
+
+**Note:** Version bump only for package @voiceflow/api-sdk
+
+
+
+
+
+## [3.12.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.12.1...@voiceflow/api-sdk@3.12.2) (2022-04-19)
+
+**Note:** Version bump only for package @voiceflow/api-sdk
+
+
+
+
+
+## [3.12.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.12.0...@voiceflow/api-sdk@3.12.1) (2022-04-14)
+
+**Note:** Version bump only for package @voiceflow/api-sdk
+
+
+
+
+
+# [3.12.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.11.6...@voiceflow/api-sdk@3.12.0) (2022-04-11)
+
+
+### Features
+
+* implement new reorderTopics method (VF-3269) ([#246](https://github.com/voiceflow/libs/issues/246)) ([5e03421](https://github.com/voiceflow/libs/commit/5e03421b5aae03829e123cd856722aa4515f930a))
+
+
+
+
+
 ## [3.11.6](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.11.5...@voiceflow/api-sdk@3.11.6) (2022-04-08)
 
 **Note:** Version bump only for package @voiceflow/api-sdk

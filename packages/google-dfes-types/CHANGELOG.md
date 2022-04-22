@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.8.0...@voiceflow/google-dfes-types@2.8.1) (2022-04-22)
+
+**Note:** Version bump only for package @voiceflow/google-dfes-types
+
+
+
+
+
+# [2.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.7.25...@voiceflow/google-dfes-types@2.8.0) (2022-04-21)
+
+
+### Features
+
+* map dfes slots to vf slots (VF-3313) ([#251](https://github.com/voiceflow/libs/issues/251)) ([093fefa](https://github.com/voiceflow/libs/commit/093fefab6c9b4697ca628392c0ec9864a313b7b4))
+
+
+
+
+
+## [2.7.25](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.7.24...@voiceflow/google-dfes-types@2.7.25) (2022-04-19)
+
+**Note:** Version bump only for package @voiceflow/google-dfes-types
+
+
+
+
+
+## [2.7.24](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.7.23...@voiceflow/google-dfes-types@2.7.24) (2022-04-19)
+
+**Note:** Version bump only for package @voiceflow/google-dfes-types
+
+
+
+
+
+## [2.7.23](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.7.22...@voiceflow/google-dfes-types@2.7.23) (2022-04-14)
+
+**Note:** Version bump only for package @voiceflow/google-dfes-types
+
+
+
+
+
+## [2.7.22](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.7.21...@voiceflow/google-dfes-types@2.7.22) (2022-04-14)
+
+**Note:** Version bump only for package @voiceflow/google-dfes-types
+
+
+
+
+
 ## [2.7.21](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.7.20...@voiceflow/google-dfes-types@2.7.21) (2022-04-08)
 
 **Note:** Version bump only for package @voiceflow/google-dfes-types

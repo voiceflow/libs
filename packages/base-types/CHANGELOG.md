@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.23.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.23.1...@voiceflow/base-types@2.23.2) (2022-04-22)
+
+**Note:** Version bump only for package @voiceflow/base-types
+
+
+
+
+
+## [2.23.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.23.0...@voiceflow/base-types@2.23.1) (2022-04-19)
+
+
+### Bug Fixes
+
+* fix cardV2 type enum definition (VF-3351) ([#250](https://github.com/voiceflow/libs/issues/250)) ([67c8396](https://github.com/voiceflow/libs/commit/67c8396ade9eb066102acd1cd257df470c31a2a5))
+
+
+
+
+
+# [2.23.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.22.0...@voiceflow/base-types@2.23.0) (2022-04-19)
+
+
+### Features
+
+* add types for CardV2 (VF-3351) ([#249](https://github.com/voiceflow/libs/issues/249)) ([2a90fcf](https://github.com/voiceflow/libs/commit/2a90fcf6ffde296f79aa0f948f81115f70f366ce))
+
+
+
+
+
+# [2.22.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.21.0...@voiceflow/base-types@2.22.0) (2022-04-14)
+
+
+### Features
+
+* add schema version to model (VF-3082) ([#247](https://github.com/voiceflow/libs/issues/247)) ([16398d7](https://github.com/voiceflow/libs/commit/16398d708e206f681c576bd08125498ea9411460)), closes [voiceflow/database-cli#186](https://github.com/voiceflow/database-cli/issues/186) [voiceflow/creator-api#960](https://github.com/voiceflow/creator-api/issues/960) [voiceflow/creator-app#5320](https://github.com/voiceflow/creator-app/issues/5320)
+
+
+
+
+
 # [2.21.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.20.2...@voiceflow/base-types@2.21.0) (2022-04-08)
 
 

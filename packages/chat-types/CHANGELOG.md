@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.2](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.7.1...@voiceflow/chat-types@2.7.2) (2022-04-22)
+
+**Note:** Version bump only for package @voiceflow/chat-types
+
+
+
+
+
+## [2.7.1](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.7.0...@voiceflow/chat-types@2.7.1) (2022-04-19)
+
+**Note:** Version bump only for package @voiceflow/chat-types
+
+
+
+
+
+# [2.7.0](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.6.14...@voiceflow/chat-types@2.7.0) (2022-04-19)
+
+
+### Features
+
+* add types for CardV2 (VF-3351) ([#249](https://github.com/voiceflow/libs/issues/249)) ([2a90fcf](https://github.com/voiceflow/libs/commit/2a90fcf6ffde296f79aa0f948f81115f70f366ce))
+
+
+
+
+
+## [2.6.14](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.6.13...@voiceflow/chat-types@2.6.14) (2022-04-14)
+
+**Note:** Version bump only for package @voiceflow/chat-types
+
+
+
+
+
+## [2.6.13](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.6.12...@voiceflow/chat-types@2.6.13) (2022-04-14)
+
+
+### Bug Fixes
+
+* reduce message delay default (VF-000) ([#240](https://github.com/voiceflow/libs/issues/240)) ([8faef67](https://github.com/voiceflow/libs/commit/8faef67912d8c71be62735bf2842be5431d31ad1))
+
+
+
+
+
 ## [2.6.12](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.6.11...@voiceflow/chat-types@2.6.12) (2022-04-08)
 
 **Note:** Version bump only for package @voiceflow/chat-types

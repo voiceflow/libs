@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.2](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.10.1...@voiceflow/voiceflow-types@3.10.2) (2022-04-22)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
+## [3.10.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.10.0...@voiceflow/voiceflow-types@3.10.1) (2022-04-19)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
+# [3.10.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.9.5...@voiceflow/voiceflow-types@3.10.0) (2022-04-19)
+
+
+### Features
+
+* add types for CardV2 (VF-3351) ([#249](https://github.com/voiceflow/libs/issues/249)) ([2a90fcf](https://github.com/voiceflow/libs/commit/2a90fcf6ffde296f79aa0f948f81115f70f366ce))
+
+
+
+
+
+## [3.9.5](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.9.4...@voiceflow/voiceflow-types@3.9.5) (2022-04-14)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
+## [3.9.4](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.9.3...@voiceflow/voiceflow-types@3.9.4) (2022-04-14)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
 ## [3.9.3](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.9.2...@voiceflow/voiceflow-types@3.9.3) (2022-04-08)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
