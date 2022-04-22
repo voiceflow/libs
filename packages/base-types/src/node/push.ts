@@ -1,16 +1,13 @@
 import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
-import { BaseCommand, BasePort, BaseStep, NodeID, SlotMappings } from './utils';
+import { BaseCommand, BaseStep, NodeID, SlotMappings } from './utils';
 
 // called the "command block" on creator-app
 export interface StepData extends SlotMappings {
   name: string;
   intent: Nullable<string>;
   diagramID: Nullable<string>;
-
-  // manually define ports to allow command step processing
-  ports: BasePort[];
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
