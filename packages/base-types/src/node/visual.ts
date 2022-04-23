@@ -34,29 +34,13 @@ export enum CanvasVisibility {
   CROPPED = 'cropped',
 }
 
-export enum APLType {
-  JSON = 'JSON',
-  SPLASH = 'SPLASH',
-}
-
-export enum VisualType {
-  APL = 'apl',
-  IMAGE = 'image',
-}
-
 export enum FrameType {
   AUTO = 'AUTO',
   DEVICE = 'DEVICE',
   CUSTOM_SIZE = 'CUSTOM_SIZE',
 }
 
-interface BaseStepData {
-  visualType: VisualType;
-}
-
-export interface ImageStepData extends BaseStepData {
-  visualType: VisualType.IMAGE;
-
+export interface StepData {
   image: Nullable<string>;
   device: Nullable<DeviceType>;
   frameType?: FrameType;
@@ -66,28 +50,13 @@ export interface ImageStepData extends BaseStepData {
     loop: boolean;
   };
 }
-
-export interface APLStepData extends BaseStepData {
-  visualType: VisualType.APL;
-
-  title?: string;
-  aplType: APLType;
-  imageURL?: string;
-  document?: string;
-  datasource?: string;
-  aplCommands?: string;
-  jsonFileName?: string;
-}
-
-export type StepData = ImageStepData | APLStepData;
-
 export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.VISUAL;
 }
 
 export interface Node extends BaseNode, NodeNextID {
   type: NodeType.VISUAL;
-  data: ImageStepData;
+  data: StepData;
 }
 
 export interface TraceFrame extends BaseTraceFrame<StepData> {
