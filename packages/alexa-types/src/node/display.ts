@@ -14,7 +14,6 @@ export enum FrameType {
 }
 
 export interface StepData {
-  type: APLType;
   title?: string;
   aplType: APLType;
   imageURL?: string;
