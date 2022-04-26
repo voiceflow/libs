@@ -64,8 +64,11 @@ export const AZURE_LOCALE_VOICE_META = {
     locale: 'en-GB',
     voices: [
       { gender: 'Male', voiceID: 'azure-en-GB-George' },
+      { gender: 'Male', voiceID: 'azure-en-GB-RyanNeural' },
+      { gender: 'Female', voiceID: 'azure-en-GB-SoniaNeural' },
       { gender: 'Female', voiceID: 'azure-en-GB-HazelRUS' },
       { gender: 'Female', voiceID: 'azure-en-GB-Susan' },
+      { gender: 'Female', voiceID: 'azure-en-GB-LibbyNeural' },
     ],
   },
   'en-US': {
