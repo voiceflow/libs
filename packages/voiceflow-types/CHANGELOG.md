@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.12.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.11.0...@voiceflow/voiceflow-types@3.12.0) (2022-04-26)
+
+
+### Features
+
+* add three new azure voices (VF-2845) ([#255](https://github.com/voiceflow/libs/issues/255)) ([84ed653](https://github.com/voiceflow/libs/commit/84ed6534d13229d07a2a03980c27116bcf89dc97))
+
+
+
+
+
 # [3.11.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.10.2...@voiceflow/voiceflow-types@3.11.0) (2022-04-23)
 
 
