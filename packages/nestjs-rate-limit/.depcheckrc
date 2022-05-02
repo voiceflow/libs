@@ -10,7 +10,7 @@
     "ttypescript"
   ],
   "ignores": [
-    "@nestjs-metrics/*",
+    "@nestjs-rate-limit/*",
     "@commitlint/*",
     "@types/*",
     "@voiceflow/commitlint-config",

@@ -8,7 +8,7 @@
     "experimentalDecorators": true,
     "baseUrl": "./",
     "paths": {
-      "@nestjs-metrics/*": ["src/*"]
+      "@nestjs-rate-limit/*": ["src/*"]
     },
 
     // Strictness
