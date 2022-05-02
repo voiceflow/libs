@@ -8,7 +8,7 @@ HTTP request rate limiting for NestJS.
 yarn add @voiceflow/nestjs-rate-limit
 ```
 
-This package also requires you to have `@voiceflow/nestjs-rate-limit` installed.
+This package also requires you to have `@voiceflow/nestjs-redis` installed since `RateLimitModule` uses `RedisModule` as a dependency.
 
 ## Usage
 
