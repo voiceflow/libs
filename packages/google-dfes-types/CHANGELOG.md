@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.8.3...@voiceflow/google-dfes-types@2.9.0) (2022-05-03)
+
+
+### Features
+
+* add dfes fallback built in intent (VF-1816) ([#256](https://github.com/voiceflow/libs/issues/256)) ([2f73066](https://github.com/voiceflow/libs/commit/2f73066cf2eaedcfa8f0522451316695a210f5ae))
+
+
+
+
+
 ## [2.8.3](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.8.2...@voiceflow/google-dfes-types@2.8.3) (2022-04-26)
 
 **Note:** Version bump only for package @voiceflow/google-dfes-types
