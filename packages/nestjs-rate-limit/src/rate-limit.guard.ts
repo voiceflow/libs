@@ -12,7 +12,6 @@ export class RateLimitGuard implements CanActivate {
   private static extractTokenFromHeadersOrCookies(executionContext: ExecutionContext): string | undefined {
     const request = executionContext.switchToHttp().getRequest<Request>();
 
-    // TODO: Pretty sure this is not how we're meant to access the cookies
     return request.headers.authorization || request.cookies.auth_vf;
   }
 

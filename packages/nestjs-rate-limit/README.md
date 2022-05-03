@@ -72,3 +72,9 @@ export class MyController {
   /* ... */
 }
 ```
+
+#### Default token extractor
+
+The default token extractor will extract the user's token from the request headers or cookies.
+
+For using cookies you must install `cookie-parser` and configure it per [the NestJS documentation](https://docs.nestjs.com/techniques/cookies#use-with-express-default).
