@@ -46,6 +46,9 @@ export const getAbbrevatedFormat = (time: string) =>
   time
     .split(' ')
     .map((str: string) => {
+      if (str.includes('month')) {
+        return 'mo';
+      }
       if (str.includes('day')) {
         return 'd';
       }
