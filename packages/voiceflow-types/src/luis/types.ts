@@ -87,7 +87,7 @@ export interface LuisUtteranceEntity {
   children?: string[];
 }
 
-export interface LuisUtterances {
+export interface LuisUtterance {
   text: string;
   intent: string;
   entities: LuisUtteranceEntity[];
@@ -105,9 +105,10 @@ export interface LuisClosedList {
 }
 
 export interface LuisWorkspace {
+  culture: string;
   intents: LuisIntentStructure[];
   entities: LuisEntityStructure[];
   closedLists: LuisClosedList[];
   builtInEntities: LuisBuiltInEntity[];
-  utterances: LuisUtterances[];
+  utterances: LuisUtterance[];
 }
