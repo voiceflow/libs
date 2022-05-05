@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.12.1...@voiceflow/voiceflow-types@3.13.0) (2022-05-05)
+
+
+### Features
+
+* update luis types (VF-3315) ([#259](https://github.com/voiceflow/libs/issues/259)) ([9ca98d8](https://github.com/voiceflow/libs/commit/9ca98d8d7009148fefdc43de3266b2e79e5be4a7))
+
+
+
+
+
 ## [3.12.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.12.0...@voiceflow/voiceflow-types@3.12.1) (2022-05-05)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
