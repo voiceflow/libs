@@ -77,7 +77,7 @@ describe('ProgramResource', () => {
     const body = {
       id: '1',
       startId: '1',
-      skill_id: '1',
+      versionID: '1',
 
       lines: {
         1: { id: '1', type: 'type' },
@@ -100,7 +100,7 @@ describe('ProgramResource', () => {
 
     const body = {
       startId: '1',
-      skill_id: '1',
+      versionID: '1',
 
       lines: {
         1: { id: '1', type: 'type' },
