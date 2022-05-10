@@ -28,6 +28,18 @@ class DiagramResource extends CrudResource<BaseModels.Diagram.Model, ModelIDKey,
     return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
+  public async getBatch<T extends Partial<BaseModels.Diagram.Model>>(ids: string[]): Promise<T[]>;
+
+  public async getBatch<T extends BaseModels.BaseDiagramNode = BaseModels.BaseDiagramNode>(ids: string[]): Promise<BaseModels.Diagram.Model<T>[]>;
+
+  public async getBatch<T extends BaseModels.Diagram.Model<any> = BaseModels.Diagram.Model>(ids: string[]): Promise<T[]>;
+
+  public async getBatch(ids: string[]): Promise<BaseModels.Diagram.Model[]> {
+    const joinedIDs = ids.join(',');
+    const { data } = await this.fetch.get<{ diagrams: BaseModels.Diagram.Model[] }>(`${this._getCRUDEndpoint()}/batch/${joinedIDs}`);
+    return data.diagrams;
+  }
+
   public async getRTC<T extends BaseModels.Diagram.Model<any> = BaseModels.Diagram.Model>(id: string): Promise<{ diagram: T; timestamp: number }> {
     const { data } = await this.fetch.get<{ diagram: T; timestamp: number }>(`${this._getCRUDEndpoint(id)}/rtc`);
 
