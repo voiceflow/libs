@@ -36,7 +36,7 @@ class DiagramResource extends CrudResource<BaseModels.Diagram.Model, ModelIDKey,
 
   public async getBatch(ids: string[]): Promise<BaseModels.Diagram.Model[]> {
     const joinedIDs = ids.join(',');
-    const { data } = await this.fetch.get<{ diagrams: BaseModels.Diagram.Model[] }>(`${this._getCRUDEndpoint()}/batch/${joinedIDs}`);
+    const { data } = await this.fetch.get<{ diagrams: BaseModels.Diagram.Model[] }>(`${this._getCRUDEndpoint()}/batch/?diagramIDs=${joinedIDs}`);
     return data.diagrams;
   }
 
