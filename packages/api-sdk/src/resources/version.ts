@@ -111,6 +111,12 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
     return data;
   }
 
+  public async getDiagramsByIDs(versionId: string, diagramIds: string[]): Promise<BaseModels.Diagram.Model[]> {
+    const { data } = await this.fetch.get<BaseModels.Diagram.Model[]>(`${this._getCRUDEndpoint(versionId)}/diagrams${this._getIDsQuery(diagramIds)}`);
+
+    return data;
+  }
+
   public async export<
     P extends BaseModels.Project.Model<any, any> = BaseModels.Project.Model<AnyRecord, AnyRecord>,
     V extends BaseModels.Version.Model<any> = BaseModels.Version.Model<BaseModels.Version.PlatformData>,
