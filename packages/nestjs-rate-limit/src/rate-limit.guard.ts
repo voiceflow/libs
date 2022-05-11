@@ -12,7 +12,7 @@ export class RateLimitGuard implements CanActivate {
   private static extractTokenFromHeadersOrCookies(executionContext: ExecutionContext): string | undefined {
     const request = executionContext.switchToHttp().getRequest<Request>();
 
-    return request.headers.authorization || request.cookies.auth_vf;
+    return request.headers.authorization || request.cookies?.auth_vf;
   }
 
   private readonly tokenExtractor: TokenExtractor;
