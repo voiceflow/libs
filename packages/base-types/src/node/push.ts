@@ -1,7 +1,7 @@
 import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
-import { BaseCommand, BaseStep, NodeID, SlotMappings } from './utils';
+import { BaseCommand, BaseStep, CommandType, NodeID, SlotMappings } from './utils';
 
 // called the "command block" on creator-app
 export interface StepData extends SlotMappings {
@@ -19,7 +19,7 @@ export interface Step<Data = StepData> extends BaseStep<Data> {
  * use Node.Utils.AnyCommand for other platforms
  */
 export interface Command extends BaseCommand, Required<SlotMappings> {
-  type: NodeType.COMMAND;
+  type: CommandType.PUSH;
   next?: NodeID;
   intent: string;
   diagram_id?: string;

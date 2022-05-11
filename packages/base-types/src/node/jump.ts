@@ -1,7 +1,7 @@
 import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
-import { BaseCommand, BaseStep, NodeID, SlotMappings } from './utils';
+import { BaseCommand, BaseStep, CommandType, NodeID, SlotMappings } from './utils';
 
 export enum IntentAvailability {
   LOCAL = 'LOCAL',
@@ -23,7 +23,7 @@ export interface Step<Data = StepData> extends BaseStep<Data> {
  * use Node.Utils.AnyCommand for other platforms
  */
 export interface Command extends BaseCommand, Required<SlotMappings> {
-  type: NodeType.INTENT;
+  type: CommandType.JUMP;
   next: NodeID;
   intent: string;
   diagramID?: string;
