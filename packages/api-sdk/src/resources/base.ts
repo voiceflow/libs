@@ -1,7 +1,7 @@
 import Fetcher, { FetcherOptions } from './fetcher';
 
-export type Fields = string[] | ReadonlyArray<string>;
-export type IDs = string[] | ReadonlyArray<string>;
+export type Fields = readonly string[];
+export type IDs = readonly string[];
 
 export type BaseResourceOptions<Client extends Record<string, any>> = FetcherOptions<Client>;
 
