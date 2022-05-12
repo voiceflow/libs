@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.24.1...@voiceflow/base-types@2.24.2) (2022-05-12)
+
+
+### Bug Fixes
+
+* make defaultCardLayout optional (VF-3358) ([#267](https://github.com/voiceflow/libs/issues/267)) ([459c5cc](https://github.com/voiceflow/libs/commit/459c5cc8948723c529dea7474469d836231c4558))
+
+
+
+
+
 ## [2.24.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.24.0...@voiceflow/base-types@2.24.1) (2022-05-12)
 
 
