@@ -31,7 +31,7 @@ export interface Settings<Prompt = unknown> {
   repeat: RepeatType;
   session: Session<Prompt>;
   defaultCanvasNodeVisibility: Nullable<Utils.CanvasNodeVisibility>;
-  defaultCardLayout: Nullable<CardLayout>;
+  defaultCardLayout?: Nullable<CardLayout>;
 }
 
 export const defaultSettings = <Prompt>({
