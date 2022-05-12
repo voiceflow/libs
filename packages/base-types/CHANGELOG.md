@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.24.0...@voiceflow/base-types@2.24.1) (2022-05-12)
+
+
+### Bug Fixes
+
+* fix cardv2 description type (VF-3358) ([#266](https://github.com/voiceflow/libs/issues/266)) ([2ece6af](https://github.com/voiceflow/libs/commit/2ece6af3336e46ae2f3645eaa3a4bb834d90c322))
+
+
+
+
+
 # [2.24.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.23.5...@voiceflow/base-types@2.24.0) (2022-05-11)
 
 
