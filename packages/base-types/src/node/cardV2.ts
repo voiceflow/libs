@@ -1,3 +1,4 @@
+import { SlateTextValue } from '@base-types/text';
 import { Nullable } from '@base-types/types';
 
 import { NodeType } from './constants';
@@ -25,7 +26,7 @@ export interface CardButton extends DataID {
 export interface Card extends DataID {
   imageUrl: string | null;
   title: string;
-  description: string;
+  description: SlateTextValue;
   buttons: CardButton[];
 }
 
