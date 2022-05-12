@@ -41,7 +41,7 @@ class ProgramResource extends CrudResource<BaseModels.Program.Model, ModelIDKey,
   }
 
   public async createMany(body: Omit<BaseModels.Program.Model<any, any>, ModelIDKey>[]): Promise<BaseModels.Program.Model<any, any>[]> {
-    const { data } = await this.fetch.post<BaseModels.Program.Model<any, any>[]>(`${super._getCRUDEndpoint}/batch`, body);
+    const { data } = await this.fetch.post<BaseModels.Program.Model<any, any>[]>(`${super._getCRUDEndpoint()}/batch`, { programs: body });
     return data;
   }
 
