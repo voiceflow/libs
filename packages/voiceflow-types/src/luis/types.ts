@@ -104,6 +104,14 @@ export interface LuisClosedList {
   subLists: LuisSubList[];
 }
 
+export interface LuisPhraseList {
+  name: string;
+  mode: boolean;
+  words: string;
+  activated: string;
+  enabledForAllModels: boolean;
+}
+
 export interface LuisWorkspace {
   culture: string;
   intents: LuisIntentStructure[];
@@ -111,4 +119,5 @@ export interface LuisWorkspace {
   closedLists: LuisClosedList[];
   builtInEntities: LuisBuiltInEntity[];
   utterances: LuisUtterance[];
+  phraselists: LuisPhraseList[];
 }
