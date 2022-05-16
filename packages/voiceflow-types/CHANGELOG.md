@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.14.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.13.4...@voiceflow/voiceflow-types@3.14.0) (2022-05-13)
+
+
+### Features
+
+* added phraselists property to LuisWorkspace (VF-3494) ([#269](https://github.com/voiceflow/libs/issues/269)) ([7a85a65](https://github.com/voiceflow/libs/commit/7a85a656bb2fbf7b79c7aced7f2baf6980b29e2c))
+
+
+
+
+
 ## [3.13.4](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.13.3...@voiceflow/voiceflow-types@3.13.4) (2022-05-12)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
