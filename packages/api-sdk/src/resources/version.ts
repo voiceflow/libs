@@ -124,7 +124,9 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
   ): Promise<T[]>;
 
   public async getDiagramsByIDs(versionId: string, diagramIds: string[]): Promise<BaseModels.Diagram.Model[]> {
-    const { data } = await this.fetch.get<BaseModels.Diagram.Model[]>(`${this._getCRUDEndpoint(versionId)}/diagrams${this._getIDsQuery(diagramIds)}`);
+    const url = new URL('diagrams', this._getCRUDEndpoint(versionId));
+    diagramIds.forEach((id) => url.searchParams.append('diagramID[]', id));
+    const { data } = await this.fetch.get<BaseModels.Diagram.Model[]>(url.href);
 
     return data;
   }

@@ -1,7 +1,7 @@
 {
   "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
-    "lib": ["es2020"],
+    "lib": ["es2020", "dom"],
     "strict": true,
     "baseUrl": ".",
     "sourceMap": false,
