@@ -5,6 +5,7 @@ export const API_KEY_PREFIX = 'VF.';
 export enum APIKeySubType {
   Workspace = 'WS',
   DialogManager = 'DM',
+  SecondaryKey = 'SK',
 }
 
 const buildAPIKeyGuard =
@@ -27,4 +28,5 @@ export interface Model<Data extends AnyRecord = AnyRecord> {
   data?: Data;
   scopes: string[];
   permissions: string[];
+  secondaryKeyID: string;
 }
