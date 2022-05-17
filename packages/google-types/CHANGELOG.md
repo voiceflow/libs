@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.10.17...@voiceflow/google-types@2.11.0) (2022-05-17)
+
+
+### Features
+
+* add actions types (VF-000) ([#268](https://github.com/voiceflow/libs/issues/268)) ([19fea82](https://github.com/voiceflow/libs/commit/19fea82aac722b4b50d5e792c2e37473fde0f03e))
+
+
+
+
+
 ## [2.10.17](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.10.16...@voiceflow/google-types@2.10.17) (2022-05-13)
 
 **Note:** Version bump only for package @voiceflow/google-types

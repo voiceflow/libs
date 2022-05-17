@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.25.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.24.2...@voiceflow/base-types@2.25.0) (2022-05-17)
+
+
+### Features
+
+* add actions types (VF-000) ([#268](https://github.com/voiceflow/libs/issues/268)) ([19fea82](https://github.com/voiceflow/libs/commit/19fea82aac722b4b50d5e792c2e37473fde0f03e))
+
+
+
+
+
 ## [2.24.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.24.1...@voiceflow/base-types@2.24.2) (2022-05-12)
 
 
