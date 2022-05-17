@@ -3,6 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.25.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.25.0...@voiceflow/base-types@2.25.1) (2022-05-17)
+
+
+### Bug Fixes
+
+* actions improve types (VF-000) ([#270](https://github.com/voiceflow/libs/issues/270)) ([c00681d](https://github.com/voiceflow/libs/commit/c00681d0ddeebcc898d8a4d683d953b2fb4c9ae1))
+
+
+
+
+
+# [2.25.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.24.2...@voiceflow/base-types@2.25.0) (2022-05-17)
+
+
+### Features
+
+* add actions types (VF-000) ([#268](https://github.com/voiceflow/libs/issues/268)) ([19fea82](https://github.com/voiceflow/libs/commit/19fea82aac722b4b50d5e792c2e37473fde0f03e))
+
+
+
+
+
+## [2.24.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.24.1...@voiceflow/base-types@2.24.2) (2022-05-12)
+
+
+### Bug Fixes
+
+* make defaultCardLayout optional (VF-3358) ([#267](https://github.com/voiceflow/libs/issues/267)) ([459c5cc](https://github.com/voiceflow/libs/commit/459c5cc8948723c529dea7474469d836231c4558))
+
+
+
+
+
+## [2.24.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.24.0...@voiceflow/base-types@2.24.1) (2022-05-12)
+
+
+### Bug Fixes
+
+* fix cardv2 description type (VF-3358) ([#266](https://github.com/voiceflow/libs/issues/266)) ([2ece6af](https://github.com/voiceflow/libs/commit/2ece6af3336e46ae2f3645eaa3a4bb834d90c322))
+
+
+
+
+
+# [2.24.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.23.5...@voiceflow/base-types@2.24.0) (2022-05-11)
+
+
+### Features
+
+* update command type (VF-000) ([#265](https://github.com/voiceflow/libs/issues/265)) ([33e7a37](https://github.com/voiceflow/libs/commit/33e7a3790486c38c5fc20590052303ed27da3139)), closes [/github.com/voiceflow/google-runtime/blob/f4cdb47be45df8c61a076e46a17e59a6d7e9d6fb/lib/services/runtime/handlers/command.ts#L12-L18](https://github.com//github.com/voiceflow/google-runtime/blob/f4cdb47be45df8c61a076e46a17e59a6d7e9d6fb/lib/services/runtime/handlers/command.ts/issues/L12-L18) [/github.com/voiceflow/alexa-runtime/blob/74a292aef66964b0d7a3c6161b7dd6dcfa2d3c45/lib/services/runtime/handlers/command.ts#L14-L20](https://github.com//github.com/voiceflow/alexa-runtime/blob/74a292aef66964b0d7a3c6161b7dd6dcfa2d3c45/lib/services/runtime/handlers/command.ts/issues/L14-L20)
+
+
+
+
+
 ## [2.23.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.23.4...@voiceflow/base-types@2.23.5) (2022-05-06)
 
 

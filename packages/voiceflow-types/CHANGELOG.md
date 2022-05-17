@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.15.0...@voiceflow/voiceflow-types@3.15.1) (2022-05-17)
+
+
+### Bug Fixes
+
+* actions improve types (VF-000) ([#270](https://github.com/voiceflow/libs/issues/270)) ([c00681d](https://github.com/voiceflow/libs/commit/c00681d0ddeebcc898d8a4d683d953b2fb4c9ae1))
+
+
+
+
+
+# [3.15.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.14.0...@voiceflow/voiceflow-types@3.15.0) (2022-05-17)
+
+
+### Features
+
+* add actions types (VF-000) ([#268](https://github.com/voiceflow/libs/issues/268)) ([19fea82](https://github.com/voiceflow/libs/commit/19fea82aac722b4b50d5e792c2e37473fde0f03e))
+
+
+
+
+
+# [3.14.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.13.4...@voiceflow/voiceflow-types@3.14.0) (2022-05-13)
+
+
+### Features
+
+* added phraselists property to LuisWorkspace (VF-3494) ([#269](https://github.com/voiceflow/libs/issues/269)) ([7a85a65](https://github.com/voiceflow/libs/commit/7a85a656bb2fbf7b79c7aced7f2baf6980b29e2c))
+
+
+
+
+
+## [3.13.4](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.13.3...@voiceflow/voiceflow-types@3.13.4) (2022-05-12)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
+## [3.13.3](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.13.2...@voiceflow/voiceflow-types@3.13.3) (2022-05-12)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
+## [3.13.2](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.13.1...@voiceflow/voiceflow-types@3.13.2) (2022-05-11)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
 ## [3.13.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.13.0...@voiceflow/voiceflow-types@3.13.1) (2022-05-06)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types

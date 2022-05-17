@@ -53,6 +53,7 @@ export interface NoReplyRequest extends BaseRequest<undefined> {
 export interface TextRequest extends BaseRequest<string> {
   type: RequestType.TEXT;
 }
+
 interface ActionAndLabelRequestPayload extends ActionPayload, LabelRequestPayload {}
 
 export interface IntentRequestPayload extends ActionAndLabelRequestPayload {

@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.11.0...@voiceflow/google-types@2.11.1) (2022-05-17)
+
+
+### Bug Fixes
+
+* actions improve types (VF-000) ([#270](https://github.com/voiceflow/libs/issues/270)) ([c00681d](https://github.com/voiceflow/libs/commit/c00681d0ddeebcc898d8a4d683d953b2fb4c9ae1))
+
+
+
+
+
+# [2.11.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.10.17...@voiceflow/google-types@2.11.0) (2022-05-17)
+
+
+### Features
+
+* add actions types (VF-000) ([#268](https://github.com/voiceflow/libs/issues/268)) ([19fea82](https://github.com/voiceflow/libs/commit/19fea82aac722b4b50d5e792c2e37473fde0f03e))
+
+
+
+
+
+## [2.10.17](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.10.16...@voiceflow/google-types@2.10.17) (2022-05-13)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [2.10.16](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.10.15...@voiceflow/google-types@2.10.16) (2022-05-12)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [2.10.15](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.10.14...@voiceflow/google-types@2.10.15) (2022-05-12)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
+## [2.10.14](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.10.13...@voiceflow/google-types@2.10.14) (2022-05-11)
+
+**Note:** Version bump only for package @voiceflow/google-types
+
+
+
+
+
 ## [2.10.13](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.10.12...@voiceflow/google-types@2.10.13) (2022-05-06)
 
 **Note:** Version bump only for package @voiceflow/google-types

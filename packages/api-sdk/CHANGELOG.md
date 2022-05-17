@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.13.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.13.1...@voiceflow/api-sdk@3.13.2) (2022-05-17)
+
+**Note:** Version bump only for package @voiceflow/api-sdk
+
+
+
+
+
+## [3.13.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.13.0...@voiceflow/api-sdk@3.13.1) (2022-05-17)
+
+**Note:** Version bump only for package @voiceflow/api-sdk
+
+
+
+
+
+# [3.13.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.12.10...@voiceflow/api-sdk@3.13.0) (2022-05-16)
+
+
+### Features
+
+* add batch endpoints to sdk (VF-3019) ([#263](https://github.com/voiceflow/libs/issues/263)) ([49bbf40](https://github.com/voiceflow/libs/commit/49bbf40c71791de9f1fda954bd8ee593f51df75e))
+
+
+
+
+
+## [3.12.10](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.12.9...@voiceflow/api-sdk@3.12.10) (2022-05-12)
+
+**Note:** Version bump only for package @voiceflow/api-sdk
+
+
+
+
+
+## [3.12.9](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.12.8...@voiceflow/api-sdk@3.12.9) (2022-05-12)
+
+**Note:** Version bump only for package @voiceflow/api-sdk
+
+
+
+
+
+## [3.12.8](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.12.7...@voiceflow/api-sdk@3.12.8) (2022-05-11)
+
+**Note:** Version bump only for package @voiceflow/api-sdk
+
+
+
+
+
 ## [3.12.7](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.12.6...@voiceflow/api-sdk@3.12.7) (2022-05-06)
 
 **Note:** Version bump only for package @voiceflow/api-sdk

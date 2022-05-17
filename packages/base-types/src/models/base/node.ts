@@ -30,8 +30,22 @@ export interface BlockOnlyData {
   steps: string[];
 }
 
+export enum BaseNodeType {
+  BLOCK = 'block',
+  ACTIONS = 'actions',
+}
+
 export interface BaseBlock<D extends AnyRecord = AnyRecord> extends BaseDiagramNode<D & BlockOnlyData> {
+  type: BaseNodeType.BLOCK;
   coords: Point;
+}
+
+export interface ActionsData {
+  actions: string[];
+}
+
+export interface BaseActions extends BaseDiagramNode<ActionsData> {
+  type: BaseNodeType.ACTIONS;
 }
 
 export type StepOnlyData<Ports, PortsOld> = { ports?: never; portsV2: Ports } | { ports: PortsOld; portsV2?: never };
