@@ -1,4 +1,4 @@
-import { AnyRecord } from '@base-types/types';
+import { AnyRecord } from '@voiceflow/common';
 
 import { AnyBaseStepPorts, BasePortList, NextStepPorts } from './port';
 

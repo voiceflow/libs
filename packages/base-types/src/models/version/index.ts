@@ -1,4 +1,4 @@
-import { AnyRecord } from '@base-types/types';
+import { AnyRecord } from '@voiceflow/common';
 
 import { BaseCommand, BaseNote, Intent, Slot, Variable } from '../base';
 import { Prototype } from './prototype';

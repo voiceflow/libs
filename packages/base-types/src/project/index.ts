@@ -1,5 +1,5 @@
 import { Project as ProjectModels } from '@base-types/models';
-import { AnyRecord } from '@base-types/types';
+import { AnyRecord } from '@voiceflow/common';
 
 export interface PlatformData extends AnyRecord {}
 

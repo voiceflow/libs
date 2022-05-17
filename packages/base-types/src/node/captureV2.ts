@@ -1,5 +1,5 @@
 import { Intent } from '@base-types/models';
-import { Nullable } from '@base-types/types';
+import { Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
 import {

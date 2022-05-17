@@ -1,4 +1,4 @@
-import { AnyRecord } from '@base-types/types';
+import { AnyRecord } from '@voiceflow/common';
 
 export enum NoteType {
   INTENT = 'INTENT',

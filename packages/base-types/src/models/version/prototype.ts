@@ -1,4 +1,4 @@
-import { AnyRecord, Nullable } from '@base-types/types';
+import { AnyRecord, Nullable } from '@voiceflow/common';
 
 import { BaseCommand, PrototypeModel } from '../base';
 

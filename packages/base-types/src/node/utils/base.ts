@@ -1,4 +1,4 @@
-import { Nullable } from '@base-types/types';
+import { Nullable } from '@voiceflow/common';
 
 export {
   BaseCommand,

@@ -1,4 +1,4 @@
-import { Nullable } from '@voiceflow/base-types';
+import { Nullable } from '@voiceflow/common';
 
 // shared across google and dfes types
 export interface SharedBaseMemberPlatformData {

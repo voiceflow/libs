@@ -1,4 +1,4 @@
-import { Nullable } from '@voiceflow/base-types';
+import { Nullable } from '@voiceflow/common';
 
 export interface BaseMemberPlatformData {
   agentName: Nullable<string>;
