@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@voiceflow/base-types": "^2.25.2",
-    "@voiceflow/common": "7.26.1"
+    "@voiceflow/common": "^7.26.1"
   },
   "files": [
     "build"
