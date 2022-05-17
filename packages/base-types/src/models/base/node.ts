@@ -24,7 +24,11 @@ export interface BaseDiagramNode<D extends AnyRecord = AnyRecord> {
   coords?: Point;
 }
 
-export interface BlockOnlyData {
+export interface BaseNodeData {
+  name?: string;
+}
+
+export interface BlockOnlyData extends BaseNodeData {
   name: string;
   color: string;
   steps: string[];
@@ -40,7 +44,7 @@ export interface BaseBlock<D extends AnyRecord = AnyRecord> extends BaseDiagramN
   coords: Point;
 }
 
-export interface ActionsData {
+export interface ActionsData extends BaseNodeData {
   actions: string[];
 }
 
@@ -48,7 +52,8 @@ export interface BaseActions extends BaseDiagramNode<ActionsData> {
   type: BaseNodeType.ACTIONS;
 }
 
-export type StepOnlyData<Ports, PortsOld> = { ports?: never; portsV2: Ports } | { ports: PortsOld; portsV2?: never };
+export type StepPortsData<Ports, PortsOld> = { ports?: never; portsV2: Ports } | { ports: PortsOld; portsV2?: never };
+export type StepOnlyData<Ports, PortsOld> = StepPortsData<Ports, PortsOld> & BaseNodeData;
 
 export interface BaseStep<Data extends AnyRecord = AnyRecord, Ports = NextStepPorts, PortsOld = BasePortList>
   extends BaseDiagramNode<Data & StepOnlyData<Ports, PortsOld>> {}
