@@ -45,7 +45,7 @@ export interface BaseBlock<D extends AnyRecord = AnyRecord> extends BaseDiagramN
 }
 
 export interface ActionsData extends BaseNodeData {
-  actions: string[];
+  steps: string[];
 }
 
 export interface BaseActions extends BaseDiagramNode<ActionsData> {
