@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.15.0...@voiceflow/voiceflow-types@3.15.1) (2022-05-17)
+
+
+### Bug Fixes
+
+* actions improve types (VF-000) ([#270](https://github.com/voiceflow/libs/issues/270)) ([c00681d](https://github.com/voiceflow/libs/commit/c00681d0ddeebcc898d8a4d683d953b2fb4c9ae1))
+
+
+
+
+
 # [3.15.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.14.0...@voiceflow/voiceflow-types@3.15.0) (2022-05-17)
 
 
