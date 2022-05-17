@@ -40,3 +40,9 @@ export interface BaseStep<Data extends AnyRecord = AnyRecord, Ports = NextStepPo
   extends BaseDiagramNode<Data & StepOnlyData<Ports, PortsOld>> {}
 
 export interface AnyBaseStep extends BaseStep<AnyRecord, AnyBaseStepPorts> {}
+
+export interface ActionsData {
+  steps: string[];
+}
+
+export interface Actions extends BaseDiagramNode<ActionsData> {}
