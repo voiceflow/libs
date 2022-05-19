@@ -1,5 +1,5 @@
 import { Prompt } from '@voice-types/models';
-import { Nullable } from '@voiceflow/base-types';
+import { Nullable } from '@voiceflow/common';
 
 export const defaultPrompt = <V>(prompt: Nullable<Prompt<V>> | undefined, defaultVoice: V): Nullable<Prompt<V>> => {
   if (!prompt?.content) {

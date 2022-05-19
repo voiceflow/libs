@@ -1,4 +1,4 @@
-import { AnyRecord } from '@base-types/types';
+import { AnyRecord } from '@voiceflow/common';
 
 import { Member } from './member';
 import { Prototype } from './prototype';
