@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.27.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.26.0...@voiceflow/base-types@2.27.0) (2022-05-19)
+
+
+### Features
+
+* create `LogBuffer` and `AsyncLogBuffer` interfaces (VF-3529) ([#278](https://github.com/voiceflow/libs/issues/278)) ([9ad664c](https://github.com/voiceflow/libs/commit/9ad664cfa5991d3a6a022ed64f0862a27723741f))
+
+
+
+
+
 # [2.26.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.25.3...@voiceflow/base-types@2.26.0) (2022-05-19)
 
 
