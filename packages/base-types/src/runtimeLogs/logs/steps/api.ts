@@ -1,5 +1,4 @@
 import { APIBodyType, APIMethod } from '@base-types/node/api';
-import { JsonArray, JsonObject, JsonValue } from 'type-fest';
 
 import { LoggingNodeType, LogLevel } from '../../utils';
 import { BaseStepLog } from '../base';
@@ -23,7 +22,7 @@ interface VerboseApiLogMessage {
     | {
         method: Exclude<APIMethod, APIMethod.GET>;
         bodyType: APIBodyType;
-        body: string | JsonObject | JsonArray;
+        body: string;
       }
     | {
         // GET requests can't have a body
@@ -34,7 +33,7 @@ interface VerboseApiLogMessage {
   );
   response: {
     headers: Record<string, string>;
-    body: JsonValue;
+    body: string;
   };
 }
 
