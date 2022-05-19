@@ -1,4 +1,4 @@
-import { AnyRecord } from '@voiceflow/base-types';
+import { AnyRecord } from '@voiceflow/common';
 
 export type Flatten<T> = T extends infer U ? { [K in keyof U]: U[K] } : never;
 

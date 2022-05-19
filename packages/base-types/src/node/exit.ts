@@ -1,9 +1,9 @@
-import { UnknownRecord } from '@base-types/types';
+import { Struct } from '@voiceflow/common';
 
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, BaseTraceFrame, EmptyStepPorts, TraceType } from './utils';
 
-export type StepData = UnknownRecord;
+export type StepData = Struct;
 
 export interface NodeData {
   end: true;

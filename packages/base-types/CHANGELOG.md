@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.26.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.25.3...@voiceflow/base-types@2.26.0) (2022-05-19)
+
+
+### Features
+
+* add runtime logging log entry types (VF-3528) ([#275](https://github.com/voiceflow/libs/issues/275)) ([7b309f7](https://github.com/voiceflow/libs/commit/7b309f78e5453698bf669cd18a198e132f3bf049))
+
+
+
+
+
+## [2.25.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.25.2...@voiceflow/base-types@2.25.3) (2022-05-19)
+
+**Note:** Version bump only for package @voiceflow/base-types
+
+
+
+
+
+## [2.25.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.25.1...@voiceflow/base-types@2.25.2) (2022-05-18)
+
+
+### Bug Fixes
+
+* actions types (VF-000) ([#271](https://github.com/voiceflow/libs/issues/271)) ([f59204d](https://github.com/voiceflow/libs/commit/f59204d4eeb640ecb2c7f1db68f77800cba26640))
+
+
+
+
+
 ## [2.25.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.25.0...@voiceflow/base-types@2.25.1) (2022-05-17)
 
 

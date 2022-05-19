@@ -1,5 +1,5 @@
 import { CardLayout } from '@base-types/node/cardV2';
-import { Nullable } from '@base-types/types';
+import { Nullable } from '@voiceflow/common';
 
 import { Utils } from '../node';
 

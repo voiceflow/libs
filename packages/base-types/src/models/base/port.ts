@@ -1,4 +1,4 @@
-import { EmptyRecord, Nullable } from '@base-types/types';
+import { EmptyObject, Nullable } from '@voiceflow/common';
 
 export enum PortType {
   FAIL = 'fail',
@@ -42,13 +42,13 @@ export interface BuiltInNextFailPorts extends BuiltInNextPort, BuiltInFailPort {
 
 export interface BuiltInNoMatchNoReplyPorts extends BuiltInNoMatchPort, BuiltInNoReplyPort {}
 
-export interface EmptyStepPorts extends BaseStepPorts<EmptyRecord, []> {}
+export interface EmptyStepPorts extends BaseStepPorts<EmptyObject, []> {}
 
 export interface NextStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNextPort, Dynamic> {}
 
 export interface SuccessFailStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNextFailPorts, Dynamic> {}
 
-export interface DynamicOnlyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<EmptyRecord, Dynamic> {}
+export interface DynamicOnlyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<EmptyObject, Dynamic> {}
 
 export interface NoMatchNoReplyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNoMatchNoReplyPorts, Dynamic> {}
 

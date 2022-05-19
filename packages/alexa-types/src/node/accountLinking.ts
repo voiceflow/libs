@@ -1,8 +1,9 @@
-import { BaseNode, UnknownRecord } from '@voiceflow/base-types';
+import { BaseNode } from '@voiceflow/base-types';
+import { Struct } from '@voiceflow/common';
 
 import { NodeType } from './constants';
 
-export type StepData = UnknownRecord;
+export type StepData = Struct;
 
 export interface Step extends BaseNode.Utils.BaseStep<StepData> {
   type: NodeType.ACCOUNT_LINKING;

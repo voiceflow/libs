@@ -1,5 +1,5 @@
 import { AnyRequestButton } from '@base-types/request';
-import { Nullable } from '@base-types/types';
+import { Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
 import {

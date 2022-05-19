@@ -1,5 +1,6 @@
 import type Fetch from '@api-sdk/fetch';
-import { AnyRecord, BaseModels } from '@voiceflow/base-types';
+import { BaseModels } from '@voiceflow/base-types';
+import { AnyRecord } from '@voiceflow/common';
 
 import { Fields } from '../base';
 import CrudResource from '../crud';
