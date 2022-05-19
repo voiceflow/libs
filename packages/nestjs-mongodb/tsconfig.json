@@ -1,0 +1,32 @@
+{
+  "extends": "@voiceflow/tsconfig",
+  "compilerOptions": {
+    // General
+    "target": "es2021",
+    "module": "commonjs",
+    "lib": ["es2021"],
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "@nestjs-mongodb/*": ["src/*"]
+    },
+
+    // Strictness
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // Modules
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    // Emit
+    "outDir": "./build",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true
+  },
+  "include": ["src", "tests", "typings"],
+  "exclude": ["**/node_modules", "**/.*/"]
+}

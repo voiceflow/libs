@@ -6,12 +6,12 @@ parameters:
     default: false
 
 orbs:
-  vfcommon: voiceflow/common@0.0.328
+  vfcommon: voiceflow/common@0.0.345
   sonarcloud: sonarsource/sonarcloud@1.0.2
 
 jobs:
   test:
-    executor: vfcommon/default-executor
+    executor: vfcommon/code-test-executor
     steps:
       - checkout
       - vfcommon/install_node_modules:
