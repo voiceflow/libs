@@ -14,13 +14,13 @@ export class MongoHealthIndicator extends HealthIndicator {
 
   async isHealthy(key: string): Promise<HealthIndicatorResult> {
     let isHealthy: boolean;
-    let data: { response: Document } | HealthCheckErrorDto;
+    let data: { statsResponse: Document } | HealthCheckErrorDto;
 
     try {
-      const pingResponse = await this.mongoService.db.stats();
+      const statsResponse = await this.mongoService.db.stats();
 
       isHealthy = true;
-      data = { response: pingResponse };
+      data = { statsResponse };
     } catch (error) {
       isHealthy = false;
 

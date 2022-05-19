@@ -27,8 +27,7 @@ import { MongoModule, MongoService, MongoOptions } from '@voiceflow/nestjs-mongo
 
       // Union field, one of `useValue`, `useFactory`, or `useClass`:
       useValue: {
-        host: '0.0.0.0',
-        port: 6379,
+        url: 'mongodb://<auth>@<your-mongo-db-address>/<db_name>?<params>',
       },
       useFactory: () => getMongoConfig(),
       useClass: MongoConfigService,
