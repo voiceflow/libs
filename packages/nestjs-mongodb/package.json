@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/nestjs-mongodb",
   "description": "MongoDB for NestJS",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
@@ -17,8 +17,8 @@
     "@nestjs/testing": "^8.4.2",
     "@types/chai": "4.3.0",
     "@types/chai-as-promised": "^7.1.5",
-    "@types/mongodb": "^4.0.7",
     "@types/mocha": "^8.2.2",
+    "@types/mongodb": "^4.0.7",
     "@types/node": "16.11.12",
     "@zerollup/ts-transform-paths": "^1.7.18",
     "chai": "4.3.6",
