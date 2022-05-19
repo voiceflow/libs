@@ -1,7 +1,7 @@
 import { Log } from '../logs';
 
 /**
- * It acts as a buffer which is in between the runtime which produces the logs and the service/datastore which consumes the logs.
+ * It acts as a buffer in between the runtime which produces the logs and the service/datastore which consumes the logs.
  * In practice, this will almost always be implemented as part of the runtime itself.
  */
 export interface LogBuffer {
