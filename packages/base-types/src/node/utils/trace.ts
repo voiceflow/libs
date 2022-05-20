@@ -22,7 +22,7 @@ export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {
 }
 
 export interface BaseTraceFrame<Payload = any, TracePath extends BaseTraceFramePath = BaseTraceFramePath> {
-  type: string;
+  type: TraceType;
   paths?: TracePath[];
   payload: Payload;
   defaultPath?: number;
