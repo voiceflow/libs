@@ -1210,3 +1210,7 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, GoogleVoice[]> 
     },
   ],
 };
+
+export const ALL_GOOGLE_VOICE_NAMES = Array.from(
+  new Set(Object.values(VoiceLanguageCodeToVoice).flatMap((value) => value.flatMap((voice) => voice.voiceName)))
+);
