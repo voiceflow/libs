@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.11.6...@voiceflow/google-types@2.12.0) (2022-05-20)
+
+
+### Features
+
+* add set of all channel voices (VF-3536) ([#283](https://github.com/voiceflow/libs/issues/283)) ([e84f5de](https://github.com/voiceflow/libs/commit/e84f5deccc6bc6abb3567cd534fec53b5336a36e))
+
+
+
+
+
 ## [2.11.6](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.11.5...@voiceflow/google-types@2.11.6) (2022-05-20)
 
 **Note:** Version bump only for package @voiceflow/google-types
