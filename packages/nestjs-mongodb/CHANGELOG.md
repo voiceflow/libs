@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/voiceflow/libs/compare/@voiceflow/nestjs-mongodb@1.1.0...@voiceflow/nestjs-mongodb@1.1.1) (2022-05-20)
+
+
+### Bug Fixes
+
+* change mongo params to use uri + db (VF-000) ([#281](https://github.com/voiceflow/libs/issues/281)) ([b36a85b](https://github.com/voiceflow/libs/commit/b36a85b5d6c94d4e1170404bbf37503372a3b07d))
+
+
+
+
+
 # 1.1.0 (2022-05-19)
 
 
