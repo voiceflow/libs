@@ -7,6 +7,7 @@ import { TraceFrame as TextTrace } from '@base-types/node/text';
 import { BaseTraceFrame, TraceType } from '@base-types/node/utils';
 import { TraceFrame as VisualTrace } from '@base-types/node/visual';
 import { IntentRequest } from '@base-types/request';
+import { Log as RuntimeLog } from '@base-types/runtimeLogs';
 
 export { TraceFrame as ExitTrace } from '@base-types/node/exit';
 export { TraceFrame as FlowTrace } from '@base-types/node/flow';
@@ -66,6 +67,12 @@ export interface EntityFillingTrace extends BaseTraceFrame<EntityFillingTracePay
   type: TraceType.ENTITY_FILLING;
 }
 
+export type LogTracePayload = RuntimeLog;
+
+export interface LogTrace extends BaseTraceFrame<LogTracePayload> {
+  type: TraceType.LOG;
+}
+
 export type AnyTrace =
   | ExitTrace
   | TextTrace
@@ -78,4 +85,5 @@ export type AnyTrace =
   | StreamTrace
   | VisualTrace
   | NoReplyTrace
-  | EntityFillingTrace;
+  | EntityFillingTrace
+  | LogTrace;
