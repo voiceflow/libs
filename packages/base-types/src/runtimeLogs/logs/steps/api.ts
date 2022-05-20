@@ -1,7 +1,8 @@
 import { APIBodyType, APIMethod } from '@base-types/node/api';
 
-import { LoggingNodeType, LogLevel } from '../../utils';
 import { BaseStepLog } from '../base';
+import { StepLogKind } from '../kinds';
+import { LogLevel } from '../levels';
 
 interface ApiLogMessage {
   request: {
@@ -39,7 +40,7 @@ interface VerboseApiLogMessage {
 
 export type ApiStepLog =
   // Non-verbose mode
-  | BaseStepLog<LoggingNodeType.API, ApiLogMessage, LogLevel.INFO | LogLevel.ERROR>
+  | BaseStepLog<StepLogKind.API, ApiLogMessage, LogLevel.INFO | LogLevel.ERROR>
   // Verbose mode
   // LogLevel.ERROR is used for both regular errors and verbose errors
-  | BaseStepLog<LoggingNodeType.API, ApiLogMessage & VerboseApiLogMessage, LogLevel.VERBOSE | LogLevel.ERROR>;
+  | BaseStepLog<StepLogKind.API, ApiLogMessage & VerboseApiLogMessage, LogLevel.VERBOSE | LogLevel.ERROR>;

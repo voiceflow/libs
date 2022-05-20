@@ -1,9 +1,8 @@
-import { GlobalLogKinds } from '@base-types/runtimeLogs/utils';
-
 import { BaseGlobalLog } from '../base';
+import { GlobalLogKind } from '../kinds';
 
 export type ConversationStartLog = BaseGlobalLog<
-  GlobalLogKinds.CONVERSATION_START,
+  GlobalLogKind.CONVERSATION_START,
   {
     versionID: string;
     userID: string;

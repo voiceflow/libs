@@ -1,9 +1,4 @@
-export enum LogLevel {
-  ERROR = 'error',
-  WARN = 'warn',
-  INFO = 'info',
-  VERBOSE = 'verbose',
-}
+import { LogLevel } from '../logs/levels';
 
 const logLevelValues: Readonly<Record<LogLevel, number>> = {
   [LogLevel.ERROR]: 0,

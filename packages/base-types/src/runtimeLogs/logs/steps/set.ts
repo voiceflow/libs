@@ -1,8 +1,8 @@
-import { LoggingNodeType } from '../../utils';
 import { BaseStepLog } from '../base';
+import { StepLogKind } from '../kinds';
 
 export type SetStepLog = BaseStepLog<
-  LoggingNodeType.SET,
+  StepLogKind.SET,
   {
     variableName: string;
     expression: string;

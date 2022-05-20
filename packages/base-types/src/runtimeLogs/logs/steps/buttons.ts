@@ -1,7 +1,8 @@
 import { Nullable } from '@voiceflow/common';
 
-import { LoggingNodeType, PathReference } from '../../utils';
+import { PathReference } from '../../utils';
 import { BaseStepLog } from '../base';
+import { StepLogKind } from '../kinds';
 
 interface UrlButtonLogMessage {
   url: Nullable<string>;
@@ -17,4 +18,4 @@ interface GoToIntentButtonLogMessage extends UrlButtonLogMessage {
   path: null;
 }
 
-export type ButtonsStepLog = BaseStepLog<LoggingNodeType.BUTTONS, FollowPathButtonLogMessage | GoToIntentButtonLogMessage>;
+export type ButtonsStepLog = BaseStepLog<StepLogKind.BUTTONS, FollowPathButtonLogMessage | GoToIntentButtonLogMessage>;

@@ -1,9 +1,10 @@
-import { LoggingNodeType, LogLevel } from '../../utils';
 import { BaseStepLog } from '../base';
+import { StepLogKind } from '../kinds';
+import { LogLevel } from '../levels';
 
 export type CodeStepLog =
   | BaseStepLog<
-      LoggingNodeType.CUSTOM_CODE,
+      StepLogKind.CUSTOM_CODE,
       {
         data: any;
         error: null;
@@ -11,7 +12,7 @@ export type CodeStepLog =
       LogLevel.INFO
     >
   | BaseStepLog<
-      LoggingNodeType.CUSTOM_CODE,
+      StepLogKind.CUSTOM_CODE,
       {
         data: null;
         error: any;
