@@ -1,7 +1,8 @@
 import { ModuleMetadata, Type } from '@nestjs/common';
 
 export interface MongoOptions {
-  url: string;
+  uri: string;
+  db: string;
 }
 
 export interface MongoModuleAsyncOptions extends Pick<ModuleMetadata, 'providers' | 'imports'> {
