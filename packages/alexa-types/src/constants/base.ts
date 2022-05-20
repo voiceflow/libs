@@ -127,3 +127,5 @@ export const REGIONAL_VOICE = [
     options: [Voice.VITORIA, Voice.CAMILA, Voice.RICARDO],
   },
 ];
+
+export const ALL_ALEXA_VOICE_NAMES = new Set(Object.values(Voice));
