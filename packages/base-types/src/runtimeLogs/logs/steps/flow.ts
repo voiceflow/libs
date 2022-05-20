@@ -1,8 +1,9 @@
-import { LoggingNodeType, PathReference } from '../../utils';
+import { PathReference } from '../../utils';
 import { BaseStepLog } from '../base';
+import { StepLogKind } from '../kinds';
 
 export type FlowStepLog = BaseStepLog<
-  LoggingNodeType.FLOW,
+  StepLogKind.FLOW,
   {
     path: PathReference;
   }

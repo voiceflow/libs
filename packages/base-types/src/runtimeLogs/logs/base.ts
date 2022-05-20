@@ -1,7 +1,8 @@
 import { EmptyObject } from '@voiceflow/common';
 
-import { GlobalLogKinds, Iso8601Timestamp, LoggingNodeType, PathReference } from '../utils';
-import { LogLevel } from '../utils/logs';
+import { Iso8601Timestamp, PathReference } from '../utils';
+import { GlobalLogKind, StepLogKind } from './kinds';
+import { LogLevel } from './levels';
 
 /** The base log interface. This should not be used directly, use one of the subtypes instead. */
 interface BaseLog {
@@ -11,13 +12,13 @@ interface BaseLog {
   level: LogLevel;
 }
 
-export interface BaseGlobalLog<Kind extends GlobalLogKinds, Message extends EmptyObject, Level extends LogLevel = LogLevel.INFO> extends BaseLog {
+export interface BaseGlobalLog<Kind extends GlobalLogKind, Message extends EmptyObject, Level extends LogLevel = LogLevel.INFO> extends BaseLog {
   kind: `global.${Kind}`;
   level: Level;
   message: Message;
 }
 
-export interface BaseStepLog<Kind extends LoggingNodeType, Message extends EmptyObject, Level extends LogLevel = LogLevel.INFO> extends BaseLog {
+export interface BaseStepLog<Kind extends StepLogKind, Message extends EmptyObject, Level extends LogLevel = LogLevel.INFO> extends BaseLog {
   kind: `step.${Kind}`;
   level: Level;
   message: PathReference & Message;

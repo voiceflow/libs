@@ -1,8 +1,8 @@
-import { LoggingNodeType } from '../../utils';
 import { BaseStepLog } from '../base';
+import { StepLogKind } from '../kinds';
 
 export type TextStepLog = BaseStepLog<
-  LoggingNodeType.TEXT,
+  StepLogKind.TEXT,
   {
     text: string;
   }

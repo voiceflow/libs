@@ -1,8 +1,8 @@
-import { LoggingNodeType } from '../../utils';
 import { BaseStepLog } from '../base';
+import { StepLogKind } from '../kinds';
 
 export type IntentStepLog = BaseStepLog<
-  LoggingNodeType.INTENT,
+  StepLogKind.INTENT,
   {
     intentName: string;
     utterance: string;
