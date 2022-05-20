@@ -11,13 +11,16 @@ export class MongoService implements OnModuleDestroy {
   static connectionFactory: Provider<Promise<MongoClient>> = {
     provide: Providers.MONGO_CONNECTION,
     useFactory: async (options: MongoOptions): Promise<MongoClient> => {
-      return MongoClient.connect(options.url);
+      return MongoClient.connect(options.uri);
     },
     inject: [{ token: Providers.MONGO_OPTIONS, optional: false }],
   };
 
-  constructor(@Inject(Providers.MONGO_CONNECTION) private readonly client: MongoClient) {
-    this.db = client.db();
+  constructor(
+    @Inject(Providers.MONGO_CONNECTION) private readonly client: MongoClient,
+    @Inject(Providers.MONGO_OPTIONS) private readonly options: MongoOptions
+  ) {
+    this.db = client.db(this.options.db);
   }
 
   async onModuleDestroy(): Promise<void> {
