@@ -42,14 +42,15 @@ class APIKeyResource extends CrudResource<BaseModels.ApiKey.Model, ModelIDKey, A
     return data;
   }
 
-  public async createSecondary(id: string) {
-    const { data } = await this.fetch.post(`${this._getCRUDEndpoint(id)}/secondary`);
+  public async createSecondary(id: string): Promise<BaseModels.ApiKey.Model> {
+    const { data } = await this.fetch.post<BaseModels.ApiKey.Model>(`${this._getCRUDEndpoint(id)}/secondary`);
 
     return data;
   }
 
-  public async promoteSecondary(id: string) {
-    const { data } = await this.fetch.patch(`${this._getCRUDEndpoint(id)}/secondary`, {});
+  public async promoteSecondary(id: string): Promise<BaseModels.ApiKey.Model> {
+    const { data } = await this.fetch.patch<BaseModels.ApiKey.Model>(`${this._getCRUDEndpoint(id)}/secondary`, {});
+
     return data;
   }
 
