@@ -14,6 +14,7 @@ export enum TraceType {
   VISUAL = 'visual',
   NO_REPLY = 'no-reply',
   ENTITY_FILLING = 'entity-filling',
+  LOG = 'log',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {

@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.15](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.7.14...@voiceflow/chat-types@2.7.15) (2022-05-20)
+
+**Note:** Version bump only for package @voiceflow/chat-types
+
+
+
+
+
+## [2.7.14](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.7.13...@voiceflow/chat-types@2.7.14) (2022-05-19)
+
+**Note:** Version bump only for package @voiceflow/chat-types
+
+
+
+
+
+## [2.7.13](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.7.12...@voiceflow/chat-types@2.7.13) (2022-05-19)
+
+**Note:** Version bump only for package @voiceflow/chat-types
+
+
+
+
+
+## [2.7.12](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.7.11...@voiceflow/chat-types@2.7.12) (2022-05-19)
+
+**Note:** Version bump only for package @voiceflow/chat-types
+
+
+
+
+
+## [2.7.11](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.7.10...@voiceflow/chat-types@2.7.11) (2022-05-18)
+
+**Note:** Version bump only for package @voiceflow/chat-types
+
+
+
+
+
 ## [2.7.10](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.7.9...@voiceflow/chat-types@2.7.10) (2022-05-17)
 
 **Note:** Version bump only for package @voiceflow/chat-types

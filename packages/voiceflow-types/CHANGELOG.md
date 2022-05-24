@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.7](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.15.6...@voiceflow/voiceflow-types@3.15.7) (2022-05-24)
+
+
+### Bug Fixes
+
+* update voiceIDs (VF-3459) ([#274](https://github.com/voiceflow/libs/issues/274)) ([52e6fb4](https://github.com/voiceflow/libs/commit/52e6fb41ec832cc2187c7ac83c0f031a6fb752d2))
+
+
+
+
+
+## [3.15.6](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.15.5...@voiceflow/voiceflow-types@3.15.6) (2022-05-20)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
+## [3.15.5](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.15.4...@voiceflow/voiceflow-types@3.15.5) (2022-05-19)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
+## [3.15.4](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.15.3...@voiceflow/voiceflow-types@3.15.4) (2022-05-19)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
+## [3.15.3](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.15.2...@voiceflow/voiceflow-types@3.15.3) (2022-05-19)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
+## [3.15.2](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.15.1...@voiceflow/voiceflow-types@3.15.2) (2022-05-18)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
+
+
+
+
 ## [3.15.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.15.0...@voiceflow/voiceflow-types@3.15.1) (2022-05-17)
 
 

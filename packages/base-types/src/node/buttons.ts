@@ -1,4 +1,4 @@
-import { Nullable } from '@base-types/types';
+import { Nullable } from '@voiceflow/common';
 
 import { StepButtonsLayout } from '../button';
 import { NodeType } from './constants';

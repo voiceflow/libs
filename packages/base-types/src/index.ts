@@ -8,6 +8,7 @@ export * as Project from './project';
 export * as BaseProject from './project';
 export * as Request from './request';
 export * as BaseRequest from './request';
+export * as RuntimeLogs from './runtimeLogs';
 export * as Text from './text';
 export * as BaseText from './text';
 export * as Trace from './trace';

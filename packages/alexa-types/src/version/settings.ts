@@ -1,5 +1,5 @@
 import { Voice } from '@alexa-types/constants';
-import { Nullable } from '@voiceflow/base-types';
+import { Nullable } from '@voiceflow/common';
 import { VoiceVersion } from '@voiceflow/voice-types';
 import { v1 } from 'ask-smapi-model';
 

@@ -1,4 +1,4 @@
-import { Nullable } from '@base-types/types';
+import { Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, ExpressionTypeV2, NodeNextID } from './utils';

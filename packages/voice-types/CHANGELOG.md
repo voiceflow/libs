@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.29](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.5.28...@voiceflow/voice-types@2.5.29) (2022-05-20)
+
+**Note:** Version bump only for package @voiceflow/voice-types
+
+
+
+
+
+## [2.5.28](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.5.27...@voiceflow/voice-types@2.5.28) (2022-05-19)
+
+**Note:** Version bump only for package @voiceflow/voice-types
+
+
+
+
+
+## [2.5.27](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.5.26...@voiceflow/voice-types@2.5.27) (2022-05-19)
+
+**Note:** Version bump only for package @voiceflow/voice-types
+
+
+
+
+
+## [2.5.26](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.5.25...@voiceflow/voice-types@2.5.26) (2022-05-19)
+
+**Note:** Version bump only for package @voiceflow/voice-types
+
+
+
+
+
+## [2.5.25](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.5.24...@voiceflow/voice-types@2.5.25) (2022-05-18)
+
+**Note:** Version bump only for package @voiceflow/voice-types
+
+
+
+
+
 ## [2.5.24](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.5.23...@voiceflow/voice-types@2.5.24) (2022-05-17)
 
 **Note:** Version bump only for package @voiceflow/voice-types
