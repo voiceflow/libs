@@ -5,7 +5,6 @@ export const API_KEY_PREFIX = 'VF.';
 export enum APIKeySubType {
   Workspace = 'WS',
   DialogManager = 'DM',
-  SecondaryKey = 'SK',
 }
 
 const buildAPIKeyGuard =
