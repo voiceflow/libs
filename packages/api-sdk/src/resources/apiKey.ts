@@ -35,18 +35,6 @@ class APIKeyResource extends CrudResource<BaseModels.ApiKey.Model, ModelIDKey, A
   public async delete(id: string): Promise<string> {
     return super._delete(id);
   }
-
-  public async createSecondary(id: string): Promise<BaseModels.ApiKey.Model> {
-    const { data } = await this.fetch.post<BaseModels.ApiKey.Model>(`${this._getCRUDEndpoint(id)}/secondary`);
-
-    return data;
-  }
-
-  public async deleteSecondary(id: string): Promise<string> {
-    await this.fetch.delete(`${this._getCRUDEndpoint(id)}/secondary`);
-
-    return id;
-  }
 }
 
 export default APIKeyResource;
