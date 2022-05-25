@@ -36,6 +36,7 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   platform: string; // voiceflow | alexa | google | etc
   linkType?: LinkType;
   prototype?: Prototype;
+  livePrototype?: Prototype;
   reportTags?: Record<string, ReportTag>;
 
   members: Member<MemberPlatformData>[];
