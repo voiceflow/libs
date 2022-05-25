@@ -15,9 +15,14 @@ export interface BasePort {
   target: Nullable<string>;
 }
 
-export interface BaseStepPorts<Builtin extends Partial<Record<PortType, BasePort>>, Dynamic extends BasePort[] = BasePort[]> {
+export interface BaseStepPorts<
+  Builtin extends Partial<Record<PortType, BasePort>>,
+  Dynamic extends BasePort[] = BasePort[],
+  ByKey extends Record<string, BasePort> = Record<string, BasePort>
+> {
   builtIn: Builtin;
   dynamic: Dynamic;
+  byKey: ByKey;
 }
 
 export interface AnyBaseStepPorts extends BaseStepPorts<Record<string, BasePort>, BasePort[]> {}
