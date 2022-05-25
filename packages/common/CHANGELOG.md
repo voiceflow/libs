@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.27.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.26.1...@voiceflow/common@7.27.0) (2022-05-25)
+
+
+### Features
+
+* add ports.out.byKey type definition (VF-3575) ([#285](https://github.com/voiceflow/libs/issues/285)) ([f9f1595](https://github.com/voiceflow/libs/commit/f9f159598f5e42a52b22525ce193b3d4942f0ef5))
+
+
+
+
+
 ## [7.26.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.26.0...@voiceflow/common@7.26.1) (2022-05-05)
 
 

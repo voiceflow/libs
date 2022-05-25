@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.29.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.28.1...@voiceflow/base-types@2.29.0) (2022-05-25)
+
+
+### Features
+
+* add ports.out.byKey type definition (VF-3575) ([#285](https://github.com/voiceflow/libs/issues/285)) ([f9f1595](https://github.com/voiceflow/libs/commit/f9f159598f5e42a52b22525ce193b3d4942f0ef5))
+
+
+
+
+
 ## [2.28.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.28.0...@voiceflow/base-types@2.28.1) (2022-05-25)
 
 
