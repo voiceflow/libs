@@ -1,4 +1,16 @@
-import { hasProperty, isObject, omit, omitBy, pick, pickBy, selectField, selectID, selectKey, selectValue } from '@common/utils/object/common';
+import {
+  hasProperty,
+  isObject,
+  mapValue,
+  omit,
+  omitBy,
+  pick,
+  pickBy,
+  selectField,
+  selectID,
+  selectKey,
+  selectValue,
+} from '@common/utils/object/common';
 import { expect } from 'chai';
 
 describe('Utils | object | common', () => {
@@ -128,6 +140,18 @@ describe('Utils | object | common', () => {
         value2: '2',
         value5: null,
       });
+    });
+  });
+
+  describe('mapValue()', () => {
+    it('works', () => {
+      const objects = {
+        a: { id: 1 },
+        b: { id: 2 },
+        c: { id: 3 },
+      };
+
+      expect(mapValue(objects, ({ id }) => id)).to.eql({ a: 1, b: 2, c: 3 });
     });
   });
 });

@@ -89,3 +89,6 @@ export const omitBy: PickOmitBy = (obj: AnyRecord, predicate: (key: string, valu
  * @deprecated use pickBy instead
  */
 export const filterEntries = pickBy;
+
+export const mapValue = <T, R>(obj: Record<string | number | symbol, T>, callback: (value: T) => R) =>
+  Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, callback(value)]));
