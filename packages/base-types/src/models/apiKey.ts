@@ -27,5 +27,5 @@ export interface Model<Data extends AnyRecord = AnyRecord> {
   data?: Data;
   scopes: string[];
   permissions: string[];
-  secondaryKeyID: string;
+  secondaryKeyID?: string | null;
 }
