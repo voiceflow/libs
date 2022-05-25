@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.30.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.29.0...@voiceflow/base-types@2.30.0) (2022-05-25)
+
+
+### Features
+
+* api key rotation (VF-3483) ([#272](https://github.com/voiceflow/libs/issues/272)) ([469b7bd](https://github.com/voiceflow/libs/commit/469b7bd72eaab92f8607d37ebdd5f0d9ed2e73a8))
+
+
+
+
+
 # [2.29.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.28.1...@voiceflow/base-types@2.29.0) (2022-05-25)
 
 
