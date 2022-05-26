@@ -7,7 +7,7 @@ import * as Flow from './flow';
 import * as General from './general';
 import * as GoogleSheets from './googleSheets';
 import * as GoTo from './goTo';
-import * as GoToBlock from './goToBlock';
+import * as GoToNode from './goToNode';
 import * as If from './if';
 import * as IfV2 from './ifV2';
 import * as Integration from './integration';
@@ -35,7 +35,7 @@ export * as Flow from './flow';
 export * as General from './general';
 export * as GoogleSheets from './googleSheets';
 export * as GoTo from './goTo';
-export * as GoToBlock from './goToBlock';
+export * as GoToNode from './goToNode';
 export * as If from './if';
 export * as IfV2 from './ifV2';
 export * as Integration from './integration';
@@ -72,7 +72,7 @@ export type AnyCommonStep =
   | IfV2.Step
   | General.Step
   | GoTo.Step
-  | GoToBlock.Step
+  | GoToNode.Step
   | _v1.Step;
 
 export type AnyCommonNode =
@@ -88,7 +88,7 @@ export type AnyCommonNode =
   | If.Node
   | IfV2.Node
   | GoTo.Node
-  | GoToBlock.Node
+  | GoToNode.Node
   | _v1.Node;
 
 export type AnyCommonCommand = Intent.Command | Command.Command;

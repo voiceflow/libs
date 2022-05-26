@@ -18,7 +18,7 @@ export enum NodeType {
 
   // navigation
   GOTO = 'goTo',
-  GOTO_BLOCK = 'goToBlock',
+  GOTO_NODE = 'goToNode',
 
   // integrations
   API = 'api',
