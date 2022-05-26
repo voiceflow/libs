@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.32.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.31.0...@voiceflow/base-types@2.32.0) (2022-05-26)
+
+
+### Features
+
+* removing liveprototype field (VF-3491) ([#288](https://github.com/voiceflow/libs/issues/288)) ([7119382](https://github.com/voiceflow/libs/commit/71193828df4368ed878194de5f08acb6a8b4edb5))
+
+
+
+
+
 # [2.31.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.30.2...@voiceflow/base-types@2.31.0) (2022-05-26)
 
 
