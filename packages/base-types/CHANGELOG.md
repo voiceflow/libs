@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.31.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.30.2...@voiceflow/base-types@2.31.0) (2022-05-26)
+
+
+### Features
+
+* added livePrototype to model for projects (VF-3491) ([#286](https://github.com/voiceflow/libs/issues/286)) ([02cd298](https://github.com/voiceflow/libs/commit/02cd2989f44b5bd35d906634b69de811770e0161))
+
+
+
+
+
 ## [2.30.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.30.1...@voiceflow/base-types@2.30.2) (2022-05-26)
 
 
