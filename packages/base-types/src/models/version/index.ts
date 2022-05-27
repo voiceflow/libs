@@ -53,4 +53,7 @@ export interface Model<_PlatformData extends PlatformData, Command extends BaseC
   prototype?: Prototype<Command, Locale>;
   components?: FolderItem[];
   platformData: _PlatformData;
+
+  manualSave?: boolean;
+  autoSaveFromRestore?: boolean;
 }
