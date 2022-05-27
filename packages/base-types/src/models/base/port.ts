@@ -18,7 +18,7 @@ export interface BasePort {
 export interface BaseStepPorts<
   Builtin extends Partial<Record<PortType, BasePort>>,
   Dynamic extends BasePort[] = BasePort[],
-  ByKey extends Record<string, BasePort> = Record<string, BasePort>
+  ByKey extends Partial<Record<string, BasePort>> = Partial<Record<string, BasePort>>
 > {
   builtIn: Builtin;
   dynamic: Dynamic;
