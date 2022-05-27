@@ -9,7 +9,7 @@ export interface LogBuffer {
   readonly bufferSize: number;
 
   /** Add {@link Log} to this {@link LogBuffer}'s buffer. */
-  push(...logs: Log[]): void;
+  push(...logs: readonly Log[]): void;
   /** Dispatch all {@link Log} from this {@link LogBuffer}'s buffer and then remove them. */
   flush(): void;
   /** Remove all {@link Log} from this {@link LogBuffer}'s buffer. */
