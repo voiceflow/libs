@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.32.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.32.1...@voiceflow/base-types@2.32.2) (2022-05-27)
+
+
+### Bug Fixes
+
+* make byKey port partial, to have better ts typecheck (VF-3527) ([#290](https://github.com/voiceflow/libs/issues/290)) ([6a8325c](https://github.com/voiceflow/libs/commit/6a8325c6659ddc328ded70c2cf640708234b148d))
+
+
+
+
+
 ## [2.32.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.32.0...@voiceflow/base-types@2.32.1) (2022-05-27)
 
 
