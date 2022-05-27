@@ -1,5 +1,5 @@
 import { IntentRequest } from '@base-types/request';
-import { Nullable } from '@voiceflow/common';
+import { EmptyObject, Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
 import { BaseNode, BaseNoMatchNodeData, BaseStep } from './utils';
@@ -9,7 +9,7 @@ export interface StepData {
   diagramID: Nullable<string>;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data> {
+export interface Step<Data = StepData> extends BaseStep<Data, EmptyObject, []> {
   type: NodeType.GOTO;
 }
 
