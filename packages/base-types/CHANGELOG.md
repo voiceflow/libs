@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.32.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.32.0...@voiceflow/base-types@2.32.1) (2022-05-27)
+
+
+### Bug Fixes
+
+* goto ports and add missing typeguards ([2b9099f](https://github.com/voiceflow/libs/commit/2b9099f5ad570470b43b1f79b33ef16d4ef83365))
+
+
+
+
+
 # [2.32.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.31.0...@voiceflow/base-types@2.32.0) (2022-05-26)
 
 
