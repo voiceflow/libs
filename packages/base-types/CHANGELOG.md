@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.33.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.32.2...@voiceflow/base-types@2.33.0) (2022-05-30)
+
+
+### Features
+
+* added manualSave and autoSaveFromRestore types (VF-3631) ([#292](https://github.com/voiceflow/libs/issues/292)) ([20641c2](https://github.com/voiceflow/libs/commit/20641c28cafcc29b4bb9ddb7ada649ffbbc65c6d))
+
+
+
+
+
 ## [2.32.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.32.1...@voiceflow/base-types@2.32.2) (2022-05-27)
 
 
