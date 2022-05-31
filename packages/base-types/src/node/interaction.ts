@@ -21,19 +21,32 @@ import {
   TraceType,
 } from './utils';
 
+/**
+ * @deprecated use `actions` instead
+ */
 export enum ChoiceAction {
   PATH = 'PATH',
   GO_TO = 'GO_TO',
 }
 
+/**
+ * @deprecated use `actions` instead
+ */
 export interface ChoiceGoTo {
   intentID: Nullable<string>;
   diagramID?: Nullable<string>;
 }
 
 export interface Choice extends SlotMappings {
-  goTo?: ChoiceGoTo;
   intent: string;
+
+  /**
+   * @deprecated use `actions` instead
+   */
+  goTo?: ChoiceGoTo;
+  /**
+   * @deprecated use `actions` instead
+   */
   action?: ChoiceAction;
 }
 
