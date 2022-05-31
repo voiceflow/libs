@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.33.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.33.0...@voiceflow/base-types@2.33.1) (2022-05-31)
+
+
+### Bug Fixes
+
+* deprecate goto and url related fields in favor of actions (VF-000) ([#289](https://github.com/voiceflow/libs/issues/289)) ([0fe8f9e](https://github.com/voiceflow/libs/commit/0fe8f9ebb06fddacc00635055bf27fb7f2847b2f))
+
+
+
+
+
 # [2.33.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.32.2...@voiceflow/base-types@2.33.0) (2022-05-30)
 
 
