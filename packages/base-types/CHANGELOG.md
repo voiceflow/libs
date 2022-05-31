@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.34.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.33.1...@voiceflow/base-types@2.34.0) (2022-05-31)
+
+
+### Features
+
+* add url ([b30b1c4](https://github.com/voiceflow/libs/commit/b30b1c4eaf5dbb308a2d40dc57b43d24fcc88c59))
+
+
+
+
+
 ## [2.33.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.33.0...@voiceflow/base-types@2.33.1) (2022-05-31)
 
 
