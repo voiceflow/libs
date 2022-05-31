@@ -4,6 +4,7 @@ import { Utils } from '@voiceflow/common';
 export const createNodeTypeTypeguard = Utils.typeguard.createTypeguardCreator<Node.NodeType>();
 
 export const isIf = createNodeTypeTypeguard(Node.NodeType.IF);
+export const isUrl = createNodeTypeTypeguard(Node.NodeType.URL);
 export const isSet = createNodeTypeTypeguard(Node.NodeType.SET);
 export const isApi = createNodeTypeTypeguard(Node.NodeType.API);
 export const isGoTo = createNodeTypeTypeguard(Node.NodeType.GOTO);

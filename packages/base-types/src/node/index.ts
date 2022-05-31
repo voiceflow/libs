@@ -17,6 +17,7 @@ import * as Random from './random';
 import * as Set from './set';
 import * as SetV2 from './setV2';
 import * as Start from './start';
+import * as Url from './url';
 import * as Zapier from './zapier';
 
 export * as _v1 from './_v1';
@@ -50,6 +51,7 @@ export * as Speak from './speak';
 export * as Start from './start';
 export * as Stream from './stream';
 export * as Text from './text';
+export * as Url from './url';
 export * as Utils from './utils';
 export * as Visual from './visual';
 export * as Zapier from './zapier';
@@ -73,6 +75,7 @@ export type AnyCommonStep =
   | General.Step
   | GoTo.Step
   | GoToNode.Step
+  | Url.Step
   | _v1.Step;
 
 export type AnyCommonNode =
@@ -88,6 +91,7 @@ export type AnyCommonNode =
   | If.Node
   | IfV2.Node
   | GoTo.Node
+  | Url.Node
   | GoToNode.Node
   | _v1.Node;
 

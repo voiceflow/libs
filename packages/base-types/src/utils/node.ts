@@ -6,6 +6,7 @@ export const createNodeTypeguard = Utils.typeguard.createTypedTypeguardCreator<B
 
 export const isV1 = (node: BaseModels.BaseNode): node is Node._v1.Node => Utils.object.hasProperty(node, '_v') && node._v === 1;
 export const isIf = createNodeTypeguard<Node.If.Node>(Node.NodeType.IF);
+export const isUrl = createNodeTypeguard<Node.Url.Node>(Node.NodeType.URL);
 export const isSet = createNodeTypeguard<Node.Set.Node>(Node.NodeType.SET);
 export const isText = createNodeTypeguard<Node.Text.Node>(Node.NodeType.TEXT);
 export const isGoTo = createNodeTypeguard<Node.GoTo.Node>(Node.NodeType.GOTO);

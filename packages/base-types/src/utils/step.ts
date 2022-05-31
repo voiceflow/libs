@@ -5,6 +5,7 @@ import { Utils } from '@voiceflow/common';
 export const createStepTypeguard = Utils.typeguard.createTypedTypeguardCreator<BaseModels.BaseDiagramNode>();
 
 export const isIf = createStepTypeguard<Node.If.Step>(Node.NodeType.IF);
+export const isUrl = createStepTypeguard<Node.Url.Step>(Node.NodeType.URL);
 export const isSet = createStepTypeguard<Node.Set.Step>(Node.NodeType.SET);
 export const isApi = createStepTypeguard<Node.Api.Step>(Node.NodeType.API);
 export const isText = createStepTypeguard<Node.Text.Step>(Node.NodeType.TEXT);

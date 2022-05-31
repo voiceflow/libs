@@ -37,6 +37,7 @@ export enum NodeType {
   TRACE = 'trace',
 
   // other
+  URL = 'url',
   STREAM = 'stream',
   VISUAL = 'visual',
   GENERAL = 'general',
