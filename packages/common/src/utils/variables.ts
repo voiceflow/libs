@@ -11,8 +11,25 @@ export const variableReplacer = (
     return match;
   }
 
-  // TODO this is not very nice
-  const replaced = eval(`variables[inner]${selectors[0]}`);
+  let replaced: any = variables[inner];
+
+  let selectorString = selectors[0];
+  while (selectorString.length > 0) {
+    selectorString = selectorString.replace(/^\.(\w{1,64})/, (_m, field) => {
+      replaced = replaced[field];
+      return '';
+    });
+    if (replaced === undefined) {
+      break;
+    }
+    selectorString = selectorString.replace(/^\[(\d+)\]/, (_m, index) => {
+      replaced = replaced[index];
+      return '';
+    });
+    if (replaced === undefined) {
+      break;
+    }
+  }
 
   return typeof modifier === 'function' ? modifier(replaced) : replaced;
 };
