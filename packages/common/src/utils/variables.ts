@@ -44,7 +44,7 @@ export const replaceVariables = (
     return '';
   }
 
-  return phrase.replace(READABLE_VARIABLE_REGEXP, (match, [inner, ...selectors]) =>
+  return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner, ...selectors) =>
     String(variableReplacer(match, inner, selectors, variables, modifier))
   );
 };
