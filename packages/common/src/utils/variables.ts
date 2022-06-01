@@ -15,6 +15,7 @@ export const variableReplacer = (
 
   let selectorString = selectors[0];
   while (selectorString.length > 0) {
+    // eslint-disable-next-line no-loop-func
     selectorString = selectorString.replace(/^\.(\w{1,64})/, (_m, field) => {
       replaced = replaced[field];
       return '';
@@ -22,7 +23,8 @@ export const variableReplacer = (
     if (replaced === undefined) {
       break;
     }
-    selectorString = selectorString.replace(/^\[(\d+)\]/, (_m, index) => {
+    // eslint-disable-next-line no-loop-func
+    selectorString = selectorString.replace(/^\[(\d+)]/, (_m, index) => {
       replaced = replaced[index];
       return '';
     });
