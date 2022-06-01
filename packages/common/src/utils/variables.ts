@@ -3,14 +3,18 @@ import { READABLE_VARIABLE_REGEXP } from '@common/constants';
 export const variableReplacer = (
   match: string,
   inner: string,
+  selectors: string[],
   variables: Record<string, unknown>,
   modifier?: (variable: unknown) => unknown
 ): unknown => {
-  if (inner in variables) {
-    return typeof modifier === 'function' ? modifier(variables[inner]) : variables[inner];
+  if (!(inner in variables)) {
+    return match;
   }
 
-  return match;
+  // TODO this is not very nice
+  const replaced = eval(`variables[inner]${selectors[0]}`);
+
+  return typeof modifier === 'function' ? modifier(replaced) : replaced;
 };
 
 export const replaceVariables = (
@@ -23,7 +27,9 @@ export const replaceVariables = (
     return '';
   }
 
-  return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner) => String(variableReplacer(match, inner, variables, modifier)));
+  return phrase.replace(READABLE_VARIABLE_REGEXP, (match, [inner, ...selectors]) =>
+    String(variableReplacer(match, inner, selectors, variables, modifier))
+  );
 };
 
 // turn float variables to 2 decimal places
