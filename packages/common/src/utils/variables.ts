@@ -3,6 +3,13 @@ import { hasProperty } from '@common/utils/object';
 import { recursiveReplace } from '@common/utils/string';
 import { get } from 'lodash';
 
+const resolveVariableSelectorPath = (variableValue: unknown, trimmedSelectorPath: string, defaultValue?: string) => {
+  if (trimmedSelectorPath) {
+    return typeof variableValue === 'object' ? get(variableValue, trimmedSelectorPath, defaultValue) : defaultValue;
+  }
+  return variableValue;
+};
+
 export const variableReplacer = (
   matchedString: string,
   variableName: string,
@@ -15,7 +22,7 @@ export const variableReplacer = (
   const variableValue = variables[variableName];
   const trimmedSelectorPath = selectorPath.startsWith('.') ? selectorPath.substring(1) : selectorPath;
 
-  const resolvedValue = typeof variableValue === 'object' ? get(variableValue, trimmedSelectorPath, matchedString) : variableValue;
+  const resolvedValue = resolveVariableSelectorPath(variableValue, trimmedSelectorPath, matchedString);
 
   return typeof modifier === 'function' ? modifier(resolvedValue) : resolvedValue;
 };
@@ -29,8 +36,12 @@ export const replaceVariables = (
   const trimmedPhrase = trim ? phrase?.trim() : phrase;
   if (!trimmedPhrase) return '';
 
-  return recursiveReplace(trimmedPhrase, READABLE_VARIABLE_REGEXP, (matchedString, variableName: string, selectorPath: string) =>
-    String(variableReplacer(matchedString, variableName, selectorPath, variables, modifier))
+  return recursiveReplace(
+    trimmedPhrase,
+    READABLE_VARIABLE_REGEXP,
+    (matchedString, variableName: string, selectorPath: string) =>
+      String(variableReplacer(matchedString, variableName, selectorPath, variables, modifier)),
+    10
   );
 };
 

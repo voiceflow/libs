@@ -22,8 +22,15 @@ export const conditionalReplace = (base: string, pattern: RegExp, value?: string
  *
  * For simple "recursive" replacements use the global RegExp flag (`g`) and not this method.
  */
-export const recursiveReplace = (str: string, searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string => {
+export const recursiveReplace = (
+  str: string,
+  searchValue: string | RegExp,
+  replacer: (substring: string, ...args: any[]) => string,
+  maxDepth = Infinity,
+  currentDepth = 0
+): string => {
   const replacedString = str.replace(searchValue, replacer);
   if (replacedString === str) return replacedString;
-  return recursiveReplace(replacedString, searchValue, replacer);
+  if (currentDepth >= maxDepth) return replacedString;
+  return recursiveReplace(replacedString, searchValue, replacer, maxDepth, currentDepth + 1);
 };

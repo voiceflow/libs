@@ -60,6 +60,21 @@ describe('Utils | variables', () => {
       expect(result).to.equal('i work at voiceflow as a software engineer on the creator team');
     });
 
+    it('does replaces variable annotations if the property does not exist', () => {
+      // arrange
+      const variables = {
+        obj: {
+          a: 1,
+        },
+      };
+
+      // act
+      const result = replaceVariables('what is {obj.b}', variables);
+
+      // assert
+      expect(result).to.equal('what is {obj.b}');
+    });
+
     it('replaces variable annotations with an element selector (array index)', () => {
       // arrange
       const variables = {
@@ -144,6 +159,32 @@ describe('Utils | variables', () => {
       expect(result).to.equal('this is a weird nested variable :)');
     });
 
+    it('does not resolve a non-object property selector', () => {
+      // arrange
+      const variables = {
+        a: 1,
+      };
+
+      // act
+      const result = replaceVariables('accessing non-object {a.b}', variables);
+
+      // assert
+      expect(result).to.equal('accessing non-object {a.b}');
+    });
+
+    it('does not resolve an array index that is too large', () => {
+      // arrange
+      const variables = {
+        a: [1, 2],
+      };
+
+      // act
+      const result = replaceVariables('accessing index {a[100]}', variables);
+
+      // assert
+      expect(result).to.equal('accessing index {a[100]}');
+    });
+
     describe('edge cases', () => {
       it('ignores empty variable annotations', () => {
         // arrange
@@ -156,6 +197,20 @@ describe('Utils | variables', () => {
 
         // assert
         expect(result).to.equal('this is a blank variable {}');
+      });
+
+      it('breaks during variable annotation reference loop', () => {
+        // arrange
+        const variables = {
+          a: '{b}',
+          b: '{a}',
+        };
+
+        // act
+        const result = replaceVariables('{a}', variables);
+
+        // assert
+        expect(result).to.equal('{b}');
       });
     });
   });
