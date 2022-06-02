@@ -15,3 +15,22 @@ export const removeTrailingUnderscores = (str: string): string => str.replace(TR
 export const conditionalReplace = (base: string, pattern: RegExp, value?: string) => {
   return value ? base.replace(pattern, value) : base;
 };
+
+/**
+ * Recursively call String.prototype.replace until the result is unchanged.
+ * This is more useful when the `replacer` may end up returning something that should be replaced.
+ *
+ * For simple "recursive" replacements use the global RegExp flag (`g`) and not this method.
+ */
+export const recursiveReplace = (
+  str: string,
+  searchValue: string | RegExp,
+  replacer: (substring: string, ...args: any[]) => string,
+  maxDepth = Infinity,
+  currentDepth = 0
+): string => {
+  const replacedString = str.replace(searchValue, replacer);
+  if (replacedString === str) return replacedString;
+  if (currentDepth >= maxDepth) return replacedString;
+  return recursiveReplace(replacedString, searchValue, replacer, maxDepth, currentDepth + 1);
+};

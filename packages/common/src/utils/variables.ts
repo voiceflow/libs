@@ -1,53 +1,47 @@
 import { READABLE_VARIABLE_REGEXP } from '@common/constants';
+import { hasProperty } from '@common/utils/object';
+import { recursiveReplace } from '@common/utils/string';
+import { get } from 'lodash';
+
+const resolveVariableSelectorPath = (variableValue: unknown, trimmedSelectorPath: string, defaultValue?: string) => {
+  if (trimmedSelectorPath) {
+    return typeof variableValue === 'object' ? get(variableValue, trimmedSelectorPath, defaultValue) : defaultValue;
+  }
+  return variableValue;
+};
 
 export const variableReplacer = (
-  match: string,
-  inner: string,
-  selectors: string[],
+  matchedString: string,
+  variableName: string,
+  selectorPath: string,
   variables: Record<string, unknown>,
   modifier?: (variable: unknown) => unknown
 ): unknown => {
-  if (!(inner in variables)) {
-    return match;
-  }
+  if (!hasProperty(variables, variableName)) return matchedString;
 
-  let replaced: any = variables[inner];
+  const variableValue = variables[variableName];
+  const trimmedSelectorPath = selectorPath.startsWith('.') ? selectorPath.substring(1) : selectorPath;
 
-  let selectorString = selectors[0];
-  while (selectorString.length > 0) {
-    // eslint-disable-next-line no-loop-func
-    selectorString = selectorString.replace(/^\.(\w{1,64})/, (_m, field) => {
-      replaced = replaced[field];
-      return '';
-    });
-    if (replaced === undefined) {
-      break;
-    }
-    // eslint-disable-next-line no-loop-func
-    selectorString = selectorString.replace(/^\[(\d+)]/, (_m, index) => {
-      replaced = replaced[index];
-      return '';
-    });
-    if (replaced === undefined) {
-      break;
-    }
-  }
+  const resolvedValue = resolveVariableSelectorPath(variableValue, trimmedSelectorPath, matchedString);
 
-  return typeof modifier === 'function' ? modifier(replaced) : replaced;
+  return typeof modifier === 'function' ? modifier(resolvedValue) : resolvedValue;
 };
 
 export const replaceVariables = (
   phrase: string | undefined | null,
   variables: Record<string, unknown>,
-  modifier: ((variable: unknown) => unknown) | undefined = undefined,
+  modifier?: (variable: unknown) => unknown,
   { trim = true }: { trim?: boolean } = {}
 ): string => {
-  if (!phrase || (trim && !phrase.trim())) {
-    return '';
-  }
+  const trimmedPhrase = trim ? phrase?.trim() : phrase;
+  if (!trimmedPhrase) return '';
 
-  return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner, ...selectors) =>
-    String(variableReplacer(match, inner, selectors, variables, modifier))
+  return recursiveReplace(
+    trimmedPhrase,
+    READABLE_VARIABLE_REGEXP,
+    (matchedString, variableName: string, selectorPath: string) =>
+      String(variableReplacer(matchedString, variableName, selectorPath, variables, modifier)),
+    10
   );
 };
 
