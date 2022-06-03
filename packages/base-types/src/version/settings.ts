@@ -1,4 +1,4 @@
-import { CardLayout } from '@base-types/node/cardV2';
+import { CarouselLayout } from '@base-types/node/carousel';
 import { Nullable } from '@voiceflow/common';
 
 import { Utils } from '../node';
@@ -31,7 +31,7 @@ export interface Settings<Prompt = unknown> {
   repeat: RepeatType;
   session: Session<Prompt>;
   defaultCanvasNodeVisibility: Nullable<Utils.CanvasNodeVisibility>;
-  defaultCardLayout?: Nullable<CardLayout>;
+  defaultCarouselLayout?: Nullable<CarouselLayout>;
 }
 
 export const defaultSettings = <Prompt>({
@@ -39,11 +39,11 @@ export const defaultSettings = <Prompt>({
   repeat = RepeatType.ALL,
   session = { type: SessionType.RESTART },
   defaultCanvasNodeVisibility = null,
-  defaultCardLayout = null,
+  defaultCarouselLayout = null,
 }: Partial<Settings<Prompt>> = {}): Settings<Prompt> => ({
   error,
   repeat,
   session,
   defaultCanvasNodeVisibility,
-  defaultCardLayout,
+  defaultCarouselLayout,
 });

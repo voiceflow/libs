@@ -13,35 +13,35 @@ import {
   NoMatchNoReplyStepPorts,
 } from './utils';
 
-export enum CardLayout {
+export enum CarouselLayout {
   CAROUSEL = 'Carousel',
   LIST = 'List',
 }
 
-export interface CardButton extends DataID {
+export interface CarouselButton extends DataID {
   name: string;
   intent?: Nullable<string>;
 }
 
-export interface Card extends DataID {
+export interface CarouselCard extends DataID {
   imageUrl: string | null;
   title: string;
   description: SlateTextValue;
-  buttons: CardButton[];
+  buttons: CarouselButton[];
 }
 
 export interface StepPorts extends NoMatchNoReplyStepPorts {}
 
 export interface StepData extends BaseNoMatchStepData, BaseNoReplyStepData {
-  layout: CardLayout;
-  cards: Card[];
+  layout: CarouselLayout;
+  cards: CarouselCard[];
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
-  type: NodeType.CARDV2;
+  type: NodeType.CAROUSEL;
 }
 
 export interface Node extends BaseNode, BaseNoReplyNodeData, BaseNoMatchNodeData {
-  type: NodeType.CARDV2;
-  cards: Card[];
+  type: NodeType.CAROUSEL;
+  cards: CarouselCard[];
 }
