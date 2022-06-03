@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.35.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.34.0...@voiceflow/base-types@2.35.0) (2022-06-03)
+
+
+### Features
+
+* rename CardV2 to Carousel in base-types (VF-3721) ([#295](https://github.com/voiceflow/libs/issues/295)) ([8530883](https://github.com/voiceflow/libs/commit/85308831f63ec7a76d78b42f1331c44ae33f8c8d))
+
+
+
+
+
 # [2.34.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.33.1...@voiceflow/base-types@2.34.0) (2022-05-31)
 
 
