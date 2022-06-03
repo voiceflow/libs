@@ -6,7 +6,7 @@ export * from './chat';
 
 export type Step = ChatStep;
 
-export type StepPorts = BaseNode.CardV2.StepPorts;
+export type StepPorts = BaseNode.Carousel.StepPorts;
 
 export type StepData = ChatStepData;
 
