@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.36.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.35.0...@voiceflow/base-types@2.36.0) (2022-06-08)
+
+
+### Features
+
+* carousel node type and trace type (VF-3746) ([#297](https://github.com/voiceflow/libs/issues/297)) ([a9fee87](https://github.com/voiceflow/libs/commit/a9fee8730d50ceba9d4b8d1a4f6a76b7c6f75370))
+
+
+
+
+
 # [2.35.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.34.0...@voiceflow/base-types@2.35.0) (2022-06-03)
 
 
