@@ -1,6 +1,7 @@
 import { BaseEvent } from './event';
 
 export enum TraceType {
+  LOG = 'log',
   END = 'end',
   TEXT = 'text',
   PATH = 'path',
@@ -12,9 +13,9 @@ export enum TraceType {
   CHOICE = 'choice',
   STREAM = 'stream',
   VISUAL = 'visual',
+  CAROUSEL = 'carousel',
   NO_REPLY = 'no-reply',
   ENTITY_FILLING = 'entity-filling',
-  LOG = 'log',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {
