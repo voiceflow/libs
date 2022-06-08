@@ -8,6 +8,7 @@ export enum StepLogKind {
   AUDIO = 'audio',
   VISUALS = 'visuals',
   CARD = 'card',
+  CAROUSEL = 'carousel',
 
   // User input
   BUTTONS = 'buttons',
@@ -43,7 +44,7 @@ const NODE_TYPE_TO_STEP_LOG_KIND = {
   [NodeType.SPEAK]: StepLogKind.SPEAK,
   [NodeType.START]: StepLogKind.START,
   [NodeType.CARD]: StepLogKind.CARD,
-  [NodeType.CARDV2]: StepLogKind.CARD,
+  [NodeType.CAROUSEL]: StepLogKind.CAROUSEL,
   [NodeType.BUTTONS]: StepLogKind.BUTTONS,
 
   [NodeType.SET]: StepLogKind.SET,
