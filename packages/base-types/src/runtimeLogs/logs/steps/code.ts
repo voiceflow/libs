@@ -11,7 +11,6 @@ export type CodeStepLog =
   | BaseStepLog<
       StepLogKind.CUSTOM_CODE,
       {
-        data: any;
         error: null;
         changedVariables: Record<string, ChangedVariable<any>>;
       },
@@ -20,9 +19,8 @@ export type CodeStepLog =
   | BaseStepLog<
       StepLogKind.CUSTOM_CODE,
       {
-        data: null;
         error: any;
-        changedVariables: Record<string, ChangedVariable<any>>;
+        changedVariables: null;
       },
       LogLevel.ERROR
     >;
