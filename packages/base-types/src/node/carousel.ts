@@ -1,4 +1,4 @@
-import { AnyRequestButton } from '@base-types/request';
+import { GeneralRequestButton } from '@base-types/request';
 import { SlateTextValue } from '@base-types/text';
 import { Nullable } from '@voiceflow/common';
 
@@ -26,11 +26,11 @@ export interface CarouselButton extends DataID {
   intent?: Nullable<string>;
 }
 
-export interface CarouselCard extends DataID {
+export interface CarouselCard<B = CarouselButton> extends DataID {
   imageUrl: string | null;
   title: string;
   description: SlateTextValue;
-  buttons: CarouselButton[];
+  buttons: B[];
 }
 
 export interface StepPorts extends NoMatchNoReplyStepPorts {}
@@ -44,22 +44,19 @@ export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.CAROUSEL;
 }
 
-export interface NodeCarouseCard {
-  imageUrl: string | null;
-  title: string;
-  description: string;
-  buttons: AnyRequestButton[];
-}
+export type NodeCarouselCard = CarouselCard<GeneralRequestButton>;
 export interface Node extends BaseNode, BaseNoReplyNodeData, BaseNoMatchNodeData {
   type: NodeType.CAROUSEL;
-  cards: CarouselCard[];
+  cards: NodeCarouselCard[];
   isBlocking: boolean;
+}
+export interface TraceCarouselCard extends Omit<NodeCarouselCard, 'description'> {
+  description: string;
 }
 
 export interface TraceFramePayload {
-  cards: NodeCarouseCard[];
+  cards: TraceCarouselCard[];
 }
-
 export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
   type: TraceType.CAROUSEL;
 }
