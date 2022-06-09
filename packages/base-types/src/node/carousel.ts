@@ -10,9 +10,12 @@ import {
   BaseNoReplyNodeData,
   BaseNoReplyStepData,
   BaseStep,
+  BaseStepPorts,
   BaseTraceFrame,
+  BuiltInNextPort,
+  BuiltInNoMatchNoReplyPorts,
   DataID,
-  NoMatchNoReplyStepPorts,
+  NodeNextID,
   TraceType,
 } from './utils';
 
@@ -33,7 +36,9 @@ export interface CarouselCard<B = CarouselButton> extends DataID {
   buttons: B[];
 }
 
-export interface StepPorts extends NoMatchNoReplyStepPorts {}
+export interface StepBuiltInPorts extends BuiltInNextPort, BuiltInNoMatchNoReplyPorts {}
+
+export interface StepPorts extends BaseStepPorts<StepBuiltInPorts, []> {}
 
 export interface StepData extends BaseNoMatchStepData, BaseNoReplyStepData {
   layout: CarouselLayout;
@@ -45,17 +50,24 @@ export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
 }
 
 export type NodeCarouselCard = CarouselCard<GeneralRequestButton>;
-export interface Node extends BaseNode, BaseNoReplyNodeData, BaseNoMatchNodeData {
+export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData, BaseNoMatchNodeData {
   type: NodeType.CAROUSEL;
   cards: NodeCarouselCard[];
+  layout: CarouselLayout;
   isBlocking: boolean;
 }
+
+export interface TraceCarouselCardDescription {
+  slate: SlateTextValue;
+  text: string;
+}
 export interface TraceCarouselCard extends Omit<NodeCarouselCard, 'description'> {
-  description: string;
+  description: TraceCarouselCardDescription;
 }
 
 export interface TraceFramePayload {
   cards: TraceCarouselCard[];
+  layout: CarouselLayout;
 }
 export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
   type: TraceType.CAROUSEL;
