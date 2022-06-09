@@ -1,3 +1,4 @@
+import { TraceFrame as CarouselTrace } from '@base-types/node/carousel';
 import { TraceFrame as ExitTrace } from '@base-types/node/exit';
 import { TraceFrame as FlowTrace } from '@base-types/node/flow';
 import { TraceFrame as ChoiceTrace } from '@base-types/node/interaction';
@@ -9,6 +10,7 @@ import { TraceFrame as VisualTrace } from '@base-types/node/visual';
 import { IntentRequest } from '@base-types/request';
 import { Log as RuntimeLog } from '@base-types/runtimeLogs';
 
+export { TraceFrame as CarouselTrace } from '@base-types/node/carousel';
 export { TraceFrame as ExitTrace } from '@base-types/node/exit';
 export { TraceFrame as FlowTrace } from '@base-types/node/flow';
 export { TraceFrame as ChoiceTrace } from '@base-types/node/interaction';
@@ -74,6 +76,7 @@ export interface LogTrace extends BaseTraceFrame<LogTracePayload> {
 }
 
 export type AnyTrace =
+  | LogTrace
   | ExitTrace
   | TextTrace
   | GoToTrace
@@ -85,5 +88,5 @@ export type AnyTrace =
   | StreamTrace
   | VisualTrace
   | NoReplyTrace
-  | EntityFillingTrace
-  | LogTrace;
+  | CarouselTrace
+  | EntityFillingTrace;
