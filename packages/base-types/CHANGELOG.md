@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.39.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.38.0...@voiceflow/base-types@2.39.0) (2022-06-10)
+
+
+### Features
+
+* add types for customThemes (VF-3266) ([#300](https://github.com/voiceflow/libs/issues/300)) ([fbc60b7](https://github.com/voiceflow/libs/commit/fbc60b7a9ba1c98bfd8accece62e8613b0f14933))
+
+
+
+
+
 # [2.38.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.37.0...@voiceflow/base-types@2.38.0) (2022-06-09)
 
 
