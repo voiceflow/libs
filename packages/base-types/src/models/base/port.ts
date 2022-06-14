@@ -14,7 +14,7 @@ export interface BasePort {
   target: Nullable<string>;
 
   /**
-   * @deprecated moved to within the ref property
+   * @deprecated this will now be the refID value when the refType is 'builtin'
    */
   type?: string | PortType;
 }
