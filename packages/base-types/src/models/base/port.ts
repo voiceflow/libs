@@ -20,30 +20,39 @@ export interface BasePort {
 }
 
 export enum ReferenceType {
-  KEY = 'key',
+  /**
+   * describes a port that is not affected by step reorder operations
+   */
+  PERSISTENT = 'persistent',
+  /**
+   * describes a port of a pre-defined type (next, no-match, no-reply, etc.)
+   */
   BUILTIN = 'builtin',
 
-  // eventually we can introduce this
+  /**
+   * eventually we can introduce this alongside a portsV3 structure that is
+   * just an array of BaseReferencePorts
+   */
   // DYNAMIC = 'dynamic'
 }
 
-export interface BaseReference {
-  type: ReferenceType;
+export interface ReferenceMixin {
+  refType: ReferenceType;
+  refID: string;
 }
 
-export interface ByKeyReference extends BaseReference {
-  type: ReferenceType.KEY;
-  value: string;
+export interface PersistentReference extends ReferenceMixin {
+  refType: ReferenceType.PERSISTENT;
 }
 
-export interface BuiltinReference extends BaseReference {
-  type: ReferenceType.BUILTIN;
-  value: PortType;
+export interface BuiltinReference extends ReferenceMixin {
+  refType: ReferenceType.BUILTIN;
+  refID: PortType;
 }
 
-export interface BaseReferencePort extends BasePort {
-  ref: ByKeyReference | BuiltinReference;
-}
+export type BaseReference = PersistentReference | BuiltinReference;
+
+export type BaseReferencePort = BasePort & BaseReference;
 
 export interface BaseStepPorts<
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
