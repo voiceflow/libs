@@ -11,21 +11,60 @@ export enum PortType {
 
 export interface BasePort {
   id: string;
-  type: string | PortType;
   target: Nullable<string>;
+
+  /**
+   * @deprecated this will now be the refID value when the refType is 'builtin'
+   */
+  type?: string | PortType;
 }
+
+export enum ReferenceType {
+  /**
+   * describes a port that is not affected by step reorder operations
+   */
+  PERSISTENT = 'persistent',
+  /**
+   * describes a port of a pre-defined type (next, no-match, no-reply, etc.)
+   */
+  BUILTIN = 'builtin',
+
+  /**
+   * eventually we can introduce this alongside a portsV3 structure that is
+   * just an array of BaseReferencePorts
+   */
+  // DYNAMIC = 'dynamic'
+}
+
+export interface ReferenceMixin {
+  refType: ReferenceType;
+  refID: string;
+}
+
+export interface PersistentReference extends ReferenceMixin {
+  refType: ReferenceType.PERSISTENT;
+}
+
+export interface BuiltinReference extends ReferenceMixin {
+  refType: ReferenceType.BUILTIN;
+  refID: PortType;
+}
+
+export type BaseReference = PersistentReference | BuiltinReference;
+
+export type BaseReferencePort = BasePort & BaseReference;
 
 export interface BaseStepPorts<
-  Builtin extends Partial<Record<PortType, BasePort>>,
-  Dynamic extends BasePort[] = BasePort[],
-  ByKey extends Partial<Record<string, BasePort>> = Partial<Record<string, BasePort>>
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _Typed extends Partial<Record<PortType, BasePort>>,
+  Dynamic extends BasePort = BasePort,
+  Reference extends BaseReferencePort = BaseReferencePort
 > {
-  builtIn: Builtin;
-  dynamic: Dynamic;
-  byKey: ByKey;
+  dynamic: Dynamic[];
+  byRef: Reference[];
 }
 
-export interface AnyBaseStepPorts extends BaseStepPorts<Record<string, BasePort>, BasePort[]> {}
+export interface AnyBaseStepPorts extends BaseStepPorts<Partial<Record<PortType, BasePort>>, BasePort, BaseReferencePort> {}
 
 export interface BuiltInNextPort {
   [PortType.NEXT]: BasePort;
@@ -47,15 +86,15 @@ export interface BuiltInNextFailPorts extends BuiltInNextPort, BuiltInFailPort {
 
 export interface BuiltInNoMatchNoReplyPorts extends BuiltInNoMatchPort, BuiltInNoReplyPort {}
 
-export interface EmptyStepPorts extends BaseStepPorts<EmptyObject, []> {}
+export interface EmptyStepPorts extends BaseStepPorts<EmptyObject> {}
 
-export interface NextStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNextPort, Dynamic> {}
+export interface NextStepPorts extends BaseStepPorts<BuiltInNextPort> {}
 
-export interface SuccessFailStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNextFailPorts, Dynamic> {}
+export interface SuccessFailStepPorts extends BaseStepPorts<BuiltInNextFailPorts> {}
 
-export interface DynamicOnlyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<EmptyObject, Dynamic> {}
+export interface DynamicOnlyStepPorts extends BaseStepPorts<EmptyObject> {}
 
-export interface NoMatchNoReplyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNoMatchNoReplyPorts, Dynamic> {}
+export interface NoMatchNoReplyStepPorts extends BaseStepPorts<BuiltInNoMatchNoReplyPorts> {}
 
 /**
  * @deprecated

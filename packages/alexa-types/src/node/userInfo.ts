@@ -18,7 +18,7 @@ export interface Permission {
   selected: Nullable<{ value: string }>;
 }
 
-export interface StepPorts extends BaseNode.Utils.SuccessFailStepPorts<[]> {}
+export interface StepPorts extends BaseNode.Utils.SuccessFailStepPorts {}
 
 export interface Step extends BaseNode.Utils.BaseStep<StepData, StepPorts> {
   type: NodeType.USER_INFO;

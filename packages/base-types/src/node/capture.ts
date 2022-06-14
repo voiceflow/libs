@@ -22,7 +22,7 @@ export interface StepData extends BaseNoReplyStepData {
 export interface StepBuiltInPorts extends BuiltInNextPort, BuiltInNoReplyPort {}
 
 /** @deprecated */
-export interface StepPorts extends BaseStepPorts<StepBuiltInPorts, []> {}
+export interface StepPorts extends BaseStepPorts<StepBuiltInPorts> {}
 
 /** @deprecated */
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {

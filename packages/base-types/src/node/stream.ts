@@ -22,7 +22,7 @@ export interface StepDefaultBuiltPorts extends StepBaseBuiltInPorts {
   [PortType.PREVIOUS]?: BasePort;
 }
 
-export interface StepPorts<BuiltInPorts extends StepBaseBuiltInPorts = StepDefaultBuiltPorts> extends BaseStepPorts<BuiltInPorts, []> {}
+export interface StepPorts<BuiltInPorts extends StepBaseBuiltInPorts = StepDefaultBuiltPorts> extends BaseStepPorts<BuiltInPorts> {}
 
 export interface Step<Data = StepData, Ports = StepPorts> extends BaseStep<Data, Ports> {
   type: NodeType.STREAM;
