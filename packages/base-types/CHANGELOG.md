@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.40.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.39.0...@voiceflow/base-types@2.40.0) (2022-06-14)
+
+
+### Features
+
+* ports by reference (VF-3809) ([#301](https://github.com/voiceflow/libs/issues/301)) ([5f1fd87](https://github.com/voiceflow/libs/commit/5f1fd87dfabf46794c600a0cd4c8ce0f0d16e69d)), closes [voiceflow/general-service#352](https://github.com/voiceflow/general-service/issues/352)
+
+
+
+
+
 # [2.39.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.38.0...@voiceflow/base-types@2.39.0) (2022-06-10)
 
 
