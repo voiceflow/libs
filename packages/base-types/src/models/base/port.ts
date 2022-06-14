@@ -12,10 +12,37 @@ export enum PortType {
 export interface BasePort {
   id: string;
   target: Nullable<string>;
+
+  /**
+   * @deprecated moved to within the ref property
+   */
+  type?: string | PortType;
+}
+
+export enum ReferenceType {
+  KEY = 'key',
+  BUILTIN = 'builtin',
+
+  // eventually we can introduce this
+  // DYNAMIC = 'dynamic'
+}
+
+export interface BaseReference {
+  type: ReferenceType;
+}
+
+export interface ByKeyReference extends BaseReference {
+  type: ReferenceType.KEY;
+  value: string;
+}
+
+export interface BuiltinReference extends BaseReference {
+  type: ReferenceType.BUILTIN;
+  value: PortType;
 }
 
 export interface BaseReferencePort extends BasePort {
-  ref: { key: string } | { type: PortType };
+  ref: ByKeyReference | BuiltinReference;
 }
 
 export interface BaseStepPorts<
