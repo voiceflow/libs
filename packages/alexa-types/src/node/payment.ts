@@ -6,7 +6,7 @@ export interface StepData {
   productID: Nullable<string>;
 }
 
-export interface StepPorts extends BaseNode.Utils.SuccessFailStepPorts<[]> {}
+export interface StepPorts extends BaseNode.Utils.SuccessFailStepPorts {}
 
 export interface Step extends BaseNode.Utils.BaseStep<StepData, StepPorts> {
   type: NodeType.PAYMENT;

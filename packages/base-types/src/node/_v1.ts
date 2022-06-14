@@ -15,7 +15,8 @@ export interface StepPort<Event = BaseEvent> extends BasePort {
   data: { event?: Event };
 }
 
-export interface StepPorts<Event> extends BaseStepPorts<Record<string, StepPort<Event>>, StepPort<Event>[]> {}
+// eslint-disable-next-line @typescript-eslint/ban-types
+export interface StepPorts<Event> extends BaseStepPorts<{}, StepPort<Event>> {}
 
 export interface Step<Payload = unknown, Event = BaseEvent> extends BaseStep<StepData<Payload>, StepPorts<Event>, BasePortList<StepPort<Event>>> {
   type: string;

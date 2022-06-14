@@ -40,7 +40,7 @@ export interface StepData {
   selectedIntegration: IntegrationType.GOOGLE_SHEETS;
 }
 
-export interface StepPorts extends SuccessFailStepPorts<[]> {}
+export interface StepPorts extends SuccessFailStepPorts {}
 
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.GOOGLE_SHEETS;

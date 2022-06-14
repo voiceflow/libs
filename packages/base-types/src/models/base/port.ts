@@ -11,21 +11,24 @@ export enum PortType {
 
 export interface BasePort {
   id: string;
-  type: string | PortType;
   target: Nullable<string>;
 }
 
-export interface BaseStepPorts<
-  Builtin extends Partial<Record<PortType, BasePort>>,
-  Dynamic extends BasePort[] = BasePort[],
-  ByKey extends Partial<Record<string, BasePort>> = Partial<Record<string, BasePort>>
-> {
-  builtIn: Builtin;
-  dynamic: Dynamic;
-  byKey: ByKey;
+export interface BaseReferencePort extends BasePort {
+  ref: { key: string } | { type: PortType };
 }
 
-export interface AnyBaseStepPorts extends BaseStepPorts<Record<string, BasePort>, BasePort[]> {}
+export interface BaseStepPorts<
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _Typed extends Partial<Record<PortType, BasePort>>,
+  Dynamic extends BasePort = BasePort,
+  Reference extends BaseReferencePort = BaseReferencePort
+> {
+  dynamic: Dynamic[];
+  byRef: Reference[];
+}
+
+export interface AnyBaseStepPorts extends BaseStepPorts<Partial<Record<PortType, BasePort>>, BasePort, BaseReferencePort> {}
 
 export interface BuiltInNextPort {
   [PortType.NEXT]: BasePort;
@@ -47,15 +50,15 @@ export interface BuiltInNextFailPorts extends BuiltInNextPort, BuiltInFailPort {
 
 export interface BuiltInNoMatchNoReplyPorts extends BuiltInNoMatchPort, BuiltInNoReplyPort {}
 
-export interface EmptyStepPorts extends BaseStepPorts<EmptyObject, []> {}
+export interface EmptyStepPorts extends BaseStepPorts<EmptyObject> {}
 
-export interface NextStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNextPort, Dynamic> {}
+export interface NextStepPorts extends BaseStepPorts<BuiltInNextPort> {}
 
-export interface SuccessFailStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNextFailPorts, Dynamic> {}
+export interface SuccessFailStepPorts extends BaseStepPorts<BuiltInNextFailPorts> {}
 
-export interface DynamicOnlyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<EmptyObject, Dynamic> {}
+export interface DynamicOnlyStepPorts extends BaseStepPorts<EmptyObject> {}
 
-export interface NoMatchNoReplyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNoMatchNoReplyPorts, Dynamic> {}
+export interface NoMatchNoReplyStepPorts extends BaseStepPorts<BuiltInNoMatchNoReplyPorts> {}
 
 /**
  * @deprecated
