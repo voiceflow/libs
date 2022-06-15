@@ -8,7 +8,7 @@ export interface StepData extends BaseNoReplyStepData, BaseNoMatchStepData {
   noMatches?: BaseStepNoMatch;
 }
 
-export interface StepPorts extends NoMatchNoReplyStepPorts {}
+export interface StepPorts extends NoMatchNoReplyStepPorts<[]> {}
 
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.PROMPT;

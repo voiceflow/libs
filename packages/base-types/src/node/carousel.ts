@@ -38,7 +38,7 @@ export interface CarouselCard<B = CarouselButton> extends DataID {
 
 export interface StepBuiltInPorts extends BuiltInNextPort, BuiltInNoMatchNoReplyPorts {}
 
-export interface StepPorts extends BaseStepPorts<StepBuiltInPorts> {}
+export interface StepPorts extends BaseStepPorts<StepBuiltInPorts, []> {}
 
 export interface StepData extends BaseNoMatchStepData, BaseNoReplyStepData {
   layout: CarouselLayout;

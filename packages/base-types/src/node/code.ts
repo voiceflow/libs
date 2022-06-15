@@ -5,7 +5,7 @@ export interface StepData {
   code: string;
 }
 
-export interface StepPorts extends SuccessFailStepPorts {}
+export interface StepPorts extends SuccessFailStepPorts<[]> {}
 
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.CODE;
