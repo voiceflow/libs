@@ -7,6 +7,10 @@ export interface StepData {
   src: string;
   loop: boolean;
   customPause?: boolean;
+  title?: string;
+  iconImage?: string;
+  description?: string;
+  backgroundImage?: string;
 }
 
 export enum TraceStreamAction {
@@ -32,6 +36,10 @@ export interface Node extends BaseNode {
   type: NodeType.STREAM;
   src: string;
   loop: boolean;
+  title?: string;
+  iconImage?: string;
+  description?: string;
+  backgroundImage?: string;
   nextID?: NodeID;
   pauseID?: NodeID;
   previousID?: NodeID;
@@ -41,6 +49,11 @@ export interface TraceFramePayload {
   src: string;
   token: string;
   action: TraceStreamAction;
+  loop: boolean;
+  title?: string;
+  iconImage?: string;
+  description?: string;
+  backgroundImage?: string;
 }
 
 export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
