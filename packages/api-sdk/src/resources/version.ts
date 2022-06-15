@@ -208,8 +208,15 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
     return data;
   }
 
-  public async reorderTopics<P extends { fromID: string; toIndex: number }>(id: string, body: P): Promise<string> {
-    const { data } = await this.fetch.patch<string>(`${this._getCRUDEndpoint(id)}/topics/reorder`, body);
+  public async reorderTopics(id: string, body: { fromID: string; toIndex: number }): Promise<BaseModels.Version.FolderItem> {
+    const { data } = await this.fetch.patch<BaseModels.Version.FolderItem>(`${this._getCRUDEndpoint(id)}/topics/reorder`, body);
+
+    return data;
+  }
+
+  public async reorderComponents(id: string, body: { fromID: string; toIndex: number }): Promise<BaseModels.Version.FolderItem> {
+    const { data } = await this.fetch.patch<BaseModels.Version.FolderItem>(`${this._getCRUDEndpoint(id)}/components/reorder`, body);
+
     return data;
   }
 }

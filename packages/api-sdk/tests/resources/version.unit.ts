@@ -389,7 +389,7 @@ describe('VersionResource', () => {
     const fromID = 'fromID-1';
     const toIndex = 1;
 
-    const response = { data: 'fromID-1' };
+    const response = { data: { sourceID: 'fromID-1' } };
 
     fetch.patch.resolves(response);
 
@@ -399,6 +399,25 @@ describe('VersionResource', () => {
 
     expect(fetch.patch.callCount).to.eql(1);
     expect(fetch.patch.args[0]).to.eql([`versions/${versionID}/topics/reorder`, { fromID, toIndex }]);
+    expect(data).to.eql(response.data);
+  });
+
+  it('reorderComponents', async () => {
+    const { fetch, resource } = createClient();
+
+    const fromID = 'fromID-1';
+    const toIndex = 1;
+
+    const response = { data: { sourceID: 'fromID-1' } };
+
+    fetch.patch.resolves(response);
+
+    const versionID = '1';
+
+    const data = await resource.reorderComponents(versionID, { fromID, toIndex });
+
+    expect(fetch.patch.callCount).to.eql(1);
+    expect(fetch.patch.args[0]).to.eql([`versions/${versionID}/components/reorder`, { fromID, toIndex }]);
     expect(data).to.eql(response.data);
   });
 });
