@@ -5,6 +5,6 @@ import { StepLogKind } from '../kinds';
 export type RandomStepLog = BaseStepLog<
   StepLogKind.RANDOM,
   {
-    path: PathReference;
+    path: PathReference | null;
   }
 >;
