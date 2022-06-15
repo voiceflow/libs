@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.41.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.40.0...@voiceflow/base-types@2.41.0) (2022-06-15)
+
+
+### Features
+
+* add stream step support for google assistant (VF-3675) ([#303](https://github.com/voiceflow/libs/issues/303)) ([3768bb5](https://github.com/voiceflow/libs/commit/3768bb547f58ae99a49eb80b51c44548e573612a))
+
+
+
+
+
 # [2.40.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.39.0...@voiceflow/base-types@2.40.0) (2022-06-14)
 
 
