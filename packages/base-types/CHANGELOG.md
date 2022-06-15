@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.42.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.41.0...@voiceflow/base-types@2.42.0) (2022-06-15)
+
+
+### Features
+
+* **base-types:** update runtime logging types for batch 1 of steps (VF-3554) ([#302](https://github.com/voiceflow/libs/issues/302)) ([f1faeba](https://github.com/voiceflow/libs/commit/f1faebaef08071ff4a81b1e88d7be8dd74505cdc))
+
+
+
+
+
 # [2.41.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.40.0...@voiceflow/base-types@2.41.0) (2022-06-15)
 
 
