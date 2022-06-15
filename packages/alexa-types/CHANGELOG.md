@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.3](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.9.2...@voiceflow/alexa-types@2.9.3) (2022-06-15)
+
+
+### Reverts
+
+* Revert "feat: ports by reference (VF-3809) (#301)" ([04d3f20](https://github.com/voiceflow/libs/commit/04d3f205e0ed30df32ba6d50ddc8a9f838bf5cbd)), closes [#301](https://github.com/voiceflow/libs/issues/301)
+
+
+
+
+
 ## [2.9.2](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.9.1...@voiceflow/alexa-types@2.9.2) (2022-06-15)
 
 **Note:** Version bump only for package @voiceflow/alexa-types

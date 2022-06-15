@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.42.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.42.0...@voiceflow/base-types@2.42.1) (2022-06-15)
+
+
+### Reverts
+
+* Revert "feat: ports by reference (VF-3809) (#301)" ([04d3f20](https://github.com/voiceflow/libs/commit/04d3f205e0ed30df32ba6d50ddc8a9f838bf5cbd)), closes [#301](https://github.com/voiceflow/libs/issues/301)
+
+
+
+
+
 # [2.42.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.41.0...@voiceflow/base-types@2.42.0) (2022-06-15)
 
 
