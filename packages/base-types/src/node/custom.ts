@@ -26,8 +26,8 @@ export interface NodePath<Event = BaseEvent> {
 }
 
 export interface NodePayload {
-  name: string,
-  body: unknown
+  name: string;
+  body: unknown;
 }
 
 export interface Node<Event = BaseEvent> extends BaseNode {
