@@ -8,6 +8,12 @@ export interface PathReference {
   stepID: string;
 }
 
+/** A reference to a flow (frame) on the canvas. */
+export interface FlowReference {
+  name: string | null;
+  programID: string;
+}
+
 /** A common interface for representing a before & after change of a value. */
 export interface ValueChange<T> {
   before: T;

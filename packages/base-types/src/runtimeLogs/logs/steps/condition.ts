@@ -5,6 +5,6 @@ import { StepLogKind } from '../kinds';
 export type ConditionStepLog = BaseStepLog<
   StepLogKind.CONDITION,
   {
-    path: PathReference;
+    path: PathReference | null;
   }
 >;
