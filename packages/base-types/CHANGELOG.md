@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.44.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.43.0...@voiceflow/base-types@2.44.0) (2022-06-21)
+
+
+### Features
+
+* add trace support for stop field (VF-3675) ([#308](https://github.com/voiceflow/libs/issues/308)) ([0d2c78d](https://github.com/voiceflow/libs/commit/0d2c78d67d440bec7a8235a635511dc4c6855a66))
+
+
+
+
+
 # [2.43.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.42.1...@voiceflow/base-types@2.43.0) (2022-06-17)
 
 
