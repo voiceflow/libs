@@ -96,4 +96,4 @@ export const mapValue = <T, R>(obj: Record<string | number | symbol, T>, callbac
   Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, callback(value)]));
 
 export const shallowPartialEquals = <T extends object>(obj: T, partial: Partial<T>) =>
-  Object.entries(partial).every(([key, partialValue]) => hasProperty(obj, key) && obj[key] && partialValue === obj[key]);
+  Object.entries(partial).every(([key, partialValue]) => hasProperty(obj, key) && partialValue === obj[key]);
