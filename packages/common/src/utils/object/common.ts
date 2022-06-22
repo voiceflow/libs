@@ -1,5 +1,7 @@
 import { AnyRecord, Struct } from '@common/types';
 
+export { default as shallowEquals } from 'shallowequal';
+
 export const selectField =
   <K extends string | number>(field: K) =>
   <T extends { [key in K]: any }>(obj: T): T[K] =>
@@ -92,3 +94,6 @@ export const filterEntries = pickBy;
 
 export const mapValue = <T, R>(obj: Record<string | number | symbol, T>, callback: (value: T) => R) =>
   Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, callback(value)]));
+
+export const shallowPartialEquals = <T extends object>(obj: T, partial: Partial<T>) =>
+  Object.entries(partial).every(([key, partialValue]) => hasProperty(obj, key) && partialValue === obj[key]);
