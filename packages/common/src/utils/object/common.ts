@@ -1,6 +1,6 @@
 import { AnyRecord, Struct } from '@common/types';
 
-export { default as shallowEqual } from 'shallowequal';
+export { default as shallowEquals } from 'shallowequal';
 
 export const selectField =
   <K extends string | number>(field: K) =>
@@ -96,5 +96,5 @@ export const mapValue = <T, R>(obj: Record<string | number | symbol, T>, callbac
   Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, callback(value)]));
 
 export const shallowPartialEquals = <T extends object>(obj: T, partial: Partial<T>) => {
-  return isObject(obj) && isObject(partial) && Object.keys(partial).every((key) => partial[key] === obj[key]);
+  return isObject(obj) && isObject(partial) && Object.entries(partial).every(([key, partialValue]) => partialValue === obj[key]);
 };
