@@ -92,3 +92,7 @@ export const filterEntries = pickBy;
 
 export const mapValue = <T, R>(obj: Record<string | number | symbol, T>, callback: (value: T) => R) =>
   Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, callback(value)]));
+
+export const shallowPartialEquals = (obj: unknown, partial: unknown) => {
+  return isObject(obj) && isObject(partial) && Object.keys(partial).every((key) => partial[key] === obj[key]);
+};
