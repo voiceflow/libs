@@ -1,5 +1,7 @@
 import { AnyRecord, Struct } from '@common/types';
 
+export { default as shallowEqual } from 'shallowequal';
+
 export const selectField =
   <K extends string | number>(field: K) =>
   <T extends { [key in K]: any }>(obj: T): T[K] =>
