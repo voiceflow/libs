@@ -10,6 +10,7 @@ import {
   selectID,
   selectKey,
   selectValue,
+  shallowPartialEquals,
 } from '@common/utils/object/common';
 import { expect } from 'chai';
 
@@ -152,6 +153,40 @@ describe('Utils | object | common', () => {
       };
 
       expect(mapValue(objects, ({ id }) => id)).to.eql({ a: 1, b: 2, c: 3 });
+    });
+  });
+
+  describe('shallowPartialEquals()', () => {
+    it('works', () => {
+      const obj1 = {
+        a: 1,
+        b: 2,
+      };
+      const obj1Update = {
+        a: 1,
+        c: undefined,
+      };
+
+      expect(shallowPartialEquals(obj1, obj1Update)).to.eql(false);
+
+      const obj2 = {
+        a: 1,
+        b: 2,
+      };
+      const obj2Update = {
+        a: 1,
+      };
+
+      expect(shallowPartialEquals(obj2, obj2Update)).to.eql(true);
+
+      const obj3: any = {
+        a: 1,
+      };
+      const obj3Update = {
+        b: 1,
+      };
+
+      expect(shallowPartialEquals(obj3, obj3Update)).to.eql(false);
     });
   });
 });
