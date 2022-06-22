@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.27.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.27.0...@voiceflow/common@7.27.1) (2022-06-22)
+
+
+### Bug Fixes
+
+* shallow partial equals (VF-3887) ([#310](https://github.com/voiceflow/libs/issues/310)) ([56b4392](https://github.com/voiceflow/libs/commit/56b439284c7bba6ca36d7d29de9cf1cb50457d4e))
+
+
+
+
+
 # [7.27.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.26.1...@voiceflow/common@7.27.0) (2022-05-25)
 
 
