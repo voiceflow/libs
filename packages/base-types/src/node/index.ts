@@ -2,6 +2,7 @@ import * as _v1 from './_v1';
 import * as Api from './api';
 import * as Code from './code';
 import * as Component from './component';
+import * as Custom from './custom';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as General from './general';
@@ -30,6 +31,7 @@ export * as Carousel from './carousel';
 export * as Code from './code';
 export * as Component from './component';
 export * from './constants';
+export * as Custom from './custom';
 export * as Directive from './directive';
 export * as Exit from './exit';
 export * as Flow from './flow';
@@ -76,7 +78,8 @@ export type AnyCommonStep =
   | GoTo.Step
   | GoToNode.Step
   | Url.Step
-  | _v1.Step;
+  | _v1.Step
+  | Custom.Step;
 
 export type AnyCommonNode =
   | Set.Node
@@ -93,6 +96,7 @@ export type AnyCommonNode =
   | GoTo.Node
   | Url.Node
   | GoToNode.Node
-  | _v1.Node;
+  | _v1.Node
+  | Custom.Node;
 
 export type AnyCommonCommand = Intent.Command | Command.Command;

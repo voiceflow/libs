@@ -16,6 +16,7 @@ export enum TraceType {
   CAROUSEL = 'carousel',
   NO_REPLY = 'no-reply',
   ENTITY_FILLING = 'entity-filling',
+  CUSTOM = 'custom',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {
