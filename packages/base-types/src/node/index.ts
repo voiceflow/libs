@@ -18,6 +18,7 @@ import * as Set from './set';
 import * as SetV2 from './setV2';
 import * as Start from './start';
 import * as Url from './url';
+import { BaseNode, NodeNextID } from './utils';
 import * as Zapier from './zapier';
 
 export * as _v1 from './_v1';
@@ -56,6 +57,10 @@ export * as Utils from './utils';
 export * as Visual from './visual';
 export * as Zapier from './zapier';
 
+export interface NextOnlyNode extends BaseNode, NodeNextID {
+  type: '_next';
+}
+
 export type AnyCommonStep =
   | Set.Step
   | SetV2.Step
@@ -93,6 +98,7 @@ export type AnyCommonNode =
   | GoTo.Node
   | Url.Node
   | GoToNode.Node
+  | NextOnlyNode
   | _v1.Node;
 
 export type AnyCommonCommand = Intent.Command | Command.Command;
