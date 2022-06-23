@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.46.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.45.0...@voiceflow/base-types@2.46.0) (2022-06-23)
+
+
+### Features
+
+* add next only node ([37dacd1](https://github.com/voiceflow/libs/commit/37dacd10e2d8402ac7613b88b95f4098f7a1e4b5))
+
+
+
+
+
 # [2.45.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.44.1...@voiceflow/base-types@2.45.0) (2022-06-23)
 
 
