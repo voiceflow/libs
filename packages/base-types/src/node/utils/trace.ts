@@ -28,5 +28,4 @@ export interface BaseTraceFrame<Payload = any, TracePath extends BaseTraceFrameP
   paths?: TracePath[];
   payload: Payload;
   defaultPath?: number;
-  stop?: boolean;
 }
