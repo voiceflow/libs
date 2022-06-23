@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.45.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.44.1...@voiceflow/base-types@2.45.0) (2022-06-23)
+
+
+### Features
+
+* revert adding stop on trace node (VF-3675) ([#311](https://github.com/voiceflow/libs/issues/311)) ([bbb69f6](https://github.com/voiceflow/libs/commit/bbb69f627cdc3ea5e2d1f830acea2a247058d7b3))
+
+
+
+
+
 ## [2.44.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.44.0...@voiceflow/base-types@2.44.1) (2022-06-22)
 
 **Note:** Version bump only for package @voiceflow/base-types
