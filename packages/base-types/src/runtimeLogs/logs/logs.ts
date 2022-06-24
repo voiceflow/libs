@@ -1,4 +1,5 @@
 import { ConversationStartLog } from './global/conversationStart';
+import { NluIntentResolvedLog } from './global/nluIntentResolved';
 import { ApiStepLog } from './steps/api';
 import { ButtonsStepLog } from './steps/buttons';
 import { CaptureStepLog } from './steps/capture';
@@ -33,7 +34,7 @@ export {
 };
 
 /** All possible runtime logs for global events. */
-export type GlobalLog = ConversationStartLog;
+export type GlobalLog = ConversationStartLog | NluIntentResolvedLog;
 
 /** All possible runtime logs for steps. */
 export type StepLog =
