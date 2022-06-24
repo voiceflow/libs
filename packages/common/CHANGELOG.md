@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.27.3](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.27.2...@voiceflow/common@7.27.3) (2022-06-24)
+
+
+### Bug Fixes
+
+* new email regex (VF-3921) ([#314](https://github.com/voiceflow/libs/issues/314)) ([1fea4b5](https://github.com/voiceflow/libs/commit/1fea4b5d78c15407ddf59eab6c4141a4398c5d03))
+
+
+
+
+
 ## [7.27.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.27.1...@voiceflow/common@7.27.2) (2022-06-24)
 
 
