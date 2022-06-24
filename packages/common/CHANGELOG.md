@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.27.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.27.1...@voiceflow/common@7.27.2) (2022-06-24)
+
+
+### Bug Fixes
+
+* shallowequal types ([fda5067](https://github.com/voiceflow/libs/commit/fda50678957775d510a926cea7a99f7de494b8f7))
+
+
+
+
+
 ## [7.27.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.27.0...@voiceflow/common@7.27.1) (2022-06-22)
 
 
