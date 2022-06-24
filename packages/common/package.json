@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@types/crypto-js": "^4.0.2",
+    "@types/shallowequal": "^1.1.1",
     "bson-objectid": "^2.0.1",
     "crypto-js": "^4.1.1",
     "cuid": "^2.1.8",
@@ -26,7 +27,6 @@
     "@types/mocha": "^8.2.2",
     "@types/node": "^15.3.1",
     "@types/number-to-words": "1.2.0",
-    "@types/shallowequal": "^1.1.1",
     "@types/sinon": "^10.0.0",
     "@zerollup/ts-transform-paths": "^1.7.18",
     "chai": "^4.3.4",
