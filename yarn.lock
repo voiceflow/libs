@@ -1936,22 +1936,22 @@
     eslint-plugin-xss "^0.1.9"
     eslint-plugin-you-dont-need-lodash-underscore "^6.12.0"
 
-"@voiceflow/git-branch-check@1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@voiceflow/git-branch-check/-/git-branch-check-1.2.3.tgz#11a58a2db3f8cfdcc587ca8988620d57ed47a828"
-  integrity sha512-BMR72VtRlrkKKj77qm2ZuzZYUYnZ44NANMLZvk3nVzzwNgI5z6855BTXPmrDpwOzuC3YdvBlY4bdOVCw4tJTEQ==
+"@voiceflow/git-branch-check@1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@voiceflow/git-branch-check/-/git-branch-check-1.2.4.tgz#d9fade385acf9e9f01b198a2fcd6552bc8b00ee4"
+  integrity sha512-hhJfdk4P/GAnhTuMJXtG7Wk65LUdVDKUWgFP8jMXv6lzmgx8NXANZR23AJ6NQ0sVibU994rTUVPPoyaU2h2+/Q==
   dependencies:
     current-git-branch "^1.1.0"
 
-"@voiceflow/prettier-config@1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@voiceflow/prettier-config/-/prettier-config-1.0.7.tgz#628771e2cfb124f38c5c72164afa84b673da9d2e"
-  integrity sha512-V1DFizimL6bfDdRcwFW8vYvJX9W3rTD6JcYPUsWVR6VxH6ao9mlLWC3cWpQA0nZR8QGT9OmeG4oE/i6L4cRdyw==
+"@voiceflow/prettier-config@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/prettier-config/-/prettier-config-1.2.1.tgz#906bc852bcd8b2586fa62e4635392a0bea1fdb59"
+  integrity sha512-J7wnJCwRWSNX33Ji2eLeBxtwXplAKIk9/aOfrHVfKmYrLHqXvOcrl2/7xa37jqnuTl8vw3+UsfFo3sMDY6weTg==
 
-"@voiceflow/tsconfig@1.2.5":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@voiceflow/tsconfig/-/tsconfig-1.2.5.tgz#b5ebf633fb56f838bf561dc67eef6bc24c862579"
-  integrity sha512-1HJkuvp3Rekb8q8qxGQViGVJi45FAeEFz4zYRFPfIzc7W0l2Buy8GUO5656Q88bMAAaDtPwxJ4RfRv9ChPvVyQ==
+"@voiceflow/tsconfig@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@voiceflow/tsconfig/-/tsconfig-1.3.0.tgz#66cd762c7000e703de44cf41fccff457860aaac6"
+  integrity sha512-rlSarcUAUMjevrfGjH8iCz1UvFLoLdHKz0xtgkEJTYj22jfCn8r8A9soucYvMJJib+4wxoV5rxXrW08/3h285w==
   dependencies:
     "@zerollup/ts-transform-paths" "1.7.18"
 
