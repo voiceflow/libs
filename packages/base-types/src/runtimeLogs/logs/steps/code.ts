@@ -1,26 +1,21 @@
+import { ChangedVariables } from '@base-types/runtimeLogs/utils';
+
 import { BaseStepLog } from '../base';
 import { StepLogKind } from '../kinds';
 import { LogLevel } from '../levels';
-
-interface ChangedVariable<T> {
-  before: T;
-  after: T;
-}
 
 export type CodeStepLog =
   | BaseStepLog<
       StepLogKind.CUSTOM_CODE,
       {
         error: null;
-        changedVariables: Record<string, ChangedVariable<any>>;
-      },
+      } & ChangedVariables<any>,
       LogLevel.INFO
     >
   | BaseStepLog<
       StepLogKind.CUSTOM_CODE,
       {
         error: any;
-        changedVariables: null;
-      },
+      } & Record<keyof ChangedVariables<never>, null>,
       LogLevel.ERROR
     >;

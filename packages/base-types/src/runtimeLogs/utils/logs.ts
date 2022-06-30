@@ -16,3 +16,5 @@ const ALL_LOG_LEVELS: ReadonlySet<LogLevel> = new Set(Object.values(LogLevel));
 export const isLogLevel = (level: string): level is LogLevel => {
   return ALL_LOG_LEVELS.has(level as any);
 };
+
+export const DEFAULT_LOG_LEVEL = LogLevel.INFO;

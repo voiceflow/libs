@@ -37,6 +37,7 @@ export enum StepLogKind {
 
 export enum GlobalLogKind {
   CONVERSATION_START = 'conversation_start',
+  NLU_INTENT_RESOLVED = 'nlu.intent_resolved',
 }
 
 const NODE_TYPE_TO_STEP_LOG_KIND = {

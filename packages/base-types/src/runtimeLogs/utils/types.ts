@@ -15,15 +15,17 @@ export interface FlowReference {
 }
 
 /** A common interface for representing a before & after change of a value. */
-export interface ValueChange<T> {
-  before: T;
-  after: T;
+export interface ValueChange<Before, After = Before> {
+  before: Before;
+  after: After;
 }
 
 /**
  * An abstract interface for something that includes changed variables.
  * This enforces a consistent naming scheme of the property.
  */
-export interface ChangedVariables<V, K extends PropertyKey = string> {
-  changedVariables: Record<K, ValueChange<V>>;
+export interface ChangedVariables<V, K extends PropertyKey = string, V2 = V> {
+  changedVariables: Record<K, ValueChange<V, V2>>;
 }
+
+export type VariableValue = string | number;

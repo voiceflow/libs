@@ -15,7 +15,7 @@ interface ApiLogMessageRequest {
 
 interface ApiLogMessageResponse {
   statusCode: number;
-  statusMessage: string;
+  statusText: string;
   headers: null;
   body: null;
 }
@@ -45,7 +45,7 @@ type VerboseApiLogMessageRequest = {
 
 interface VerboseApiLogMessageResponse {
   statusCode: number;
-  statusMessage: string;
+  statusText: string;
   headers: Record<string, string>;
   body: string;
 }
