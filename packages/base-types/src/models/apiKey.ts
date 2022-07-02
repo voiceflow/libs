@@ -7,14 +7,33 @@ export enum APIKeySubType {
   DialogManager = 'DM',
 }
 
-const buildAPIKeyGuard =
-  (type: APIKeySubType) =>
-  (key: unknown): key is string =>
-    typeof key === 'string' && key.startsWith(`${API_KEY_PREFIX}${type}.`);
+export type APIKeyType<T extends string> = `${typeof API_KEY_PREFIX}${T}.${string}.${string}`;
 
-export const isWorkspaceAPIKey = buildAPIKeyGuard(APIKeySubType.Workspace);
+export type APIKeyLegacyType = `${typeof API_KEY_PREFIX}${string}.${string}`;
 
-export const isDialogManagerAPIKey = buildAPIKeyGuard(APIKeySubType.DialogManager);
+export const WORKSPACE_API_KEY_REGEX = new RegExp(`^${API_KEY_PREFIX}${APIKeySubType.Workspace}\\.\\w{24}\\.\\w{16,}`);
+
+export const DIALOG_MANAGER_API_KEY_REGEX = new RegExp(`^${API_KEY_PREFIX}${APIKeySubType.DialogManager}\\.\\w{24}\\.\\w{16,}`);
+
+export const LEGACY_WORKSPACE_API_KEY_REGEX = new RegExp(`^${API_KEY_PREFIX}\\w{24}\\.\\w{16,}`);
+
+export const isWorkspaceAPIKey = (key: unknown): key is APIKeyType<typeof APIKeySubType.Workspace> =>
+  typeof key === 'string' && WORKSPACE_API_KEY_REGEX.test(key);
+
+export const isDialogManagerAPIKey = (key: unknown): key is APIKeyType<typeof APIKeySubType.DialogManager> =>
+  typeof key === 'string' && DIALOG_MANAGER_API_KEY_REGEX.test(key);
+
+export const isLegacyWorkspaceAPIKey = (key: unknown): key is APIKeyLegacyType => typeof key === 'string' && LEGACY_WORKSPACE_API_KEY_REGEX.test(key);
+
+export const extractAPIKeyID = (key: string): string => {
+  if (isWorkspaceAPIKey(key) || isDialogManagerAPIKey(key)) {
+    return key.split('.')[2];
+  }
+  if (isLegacyWorkspaceAPIKey(key)) {
+    return key.split('.')[1];
+  }
+  throw new Error('Cannot extract the ID from an unknown API Key');
+};
 
 export interface Model<Data extends AnyRecord = AnyRecord> {
   _id: string;
