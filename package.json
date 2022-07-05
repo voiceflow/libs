@@ -9,7 +9,7 @@
     "@commitlint/cli": "16.0.2",
     "@voiceflow/commitlint-config": "2.0.0",
     "@voiceflow/eslint-config": "6.0.1",
-    "@voiceflow/git-branch-check": "1.2.4",
+    "@voiceflow/git-branch-check": "1.2.5",
     "@voiceflow/prettier-config": "1.2.1",
     "@voiceflow/tsconfig": "1.3.0",
     "@zerollup/ts-transform-paths": "^1.7.18",
