@@ -26,6 +26,7 @@ export {
   ExitStepLog,
   FlowStepLog,
   IntentStepLog,
+  NluIntentResolvedLog,
   RandomStepLog,
   SetStepLog,
   SpeakStepLog,
