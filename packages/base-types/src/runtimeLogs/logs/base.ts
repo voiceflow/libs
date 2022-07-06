@@ -9,18 +9,24 @@ interface BaseLog {
   kind: string;
   timestamp: Iso8601Timestamp;
   message: EmptyObject;
-  level: LogLevel;
+  level: Exclude<LogLevel, LogLevel.OFF>;
 }
 
-export interface BaseGlobalLog<Kind extends GlobalLogKind, Message extends EmptyObject, Level extends LogLevel = typeof DEFAULT_LOG_LEVEL>
-  extends BaseLog {
+export interface BaseGlobalLog<
+  Kind extends GlobalLogKind,
+  Message extends EmptyObject,
+  Level extends Exclude<LogLevel, LogLevel.OFF> = typeof DEFAULT_LOG_LEVEL
+> extends BaseLog {
   kind: `global.${Kind}`;
   level: Level;
   message: Message;
 }
 
-export interface BaseStepLog<Kind extends StepLogKind, Message extends EmptyObject, Level extends LogLevel = typeof DEFAULT_LOG_LEVEL>
-  extends BaseLog {
+export interface BaseStepLog<
+  Kind extends StepLogKind,
+  Message extends EmptyObject,
+  Level extends Exclude<LogLevel, LogLevel.OFF> = typeof DEFAULT_LOG_LEVEL
+> extends BaseLog {
   kind: `step.${Kind}`;
   level: Level;
   message: PathReference & Message;
