@@ -1960,12 +1960,14 @@
   resolved "https://registry.yarnpkg.com/@voiceflow/prettier-config/-/prettier-config-1.2.1.tgz#906bc852bcd8b2586fa62e4635392a0bea1fdb59"
   integrity sha512-J7wnJCwRWSNX33Ji2eLeBxtwXplAKIk9/aOfrHVfKmYrLHqXvOcrl2/7xa37jqnuTl8vw3+UsfFo3sMDY6weTg==
 
-"@voiceflow/tsconfig@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/tsconfig/-/tsconfig-1.3.0.tgz#66cd762c7000e703de44cf41fccff457860aaac6"
-  integrity sha512-rlSarcUAUMjevrfGjH8iCz1UvFLoLdHKz0xtgkEJTYj22jfCn8r8A9soucYvMJJib+4wxoV5rxXrW08/3h285w==
+"@voiceflow/tsconfig@1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@voiceflow/tsconfig/-/tsconfig-1.4.3.tgz#ca7a3ab326127c6ccb48fd67dd7031022af4c61c"
+  integrity sha512-xbU+oyI5n3sZLsFKcd6xYIhNtgHpyylml5+SaXw2ASYat6yZjiNdI6waOSh5b3BkT1D3CPt/TwfgVd18vc9S/A==
   dependencies:
     "@zerollup/ts-transform-paths" "1.7.18"
+    "@zoltu/typescript-transformer-append-js-extension" "1.0.1"
+    typescript-transform-paths "3.3.1"
 
 "@vue/compiler-core@3.2.30":
   version "3.2.30"
@@ -2038,6 +2040,11 @@
   integrity sha512-YPVUxvWQVzRx1OBN0Pmkd58+R9FcfUJuwTaPUSoi5rKxuXMtxevTXdfi0w5mEaIH8b0DfL+wg0wFDHiJE+S2zA==
   dependencies:
     "@zerollup/ts-helpers" "^1.7.18"
+
+"@zoltu/typescript-transformer-append-js-extension@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@zoltu/typescript-transformer-append-js-extension/-/typescript-transformer-append-js-extension-1.0.1.tgz#c7edaccaef0fc87c0c85d6ce4f074e66a42d9080"
+  integrity sha512-7Lp30MtJO7YHZW19yJWhkuJrf+Y78COHopeZli7fiWrbIRvodsSXZIa7cFX/c4PFwFJt55N/7Pp/t6VH0fwBVQ==
 
 JSONStream@^1.0.4:
   version "1.3.5"
@@ -8448,6 +8455,13 @@ typescript-fsa@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/typescript-fsa/-/typescript-fsa-3.0.0.tgz#3ad1cb915a67338e013fc21f67c9b3e0e110c912"
   integrity sha512-xiXAib35i0QHl/+wMobzPibjAH5TJLDj+qGq5jwVLG9qR4FUswZURBw2qihBm0m06tHoyb3FzpnJs1GRhRwVag==
+
+typescript-transform-paths@3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/typescript-transform-paths/-/typescript-transform-paths-3.3.1.tgz#74526bc1b6dc575ffe269cc81833db7bd81763e1"
+  integrity sha512-c+8Cqd2rsRtTU68rJI0NX/OtqgBDddNs1fIxm1nCNyhn0WpoyqtpUxc1w9Ke5c5kgE4/OT5xYbKf2cf694RYEg==
+  dependencies:
+    minimatch "^3.0.4"
 
 typescript@4.4.4:
   version "4.4.4"
