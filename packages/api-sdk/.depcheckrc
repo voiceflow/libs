@@ -3,6 +3,9 @@
   "ignores": [
     "@types/*",
     "@api-sdk/*",
+    "chai",
+    "chai-as-promised",
+    "sinon",
     "source-map-support"
   ]
 }
