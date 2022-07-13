@@ -7,8 +7,8 @@
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/base-types": "^2.48.0",
-    "@voiceflow/common": "^7.27.3"
+    "@voiceflow/base-types": "2.48.0",
+    "@voiceflow/common": "7.27.3"
   },
   "files": [
     "build"
