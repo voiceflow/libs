@@ -29,15 +29,16 @@
     "@nestjs/config": "^2.0.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "types": "build/index.d.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voiceflow/libs.git"
   },
   "scripts": {
-    "build": "ttsc --project ./tsconfig.build.json",
-    "clean": "rimraf build",
+    "build": "ttsc --build tsconfig.build.json",
+    "clean": "rimraf build *.tsbuildinfo",
     "commit": "cz",
     "lint": "eslint \"**/*.{js,ts}\"",
     "lint:fix": "yarn lint --fix",
@@ -52,5 +53,5 @@
     "test:single": "NODE_ENV=test ts-mocha --paths --config config/tests/mocharc.yml",
     "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
   },
-  "types": "build/index.d.ts"
+  "types": "src/index.ts"
 }

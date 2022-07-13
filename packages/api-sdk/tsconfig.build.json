@@ -8,7 +8,5 @@
       "path": "../common/tsconfig.build.json"
     }
   ],
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

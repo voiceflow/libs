@@ -25,27 +25,27 @@
     {
       "path": "packages/google-types/tsconfig.build.json"
     },
-    // {
-    //   "path": "packages/metrics"
-    // },
-    // {
-    //   "path": "packages/nestjs-common"
-    // },
-    // {
-    //   "path": "packages/nestjs-metrics"
-    // },
-    // {
-    //   "path": "packages/nestjs-mongodb"
-    // },
-    // {
-    //   "path": "packages/nestjs-rate-limit"
-    // },
-    // {
-    //   "path": "packages/nestjs-redis"
-    // },
-    // {
-    //   "path": "packages/nestjs-timeout"
-    // },
+    {
+      "path": "packages/metrics/tsconfig.build.json"
+    },
+    {
+      "path": "packages/nestjs-common/tsconfig.build.json"
+    },
+    {
+      "path": "packages/nestjs-metrics/tsconfig.build.json"
+    },
+    {
+      "path": "packages/nestjs-mongodb/tsconfig.build.json"
+    },
+    {
+      "path": "packages/nestjs-rate-limit/tsconfig.build.json"
+    },
+    {
+      "path": "packages/nestjs-redis/tsconfig.build.json"
+    },
+    {
+      "path": "packages/nestjs-timeout/tsconfig.build.json"
+    },
     {
       "path": "packages/voice-types/tsconfig.build.json"
     },
@@ -53,7 +53,5 @@
       "path": "packages/voiceflow-types/tsconfig.build.json"
     }
   ],
-  "exclude": [
-    "**/*"
-  ]
+  "exclude": ["**/*"]
 }

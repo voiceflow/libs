@@ -20,7 +20,5 @@
       "path": "../voiceflow-types/tsconfig.build.json"
     }
   ],
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

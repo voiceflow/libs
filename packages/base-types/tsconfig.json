@@ -8,16 +8,9 @@
     "rootDir": "src",
     "outDir": "build/cjs",
     "paths": {
-      "@base-types/*": [
-        "src/*"
-      ]
+      "@base-types/*": ["src/*"]
     },
-    "types": [
-      "mocha"
-    ]
+    "types": ["mocha"]
   },
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
+  "exclude": ["node_modules", "build"]
 }

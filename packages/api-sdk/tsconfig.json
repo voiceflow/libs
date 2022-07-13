@@ -8,16 +8,9 @@
     "rootDir": "src",
     "outDir": "build/cjs",
     "paths": {
-      "@api-sdk/*": [
-        "src/*"
-      ]
+      "@api-sdk/*": ["src/*"]
     },
-    "types": [
-      "mocha"
-    ]
+    "types": ["mocha"]
   },
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
+  "exclude": ["node_modules", "build"]
 }

@@ -1,16 +1,9 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "declaration": true,
-    "rootDir": "src",
-    "outDir": "build",
-    "plugins": [
-      {
-        "transform": "@zerollup/ts-transform-paths"
-      }
-    ],
-    "traceResolution": false,
-    "skipLibCheck": true
-  },
+  "references": [
+    {
+      "path": "../nestjs-common/tsconfig.build.json"
+    }
+  ],
   "include": ["src", "typings"]
 }

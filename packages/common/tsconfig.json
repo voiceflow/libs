@@ -6,16 +6,9 @@
     "baseUrl": ".",
     "outDir": "build/cjs",
     "paths": {
-      "@common/*": [
-        "src/*"
-      ]
+      "@common/*": ["src/*"]
     },
-    "types": [
-      "mocha"
-    ]
+    "types": ["mocha"]
   },
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
+  "exclude": ["node_modules", "build"]
 }

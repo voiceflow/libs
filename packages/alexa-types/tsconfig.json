@@ -7,16 +7,9 @@
     "rootDir": "src",
     "outDir": "build/cjs",
     "paths": {
-      "@alexa-types/*": [
-        "src/*"
-      ]
+      "@alexa-types/*": ["src/*"]
     },
-    "types": [
-      "mocha"
-    ]
+    "types": ["mocha"]
   },
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
+  "exclude": ["node_modules", "build"]
 }
