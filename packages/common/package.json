@@ -31,10 +31,11 @@
     "voiceflow"
   ],
   "license": "ISC",
-  "main": "build/common/index.js",
+  "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "types": "build/cjs/index.d.ts"
   },
   "repository": {
     "type": "git",
@@ -42,8 +43,8 @@
   },
   "scripts": {
     "build": "yarn clean && yarn build:cjs && yarn build:esm",
-    "build:cjs": "ttsc --project ./tsconfig.build.json",
-    "build:esm": "ttsc --project ./tsconfig.build.json --module esnext --outDir ./build/esm",
+    "build:cjs": "ttsc --build tsconfig.build.json",
+    "build:esm": "ttsc --build tsconfig.esm.json",
     "clean": "rimraf build",
     "commit": "cz",
     "lint": "eslint \"{src,tests}/**/*.{js,ts}\"",
@@ -57,5 +58,6 @@
     "test:run": "NODE_ENV=test nyc ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.{unit,it}.ts'",
     "test:single": "NODE_ENV=test ts-mocha --paths --config config/tests/mocharc.yml",
     "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
-  }
+  },
+  "types": "src/index.ts"
 }

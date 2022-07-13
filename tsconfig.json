@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "incremental": true
+  },
+  "references": [
+    {
+      "path": "packages/alexa-types/tsconfig.build.json"
+    },
+    {
+      "path": "packages/api-sdk/tsconfig.build.json"
+    },
+    {
+      "path": "packages/base-types/tsconfig.build.json"
+    },
+    {
+      "path": "packages/chat-types/tsconfig.build.json"
+    },
+    {
+      "path": "packages/common/tsconfig.build.json"
+    },
+    {
+      "path": "packages/google-dfes-types/tsconfig.build.json"
+    },
+    {
+      "path": "packages/google-types/tsconfig.build.json"
+    },
+    // {
+    //   "path": "packages/metrics"
+    // },
+    // {
+    //   "path": "packages/nestjs-common"
+    // },
+    // {
+    //   "path": "packages/nestjs-metrics"
+    // },
+    // {
+    //   "path": "packages/nestjs-mongodb"
+    // },
+    // {
+    //   "path": "packages/nestjs-rate-limit"
+    // },
+    // {
+    //   "path": "packages/nestjs-redis"
+    // },
+    // {
+    //   "path": "packages/nestjs-timeout"
+    // },
+    {
+      "path": "packages/voice-types/tsconfig.build.json"
+    },
+    {
+      "path": "packages/voiceflow-types/tsconfig.build.json"
+    }
+  ],
+  "exclude": [
+    "**/*"
+  ]
+}

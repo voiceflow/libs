@@ -1,25 +1,22 @@
 {
-  "extends": "@voiceflow/tsconfig",
+  "extends": "@voiceflow/tsconfig/monorepo.json",
   "compilerOptions": {
-    "lib": ["es2020"],
     "strict": true,
-    "baseUrl": ".",
     "sourceMap": false,
+    "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "build/cjs",
     "paths": {
-      "@voiceflow-types/*": ["voiceflow-types/src/*"],
-
-      "@voiceflow/base-types": ["base-types/src"],
-      "@voiceflow/voice-types": ["voice-types/src"],
-
-      // only used to fix intra-monorepo resolution
-      "@common/*": ["common/src/*"],
-      "@base-types/*": ["base-types/src/*"],
-      "@chat-types/*": ["chat-types/src/*"],
-      "@voice-types/*": ["voice-types/src/*"],
-      "@voiceflow/chat-types": ["chat-types/src"]
+      "@voiceflow-types/*": [
+        "src/*"
+      ]
     },
-    "types": ["mocha"]
+    "types": [
+      "mocha"
+    ]
   },
-  "include": ["src", "tests", "typings"],
-  "exclude": ["**/node_modules", "**/.*/"]
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
 }

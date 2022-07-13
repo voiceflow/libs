@@ -49,7 +49,9 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --no-ci",
-    "build": "lerna run build --stream",
+    "build": "yarn build:cjs && yarn build:esm",
+    "build:cjs": "ttsc --build",
+    "build:esm": "ttsc --build tsconfig.esm.json",
     "clean": "yarn clean:artifacts && yarn clean:root",
     "clean:artifacts": "lerna run clean --parallel",
     "clean:root": "rimraf node_modules",
