@@ -1,14 +1,7 @@
 {
   "extends": "@voiceflow/tsconfig/monorepo.json",
   "compilerOptions": {
-    "strict": true,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "rootDir": "src",
     "outDir": "build",
