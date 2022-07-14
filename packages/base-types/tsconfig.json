@@ -3,7 +3,6 @@
   "compilerOptions": {
     "strict": true,
     "sourceMap": false,
-    "resolveJsonModule": true,
     "baseUrl": ".",
     "rootDir": "src",
     "outDir": "build/cjs",
