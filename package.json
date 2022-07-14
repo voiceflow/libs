@@ -50,6 +50,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap --no-ci",
     "build": "yarn build:cjs && yarn build:esm",
+    "build:all": "yarn build",
     "build:cjs": "ttsc --build",
     "build:esm": "ttsc --build tsconfig.esm.json",
     "clean": "yarn clean:artifacts && yarn clean:root",
