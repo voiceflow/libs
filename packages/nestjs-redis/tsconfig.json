@@ -1,7 +1,6 @@
 {
   "extends": "@voiceflow/tsconfig/monorepo.json",
   "compilerOptions": {
-    "skipLibCheck": true,
     "exactOptionalPropertyTypes": false,
     "baseUrl": ".",
     "rootDir": "src",
