@@ -60,6 +60,8 @@
     "lint:fix": "lerna run lint:fix --parallel",
     "lint:quiet": "lerna run lint:quiet --parallel",
     "lint:report": "lerna run lint:report --parallel",
+    "postinstall": "[[ -e node_modules/_bootstrap ]] && lerna bootstrap && rm node_modules/_bootstrap || true",
+    "preinstall": "[[ ! -d node_modules ]] && mkdir node_modules && touch node_modules/_bootstrap || true",
     "test": "lerna run test  --parallel",
     "test:dependencies": "lerna run test:dependencies --parallel",
     "test:integration": "lerna run test:integration --parallel",
