@@ -6,7 +6,7 @@ parameters:
     default: false
 
 orbs:
-  vfcommon: voiceflow/common@0.0.345
+  vfcommon: voiceflow/common@dev:de8a97b
   sonarcloud: sonarsource/sonarcloud@1.0.2
 
 jobs:
@@ -33,15 +33,14 @@ jobs:
 workflows:
   test-and-release:
     jobs:
-
       - vfcommon/install_and_build:
           context: dev-test
           avoid_post_install_scripts: false
           name: build
           force_execute: true
           package: all
-          build_all_packages_together: true
-          container_folder_to_copy: "" #Copy all
+          copy_lock_files: false
+          container_folder_to_copy: '' #Copy all
 
       - test:
           context: dev-test
@@ -50,7 +49,7 @@ workflows:
 
       - vfcommon/monorepo_release:
           avoid_post_install_scripts: false
-          ssh_key: "94:fb:dc:e2:30:96:9d:61:f5:6f:95:c2:32:20:f7:37"
+          ssh_key: '94:fb:dc:e2:30:96:9d:61:f5:6f:95:c2:32:20:f7:37'
           context: dev-test
           requires:
             - test
