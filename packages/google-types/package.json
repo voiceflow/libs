@@ -41,7 +41,7 @@
     "lint": "eslint '**/*.{js,ts}'",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
-    "lint:report": "yarn lint --format json -o sonar/report.json",
+    "lint:report": "eslint-output --quiet '**/*.{js,ts}'",
     "test": "exit 0",
     "test:dependencies": "depcheck",
     "test:integration": "exit 0",
