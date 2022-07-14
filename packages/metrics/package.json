@@ -11,7 +11,9 @@
     "@opentelemetry/api-metrics": "0.26.0",
     "@opentelemetry/exporter-prometheus": "0.26.0",
     "@opentelemetry/sdk-metrics-base": "0.26.0",
+    "@types/chai": "4.3.0",
     "axios": "0.24.0",
+    "chai": "4.3.6",
     "get-port": "^5.1.1"
   },
   "engines": {
@@ -40,10 +42,10 @@
     "build": "ttsc --build tsconfig.build.json",
     "clean": "rimraf build *.tsbuildinfo",
     "commit": "cz",
-    "lint": "eslint \"**/*.{js,ts}\"",
+    "lint": "eslint '**/*.{js,ts}'",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
-    "lint:report": "eslint-output --quiet \"**/*.{js,ts}\"",
+    "lint:report": "eslint-output --quiet '**/*.{js,ts}'",
     "prebuild": "yarn clean",
     "tdd": "yarn test --watch",
     "test": "yarn test:run",

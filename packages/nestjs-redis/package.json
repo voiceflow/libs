@@ -33,6 +33,7 @@
   "main": "build/index.js",
   "peerDependencies": {
     "@nestjs/common": "^8.4.2",
+    "@nestjs/terminus": "^8.0.6",
     "ioredis": "^4.28.5"
   },
   "publishConfig": {
@@ -47,10 +48,10 @@
     "build": "ttsc --build tsconfig.build.json",
     "clean": "rimraf build *.tsbuildinfo",
     "commit": "cz",
-    "lint": "eslint \"**/*.{js,ts}\"",
+    "lint": "eslint '**/*.{js,ts}'",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
-    "lint:report": "eslint-output --quiet \"**/*.{js,ts}\"",
+    "lint:report": "eslint-output --quiet '**/*.{js,ts}'",
     "prebuild": "yarn clean",
     "tdd": "yarn test --watch",
     "test": "yarn test:run",

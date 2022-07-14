@@ -40,7 +40,7 @@
     "build:cjs": "ttsc --build tsconfig.build.json",
     "build:esm": "ttsc --build tsconfig.esm.json",
     "clean": "rimraf build",
-    "lint": "eslint \"src/**/*.{ts,js}\" \"tests/**/*.{ts,js}\"",
+    "lint": "eslint '**/*.{js,ts}'",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
     "lint:report": "yarn lint --format json -o sonar/report.json",

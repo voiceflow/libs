@@ -32,6 +32,7 @@
   "main": "build/index.js",
   "peerDependencies": {
     "@nestjs/common": "^8.4.2",
+    "@nestjs/terminus": "^8.0.6",
     "mongodb": "^4.6.0"
   },
   "publishConfig": {
