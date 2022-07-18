@@ -1,20 +1,9 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "declaration": true,
-    "rootDir": "src",
-    "outDir": "build/common",
-    "paths": {
-      "@base-types/*": ["src/*"]
-    },
-    "plugins": [
-      {
-        "transform": "@zerollup/ts-transform-paths"
-      }
-    ],
-    "traceResolution": false,
-    "skipLibCheck": true,
-    "types": []
-  },
-  "include": ["src", "typings"]
+  "references": [
+    {
+      "path": "../common/tsconfig.build.json"
+    }
+  ],
+  "include": ["src"]
 }

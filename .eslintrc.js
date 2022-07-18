@@ -11,6 +11,13 @@ module.exports = {
       files: ['*.js'],
       extends: ['@voiceflow/eslint-config/utility'],
     },
+    {
+      files: ['packages/*/tests/**/*.ts'],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+        'sonarjs/no-duplicate-string': 'off',
+      },
+    },
     ...monorepoOverrides(__dirname),
   ],
 };

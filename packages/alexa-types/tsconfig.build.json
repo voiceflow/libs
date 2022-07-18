@@ -1,20 +1,18 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "declaration": true,
-    "rootDir": "src",
-    "outDir": "build/common",
-    "paths": {
-      "@alexa-types/*": ["src/*"]
+  "references": [
+    {
+      "path": "../base-types/tsconfig.build.json"
     },
-    "plugins": [
-      {
-        "transform": "@zerollup/ts-transform-paths"
-      }
-    ],
-    "traceResolution": false,
-    "skipLibCheck": true,
-    "types": []
-  },
-  "include": ["src", "typings"]
+    {
+      "path": "../common/tsconfig.build.json"
+    },
+    {
+      "path": "../voice-types/tsconfig.build.json"
+    },
+    {
+      "path": "../voiceflow-types/tsconfig.build.json"
+    }
+  ],
+  "include": ["src"]
 }

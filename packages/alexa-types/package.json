@@ -7,10 +7,10 @@
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/base-types": "^2.48.0",
-    "@voiceflow/common": "^7.27.3",
-    "@voiceflow/voice-types": "^2.5.60",
-    "@voiceflow/voiceflow-types": "^3.16.18",
+    "@voiceflow/base-types": "2.48.0",
+    "@voiceflow/common": "7.27.3",
+    "@voiceflow/voice-types": "2.5.60",
+    "@voiceflow/voiceflow-types": "3.16.18",
     "ask-smapi-model": "1.14.0"
   },
   "files": [
@@ -22,10 +22,11 @@
     "voiceflow-types"
   ],
   "license": "ISC",
-  "main": "build/common/index.js",
+  "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "types": "build/cjs/index.d.ts"
   },
   "repository": {
     "type": "git",
@@ -33,16 +34,17 @@
   },
   "scripts": {
     "build": "yarn clean && yarn build:cjs && yarn build:esm",
-    "build:cjs": "ttsc --project ./tsconfig.build.json",
-    "build:esm": "ttsc --project ./tsconfig.build.json --module esnext --outDir ./build/esm",
+    "build:cjs": "ttsc --build tsconfig.build.json",
+    "build:esm": "ttsc --build tsconfig.esm.json",
     "clean": "rimraf build",
-    "lint": "eslint \"src/**/*.ts\"",
+    "lint": "eslint '**/*.{js,ts}'",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
-    "lint:report": "yarn lint --format json -o sonar/report.json",
+    "lint:report": "eslint-output --quiet '**/*.{js,ts}'",
     "test": "exit 0",
     "test:dependencies": "depcheck",
     "test:integration": "exit 0",
     "test:unit": "exit 0"
-  }
+  },
+  "types": "src/index.ts"
 }

@@ -3,11 +3,5 @@ module.exports = {
     'no-underscore-dangle': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     'class-methods-use-this': 'off',
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true,
-      },
-    ],
   },
 };

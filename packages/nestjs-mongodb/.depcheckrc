@@ -6,8 +6,7 @@
     "istanbul",
     "commitizen",
     "husky",
-    "prettier",
-    "ttypescript"
+    "prettier"
   ],
   "ignores": [
     "@nestjs-mongodb/*",
@@ -15,6 +14,8 @@
     "@types/*",
     "@voiceflow/commitlint-config",
     "@voiceflow/git-branch-check",
+    "chai",
+    "chai-as-promised",
     "fixpack",
     "husky",
     "lint-staged",

@@ -1,15 +1,13 @@
 {
-  "extends": "@voiceflow/tsconfig",
+  "extends": "@voiceflow/tsconfig/monorepo.json",
   "compilerOptions": {
-    "lib": ["es2020"],
-    "strict": true,
     "baseUrl": ".",
-    "sourceMap": false,
+    "rootDir": "src",
+    "outDir": "build/cjs",
     "paths": {
       "@common/*": ["src/*"]
     },
     "types": ["mocha"]
   },
-  "include": ["src", "tests", "typings"],
-  "exclude": ["**/node_modules", "**/.*/"]
+  "exclude": ["node_modules", "build"]
 }

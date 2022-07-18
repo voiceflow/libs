@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import { Language, Locale } from './base';
 
 export enum SlotType {
