@@ -3,6 +3,7 @@ export enum NodeType {
   SPEAK = 'speak',
   START = 'start',
   CARD = 'card',
+  CARD_V2 = 'cardV2',
   CAROUSEL = 'carousel',
   BUTTONS = 'buttons',
   INTERACTION = 'interaction',

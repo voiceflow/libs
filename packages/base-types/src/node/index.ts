@@ -27,6 +27,7 @@ export * as Buttons from './buttons';
 export * as Capture from './capture';
 export * as CaptureV2 from './captureV2';
 export * as Card from './card';
+export * as CardV2 from './cardV2';
 export * as Carousel from './carousel';
 export * as Code from './code';
 export * as Component from './component';
