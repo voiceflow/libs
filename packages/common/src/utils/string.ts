@@ -1,5 +1,5 @@
 const TAGS_REGEXP = /(<([^>]+)>)/gi;
-const TRAILING_UNDERSCORES_REGEXP = /^_+|_+$/g;
+const TRAILING_UNDERSCORES_REGEXP = /(^_+)|(_+$)/g;
 
 export const capitalizeFirstLetter = (value: string): string => value.charAt(0).toUpperCase() + value.slice(1);
 
