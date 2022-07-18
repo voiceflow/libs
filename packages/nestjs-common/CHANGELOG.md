@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/nestjs-common@1.4.0...@voiceflow/nestjs-common@1.5.0) (2022-07-18)
+
+
+### Features
+
+* improve typescript monorepo configuration (DX-37) ([#323](https://github.com/voiceflow/libs/issues/323)) ([98dfa98](https://github.com/voiceflow/libs/commit/98dfa98cf64f1dc7705cbc94a3a5dd3c3e825900))
+
+
+
+
+
 # [1.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/nestjs-common@1.3.0...@voiceflow/nestjs-common@1.4.0) (2022-04-01)
 
 
