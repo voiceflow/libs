@@ -1,6 +1,12 @@
 import {
   append,
+  createEntries,
+  createMap,
+  diff,
+  filterAndGetLastRemovedValue,
   filterOutNullish,
+  findUnion,
+  hasIdenticalMembers,
   head,
   insert,
   insertAll,
@@ -9,6 +15,7 @@ import {
   mergeByIdentifier,
   reorder,
   replace,
+  separate,
   tail,
   toArray,
   toggleMembership,
@@ -156,12 +163,14 @@ describe('Utils | array', () => {
       expect(reorder(array, -1, 1)).to.eql(array);
       expect(reorder(array, 3, 1)).to.eql(array);
     });
+
     it('should set as first item if toIndex is zero or lower than 0', () => {
       const array = [1, 2, 3];
 
       expect(reorder(array, 2, -1)).to.eql([3, 1, 2]);
       expect(reorder(array, 2, 0)).to.eql([3, 1, 2]);
     });
+
     it('should set as last item if toIndex is the last or greater than last', () => {
       const array = [1, 2, 3];
 
@@ -178,6 +187,81 @@ describe('Utils | array', () => {
 
       expect(reorder(array, 8, 1)).to.eql([1, 9, 2, 3, 4, 5, 6, 7, 8, 10]);
       expect(reorder(array, 7, 2)).to.eql([1, 2, 8, 3, 4, 5, 6, 7, 9, 10]);
+    });
+  });
+
+  describe('separate()', () => {
+    it('separates items that pass and fail a predicate', () => {
+      const [passes, fails] = separate([20, 1, -3, 15, 8, 23, 40, 3], (x) => x > 10);
+
+      expect(passes).to.eql([20, 15, 23, 40]);
+      expect(fails).to.eql([1, -3, 8, 3]);
+    });
+  });
+
+  describe('createEntries()', () => {
+    it('creates entries by extracting a key for each item in an array', () => {
+      const entries = createEntries([{ index: 1 }, { index: 3 }, { index: 5 }], ({ index }) => String(index));
+
+      expect(entries).to.eql([
+        ['1', { index: 1 }],
+        ['3', { index: 3 }],
+        ['5', { index: 5 }],
+      ]);
+    });
+  });
+
+  describe('createMap()', () => {
+    it('creates object by extracting a key for each item in an array', () => {
+      const obj = createMap([{ index: 1 }, { index: 3 }, { index: 5 }], ({ index }) => String(index));
+
+      expect(obj).to.eql({
+        1: { index: 1 },
+        3: { index: 3 },
+        5: { index: 5 },
+      });
+    });
+  });
+
+  describe('findUnion()', () => {
+    it('finds the overlap between two lists', () => {
+      const { lhsOnly, rhsOnly, union } = findUnion([20, 1, -3, 15], [1, 8, 23, -3, 40, 3]);
+
+      expect(lhsOnly).to.eql([20, 15]);
+      expect(rhsOnly).to.eql([8, 23, 40, 3]);
+      expect(union).to.eql([1, -3]);
+    });
+  });
+
+  describe('diff()', () => {
+    it('finds items that only occur in one of two lists', () => {
+      expect(diff([20, 1, -3, 15], [1, 8, 23, -3, 40, 3])).to.eql([20, 15, 8, 23, 40, 3]);
+    });
+  });
+
+  describe('hasIdenticalMembers()', () => {
+    it('returns false if lists have different lengths', () => {
+      expect(hasIdenticalMembers([1, 2, 3], [3, 3, 2, 2, 1])).to.be.false;
+    });
+
+    it('returns false if either list has a unique member', () => {
+      expect(hasIdenticalMembers([1, 2, 3], [2, 3])).to.be.false;
+    });
+
+    it('returns true if both lists contain the same members', () => {
+      expect(hasIdenticalMembers([1, 2, 3], [3, 1, 2])).to.be.true;
+    });
+
+    it('returns true if both lists are empty', () => {
+      expect(hasIdenticalMembers([], [])).to.be.true;
+    });
+  });
+
+  describe('filterAndGetLastRemovedValue()', () => {
+    it('returns the last item which did not pass the filter predicate', () => {
+      expect(filterAndGetLastRemovedValue([1, 2, 3], () => true)).to.eql([[1, 2, 3], null]);
+      expect(filterAndGetLastRemovedValue([], () => false)).to.eql([[], null]);
+      expect(filterAndGetLastRemovedValue([1, 2, 3], (x) => x !== 2)).to.eql([[1, 3], 2]);
     });
   });
 
