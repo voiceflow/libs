@@ -9,7 +9,7 @@ describe('Utils | promise', () => {
 
       await delay(timeout);
 
-      expect(Date.now() - start > timeout);
+      expect(Date.now() - start).to.be.greaterThanOrEqual(timeout);
     });
   });
 
@@ -21,7 +21,7 @@ describe('Utils | promise', () => {
       try {
         await rejectIn(timeout);
       } catch (err) {
-        expect(Date.now() - start > timeout);
+        expect(Date.now() - start).to.be.greaterThanOrEqual(timeout);
       }
     });
   });
