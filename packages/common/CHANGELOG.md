@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.28.0...@voiceflow/common@8.0.0) (2022-07-19)
+
+
+### Features
+
+* add missing unit tests to common (vf-000) ([#326](https://github.com/voiceflow/libs/issues/326)) ([3d082c7](https://github.com/voiceflow/libs/commit/3d082c79ccf38229bef83dcc5d0e756416468825))
+
+
+### BREAKING CHANGES
+
+* removes unused utility functions
+
+Co-authored-by: Ben Teichman <ben@voiceflow.com>
+
+
+
+
+
 # [7.28.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@7.27.3...@voiceflow/common@7.28.0) (2022-07-18)
 
 
