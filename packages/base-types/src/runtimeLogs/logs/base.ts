@@ -23,5 +23,5 @@ export interface BaseStepLog<Kind extends StepLogKind, Message extends EmptyObje
   extends BaseLog {
   kind: `step.${Kind}`;
   level: Level;
-  message: PathReference & Message;
+  message: Message;
 }
