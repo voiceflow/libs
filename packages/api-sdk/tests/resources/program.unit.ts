@@ -93,6 +93,43 @@ describe('ProgramResource', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
+  it('.createMany', async () => {
+    const { fetch, resource } = createClient();
+
+    fetch.post.resolves({ data: RESPONSE_DATA });
+
+    const body = [
+      {
+        id: '1',
+        startId: '1',
+        versionID: '1',
+
+        lines: {
+          1: { id: '1', type: 'type' },
+        },
+        commands: [],
+        variables: [],
+      },
+      {
+        id: '2',
+        startId: '2',
+        versionID: '2',
+
+        lines: {
+          2: { id: '2', type: 'type' },
+        },
+        commands: [],
+        variables: [],
+      },
+    ];
+
+    const data = await resource.createMany(body);
+
+    expect(fetch.post.callCount).to.eql(1);
+    expect(fetch.post.args[0]).to.eql(['programs/batch', { programs: body }]);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
   it('.update', async () => {
     const { crud, resource } = createClient();
 

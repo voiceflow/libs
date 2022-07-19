@@ -15,21 +15,21 @@ export type FetcherOptions<Client, Options = undefined> = Options extends undefi
 class Fetcher<Client, Options = undefined> {
   private readonly clazz: Clazz<Client, Options>;
 
-  private endpoint: string;
+  private readonly clazzOptions: Options;
 
-  private clazzOptions: Options;
+  private readonly _endpoint: string;
+
+  protected get endpoint(): string {
+    return this._endpoint;
+  }
 
   protected readonly fetch: Fetch;
 
   constructor({ fetch, clazz, endpoint, clazzOptions }: FetcherOptions<Client, Options>) {
     this.fetch = fetch;
     this.clazz = clazz as Clazz<Client, Options>;
-    this.endpoint = endpoint;
+    this._endpoint = endpoint;
     this.clazzOptions = clazzOptions as Options;
-  }
-
-  protected _getEndpoint(): string {
-    return this.endpoint;
   }
 
   public options(options: Parameters<Fetch['initWithOptions']>[0]): Client {

@@ -50,11 +50,11 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
     this.privateQueue = new Queue(this.onFlushPrivate);
   }
 
-  protected _getEndpoint(): string {
-    return this.shouldEncrypt ? ENCRYPTED_ENDPOINT : ENDPOINT;
+  protected get endpoint() {
+    return this.encrypted ? ENCRYPTED_ENDPOINT : ENDPOINT;
   }
 
-  private get shouldEncrypt() {
+  private get encrypted() {
     return !!this.encryption;
   }
 
@@ -67,19 +67,19 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
   }
 
   private onFlushPublic = (payload: Record<string, unknown>[]): Promise<unknown> => {
-    if (this.shouldEncrypt) {
-      return this.fetch.post(`${this._getEndpoint()}/batch`, this.encryptedPayload(payload));
+    if (this.encrypted) {
+      return this.fetch.post(`${this.endpoint}/batch`, this.encryptedPayload(payload));
     }
 
-    return this.fetch.post(`${this._getEndpoint()}/batch-track`, payload);
+    return this.fetch.post(`${this.endpoint}/batch-track`, payload);
   };
 
   private onFlushPrivate = (payload: Record<string, unknown>[]): Promise<unknown> => {
-    if (this.shouldEncrypt) {
-      return this.fetch.post(`${this._getEndpoint()}/private-batch`, this.encryptedPayload(payload));
+    if (this.encrypted) {
+      return this.fetch.post(`${this.endpoint}/private-batch`, this.encryptedPayload(payload));
     }
 
-    return this.fetch.post(`${this._getEndpoint()}/private-batch-track`, payload);
+    return this.fetch.post(`${this.endpoint}/private-batch-track`, payload);
   };
 
   public setBatching(batching: boolean): void {
@@ -104,11 +104,11 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
       return this.privateQueue.enqueue(payload);
     }
 
-    if (this.shouldEncrypt) {
-      return this.fetch.post(`${this._getEndpoint()}/private`, this.encryptedPayload(payload)).then(Queue.voidFunc);
+    if (this.encrypted) {
+      return this.fetch.post(`${this.endpoint}/private`, this.encryptedPayload(payload)).then(Queue.voidFunc);
     }
 
-    return this.fetch.post(`${this._getEndpoint()}/private-track`, payload).then(Queue.voidFunc);
+    return this.fetch.post(`${this.endpoint}/private-track`, payload).then(Queue.voidFunc);
   }
 
   public trackPublic<P extends Record<string, any>, K extends keyof P>(
@@ -125,11 +125,11 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
       return this.publicQueue.enqueue(payload);
     }
 
-    if (this.shouldEncrypt) {
-      return this.fetch.post(`${this._getEndpoint()}`, this.encryptedPayload(payload)).then(Queue.voidFunc);
+    if (this.encrypted) {
+      return this.fetch.post(`${this.endpoint}`, this.encryptedPayload(payload)).then(Queue.voidFunc);
     }
 
-    return this.fetch.post(`${this._getEndpoint()}/track`, payload).then(Queue.voidFunc);
+    return this.fetch.post(`${this.endpoint}/track`, payload).then(Queue.voidFunc);
   }
 
   public async identify<T extends Record<string, any>, K extends keyof T>({
@@ -140,21 +140,21 @@ class Analytics extends Fetcher<Analytics, AnalyticsOptions> {
   }: IdentifyOptions<T, K>): Promise<void> {
     const payload = { traits, envIDs, hashed, teamhashed };
 
-    if (this.shouldEncrypt) {
-      return this.fetch.post(`${this._getEndpoint()}/user`, this.encryptedPayload(payload)).then(Queue.voidFunc);
+    if (this.encrypted) {
+      return this.fetch.post(`${this.endpoint}/user`, this.encryptedPayload(payload)).then(Queue.voidFunc);
     }
 
-    return this.fetch.post(`${this._getEndpoint()}/identify`, payload).then(Queue.voidFunc);
+    return this.fetch.post(`${this.endpoint}/identify`, payload).then(Queue.voidFunc);
   }
 
   public async identifyWorkspace<T extends { name: string }>(id: string, properties: T): Promise<void> {
     const payload = { ...properties, id };
 
-    if (this.shouldEncrypt) {
-      return this.fetch.post(`${this._getEndpoint()}/workspace`, this.encryptedPayload(payload)).then(Queue.voidFunc);
+    if (this.encrypted) {
+      return this.fetch.post(`${this.endpoint}/workspace`, this.encryptedPayload(payload)).then(Queue.voidFunc);
     }
 
-    return this.fetch.post(`${this._getEndpoint()}/workspace/identify`, payload).then(Queue.voidFunc);
+    return this.fetch.post(`${this.endpoint}/workspace/identify`, payload).then(Queue.voidFunc);
   }
 }
 

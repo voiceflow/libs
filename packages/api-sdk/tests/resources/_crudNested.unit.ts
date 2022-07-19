@@ -1,6 +1,7 @@
 /* eslint-disable dot-notation */
 
-import CrudResource from '@api-sdk/resources/crud';
+import CrudNestedResource from '@api-sdk/resources/crudNested';
+import { AnyRecord } from '@voiceflow/common';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
@@ -18,10 +19,11 @@ const createClient = () => {
     delete: sinon.stub(),
   };
 
-  const resource = new CrudResource<{ id: string; key: string; optional?: string }, 'id', any, 'id'>({
+  const resource = new CrudNestedResource<string, { id: string; key: string; optional?: string }, 'id', AnyRecord, 'id'>({
     clazz: class {},
     fetch: fetch as any,
     endpoint: 'endpoint',
+    clazzOptions: { parentEndpoint: 'parentEndpoint' },
   });
 
   return {
@@ -30,7 +32,7 @@ const createClient = () => {
   };
 };
 
-describe('CrudResource', () => {
+describe('CrudNestedResource', () => {
   afterEach(() => {
     sinon.restore();
   });
@@ -38,13 +40,13 @@ describe('CrudResource', () => {
   it('._getCRUDEndpoint', () => {
     const { resource } = createClient();
 
-    expect(resource['_getCRUDEndpoint']()).to.eql('endpoint');
+    expect(resource['_getCRUDEndpoint']('parent-id')).to.eql('parentEndpoint/parent-id/endpoint');
   });
 
   it('._getCRUDEndpoint with id', () => {
     const { resource } = createClient();
 
-    expect(resource['_getCRUDEndpoint']('1')).to.eql('endpoint/1');
+    expect(resource['_getCRUDEndpoint']('parent-id', '1')).to.eql('parentEndpoint/parent-id/endpoint/1');
   });
 
   it('._get', async () => {
@@ -52,10 +54,10 @@ describe('CrudResource', () => {
 
     fetch.get.resolves(RESPONSE_DATA);
 
-    const data = await resource['_get']();
+    const data = await resource['_get']('parent-id');
 
     expect(fetch.get.callCount).to.eql(1);
-    expect(fetch.get.args[0]).to.eql(['endpoint']);
+    expect(fetch.get.args[0]).to.eql(['parentEndpoint/parent-id/endpoint']);
     expect(data).to.eql(RESPONSE_DATA.data);
   });
 
@@ -64,10 +66,10 @@ describe('CrudResource', () => {
 
     fetch.get.resolves(RESPONSE_DATA);
 
-    const data = await resource['_get']<{ key: string }>(['key']);
+    const data = await resource['_get']<{ key: string }>('parent-id', ['key']);
 
     expect(fetch.get.callCount).to.eql(1);
-    expect(fetch.get.args[0]).to.eql(['endpoint?fields=key']);
+    expect(fetch.get.args[0]).to.eql(['parentEndpoint/parent-id/endpoint?fields=key']);
     expect(data).to.eql(RESPONSE_DATA.data);
   });
 
@@ -76,10 +78,10 @@ describe('CrudResource', () => {
 
     fetch.get.resolves(RESPONSE_DATA);
 
-    const data = await resource['_getByID']('1');
+    const data = await resource['_getByID']('parent-id', '1');
 
     expect(fetch.get.callCount).to.eql(1);
-    expect(fetch.get.args[0]).to.eql(['endpoint/1']);
+    expect(fetch.get.args[0]).to.eql(['parentEndpoint/parent-id/endpoint/1']);
     expect(data).to.eql(RESPONSE_DATA.data);
   });
 
@@ -88,10 +90,10 @@ describe('CrudResource', () => {
 
     fetch.get.resolves(RESPONSE_DATA);
 
-    const data = await resource['_getByID']<{ key: string; optional?: string }>('1', ['key', 'optional']);
+    const data = await resource['_getByID']<{ key: string; optional?: string }>('parent-id', '1', ['key', 'optional']);
 
     expect(fetch.get.callCount).to.eql(1);
-    expect(fetch.get.args[0]).to.eql(['endpoint/1?fields=key,optional']);
+    expect(fetch.get.args[0]).to.eql(['parentEndpoint/parent-id/endpoint/1?fields=key,optional']);
     expect(data).to.eql(RESPONSE_DATA.data);
   });
 
@@ -100,10 +102,10 @@ describe('CrudResource', () => {
 
     fetch.post.resolves(RESPONSE_DATA);
 
-    const data = await resource['_post']({ key: 'value' });
+    const data = await resource['_post']('parent-id', { key: 'value' });
 
     expect(fetch.post.callCount).to.eql(1);
-    expect(fetch.post.args[0]).to.eql(['endpoint', { key: 'value' }]);
+    expect(fetch.post.args[0]).to.eql(['parentEndpoint/parent-id/endpoint', { key: 'value' }]);
     expect(data).to.eql(RESPONSE_DATA.data);
   });
 
@@ -112,10 +114,10 @@ describe('CrudResource', () => {
 
     fetch.put.resolves(RESPONSE_DATA);
 
-    const data = await resource['_put']('1', { key: 'value' });
+    const data = await resource['_put']('parent-id', '1', { key: 'value' });
 
     expect(fetch.put.callCount).to.eql(1);
-    expect(fetch.put.args[0]).to.eql(['endpoint/1', { key: 'value' }]);
+    expect(fetch.put.args[0]).to.eql(['parentEndpoint/parent-id/endpoint/1', { key: 'value' }]);
     expect(data).to.eql(RESPONSE_DATA.data);
   });
 
@@ -124,10 +126,10 @@ describe('CrudResource', () => {
 
     fetch.patch.resolves(RESPONSE_DATA);
 
-    const data = await resource['_patch']('1', { optional: 'value' });
+    const data = await resource['_patch']('parent-id', '1', { optional: 'value' });
 
     expect(fetch.patch.callCount).to.eql(1);
-    expect(fetch.patch.args[0]).to.eql(['endpoint/1', { optional: 'value' }]);
+    expect(fetch.patch.args[0]).to.eql(['parentEndpoint/parent-id/endpoint/1', { optional: 'value' }]);
     expect(data).to.eql(RESPONSE_DATA.data);
   });
 
@@ -136,10 +138,10 @@ describe('CrudResource', () => {
 
     fetch.delete.resolves(RESPONSE_DATA);
 
-    const data = await resource['_delete']('1');
+    const data = await resource['_delete']('parent-id', '1');
 
     expect(fetch.delete.callCount).to.eql(1);
-    expect(fetch.delete.args[0]).to.eql(['endpoint/1']);
+    expect(fetch.delete.args[0]).to.eql(['parentEndpoint/parent-id/endpoint/1']);
     expect(data).to.eql('1');
   });
 });

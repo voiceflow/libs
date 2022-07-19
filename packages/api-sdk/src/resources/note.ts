@@ -13,13 +13,13 @@ class NoteResource extends BaseResource<NoteResource> {
   }
 
   public async upsert<T extends BaseModels.BaseNote = BaseModels.BaseNote>(versionID: string, note: T): Promise<T> {
-    const { data } = await this.fetch.put<T>(`${this._getEndpoint()}/${versionID}`, { note });
+    const { data } = await this.fetch.put<T>(`${this.endpoint}/${versionID}`, { note });
 
     return data;
   }
 
   public async delete(versionID: string, noteID: string): Promise<void> {
-    await this.fetch.delete(`${this._getEndpoint()}/${versionID}/${noteID}`);
+    await this.fetch.delete(`${this.endpoint}/${versionID}/${noteID}`);
   }
 }
 

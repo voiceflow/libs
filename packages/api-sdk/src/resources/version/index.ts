@@ -2,20 +2,25 @@ import Fetch from '@api-sdk/fetch';
 import { BaseModels } from '@voiceflow/base-types';
 import { AnyRecord } from '@voiceflow/common';
 
-import { Fields } from './base';
-import CrudResource from './crud';
+import { Fields } from '../base';
+import CrudResource from '../crud';
+import Domain from './domain';
 
 export const ENDPOINT = 'versions';
 
 export type ModelKey = '_id';
 
 class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.Version.PlatformData>, ModelKey, VersionResource, 'creatorID'> {
+  public domain: Domain;
+
   constructor(fetch: Fetch) {
     super({
       fetch,
       clazz: VersionResource,
       endpoint: ENDPOINT,
     });
+
+    this.domain = new Domain(fetch, { parentEndpoint: ENDPOINT });
   }
 
   public async get<T extends Partial<BaseModels.Version.Model<BaseModels.Version.PlatformData>>>(id: string, fields: Fields): Promise<T>;
@@ -112,8 +117,6 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
     return data;
   }
 
-  public async getDiagramsByIDs<T extends Partial<BaseModels.Diagram.Model>>(versionId: string, diagramIds: string[]): Promise<T[]>;
-
   public async getDiagramsByIDs<T extends BaseModels.BaseDiagramNode = BaseModels.BaseDiagramNode>(
     versionId: string,
     diagramIds: string[]
@@ -125,7 +128,9 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
   ): Promise<T[]>;
 
   public async getDiagramsByIDs(versionId: string, diagramIds: string[]): Promise<BaseModels.Diagram.Model[]> {
-    const { data } = await this.fetch.get<BaseModels.Diagram.Model[]>(`${this._getCRUDEndpoint(versionId)}/diagrams${this._getIDsQuery(diagramIds)}`);
+    const { data } = await this.fetch.get<BaseModels.Diagram.Model[]>(
+      `${this._getCRUDEndpoint(versionId)}/diagrams${this._getIDsQuery('diagramID', diagramIds)}`
+    );
 
     return data;
   }
@@ -208,14 +213,18 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
     return data;
   }
 
-  public async reorderTopics(id: string, body: { fromID: string; toIndex: number }): Promise<BaseModels.Version.FolderItem> {
-    const { data } = await this.fetch.patch<BaseModels.Version.FolderItem>(`${this._getCRUDEndpoint(id)}/topics/reorder`, body);
+  public async reorderComponents(id: string, body: { fromID: string; toIndex: number }): Promise<BaseModels.Version.FolderItem> {
+    const { data } = await this.fetch.patch<BaseModels.Version.FolderItem>(`${this._getCRUDEndpoint(id)}/components/reorder`, body);
 
     return data;
   }
 
-  public async reorderComponents(id: string, body: { fromID: string; toIndex: number }): Promise<BaseModels.Version.FolderItem> {
-    const { data } = await this.fetch.patch<BaseModels.Version.FolderItem>(`${this._getCRUDEndpoint(id)}/components/reorder`, body);
+  /**
+   * @deprecated topics moved to domain
+   */
+
+  public async reorderTopics(id: string, body: { fromID: string; toIndex: number }): Promise<BaseModels.Version.FolderItem> {
+    const { data } = await this.fetch.patch<BaseModels.Version.FolderItem>(`${this._getCRUDEndpoint(id)}/topics/reorder`, body);
 
     return data;
   }

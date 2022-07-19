@@ -38,6 +38,14 @@ export interface Folder {
   items: FolderItem[];
 }
 
+export interface Domain {
+  id: string;
+  live: boolean;
+  name: string;
+  topicIDs: string[];
+  rootDiagramID: string;
+}
+
 export interface Model<_PlatformData extends PlatformData, Command extends BaseCommand = BaseCommand, Locale extends string = string> {
   _id: string;
   _version?: number;
@@ -47,7 +55,7 @@ export interface Model<_PlatformData extends PlatformData, Command extends BaseC
 
   name: string;
   notes?: Record<string, BaseNote>;
-  topics?: FolderItem[];
+  domains?: Domain[];
   folders?: Record<string, Folder>;
   variables: Variable[];
   prototype?: Prototype<Command, Locale>;
@@ -56,4 +64,9 @@ export interface Model<_PlatformData extends PlatformData, Command extends BaseC
 
   manualSave: boolean;
   autoSaveFromRestore: boolean;
+
+  /**
+   * @deprecated replaced with domains
+   */
+  topics?: FolderItem[];
 }

@@ -29,16 +29,16 @@ describe('Analytics', () => {
     expect(analytics['fetch']).to.eql(fetch);
   });
 
-  it('._getEndpoint', () => {
+  it('.endpoint', () => {
     const { analytics } = createClient();
 
-    expect(analytics['_getEndpoint']()).to.eql('analytics');
+    expect(analytics['endpoint']).to.eql('analytics');
   });
 
-  it('._getEndpoint encrypted', () => {
+  it('.endpoint encrypted', () => {
     const { analytics } = createClient(true);
 
-    expect(analytics['_getEndpoint']()).to.eql('vf-ping');
+    expect(analytics['endpoint']).to.eql('vf-ping');
   });
 
   it('.encryptedPayload throws error', () => {

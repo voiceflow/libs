@@ -56,4 +56,18 @@ describe('BaseResource', () => {
       },
     ]);
   });
+
+  it('._getFieldsQuery', () => {
+    const { resource } = createClient();
+
+    expect(resource['_getFieldsQuery']()).to.eql('');
+    expect(resource['_getFieldsQuery'](['name'])).to.eql('?fields=name');
+  });
+
+  it('._getIDsQuery', () => {
+    const { resource } = createClient();
+
+    expect(resource['_getIDsQuery']('name', [])).to.eql('');
+    expect(resource['_getIDsQuery']('name', [1, 2])).to.eql('?name=1&name=2');
+  });
 });

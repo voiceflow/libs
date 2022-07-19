@@ -245,6 +245,18 @@ describe('VersionResource', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
+  it('.getDiagramsByIDs', async () => {
+    const { fetch, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getDiagramsByIDs('id', ['1', '2']);
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/id/diagrams?diagramID=1&diagramID=2']);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
   it('.export', async () => {
     const { fetch, resource } = createClient();
 
