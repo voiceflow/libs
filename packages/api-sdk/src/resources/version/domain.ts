@@ -7,7 +7,7 @@ const ENDPOINT = 'domains';
 
 export type ModelKey = 'id';
 
-class DomainResource extends CrudNestedResource<string, BaseModels.Version.Domain, ModelKey, DomainResource, 'topicIDs' | 'rootDiagramID'> {
+class DomainResource extends CrudNestedResource<string, BaseModels.Version.Domain, ModelKey, DomainResource> {
   constructor(fetch: Fetch, { parentEndpoint }: { parentEndpoint: string }) {
     super({
       fetch,
@@ -25,14 +25,11 @@ class DomainResource extends CrudNestedResource<string, BaseModels.Version.Domai
     return this._getByID<BaseModels.Version.Domain>(versionID, id);
   }
 
-  public async create(
-    versionID: string,
-    body: Omit<BaseModels.Version.Domain, ModelKey | 'topicIDs' | 'rootDiagramID'>
-  ): Promise<BaseModels.Version.Domain> {
+  public async create(versionID: string, body: BaseModels.Version.Domain): Promise<BaseModels.Version.Domain> {
     return this._post<BaseModels.Version.Domain>(versionID, body);
   }
 
-  public async update<T extends Partial<Omit<BaseModels.Version.Domain, ModelKey | 'topicIDs' | 'rootDiagramID'>>>(
+  public async update<T extends Partial<Omit<BaseModels.Version.Domain, ModelKey | 'rootDiagramID'>>>(
     versionID: string,
     id: string,
     body: T
@@ -44,8 +41,20 @@ class DomainResource extends CrudNestedResource<string, BaseModels.Version.Domai
     return this._delete(projectID, id);
   }
 
+  public async addTopic(projectID: string, id: string, topicID: string): Promise<string> {
+    const { data } = await this.fetch.post<string>(`${this._getCRUDEndpoint(projectID, id)}/topics`, { topicID });
+
+    return data;
+  }
+
+  public async removeTopic(projectID: string, id: string, topicID: string): Promise<string> {
+    const { data } = await this.fetch.delete<string>(`${this._getCRUDEndpoint(projectID, id)}/topics/${topicID}`);
+
+    return data;
+  }
+
   public async reorderTopics(projectID: string, id: string, body: { fromID: string; toIndex: number }): Promise<string[]> {
-    const { data } = await this.fetch.patch<string[]>(`${this._getCRUDEndpoint(projectID, id)}/reorder-topics`, body);
+    const { data } = await this.fetch.patch<string[]>(`${this._getCRUDEndpoint(projectID, id)}/topics/reorder`, body);
 
     return data;
   }
