@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/nestjs-rate-limit",
   "description": "HTTP request rate-limiting for NestJS.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
@@ -12,7 +12,7 @@
   "devDependencies": {
     "@nestjs/common": "^8.4.1",
     "@types/express": "^4.17.13",
-    "@voiceflow/nestjs-redis": "^1.2.0"
+    "@voiceflow/nestjs-redis": "^1.2.1"
   },
   "engines": {
     "node": ">=16"

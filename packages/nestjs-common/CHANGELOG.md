@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/voiceflow/libs/compare/@voiceflow/nestjs-common@1.5.0...@voiceflow/nestjs-common@1.5.1) (2022-07-19)
+
+
+### Bug Fixes
+
+* reference types in published directory (VF-000) ([#329](https://github.com/voiceflow/libs/issues/329)) ([9012106](https://github.com/voiceflow/libs/commit/9012106d697d26a9878ba427df56b07fa05c7e60))
+
+
+
+
+
 # [1.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/nestjs-common@1.4.0...@voiceflow/nestjs-common@1.5.0) (2022-07-18)
 
 

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.51.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.50.1...@voiceflow/base-types@2.51.0) (2022-07-19)
+
+
+### Bug Fixes
+
+* reference types in published directory (VF-000) ([#329](https://github.com/voiceflow/libs/issues/329)) ([9012106](https://github.com/voiceflow/libs/commit/9012106d697d26a9878ba427df56b07fa05c7e60))
+
+
+### Features
+
+* add domains types (CT-563) ([#328](https://github.com/voiceflow/libs/issues/328)) ([eebf1c4](https://github.com/voiceflow/libs/commit/eebf1c445143b9e80170363dd4c619bc6bf38704))
+* make the node for speak and text logs nullable (VF-4103) ([#327](https://github.com/voiceflow/libs/issues/327)) ([8e706db](https://github.com/voiceflow/libs/commit/8e706db8816e872dbb87d953882d1904ab22a596))
+
+
+
+
+
 ## [2.50.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.50.0...@voiceflow/base-types@2.50.1) (2022-07-19)
 
 **Note:** Version bump only for package @voiceflow/base-types

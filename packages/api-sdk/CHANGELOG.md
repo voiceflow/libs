@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.16.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.15.2...@voiceflow/api-sdk@3.16.0) (2022-07-19)
+
+
+### Bug Fixes
+
+* reference types in published directory (VF-000) ([#329](https://github.com/voiceflow/libs/issues/329)) ([9012106](https://github.com/voiceflow/libs/commit/9012106d697d26a9878ba427df56b07fa05c7e60))
+
+
+### Features
+
+* add domains types (CT-563) ([#328](https://github.com/voiceflow/libs/issues/328)) ([eebf1c4](https://github.com/voiceflow/libs/commit/eebf1c445143b9e80170363dd4c619bc6bf38704))
+
+
+
+
+
 ## [3.15.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.15.1...@voiceflow/api-sdk@3.15.2) (2022-07-19)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
