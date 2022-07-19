@@ -84,6 +84,12 @@ class DiagramResource extends CrudResource<BaseModels.Diagram.Model, ModelIDKey,
   public async delete(id: string): Promise<string> {
     return super._delete(id);
   }
+
+  public async deleteMany(ids: string[]): Promise<string[]> {
+    await this.fetch.post(`${this.endpoint}/remove-many`, { ids });
+
+    return ids;
+  }
 }
 
 export default DiagramResource;

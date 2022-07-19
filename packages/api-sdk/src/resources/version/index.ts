@@ -1,3 +1,4 @@
+import Fetch from '@api-sdk/fetch';
 import { BaseModels } from '@voiceflow/base-types';
 import { AnyRecord } from '@voiceflow/common';
 
@@ -10,7 +11,17 @@ export const ENDPOINT = 'versions';
 export type ModelKey = '_id';
 
 class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.Version.PlatformData>, ModelKey, VersionResource, 'creatorID'> {
-  public domain = new Domain(this.fetch, { parentEndpoint: ENDPOINT });
+  public domain: Domain;
+
+  constructor(fetch: Fetch) {
+    super({
+      fetch,
+      clazz: VersionResource,
+      endpoint: ENDPOINT,
+    });
+
+    this.domain = new Domain(fetch, { parentEndpoint: ENDPOINT });
+  }
 
   public async get<T extends Partial<BaseModels.Version.Model<BaseModels.Version.PlatformData>>>(id: string, fields: Fields): Promise<T>;
 

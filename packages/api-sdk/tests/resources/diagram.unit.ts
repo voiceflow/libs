@@ -181,4 +181,14 @@ describe('DiagramResource', () => {
     expect(crud.delete.args[0]).to.eql(['1']);
     expect(data).to.eql(RESPONSE_DATA);
   });
+
+  it('.deleteMany', async () => {
+    const { fetch, resource } = createClient();
+
+    const data = await resource.deleteMany(['1', '2']);
+
+    expect(fetch.post.callCount).to.eql(1);
+    expect(fetch.post.args[0]).to.eql(['diagrams/remove-many', { ids: ['1', '2'] }]);
+    expect(data).to.eql(['1', '2']);
+  });
 });
