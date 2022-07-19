@@ -9,23 +9,3 @@ export const rejectIn = (timeout: number): Promise<never> =>
       reject(new Error('Rejected by timeout!'));
     }, timeout);
   });
-
-interface ControlledPromise<T> extends Promise<T> {
-  reject: (reason?: any) => void;
-  resolve: (value: T) => void;
-}
-
-export const createControlledPromise = <T>(): ControlledPromise<T> => {
-  let res: (value: T) => void;
-  let rej: (reason?: any) => void;
-
-  const promise: ControlledPromise<T> = new Promise<T>((resolve, reject) => {
-    res = resolve;
-    rej = reject;
-  }) as ControlledPromise<T>;
-
-  promise.reject = rej!;
-  promise.resolve = res!;
-
-  return promise;
-};

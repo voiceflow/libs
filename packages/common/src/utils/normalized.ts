@@ -1,6 +1,5 @@
 import { Normalized } from '@common/types';
 
-import { withoutValue } from './array';
 import { stringify } from './functional';
 import { hasProperty } from './object';
 
@@ -23,7 +22,7 @@ export interface SafeGetNormalizedByKey {
   <T extends Normalized<any>>({ byKey }: T, key: string): T extends Normalized<infer R> ? R | null : never;
 }
 
-export const createEmptyNormalized = (): Normalized<any> => ({ byKey: {}, allKeys: [] });
+const createEmptyNormalized = (): Normalized<any> => ({ byKey: {}, allKeys: [] });
 export const EMPTY = createEmptyNormalized();
 
 export type GetKey<T> = (obj: T, index?: number, array?: T[]) => string;
@@ -31,9 +30,12 @@ export type GetKeyFromMap<T> = (obj: T, index: number, array: T[]) => string;
 
 export const defaultGetKey = <T extends ObjectWithId>(obj: T) => stringify(obj.id);
 
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const safeAdd = <T>(items: T[], obj: T) => (items.includes(obj) ? items : [...items, obj]);
 
-export const safeAddToStart = <T>(items: T[], obj: T) => (items.includes(obj) ? items : [obj, ...items]);
+const safeAddToStart = <T>(items: T[], obj: T) => (items.includes(obj) ? items : [obj, ...items]);
 
 export const getByIndex =
   <T>(items: T[]) =>
@@ -52,6 +54,9 @@ export const buildLookup = <T>(allKeys: string[], getValue: (key: string, index:
     return acc;
   }, {});
 
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const normalize = <T extends ObjectWithId | unknown>(items: T[], getKey?: GetKeyFromMap<T>): Normalized<T> => {
   const allKeys = items.map(getKey ?? (defaultGetKey as GetKeyFromMap<T>));
 
@@ -61,37 +66,55 @@ export const normalize = <T extends ObjectWithId | unknown>(items: T[], getKey?:
   };
 };
 
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const denormalize = <T>({ allKeys, byKey }: Normalized<T>) => allKeys.map((key) => byKey[key]);
 
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const getNormalizedByKey: GetNormalizedByKey = <T>({ byKey }: Normalized<T>, key: string) => byKey[key];
 
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const safeGetNormalizedByKey: SafeGetNormalizedByKey = <T>({ byKey }: Normalized<T>, key: string) =>
   hasProperty(byKey, key) ? byKey[key] : null;
 
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const getAllNormalizedByKeys = <T>({ byKey }: Normalized<T>, keys: string[]) => keys.map((key) => byKey[key]);
 
-export const safeGetAllNormalizedByKeys = <T>({ allKeys, byKey }: Normalized<T>, keys: string[]): T[] =>
-  allKeys.filter((key) => keys.includes(key)).map((key) => byKey[key]);
-
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const updateNormalizedByKey = <T, N extends Normalized<T>>({ byKey, ...rest }: N, key: string, obj: T) =>
   ({
     ...rest,
     byKey: { ...byKey, [key]: obj },
   } as N);
 
-export const patchNormalizedByKey = <T, N extends Normalized<T>>(normalized: N, key: string, obj: Partial<T>) =>
-  updateNormalizedByKey(normalized, key, { ...getNormalizedByKey(normalized, key), ...obj });
-
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const addNormalizedByKey = <T>(normalized: Normalized<T>, key: string, obj: T) => ({
   ...updateNormalizedByKey(normalized, key, obj),
   allKeys: safeAdd(normalized.allKeys, key),
 });
 
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const addToStartNormalizedByKey = <T>(normalized: Normalized<T>, key: string, obj: T) => ({
   ...updateNormalizedByKey(normalized, key, obj),
   allKeys: safeAddToStart(normalized.allKeys, key),
 });
 
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const addAllNormalizedByKeys = <T extends ObjectWithId | unknown, K extends GetKey<T> = (obj: T) => string>(
   normalized: Normalized<T>,
   objs: T[],
@@ -109,25 +132,10 @@ export const addAllNormalizedByKeys = <T extends ObjectWithId | unknown, K exten
   };
 };
 
-export const removeNormalizedByKey: RemoveNormalizedByKey = <T>({ allKeys, byKey }: Normalized<T>, targetKey: string): Normalized<T> => {
-  const filteredKeys = withoutValue(allKeys, targetKey);
-
-  return {
-    allKeys: filteredKeys,
-    byKey: buildLookup(filteredKeys, getByKey(byKey)),
-  };
-};
-
+/**
+ * @deprecated prefer `normal-store`
+ */
 export const reorderKeys = <T>(newKeyArray: string[], byKey: Record<string, T>): Normalized<T> => ({
   allKeys: newKeyArray,
   byKey,
 });
-
-export const removeAllNormalizedByKeys = <T>({ allKeys, byKey }: Normalized<T>, targetKeys: string[]): Normalized<T> => {
-  const filteredKeys = allKeys.filter((key) => !targetKeys.includes(key));
-
-  return {
-    allKeys: filteredKeys,
-    byKey: buildLookup(filteredKeys, getByKey(byKey)),
-  };
-};
