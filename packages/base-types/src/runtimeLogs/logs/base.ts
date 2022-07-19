@@ -1,6 +1,6 @@
 import { EmptyObject } from '@voiceflow/common';
 
-import { DEFAULT_LOG_LEVEL, Iso8601Timestamp, PathReference } from '../utils';
+import { DEFAULT_LOG_LEVEL, Iso8601Timestamp } from '../utils';
 import { GlobalLogKind, StepLogKind } from './kinds';
 import { LogLevel } from './levels';
 
