@@ -1,21 +1,8 @@
-import { GeneralRequestButton } from '@base-types/request';
 import { SlateTextValue } from '@base-types/text';
 import { Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
-import {
-  BaseNode,
-  BaseNoMatchNodeData,
-  BaseNoMatchStepData,
-  BaseNoReplyNodeData,
-  BaseNoReplyStepData,
-  BaseStep,
-  BaseStepPorts,
-  BuiltInNextPort,
-  BuiltInNoMatchNoReplyPorts,
-  DataID,
-  NodeNextID,
-} from './utils';
+import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepPorts, BuiltInNextPort, BuiltInNoMatchNoReplyPorts, DataID } from './utils';
 
 export interface CardV2Button extends DataID {
   name: string;
