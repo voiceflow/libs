@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.18.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.17.0...@voiceflow/voiceflow-types@3.18.0) (2022-07-19)
+
+
+### Features
+
+* add types for card step (VF-000) ([#325](https://github.com/voiceflow/libs/issues/325)) ([afb0084](https://github.com/voiceflow/libs/commit/afb0084929e8838aa440457a1acb67c66abc08c9))
+
+
+
+
+
 # [3.17.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.16.18...@voiceflow/voiceflow-types@3.17.0) (2022-07-18)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.50.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.49.0...@voiceflow/base-types@2.50.0) (2022-07-19)
+
+
+### Features
+
+* add types for card step (VF-000) ([#325](https://github.com/voiceflow/libs/issues/325)) ([afb0084](https://github.com/voiceflow/libs/commit/afb0084929e8838aa440457a1acb67c66abc08c9))
+
+
+
+
+
 # [2.49.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.48.0...@voiceflow/base-types@2.49.0) (2022-07-18)
 
 
