@@ -41,20 +41,20 @@ class DomainResource extends CrudNestedResource<string, BaseModels.Version.Domai
     return this._delete(projectID, id);
   }
 
-  public async addTopic(projectID: string, id: string, topicID: string): Promise<string> {
+  public async topicAdd(projectID: string, id: string, topicID: string): Promise<string> {
     const { data } = await this.fetch.post<string>(`${this._getCRUDEndpoint(projectID, id)}/topics`, { topicID });
 
     return data;
   }
 
-  public async removeTopic(projectID: string, id: string, topicID: string): Promise<string> {
+  public async topicRemove(projectID: string, id: string, topicID: string): Promise<string> {
     const { data } = await this.fetch.delete<string>(`${this._getCRUDEndpoint(projectID, id)}/topics/${topicID}`);
 
     return data;
   }
 
-  public async reorderTopics(projectID: string, id: string, body: { fromID: string; toIndex: number }): Promise<string[]> {
-    const { data } = await this.fetch.patch<string[]>(`${this._getCRUDEndpoint(projectID, id)}/topics/reorder`, body);
+  public async topicReorder(projectID: string, id: string, topicID: string, body: { toIndex: number }): Promise<string[]> {
+    const { data } = await this.fetch.patch<string[]>(`${this._getCRUDEndpoint(projectID, id)}/topics/${topicID}/reorder`, body);
 
     return data;
   }

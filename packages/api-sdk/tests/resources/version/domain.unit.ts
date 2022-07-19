@@ -114,39 +114,39 @@ describe('DomainResource', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
-  it('.addTopic', async () => {
+  it('.topicAdd', async () => {
     const { fetch, resource } = createClient();
 
     fetch.post.resolves({ data: RESPONSE_DATA });
 
-    const data = await resource.addTopic('version-id', '1', 'topic');
+    const data = await resource.topicAdd('version-id', '1', 'topic');
 
     expect(fetch.post.callCount).to.eql(1);
     expect(fetch.post.args[0]).to.eql(['parentEndpoint/version-id/domains/1/topics', { topicID: 'topic' }]);
     expect(data).to.eql(RESPONSE_DATA);
   });
 
-  it('.removeTopic', async () => {
+  it('.topicRemove', async () => {
     const { fetch, resource } = createClient();
 
     fetch.delete.resolves({ data: RESPONSE_DATA });
 
-    const data = await resource.removeTopic('version-id', '1', 'topic');
+    const data = await resource.topicRemove('version-id', '1', 'topic');
 
     expect(fetch.delete.callCount).to.eql(1);
     expect(fetch.delete.args[0]).to.eql(['parentEndpoint/version-id/domains/1/topics/topic']);
     expect(data).to.eql(RESPONSE_DATA);
   });
 
-  it('.reorderTopics', async () => {
+  it('.topicReorder', async () => {
     const { fetch, resource } = createClient();
 
     fetch.patch.resolves({ data: RESPONSE_DATA });
 
-    const data = await resource.reorderTopics('version-id', '1', { fromID: 'fromID', toIndex: 3 });
+    const data = await resource.topicReorder('version-id', '1', 'fromID', { toIndex: 3 });
 
     expect(fetch.patch.callCount).to.eql(1);
-    expect(fetch.patch.args[0]).to.eql(['parentEndpoint/version-id/domains/1/topics/reorder', { fromID: 'fromID', toIndex: 3 }]);
+    expect(fetch.patch.args[0]).to.eql(['parentEndpoint/version-id/domains/1/topics/fromID/reorder', { toIndex: 3 }]);
     expect(data).to.eql(RESPONSE_DATA);
   });
 });
