@@ -18,7 +18,7 @@ class MemberResource extends BaseResource<MemberResource> {
   }
 
   protected _getCRUDEndpoint(id: string): string {
-    return `${this._getEndpoint()}/${id}/members`;
+    return `${this.endpoint}/${id}/members`;
   }
 
   public async list<P extends Partial<BaseModels.Project.Member>>(projectID: string, fields: Fields): Promise<P[]>;
@@ -43,7 +43,7 @@ class MemberResource extends BaseResource<MemberResource> {
 
   public async get(projectID: string, fields?: Fields): Promise<BaseModels.Project.Member<any> | Partial<BaseModels.Project.Member<any>>> {
     const { data } = await this.fetch.get<BaseModels.Project.Member<any> | Partial<BaseModels.Project.Member<any>>>(
-      `${this._getEndpoint()}/${projectID}/member${this._getFieldsQuery(fields)}`
+      `${this.endpoint}/${projectID}/member${this._getFieldsQuery(fields)}`
     );
 
     return data;

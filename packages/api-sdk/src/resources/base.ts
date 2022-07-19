@@ -1,11 +1,13 @@
+import type { AnyRecord } from '@voiceflow/common';
+
 import Fetcher, { FetcherOptions } from './fetcher';
 
 export type Fields = readonly string[];
 
-export type BaseResourceOptions<Client extends Record<string, any>> = FetcherOptions<Client>;
+export type BaseResourceOptions<Client extends AnyRecord, Options = undefined> = FetcherOptions<Client, Options>;
 
-class BaseResource<Client extends Record<string, any>> extends Fetcher<Client> {
-  constructor(options: BaseResourceOptions<Client>) {
+class BaseResource<Client extends AnyRecord, Options = undefined> extends Fetcher<Client, Options> {
+  constructor(options: BaseResourceOptions<Client, Options>) {
     super(options);
   }
 
@@ -13,12 +15,11 @@ class BaseResource<Client extends Record<string, any>> extends Fetcher<Client> {
     return fields ? `?fields=${fields.join(',')}` : '';
   }
 
-  protected _getIDsQuery(ids: string[]): string {
-    if (ids.length > 0) {
-      // eslint-disable-next-line prefer-template
-      return '?' + ids.map((id) => `diagramID=${id}`).join('&');
-    }
-    return '';
+  protected _getIDsQuery(name: string, ids: string[]): string {
+    if (!ids.length) return '';
+
+    // eslint-disable-next-line sonarjs/no-nested-template-literals
+    return `?${ids.map((id) => `${name}=${id}`).join('&')}`;
   }
 }
 
