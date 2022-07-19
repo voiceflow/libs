@@ -44,5 +44,5 @@
     "test:smoke": "exit 0",
     "test:unit": "exit 0"
   },
-  "types": "src/index.ts"
+  "types": "build/cjs/index.d.ts"
 }

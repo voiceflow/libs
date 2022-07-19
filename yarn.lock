@@ -1963,10 +1963,10 @@
   resolved "https://registry.yarnpkg.com/@voiceflow/prettier-config/-/prettier-config-1.2.1.tgz#906bc852bcd8b2586fa62e4635392a0bea1fdb59"
   integrity sha512-J7wnJCwRWSNX33Ji2eLeBxtwXplAKIk9/aOfrHVfKmYrLHqXvOcrl2/7xa37jqnuTl8vw3+UsfFo3sMDY6weTg==
 
-"@voiceflow/tsconfig@1.4.4":
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/@voiceflow/tsconfig/-/tsconfig-1.4.4.tgz#0d55a701f47c07d1b7576255fadb06347e01adfb"
-  integrity sha512-gfPtPOkkcUF2QvTjRral1PWN6VZLwqxQGEx6SJ23RxkxfLdEjQh1aRxRZBDO/yLyogYmnevOgBIbGjMMlmxbtg==
+"@voiceflow/tsconfig@1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@voiceflow/tsconfig/-/tsconfig-1.4.5.tgz#38c1f9df6e1fe8c45e50ffd4e8408c015d0deb3e"
+  integrity sha512-ndeA7Gn272JshpLs7ZmgtuIbdjIjomjJ4vKgw4B5iYlDnghuMIPPqOaocPsf2ajTy/LavJeAYhA4mDY/ZCO9GA==
   dependencies:
     "@zerollup/ts-transform-paths" "1.7.18"
     "@zoltu/typescript-transformer-append-js-extension" "1.0.1"
