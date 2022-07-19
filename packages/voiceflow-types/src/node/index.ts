@@ -27,7 +27,7 @@ export type AnyExtendedStep =
   | Buttons.Step
   | Carousel.Step
   | CardV2.Step;
-export type AnyExtendedNode = Speak.Node | Capture.Node | CaptureV2.Node | Interaction.Node | Carousel.Node | CardV2.Node;
+export type AnyExtendedNode = Speak.Node | Capture.Node | CaptureV2.Node | Interaction.Node | Carousel.Node;
 
 export type AnyStep =
   | BaseNode.AnyCommonStep

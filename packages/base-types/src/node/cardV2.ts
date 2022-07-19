@@ -40,10 +40,3 @@ export interface StepData extends BaseNoMatchStepData, BaseNoReplyStepData {
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.CARD_V2;
 }
-
-export type NodeCardV2 = CardV2Card<GeneralRequestButton>;
-export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData, BaseNoMatchNodeData {
-  type: NodeType.CARD_V2;
-  card: NodeCardV2;
-  isBlocking: boolean;
-}
