@@ -18,4 +18,4 @@ interface GoToIntentButtonLogMessage extends UrlButtonLogMessage {
   path: null;
 }
 
-export type ButtonsStepLog = BaseStepLog<StepLogKind.BUTTONS, FollowPathButtonLogMessage | GoToIntentButtonLogMessage>;
+export type ButtonsStepLog = BaseStepLog<StepLogKind.BUTTONS, PathReference & (FollowPathButtonLogMessage | GoToIntentButtonLogMessage)>;
