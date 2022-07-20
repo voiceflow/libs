@@ -1,6 +1,7 @@
 import {
   hasProperty,
   isObject,
+  mapEntry,
   mapValue,
   omit,
   omitBy,
@@ -153,6 +154,18 @@ describe('Utils | object | common', () => {
       };
 
       expect(mapValue(objects, ({ id }) => id)).to.eql({ a: 1, b: 2, c: 3 });
+    });
+  });
+
+  describe('mapEntry()', () => {
+    it('works', () => {
+      const objects = {
+        a: { id: 1 },
+        b: { id: 2 },
+        c: { id: 3 },
+      };
+
+      expect(mapEntry(objects, ([key, { id }]) => [`new_${key}`, id])).to.eql({ new_a: 1, new_b: 2, new_c: 3 });
     });
   });
 
