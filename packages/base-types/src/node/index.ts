@@ -96,7 +96,7 @@ export type AnyCommonNode =
   | Integration.Node
   | Exit.Node
   | Random.Node
-  | RandomV2.Step
+  | RandomV2.Node
   | General.Node
   | If.Node
   | IfV2.Node
