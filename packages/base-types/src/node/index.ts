@@ -14,6 +14,7 @@ import * as Integration from './integration';
 import * as Intent from './jump';
 import * as Command from './push';
 import * as Random from './random';
+import * as RandomV2 from './randomV2';
 import * as Set from './set';
 import * as SetV2 from './setV2';
 import * as Start from './start';
@@ -47,6 +48,7 @@ export * as Intent from './jump';
 export * as Prompt from './prompt';
 export * as Command from './push';
 export * as Random from './random';
+export * as RandomV2 from './randomV2';
 export * as Set from './set';
 export * as SetV2 from './setV2';
 export * as Speak from './speak';
@@ -74,6 +76,7 @@ export type AnyCommonStep =
   | Api.Step
   | Exit.Step
   | Random.Step
+  | RandomV2.Step
   | Zapier.Step
   | GoogleSheets.Step
   | If.Step
@@ -93,6 +96,7 @@ export type AnyCommonNode =
   | Integration.Node
   | Exit.Node
   | Random.Node
+  | RandomV2.Step
   | General.Node
   | If.Node
   | IfV2.Node
