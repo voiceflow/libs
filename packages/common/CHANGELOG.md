@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.1.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.0.1...@voiceflow/common@8.1.0) (2022-07-20)
+
+
+### Features
+
+* add mapEntry object util (vf-000) ([#335](https://github.com/voiceflow/libs/issues/335)) ([a58311c](https://github.com/voiceflow/libs/commit/a58311cc72044bbd84a3bb8df5bc5514a9b3a3a5))
+
+
+
+
+
 ## [8.0.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.0.0...@voiceflow/common@8.0.1) (2022-07-19)
 
 
