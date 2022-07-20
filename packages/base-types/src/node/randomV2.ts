@@ -7,17 +7,17 @@ export enum RandomType {
 }
 
 export interface StepData {
-  paths: number;
+  namedPaths: {label: string}[];
   noDuplicates: boolean;
 }
 
 export interface StepPorts extends DynamicOnlyStepPorts {}
 
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
-  type: NodeType.RANDOM;
+  type: NodeType.RANDOM_V2;
 }
 
 export interface Node extends BaseNode, NodeNextIDs {
-  type: NodeType.RANDOM;
+  type: NodeType.RANDOM_V2;
   random: RandomType;
 }
