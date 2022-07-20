@@ -8,7 +8,6 @@ export enum RandomType {
 
 export interface StepData {
   paths: number;
-  namedPaths: {label: string}[];
   noDuplicates: boolean;
 }
 
