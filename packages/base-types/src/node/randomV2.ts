@@ -7,7 +7,7 @@ export enum RandomType {
 }
 
 export interface StepData {
-  namedPaths: {label: string}[];
+  namedPaths: { label: string }[];
   noDuplicates: boolean;
 }
 
