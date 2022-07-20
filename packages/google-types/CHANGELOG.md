@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.14.4...@voiceflow/google-types@2.15.0) (2022-07-20)
+
+
+### Features
+
+* add carousel types to google-types (CT-601) ([#332](https://github.com/voiceflow/libs/issues/332)) ([5c1e37a](https://github.com/voiceflow/libs/commit/5c1e37a07f869f603f480d188c2752c115e0786e))
+
+
+
+
+
 ## [2.14.4](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.14.3...@voiceflow/google-types@2.14.4) (2022-07-20)
 
 **Note:** Version bump only for package @voiceflow/google-types
