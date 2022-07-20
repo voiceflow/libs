@@ -3,14 +3,37 @@ import { READABLE_VARIABLE_REGEXP } from '@common/constants';
 export const variableReplacer = (
   match: string,
   inner: string,
+  selectors: string[],
   variables: Record<string, unknown>,
   modifier?: (variable: unknown) => unknown
 ): unknown => {
-  if (inner in variables) {
-    return typeof modifier === 'function' ? modifier(variables[inner]) : variables[inner];
+  if (!(inner in variables)) {
+    return match;
   }
 
-  return match;
+  let replaced: any = variables[inner];
+
+  let selectorString = selectors[0];
+  while (selectorString.length > 0) {
+    // eslint-disable-next-line no-loop-func
+    selectorString = selectorString.replace(/^\.(\w{1,64})/, (_m, field) => {
+      replaced = replaced[field];
+      return '';
+    });
+    if (replaced === undefined) {
+      break;
+    }
+    // eslint-disable-next-line no-loop-func
+    selectorString = selectorString.replace(/^\[(\d+)]/, (_m, index) => {
+      replaced = replaced[index];
+      return '';
+    });
+    if (replaced === undefined) {
+      break;
+    }
+  }
+
+  return typeof modifier === 'function' ? modifier(replaced) : replaced;
 };
 
 export const replaceVariables = (
@@ -23,7 +46,9 @@ export const replaceVariables = (
     return '';
   }
 
-  return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner) => String(variableReplacer(match, inner, variables, modifier)));
+  return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner, ...selectors) =>
+    String(variableReplacer(match, inner, selectors, variables, modifier))
+  );
 };
 
 // turn float variables to 2 decimal places
