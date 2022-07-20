@@ -24,6 +24,7 @@ export const isIntent = createNodeTypeTypeguard(Node.NodeType.INTENT);
 export const isStream = createNodeTypeTypeguard(Node.NodeType.STREAM);
 export const isZapier = createNodeTypeTypeguard(Node.NodeType.ZAPIER);
 export const isRandom = createNodeTypeTypeguard(Node.NodeType.RANDOM);
+export const isRandomV2 = createNodeTypeTypeguard(Node.NodeType.RANDOM_V2);
 export const isCommand = createNodeTypeTypeguard(Node.NodeType.COMMAND);
 export const isButtons = createNodeTypeTypeguard(Node.NodeType.BUTTONS);
 export const isCapture = createNodeTypeTypeguard(Node.NodeType.CAPTURE);

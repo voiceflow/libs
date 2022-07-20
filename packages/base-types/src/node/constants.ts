@@ -14,6 +14,7 @@ export enum NodeType {
   IF = 'if',
   IF_V2 = 'ifV2',
   RANDOM = 'random',
+  RANDOM_V2 = 'randomV2',
   CAPTURE = 'capture',
   CAPTURE_V2 = 'captureV2',
 

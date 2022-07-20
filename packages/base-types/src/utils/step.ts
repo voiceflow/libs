@@ -25,6 +25,7 @@ export const isIntent = createStepTypeguard<Node.Intent.Step>(Node.NodeType.INTE
 export const isStream = createStepTypeguard<Node.Stream.Step>(Node.NodeType.STREAM);
 export const isZapier = createStepTypeguard<Node.Zapier.Step>(Node.NodeType.ZAPIER);
 export const isRandom = createStepTypeguard<Node.Random.Step>(Node.NodeType.RANDOM);
+export const isRandomV2 = createStepTypeguard<Node.RandomV2.Step>(Node.NodeType.RANDOM_V2);
 export const isCommand = createStepTypeguard<Node.Command.Step>(Node.NodeType.COMMAND);
 export const isButtons = createStepTypeguard<Node.Buttons.Step>(Node.NodeType.BUTTONS);
 export const isCapture = createStepTypeguard<Node.Capture.Step>(Node.NodeType.CAPTURE);

@@ -22,6 +22,7 @@ export const isVisual = createNodeTypeguard<Node.Visual.Node>(Node.NodeType.VISU
 export const isCarousel = createNodeTypeguard<Node.Carousel.Node>(Node.NodeType.CAROUSEL);
 export const isStream = createNodeTypeguard<Node.Stream.Node>(Node.NodeType.STREAM);
 export const isRandom = createNodeTypeguard<Node.Random.Node>(Node.NodeType.RANDOM);
+export const isRandomV2 = createNodeTypeguard<Node.RandomV2.Node>(Node.NodeType.RANDOM_V2);
 export const isCapture = createNodeTypeguard<Node.Capture.Node>(Node.NodeType.CAPTURE);
 export const isGeneral = createNodeTypeguard<Node.General.Node>(Node.NodeType.GENERAL);
 export const isGoToNode = createNodeTypeguard<Node.GoToNode.Node>(Node.NodeType.GOTO_NODE);
