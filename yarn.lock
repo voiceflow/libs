@@ -1529,6 +1529,13 @@
   resolved "https://registry.yarnpkg.com/@opentelemetry/semantic-conventions/-/semantic-conventions-1.0.1.tgz#9349c3860a53468fa2108b5df09aa843f22dbf94"
   integrity sha512-7XU1sfQ8uCVcXLxtAHA8r3qaLJ2oq7sKtEwzZhzuEXqYmjW+n+J4yM3kNo0HQo3Xp1eUe47UM6Wy6yuAvIyllg==
 
+"@ovos-media/ts-transform-paths@1.7.18-1":
+  version "1.7.18-1"
+  resolved "https://registry.yarnpkg.com/@ovos-media/ts-transform-paths/-/ts-transform-paths-1.7.18-1.tgz#654f777e9f54fe50b920639654790adc317ad49f"
+  integrity sha512-5uYtraYSWg1klaMYus3ouCOUUNzcI40pS0NCaw0PhoaPTimVfT3MV061ZLYR/4F14THqyofMjmCNcHgFrBX3AA==
+  dependencies:
+    "@zerollup/ts-helpers" "^1.7.18"
+
 "@pkgr/utils@^2.2.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-2.3.0.tgz#3b8491f112a80839450498816767eb03b7db6139"
@@ -1963,11 +1970,12 @@
   resolved "https://registry.yarnpkg.com/@voiceflow/prettier-config/-/prettier-config-1.2.1.tgz#906bc852bcd8b2586fa62e4635392a0bea1fdb59"
   integrity sha512-J7wnJCwRWSNX33Ji2eLeBxtwXplAKIk9/aOfrHVfKmYrLHqXvOcrl2/7xa37jqnuTl8vw3+UsfFo3sMDY6weTg==
 
-"@voiceflow/tsconfig@1.4.7":
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/@voiceflow/tsconfig/-/tsconfig-1.4.7.tgz#43c66e6ec29fb626b46a4e9528a6fae9c1336667"
-  integrity sha512-Td4gRApk07W9LPGz3KKjC9RocHUVy+TaWv2k4VgHrp2AfQSEWlQuFVgvzzw9K0gDVBssMtqSy7ZJQ7Bhmp4/KQ==
+"@voiceflow/tsconfig@1.4.8":
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/@voiceflow/tsconfig/-/tsconfig-1.4.8.tgz#02c833721978be6ab711b3697b785bd74d59ac6f"
+  integrity sha512-gcuJNGm5qL2OJn1BVinMWTDUiZlRlSssns3Yur52uPxzKXoEuv6FJbtBErON1g/20n4Rt1epDCMY8nCbbkvn6g==
   dependencies:
+    "@ovos-media/ts-transform-paths" "1.7.18-1"
     "@zerollup/ts-transform-paths" "1.7.18"
 
 "@vue/compiler-core@3.2.30":
