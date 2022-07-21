@@ -1,4 +1,4 @@
-import type Fetch from '@api-sdk/fetch';
+import { type default as Fetch } from '@api-sdk/fetch';
 import { Crypto } from '@voiceflow/common';
 
 import Fetcher from '../fetcher';

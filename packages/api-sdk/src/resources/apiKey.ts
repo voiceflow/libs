@@ -1,4 +1,4 @@
-import type Fetch from '@api-sdk/fetch';
+import { type default as Fetch } from '@api-sdk/fetch';
 import { BaseModels } from '@voiceflow/base-types';
 
 import CrudResource from './crud';
