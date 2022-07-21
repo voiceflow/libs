@@ -116,6 +116,19 @@ class ProjectResource extends CrudResource<BaseModels.Project.Model<AnyRecord, A
 
     return data;
   }
+
+  public async getCreator<
+    P extends BaseModels.Project.Model<any, any> = BaseModels.Project.Model<AnyRecord, AnyRecord>,
+    V extends BaseModels.Version.Model<any, any, string> = BaseModels.Version.Model<BaseModels.Version.PlatformData>,
+    D extends BaseModels.Diagram.Model<any> = BaseModels.Diagram.Model,
+    VS extends BaseModels.VariableState.Model = BaseModels.VariableState.Model
+  >(id: string, versionID: string): Promise<{ project: P; version: V; diagrams: D[]; variableStates: VS[] }> {
+    const { data } = await this.fetch.get<{ project: P; version: V; diagrams: D[]; variableStates: VS[] }>(
+      `${this._getCRUDEndpoint(id)}/creator/${versionID}`
+    );
+
+    return data;
+  }
 }
 
 export default ProjectResource;

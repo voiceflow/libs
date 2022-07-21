@@ -234,4 +234,16 @@ describe('ProjectResource', () => {
     expect(fetch.get.args[0]).to.eql(['projects/1/prototype']);
     expect(data).to.eql(RESPONSE_DATA);
   });
+
+  it('.getCreator', async () => {
+    const { fetch, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getCreator('1', 'version');
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['projects/1/creator/version']);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
 });
