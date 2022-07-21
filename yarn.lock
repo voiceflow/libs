@@ -1963,13 +1963,12 @@
   resolved "https://registry.yarnpkg.com/@voiceflow/prettier-config/-/prettier-config-1.2.1.tgz#906bc852bcd8b2586fa62e4635392a0bea1fdb59"
   integrity sha512-J7wnJCwRWSNX33Ji2eLeBxtwXplAKIk9/aOfrHVfKmYrLHqXvOcrl2/7xa37jqnuTl8vw3+UsfFo3sMDY6weTg==
 
-"@voiceflow/tsconfig@1.4.6":
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/@voiceflow/tsconfig/-/tsconfig-1.4.6.tgz#66cb73236aaf853ac6afcccc6570fc9bd64985b7"
-  integrity sha512-jPT8DEc4Nr+8CK4fb/Fh52B+OQzhg1ObDclk5YWFCNuFhjhi+XeSRG0H3vSnr0EfM/At1yO9+939VEr3PKn3Zw==
+"@voiceflow/tsconfig@1.4.7":
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/@voiceflow/tsconfig/-/tsconfig-1.4.7.tgz#43c66e6ec29fb626b46a4e9528a6fae9c1336667"
+  integrity sha512-Td4gRApk07W9LPGz3KKjC9RocHUVy+TaWv2k4VgHrp2AfQSEWlQuFVgvzzw9K0gDVBssMtqSy7ZJQ7Bhmp4/KQ==
   dependencies:
     "@zerollup/ts-transform-paths" "1.7.18"
-    typescript-transform-paths "3.3.1"
 
 "@vue/compiler-core@3.2.30":
   version "3.2.30"
@@ -8378,13 +8377,6 @@ typescript-fsa@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/typescript-fsa/-/typescript-fsa-3.0.0.tgz#3ad1cb915a67338e013fc21f67c9b3e0e110c912"
   integrity sha512-xiXAib35i0QHl/+wMobzPibjAH5TJLDj+qGq5jwVLG9qR4FUswZURBw2qihBm0m06tHoyb3FzpnJs1GRhRwVag==
-
-typescript-transform-paths@3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/typescript-transform-paths/-/typescript-transform-paths-3.3.1.tgz#74526bc1b6dc575ffe269cc81833db7bd81763e1"
-  integrity sha512-c+8Cqd2rsRtTU68rJI0NX/OtqgBDddNs1fIxm1nCNyhn0WpoyqtpUxc1w9Ke5c5kgE4/OT5xYbKf2cf694RYEg==
-  dependencies:
-    minimatch "^3.0.4"
 
 typescript@4.7.4:
   version "4.7.4"

@@ -1,4 +1,4 @@
-import { type default as Fetch } from '@api-sdk/fetch';
+import type Fetch from '@api-sdk/fetch';
 
 type Clazz<Client, Options = undefined> = Options extends undefined ? new (fetch: Fetch) => Client : new (fetch: Fetch, options: Options) => Client;
 
