@@ -1,15 +1,15 @@
 {
   "name": "@voiceflow/voiceflow-types",
   "description": "Voiceflow 'voiceflow' project types",
-  "version": "3.18.5",
+  "version": "3.18.6",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/base-types": "^2.52.1",
-    "@voiceflow/chat-types": "^2.10.5",
-    "@voiceflow/voice-types": "^2.6.6"
+    "@voiceflow/base-types": "^2.52.2",
+    "@voiceflow/chat-types": "^2.10.6",
+    "@voiceflow/voice-types": "^2.6.7"
   },
   "files": [
     "build"

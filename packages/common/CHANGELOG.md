@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.1.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.1.0...@voiceflow/common@8.1.1) (2022-07-21)
+
+
+### Bug Fixes
+
+* esm build ([34463cb](https://github.com/voiceflow/libs/commit/34463cbe196ddd65653bcf3945d00cc257dc5f9e))
+
+
+
+
+
 # [8.1.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.0.1...@voiceflow/common@8.1.0) (2022-07-20)
 
 

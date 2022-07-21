@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.17.1](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.17.0...@voiceflow/api-sdk@3.17.1) (2022-07-21)
+
+
+### Bug Fixes
+
+* esm build ([34463cb](https://github.com/voiceflow/libs/commit/34463cbe196ddd65653bcf3945d00cc257dc5f9e))
+
+
+
+
+
 # [3.17.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.16.3...@voiceflow/api-sdk@3.17.0) (2022-07-21)
 
 
