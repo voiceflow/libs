@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.17.3](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.17.2...@voiceflow/api-sdk@3.17.3) (2022-07-21)
+
+
+### Bug Fixes
+
+* revert ts paths plugin (vf-000) ([#336](https://github.com/voiceflow/libs/issues/336)) ([d642c13](https://github.com/voiceflow/libs/commit/d642c13e090f049c9a2e1d6e56ef015f75cdb854)), closes [voiceflow/tsconfig#32](https://github.com/voiceflow/tsconfig/issues/32)
+
+
+
+
+
 ## [3.17.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.17.1...@voiceflow/api-sdk@3.17.2) (2022-07-21)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
