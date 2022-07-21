@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.17.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.16.3...@voiceflow/api-sdk@3.17.0) (2022-07-21)
+
+
+### Features
+
+* add get creator ([b606d7a](https://github.com/voiceflow/libs/commit/b606d7a5ec6ee9d3ed3d52dfc3ecb374664d82da))
+
+
+
+
+
 ## [3.16.3](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.16.2...@voiceflow/api-sdk@3.16.3) (2022-07-20)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
