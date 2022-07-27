@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.53.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.52.3...@voiceflow/base-types@2.53.0) (2022-07-27)
+
+
+### Features
+
+* add channel action step and node types (PL-27) ([#342](https://github.com/voiceflow/libs/issues/342)) ([d466203](https://github.com/voiceflow/libs/commit/d4662031f45963e44d399f294dce09eab7bfe620))
+
+
+
+
+
 ## [2.52.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.52.2...@voiceflow/base-types@2.52.3) (2022-07-21)
 
 **Note:** Version bump only for package @voiceflow/base-types
