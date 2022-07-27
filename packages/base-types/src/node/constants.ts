@@ -37,6 +37,7 @@ export enum NodeType {
   PROMPT = 'prompt',
   COMMAND = 'command',
   TRACE = 'trace',
+  CHANNEL_ACTION = 'channel_action',
 
   // other
   URL = 'url',
