@@ -1,5 +1,6 @@
 import * as _v1 from './_v1';
 import * as Api from './api';
+import * as ChannelAction from './channelAction';
 import * as Code from './code';
 import * as Component from './component';
 import * as Exit from './exit';
@@ -30,6 +31,7 @@ export * as CaptureV2 from './captureV2';
 export * as Card from './card';
 export * as CardV2 from './cardV2';
 export * as Carousel from './carousel';
+export * as ChannelAction from './channelAction';
 export * as Code from './code';
 export * as Component from './component';
 export * from './constants';
@@ -85,6 +87,7 @@ export type AnyCommonStep =
   | GoTo.Step
   | GoToNode.Step
   | Url.Step
+  | ChannelAction.Step
   | _v1.Step;
 
 export type AnyCommonNode =
@@ -104,6 +107,7 @@ export type AnyCommonNode =
   | Url.Node
   | GoToNode.Node
   | NextOnlyNode
+  | ChannelAction.Node
   | _v1.Node;
 
 export type AnyCommonCommand = Intent.Command | Command.Command;
