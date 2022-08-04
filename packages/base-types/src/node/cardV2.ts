@@ -1,19 +1,27 @@
-import { SlateTextValue } from '@base-types/text';
 import { Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
-import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepPorts, BuiltInNextPort, BuiltInNoMatchNoReplyPorts, DataID } from './utils';
+import {
+  BaseNode,
+  BaseNoMatchStepData,
+  BaseNoReplyStepData,
+  BaseStep,
+  BaseStepPorts,
+  BuiltInNextPort,
+  BuiltInNoMatchNoReplyPorts,
+  DataID,
+  NodeNextID,
+} from './utils';
 
 export interface CardV2Button extends DataID {
   name: string;
   intent?: Nullable<string>;
 }
 
-export interface CardV2Card<B = CardV2Button> extends DataID {
-  imageUrl: string | null;
+export interface CardV2Card<Button extends CardV2Button = CardV2Button> extends DataID {
   title: string;
-  description: SlateTextValue;
-  buttons: B[];
+  buttons: Button[];
+  imageUrl: string | null;
 }
 
 export interface StepBuiltInPorts extends BuiltInNextPort, BuiltInNoMatchNoReplyPorts {}
