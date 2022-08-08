@@ -10,6 +10,7 @@ export const isSet = createStepTypeguard<Node.Set.Step>(Node.NodeType.SET);
 export const isApi = createStepTypeguard<Node.Api.Step>(Node.NodeType.API);
 export const isText = createStepTypeguard<Node.Text.Step>(Node.NodeType.TEXT);
 export const isCard = createStepTypeguard<Node.Card.Step>(Node.NodeType.CARD);
+export const isCardV2 = createStepTypeguard<Node.CardV2.Step>(Node.NodeType.CARD_V2);
 export const isIfV2 = createStepTypeguard<Node.IfV2.Step>(Node.NodeType.IF_V2);
 export const isFlow = createStepTypeguard<Node.Flow.Step>(Node.NodeType.FLOW);
 export const isGoTo = createStepTypeguard<Node.GoTo.Step>(Node.NodeType.GOTO);
