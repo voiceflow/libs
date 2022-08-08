@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.54.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.53.0...@voiceflow/base-types@2.54.0) (2022-08-08)
+
+
+### Features
+
+* implement block template types (CT-679) ([#345](https://github.com/voiceflow/libs/issues/345)) ([425fcdd](https://github.com/voiceflow/libs/commit/425fcdd550715c8ce292cd142bcc2ff2f5e93940))
+
+
+
+
+
 # [2.53.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.52.3...@voiceflow/base-types@2.53.0) (2022-07-27)
 
 
