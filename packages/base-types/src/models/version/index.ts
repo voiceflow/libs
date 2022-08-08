@@ -1,8 +1,10 @@
 import { AnyRecord } from '@voiceflow/common';
 
 import { BaseCommand, BaseNote, Intent, Slot, Variable } from '../base';
+import { BlockTemplate } from './blockTemplate';
 import { Prototype } from './prototype';
 
+export * from './blockTemplate';
 export * from './prototype';
 
 export interface PlatformData<Settings extends AnyRecord = AnyRecord, Publishing extends AnyRecord = AnyRecord> {
@@ -45,7 +47,6 @@ export interface Domain {
   topicIDs: string[];
   rootDiagramID: string;
 }
-
 export interface Model<_PlatformData extends PlatformData, Command extends BaseCommand = BaseCommand, Locale extends string = string> {
   _id: string;
   _version?: number;
@@ -61,6 +62,7 @@ export interface Model<_PlatformData extends PlatformData, Command extends BaseC
   prototype?: Prototype<Command, Locale>;
   components?: FolderItem[];
   platformData: _PlatformData;
+  blockTemplates?: BlockTemplate[];
 
   manualSave: boolean;
   autoSaveFromRestore: boolean;
