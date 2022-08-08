@@ -135,6 +135,12 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
     return data;
   }
 
+  public async getLiveDiagramIDs(versionId: string): Promise<string[]> {
+    const { data } = await this.fetch.get<string[]>(`${this._getCRUDEndpoint(versionId)}/live-diagram-ids`);
+
+    return data;
+  }
+
   public async export<
     P extends BaseModels.Project.Model<any, any> = BaseModels.Project.Model<AnyRecord, AnyRecord>,
     V extends BaseModels.Version.Model<any> = BaseModels.Version.Model<BaseModels.Version.PlatformData>,
