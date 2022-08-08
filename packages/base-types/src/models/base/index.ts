@@ -1,6 +1,7 @@
 export * from './command';
 export * from './common';
 export * from './intent';
+export * from './link';
 export * from './node';
 export * from './note';
 export * from './port';
