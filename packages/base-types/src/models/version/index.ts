@@ -1,10 +1,10 @@
 import { AnyRecord } from '@voiceflow/common';
 
 import { BaseCommand, BaseNote, Intent, Slot, Variable } from '../base';
-import { BlockTemplate } from './blockTemplate';
+import { CanvasTemplate } from './canvasTemplate';
 import { Prototype } from './prototype';
 
-export * from './blockTemplate';
+export * from './canvasTemplate';
 export * from './prototype';
 
 export interface PlatformData<Settings extends AnyRecord = AnyRecord, Publishing extends AnyRecord = AnyRecord> {
@@ -62,7 +62,8 @@ export interface Model<_PlatformData extends PlatformData, Command extends BaseC
   prototype?: Prototype<Command, Locale>;
   components?: FolderItem[];
   platformData: _PlatformData;
-  blockTemplates?: BlockTemplate[];
+  canvasTemplates?: CanvasTemplate[];
+  templateDiagramID?: string;
 
   manualSave: boolean;
   autoSaveFromRestore: boolean;

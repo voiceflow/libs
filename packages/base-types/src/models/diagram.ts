@@ -4,6 +4,7 @@ export enum DiagramType {
   TOPIC = 'TOPIC',
   GROUP = 'GROUP',
   COMPONENT = 'COMPONENT',
+  TEMPLATE = 'TEMPLATE',
 }
 
 export interface Model<Node extends BaseDiagramNode = BaseDiagramNode> {
