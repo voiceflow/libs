@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.54.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.54.0...@voiceflow/base-types@2.54.1) (2022-08-09)
+
+
+### Bug Fixes
+
+* update BlockTemplate types to use diagramID instead of new structure (CT-679) ([#346](https://github.com/voiceflow/libs/issues/346)) ([946fcaf](https://github.com/voiceflow/libs/commit/946fcaf91acffb153464865294cd4c6d0681db86))
+
+
+
+
+
 # [2.54.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.53.0...@voiceflow/base-types@2.54.0) (2022-08-08)
 
 
