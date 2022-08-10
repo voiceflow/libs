@@ -13,6 +13,7 @@ export enum TraceType {
   CHOICE = 'choice',
   STREAM = 'stream',
   VISUAL = 'visual',
+  CARD_V2 = 'cardV2',
   CAROUSEL = 'carousel',
   NO_REPLY = 'no-reply',
   ENTITY_FILLING = 'entity-filling',
