@@ -19,6 +19,11 @@ export interface ReportTag {
   tagID: string;
   label: string;
 }
+
+export interface StickerURL {
+  id: string;
+  url: string;
+}
 export interface Model<PlatformData extends AnyRecord, MemberPlatformData extends AnyRecord> {
   _id: string;
   teamID: string;
@@ -36,6 +41,7 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   prototype?: Prototype;
   reportTags?: Record<string, ReportTag>;
   customThemes: Themes;
+  stickerURLs?: StickerURL[];
 
   members: Member<MemberPlatformData>[];
   platformData: PlatformData;
