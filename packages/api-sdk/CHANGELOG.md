@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.18.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.17.7...@voiceflow/api-sdk@3.18.0) (2022-08-11)
+
+
+### Features
+
+* add live diagram ids endpoint (CT-000) ([#344](https://github.com/voiceflow/libs/issues/344)) ([6eb6ee6](https://github.com/voiceflow/libs/commit/6eb6ee6c57a5cd25241921abd601ee8a306c8cfe))
+
+
+
+
+
 ## [3.17.7](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.17.6...@voiceflow/api-sdk@3.17.7) (2022-08-09)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
