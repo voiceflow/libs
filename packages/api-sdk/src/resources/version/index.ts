@@ -4,6 +4,7 @@ import { AnyRecord } from '@voiceflow/common';
 
 import { Fields } from '../base';
 import CrudResource from '../crud';
+import CanvasTemplate from './canvasTemplate';
 import Domain from './domain';
 
 export const ENDPOINT = 'versions';
@@ -13,6 +14,8 @@ export type ModelKey = '_id';
 class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.Version.PlatformData>, ModelKey, VersionResource, 'creatorID'> {
   public domain: Domain;
 
+  public canvasTemplate: CanvasTemplate;
+
   constructor(fetch: Fetch) {
     super({
       fetch,
@@ -21,6 +24,7 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
     });
 
     this.domain = new Domain(fetch, { parentEndpoint: ENDPOINT });
+    this.canvasTemplate = new CanvasTemplate(fetch, { parentEndpoint: ENDPOINT });
   }
 
   public async get<T extends Partial<BaseModels.Version.Model<BaseModels.Version.PlatformData>>>(id: string, fields: Fields): Promise<T>;
