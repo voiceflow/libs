@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.56.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.55.0...@voiceflow/base-types@2.56.0) (2022-08-11)
+
+
+### Features
+
+* add domain status (CT-000) ([#350](https://github.com/voiceflow/libs/issues/350)) ([7323997](https://github.com/voiceflow/libs/commit/7323997f09c3e995f1add9fe3398d3f09d28c68b))
+
+
+
+
+
 # [2.55.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.54.1...@voiceflow/base-types@2.55.0) (2022-08-11)
 
 
