@@ -2,9 +2,11 @@ import { AnyRecord } from '@voiceflow/common';
 
 import { BaseCommand, BaseNote, Intent, Slot, Variable } from '../base';
 import { CanvasTemplate } from './canvasTemplate';
+import { Domain } from './domain';
 import { Prototype } from './prototype';
 
 export * from './canvasTemplate';
+export * from './domain';
 export * from './prototype';
 
 export interface PlatformData<Settings extends AnyRecord = AnyRecord, Publishing extends AnyRecord = AnyRecord> {
@@ -40,13 +42,6 @@ export interface Folder {
   items: FolderItem[];
 }
 
-export interface Domain {
-  id: string;
-  live: boolean;
-  name: string;
-  topicIDs: string[];
-  rootDiagramID: string;
-}
 export interface Model<_PlatformData extends PlatformData, Command extends BaseCommand = BaseCommand, Locale extends string = string> {
   _id: string;
   _version?: number;
