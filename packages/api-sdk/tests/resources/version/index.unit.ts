@@ -257,6 +257,18 @@ describe('VersionResource', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
+  it('.getLiveDiagramIDs', async () => {
+    const { fetch, resource } = createClient();
+
+    fetch.get.resolves({ data: RESPONSE_DATA });
+
+    const data = await resource.getLiveDiagramIDs('id');
+
+    expect(fetch.get.callCount).to.eql(1);
+    expect(fetch.get.args[0]).to.eql(['versions/id/live-diagram-ids']);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
   it('.export', async () => {
     const { fetch, resource } = createClient();
 
