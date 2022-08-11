@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.19.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.18.2...@voiceflow/api-sdk@3.19.0) (2022-08-11)
+
+
+### Features
+
+* support to canvas templates on api-sdk (CT-000) ([#349](https://github.com/voiceflow/libs/issues/349)) ([0179914](https://github.com/voiceflow/libs/commit/0179914d62960a40ceb7f9d941f2aee5e101b02d))
+
+
+
+
+
 ## [3.18.2](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.18.1...@voiceflow/api-sdk@3.18.2) (2022-08-11)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
