@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.55.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.54.1...@voiceflow/base-types@2.55.0) (2022-08-11)
+
+
+### Features
+
+* update project types with sticker urls (CT-705) ([#348](https://github.com/voiceflow/libs/issues/348)) ([5f337d6](https://github.com/voiceflow/libs/commit/5f337d606a2ad2dd5005777d8b993a952ede88a5))
+
+
+
+
+
 ## [2.54.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.54.0...@voiceflow/base-types@2.54.1) (2022-08-09)
 
 
