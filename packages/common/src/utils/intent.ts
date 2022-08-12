@@ -78,12 +78,20 @@ const continuousReplace = (text: string, regex: RegExp, replacer: (substring: st
   return current;
 };
 
-export const utteranceEntityPermutations = (
-  utterances: string[],
-  entitiesByID: Record<string, { inputs: string[]; name: string }>,
-  limit = 22
+export const utteranceEntityPermutations = ({
+  utterances,
+  entitiesByID,
+  limit = 22,
+  replacer,
+  getSamples = getAllSamples,
+}: {
+  utterances: string[];
+  entitiesByID: Record<string, { inputs: string[]; name: string }>;
+  limit?: number;
+  replacer?: (sample: string, entityID: string) => string;
+  getSamples: (inputs: string[]) => string[];
   // eslint-disable-next-line sonarjs/cognitive-complexity
-): JSONUtterance[] => {
+}): JSONUtterance[] => {
   const newUtterances: JSONUtterance[] = [];
   const entityRef: Record<string, { utterances: string[]; samples: string[] }> = {};
 
@@ -97,20 +105,22 @@ export const utteranceEntityPermutations = (
       const entity = entitiesByID[entityID];
       if (!entity) return entityName;
 
-      const sample = (entityRef[entityID]?.samples.shift() || _sample(getAllSamples(entity?.inputs)) || entityName).trim();
+      const sample = (entityRef[entityID]?.samples.shift() || _sample(getSamples(entity?.inputs)) || entityName).trim();
       if (!entityRef[entityID]?.samples?.length) delete entityRef[entityID];
+
+      const replacement = replacer?.(sample, entityID) ?? sample;
 
       // This module should additionally create one full training utterance with positional entity (startPos, endPos, entityName).
       const startPos = offset || 0;
-      const endPos = startPos + sample.length - 1;
+      const endPos = startPos + replacement.length - 1;
       entities.push({
         startPos,
         endPos,
         entity: entity.name,
       });
 
-      // Replace the entities with the sample value
-      return sample;
+      // Replace the entities with the replacement value
+      return replacement;
     });
 
     newUtterances.push({
@@ -131,7 +141,7 @@ export const utteranceEntityPermutations = (
         entityRef[entityID] = { samples: [], utterances: [] };
         const entity = entitiesByID[entityID];
         if (entity) {
-          entityRef[entityID].samples.push(...getAllSamples(entity.inputs));
+          entityRef[entityID].samples.push(...getSamples(entity.inputs));
         }
       }
 

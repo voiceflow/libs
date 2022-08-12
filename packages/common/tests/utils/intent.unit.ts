@@ -3,18 +3,18 @@ import { expect } from 'chai';
 
 import * as data from '../fixtures/name.json';
 
-const utterances = data.intents[0].inputs.map(({ text }) => text);
-const entities = Object.fromEntries(data.slots.map((slot) => [slot.key, slot]));
-const key = '4i3h3mmi';
-
 describe('utteranceEntityPermutations unit tests', () => {
   it('works correctly', async () => {
-    const luisUtterances = utteranceEntityPermutations(utterances, entities);
+    const utterances = data.intents[0].inputs.map(({ text }) => text);
+    const entitiesByID = Object.fromEntries(data.slots.map((slot) => [slot.key, slot])) as Record<string, { inputs: string[]; name: string }>;
+    const key = '4i3h3mmi';
 
-    expect(luisUtterances.length).to.eql(Math.min(entities[key].inputs.length, 22));
+    const luisUtterances = utteranceEntityPermutations({ utterances, entitiesByID });
+
+    expect(luisUtterances.length).to.eql(Math.min(entitiesByID[key].inputs.length, 22));
 
     // Check that each slot value is within one of the utterances
-    entities[key].inputs.forEach((input, i) => {
+    entitiesByID[key].inputs.forEach((input, i) => {
       if (i < 22) {
         expect(luisUtterances.filter((utt) => utt.text?.includes(input)).length).to.be.greaterThan(0);
       }
@@ -22,6 +22,30 @@ describe('utteranceEntityPermutations unit tests', () => {
 
     // Check that a fake name is not within the utterances
     expect(luisUtterances.filter((utt) => utt.text?.includes('fakeName')).length).to.eql(0);
+  });
+
+  it('with replacer', async () => {
+    const utterances = [
+      '{{[slot].4i3h3mmi}} testing {{[slotmans].4i3h3mmi}} {{[third].third}}',
+      'close {{[slotmans].4i3h3mmi}}{{[third].third}} together',
+    ];
+
+    const entitiesByID: Record<string, { inputs: string[]; name: string }> = {
+      '4i3h3mmi': { name: 'slotmans', inputs: ['value1', 'value_super_long', 'v3'] },
+      third: { name: 'third', inputs: ['thirdvalue'] },
+    };
+
+    // this generates the rasa format
+    const replacer = (sample: string, entityID: string) => {
+      return `[${sample}](${entitiesByID[entityID].name})`;
+    };
+
+    const replacedUtterances = utteranceEntityPermutations({ utterances, entitiesByID, replacer });
+
+    expect(replacedUtterances.map(({ text }) => text)).to.eql([
+      '[value1](slotmans) testing [value_super_long](slotmans) [thirdvalue](third)',
+      'close [v3](slotmans)[thirdvalue](third) together',
+    ]);
   });
 });
 
