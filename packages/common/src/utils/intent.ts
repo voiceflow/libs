@@ -83,11 +83,13 @@ export const utteranceEntityPermutations = ({
   entitiesByID,
   limit = 22,
   replacer,
+  getSamples = getAllSamples,
 }: {
   utterances: string[];
   entitiesByID: Record<string, { inputs: string[]; name: string }>;
   limit?: number;
   replacer?: (sample: string, entityID: string) => string;
+  getSamples: (inputs: string[]) => string[];
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }): JSONUtterance[] => {
   const newUtterances: JSONUtterance[] = [];
@@ -103,7 +105,7 @@ export const utteranceEntityPermutations = ({
       const entity = entitiesByID[entityID];
       if (!entity) return entityName;
 
-      const sample = (entityRef[entityID]?.samples.shift() || _sample(getAllSamples(entity?.inputs)) || entityName).trim();
+      const sample = (entityRef[entityID]?.samples.shift() || _sample(getSamples(entity?.inputs)) || entityName).trim();
       if (!entityRef[entityID]?.samples?.length) delete entityRef[entityID];
 
       const replacement = replacer?.(sample, entityID) ?? sample;
@@ -139,7 +141,7 @@ export const utteranceEntityPermutations = ({
         entityRef[entityID] = { samples: [], utterances: [] };
         const entity = entitiesByID[entityID];
         if (entity) {
-          entityRef[entityID].samples.push(...getAllSamples(entity.inputs));
+          entityRef[entityID].samples.push(...getSamples(entity.inputs));
         }
       }
 
