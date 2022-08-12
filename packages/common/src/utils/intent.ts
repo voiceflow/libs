@@ -89,7 +89,7 @@ export const utteranceEntityPermutations = ({
   entitiesByID: Record<string, { inputs: string[]; name: string }>;
   limit?: number;
   replacer?: (sample: string, entityID: string) => string;
-  getSamples: (inputs: string[]) => string[];
+  getSamples?: (inputs: string[]) => string[];
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }): JSONUtterance[] => {
   const newUtterances: JSONUtterance[] = [];
