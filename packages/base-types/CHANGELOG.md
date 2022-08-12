@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.56.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.56.0...@voiceflow/base-types@2.56.1) (2022-08-12)
+
+
+### Bug Fixes
+
+* use data path custom action (CT-791) ([462a838](https://github.com/voiceflow/libs/commit/462a838c8a2ef96d078aa0978d86b4bd0e030760))
+
+
+
+
+
 # [2.56.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.55.0...@voiceflow/base-types@2.56.0) (2022-08-11)
 
 
