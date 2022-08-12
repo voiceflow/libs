@@ -7,6 +7,7 @@ export const _V1_STOP_TYPES = 'stopTypes';
 export interface StepData<Payload = unknown> {
   _v: 1;
   stop?: boolean;
+  paths: { label: string }[];
   payload: Payload;
   defaultPath?: number;
 }
