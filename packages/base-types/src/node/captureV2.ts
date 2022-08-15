@@ -55,4 +55,5 @@ export interface Node extends BaseNode, NodeNextID, NodeIntentScope, BaseNoReply
   type: NodeType.CAPTURE_V2;
   intent?: NodeIntent;
   variable?: string;
+  platform?: string;
 }

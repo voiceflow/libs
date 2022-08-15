@@ -55,6 +55,7 @@ export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData, BaseNoM
   cards: NodeCarouselCard[];
   layout: CarouselLayout;
   isBlocking: boolean;
+  platform?: string;
 }
 
 export interface TraceCarouselCardDescription {
