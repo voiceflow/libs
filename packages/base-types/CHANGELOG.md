@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.56.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.56.3...@voiceflow/base-types@2.56.4) (2022-08-15)
+
+
+### Bug Fixes
+
+* add optional platform data to nodes (PL-000) ([#353](https://github.com/voiceflow/libs/issues/353)) ([6fd7910](https://github.com/voiceflow/libs/commit/6fd79108907ca358d944835e322f9065dba70fab))
+
+
+
+
+
 ## [2.56.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.56.2...@voiceflow/base-types@2.56.3) (2022-08-12)
 
 **Note:** Version bump only for package @voiceflow/base-types
