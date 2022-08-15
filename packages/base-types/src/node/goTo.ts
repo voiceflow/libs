@@ -16,4 +16,5 @@ export interface Step<Data = StepData> extends BaseStep<Data, EmptyObject, []> {
 export interface Node extends BaseNode, BaseNoMatchNodeData {
   type: NodeType.GOTO;
   request: IntentRequest;
+  platform?: string;
 }

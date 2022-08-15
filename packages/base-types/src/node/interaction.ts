@@ -73,6 +73,7 @@ export interface NodeInteraction<Event = BaseEvent> extends NodeNextID {
 export interface Node<Event = BaseEvent> extends BaseNode, DeprecatedBaseNodeNoMatch, BaseNoReplyNodeData, NodeIntentScope, BaseNoMatchNodeData {
   type: NodeType.INTERACTION;
   interactions: NodeInteraction<Event>[];
+  platform?: string;
 }
 
 export interface TraceFramePayload {

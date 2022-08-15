@@ -44,4 +44,5 @@ export interface StepPorts extends NoMatchNoReplyStepPorts {}
 
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.BUTTONS;
+  platform?: string;
 }

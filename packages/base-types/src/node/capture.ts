@@ -35,4 +35,5 @@ export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData {
   intent?: string;
   slots?: string[];
   variable: string;
+  platform?: string;
 }
