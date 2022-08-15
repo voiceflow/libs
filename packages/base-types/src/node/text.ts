@@ -19,6 +19,7 @@ export interface Step<Data = StepData> extends BaseStep<Data> {
 export interface Node extends BaseNode, NodeNextID {
   type: NodeType.TEXT;
   texts: TextData[];
+  platform?: string;
 }
 
 export interface TextTracePayload {

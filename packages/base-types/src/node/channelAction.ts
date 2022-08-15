@@ -34,4 +34,5 @@ export interface Node<Event = BaseEvent> extends BaseNode {
   stop: boolean;
   defaultPath?: number; // index starting from 0
   paths: Array<NodePath<Event>>;
+  platform?: string;
 }

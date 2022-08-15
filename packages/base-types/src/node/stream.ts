@@ -58,4 +58,5 @@ export interface TraceFramePayload {
 
 export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
   type: TraceType.STREAM;
+  platform?: string;
 }
