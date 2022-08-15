@@ -18,11 +18,13 @@ export interface JumpCommand<Event extends BaseEvent = BaseEvent> extends TypedB
   type: CommandType.JUMP;
   nextID: Nullable<string>;
   diagramID?: Nullable<string>;
+  platform?: string;
 }
 
 export interface PushCommand<Event extends BaseEvent = BaseEvent> extends TypedBaseCommand<Event> {
   type: CommandType.PUSH;
   diagramID: Nullable<string>;
+  platform?: string;
 }
 
 export type AnyCommand<Event extends BaseEvent = BaseEvent> = JumpCommand<Event> | PushCommand<Event>;

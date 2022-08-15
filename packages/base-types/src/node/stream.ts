@@ -43,6 +43,7 @@ export interface Node extends BaseNode {
   nextID?: NodeID;
   pauseID?: NodeID;
   previousID?: NodeID;
+  platform?: string;
 }
 
 export interface TraceFramePayload {
@@ -58,5 +59,4 @@ export interface TraceFramePayload {
 
 export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
   type: TraceType.STREAM;
-  platform?: string;
 }

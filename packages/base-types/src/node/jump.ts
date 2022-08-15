@@ -27,5 +27,4 @@ export interface Command extends BaseCommand, Required<SlotMappings> {
   next: NodeID;
   intent: string;
   diagramID?: string;
-  platform?: string;
 }
