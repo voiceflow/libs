@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.57.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.56.5...@voiceflow/base-types@2.57.0) (2022-08-16)
+
+
+### Features
+
+* add context menu to step menu item (CT-799) ([#354](https://github.com/voiceflow/libs/issues/354)) ([4a33919](https://github.com/voiceflow/libs/commit/4a339198a930d3f31aa998a8dd81303e49577793))
+
+
+
+
+
 ## [2.56.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.56.4...@voiceflow/base-types@2.56.5) (2022-08-15)
 
 
