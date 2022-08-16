@@ -1,5 +1,5 @@
 import { Prompt } from '@chat-types/models';
-import { BaseNode, BaseText, Nullable } from '@voiceflow/base-types';
+import { BaseNode, BaseText } from '@voiceflow/base-types';
 
 export interface StepNoReply extends BaseNode.Utils.StepNoReply<Prompt> {}
 
@@ -25,11 +25,3 @@ export interface NodeReprompt extends BaseNode.Utils.NodeReprompt<BaseText.Slate
  * @deprecated use NodeNoMatch instead
  */
 export interface DeprecatedNodeNoMatch extends BaseNode.Utils.DeprecatedNodeNoMatch<BaseText.SlateTextValue> {}
-
-export interface NoMatchNode extends BaseNode.Utils.BaseNode, DeprecatedNodeNoMatch {
-  noMatch?: Nullable<NodeNoMatch>;
-}
-
-export interface NoReplyNode extends BaseNode.Utils.BaseNode, NodeReprompt {
-  noReply?: Nullable<NodeNoReply>;
-}
