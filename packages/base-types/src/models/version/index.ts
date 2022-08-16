@@ -1,5 +1,6 @@
 import { AnyRecord } from '@voiceflow/common';
 
+import { NodeType } from '../../node/constants';
 import { BaseCommand, BaseNote, Intent, Slot, Variable } from '../base';
 import { CanvasTemplate } from './canvasTemplate';
 import { Domain } from './domain';
@@ -59,6 +60,7 @@ export interface Model<_PlatformData extends PlatformData, Command extends BaseC
   platformData: _PlatformData;
   canvasTemplates?: CanvasTemplate[];
   templateDiagramID?: string;
+  defaultStepColors?: Record<NodeType, string>;
 
   manualSave: boolean;
   autoSaveFromRestore: boolean;
