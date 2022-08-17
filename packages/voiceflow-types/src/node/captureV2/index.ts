@@ -1,7 +1,8 @@
 import { BaseNode } from '@voiceflow/base-types';
 
-import { ChatNode, ChatStep, ChatStepData } from './chat';
-import { VoiceNode, VoiceStep, VoiceStepData } from './voice';
+import { VoiceflowPrompt } from '../utils';
+import { ChatStep, ChatStepData } from './chat';
+import { VoiceStep, VoiceStepData } from './voice';
 
 export * from './chat';
 export * from './voice';
@@ -12,4 +13,7 @@ export type StepPorts = BaseNode.CaptureV2.StepPorts;
 
 export type StepData = ChatStepData | VoiceStepData;
 
-export type Node = ChatNode | VoiceNode;
+export interface Node extends BaseNode.CaptureV2.Node {
+  noMatch?: BaseNode.Utils.NodeNoMatch<VoiceflowPrompt> | null;
+  noReply?: BaseNode.Utils.NodeNoReply<VoiceflowPrompt> | null;
+}

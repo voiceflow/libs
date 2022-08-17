@@ -17,6 +17,7 @@ export * as Carousel from './carousel';
 export * as Interaction from './interaction';
 export * as Prompt from './prompt';
 export * as Speak from './speak';
+export * as Utils from './utils';
 
 export type AnyExtendedStep =
   | Speak.Step

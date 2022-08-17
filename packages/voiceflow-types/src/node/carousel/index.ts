@@ -1,6 +1,7 @@
 import { BaseNode } from '@voiceflow/base-types';
 
-import { ChatNode, ChatStep, ChatStepData } from './chat';
+import { VoiceflowPrompt } from '../utils';
+import { ChatStep, ChatStepData } from './chat';
 
 export * from './chat';
 
@@ -10,4 +11,7 @@ export type StepPorts = BaseNode.Carousel.StepPorts;
 
 export type StepData = ChatStepData;
 
-export type Node = ChatNode;
+export interface Node extends BaseNode.Carousel.Node {
+  noMatch?: BaseNode.Utils.NodeNoMatch<VoiceflowPrompt> | null;
+  noReply?: BaseNode.Utils.NodeNoReply<VoiceflowPrompt> | null;
+}

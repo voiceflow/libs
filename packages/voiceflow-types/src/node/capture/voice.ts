@@ -1,4 +1,4 @@
-import { BaseButton, BaseRequest } from '@voiceflow/base-types';
+import { BaseButton } from '@voiceflow/base-types';
 import { VoiceNode } from '@voiceflow/voice-types';
 import { Voice } from '@voiceflow-types/constants';
 
@@ -7,6 +7,3 @@ export interface VoiceStepData extends VoiceNode.Capture.StepData<Voice>, BaseBu
 
 /** @deprecated */
 export interface VoiceStep extends VoiceNode.Capture.Step<VoiceStepData> {}
-
-/** @deprecated */
-export interface VoiceNode extends VoiceNode.Capture.Node, BaseRequest.NodeButton {}
