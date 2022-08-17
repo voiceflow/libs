@@ -145,6 +145,22 @@ describe('VersionResource', () => {
     expect(data).to.eql(RESPONSE_DATA);
   });
 
+  it('.updateDefaultStepColors', async () => {
+    const { fetch, resource } = createClient();
+
+    fetch.patch.resolves({ data: RESPONSE_DATA });
+
+    const body = {
+      carousel: 'red',
+    };
+
+    const data = await resource.updateDefaultStepColors('1', body);
+
+    expect(fetch.patch.callCount).to.eql(1);
+    expect(fetch.patch.args[0]).to.eql(['versions/1/defaultStepColors', body]);
+    expect(data).to.eql(RESPONSE_DATA);
+  });
+
   it('.updatePlatformDataSettings', async () => {
     const { fetch, resource } = createClient();
 
