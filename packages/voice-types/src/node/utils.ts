@@ -1,5 +1,5 @@
 import { Prompt } from '@voice-types/models';
-import { BaseNode, Nullable } from '@voiceflow/base-types';
+import { BaseNode } from '@voiceflow/base-types';
 
 export interface StepNoReply<Voice> extends BaseNode.Utils.StepNoReply<Prompt<Voice>> {}
 
@@ -25,11 +25,3 @@ export interface NodeReprompt extends BaseNode.Utils.NodeReprompt<string> {}
  * @deprecated use NodeNoMatch instead
  */
 export interface DeprecatedNodeNoMatch extends BaseNode.Utils.DeprecatedNodeNoMatch<string> {}
-
-export interface NoMatchNode extends BaseNode.Utils.BaseNode, DeprecatedNodeNoMatch {
-  noMatch?: Nullable<NodeNoMatch>;
-}
-
-export interface NoReplyNode extends BaseNode.Utils.BaseNode, NodeReprompt {
-  noReply?: Nullable<NodeNoReply>;
-}
