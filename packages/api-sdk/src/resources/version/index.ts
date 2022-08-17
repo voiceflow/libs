@@ -89,6 +89,12 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
     return data;
   }
 
+  public async updateDefaultStepColors<P extends BaseModels.Version.DefaultStepColors>(id: string, body: P): Promise<P> {
+    const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/defaultStepColors`, body);
+
+    return data;
+  }
+
   public async getPrograms<T extends Partial<BaseModels.Program.Model>>(id: string, fields: Fields): Promise<T[]>;
 
   public async getPrograms<T extends BaseModels.Program.Model<any> = BaseModels.Program.Model>(id: string): Promise<T[]>;

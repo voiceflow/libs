@@ -43,6 +43,8 @@ export interface Folder {
   items: FolderItem[];
 }
 
+export type DefaultStepColors = Partial<Record<NodeType, string>>;
+
 export interface Model<_PlatformData extends PlatformData, Command extends BaseCommand = BaseCommand, Locale extends string = string> {
   _id: string;
   _version?: number;
@@ -60,7 +62,7 @@ export interface Model<_PlatformData extends PlatformData, Command extends BaseC
   platformData: _PlatformData;
   canvasTemplates?: CanvasTemplate[];
   templateDiagramID?: string;
-  defaultStepColors?: Record<NodeType, string>;
+  defaultStepColors?: DefaultStepColors;
 
   manualSave: boolean;
   autoSaveFromRestore: boolean;
