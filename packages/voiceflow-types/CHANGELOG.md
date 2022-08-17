@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.19.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.18.19...@voiceflow/voiceflow-types@3.19.0) (2022-08-17)
+
+
+### Features
+
+* no match no reply prompt types ([#355](https://github.com/voiceflow/libs/issues/355)) ([70be8c2](https://github.com/voiceflow/libs/commit/70be8c264d982eb000960c1454349bb8a5cdcf60)), closes [/github.com/voiceflow/general-service/blob/master/lib/clients/platform/handlers/captureV2/compiler.ts#L34](https://github.com//github.com/voiceflow/general-service/blob/master/lib/clients/platform/handlers/captureV2/compiler.ts/issues/L34) [/github.com/voiceflow/general-service/blob/master/lib/clients/platform/handlers/interaction/compiler.ts#L91](https://github.com//github.com/voiceflow/general-service/blob/master/lib/clients/platform/handlers/interaction/compiler.ts/issues/L91)
+
+
+
+
+
 ## [3.18.19](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.18.18...@voiceflow/voiceflow-types@3.18.19) (2022-08-17)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
