@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.58.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.57.0...@voiceflow/base-types@2.58.0) (2022-08-17)
+
+
+### Features
+
+* expose Version.DefaultStepColors and add version.updateDefaultStepColors to api-sdk (CT-801) ([#356](https://github.com/voiceflow/libs/issues/356)) ([5a4d63a](https://github.com/voiceflow/libs/commit/5a4d63aa40d9071d516ffade545d88dcce9834d1))
+
+
+
+
+
 # [2.57.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.56.5...@voiceflow/base-types@2.57.0) (2022-08-16)
 
 
