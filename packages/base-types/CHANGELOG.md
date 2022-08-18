@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.59.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.58.0...@voiceflow/base-types@2.59.0) (2022-08-18)
+
+
+### Features
+
+* menu node ids (CT-768) ([#357](https://github.com/voiceflow/libs/issues/357)) ([3874337](https://github.com/voiceflow/libs/commit/3874337bdb20971fee6ca8b2b2933286f36f6ede))
+
+
+
+
+
 # [2.58.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.57.0...@voiceflow/base-types@2.58.0) (2022-08-17)
 
 
