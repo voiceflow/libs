@@ -21,5 +21,10 @@ export interface Model<Node extends BaseDiagramNode = BaseDiagramNode> {
   modified: number;
   children: string[];
   variables: Variable[];
+  menuNodeIDs?: string[];
+
+  /**
+   * @deprecated use `menuNodeIDs` instead
+   */
   intentStepIDs?: string[];
 }
