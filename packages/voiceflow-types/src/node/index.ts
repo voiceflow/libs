@@ -35,6 +35,7 @@ export type AnyStep =
   | AnyExtendedStep
   | BaseNode.Text.Step
   | BaseNode.Visual.Step
+  | BaseNode.Card.Step
   | BaseNode.Stream.Step
   | BaseNode.Directive.Step;
 export type AnyNode =
@@ -42,6 +43,7 @@ export type AnyNode =
   | AnyExtendedNode
   | BaseNode.Text.Node
   | BaseNode.Visual.Node
+  | BaseNode.Card.Node
   | BaseNode.Stream.Node
   | BaseNode.Directive.Node;
 
