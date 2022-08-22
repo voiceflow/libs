@@ -1,29 +1,60 @@
+import { GeneralRequestButton } from '@base-types/request';
 import { SlateTextValue } from '@base-types/text';
 import { Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
-import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepPorts, BuiltInNextPort, BuiltInNoMatchNoReplyPorts, DataID } from './utils';
+import {
+  BaseNode,
+  BaseNoMatchNodeData,
+  BaseNoMatchStepData,
+  BaseNoReplyNodeData,
+  BaseNoReplyStepData,
+  BaseStep,
+  BaseStepPorts,
+  BaseTraceFrame,
+  BuiltInNextPort,
+  BuiltInNoMatchNoReplyPorts,
+  DataID,
+  NodeNextID,
+  TraceType,
+} from './utils';
 
 export interface CardV2Button extends DataID {
   name: string;
   intent?: Nullable<string>;
 }
 
-export interface CardV2Card<B = CardV2Button> extends DataID {
-  imageUrl: string | null;
+export interface CardV2Data<Button> {
   title: string;
-  description: SlateTextValue;
-  buttons: B[];
+  buttons: Button[];
+  imageUrl: string | null;
 }
 
 export interface StepBuiltInPorts extends BuiltInNextPort, BuiltInNoMatchNoReplyPorts {}
 
 export interface StepPorts extends BaseStepPorts<StepBuiltInPorts, []> {}
 
-export interface StepData extends BaseNoMatchStepData, BaseNoReplyStepData {
-  card: CardV2Card;
-}
+export interface StepData<Button = CardV2Button> extends BaseNoMatchStepData, BaseNoReplyStepData, CardV2Data<Button> {}
 
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.CARD_V2;
+}
+
+type CardDataWithGeneralButton = CardV2Data<GeneralRequestButton>;
+export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData, BaseNoMatchNodeData, CardDataWithGeneralButton {
+  type: NodeType.CARD_V2;
+  isBlocking: boolean;
+}
+
+export interface TraceCardV2Description {
+  slate: SlateTextValue;
+  text: string;
+}
+export interface TraceCardV2 extends CardDataWithGeneralButton {
+  description: TraceCardV2Description;
+}
+
+export interface TraceFramePayload extends TraceCardV2 {}
+export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
+  type: TraceType.CARD_V2;
 }
