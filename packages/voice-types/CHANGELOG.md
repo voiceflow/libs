@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.7.1...@voiceflow/voice-types@2.8.0) (2022-08-22)
+
+
+### Features
+
+* migrate card v2 (CT-749) ([#358](https://github.com/voiceflow/libs/issues/358)) ([f84042f](https://github.com/voiceflow/libs/commit/f84042f78ae827b9b73cf28bcf7dfb21b6e427f3))
+
+
+
+
+
 ## [2.7.1](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.7.0...@voiceflow/voice-types@2.7.1) (2022-08-18)
 
 **Note:** Version bump only for package @voiceflow/voice-types
