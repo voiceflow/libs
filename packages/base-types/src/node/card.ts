@@ -1,5 +1,5 @@
 import { NodeType } from './constants';
-import { BaseNode, BaseStep, BaseTraceFrame, NodeNextID, TraceType } from './utils';
+import { BaseNode, BaseStep, NodeNextID } from './utils';
 
 export enum CardType {
   SIMPLE = 'Simple',
@@ -27,9 +27,4 @@ export interface Step<Data = StepData> extends BaseStep<Data> {
 export interface Node extends BaseNode, NodeNextID {
   type: NodeType.CARD;
   card: Card;
-}
-
-export interface TraceFramePayload extends Card {}
-export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
-  type: TraceType.CARD;
 }

@@ -1,4 +1,3 @@
-import { TraceFrame as CardTrace } from '@base-types/node/card';
 import { TraceFrame as CardV2Trace } from '@base-types/node/cardV2';
 import { TraceFrame as CarouselTrace } from '@base-types/node/carousel';
 import { TraceFrame as ExitTrace } from '@base-types/node/exit';
@@ -12,7 +11,6 @@ import { TraceFrame as VisualTrace } from '@base-types/node/visual';
 import { IntentRequest } from '@base-types/request';
 import { Log as RuntimeLog } from '@base-types/runtimeLogs';
 
-export { TraceFrame as CardTrace } from '@base-types/node/card';
 export { TraceFrame as CardV2Trace } from '@base-types/node/cardV2';
 export { TraceFrame as CarouselTrace } from '@base-types/node/carousel';
 export { TraceFrame as ExitTrace } from '@base-types/node/exit';
@@ -94,5 +92,4 @@ export type AnyTrace =
   | NoReplyTrace
   | CarouselTrace
   | CardV2Trace
-  | CardTrace
   | EntityFillingTrace;

@@ -14,7 +14,6 @@ export enum TraceType {
   STREAM = 'stream',
   VISUAL = 'visual',
   CARD_V2 = 'cardV2',
-  CARD = 'card',
   CAROUSEL = 'carousel',
   NO_REPLY = 'no-reply',
   ENTITY_FILLING = 'entity-filling',
