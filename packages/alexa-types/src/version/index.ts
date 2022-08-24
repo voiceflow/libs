@@ -9,6 +9,7 @@ import { defaultSettings, Settings } from './settings';
 
 export * from './publishing';
 export * from './settings';
+export * from './prototype';
 
 // shared only across voiceflow types
 

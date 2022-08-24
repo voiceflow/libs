@@ -1,6 +1,6 @@
 import { AnyRecord, Nullable } from '@voiceflow/common';
 
-import { BaseCommand, PrototypeModel } from '../base';
+import { BaseCommand, Intent, PrototypeModel, Slot } from '../base';
 
 export interface PrototypeStackFrame<Command extends BaseCommand = BaseCommand> {
   nodeID?: Nullable<string>;
@@ -40,11 +40,20 @@ export interface PrototypeSettings {
   variableStateID?: string;
 }
 
-export interface Prototype<Command extends BaseCommand = BaseCommand, Locale extends string = string> {
+export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord> = {
+  slotsMap: Record<string, Slot>;
+  extraSlots: Slot[];
+  extraIntents: Intent[];
+  usedIntentsSet: string[];
+  platform: string; // VoiceflowConstants.PlatformType
+} & SurveyContextExtension;
+
+export interface Prototype<Command extends BaseCommand = BaseCommand, Locale extends string = string, SurveyContextExtension extends AnyRecord = AnyRecord> {
   type: string;
   data: PrototypeData<Locale>;
   model: PrototypeModel;
   context: PrototypeContext<Command>;
   platform: string;
   settings: PrototypeSettings;
+  surveyorContext: SurveyContext<SurveyContextExtension>;
 }

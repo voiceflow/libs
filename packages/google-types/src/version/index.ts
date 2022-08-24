@@ -24,6 +24,7 @@ import {
 export * from './base';
 export * from './chat';
 export * from './voice';
+export * from './prototype';
 
 export interface PlatformDataPerType {
   [VoiceflowConstants.ProjectType.CHAT]: ChatPlatformData;
