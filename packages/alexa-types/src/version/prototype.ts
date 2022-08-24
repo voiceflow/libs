@@ -1,12 +1,13 @@
-import { AlexaConstants, AlexaNode, AlexaProject } from "..";
+import { PermissionType } from '@alexa-types/node';
+import { Product } from '@alexa-types/project';
+
+import { InterfaceType } from '../constants';
 
 /**
  * Stores survey results in Alexa projects
- * 
- * USAGE: BaseModels.Version.SurveyContext<AlexaSurveyContextExtension>
  */
 export interface AlexaSurveyContextExtension {
-    products: Record<string, AlexaProject.Product>;
-    permissions: Set<AlexaNode.PermissionType>;
-    interfaces: Set<AlexaConstants.InterfaceType>;
+  products: Record<string, Product>;
+  permissions: Set<PermissionType>;
+  interfaces: Set<InterfaceType>;
 }

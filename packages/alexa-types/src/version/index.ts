@@ -7,9 +7,9 @@ import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 import { defaultPublishing, Publishing } from './publishing';
 import { defaultSettings, Settings } from './settings';
 
+export * from './prototype';
 export * from './publishing';
 export * from './settings';
-export * from './prototype';
 
 // shared only across voiceflow types
 
