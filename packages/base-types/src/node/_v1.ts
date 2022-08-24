@@ -1,6 +1,6 @@
 import { Nullable } from '@voiceflow/common';
 
-import { BaseEvent, BaseNode, BasePort, BasePortList, BaseStep, BaseStepPorts, NodeID } from './utils';
+import { BaseEvent, BaseNode, BaseStep, DynamicOnlyStepPorts, NodeID } from './utils';
 
 export const _V1_STOP_TYPES = 'stopTypes';
 
@@ -12,13 +12,9 @@ export interface StepData<Payload = unknown> {
   defaultPath?: number;
 }
 
-export interface StepPort<Event = BaseEvent> extends BasePort {
-  data: { event?: Event };
-}
+export interface StepPorts extends DynamicOnlyStepPorts {}
 
-export interface StepPorts<Event> extends BaseStepPorts<Record<string, StepPort<Event>>, StepPort<Event>[]> {}
-
-export interface Step<Payload = unknown, Event = BaseEvent> extends BaseStep<StepData<Payload>, StepPorts<Event>, BasePortList<StepPort<Event>>> {
+export interface Step<Payload = unknown> extends BaseStep<StepData<Payload>, StepPorts> {
   type: string;
 }
 
