@@ -48,7 +48,11 @@ export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord> 
   platform: string; // VoiceflowConstants.PlatformType
 } & SurveyContextExtension;
 
-export interface Prototype<Command extends BaseCommand = BaseCommand, Locale extends string = string, SurveyContextExtension extends AnyRecord = AnyRecord> {
+export interface Prototype<
+  Command extends BaseCommand = BaseCommand,
+  Locale extends string = string,
+  SurveyContextExtension extends AnyRecord = AnyRecord
+> {
   type: string;
   data: PrototypeData<Locale>;
   model: PrototypeModel;
