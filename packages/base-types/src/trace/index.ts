@@ -10,8 +10,8 @@ import { BaseTraceFrame, TraceType } from '@base-types/node/utils';
 import { TraceFrame as VisualTrace } from '@base-types/node/visual';
 import { IntentRequest } from '@base-types/request';
 import { Log as RuntimeLog } from '@base-types/runtimeLogs';
+import { AnyRecord } from '@voiceflow/common';
 
-export { TraceFrame as CardV2Trace } from '@base-types/node/cardV2';
 export { TraceFrame as CarouselTrace } from '@base-types/node/carousel';
 export { TraceFrame as ExitTrace } from '@base-types/node/exit';
 export { TraceFrame as FlowTrace } from '@base-types/node/flow';
@@ -77,6 +77,15 @@ export interface LogTrace extends BaseTraceFrame<LogTracePayload> {
   type: TraceType.LOG;
 }
 
+export interface ChannelActionTracePayload {
+  name: string;
+  data: AnyRecord;
+}
+
+export interface ChannelActionTrace extends BaseTraceFrame<ChannelActionTracePayload> {
+  type: TraceType.CHANNEL_ACTION;
+}
+
 export type AnyTrace =
   | LogTrace
   | ExitTrace
@@ -92,4 +101,5 @@ export type AnyTrace =
   | NoReplyTrace
   | CarouselTrace
   | CardV2Trace
-  | EntityFillingTrace;
+  | EntityFillingTrace
+  | ChannelActionTrace;
