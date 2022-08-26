@@ -46,8 +46,8 @@ export interface Folder {
 export type DefaultStepColors = Partial<Record<NodeType, string>>;
 
 export interface Model<
-  _PlatformData extends PlatformData, 
-  Command extends BaseCommand = BaseCommand, 
+  _PlatformData extends PlatformData,
+  Command extends BaseCommand = BaseCommand,
   Locale extends string = string,
   SurveyContextExt extends AnyRecord = AnyRecord
 > {

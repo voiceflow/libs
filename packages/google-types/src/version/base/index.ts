@@ -1,8 +1,8 @@
 import { Locale } from '@google-types/constants';
 import { AnyCommand } from '@google-types/node';
 import { BaseModels, DeepPartialByKey } from '@voiceflow/base-types';
-import { GaDfesSurveyContextExtension } from '../prototype';
 
+import { GaDfesSurveyContextExtension } from '../prototype';
 import { defaultSharedBasePublishing, SharedBasePublishing } from './publishing';
 
 export * from './publishing';
