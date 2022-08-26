@@ -40,12 +40,12 @@ export interface PrototypeSettings {
   variableStateID?: string;
 }
 
-export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord> = {
-  slotsMap: Record<string, Slot>;
+export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord, PlatformType extends string = string> = {
+  slotsMap: Map<string, Slot>;
   extraSlots: Slot[];
   extraIntents: Intent[];
-  usedIntentsSet: string[];
-  platform: string; // VoiceflowConstants.PlatformType
+  usedIntentsSet: Set<string>;
+  platform: PlatformType;
 } & SurveyContextExtension;
 
 export interface Prototype<

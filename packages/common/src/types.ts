@@ -64,3 +64,24 @@ export type TupleFirst<T> = T extends Tuple<infer R, any> ? R : never;
 export type TupleSecond<T> = T extends Tuple<any, infer R> ? R : never;
 
 export type Pair<T> = Tuple<T, T>;
+
+/**
+ * Given a type with non-primitive types, i.e, Map and Set, converts the type
+ * into the equivalent serialized type, which can be stored in a database or 
+ * transmitted over the network.
+ */
+export type Serialized<T> =
+  /* Base case 1 - Set is serialized to an array */
+  T extends Set<infer ElementType>              
+    ? ElementType[]
+  
+  /* Base case 2 - Map is serialized to object */
+  : T extends Map<infer Key extends string | symbol | number, infer Value> 
+    ? Record<Key, Value>
+
+  /* Recursive case - Serialize each property of the object */
+  : T extends Record<any, any>            
+    ? { [Property in keyof T]: Serialized<T[Property]> }
+
+  /* Base case 3 - Primitive type is unchanged */
+  : T;
