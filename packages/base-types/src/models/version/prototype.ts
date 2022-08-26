@@ -41,10 +41,10 @@ export interface PrototypeSettings {
 }
 
 export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord, PlatformType extends string = string> = {
-  slotsMap: Map<string, Slot>;
+  slotsMap: Record<string, Slot>;
   extraSlots: Slot[];
   extraIntents: Intent[];
-  usedIntentsSet: Set<string>;
+  usedIntentsSet: string[];
   platform: PlatformType;
 } & SurveyContextExtension;
 

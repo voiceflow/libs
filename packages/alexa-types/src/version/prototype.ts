@@ -8,6 +8,6 @@ import { InterfaceType } from '../constants';
  */
 export interface AlexaSurveyContextExtension {
   products: Record<string, Product>;
-  permissions: Set<PermissionType>;
-  interfaces: Set<InterfaceType>;
+  permissions: PermissionType[];
+  interfaces: InterfaceType[];
 }
