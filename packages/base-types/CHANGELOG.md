@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.61.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.60.0...@voiceflow/base-types@2.61.0) (2022-08-29)
+
+
+### Features
+
+* channel action trace (PL-41) ([#360](https://github.com/voiceflow/libs/issues/360)) ([4175b88](https://github.com/voiceflow/libs/commit/4175b88cd013f70a37b7e633dda909ed1f747399))
+
+
+
+
+
 # [2.60.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.59.0...@voiceflow/base-types@2.60.0) (2022-08-22)
 
 
