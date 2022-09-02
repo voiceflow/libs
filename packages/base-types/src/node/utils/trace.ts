@@ -18,6 +18,7 @@ export enum TraceType {
   NO_REPLY = 'no-reply',
   ENTITY_FILLING = 'entity-filling',
   CHANNEL_ACTION = 'channel-action',
+  CUSTOM_ACTION = 'custom-action',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {

@@ -3,6 +3,7 @@ import * as Api from './api';
 import * as ChannelAction from './channelAction';
 import * as Code from './code';
 import * as Component from './component';
+import * as CustomAction from './customAction';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as General from './general';
@@ -36,6 +37,7 @@ export * as ChannelAction from './channelAction';
 export * as Code from './code';
 export * as Component from './component';
 export * from './constants';
+export * as CustomAction from './customAction';
 export * as Directive from './directive';
 export * as Exit from './exit';
 export * as Flow from './flow';
@@ -91,6 +93,7 @@ export type AnyCommonStep =
   | GoToDomain.Step
   | Url.Step
   | ChannelAction.Step
+  | CustomAction.Step
   | _v1.Step;
 
 export type AnyCommonNode =
