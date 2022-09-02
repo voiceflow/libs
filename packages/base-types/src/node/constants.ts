@@ -39,6 +39,7 @@ export enum NodeType {
   COMMAND = 'command',
   TRACE = 'trace',
   CHANNEL_ACTION = 'channel_action',
+  CUSTOM_ACTION = 'custom_action',
 
   // other
   URL = 'url',
