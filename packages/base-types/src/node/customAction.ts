@@ -8,6 +8,11 @@ export interface StepPorts extends BaseStepPorts<StepBuiltInPorts> {}
 export interface StepData extends BaseNoMatchStepData, BaseNoReplyStepData {
   sourceID: string;
   parameters: Record<string, string>;
+  name: string;
+  payload: string;
+  stop?: boolean;
+  paths: { label: string }[];
+  defaultPath?: number;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
