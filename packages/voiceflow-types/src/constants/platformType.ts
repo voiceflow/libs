@@ -3,6 +3,7 @@ export enum PlatformType {
   GOOGLE = 'google',
   VOICEFLOW = 'voiceflow',
   DIALOGFLOW_ES = 'df-es',
+  DIALOGFLOW_CX = 'df-cx',
   LUIS = 'luis',
   RASA = 'rasa',
   WATSON = 'watson',

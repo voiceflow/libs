@@ -57,6 +57,7 @@ export interface JSONEntity {
   startPos: number;
   endPos: number;
   entity: string;
+  key: string;
 }
 export interface JSONUtterance {
   text?: string;
@@ -117,6 +118,7 @@ export const utteranceEntityPermutations = ({
         startPos,
         endPos,
         entity: entity.name,
+        key: entityID,
       });
 
       // Replace the entities with the replacement value
