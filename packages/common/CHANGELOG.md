@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.1.5](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.1.4...@voiceflow/common@8.1.5) (2022-09-05)
+
+
+### Bug Fixes
+
+* dialogflow cx (PL-152) ([#362](https://github.com/voiceflow/libs/issues/362)) ([f14b962](https://github.com/voiceflow/libs/commit/f14b962846e72d77299f8d657d17fc1fc33af15f))
+
+
+
+
+
 ## [8.1.4](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.1.3...@voiceflow/common@8.1.4) (2022-08-12)
 
 

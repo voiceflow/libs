@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.20.2](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.20.1...@voiceflow/voiceflow-types@3.20.2) (2022-09-05)
+
+
+### Bug Fixes
+
+* dialogflow cx (PL-152) ([#362](https://github.com/voiceflow/libs/issues/362)) ([f14b962](https://github.com/voiceflow/libs/commit/f14b962846e72d77299f8d657d17fc1fc33af15f))
+
+
+
+
+
 ## [3.20.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.20.0...@voiceflow/voiceflow-types@3.20.1) (2022-08-29)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
