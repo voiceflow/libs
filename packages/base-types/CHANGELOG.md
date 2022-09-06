@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.62.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.61.1...@voiceflow/base-types@2.62.0) (2022-09-06)
+
+
+### Features
+
+* add url in carousel buttons actions (CT-809) ([#363](https://github.com/voiceflow/libs/issues/363)) ([e8a2fd5](https://github.com/voiceflow/libs/commit/e8a2fd5d350c9487bcae40ba102f0317a0792c8a))
+
+
+
+
+
 ## [2.61.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.61.0...@voiceflow/base-types@2.61.1) (2022-09-05)
 
 **Note:** Version bump only for package @voiceflow/base-types
