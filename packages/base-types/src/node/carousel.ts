@@ -1,5 +1,6 @@
 import { GeneralRequestButton, ActionRequestButton } from '@base-types/request';
 import { SlateTextValue } from '@base-types/text';
+import { Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
 import {
@@ -23,7 +24,13 @@ export enum CarouselLayout {
   LIST = 'List',
 }
 
-export interface CarouselCard<B> extends DataID {
+export interface CarouselButton extends DataID {
+  name: string;
+  intent?: Nullable<string>;
+  url?: Nullable<string>;
+}
+
+export interface CarouselCard<B = CarouselButton> extends DataID {
   imageUrl: string | null;
   title: string;
   description: SlateTextValue;
@@ -36,7 +43,7 @@ export interface StepPorts extends BaseStepPorts<StepBuiltInPorts, []> {}
 
 export interface StepData extends BaseNoMatchStepData, BaseNoReplyStepData {
   layout: CarouselLayout;
-  cards: CarouselCard<GeneralRequestButton | ActionRequestButton>[];
+  cards: CarouselCard[];
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
