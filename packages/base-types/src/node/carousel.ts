@@ -51,6 +51,7 @@ export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
 }
 
 export type NodeCarouselCard = CarouselCard<GeneralRequestButton | ActionRequestButton>;
+
 export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData, BaseNoMatchNodeData {
   type: NodeType.CAROUSEL;
   cards: NodeCarouselCard[];
