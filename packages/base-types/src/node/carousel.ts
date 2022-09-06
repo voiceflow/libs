@@ -27,6 +27,7 @@ export enum CarouselLayout {
 export interface CarouselButton extends DataID {
   name: string;
   intent?: Nullable<string>;
+  url?: Nullable<string>;
 }
 
 export interface CarouselCard<B = CarouselButton> extends DataID {
