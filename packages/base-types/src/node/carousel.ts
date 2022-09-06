@@ -1,6 +1,6 @@
+import { Nullable } from '@voiceflow/common';
 import { GeneralRequestButton, ActionRequestButton } from '@base-types/request';
 import { SlateTextValue } from '@base-types/text';
-import { Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
 import {
