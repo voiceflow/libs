@@ -35,6 +35,7 @@ export const isGoToNode = createStepTypeguard<Node.GoToNode.Step>(Node.NodeType.
 export const isDirective = createStepTypeguard<Node.Directive.Step>(Node.NodeType.DIRECTIVE);
 export const isComponent = createStepTypeguard<Node.Component.Step>(Node.NodeType.COMPONENT);
 export const isCaptureV2 = createStepTypeguard<Node.CaptureV2.Step>(Node.NodeType.CAPTURE_V2);
+export const isGoToDomain = createStepTypeguard<Node.GoToDomain.Step>(Node.NodeType.GOTO_DOMAIN);
 export const isDeprecated = createStepTypeguard<BaseModels.BaseDiagramNode & { type: Node.NodeType.DEPRECATED }>(Node.NodeType.DEPRECATED);
 export const isInteraction = createStepTypeguard<Node.Interaction.Step>(Node.NodeType.INTERACTION);
 export const isGoogleSheets = createStepTypeguard<Node.GoogleSheets.Step>(Node.NodeType.GOOGLE_SHEETS);

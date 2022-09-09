@@ -21,6 +21,7 @@ export enum NodeType {
   // navigation
   GOTO = 'goTo',
   GOTO_NODE = 'goToNode',
+  GOTO_DOMAIN = 'goToDomain',
 
   // integrations
   API = 'api',

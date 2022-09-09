@@ -8,6 +8,7 @@ import * as Flow from './flow';
 import * as General from './general';
 import * as GoogleSheets from './googleSheets';
 import * as GoTo from './goTo';
+import * as GoToDomain from './goToDomain';
 import * as GoToNode from './goToNode';
 import * as If from './if';
 import * as IfV2 from './ifV2';
@@ -41,6 +42,7 @@ export * as Flow from './flow';
 export * as General from './general';
 export * as GoogleSheets from './googleSheets';
 export * as GoTo from './goTo';
+export * as GoToDomain from './goToDomain';
 export * as GoToNode from './goToNode';
 export * as If from './if';
 export * as IfV2 from './ifV2';
@@ -86,6 +88,7 @@ export type AnyCommonStep =
   | General.Step
   | GoTo.Step
   | GoToNode.Step
+  | GoToDomain.Step
   | Url.Step
   | ChannelAction.Step
   | _v1.Step;
