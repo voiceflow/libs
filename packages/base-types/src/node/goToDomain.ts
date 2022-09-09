@@ -4,7 +4,7 @@ import { NodeType } from './constants';
 import { BaseStep } from './utils';
 
 export interface StepData {
-  rootDiagramID: Nullable<string>;
+  domainID: Nullable<string>;
 }
 
 export interface Step<Data extends AnyRecord = StepData> extends BaseStep<Data, EmptyObject, []> {
