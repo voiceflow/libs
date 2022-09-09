@@ -33,6 +33,7 @@ export const isGoToNode = createNodeTypeTypeguard(Node.NodeType.GOTO_NODE);
 export const isDirective = createNodeTypeTypeguard(Node.NodeType.DIRECTIVE);
 export const isComponent = createNodeTypeTypeguard(Node.NodeType.COMPONENT);
 export const isCaptureV2 = createNodeTypeTypeguard(Node.NodeType.CAPTURE_V2);
+export const isGoToDomain = createNodeTypeTypeguard(Node.NodeType.GOTO_DOMAIN);
 export const isDeprecated = createNodeTypeTypeguard(Node.NodeType.DEPRECATED);
 export const isInteraction = createNodeTypeTypeguard(Node.NodeType.INTERACTION);
 export const isIntegrations = createNodeTypeTypeguard(Node.NodeType.INTEGRATIONS);
