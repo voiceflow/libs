@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.64.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.63.0...@voiceflow/base-types@2.64.0) (2022-09-12)
+
+
+### Features
+
+* allow template color as null (CT-674) ([#365](https://github.com/voiceflow/libs/issues/365)) ([544232b](https://github.com/voiceflow/libs/commit/544232b9cbe558e74808fa68038c3e695a2193e0))
+
+
+
+
+
 # [2.63.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.62.0...@voiceflow/base-types@2.63.0) (2022-09-09)
 
 
