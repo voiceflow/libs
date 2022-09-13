@@ -45,7 +45,12 @@ export interface Folder {
 
 export type DefaultStepColors = Partial<Record<NodeType, string>>;
 
-export interface Model<_PlatformData extends PlatformData, Command extends BaseCommand = BaseCommand, Locale extends string = string> {
+export interface Model<
+  _PlatformData extends PlatformData,
+  Command extends BaseCommand = BaseCommand,
+  Locale extends string = string,
+  SurveyContextExt extends AnyRecord = AnyRecord
+> {
   _id: string;
   _version?: number;
   creatorID: number;
@@ -57,7 +62,7 @@ export interface Model<_PlatformData extends PlatformData, Command extends BaseC
   domains?: Domain[];
   folders?: Record<string, Folder>;
   variables: Variable[];
-  prototype?: Prototype<Command, Locale>;
+  prototype?: Prototype<Command, Locale, SurveyContextExt>;
   components?: FolderItem[];
   platformData: _PlatformData;
   canvasTemplates?: CanvasTemplate[];

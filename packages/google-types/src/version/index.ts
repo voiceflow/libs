@@ -23,6 +23,7 @@ import {
 
 export * from './base';
 export * from './chat';
+export * from './prototype';
 export * from './voice';
 
 export interface PlatformDataPerType {
