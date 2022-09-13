@@ -40,6 +40,7 @@ export enum NodeType {
   TRACE = 'trace',
   CHANNEL_ACTION = 'channel_action',
   CUSTOM_ACTION = 'custom_action',
+  POINTER = 'pointer',
 
   // other
   URL = 'url',
