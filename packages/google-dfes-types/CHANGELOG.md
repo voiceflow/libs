@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.12.29...@voiceflow/google-dfes-types@2.13.0) (2022-09-13)
+
+
+### Features
+
+* added importable types for survey context (PL-37) ([#359](https://github.com/voiceflow/libs/issues/359)) ([646bd4c](https://github.com/voiceflow/libs/commit/646bd4c5736d2b76a5d883177f1fce2f6b73aa93))
+
+
+
+
+
 ## [2.12.29](https://github.com/voiceflow/libs/compare/@voiceflow/google-dfes-types@2.12.28...@voiceflow/google-dfes-types@2.12.29) (2022-09-12)
 
 **Note:** Version bump only for package @voiceflow/google-dfes-types

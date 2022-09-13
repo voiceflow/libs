@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.10.28...@voiceflow/alexa-types@2.11.0) (2022-09-13)
+
+
+### Features
+
+* added importable types for survey context (PL-37) ([#359](https://github.com/voiceflow/libs/issues/359)) ([646bd4c](https://github.com/voiceflow/libs/commit/646bd4c5736d2b76a5d883177f1fce2f6b73aa93))
+
+
+
+
+
 ## [2.10.28](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.10.27...@voiceflow/alexa-types@2.10.28) (2022-09-12)
 
 **Note:** Version bump only for package @voiceflow/alexa-types
