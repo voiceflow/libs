@@ -7,6 +7,7 @@ export interface StepPorts extends BaseStepPorts<StepBuiltInPorts> {}
 
 export interface StepData extends BaseNoMatchStepData, BaseNoReplyStepData {
   sourceID: string;
+  pointerName: string;
   parameters: Record<string, string>;
 }
 
