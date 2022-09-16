@@ -1,11 +1,8 @@
-export interface CustomBlockSource {
+export interface Model {
   id: string;
   projectID: string;
   name: string;
-  parameters: {
-    id: string;
-    label: string;
-  }[];
+  parameters: Record<string, string>;
   body: string;
   stop: boolean;
   paths: string[];
