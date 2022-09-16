@@ -1,9 +1,7 @@
 import { NodeType } from './constants';
-import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepPorts, BuiltInNextPort, BuiltInNoMatchNoReplyPorts } from './utils';
+import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, DynamicOnlyStepPorts } from './utils';
 
-export interface StepBuiltInPorts extends BuiltInNextPort, BuiltInNoMatchNoReplyPorts {}
-
-export interface StepPorts extends BaseStepPorts<StepBuiltInPorts> {}
+export interface StepPorts extends DynamicOnlyStepPorts {}
 
 export interface StepData extends BaseNoMatchStepData, BaseNoReplyStepData {
   sourceID: string;
