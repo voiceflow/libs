@@ -12,5 +12,5 @@ export interface StepData extends BaseNoMatchStepData, BaseNoReplyStepData {
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
-  type: NodeType.POINTER;
+  type: NodeType.CUSTOM_BLOCK_POINTER;
 }

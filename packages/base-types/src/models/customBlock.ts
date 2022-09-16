@@ -1,13 +1,13 @@
-export interface BaseSource {
-    _id: string;
-    projectID: string;
-    parameters: string[];
-}
-
-export interface CustomActionSource extends BaseSource {
-    name: string;
-    body: string;
-    stop: boolean;
-    paths: string[];
-    defaultPath: number;
+export interface CustomBlockSource {
+  id: string;
+  projectID: string;
+  name: string;
+  parameters: {
+    id: string;
+    label: string;
+  }[];
+  body: string;
+  stop: boolean;
+  paths: string[];
+  defaultPath: number;
 }

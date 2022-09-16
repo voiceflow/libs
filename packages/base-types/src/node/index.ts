@@ -2,9 +2,8 @@ import * as _v1 from './_v1';
 import * as Api from './api';
 import * as ChannelAction from './channelAction';
 import * as Code from './code';
-import * as Command from './push';
 import * as Component from './component';
-import * as CustomAction from './customAction';
+import * as CustomBlockPointer from './customBlockPointer';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as General from './general';
@@ -16,7 +15,7 @@ import * as If from './if';
 import * as IfV2 from './ifV2';
 import * as Integration from './integration';
 import * as Intent from './jump';
-import * as Pointer from './pointer';
+import * as Command from './push';
 import * as Random from './random';
 import * as RandomV2 from './randomV2';
 import * as Set from './set';
@@ -38,7 +37,7 @@ export * as ChannelAction from './channelAction';
 export * as Code from './code';
 export * as Component from './component';
 export * from './constants';
-export * as CustomAction from './customAction';
+export * as CustomBlockPointer from './customBlockPointer';
 export * as Directive from './directive';
 export * as Exit from './exit';
 export * as Flow from './flow';
@@ -52,7 +51,6 @@ export * as IfV2 from './ifV2';
 export * as Integration from './integration';
 export * as Interaction from './interaction';
 export * as Intent from './jump';
-export * as Pointer from './pointer';
 export * as Prompt from './prompt';
 export * as Command from './push';
 export * as Random from './random';
@@ -74,9 +72,9 @@ export interface NextOnlyNode extends BaseNode, NodeNextID {
 
 /**
  * Steps are the "uncompiled" nodes of a Voiceflow diagram. These are stored inside
- * a `diagram` document. 
- * 
- * The frontend is aware of these types and uses adapters to transform them into their 
+ * a `diagram` document.
+ *
+ * The frontend is aware of these types and uses adapters to transform them into their
  * equivalent frontend types.
  */
 export type AnyCommonStep =
@@ -102,14 +100,13 @@ export type AnyCommonStep =
   | GoToDomain.Step
   | Url.Step
   | ChannelAction.Step
-  | CustomAction.Step
-  | _v1.Step
-  | Pointer.Step;
+  | CustomBlockPointer.Step
+  | _v1.Step;
 
 /**
  * Nodes are the "compiled" nodes of a Voiceflow diagram. These are stored inside a
  * `program` or `prototype-program` document.
- * 
+ *
  * The frontend is not aware of these types. They send requests for compilation and the
  * backend entirely manages the compilation and execution of `program` and `prototype-program`s.
  */
@@ -131,7 +128,6 @@ export type AnyCommonNode =
   | GoToNode.Node
   | NextOnlyNode
   | ChannelAction.Node
-  | CustomAction.Node
   | _v1.Node;
 
 export type AnyCommonCommand = Intent.Command | Command.Command;
