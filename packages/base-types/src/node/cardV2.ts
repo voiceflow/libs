@@ -1,4 +1,4 @@
-import { GeneralRequestButton } from '@base-types/request';
+import { ActionRequestButton, GeneralRequestButton } from '@base-types/request';
 import { SlateTextValue } from '@base-types/text';
 import { Nullable } from '@voiceflow/common';
 
@@ -40,7 +40,8 @@ export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.CARD_V2;
 }
 
-type CardDataWithGeneralButton = CardV2Data<GeneralRequestButton>;
+type CardDataWithGeneralButton = CardV2Data<GeneralRequestButton | ActionRequestButton>;
+
 export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData, BaseNoMatchNodeData, CardDataWithGeneralButton {
   type: NodeType.CARD_V2;
   isBlocking: boolean;
