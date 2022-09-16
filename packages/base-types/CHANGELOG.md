@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.66.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.65.0...@voiceflow/base-types@2.66.0) (2022-09-16)
+
+
+### Features
+
+* add action request type to cardv2 button (CT-965) ([#368](https://github.com/voiceflow/libs/issues/368)) ([4acf87e](https://github.com/voiceflow/libs/commit/4acf87ea14df6a8381d6902e9a473573f303f1d1))
+
+
+
+
+
 # [2.65.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.64.0...@voiceflow/base-types@2.65.0) (2022-09-13)
 
 
