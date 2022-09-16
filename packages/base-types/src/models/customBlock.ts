@@ -1,5 +1,5 @@
 export interface Model {
-  id: string;
+  _id: string;
   projectID: string;
   name: string;
   parameters: Record<
