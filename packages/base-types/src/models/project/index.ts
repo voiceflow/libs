@@ -36,6 +36,7 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   type?: string; // chat | voice | etc
   image?: string;
   privacy?: Privacy;
+  APIprivacy?: Privacy;
   platform: string; // voiceflow | alexa | google | etc
   linkType?: LinkType;
   prototype?: Prototype;
