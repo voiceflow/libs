@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.67.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.66.0...@voiceflow/base-types@2.67.0) (2022-09-20)
+
+
+### Features
+
+* custom action step (PL-146) ([#361](https://github.com/voiceflow/libs/issues/361)) ([8666c1e](https://github.com/voiceflow/libs/commit/8666c1e717fff9eee32c1b5c6560abf81b31e7b3))
+
+
+
+
+
 # [2.66.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.65.0...@voiceflow/base-types@2.66.0) (2022-09-16)
 
 
