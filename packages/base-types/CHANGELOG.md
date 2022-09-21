@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.68.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.68.0...@voiceflow/base-types@2.68.1) (2022-09-21)
+
+
+### Bug Fixes
+
+* add api privacy field (PL-170) ([#369](https://github.com/voiceflow/libs/issues/369)) ([157078a](https://github.com/voiceflow/libs/commit/157078ad3a32091a863ed3c1c07fb684aca19702))
+
+
+
+
+
 # [2.68.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.67.0...@voiceflow/base-types@2.68.0) (2022-09-21)
 
 
