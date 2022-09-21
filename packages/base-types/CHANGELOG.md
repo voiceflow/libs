@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.68.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.67.0...@voiceflow/base-types@2.68.0) (2022-09-21)
+
+
+### Features
+
+* adds nlu unclassified data types (NLU-333) ([#370](https://github.com/voiceflow/libs/issues/370)) ([852ffca](https://github.com/voiceflow/libs/commit/852ffcafb01f18e43bd86f1cdbd0ef9d37b733c7))
+
+
+
+
+
 # [2.67.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.66.0...@voiceflow/base-types@2.67.0) (2022-09-20)
 
 
