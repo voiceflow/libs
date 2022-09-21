@@ -45,6 +45,26 @@ export interface Folder {
 
 export type DefaultStepColors = Partial<Record<NodeType, string>>;
 
+export enum NLUUnclassifiedDataType {
+  CONVERSATION = 'conversation',
+  PROTOTYPE = 'prototype',
+  NLU_DATASOURCE_IMPORT = 'nluDatasourceImport',
+}
+
+export interface NLUUnclassifiedUtterances {
+  utterance: string;
+  sourceID?: string;
+  importedAt: Date;
+}
+
+export interface NLUUnclassifiedData {
+  id: number;
+  creatorID?: number;
+  type: NLUUnclassifiedDataType;
+  name: string;
+  utterances: NLUUnclassifiedUtterances[];
+}
+
 export interface Model<
   _PlatformData extends PlatformData,
   Command extends BaseCommand = BaseCommand,
@@ -76,4 +96,6 @@ export interface Model<
    * @deprecated replaced with domains
    */
   topics?: FolderItem[];
+
+  nluUnclassifiedData?: NLUUnclassifiedData[];
 }
