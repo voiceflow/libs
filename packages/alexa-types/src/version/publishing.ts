@@ -1,6 +1,7 @@
 import { Locale } from '@alexa-types/constants';
+import { BaseVersion } from '@voiceflow/base-types';
 
-export interface Publishing {
+export interface Publishing extends BaseVersion.Publishing {
   forExport: boolean;
   hasAds: boolean;
   summary: string;

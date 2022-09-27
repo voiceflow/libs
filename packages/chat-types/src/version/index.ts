@@ -8,6 +8,7 @@ export * from './settings';
 export interface PlatformData extends BaseVersion.PlatformData<Prompt> {
   intents: Intent[];
   settings: Settings;
+  publishing: BaseVersion.Publishing;
 }
 
 export interface Version<Prototype extends BaseModels.Version.Prototype = BaseModels.Version.Prototype>
