@@ -1,7 +1,8 @@
 import { Category, Locale } from '@google-types/constants';
+import { BaseVersion } from '@voiceflow/base-types';
 
 // shared across google and dfes types
-export interface SharedBasePublishing {
+export interface SharedBasePublishing extends BaseVersion.Publishing {
   // localized settings
   voice: string;
   displayName: string;
@@ -61,7 +62,7 @@ export const defaultSharedBasePublishing = ({
 });
 
 // shared only across google types
-export interface BasePublishing {
+export interface BasePublishing extends BaseVersion.Publishing {
   locales: Locale[];
 }
 
