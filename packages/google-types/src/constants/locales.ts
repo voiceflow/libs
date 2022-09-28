@@ -146,6 +146,7 @@ export enum VoiceLanguageCode {
   ML_IN = 'ml-IN',
   NB_NO = 'nb-NO',
   NL_NL = 'nl-NL',
+  NL_BE = 'nl-BE',
   PL_PL = 'pl-PL',
   PT_BR = 'pt-BR',
   PT_PT = 'pt-PT',
@@ -170,7 +171,7 @@ export const LocaleToVoiceLanguageCode: Record<Locale, VoiceLanguageCode> = {
   [Locale.DE_BE]: VoiceLanguageCode.DE_DE,
 
   [Locale.NL_NL]: VoiceLanguageCode.NL_NL,
-  [Locale.NL_BE]: VoiceLanguageCode.NL_NL,
+  [Locale.NL_BE]: VoiceLanguageCode.NL_BE,
 
   [Locale.EN_US]: VoiceLanguageCode.EN_US,
   [Locale.EN_CA]: VoiceLanguageCode.EN_US,
