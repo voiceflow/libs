@@ -367,6 +367,20 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, GoogleVoice[]> 
       ssmlGender: `${SSMLGender.FEMALE}-3`,
     },
   ],
+  [VoiceLanguageCode.NL_BE]: [
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_BELGIUM,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.NL_BE}-${VoiceType.WAVENET}-A`, `${VoiceLanguageCode.NL_BE}-${VoiceType.STANDARD}-A`],
+      ssmlGender: `${SSMLGender.FEMALE}-1`,
+    },
+    {
+      voiceLanguage: VoiceLanguage.DUTCH_BELGIUM,
+      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
+      voiceName: [`${VoiceLanguageCode.NL_BE}-${VoiceType.WAVENET}-B`, `${VoiceLanguageCode.NL_BE}-${VoiceType.STANDARD}-B`],
+      ssmlGender: `${SSMLGender.MALE}-1`,
+    },
+  ],
   [VoiceLanguageCode.FR_FR]: [
     {
       voiceLanguage: VoiceLanguage.FRENCH_FRANCE,
