@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.12.10...@voiceflow/chat-types@2.13.0) (2022-09-28)
+
+
+### Features
+
+* add base publishing property (CT-000) ([#371](https://github.com/voiceflow/libs/issues/371)) ([d5185d1](https://github.com/voiceflow/libs/commit/d5185d1efb32b7ad9b056ec615bf37c5edf2b8fb)), closes [/github.com/voiceflow/google-service/blob/1bc9a877afc784d7d5140cfd024005b10b0c8668/lib/jobs/dialogflow/cx/publish/stages/agent.ts#L168-L173](https://github.com//github.com/voiceflow/google-service/blob/1bc9a877afc784d7d5140cfd024005b10b0c8668/lib/jobs/dialogflow/cx/publish/stages/agent.ts/issues/L168-L173)
+
+
+
+
+
 ## [2.12.10](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.12.9...@voiceflow/chat-types@2.12.10) (2022-09-21)
 
 **Note:** Version bump only for package @voiceflow/chat-types
