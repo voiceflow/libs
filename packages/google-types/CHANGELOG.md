@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.1](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.17.0...@voiceflow/google-types@2.17.1) (2022-09-28)
+
+
+### Bug Fixes
+
+* resolve belgium dutch (BUG-45) ([#372](https://github.com/voiceflow/libs/issues/372)) ([2bedffd](https://github.com/voiceflow/libs/commit/2bedffdb25fe0336dfceb9bc31319fa239292a4e))
+
+
+
+
+
 # [2.17.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.16.4...@voiceflow/google-types@2.17.0) (2022-09-28)
 
 
