@@ -1,4 +1,4 @@
-import { Nullable } from '@voiceflow/common';
+import { AnyRecord, Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
 import { BaseStep, IntegrationType, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
@@ -48,6 +48,7 @@ export interface StepData {
   bodyType: APIBodyType;
   selectedAction: APIActionType;
   selectedIntegration: IntegrationType.CUSTOM_API;
+  tls?: { cert?: string; key?: string };
 }
 
 export interface StepPorts extends SuccessFailStepPorts<[]> {}
@@ -63,11 +64,12 @@ export interface NodeData extends NodeSuccessFailID {
     content: string;
     bodyInputType: APIBodyType;
     selected_action: APIActionType;
+    tls?: { cert?: string; key?: string };
   };
   selected_action: APIActionType;
   selected_integration: IntegrationType.CUSTOM_API;
 }
 
-export interface Step<Data = StepData> extends BaseStep<Data, StepPorts> {
+export interface Step<Data extends AnyRecord = StepData> extends BaseStep<Data, StepPorts> {
   type: NodeType.API;
 }
