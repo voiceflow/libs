@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.70.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.69.0...@voiceflow/base-types@2.70.0) (2022-10-04)
+
+
+### Features
+
+* upload custom tls certificate for api calls (PL-120) ([#373](https://github.com/voiceflow/libs/issues/373)) ([db25a99](https://github.com/voiceflow/libs/commit/db25a999351cd8c790eec8c204e880f93c7f0bc4))
+
+
+
+
+
 # [2.69.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.68.1...@voiceflow/base-types@2.69.0) (2022-09-28)
 
 
