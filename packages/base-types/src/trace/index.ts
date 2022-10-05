@@ -23,6 +23,23 @@ export { TraceFrame as Text } from '@base-types/node/text';
 export { BaseTraceFrame, TraceType } from '@base-types/node/utils/trace';
 export { TraceFrame as Visual } from '@base-types/node/visual';
 
+/** @deprecated */
+export { TraceFrame as CarouselTrace } from '@base-types/node/carousel';
+/** @deprecated */
+export { TraceFrame as ExitTrace } from '@base-types/node/exit';
+/** @deprecated */
+export { TraceFrame as FlowTrace } from '@base-types/node/flow';
+/** @deprecated */
+export { TraceFrame as ChoiceTrace } from '@base-types/node/interaction';
+/** @deprecated */
+export { TraceFrame as SpeakTrace } from '@base-types/node/speak';
+/** @deprecated */
+export { TraceFrame as StreamTrace } from '@base-types/node/stream';
+/** @deprecated */
+export { TraceFrame as TextTrace } from '@base-types/node/text';
+/** @deprecated */
+export { TraceFrame as VisualTrace } from '@base-types/node/visual';
+
 export interface DebugTracePayload {
   type?: string;
   message: string;
