@@ -12,15 +12,16 @@ import { IntentRequest } from '@base-types/request';
 import { Log as RuntimeLog } from '@base-types/runtimeLogs';
 import { AnyRecord } from '@voiceflow/common';
 
-export { TraceFrame as CarouselTrace } from '@base-types/node/carousel';
-export { TraceFrame as ExitTrace } from '@base-types/node/exit';
-export { TraceFrame as FlowTrace } from '@base-types/node/flow';
-export { TraceFrame as ChoiceTrace } from '@base-types/node/interaction';
-export { TraceFrame as SpeakTrace } from '@base-types/node/speak';
-export { TraceFrame as StreamTrace } from '@base-types/node/stream';
-export { TraceFrame as TextTrace } from '@base-types/node/text';
+export { TraceFrame as CardV2 } from '@base-types/node/cardV2';
+export { TraceFrame as Carousel } from '@base-types/node/carousel';
+export { TraceFrame as End } from '@base-types/node/exit';
+export { TraceFrame as Flow } from '@base-types/node/flow';
+export { TraceFrame as Choice } from '@base-types/node/interaction';
+export { TraceFrame as Speak } from '@base-types/node/speak';
+export { TraceFrame as Stream } from '@base-types/node/stream';
+export { TraceFrame as Text } from '@base-types/node/text';
 export { TraceType } from '@base-types/node/utils/trace';
-export { TraceFrame as VisualTrace } from '@base-types/node/visual';
+export { TraceFrame as Visual } from '@base-types/node/visual';
 
 export interface DebugTracePayload {
   type?: string;
