@@ -20,7 +20,7 @@ export { TraceFrame as Choice } from '@base-types/node/interaction';
 export { TraceFrame as Speak } from '@base-types/node/speak';
 export { TraceFrame as Stream } from '@base-types/node/stream';
 export { TraceFrame as Text } from '@base-types/node/text';
-export { TraceType } from '@base-types/node/utils/trace';
+export { BaseTraceFrame, TraceType } from '@base-types/node/utils/trace';
 export { TraceFrame as Visual } from '@base-types/node/visual';
 
 export interface DebugTracePayload {
