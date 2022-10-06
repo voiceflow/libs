@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.71.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.70.0...@voiceflow/base-types@2.71.0) (2022-10-06)
+
+
+### Features
+
+* update trace names (PL-000) ([#374](https://github.com/voiceflow/libs/issues/374)) ([7764b97](https://github.com/voiceflow/libs/commit/7764b97adff22a71d7bdabca86b9b9dc417bad3d))
+
+
+
+
+
 # [2.70.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.69.0...@voiceflow/base-types@2.70.0) (2022-10-04)
 
 
