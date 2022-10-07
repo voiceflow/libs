@@ -29,9 +29,6 @@
       "path": "packages/metrics/tsconfig.build.json"
     },
     {
-      "path": "packages/nestjs-common/tsconfig.build.json"
-    },
-    {
       "path": "packages/nestjs-metrics/tsconfig.build.json"
     },
     {
