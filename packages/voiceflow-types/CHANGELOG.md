@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.20.14](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.20.13...@voiceflow/voiceflow-types@3.20.14) (2022-10-17)
+
+
+### Bug Fixes
+
+* add chat publishing settings (CT-000) ([8dcb0f1](https://github.com/voiceflow/libs/commit/8dcb0f1124c521d0a6e06b1af99223ecce9a0beb))
+
+
+
+
+
 ## [3.20.13](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.20.12...@voiceflow/voiceflow-types@3.20.13) (2022-10-06)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
