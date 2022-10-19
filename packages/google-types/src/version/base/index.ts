@@ -5,6 +5,7 @@ import { BaseModels, DeepPartialByKey } from '@voiceflow/base-types';
 import { GaDfesSurveyContextExtension } from '../prototype';
 import { defaultSharedBasePublishing, SharedBasePublishing } from './publishing';
 
+export * from '../prototype';
 export * from './publishing';
 
 export interface BasePrototype extends BaseModels.Version.Prototype<AnyCommand, Locale, GaDfesSurveyContextExtension> {}
