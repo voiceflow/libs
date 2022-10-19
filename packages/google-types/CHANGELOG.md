@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.18.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.17.6...@voiceflow/google-types@2.18.0) (2022-10-19)
+
+
+### Features
+
+* add intent mapping for vf-google (PL-125) ([#376](https://github.com/voiceflow/libs/issues/376)) ([f42a9d2](https://github.com/voiceflow/libs/commit/f42a9d22fe914170f4c6e147e5dee7d302014ea4))
+
+
+
+
+
 ## [2.17.6](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.17.5...@voiceflow/google-types@2.17.6) (2022-10-19)
 
 
