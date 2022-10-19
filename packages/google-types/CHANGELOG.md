@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.6](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.17.5...@voiceflow/google-types@2.17.6) (2022-10-19)
+
+
+### Bug Fixes
+
+* export missing type (PL-37) ([#377](https://github.com/voiceflow/libs/issues/377)) ([c3c59b5](https://github.com/voiceflow/libs/commit/c3c59b5789244365f40d056d342614ec12b52b39))
+
+
+
+
+
 ## [2.17.5](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.17.4...@voiceflow/google-types@2.17.5) (2022-10-17)
 
 **Note:** Version bump only for package @voiceflow/google-types
