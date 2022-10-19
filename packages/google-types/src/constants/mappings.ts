@@ -1,5 +1,6 @@
 import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
+import { GoogleIntent } from './intents';
 import { Locale } from './locales';
 import { SlotType } from './slots';
 
@@ -66,4 +67,10 @@ export const GOOGLE_TO_VOICEFLOW_SLOT_TYPE_MAP: Record<SlotType, VoiceflowConsta
   [SlotType.DATE]: VoiceflowConstants.SlotType.DATETIME,
   [SlotType.NUMBER]: VoiceflowConstants.SlotType.NUMBER,
   [SlotType.DATE_TIME]: VoiceflowConstants.SlotType.DATETIME,
+};
+
+export const VOICEFLOW_TO_GOOGLE_INTENT_MAP: Partial<Record<VoiceflowConstants.IntentName, GoogleIntent>> = {
+  [VoiceflowConstants.IntentName.NO]: GoogleIntent.NO,
+  [VoiceflowConstants.IntentName.YES]: GoogleIntent.YES,
+  [VoiceflowConstants.IntentName.REPEAT]: GoogleIntent.REPEAT,
 };
