@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.71.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.71.0...@voiceflow/base-types@2.71.1) (2022-10-21)
+
+
+### Bug Fixes
+
+* channel action payload (PL-000) ([#378](https://github.com/voiceflow/libs/issues/378)) ([d3c02a4](https://github.com/voiceflow/libs/commit/d3c02a4d8a8adef07bd826aec3267a8e67615711)), closes [/github.com/voiceflow/general-runtime/blob/master/lib/services/runtime/handlers/channelAction.ts#L16](https://github.com//github.com/voiceflow/general-runtime/blob/master/lib/services/runtime/handlers/channelAction.ts/issues/L16) [/github.com/voiceflow/libs/blob/master/packages/base-types/src/node/channelAction.ts#L32](https://github.com//github.com/voiceflow/libs/blob/master/packages/base-types/src/node/channelAction.ts/issues/L32)
+
+
+
+
+
 # [2.71.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.70.0...@voiceflow/base-types@2.71.0) (2022-10-06)
 
 
