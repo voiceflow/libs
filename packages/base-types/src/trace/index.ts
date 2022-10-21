@@ -97,7 +97,7 @@ export interface LogTrace extends BaseTraceFrame<LogTracePayload> {
 
 export interface ChannelActionTracePayload {
   name: string;
-  data: AnyRecord;
+  payload: AnyRecord;
 }
 
 export interface ChannelActionTrace extends BaseTraceFrame<ChannelActionTracePayload> {
