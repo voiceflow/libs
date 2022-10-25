@@ -33,9 +33,14 @@ export interface Settings<Prompt = unknown> {
   defaultCanvasNodeVisibility: Nullable<Utils.CanvasNodeVisibility>;
   defaultCarouselLayout?: Nullable<CarouselLayout>;
 
-  globalNoMatch?: Nullable<Prompt> | undefined;
-  globalNoReply?: Nullable<Prompt> | undefined;
-  globalNoReplyDelay?: Nullable<number> | undefined;
+  globalNoReply?: {
+    prompt?: Nullable<Prompt> | undefined;
+    delay?: number | undefined;
+  };
+
+  globalNoMatch?: {
+    prompt?: Nullable<Prompt> | undefined;
+  };
 }
 
 export const defaultSettings = <Prompt>({
@@ -45,9 +50,8 @@ export const defaultSettings = <Prompt>({
   defaultCanvasNodeVisibility = null,
   defaultCarouselLayout = null,
 
-  globalNoMatch,
-  globalNoReply,
-  globalNoReplyDelay,
+  globalNoMatch = { prompt: undefined },
+  globalNoReply = { delay: undefined, prompt: undefined },
 }: Partial<Settings<Prompt>> = {}): Settings<Prompt> => ({
   error,
   repeat,
@@ -57,5 +61,4 @@ export const defaultSettings = <Prompt>({
 
   globalNoMatch,
   globalNoReply,
-  globalNoReplyDelay,
 });
