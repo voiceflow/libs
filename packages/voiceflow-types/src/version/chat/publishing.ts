@@ -7,8 +7,8 @@ export enum ChatPersistence {
 }
 
 export enum ChatPosition {
-  RIGHT = 'right',
   LEFT = 'left',
+  RIGHT = 'right',
 }
 
 export interface ChatPublishing extends BaseVersion.Publishing {
