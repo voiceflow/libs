@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.71.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.71.2...@voiceflow/base-types@2.71.3) (2022-10-25)
+
+
+### Bug Fixes
+
+* update global no-match no-reply structure (CT-1139) ([#380](https://github.com/voiceflow/libs/issues/380)) ([f86274f](https://github.com/voiceflow/libs/commit/f86274fd62d63c40a70f2534efcfd0c2bf315d78))
+
+
+
+
+
 ## [2.71.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.71.1...@voiceflow/base-types@2.71.2) (2022-10-25)
 
 
