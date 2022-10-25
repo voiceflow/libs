@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.20.17](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.20.16...@voiceflow/voiceflow-types@3.20.17) (2022-10-25)
+
+
+### Bug Fixes
+
+* update chat enum ([97e37f6](https://github.com/voiceflow/libs/commit/97e37f6aa773b7a26892a8a218ab5767715a6398))
+
+
+
+
+
 ## [3.20.16](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.20.15...@voiceflow/voiceflow-types@3.20.16) (2022-10-21)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
