@@ -32,6 +32,10 @@ export interface Settings<Prompt = unknown> {
   session: Session<Prompt>;
   defaultCanvasNodeVisibility: Nullable<Utils.CanvasNodeVisibility>;
   defaultCarouselLayout?: Nullable<CarouselLayout>;
+
+  globalNoMatch?: Nullable<Prompt> | undefined;
+  globalNoReply?: Nullable<Prompt> | undefined;
+  globalNoReplyDelay?: Nullable<number> | undefined;
 }
 
 export const defaultSettings = <Prompt>({
@@ -40,10 +44,18 @@ export const defaultSettings = <Prompt>({
   session = { type: SessionType.RESTART },
   defaultCanvasNodeVisibility = null,
   defaultCarouselLayout = null,
+
+  globalNoMatch,
+  globalNoReply,
+  globalNoReplyDelay,
 }: Partial<Settings<Prompt>> = {}): Settings<Prompt> => ({
   error,
   repeat,
   session,
   defaultCanvasNodeVisibility,
   defaultCarouselLayout,
+
+  globalNoMatch,
+  globalNoReply,
+  globalNoReplyDelay,
 });
