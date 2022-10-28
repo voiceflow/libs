@@ -1,10 +1,13 @@
 {
-  "name": "@voiceflow/exception",
-  "description": "Voiceflow standard exceptions and error codes",
+  "name": "@voiceflow/fetch",
+  "description": "Voiceflow fetch wrapper and error handling for SDKs",
   "version": "1.0.0",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
+  },
+  "devDependencies": {
+    "@voiceflow/exception": "1.0.0"
   },
   "files": [
     "build"
@@ -16,6 +19,9 @@
   "license": "ISC",
   "main": "build/cjs/main.js",
   "module": "build/esm/main.js",
+  "peerDependencies": {
+    "@voiceflow/exception": "^1"
+  },
   "publishConfig": {
     "access": "public",
     "types": "build/cjs/main.d.ts"
