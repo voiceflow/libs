@@ -10,6 +10,8 @@ export class ClientException extends Error implements ErrorPayload {
 
   public statusCode: number;
 
+  public statusText: string;
+
   public errorCode?: ErrorCode;
 
   public cause?: string;
@@ -18,29 +20,32 @@ export class ClientException extends Error implements ErrorPayload {
 
   constructor(response: Response) {
     super();
+    this.name = this.constructor.name;
     this.response = response.clone();
     this.statusCode = response.status;
-    this.applyResponse(response);
+    this.statusText = response.statusText;
   }
 
-  private async applyDetailedError(response: Response, body: Partial<ErrorPayload>) {
-    this.message = body.message || response.statusText;
+  private extractDetailedError(body: Partial<ErrorPayload>) {
+    this.message = body.message || this.response.statusText;
     if (body.cause) this.cause = body.cause;
     if (body.details) this.details = body.details;
     if (body.errorCode) this.errorCode = body.errorCode;
   }
 
-  private async applyOpaqueError(response: Response, text: string) {
-    this.message = text || response.statusText;
+  private extractOpaqueError(text: string) {
+    this.message = text || this.response.statusText;
   }
 
-  private async applyResponse(response: Response) {
-    const text = await response.text();
+  public async build() {
+    const text = await this.response.text();
 
     try {
-      await this.applyDetailedError(response, JSON.parse(text));
+      this.extractDetailedError(JSON.parse(text));
     } catch {
-      await this.applyOpaqueError(response, text);
+      this.extractOpaqueError(text);
     }
+
+    return this;
   }
 }

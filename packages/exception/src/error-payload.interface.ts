@@ -1,24 +1,16 @@
-import { ErrorCode } from './error-code.enum';
+import { BaseError } from './base-error.interface';
 
-export interface ErrorPayload {
+export interface ErrorPayload extends BaseError {
   /**
    * standard HTTP status code
    */
   statusCode: number;
   /**
-   * message describing this error
+   * textual representation of HTTP status code
    */
-  message: string;
-  /**
-   * platform-internal error code
-   */
-  errorCode?: ErrorCode;
+  statusText: string;
   /**
    * message from the internal error that caused the error response
    */
   cause?: string;
-  /**
-   * additional details attached to the error
-   */
-  details?: object;
 }

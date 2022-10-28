@@ -1,10 +1,7 @@
-import { ErrorCode } from './error-code.enum';
+import { BaseError } from './base-error.interface';
 
-export interface ErrorMessageWithDetails {
-  message: string;
-  details: object;
-  code?: ErrorCode;
-  error?: Error;
+export interface DetailedErrorMessage extends BaseError {
+  cause?: Error;
 }
 
-export type ErrorMessage = string | Error | ErrorMessageWithDetails;
+export type ErrorMessage = string | Error | DetailedErrorMessage;
