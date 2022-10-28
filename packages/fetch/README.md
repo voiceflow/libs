@@ -1,4 +1,3 @@
-# exception
+# fetch
 
-Voiceflow standard exceptions and error codes
-
+Voiceflow fetch wrapper and error handling for SDKs
