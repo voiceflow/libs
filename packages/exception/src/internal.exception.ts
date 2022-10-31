@@ -58,7 +58,7 @@ export class InternalException extends Error implements BaseError {
 
   public details?: object;
 
-  constructor(msg: ErrorMessage = 'Unexpected Error') {
+  constructor(msg?: ErrorMessage) {
     const data = InternalException.extractData(msg);
 
     super(data.message);

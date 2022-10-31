@@ -16,7 +16,7 @@ export const createHTTPException = (statusCode: HTTPStatus, statusText: string):
     }
   }
 
-  Object.defineProperty(NamedHTTPException, 'name', `${statusText.replace(WHITESPACE_PATTERN, '')}Exception`);
+  Object.defineProperty(NamedHTTPException, 'name', { value: `${statusText.replace(WHITESPACE_PATTERN, '')}Exception` });
 
   return NamedHTTPException;
 };

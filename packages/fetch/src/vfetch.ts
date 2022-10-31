@@ -1,9 +1,12 @@
 import { ClientException } from '@voiceflow/exception';
 
-type FetchAPI = WindowOrWorkerGlobalScope['fetch'];
+export type FetchAPI<Request, RequestInit, Response> = (input: string | URL | Request, init?: RequestInit) => Promise<Response>;
 
-export const vfetch =
-  (fetch?: FetchAPI): FetchAPI =>
+export const vfetch: {
+  (): FetchAPI<Request, RequestInit, Response>;
+  <Request, RequestInit, Response>(fetch: FetchAPI<Request, RequestInit, Response>): FetchAPI<Request, RequestInit, Response>;
+} =
+  (fetch?: FetchAPI<any, any, any>): FetchAPI<any, any, any> =>
   async (...args) => {
     const response = await (fetch ?? window.fetch)(...args);
 

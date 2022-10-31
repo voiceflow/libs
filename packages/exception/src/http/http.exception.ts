@@ -15,6 +15,7 @@ export class HTTPException extends InternalException {
 
   constructor(statusCode: number, statusText: string, msg: ErrorMessage = statusText) {
     super(msg);
+    this.message ||= statusText;
     this.statusCode = statusCode;
     this.statusText = statusText;
     this.response = this.createResponse();
