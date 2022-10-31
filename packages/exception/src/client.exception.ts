@@ -37,6 +37,10 @@ export class ClientException extends Error implements ErrorPayload {
     this.message = text || this.response.statusText;
   }
 
+  public getCause() {
+    return this.cause;
+  }
+
   public async build() {
     const text = await this.response.text();
 

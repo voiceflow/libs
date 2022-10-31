@@ -20,7 +20,9 @@ export class HTTPException extends InternalException {
     this.response = this.createResponse();
   }
 
-  private createResponse(): ErrorPayload {
+  public createResponse(): ErrorPayload {
+    const cause = this.getCause();
+
     return {
       message: this.message,
       statusCode: this.statusCode,
@@ -28,7 +30,7 @@ export class HTTPException extends InternalException {
 
       ...(this.details && { details: this.details }),
       ...(this.errorCode && { errorCode: this.errorCode }),
-      ...(this.cause?.message && { cause: this.cause.message }),
+      ...(cause && { cause }),
     };
   }
 }
