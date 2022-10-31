@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.21.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.20.20...@voiceflow/voiceflow-types@3.21.0) (2022-10-31)
+
+
+### Features
+
+* webchat platform type (CT-1131) ([#382](https://github.com/voiceflow/libs/issues/382)) ([0ee6e0d](https://github.com/voiceflow/libs/commit/0ee6e0d1737909d11c42e0b14eff827bebcf19e8))
+
+
+
+
+
 ## [3.20.20](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.20.19...@voiceflow/voiceflow-types@3.20.20) (2022-10-25)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
