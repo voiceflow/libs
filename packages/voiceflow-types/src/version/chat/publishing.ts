@@ -16,7 +16,7 @@ export interface ChatPublishing extends BaseVersion.Publishing {
   image?: string;
   color?: string;
   avatar?: string;
-  spacing?: { side: number; bottom: number };
+  spacing?: { side?: number; bottom?: number };
   launcher?: string;
   position?: ChatPosition;
   watermark?: boolean;
