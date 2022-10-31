@@ -10,6 +10,7 @@ export enum PlatformType {
   LEX = 'lex',
   EINSTEIN = 'einstein',
   NUANCE_MIX = 'nuance-mix',
+  WEBCHAT = 'webchat',
 
   /** @deprecated use VOICEFLOW instead */
   IVR = 'ivr',
