@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.21.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.21.0...@voiceflow/voiceflow-types@3.21.1) (2022-11-07)
+
+
+### Bug Fixes
+
+* new platform types (CT-000) ([#383](https://github.com/voiceflow/libs/issues/383)) ([037c526](https://github.com/voiceflow/libs/commit/037c52613d383380fba583b8942ff492c1792ede))
+
+
+
+
+
 # [3.21.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.20.20...@voiceflow/voiceflow-types@3.21.0) (2022-10-31)
 
 
