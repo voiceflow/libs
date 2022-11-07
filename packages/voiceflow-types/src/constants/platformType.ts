@@ -11,6 +11,8 @@ export enum PlatformType {
   EINSTEIN = 'einstein',
   NUANCE_MIX = 'nuance-mix',
   WEBCHAT = 'webchat',
+  MICROSOFT_TEAMS = 'microsoft_teams',
+  WHATSAPP = 'whatsapp',
 
   /** @deprecated use VOICEFLOW instead */
   IVR = 'ivr',
