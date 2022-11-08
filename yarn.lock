@@ -1921,10 +1921,10 @@
   resolved "https://registry.yarnpkg.com/@ungap/promise-all-settled/-/promise-all-settled-1.1.2.tgz#aa58042711d6e3275dd37dc597e5d31e8c290a44"
   integrity sha512-sL/cEvJWAnClXw0wHk85/2L0G6Sj8UB0Ctc1TEMbKSsmpRosqhwj9gWgFRZSrBr2f9tiXISwNhCPmlfqUqyb9Q==
 
-"@voiceflow/commitlint-config@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/commitlint-config/-/commitlint-config-2.0.0.tgz#ca90141f90620e1ab3477c7056f1fa88f0db8c6f"
-  integrity sha512-zSsQ6s6rOWaYZTeLcqs7ZdKYS1WaU8f3CGk6LIHkQZhJ+fjHRv/y0njRIiFTKKQjUOi3wK+QFtx4tzUXUS6nBw==
+"@voiceflow/commitlint-config@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@voiceflow/commitlint-config/-/commitlint-config-2.0.1.tgz#5559d875b543af2d823914f9c240905cb11d886f"
+  integrity sha512-Ien7RkDIRy9+msMlYIt2wLUlLLglxCqYRvyp5+O4On/LY9LU+xy5az4OAvf1Y+p71IgE9x5AwRguA+WOIsj0GA==
   dependencies:
     "@commitlint/config-conventional" "16.0.0"
 
