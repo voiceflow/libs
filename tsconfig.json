@@ -20,6 +20,9 @@
       "path": "packages/common/tsconfig.build.json"
     },
     {
+      "path": "packages/exception/tsconfig.build.json"
+    },
+    {
       "path": "packages/google-dfes-types/tsconfig.build.json"
     },
     {

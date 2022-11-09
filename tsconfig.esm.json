@@ -17,6 +17,9 @@
       "path": "packages/common/tsconfig.esm.json"
     },
     {
+      "path": "packages/exception/tsconfig.esm.json"
+    },
+    {
       "path": "packages/google-dfes-types/tsconfig.esm.json"
     },
     {
