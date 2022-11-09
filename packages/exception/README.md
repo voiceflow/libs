@@ -8,6 +8,8 @@ Voiceflow standard exceptions and error codes
 yarn add @voiceflow/exception
 ```
 
+![image](https://user-images.githubusercontent.com/3784470/200739313-495941eb-dab0-4801-87ae-182f1c43ff9e.png)
+
 ## Usage
 
 ### HTTP Exceptions
