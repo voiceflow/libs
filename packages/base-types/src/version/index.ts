@@ -6,6 +6,7 @@ import { defaultSettings, Settings } from './settings';
 
 export * from './publishing';
 export * from './settings';
+export * from './tag';
 
 export interface PlatformData<Prompt = unknown> extends VersionModels.PlatformData<Settings<Prompt>, Publishing> {}
 
