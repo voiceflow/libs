@@ -7,7 +7,9 @@
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "devDependencies": {
-    "@voiceflow/exception": "1.0.0"
+    "@voiceflow/exception": "1.1.0",
+    "fetch-mock": "^9.11.0",
+    "undici": "5.12.0"
   },
   "files": [
     "build"
@@ -41,10 +43,12 @@
     "lint:quiet": "yarn lint --quiet",
     "lint:report": "eslint-output --quiet '**/*.{js,ts}'",
     "tdd": "yarn test --watch",
-    "test": "exit 0",
+    "test": "yarn test:run",
     "test:dependencies": "depcheck",
-    "test:integration": "exit 0",
-    "test:unit": "exit 0"
+    "test:integration": "yarn test:run",
+    "test:run": "NODE_ENV=test nyc ts-mocha --paths --config config/test/mocharc.yml 'src/**/*.test.ts'",
+    "test:single": "NODE_ENV=test ts-mocha --paths --config config/test/mocharc.yml",
+    "test:unit": "yarn test:run"
   },
   "types": "build/cjs/main.d.ts"
 }

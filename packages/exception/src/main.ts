@@ -1,4 +1,5 @@
 export * from './base-error.interface';
+export * from './base-response.interface';
 export * from './client.exception';
 export * from './error-code.enum';
 export * from './error-message.interface';

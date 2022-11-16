@@ -6,7 +6,7 @@
       "dom"
     ],
     "baseUrl": ".",
-    "rootDir": "src",
+    "rootDir": ".",
     "outDir": "build/cjs",
     "paths": {
       "@fetch/*": ["src/*"]
