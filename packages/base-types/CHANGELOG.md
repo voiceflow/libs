@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.73.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.73.0...@voiceflow/base-types@2.73.1) (2022-11-18)
+
+
+### Bug Fixes
+
+* add customThemes back (CT-000) ([534d317](https://github.com/voiceflow/libs/commit/534d31717cf6cacb42300155ea17321d08129740))
+
+
+
+
+
 # [2.73.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.72.0...@voiceflow/base-types@2.73.0) (2022-11-18)
 
 
