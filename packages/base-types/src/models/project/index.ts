@@ -3,6 +3,7 @@ import { AnyRecord } from '@voiceflow/common';
 import { LinkType } from '../base/link';
 import { Member } from './member';
 import { Prototype } from './prototype';
+import { Themes } from './theme';
 
 export { LinkType } from '../base/link';
 export * from './member';
@@ -41,6 +42,7 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   prototype?: Prototype;
   apiPrivacy?: Privacy;
   reportTags?: Record<string, ReportTag>;
+  customThemes: Themes;
   canvasUpdatedAt?: string;
   canvasUpdatedByCreatorID?: number;
 
