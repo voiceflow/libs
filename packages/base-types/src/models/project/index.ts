@@ -3,7 +3,6 @@ import { AnyRecord } from '@voiceflow/common';
 import { LinkType } from '../base/link';
 import { Member } from './member';
 import { Prototype } from './prototype';
-import { Themes } from './theme';
 
 export { LinkType } from '../base/link';
 export * from './member';
@@ -36,13 +35,14 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   type?: string; // chat | voice | etc
   image?: string;
   privacy?: Privacy;
-  apiPrivacy?: Privacy;
   platform: string; // voiceflow | alexa | google | etc
+  stickers?: Sticker[];
   linkType?: LinkType;
   prototype?: Prototype;
+  apiPrivacy?: Privacy;
   reportTags?: Record<string, ReportTag>;
-  customThemes: Themes;
-  stickers?: Sticker[];
+  canvasUpdatedAt?: string;
+  canvasUpdatedByCreatorID?: number;
 
   members: Member<MemberPlatformData>[];
   platformData: PlatformData;
