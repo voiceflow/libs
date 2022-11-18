@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.73.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.72.0...@voiceflow/base-types@2.73.0) (2022-11-18)
+
+
+### Bug Fixes
+
+* export version tag (PL-000) ([#390](https://github.com/voiceflow/libs/issues/390)) ([93a6da7](https://github.com/voiceflow/libs/commit/93a6da7be105a159ca94efa708dd85a277be429b))
+
+
+### Features
+
+* add canvas updated fields (CT-000) ([11a8881](https://github.com/voiceflow/libs/commit/11a8881b876007d801e803a497a424026973f87c))
+
+
+
+
+
 # [2.72.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.71.3...@voiceflow/base-types@2.72.0) (2022-11-11)
 
 
