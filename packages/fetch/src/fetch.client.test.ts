@@ -177,6 +177,16 @@ describe('Fetch Client', () => {
 
       expect(sandbox.done()).to.be.true;
     });
+
+    it('should not prefix request using URL instance', async () => {
+      const url = new NodeURL(TARGET_URL);
+      const fetchSpy = sinon.spy<NodeFetch>(async () => new undici.Response());
+      const fetchClient = new FetchClient(fetchSpy, { baseURL: 'http://foo.com/' });
+
+      await fetchClient.get(url);
+
+      expect(fetchSpy).to.be.calledWithExactly(url, { method: 'get', headers: {}, body: undefined });
+    });
   });
 
   describe('error handling', () => {

@@ -94,6 +94,15 @@ const fetch = new FetchClient({ baseURL: 'http://example.com/' });
 fetch.get('foo'); // GET http://example.com/foo
 ```
 
+If you make a request using a `URL` instance then the `baseURL` option will be ignored.
+
+```ts
+const fetch = new FetchClient({ baseURL: 'http://example.com/' });
+const url = new URL('http://foo.com/bar');
+
+fetch.get(url); // GET http://foo.com/bar
+```
+
 ### Throws on non-2xx
 
 If any non-`2xx` HTTP status is returned then a `ClientException` from `@voiceflow/exception` is thrown.

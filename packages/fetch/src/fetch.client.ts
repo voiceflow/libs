@@ -34,7 +34,8 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
       body = JSON.stringify(json);
     }
 
-    const response = await this.raw(`${this.config.baseURL ?? ''}${url}`, { ...options, headers, body } as Opts);
+    const finalURL = typeof url === 'string' ? `${this.config.baseURL ?? ''}${url}` : url;
+    const response = await this.raw(finalURL, { ...options, headers, body } as Opts);
 
     if (!response.ok) {
       throw await new ClientException(response).build();
