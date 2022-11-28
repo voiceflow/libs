@@ -166,7 +166,7 @@ describe('Fetch Client', () => {
     });
   });
 
-  describe('#options.baseURL', () => {
+  describe('#config.baseURL', () => {
     it('should prefix request URL with provided baseURL option', async () => {
       const baseURL = 'http://example.com/';
       const path = 'foo/bar';
