@@ -1,0 +1,54 @@
+{
+  "name": "@voiceflow/fetch",
+  "description": "Voiceflow fetch wrapper and error handling for SDKs",
+  "version": "1.0.0",
+  "author": "Voiceflow",
+  "bugs": {
+    "url": "https://github.com/voiceflow/libs/issues"
+  },
+  "devDependencies": {
+    "@voiceflow/exception": "1.1.0",
+    "fetch-mock": "^9.11.0",
+    "undici": "5.12.0"
+  },
+  "files": [
+    "build"
+  ],
+  "homepage": "https://github.com/voiceflow/libs#readme",
+  "keywords": [
+    "voiceflow"
+  ],
+  "license": "ISC",
+  "main": "build/cjs/main.js",
+  "module": "build/esm/main.js",
+  "peerDependencies": {
+    "@voiceflow/exception": "^1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "types": "build/cjs/main.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voiceflow/libs.git"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn build:cjs && yarn build:esm",
+    "build:cjs": "ttsc --build tsconfig.build.json",
+    "build:esm": "ttsc --build tsconfig.esm.json",
+    "clean": "rimraf build",
+    "commit": "cz",
+    "lint": "eslint '**/*.{js,ts}'",
+    "lint:fix": "yarn lint --fix",
+    "lint:quiet": "yarn lint --quiet",
+    "lint:report": "eslint-output --quiet '**/*.{js,ts}'",
+    "tdd": "yarn test --watch",
+    "test": "yarn test:run",
+    "test:dependencies": "depcheck",
+    "test:integration": "yarn test:run",
+    "test:run": "NODE_ENV=test nyc ts-mocha --paths --config config/test/mocharc.yml 'src/**/*.test.ts'",
+    "test:single": "NODE_ENV=test ts-mocha --paths --config config/test/mocharc.yml",
+    "test:unit": "yarn test:run"
+  },
+  "types": "build/cjs/main.d.ts"
+}

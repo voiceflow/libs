@@ -1,0 +1,16 @@
+{
+  "extends": "@voiceflow/tsconfig/monorepo.json",
+  "compilerOptions": {
+    "lib": [
+      "es2019",
+      "dom"
+    ],
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "build/cjs",
+    "paths": {
+      "@fetch/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules", "build"]
+}

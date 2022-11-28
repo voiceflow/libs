@@ -23,6 +23,9 @@
       "path": "packages/exception/tsconfig.build.json"
     },
     {
+      "path": "packages/fetch/tsconfig.build.json"
+    },
+    {
       "path": "packages/google-dfes-types/tsconfig.build.json"
     },
     {
