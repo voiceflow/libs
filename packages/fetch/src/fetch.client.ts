@@ -1,11 +1,27 @@
 import { ClientException } from '@voiceflow/exception';
 
+import { ClientConfiguration } from './client-configuration.interface';
 import { FetchAPI, FetchOptions, FetchResponse } from './fetch.interface';
 import { HTTPMethod } from './http-method.enum';
 import { RequestOptions } from './request-options.interface';
 
 export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req = URL | Request, Res extends FetchResponse = Response> {
-  constructor(private readonly fetch?: FetchAPI<Opts, Req, Res>) {}
+  private readonly config: ClientConfiguration;
+
+  private readonly fetch: FetchAPI<Opts, Req, Res> | undefined;
+
+  /* eslint-disable lines-between-class-members */
+  constructor(config?: ClientConfiguration);
+  constructor(fetch: FetchAPI<Opts, Req, Res>, options?: ClientConfiguration);
+  constructor(fetchOrConfig?: FetchAPI<Opts, Req, Res> | ClientConfiguration, config?: ClientConfiguration) {
+    if (typeof fetchOrConfig === 'function') {
+      this.fetch = fetchOrConfig;
+      this.config = config ?? {};
+    } else {
+      this.config = fetchOrConfig ?? {};
+    }
+  }
+  /* eslint-enable lines-between-class-members */
 
   private async send(url: string | Req, rawOptions: RequestOptions<Opts>) {
     const { json, ...options } = rawOptions;
@@ -18,7 +34,8 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
       body = JSON.stringify(json);
     }
 
-    const response = await this.raw(url, { ...options, headers, body } as Opts);
+    const finalURL = typeof url === 'string' ? `${this.config.baseURL ?? ''}${url}` : url;
+    const response = await this.raw(finalURL, { ...options, headers, body } as Opts);
 
     if (!response.ok) {
       throw await new ClientException(response).build();
