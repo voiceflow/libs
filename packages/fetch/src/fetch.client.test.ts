@@ -166,6 +166,19 @@ describe('Fetch Client', () => {
     });
   });
 
+  describe('#options.baseURL', () => {
+    it('should prefix request URL with provided baseURL option', async () => {
+      const baseURL = 'http://example.com/';
+      const path = 'foo/bar';
+      const fetch = new FetchClient(sandbox, { baseURL });
+      sandbox.get(`${baseURL}${path}`, 200);
+
+      await fetch.get(path);
+
+      expect(sandbox.done()).to.be.true;
+    });
+  });
+
   describe('error handling', () => {
     it('should throw ClientException on non-2xx status code', async () => {
       const fetch = new FetchClient(sandbox);

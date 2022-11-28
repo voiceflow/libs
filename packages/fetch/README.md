@@ -20,7 +20,7 @@ This is a universal library and can be used in the browser or in a Node.JS envir
 ```ts
 import { FetchClient } from '@voiceflow/fetch';
 
-const fetch = new FetchClient();
+const fetch = new FetchClient({ /* options */ });
 ```
 
 ### Node Usage
@@ -29,8 +29,12 @@ const fetch = new FetchClient();
 import { FetchClient } from '@voiceflow/fetch';
 import * as undici from 'undici';
 
-const fetch = new FetchClient(undici.fetch);
+const fetch = new FetchClient(undici.fetch, { /* options */ });
 ```
+
+## Options
+
+- __`baseURL`__ (`string`): this will be added as a prefix to the URL of all requests
 
 ## Features
 
@@ -78,6 +82,16 @@ fetch.head('/foo');   // HEAD   /foo
 fetch.patch('/foo');  // PATCH  /foo
 fetch.post('/foo');   // POST   /foo
 fetch.put('/foo');    // PUT    /foo
+```
+
+### Base URL
+
+Specify a base URL which should be used to build every request.
+
+```ts
+const fetch = new FetchClient({ baseURL: 'http://example.com/' });
+
+fetch.get('foo'); // GET http://example.com/foo
 ```
 
 ### Throws on non-2xx
