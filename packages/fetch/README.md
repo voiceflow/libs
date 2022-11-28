@@ -20,7 +20,7 @@ This is a universal library and can be used in the browser or in a Node.JS envir
 ```ts
 import { FetchClient } from '@voiceflow/fetch';
 
-const fetch = new FetchClient({ /* options */ });
+const fetch = new FetchClient({ /* config */ });
 ```
 
 ### Node Usage
@@ -29,10 +29,10 @@ const fetch = new FetchClient({ /* options */ });
 import { FetchClient } from '@voiceflow/fetch';
 import * as undici from 'undici';
 
-const fetch = new FetchClient(undici.fetch, { /* options */ });
+const fetch = new FetchClient(undici.fetch, { /* config */ });
 ```
 
-## Options
+## Configuration
 
 - __`baseURL`__ (`string`): this will be added as a prefix to the URL of all requests
 
