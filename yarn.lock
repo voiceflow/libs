@@ -2175,6 +2175,14 @@
   resolved "https://registry.yarnpkg.com/@ungap/promise-all-settled/-/promise-all-settled-1.1.2.tgz#aa58042711d6e3275dd37dc597e5d31e8c290a44"
   integrity sha512-sL/cEvJWAnClXw0wHk85/2L0G6Sj8UB0Ctc1TEMbKSsmpRosqhwj9gWgFRZSrBr2f9tiXISwNhCPmlfqUqyb9Q==
 
+"@voiceflow/base-types@^2.74.0":
+  version "2.74.0"
+  resolved "https://registry.yarnpkg.com/@voiceflow/base-types/-/base-types-2.74.0.tgz#f45843e235f5c728206baac12122f8369363c40a"
+  integrity sha512-B4JJfq/FE8+SOyFckRHxjX8wXq7pzcCA31mj/WNYIDxy/ApiJHmOUljlZMwO1iReBey66yuXJbSw3gV+zkP0BA==
+  dependencies:
+    "@voiceflow/common" "^8.1.5"
+    slate "0.73.0"
+
 "@voiceflow/commitlint-config@2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@voiceflow/commitlint-config/-/commitlint-config-2.0.1.tgz#5559d875b543af2d823914f9c240905cb11d886f"

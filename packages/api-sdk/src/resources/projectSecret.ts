@@ -16,7 +16,7 @@ class ProjectSecretResource extends BaseResource<ProjectSecretResource> {
     return data;
   }
 
-  public async lookup(lookup: string, tag: number): Promise<BaseModels.ProjectSecret.Model[]> {
+  public async find(lookup: string, tag: number): Promise<BaseModels.ProjectSecret.Model[]> {
     const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model[]>(
       `${this.endpoint}/secret?lookup=${encodeURIComponent(lookup)}&tag=${tag}`
     );
