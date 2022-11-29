@@ -10,8 +10,8 @@ class ProjectSecretResource extends BaseResource<ProjectSecretResource> {
     super({ fetch, clazz: ProjectSecretResource, endpoint: ENDPOINT });
   }
 
-  public async findByProjectID(projectID: string, tag: number): Promise<string> {
-    const { data } = await this.fetch.get<string>(`${this.endpoint}/${projectID}/secret/${tag}`);
+  public async findByProjectID(projectID: string, tag: number): Promise<BaseModels.ProjectSecret.Model> {
+    const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model>(`${this.endpoint}/${projectID}/secret/${tag}`);
 
     return data;
   }
