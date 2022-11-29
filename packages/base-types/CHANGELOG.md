@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.74.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.73.1...@voiceflow/base-types@2.74.0) (2022-11-29)
+
+
+### Features
+
+* add new project secret model (PL-296) ([#392](https://github.com/voiceflow/libs/issues/392)) ([c435262](https://github.com/voiceflow/libs/commit/c4352622e347fee259c0b72bc7ca68868b8e48e6))
+
+
+
+
+
 ## [2.73.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.73.0...@voiceflow/base-types@2.73.1) (2022-11-18)
 
 
