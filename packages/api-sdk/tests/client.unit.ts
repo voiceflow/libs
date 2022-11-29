@@ -1,10 +1,22 @@
 import { Client } from '@api-sdk/client';
 import Fetch from '@api-sdk/fetch';
-import { Analytics, APIKey, Diagram, Note, Program, Project, PrototypeProgram, User, VariableState, Version } from '@api-sdk/resources';
+import {
+  Analytics,
+  APIKey,
+  Diagram,
+  Note,
+  Program,
+  Project,
+  ProjectSecret,
+  PrototypeProgram,
+  User,
+  VariableState,
+  Version,
+} from '@api-sdk/resources';
 import { expect } from 'chai';
 import JWT from 'jsonwebtoken';
 
-const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, Version, User, APIKey, Analytics, VariableState, Note];
+const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, ProjectSecret, Version, User, APIKey, Analytics, VariableState, Note];
 
 const USER_HASH = 'UserHash_16chars';
 const createClient = (authorization?: string) =>
@@ -24,6 +36,12 @@ describe('Client', () => {
     const client = createClient();
 
     expect(client.project).to.be.instanceOf(Project);
+  });
+
+  it('.project secret', () => {
+    const client = createClient();
+
+    expect(client.projectSecret).to.be.instanceOf(ProjectSecret);
   });
 
   it('.version', () => {

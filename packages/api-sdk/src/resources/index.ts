@@ -4,6 +4,7 @@ export { default as Diagram } from './diagram';
 export { default as Note } from './note';
 export { default as Program } from './program';
 export { default as Project } from './project';
+export { default as ProjectSecret } from './projectSecret';
 export { default as PrototypeProgram } from './prototypeProgram';
 export { default as User } from './user';
 export { default as VariableState } from './variableState';
