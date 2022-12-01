@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.2.0...@voiceflow/fetch@1.3.0) (2022-12-01)
+
+
+### Features
+
+* add Map support for headers in fetch request options (vf-000) ([#395](https://github.com/voiceflow/libs/issues/395)) ([b7f9b31](https://github.com/voiceflow/libs/commit/b7f9b319170bee42642a56f02b091d463d959343))
+
+
+
+
+
 # [1.2.0](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.1.0...@voiceflow/fetch@1.2.0) (2022-11-28)
 
 
