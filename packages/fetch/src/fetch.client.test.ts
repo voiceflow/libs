@@ -93,28 +93,6 @@ describe('Fetch Client', () => {
     });
   });
 
-  describe('request options', () => {
-    it('should accept headers as a Map', async () => {
-      const fetch = new FetchClient(sandbox);
-      const headers = new Map([['foo', 'bar']]);
-      sandbox.get({ url: TARGET_URL, headers: { foo: 'bar' } }, 200);
-
-      await fetch.get(TARGET_URL, { headers });
-
-      expect(sandbox.done()).to.be.true;
-    });
-
-    it('should accept headers as an object', async () => {
-      const fetch = new FetchClient(sandbox);
-      const headers = { foo: 'bar' };
-      sandbox.get({ url: TARGET_URL, headers }, 200);
-
-      await fetch.get(TARGET_URL, { headers });
-
-      expect(sandbox.done()).to.be.true;
-    });
-  });
-
   describe('#delete()', () => {
     it('should send DELETE request', async () => {
       const fetch = new FetchClient(sandbox);
@@ -208,6 +186,28 @@ describe('Fetch Client', () => {
       await fetchClient.get(url);
 
       expect(fetchSpy).to.be.calledWithExactly(url, { method: 'get', headers: {}, body: undefined });
+    });
+  });
+
+  describe('request options', () => {
+    it('should accept headers as a Map', async () => {
+      const fetch = new FetchClient(sandbox);
+      const headers = new Map([['foo', 'bar']]);
+      sandbox.get({ url: TARGET_URL, headers: { foo: 'bar' } }, 200);
+
+      await fetch.get(TARGET_URL, { headers });
+
+      expect(sandbox.done()).to.be.true;
+    });
+
+    it('should accept headers as an object', async () => {
+      const fetch = new FetchClient(sandbox);
+      const headers = { foo: 'bar' };
+      sandbox.get({ url: TARGET_URL, headers }, 200);
+
+      await fetch.get(TARGET_URL, { headers });
+
+      expect(sandbox.done()).to.be.true;
     });
   });
 

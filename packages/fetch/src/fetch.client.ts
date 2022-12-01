@@ -6,7 +6,7 @@ import { HTTPMethod } from './http-method.enum';
 import { RequestOptions } from './request-options.interface';
 
 export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req = URL | Request, Res extends FetchResponse = Response> {
-  static extractHeaders(headers: FetchOptions<any, any>['headers']) {
+  private static extractHeaders(headers: FetchOptions<any, any>['headers']) {
     if (headers instanceof Map) return new Map(headers);
 
     return new Map(Object.entries(headers));
