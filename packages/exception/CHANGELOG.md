@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/exception@1.2.0...@voiceflow/exception@1.3.0) (2022-12-01)
+
+
+### Features
+
+* add integration errors (PL-304) ([#394](https://github.com/voiceflow/libs/issues/394)) ([d3258e9](https://github.com/voiceflow/libs/commit/d3258e9a048c4dcb024fce716adfd0e8d17adf04))
+
+
+
+
+
 # [1.2.0](https://github.com/voiceflow/libs/compare/@voiceflow/exception@1.1.1...@voiceflow/exception@1.2.0) (2022-11-28)
 
 
