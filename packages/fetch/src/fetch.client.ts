@@ -6,6 +6,12 @@ import { HTTPMethod } from './http-method.enum';
 import { RequestOptions } from './request-options.interface';
 
 export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req = URL | Request, Res extends FetchResponse = Response> {
+  private static extractHeaders(headers: FetchOptions<any, any>['headers']) {
+    if (headers instanceof Map) return new Map(headers);
+
+    return new Map(Object.entries(headers));
+  }
+
   private readonly config: ClientConfiguration;
 
   private readonly fetch: FetchAPI<Opts, Req, Res> | undefined;
@@ -26,16 +32,20 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
   private async send(url: string | Req, rawOptions: RequestOptions<Opts>) {
     const { json, ...options } = rawOptions;
 
-    const headers: Record<string, string> = { ...options.headers };
+    const headers = new Map(options.headers && FetchClient.extractHeaders(options.headers));
     let { body } = options;
 
     if (json != null) {
-      headers['content-type'] = 'application/json';
+      headers.set('content-type', 'application/json');
       body = JSON.stringify(json);
     }
 
     const finalURL = typeof url === 'string' ? `${this.config.baseURL ?? ''}${url}` : url;
-    const response = await this.raw(finalURL, { ...options, headers, body } as Opts);
+    const response = await this.raw(finalURL, {
+      ...options,
+      headers: Object.fromEntries(headers.entries()),
+      body,
+    } as Opts);
 
     if (!response.ok) {
       throw await new ClientException(response).build();
