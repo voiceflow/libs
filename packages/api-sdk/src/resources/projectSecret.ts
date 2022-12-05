@@ -24,6 +24,10 @@ class ProjectSecretResource extends BaseResource<ProjectSecretResource> {
     return data;
   }
 
+  public async updateManySecrets(projectID: string, secrets: Pick<ProjectSecret, 'secret' | 'tag' | 'lookup'>[]) {
+    await this.fetch.post(`${this.endpoint}/${projectID}/secret`, { secrets });
+  }
+
   public async create(projectID: string, tag: number, secret: string, lookup?: string): Promise<BaseModels.ProjectSecret.Model> {
     const { data } = await this.fetch.post<BaseModels.ProjectSecret.Model>(`${this.endpoint}/${projectID}/secret/${tag}`, { secret, lookup });
 
