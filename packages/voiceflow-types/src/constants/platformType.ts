@@ -13,6 +13,7 @@ export enum PlatformType {
   WEBCHAT = 'webchat',
   MICROSOFT_TEAMS = 'microsoft_teams',
   WHATSAPP = 'whatsapp',
+  SMS = 'sms',
 
   /** @deprecated use VOICEFLOW instead */
   IVR = 'ivr',
