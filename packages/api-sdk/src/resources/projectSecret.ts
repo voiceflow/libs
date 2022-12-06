@@ -16,6 +16,12 @@ class ProjectSecretResource extends BaseResource<ProjectSecretResource> {
     return data;
   }
 
+  public async findManyByProjectID(projectID: string, tags: number[]) {
+    const tagsQuery = tags.join(',');
+    const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model[]>(`${this.endpoint}/${projectID}/secret?tags=${tagsQuery}`);
+    return data;
+  }
+
   public async findByLookup(lookup: string, tag: number): Promise<BaseModels.ProjectSecret.Model[]> {
     const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model[]>(
       `${this.endpoint}/secret?lookup=${encodeURIComponent(lookup)}&tag=${tag}`
