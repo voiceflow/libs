@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.21.5...@voiceflow/voiceflow-types@3.22.0) (2022-12-06)
+
+
+### Features
+
+* add sms channel (PL-304) ([#397](https://github.com/voiceflow/libs/issues/397)) ([2b31848](https://github.com/voiceflow/libs/commit/2b31848a1f2991aafae9f5f8396b53bbfeb4e324))
+
+
+
+
+
 ## [3.21.5](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.21.4...@voiceflow/voiceflow-types@3.21.5) (2022-11-29)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
