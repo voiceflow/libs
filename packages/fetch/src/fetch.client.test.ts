@@ -105,6 +105,18 @@ describe('Fetch Client', () => {
   });
 
   describe('#get()', () => {
+    it('should support url search params', async () => {
+      const expectedURL = `${TARGET_URL}?test=encode+this%26`;
+      const fetch = new FetchClient(sandbox);
+      sandbox.get(expectedURL, { status: 200 });
+
+      await fetch.get(TARGET_URL, {
+        searchParams: { test: 'encode this&' },
+      });
+
+      expect(sandbox.done()).to.be.true;
+    });
+
     it('should send GET request', async () => {
       const data = { foo: 'bar' };
       const fetch = new FetchClient(sandbox);

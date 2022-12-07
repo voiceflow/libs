@@ -3,13 +3,25 @@ import { ClientException } from '@voiceflow/exception';
 import { ClientConfiguration } from './client-configuration.interface';
 import { FetchAPI, FetchOptions, FetchResponse } from './fetch.interface';
 import { HTTPMethod } from './http-method.enum';
-import { RequestOptions } from './request-options.interface';
+import { ExtraOptions, RequestOptions } from './request-options.interface';
 
 export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req = URL | Request, Res extends FetchResponse = Response> {
-  private static extractHeaders(headers: FetchOptions<any, any>['headers']) {
+  private static extractHeaders(headers: ExtraOptions['headers']) {
     if (headers instanceof Map) return new Map(headers);
 
-    return new Map(Object.entries(headers));
+    return new Map(Object.entries(headers ?? {}));
+  }
+
+  private static extractSearchParams(searchParams: ExtraOptions['searchParams']) {
+    if (searchParams instanceof Map) return new URLSearchParams(Object.entries(searchParams));
+
+    return new URLSearchParams(searchParams);
+  }
+
+  private static formatURL(baseURL: string | undefined, path: string, searchParams: URLSearchParams) {
+    const url = new URL(path, baseURL);
+    searchParams.forEach((value, key) => url.searchParams.append(key, value));
+    return url.href;
   }
 
   private readonly config: ClientConfiguration;
@@ -33,6 +45,7 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
     const { json, ...options } = rawOptions;
 
     const headers = new Map(options.headers && FetchClient.extractHeaders(options.headers));
+    const searchParams = new URLSearchParams(options.searchParams && FetchClient.extractSearchParams(options.searchParams));
     let { body } = options;
 
     if (json != null) {
@@ -40,9 +53,9 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
       body = JSON.stringify(json);
     }
 
-    const finalURL = typeof url === 'string' ? `${this.config.baseURL ?? ''}${url}` : url;
+    const finalURL = typeof url === 'string' ? FetchClient.formatURL(this.config.baseURL, url, searchParams) : url;
     const response = await this.raw(finalURL, {
-      ...options,
+      method: options.method,
       headers: Object.fromEntries(headers.entries()),
       body,
     } as Opts);
