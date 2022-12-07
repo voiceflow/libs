@@ -1,5 +1,6 @@
 import type Fetch from '@api-sdk/fetch';
 import { BaseModels } from '@voiceflow/base-types';
+import { URL, URLSearchParams } from 'url';
 
 import BaseResource from './base';
 
@@ -17,15 +18,20 @@ class ProjectSecretResource extends BaseResource<ProjectSecretResource> {
   }
 
   public async findManyByProjectID(projectID: string, tags: number[]) {
-    const tagsQuery = tags.join(',');
-    const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model[]>(`${this.endpoint}/${projectID}/secret?tags=${tagsQuery}`);
+    const tagsQuery = new URLSearchParams(tags.map((tagValue) => ['tag', String(tagValue)] as [string, string])).toString();
+
+    const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model[]>(`${this.endpoint}/${projectID}/secret?${tagsQuery}`);
+
     return data;
   }
 
   public async findByLookup(lookup: string, tag: number): Promise<BaseModels.ProjectSecret.Model[]> {
-    const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model[]>(
-      `${this.endpoint}/secret?lookup=${encodeURIComponent(lookup)}&tag=${tag}`
-    );
+    const tagsQuery = new URLSearchParams([
+      ['lookup', String(lookup)],
+      ['tag', String(tag)],
+    ]);
+
+    const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model[]>(`${this.endpoint}/secret?${tagsQuery}`);
 
     return data;
   }
