@@ -1,6 +1,5 @@
 import type Fetch from '@api-sdk/fetch';
 import { BaseModels } from '@voiceflow/base-types';
-import { URLSearchParams } from 'url';
 
 import BaseResource from './base';
 
