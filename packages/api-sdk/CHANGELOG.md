@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.21.0...@voiceflow/api-sdk@3.22.0) (2022-12-08)
+
+
+### Features
+
+* added updateManySecrets method (PL-328) ([#396](https://github.com/voiceflow/libs/issues/396)) ([26ab091](https://github.com/voiceflow/libs/commit/26ab09137b957088b746ab3a0af8c36cd621effd))
+
+
+
+
+
 # [3.21.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.20.22...@voiceflow/api-sdk@3.21.0) (2022-11-29)
 
 
