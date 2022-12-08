@@ -16,12 +16,27 @@ class ProjectSecretResource extends BaseResource<ProjectSecretResource> {
     return data;
   }
 
-  public async findByLookup(lookup: string, tag: number): Promise<BaseModels.ProjectSecret.Model[]> {
-    const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model[]>(
-      `${this.endpoint}/secret?lookup=${encodeURIComponent(lookup)}&tag=${tag}`
-    );
+  public async findManyByProjectID(projectID: string, tags: number[]) {
+    const tagsQuery = new URLSearchParams(tags.map((tagValue) => ['tag', String(tagValue)] as [string, string])).toString();
+
+    const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model[]>(`${this.endpoint}/${projectID}/secret?${tagsQuery}`);
 
     return data;
+  }
+
+  public async findByLookup(lookup: string, tag: number): Promise<BaseModels.ProjectSecret.Model[]> {
+    const tagsQuery = new URLSearchParams([
+      ['lookup', String(lookup)],
+      ['tag', String(tag)],
+    ]);
+
+    const { data } = await this.fetch.get<BaseModels.ProjectSecret.Model[]>(`${this.endpoint}/secret?${tagsQuery}`);
+
+    return data;
+  }
+
+  public async updateManySecrets(projectID: string, secrets: Pick<BaseModels.ProjectSecret.Model, 'secret' | 'tag' | 'lookup'>[]) {
+    await this.fetch.post(`${this.endpoint}/${projectID}/secret`, { secrets });
   }
 
   public async create(projectID: string, tag: number, secret: string, lookup?: string): Promise<BaseModels.ProjectSecret.Model> {
