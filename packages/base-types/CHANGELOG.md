@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.75.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.74.0...@voiceflow/base-types@2.75.0) (2022-12-09)
+
+
+### Features
+
+* add domain updated fields ([3dbe665](https://github.com/voiceflow/libs/commit/3dbe665d65ce1dd9bcbb796a01911359b75b10d0))
+
+
+
+
+
 # [2.74.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.73.1...@voiceflow/base-types@2.74.0) (2022-11-29)
 
 
