@@ -10,5 +10,7 @@ export interface Domain {
   name: string;
   status?: DomainStatus;
   topicIDs: string[];
+  updatedAt?: string;
   rootDiagramID: string;
+  updatedByCreatorID?: number;
 }
