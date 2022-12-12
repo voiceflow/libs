@@ -12,5 +12,6 @@ export interface Domain {
   topicIDs: string[];
   updatedAt?: string;
   rootDiagramID: string;
-  updatedByCreatorID?: number;
+  updatedBy?: number;
+  updatedByCreatorID?: number /** @deprecated in favor of updatedBy */;
 }

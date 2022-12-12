@@ -43,8 +43,10 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   apiPrivacy?: Privacy;
   reportTags?: Record<string, ReportTag>;
   customThemes: Themes;
-  canvasUpdatedAt?: string;
-  canvasUpdatedByCreatorID?: number;
+  updatedAt?: string;
+  updatedBy?: number;
+  canvasUpdatedAt?: string /** @deprecated in favor of updatedAt */;
+  canvasUpdatedByCreatorID?: number /** @deprecated in favor of updatedBy */;
 
   members: Member<MemberPlatformData>[];
   platformData: PlatformData;
