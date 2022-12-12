@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.75.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.75.0...@voiceflow/base-types@2.75.1) (2022-12-12)
+
+
+### Bug Fixes
+
+* add optional platform property on card v2 (PL-102) ([#400](https://github.com/voiceflow/libs/issues/400)) ([9700f26](https://github.com/voiceflow/libs/commit/9700f265bd632ffdf8dd4f8dde508ef85e4ee4db))
+
+
+
+
+
 # [2.75.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.74.0...@voiceflow/base-types@2.75.0) (2022-12-09)
 
 
