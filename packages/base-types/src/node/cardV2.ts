@@ -45,6 +45,7 @@ type CardDataWithGeneralButton = CardV2Data<GeneralRequestButton | ActionRequest
 export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData, BaseNoMatchNodeData, CardDataWithGeneralButton {
   type: NodeType.CARD_V2;
   isBlocking: boolean;
+  platform?: string;
 }
 
 export interface TraceCardV2Description {
