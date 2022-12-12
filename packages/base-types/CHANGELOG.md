@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.75.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.75.1...@voiceflow/base-types@2.75.2) (2022-12-12)
+
+
+### Bug Fixes
+
+* deprecate verbose update properties ([b084843](https://github.com/voiceflow/libs/commit/b0848434c1d9d79d65bb53e611bca289da8ae97b))
+
+
+
+
+
 ## [2.75.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.75.0...@voiceflow/base-types@2.75.1) (2022-12-12)
 
 
