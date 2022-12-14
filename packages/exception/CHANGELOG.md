@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/exception@1.3.0...@voiceflow/exception@1.4.0) (2022-12-14)
+
+
+### Features
+
+* add error details type guard (PL-000) ([#401](https://github.com/voiceflow/libs/issues/401)) ([0205d99](https://github.com/voiceflow/libs/commit/0205d9910b6c14d8b48464280d38320258b26591))
+
+
+
+
+
 # [1.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/exception@1.2.0...@voiceflow/exception@1.3.0) (2022-12-01)
 
 
