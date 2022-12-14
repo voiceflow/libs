@@ -17,7 +17,7 @@ export class ClientException<Res extends BaseResponse = BaseResponse> extends Er
 
   public cause?: string;
 
-  public details?: object;
+  public details?: unknown;
 
   constructor(response: Res) {
     super();
@@ -52,5 +52,9 @@ export class ClientException<Res extends BaseResponse = BaseResponse> extends Er
     }
 
     return this;
+  }
+
+  public is<Details>(code: ErrorCode): this is { details: Details } {
+    return this.errorCode === code;
   }
 }

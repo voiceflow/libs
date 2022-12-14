@@ -29,9 +29,9 @@ export class HTTPException extends InternalException {
       statusCode: this.statusCode,
       statusText: this.statusText,
 
-      ...(this.details && { details: this.details }),
-      ...(this.errorCode && { errorCode: this.errorCode }),
-      ...(cause && { cause }),
+      ...(this.details ? { details: this.details } : {}),
+      ...(this.errorCode ? { errorCode: this.errorCode } : {}),
+      ...(cause ? { cause } : {}),
     };
   }
 }

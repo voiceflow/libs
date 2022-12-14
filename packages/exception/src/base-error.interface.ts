@@ -9,7 +9,7 @@ export interface BaseError {
   /**
    * additional details attached to the error
    */
-  details?: object;
+  details?: unknown;
 
   /**
    * platform-internal error code
