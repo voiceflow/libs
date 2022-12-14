@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.3.0...@voiceflow/fetch@1.4.0) (2022-12-14)
+
+
+### Features
+
+* **fetch:** support url search params (PL-000) ([#399](https://github.com/voiceflow/libs/issues/399)) ([c79caa3](https://github.com/voiceflow/libs/commit/c79caa38e8e5216aa0d9d5a7d5638434a8955027))
+
+
+
+
+
 # [1.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.2.0...@voiceflow/fetch@1.3.0) (2022-12-01)
 
 
