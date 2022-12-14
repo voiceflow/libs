@@ -56,7 +56,7 @@ export class InternalException extends Error implements BaseError {
 
   public errorCode?: ErrorCode;
 
-  public details?: object;
+  public details?: unknown;
 
   constructor(msg?: ErrorMessage) {
     const data = InternalException.extractData(msg);
@@ -72,6 +72,10 @@ export class InternalException extends Error implements BaseError {
     if (typeof this.cause === 'string') return this.cause;
     if (this.cause instanceof Error) return this.cause.message;
     return undefined;
+  }
+
+  public is<Details>(code: ErrorCode): this is { details: Details } {
+    return this.errorCode === code;
   }
 }
 
