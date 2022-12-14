@@ -3,13 +3,25 @@ import { ClientException } from '@voiceflow/exception';
 import { ClientConfiguration } from './client-configuration.interface';
 import { FetchAPI, FetchOptions, FetchResponse } from './fetch.interface';
 import { HTTPMethod } from './http-method.enum';
-import { RequestOptions } from './request-options.interface';
+import { ExtraOptions, RequestOptions } from './request-options.interface';
 
 export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req = URL | Request, Res extends FetchResponse = Response> {
-  private static extractHeaders(headers: FetchOptions<any, any>['headers']) {
+  private static extractHeaders(headers: ExtraOptions['headers']) {
     if (headers instanceof Map) return new Map(headers);
 
-    return new Map(Object.entries(headers));
+    return new Map(Object.entries(headers ?? {}));
+  }
+
+  private static extractQuery(query: ExtraOptions['query']) {
+    if (query instanceof Map) return new URLSearchParams(Object.entries(query));
+
+    return new URLSearchParams(query);
+  }
+
+  private static formatURL(baseURL: string | undefined, path: string, query: URLSearchParams) {
+    const url = new URL(path, baseURL);
+    query.forEach((value, key) => url.searchParams.append(key, value));
+    return url.href;
   }
 
   private readonly config: ClientConfiguration;
@@ -30,17 +42,18 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
   /* eslint-enable lines-between-class-members */
 
   private async send(url: string | Req, rawOptions: RequestOptions<Opts>) {
-    const { json, ...options } = rawOptions;
+    // eslint-disable-next-line prefer-const
+    let { json, headers, query, body, ...options } = rawOptions;
 
-    const headers = new Map(options.headers && FetchClient.extractHeaders(options.headers));
-    let { body } = options;
+    headers = new Map(headers && FetchClient.extractHeaders(headers));
+    query = new URLSearchParams(query && FetchClient.extractQuery(query));
 
     if (json != null) {
       headers.set('content-type', 'application/json');
       body = JSON.stringify(json);
     }
 
-    const finalURL = typeof url === 'string' ? `${this.config.baseURL ?? ''}${url}` : url;
+    const finalURL = typeof url === 'string' ? FetchClient.formatURL(this.config.baseURL, url, query) : url;
     const response = await this.raw(finalURL, {
       ...options,
       headers: Object.fromEntries(headers.entries()),
