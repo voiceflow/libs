@@ -111,7 +111,7 @@ describe('Fetch Client', () => {
       sandbox.get(expectedURL, { status: 200 });
 
       await fetch.get(TARGET_URL, {
-        searchParams: { test: 'encode this&' },
+        query: { test: 'encode this&' },
       });
 
       expect(sandbox.done()).to.be.true;

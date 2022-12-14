@@ -12,15 +12,15 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
     return new Map(Object.entries(headers ?? {}));
   }
 
-  private static extractSearchParams(searchParams: ExtraOptions['searchParams']) {
-    if (searchParams instanceof Map) return new URLSearchParams(Object.entries(searchParams));
+  private static extractQuery(query: ExtraOptions['query']) {
+    if (query instanceof Map) return new URLSearchParams(Object.entries(query));
 
-    return new URLSearchParams(searchParams);
+    return new URLSearchParams(query);
   }
 
-  private static formatURL(baseURL: string | undefined, path: string, searchParams: URLSearchParams) {
+  private static formatURL(baseURL: string | undefined, path: string, query: URLSearchParams) {
     const url = new URL(path, baseURL);
-    searchParams.forEach((value, key) => url.searchParams.append(key, value));
+    query.forEach((value, key) => url.searchParams.append(key, value));
     return url.href;
   }
 
@@ -42,20 +42,20 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
   /* eslint-enable lines-between-class-members */
 
   private async send(url: string | Req, rawOptions: RequestOptions<Opts>) {
-    const { json, ...options } = rawOptions;
+    // eslint-disable-next-line prefer-const
+    let { json, headers, query, body, ...options } = rawOptions;
 
-    const headers = new Map(options.headers && FetchClient.extractHeaders(options.headers));
-    const searchParams = new URLSearchParams(options.searchParams && FetchClient.extractSearchParams(options.searchParams));
-    let { body } = options;
+    headers = new Map(headers && FetchClient.extractHeaders(headers));
+    query = new URLSearchParams(query && FetchClient.extractQuery(query));
 
     if (json != null) {
       headers.set('content-type', 'application/json');
       body = JSON.stringify(json);
     }
 
-    const finalURL = typeof url === 'string' ? FetchClient.formatURL(this.config.baseURL, url, searchParams) : url;
+    const finalURL = typeof url === 'string' ? FetchClient.formatURL(this.config.baseURL, url, query) : url;
     const response = await this.raw(finalURL, {
-      method: options.method,
+      ...options,
       headers: Object.fromEntries(headers.entries()),
       body,
     } as Opts);
@@ -69,7 +69,7 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
 
   private createMethod(method: HTTPMethod) {
     return (url: string | Req, options?: Omit<RequestOptions<Opts>, 'method'>) => {
-      const response = this.send(url, { ...options, method } as unknown as RequestOptions<Opts>);
+      const response = this.send(url, { ...options, method } as RequestOptions<Opts>);
 
       return Object.assign(response, {
         json: async <T = unknown>(): Promise<T> => (await response).json(),
