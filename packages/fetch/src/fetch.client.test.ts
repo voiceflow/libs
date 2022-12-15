@@ -180,10 +180,10 @@ describe('Fetch Client', () => {
 
   describe('#config.baseURL', () => {
     it('should prefix request URL with provided baseURL option', async () => {
-      const baseURL = 'http://example.com/';
+      const baseURL = 'http://example.com';
       const path = 'foo/bar';
       const fetch = new FetchClient(sandbox, { baseURL });
-      sandbox.get(`${baseURL}${path}`, 200);
+      sandbox.get(`${baseURL}/${path}`, 200);
 
       await fetch.get(path);
 
@@ -198,6 +198,35 @@ describe('Fetch Client', () => {
       await fetchClient.get(url);
 
       expect(fetchSpy).to.be.calledWithExactly(url, { method: 'get', headers: {}, body: undefined });
+    });
+  });
+
+  describe('#config.headers', () => {
+    const baseURL = 'http://example.com';
+    const path = 'foo/bar';
+
+    it('should join global headers with request headers', async () => {
+      const globalHeaders = { foo: 'one', bar: 'two' };
+      const headers = { bar: 'three', fizz: 'four' };
+      const fetch = new FetchClient(sandbox, { baseURL, headers: globalHeaders });
+      sandbox.get({ url: `${baseURL}/${path}`, headers: { ...globalHeaders, ...headers } }, 200);
+
+      await fetch.get(path, { headers });
+
+      expect(sandbox.done()).to.be.true;
+    });
+
+    it('should allow global headers to be updated asynchronously', async () => {
+      const globalHeaders = new Map<string, string>([['foo', 'bar']]);
+      const fetch = new FetchClient(sandbox, { baseURL, headers: globalHeaders });
+      sandbox.get({ url: `${baseURL}/one`, headers: { foo: 'bar' } }, 200);
+      sandbox.get({ url: `${baseURL}/two`, headers: { foo: 'bar', fizz: 'buzz' } }, 200);
+
+      await fetch.get('one');
+      globalHeaders.set('fizz', 'buzz');
+      await fetch.get('two');
+
+      expect(sandbox.done()).to.be.true;
     });
   });
 

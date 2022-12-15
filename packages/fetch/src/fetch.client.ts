@@ -3,19 +3,15 @@ import { ClientException } from '@voiceflow/exception';
 import { ClientConfiguration } from './client-configuration.interface';
 import { FetchAPI, FetchOptions, FetchResponse } from './fetch.interface';
 import { HTTPMethod } from './http-method.enum';
-import { ExtraOptions, RequestOptions } from './request-options.interface';
+import { RequestHeaders, RequestOptions, RequestQuery } from './request-options.interface';
 
 export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req = URL | Request, Res extends FetchResponse = Response> {
-  private static extractHeaders(headers: ExtraOptions['headers']) {
-    if (headers instanceof Map) return new Map(headers);
-
-    return new Map(Object.entries(headers ?? {}));
+  private static extractHeaders(headers: RequestHeaders | undefined) {
+    return new Map(headers instanceof Map ? headers : Object.entries(headers ?? {}));
   }
 
-  private static extractQuery(query: ExtraOptions['query']) {
-    if (query instanceof Map) return new URLSearchParams(Object.entries(query));
-
-    return new URLSearchParams(query);
+  private static extractQuery(query: RequestQuery | undefined) {
+    return new URLSearchParams(query instanceof Map ? Object.entries(query) : query);
   }
 
   private static formatURL(baseURL: string | undefined, path: string, query: URLSearchParams) {
@@ -24,14 +20,14 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
     return url.href;
   }
 
-  private readonly config: ClientConfiguration;
+  private readonly config: ClientConfiguration<Headers>;
 
   private readonly fetch: FetchAPI<Opts, Req, Res> | undefined;
 
   /* eslint-disable lines-between-class-members */
-  constructor(config?: ClientConfiguration);
-  constructor(fetch: FetchAPI<Opts, Req, Res>, options?: ClientConfiguration);
-  constructor(fetchOrConfig?: FetchAPI<Opts, Req, Res> | ClientConfiguration, config?: ClientConfiguration) {
+  constructor(config?: ClientConfiguration<Headers>);
+  constructor(fetch: FetchAPI<Opts, Req, Res>, options?: ClientConfiguration<Headers>);
+  constructor(fetchOrConfig?: FetchAPI<Opts, Req, Res> | ClientConfiguration<Headers>, config?: ClientConfiguration<Headers>) {
     if (typeof fetchOrConfig === 'function') {
       this.fetch = fetchOrConfig;
       this.config = config ?? {};
@@ -45,8 +41,8 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
     // eslint-disable-next-line prefer-const
     let { json, headers, query, body, ...options } = rawOptions;
 
-    headers = new Map(headers && FetchClient.extractHeaders(headers));
-    query = new URLSearchParams(query && FetchClient.extractQuery(query));
+    headers = new Map([...FetchClient.extractHeaders(this.config.headers).entries(), ...FetchClient.extractHeaders(headers).entries()]);
+    query = FetchClient.extractQuery(query);
 
     if (json != null) {
       headers.set('content-type', 'application/json');
