@@ -129,6 +129,12 @@ class ProjectResource extends CrudResource<BaseModels.Project.Model<AnyRecord, A
 
     return data;
   }
+
+  public async getAPIKeys(id: string): Promise<BaseModels.ApiKey.Model[]> {
+    const { data } = await this.fetch.get<BaseModels.ApiKey.Model[]>(`${this._getCRUDEndpoint(id)}/api-keys`);
+
+    return data;
+  }
 }
 
 export default ProjectResource;

@@ -21,7 +21,7 @@ class APIKeyResource extends CrudResource<BaseModels.ApiKey.Model, ModelIDKey, A
     return super._getByID<BaseModels.ApiKey.Model>(id);
   }
 
-  public async create(workspaceID: string, body: Partial<BaseModels.ApiKey.Model>): Promise<BaseModels.ApiKey.Model & { APIKey: string }> {
+  public async create(workspaceID: string, body: Partial<BaseModels.ApiKey.Model>): Promise<BaseModels.ApiKey.Model & { key: string }> {
     return super._post({ ...body, workspaceID } as any);
   }
 
