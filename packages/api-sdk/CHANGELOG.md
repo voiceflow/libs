@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.22.4](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.22.3...@voiceflow/api-sdk@3.22.4) (2022-12-15)
+
+
+### Bug Fixes
+
+* update api-key model (PL-000) ([#402](https://github.com/voiceflow/libs/issues/402)) ([4d3cc61](https://github.com/voiceflow/libs/commit/4d3cc611a3f180cb8d2b38f5bc0fc5f46056cf9d)), closes [/github.com/voiceflow/creator-app/blob/ccb1fdc9fcd9c4f123011dcbd789256dc9c40fde/packages/creator-app/src/client/project.ts#L7-L27](https://github.com//github.com/voiceflow/creator-app/blob/ccb1fdc9fcd9c4f123011dcbd789256dc9c40fde/packages/creator-app/src/client/project.ts/issues/L7-L27) [/github.com/voiceflow/creator-app/blob/86b72785cf2acd8a0cc7bac60a334d5bc1d5dadf/packages/creator-app/src/models/ProjectAPIKey.ts#L3](https://github.com//github.com/voiceflow/creator-app/blob/86b72785cf2acd8a0cc7bac60a334d5bc1d5dadf/packages/creator-app/src/models/ProjectAPIKey.ts/issues/L3) [/github.com/voiceflow/creator-api/blob/af64e7ab1680769028c253318089d282e468831f/lib/models/apiKey/index.ts#L115](https://github.com//github.com/voiceflow/creator-api/blob/af64e7ab1680769028c253318089d282e468831f/lib/models/apiKey/index.ts/issues/L115)
+
+
+
+
+
 ## [3.22.3](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.22.2...@voiceflow/api-sdk@3.22.3) (2022-12-12)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
