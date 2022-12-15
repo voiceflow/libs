@@ -1,6 +1,6 @@
 import { RequestHeaders } from './request-options.interface';
 
-export interface ClientConfiguration<Headers> {
+export interface ClientConfiguration {
   baseURL?: string;
   headers?: RequestHeaders;
 }

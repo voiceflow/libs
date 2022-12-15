@@ -20,14 +20,14 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
     return url.href;
   }
 
-  private readonly config: ClientConfiguration<Headers>;
+  private readonly config: ClientConfiguration;
 
   private readonly fetch: FetchAPI<Opts, Req, Res> | undefined;
 
   /* eslint-disable lines-between-class-members */
-  constructor(config?: ClientConfiguration<Headers>);
-  constructor(fetch: FetchAPI<Opts, Req, Res>, options?: ClientConfiguration<Headers>);
-  constructor(fetchOrConfig?: FetchAPI<Opts, Req, Res> | ClientConfiguration<Headers>, config?: ClientConfiguration<Headers>) {
+  constructor(config?: ClientConfiguration);
+  constructor(fetch: FetchAPI<Opts, Req, Res>, options?: ClientConfiguration);
+  constructor(fetchOrConfig?: FetchAPI<Opts, Req, Res> | ClientConfiguration, config?: ClientConfiguration) {
     if (typeof fetchOrConfig === 'function') {
       this.fetch = fetchOrConfig;
       this.config = config ?? {};
