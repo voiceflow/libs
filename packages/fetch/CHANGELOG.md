@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.4.0...@voiceflow/fetch@1.5.0) (2022-12-16)
+
+
+### Features
+
+* add global fetch headers (DX-261) ([#403](https://github.com/voiceflow/libs/issues/403)) ([4cf4ee6](https://github.com/voiceflow/libs/commit/4cf4ee62c94c19e6d8b68e936b8f518a6d21f9b6))
+
+
+
+
+
 # [1.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.3.0...@voiceflow/fetch@1.4.0) (2022-12-14)
 
 
