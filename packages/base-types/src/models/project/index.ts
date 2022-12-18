@@ -47,6 +47,7 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   updatedBy?: number;
   canvasUpdatedAt?: string /** @deprecated in favor of updatedAt */;
   canvasUpdatedByCreatorID?: number /** @deprecated in favor of updatedBy */;
+  aiAssist?: boolean;
 
   members: Member<MemberPlatformData>[];
   platformData: PlatformData;
