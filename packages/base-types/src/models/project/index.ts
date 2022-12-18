@@ -27,8 +27,6 @@ export interface Sticker {
 
 export interface AIAssistSettings {
   generativeTasks?: boolean;
-  autoComplete?: boolean;
-  freestyle?: boolean;
 }
 
 export interface Model<PlatformData extends AnyRecord, MemberPlatformData extends AnyRecord> {
