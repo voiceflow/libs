@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.76.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.75.2...@voiceflow/base-types@2.76.0) (2022-12-18)
+
+
+### Features
+
+* adds ai assist setting to project model (HW-48) ([#404](https://github.com/voiceflow/libs/issues/404)) ([1f912ab](https://github.com/voiceflow/libs/commit/1f912ab195a9a66dd01d122cd2a8d710c414ba3a))
+
+
+
+
+
 ## [2.75.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.75.1...@voiceflow/base-types@2.75.2) (2022-12-12)
 
 
