@@ -24,6 +24,13 @@ export interface Sticker {
   id: string;
   url: string;
 }
+
+export interface AIAssistSettings {
+  generativeTasks?: boolean;
+  autoComplete?: boolean;
+  freestyle?: boolean;
+}
+
 export interface Model<PlatformData extends AnyRecord, MemberPlatformData extends AnyRecord> {
   _id: string;
   teamID: string;
@@ -47,7 +54,7 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   updatedBy?: number;
   canvasUpdatedAt?: string /** @deprecated in favor of updatedAt */;
   canvasUpdatedByCreatorID?: number /** @deprecated in favor of updatedBy */;
-  aiAssist?: boolean;
+  aiAssistSettings?: AIAssistSettings;
 
   members: Member<MemberPlatformData>[];
   platformData: PlatformData;
