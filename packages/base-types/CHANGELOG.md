@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.77.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.76.0...@voiceflow/base-types@2.77.0) (2022-12-22)
+
+
+### Features
+
+* adds freestyle settings (CT-000) ([#406](https://github.com/voiceflow/libs/issues/406)) ([e47efac](https://github.com/voiceflow/libs/commit/e47efac986d0af05d0dab7937c3f587613881ae6))
+
+
+
+
+
 # [2.76.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.75.2...@voiceflow/base-types@2.76.0) (2022-12-18)
 
 
