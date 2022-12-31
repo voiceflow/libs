@@ -1,7 +1,7 @@
 import { Nullable } from '@voiceflow/common';
 
 import { NodeType } from './constants';
-import { BaseNode, BaseStep, BaseTraceFrame, NodeNextID, StepCanvasNodeVisibility, TraceType } from './utils';
+import { BaseNode, BaseResponseTrace, BaseStep, BaseTraceFrame, NodeNextID, StepCanvasNodeVisibility, TraceType } from './utils';
 
 export interface StepDataDialog<Dialog> {
   dialogs: Dialog[];
@@ -32,11 +32,10 @@ export enum TraceSpeakType {
   MESSAGE = 'message',
 }
 
-export interface TraceFramePayload {
+export interface TraceFramePayload extends BaseResponseTrace {
   src?: Nullable<string>;
   type: TraceSpeakType;
   voice?: string;
-  message: string;
 }
 
 export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {

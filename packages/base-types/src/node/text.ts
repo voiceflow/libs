@@ -1,7 +1,7 @@
 import { SlateTextValue } from '@base-types/text';
 
 import { NodeType } from './constants';
-import { BaseNode, BaseStep, BaseTraceFrame, DataID, NodeNextID, StepCanvasNodeVisibility, TraceType } from './utils';
+import { BaseNode, BaseResponseTrace, BaseStep, BaseTraceFrame, DataID, NodeNextID, StepCanvasNodeVisibility, TraceType } from './utils';
 
 export interface TextData extends DataID {
   content: SlateTextValue;
@@ -22,8 +22,7 @@ export interface Node extends BaseNode, NodeNextID {
   platform?: string;
 }
 
-export interface TextTracePayload {
-  message: string;
+export interface TextTracePayload extends BaseResponseTrace {
   slate: TextData;
 }
 
