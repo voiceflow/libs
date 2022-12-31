@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.77.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.77.0...@voiceflow/base-types@2.77.1) (2022-12-31)
+
+
+### Bug Fixes
+
+* base response trace with ai indicator (PL-000) ([#408](https://github.com/voiceflow/libs/issues/408)) ([ad1e49d](https://github.com/voiceflow/libs/commit/ad1e49d324ae8117777a0759263b1a6d2fa2aaf8))
+
+
+
+
+
 # [2.77.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.76.0...@voiceflow/base-types@2.77.0) (2022-12-22)
 
 
