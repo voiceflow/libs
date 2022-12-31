@@ -31,3 +31,8 @@ export interface BaseTraceFrame<Payload = any, TracePath extends BaseTraceFrameP
   payload: Payload;
   defaultPath?: number;
 }
+
+export interface BaseResponseTrace {
+  ai?: boolean;
+  message: string;
+}
