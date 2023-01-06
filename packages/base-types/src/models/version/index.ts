@@ -52,13 +52,14 @@ export enum NLUUnclassifiedDataType {
 }
 
 export interface NLUUnclassifiedUtterances {
+  id: string;
   utterance: string;
   sourceID?: string;
   importedAt: Date;
 }
 
 export interface NLUUnclassifiedData {
-  id: number;
+  datasourceID: string;
   creatorID?: number;
   type: NLUUnclassifiedDataType;
   name: string;
