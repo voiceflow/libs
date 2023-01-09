@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.77.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.77.1...@voiceflow/base-types@2.77.2) (2023-01-09)
+
+
+### Bug Fixes
+
+* adding string key to unclassified model (NLU-321) ([#411](https://github.com/voiceflow/libs/issues/411)) ([b15bc9b](https://github.com/voiceflow/libs/commit/b15bc9b0e4b4851cda129473e544cb4d218808bb))
+
+
+
+
+
 ## [2.77.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.77.0...@voiceflow/base-types@2.77.1) (2022-12-31)
 
 
