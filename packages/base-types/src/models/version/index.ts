@@ -4,10 +4,12 @@ import { NodeType } from '../../node/constants';
 import { BaseCommand, BaseNote, Intent, Slot, Variable } from '../base';
 import { CanvasTemplate } from './canvasTemplate';
 import { Domain } from './domain';
+import { NLUUnclassifiedData } from './nluUnclassifiedData';
 import { Prototype } from './prototype';
 
 export * from './canvasTemplate';
 export * from './domain';
+export * from './nluUnclassifiedData';
 export * from './prototype';
 
 export interface PlatformData<Settings extends AnyRecord = AnyRecord, Publishing extends AnyRecord = AnyRecord> {
@@ -44,26 +46,6 @@ export interface Folder {
 }
 
 export type DefaultStepColors = Partial<Record<NodeType, string>>;
-
-export enum NLUUnclassifiedDataType {
-  CONVERSATION = 'conversation',
-  PROTOTYPE = 'prototype',
-  NLU_DATASOURCE_IMPORT = 'nluDatasourceImport',
-}
-
-export interface NLUUnclassifiedUtterances {
-  utterance: string;
-  sourceID?: string;
-  importedAt: Date;
-}
-
-export interface NLUUnclassifiedData {
-  id: number;
-  creatorID?: number;
-  type: NLUUnclassifiedDataType;
-  name: string;
-  utterances: NLUUnclassifiedUtterances[];
-}
 
 export interface Model<
   _PlatformData extends PlatformData,
