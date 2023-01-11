@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.23.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.22.7...@voiceflow/voiceflow-types@3.23.0) (2023-01-11)
+
+
+### Features
+
+* configure default messages for no-match and no-reply (CT-1384) ([#412](https://github.com/voiceflow/libs/issues/412)) ([ab82ece](https://github.com/voiceflow/libs/commit/ab82ece212e10fce6862cebc383613fb55232c70))
+
+
+
+
+
 ## [3.22.7](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.22.6...@voiceflow/voiceflow-types@3.22.7) (2023-01-09)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
