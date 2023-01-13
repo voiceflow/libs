@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.78.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.77.2...@voiceflow/base-types@2.78.0) (2023-01-13)
+
+
+### Features
+
+* adds id to unclassified utterance (CT-000) ([#413](https://github.com/voiceflow/libs/issues/413)) ([602e5a8](https://github.com/voiceflow/libs/commit/602e5a888f5c958aaea89d103f5cde2126768212))
+
+
+
+
+
 ## [2.77.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.77.1...@voiceflow/base-types@2.77.2) (2023-01-09)
 
 
