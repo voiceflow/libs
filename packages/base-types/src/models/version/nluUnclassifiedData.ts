@@ -5,6 +5,7 @@ export enum NLUUnclassifiedDataType {
 }
 
 export interface NLUUnclassifiedUtterances {
+  id: string;
   utterance: string;
   sourceID?: string;
 }
