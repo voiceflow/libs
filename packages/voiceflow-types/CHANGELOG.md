@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.23.2](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.23.1...@voiceflow/voiceflow-types@3.23.2) (2023-01-18)
+
+
+### Bug Fixes
+
+* add period to end of sentence (CT-000) ([#414](https://github.com/voiceflow/libs/issues/414)) ([a3ad000](https://github.com/voiceflow/libs/commit/a3ad000e53f753c84f0e8f0805df9847bbdfd732))
+
+
+
+
+
 ## [3.23.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.23.0...@voiceflow/voiceflow-types@3.23.1) (2023-01-13)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
