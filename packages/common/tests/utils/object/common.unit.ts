@@ -75,13 +75,14 @@ describe('Utils | object | common', () => {
   });
 
   describe('omit()', () => {
-    it('works with 0-2 keys', () => {
+    it('works with 0-3 keys', () => {
       expect(omit({ value1: '1' }, [])).to.eql({ value1: '1' });
       expect(omit({ value1: '1' }, ['value1'])).to.eql({});
       expect(omit({ value1: '1', value2: '2', value3: 3 }, ['value1', 'value2'])).to.eql({ value3: 3 });
+      expect(omit({ value1: '1', value2: '2', value3: 3, value4: 4 }, ['value1', 'value2', 'value3'])).to.eql({ value4: 4 });
     });
 
-    it('works with 2+ keys', () => {
+    it('works with 3+ keys', () => {
       expect(omit({ value1: '1', value2: '2', value3: 3 }, ['value1', 'value2', 'value3'])).to.eql({});
       expect(omit({ value1: '1', value2: '2', value3: 3, value4: undefined, value5: null }, ['value1', 'value2', 'value3', 'value5'])).to.eql({
         value4: undefined,
@@ -90,13 +91,18 @@ describe('Utils | object | common', () => {
   });
 
   describe('pick()', () => {
-    it('works with 0-2 keys', () => {
+    it('works with 0-3 keys', () => {
       expect(pick({ value1: '1' }, [])).to.eql({});
       expect(pick({ value1: '1' }, ['value1'])).to.eql({ value1: '1' });
       expect(pick({ value1: '1', value2: '2', value3: 3 }, ['value1', 'value2'])).to.eql({ value1: '1', value2: '2' });
+      expect(pick({ value1: '1', value2: '2', value3: 3, value4: 4 }, ['value1', 'value2', 'value3'])).to.eql({
+        value1: '1',
+        value2: '2',
+        value3: 3,
+      });
     });
 
-    it('works with 2+ keys', () => {
+    it('works with 3+ keys', () => {
       expect(pick({ value1: '1', value2: '2', value3: 3 }, ['value1', 'value2', 'value3'])).to.eql({ value1: '1', value2: '2', value3: 3 });
       expect(pick({ value1: '1', value2: '2', value3: 3, value4: undefined, value5: null }, ['value1', 'value2', 'value3', 'value5'])).to.eql({
         value1: '1',
@@ -104,6 +110,10 @@ describe('Utils | object | common', () => {
         value3: 3,
         value5: null,
       });
+    });
+
+    it('works with undefined keys', () => {
+      expect(pick({ value1: '1', value2: '2' } as any, ['value1', 'value2', 'value3'])).to.eql({ value1: '1', value2: '2' });
     });
   });
 
