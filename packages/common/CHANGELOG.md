@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.2.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.1.5...@voiceflow/common@8.2.0) (2023-01-21)
+
+
+### Features
+
+* improve pick/omit utils (CT-000) ([#415](https://github.com/voiceflow/libs/issues/415)) ([9dda450](https://github.com/voiceflow/libs/commit/9dda450028bbaf406b9614f72140cc5d86b8eb60))
+
+
+
+
+
 ## [8.1.5](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.1.4...@voiceflow/common@8.1.5) (2022-09-05)
 
 
