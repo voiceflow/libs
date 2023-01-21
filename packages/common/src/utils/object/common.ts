@@ -21,44 +21,59 @@ export const hasProperty = <T, K extends keyof T | string>(obj: T, key: K): obj 
 export const omit = <T, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> => {
   const newObj = { ...obj };
 
-  if (keys.length === 0) {
-    return newObj;
+  if (keys.length > 3) {
+    return keys.reduce((acc, key) => {
+      delete acc[key];
+
+      return acc;
+    }, newObj) as Omit<T, K>;
   }
 
-  if (keys.length === 1) {
-    delete newObj[keys[0]];
+  delete newObj[keys[0]];
 
-    return newObj;
-  }
+  if (keys.length === 1) return newObj;
 
-  if (keys.length === 2) {
-    delete newObj[keys[0]];
-    delete newObj[keys[1]];
+  delete newObj[keys[1]];
 
-    return newObj;
-  }
+  if (keys.length === 2) return newObj;
 
-  return keys.reduce((acc, key) => {
-    delete acc[key];
+  delete newObj[keys[2]];
 
-    return acc;
-  }, newObj) as Omit<T, K>;
+  return newObj;
 };
 
 export const pick = <T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> => {
-  if (keys.length === 0) {
-    return {} as Pick<T, K>;
+  const newObj = {} as Pick<T, K>;
+
+  if (keys.length > 3) {
+    return keys.reduce((acc, key) => {
+      if (hasProperty(obj, key)) {
+        acc[key] = obj[key];
+      }
+
+      return acc;
+    }, newObj);
   }
 
-  if (keys.length === 1) {
-    return { [keys[0]]: obj[keys[0]] } as Pick<T, K>;
+  if (keys.length === 0) return newObj;
+
+  if (hasProperty(obj, keys[0])) {
+    newObj[keys[0]] = obj[keys[0]];
   }
 
-  if (keys.length === 2) {
-    return { [keys[0]]: obj[keys[0]], [keys[1]]: obj[keys[1]] } as Pick<T, K>;
+  if (keys.length === 1) return newObj;
+
+  if (hasProperty(obj, keys[1])) {
+    newObj[keys[1]] = obj[keys[1]];
   }
 
-  return keys.reduce((acc, key) => Object.assign(acc, { [key]: obj[key] }), {} as Pick<T, K>);
+  if (keys.length === 2) return newObj;
+
+  if (hasProperty(obj, keys[2])) {
+    newObj[keys[2]] = obj[keys[2]];
+  }
+
+  return newObj;
 };
 
 interface PickOmitBy {
