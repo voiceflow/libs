@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.79.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.78.1...@voiceflow/base-types@2.79.0) (2023-02-05)
+
+
+### Features
+
+* generative node (CT-000) ([#417](https://github.com/voiceflow/libs/issues/417)) ([dbd094c](https://github.com/voiceflow/libs/commit/dbd094cb8a07421d8eaa21df6f203759eebad34a))
+
+
+
+
+
 ## [2.78.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.78.0...@voiceflow/base-types@2.78.1) (2023-01-21)
 
 **Note:** Version bump only for package @voiceflow/base-types
