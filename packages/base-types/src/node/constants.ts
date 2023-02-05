@@ -7,6 +7,7 @@ export enum NodeType {
   CAROUSEL = 'carousel',
   BUTTONS = 'buttons',
   INTERACTION = 'interaction',
+  GENERATIVE = 'generative',
 
   // logic
   SET = 'set',

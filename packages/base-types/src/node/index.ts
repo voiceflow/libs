@@ -7,6 +7,7 @@ import * as CustomBlockPointer from './customBlockPointer';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as General from './general';
+import * as Generate from './generative';
 import * as GoogleSheets from './googleSheets';
 import * as GoTo from './goTo';
 import * as GoToDomain from './goToDomain';
@@ -42,6 +43,7 @@ export * as Directive from './directive';
 export * as Exit from './exit';
 export * as Flow from './flow';
 export * as General from './general';
+export * as Generative from './generative';
 export * as GoogleSheets from './googleSheets';
 export * as GoTo from './goTo';
 export * as GoToDomain from './goToDomain';
@@ -101,6 +103,7 @@ export type AnyCommonStep =
   | Url.Step
   | ChannelAction.Step
   | CustomBlockPointer.Step
+  | Generate.Step
   | _v1.Step;
 
 /**
@@ -128,6 +131,7 @@ export type AnyCommonNode =
   | GoToNode.Node
   | NextOnlyNode
   | ChannelAction.Node
+  | Generate.Node
   | _v1.Node;
 
 export type AnyCommonCommand = Intent.Command | Command.Command;

@@ -55,7 +55,7 @@ export interface BaseActions extends BaseDiagramNode<ActionsData> {
 export type StepPortsData<Ports, PortsOld> = { ports?: never; portsV2: Ports } | { ports: PortsOld; portsV2?: never };
 export type StepOnlyData<Ports, PortsOld> = StepPortsData<Ports, PortsOld> & BaseNodeData;
 
-export interface BaseStep<Data extends AnyRecord = AnyRecord, Ports = NextStepPorts, PortsOld = BasePortList>
+export interface BaseStep<Data = AnyRecord, Ports = NextStepPorts, PortsOld = BasePortList>
   extends BaseDiagramNode<Data & StepOnlyData<Ports, PortsOld>> {}
 
 export interface AnyBaseStep extends BaseStep<AnyRecord, AnyBaseStepPorts> {}
