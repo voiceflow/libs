@@ -1,17 +1,17 @@
 {
   "name": "@voiceflow/google-types",
   "description": "Google service types",
-  "version": "2.18.24",
+  "version": "2.18.25",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/base-types": "^2.79.0",
-    "@voiceflow/chat-types": "^2.13.19",
+    "@voiceflow/base-types": "^2.79.1",
+    "@voiceflow/chat-types": "^2.13.20",
     "@voiceflow/common": "^8.2.0",
-    "@voiceflow/voice-types": "^2.9.0",
-    "@voiceflow/voiceflow-types": "^3.23.4",
+    "@voiceflow/voice-types": "^2.9.1",
+    "@voiceflow/voiceflow-types": "^3.23.5",
     "googleapis": "92.0.0"
   },
   "files": [

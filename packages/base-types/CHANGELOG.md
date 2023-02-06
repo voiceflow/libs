@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.79.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.79.0...@voiceflow/base-types@2.79.1) (2023-02-06)
+
+
+### Bug Fixes
+
+* generative properties ([b81fb10](https://github.com/voiceflow/libs/commit/b81fb10685da340815e2c474cafe2d3d0f0835c5))
+
+
+
+
+
 # [2.79.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.78.1...@voiceflow/base-types@2.79.0) (2023-02-05)
 
 
