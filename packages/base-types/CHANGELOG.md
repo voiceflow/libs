@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.80.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.79.1...@voiceflow/base-types@2.80.0) (2023-02-07)
+
+
+### Features
+
+* add menu item type ([58aad62](https://github.com/voiceflow/libs/commit/58aad6220012af4a617fd1fe4f4ad69ee20af7ce))
+
+
+
+
+
 ## [2.79.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.79.0...@voiceflow/base-types@2.79.1) (2023-02-06)
 
 
