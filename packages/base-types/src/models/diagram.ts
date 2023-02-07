@@ -7,6 +7,16 @@ export enum DiagramType {
   TEMPLATE = 'TEMPLATE',
 }
 
+export enum MenuItemType {
+  NODE = 'NODE',
+  DIAGRAM = 'DIAGRAM',
+}
+
+export interface MenuItem {
+  type: MenuItemType;
+  sourceID: string;
+}
+
 export interface Model<Node extends BaseDiagramNode = BaseDiagramNode> {
   _id: string;
   versionID: string;
@@ -21,8 +31,12 @@ export interface Model<Node extends BaseDiagramNode = BaseDiagramNode> {
   modified: number;
   children: string[];
   variables: Variable[];
-  menuNodeIDs?: string[];
+  menuItems?: MenuItem[];
 
+  /**
+   * @deprecated use `menuItems` instead
+   */
+  menuNodeIDs?: string[];
   /**
    * @deprecated use `menuNodeIDs` instead
    */
