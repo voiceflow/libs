@@ -117,6 +117,15 @@ class ProjectResource extends CrudResource<BaseModels.Project.Model<AnyRecord, A
     return data;
   }
 
+  public async updateDevTrainingReceipt<P extends BaseModels.Project.Prototype>(
+    id: string,
+    trainingReceipt: Pick<Required<BaseModels.Project.Prototype>, 'lastTrainedTime' | 'trainedModel'>
+  ): Promise<P> {
+    const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/prototype/training-receipt`, trainingReceipt);
+
+    return data;
+  }
+
   public async getCreator<
     P extends BaseModels.Project.Model<any, any> = BaseModels.Project.Model<AnyRecord, AnyRecord>,
     V extends BaseModels.Version.Model<any, any, string> = BaseModels.Version.Model<BaseModels.Version.PlatformData>,
