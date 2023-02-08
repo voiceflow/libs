@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.23.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.22.13...@voiceflow/api-sdk@3.23.0) (2023-02-08)
+
+
+### Features
+
+* added method for new training receipt endpoint (PL-430) ([#418](https://github.com/voiceflow/libs/issues/418)) ([8a78bb7](https://github.com/voiceflow/libs/commit/8a78bb7b022b225ba0597efdb3d2422ad8e48408))
+
+
+
+
+
 ## [3.22.13](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.22.12...@voiceflow/api-sdk@3.22.13) (2023-02-07)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
