@@ -26,8 +26,10 @@ export interface Sticker {
 }
 
 export interface AIAssistSettings {
+  freestyle?: boolean /** @deprecated in favor of generate no match */;
+  generateStep?: boolean;
+  generateNoMatch?: boolean;
   generativeTasks?: boolean;
-  freestyle?: boolean;
 }
 
 export interface Model<PlatformData extends AnyRecord, MemberPlatformData extends AnyRecord> {
