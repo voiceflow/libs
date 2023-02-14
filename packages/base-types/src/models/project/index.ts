@@ -26,7 +26,6 @@ export interface Sticker {
 }
 
 export interface AIAssistSettings {
-  freestyle?: boolean /** @deprecated in favor of generate no match */;
   generateStep?: boolean;
   generateNoMatch?: boolean;
   generativeTasks?: boolean;
@@ -53,8 +52,6 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   customThemes: Themes;
   updatedAt?: string;
   updatedBy?: number;
-  canvasUpdatedAt?: string /** @deprecated in favor of updatedAt */;
-  canvasUpdatedByCreatorID?: number /** @deprecated in favor of updatedBy */;
   aiAssistSettings?: AIAssistSettings;
 
   members: Member<MemberPlatformData>[];

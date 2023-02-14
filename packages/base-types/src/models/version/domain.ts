@@ -13,5 +13,4 @@ export interface Domain {
   updatedAt?: string;
   rootDiagramID: string;
   updatedBy?: number;
-  updatedByCreatorID?: number /** @deprecated in favor of updatedBy */;
 }
