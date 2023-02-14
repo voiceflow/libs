@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.80.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.80.1...@voiceflow/base-types@2.80.2) (2023-02-14)
+
+
+### Bug Fixes
+
+* remove deprecated types (CT-000) ([#420](https://github.com/voiceflow/libs/issues/420)) ([4d2d2b8](https://github.com/voiceflow/libs/commit/4d2d2b861303f405246b6574cdad0feeb202f644))
+
+
+
+
+
 ## [2.80.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.80.0...@voiceflow/base-types@2.80.1) (2023-02-13)
 
 
