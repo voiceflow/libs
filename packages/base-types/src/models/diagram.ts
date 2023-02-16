@@ -29,14 +29,19 @@ export interface Model<Node extends BaseDiagramNode = BaseDiagramNode> {
   offsetX: number;
   offsetY: number;
   modified: number;
-  children: string[];
   variables: Variable[];
   menuItems?: MenuItem[];
+
+  /**
+   * @deprecated never used
+   */
+  children?: string[];
 
   /**
    * @deprecated use `menuItems` instead
    */
   menuNodeIDs?: string[];
+
   /**
    * @deprecated use `menuNodeIDs` instead
    */
