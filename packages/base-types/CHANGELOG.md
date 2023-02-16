@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.80.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.80.2...@voiceflow/base-types@2.80.3) (2023-02-16)
+
+
+### Bug Fixes
+
+* deprecate diagram childrens (CT-000) ([#421](https://github.com/voiceflow/libs/issues/421)) ([99ef63c](https://github.com/voiceflow/libs/commit/99ef63cc7835672f2f9df36141629330bfe58466))
+
+
+
+
+
 ## [2.80.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.80.1...@voiceflow/base-types@2.80.2) (2023-02-14)
 
 
