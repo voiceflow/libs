@@ -5,3 +5,4 @@ export * from './intent';
 export * from './messages';
 export * from './platformType';
 export * from './slot';
+export * from './variables';
