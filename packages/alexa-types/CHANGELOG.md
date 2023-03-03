@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.12.34...@voiceflow/alexa-types@2.13.0) (2023-03-03)
+
+
+### Features
+
+* add types for alexa (PL-30) ([#424](https://github.com/voiceflow/libs/issues/424)) ([3fa36e2](https://github.com/voiceflow/libs/commit/3fa36e25f81b426bf21a3ecdd34ba8cace2096b9))
+
+
+
+
+
 ## [2.12.34](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.12.33...@voiceflow/alexa-types@2.12.34) (2023-02-27)
 
 **Note:** Version bump only for package @voiceflow/alexa-types
