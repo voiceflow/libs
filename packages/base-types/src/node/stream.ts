@@ -17,6 +17,7 @@ export enum TraceStreamAction {
   LOOP = 'LOOP',
   PLAY = 'PLAY',
   PAUSE = 'PAUSE',
+  END = 'END',
 }
 
 export interface StepBaseBuiltInPorts extends BuiltInNextPort {}

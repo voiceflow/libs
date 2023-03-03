@@ -31,6 +31,8 @@ export enum AmazonIntent {
   SCROLL_LEFT = 'AMAZON.ScrollLeftIntent',
   SCROLL_DOWN = 'AMAZON.ScrollDownIntent',
   SELECT = 'AMAZON.SelectIntent',
+  // eslint-disable-next-line no-secrets/no-secrets
+  PLAYBACK_NEARLY_FINISHED = 'AMAZON.AudioPlayer.PlaybackNearlyFinished',
   VOICEFLOW = 'VoiceFlowIntent',
 }
 
