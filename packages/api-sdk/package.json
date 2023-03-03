@@ -16,7 +16,7 @@
   "devDependencies": {
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^18.11.11",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^9.0.0"
   },
   "files": [
     "build"
