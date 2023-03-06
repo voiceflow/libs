@@ -338,7 +338,7 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, GoogleVoice[]> 
     {
       voiceLanguage: VoiceLanguage.SPANISH_SPAIN,
       voiceType: [VoiceType.WAVENET, VoiceType.STANDARD, VoiceType.NEURAL2],
-      voiceName: [, `${VoiceLanguageCode.ES_ES}-${VoiceType.STANDARD}-C`, `${VoiceLanguageCode.ES_ES}-${VoiceType.NEURAL2}-C`],
+      voiceName: [`${VoiceLanguageCode.ES_ES}-${VoiceType.STANDARD}-C`, `${VoiceLanguageCode.ES_ES}-${VoiceType.NEURAL2}-C`],
       ssmlGender: `${SSMLGender.FEMALE}-2`,
     },
     {
