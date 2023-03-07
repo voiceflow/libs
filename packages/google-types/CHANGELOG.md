@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.19.0](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.18.31...@voiceflow/google-types@2.19.0) (2023-03-07)
+
+
+### Features
+
+* add neural2 voices (CT-1754) ([#425](https://github.com/voiceflow/libs/issues/425)) ([b305c33](https://github.com/voiceflow/libs/commit/b305c33a66cbb287c048d8af1fb1aacf366919a4))
+
+
+
+
+
 ## [2.18.31](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.18.30...@voiceflow/google-types@2.18.31) (2023-03-03)
 
 **Note:** Version bump only for package @voiceflow/google-types
