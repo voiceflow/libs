@@ -7,7 +7,10 @@ export enum NodeType {
   CAROUSEL = 'carousel',
   BUTTONS = 'buttons',
   INTERACTION = 'interaction',
+
+  // ai
   GENERATIVE = 'generative',
+  AI_VARIABLE = 'ai_variable',
 
   // logic
   SET = 'set',
