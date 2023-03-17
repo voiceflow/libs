@@ -10,7 +10,7 @@ export enum NodeType {
 
   // ai
   GENERATIVE = 'generative',
-  AI_VARIABLE = 'ai_variable',
+  AI_SET = 'ai_set',
 
   // logic
   SET = 'set',

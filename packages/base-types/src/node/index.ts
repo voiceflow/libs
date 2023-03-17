@@ -1,5 +1,5 @@
 import * as _v1 from './_v1';
-import * as AIVariable from './aiVariable';
+import * as AISet from './aiSet';
 import * as Api from './api';
 import * as ChannelAction from './channelAction';
 import * as Code from './code';
@@ -28,7 +28,7 @@ import { BaseNode, NodeNextID } from './utils';
 import * as Zapier from './zapier';
 
 export * as _v1 from './_v1';
-export * as AIVariable from './aiVariable';
+export * as AISet from './aiSet';
 export * as Api from './api';
 export * as Buttons from './buttons';
 export * as Capture from './capture';
@@ -106,7 +106,7 @@ export type AnyCommonStep =
   | ChannelAction.Step
   | CustomBlockPointer.Step
   | Generate.Step
-  | AIVariable.Step
+  | AISet.Step
   | _v1.Step;
 
 /**
@@ -135,7 +135,7 @@ export type AnyCommonNode =
   | NextOnlyNode
   | ChannelAction.Node
   | Generate.Node
-  | AIVariable.Node
+  | AISet.Node
   | _v1.Node;
 
 export type AnyCommonCommand = Intent.Command | Command.Command;
