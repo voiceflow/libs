@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.81.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.1...@voiceflow/base-types@2.81.2) (2023-03-17)
+
+
+### Bug Fixes
+
+* rename ai variable to ai set (CT-000) ([d6c6747](https://github.com/voiceflow/libs/commit/d6c67472c50bb5ca2f87f84fdef14983597f547b))
+
+
+
+
+
 ## [2.81.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.0...@voiceflow/base-types@2.81.1) (2023-03-16)
 
 
