@@ -5,6 +5,7 @@ import { BaseNode, BaseResponseTrace, BaseStep, BaseTraceFrame, DataID, NodeNext
 
 export interface TextData extends DataID {
   content: SlateTextValue;
+  /** @deprecated use TextTracePayload.delay instead */
   messageDelayMilliseconds?: number;
 }
 
@@ -24,6 +25,7 @@ export interface Node extends BaseNode, NodeNextID {
 
 export interface TextTracePayload extends BaseResponseTrace {
   slate: TextData;
+  delay?: number;
 }
 
 export interface TraceFrame extends BaseTraceFrame<TextTracePayload> {
