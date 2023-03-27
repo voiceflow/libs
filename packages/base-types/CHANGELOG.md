@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.81.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.2...@voiceflow/base-types@2.81.3) (2023-03-27)
+
+
+### Bug Fixes
+
+* add delay property to text trace (PL-000) ([#427](https://github.com/voiceflow/libs/issues/427)) ([84b0e9e](https://github.com/voiceflow/libs/commit/84b0e9e2a67dbeeea47e6ca4c6b0e7d848e9d363))
+
+
+
+
+
 ## [2.81.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.1...@voiceflow/base-types@2.81.2) (2023-03-17)
 
 
