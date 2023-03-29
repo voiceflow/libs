@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.81.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.3...@voiceflow/base-types@2.81.4) (2023-03-29)
+
+
+### Bug Fixes
+
+* add ai playground setting ([537a625](https://github.com/voiceflow/libs/commit/537a625e9d5231d8f274744373a1836a77380f0e))
+
+
+
+
+
 ## [2.81.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.2...@voiceflow/base-types@2.81.3) (2023-03-27)
 
 
