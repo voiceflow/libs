@@ -26,6 +26,7 @@ export interface Sticker {
 }
 
 export interface AIAssistSettings {
+  aiPlayground?: boolean;
   generateStep?: boolean;
   generateNoMatch?: boolean;
   generativeTasks?: boolean;
