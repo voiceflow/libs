@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.81.6](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.5...@voiceflow/base-types@2.81.6) (2023-03-31)
+
+
+### Bug Fixes
+
+* more explicit max tokens property for model params (LLM-000) ([4503405](https://github.com/voiceflow/libs/commit/4503405368d8ec85a9ebdf6f4aaf8fb2e1b9c0c5))
+
+
+
+
+
 ## [2.81.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.4...@voiceflow/base-types@2.81.5) (2023-03-31)
 
 
