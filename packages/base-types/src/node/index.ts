@@ -1,4 +1,5 @@
 import * as _v1 from './_v1';
+import * as AIResponse from './aiResponse';
 import * as AISet from './aiSet';
 import * as Api from './api';
 import * as ChannelAction from './channelAction';
@@ -8,7 +9,6 @@ import * as CustomBlockPointer from './customBlockPointer';
 import * as Exit from './exit';
 import * as Flow from './flow';
 import * as General from './general';
-import * as Generate from './generative';
 import * as GoogleSheets from './googleSheets';
 import * as GoTo from './goTo';
 import * as GoToDomain from './goToDomain';
@@ -28,6 +28,7 @@ import { BaseNode, NodeNextID } from './utils';
 import * as Zapier from './zapier';
 
 export * as _v1 from './_v1';
+export * as AIResponse from './aiResponse';
 export * as AISet from './aiSet';
 export * as Api from './api';
 export * as Buttons from './buttons';
@@ -45,7 +46,6 @@ export * as Directive from './directive';
 export * as Exit from './exit';
 export * as Flow from './flow';
 export * as General from './general';
-export * as Generative from './generative';
 export * as GoogleSheets from './googleSheets';
 export * as GoTo from './goTo';
 export * as GoToDomain from './goToDomain';
@@ -105,7 +105,7 @@ export type AnyCommonStep =
   | Url.Step
   | ChannelAction.Step
   | CustomBlockPointer.Step
-  | Generate.Step
+  | AIResponse.Step
   | AISet.Step
   | _v1.Step;
 
@@ -134,7 +134,7 @@ export type AnyCommonNode =
   | GoToNode.Node
   | NextOnlyNode
   | ChannelAction.Node
-  | Generate.Node
+  | AIResponse.Node
   | AISet.Node
   | _v1.Node;
 
