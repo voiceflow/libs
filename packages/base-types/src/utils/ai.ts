@@ -9,7 +9,7 @@ export const ChatModels = [GPT_MODEL.GPT_3_5_turbo, GPT_MODEL.GPT_4];
 export interface AIModelParams {
   model?: GPT_MODEL;
   temperature?: number;
-  tokens?: number;
+  maxTokens?: number;
   system?: string;
 }
 
