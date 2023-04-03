@@ -1,7 +1,7 @@
 import { Crypto } from '@voiceflow/common';
 
 import Fetch, { FetchConfig } from './fetch';
-import { Analytics, APIKey, Diagram, Note, Program, Project, ProjectSecret, PrototypeProgram, VariableState, Version } from './resources';
+import { Analytics, APIKey, Diagram, Note, Program, Project, ProjectSecret, PrototypeProgram, Template, VariableState, Version } from './resources';
 
 export interface ClientOptions {
   options?: FetchConfig;
@@ -34,6 +34,8 @@ export class PublicClient {
 
   public prototypeProgram: PrototypeProgram;
 
+  public template: Template;
+
   constructor({ clientKey, apiEndpoint, authorization, options, analyticsEncryption }: ClientOptions) {
     this.fetch = new Fetch({ clientKey, apiEndpoint, authorization, options });
 
@@ -47,5 +49,6 @@ export class PublicClient {
     this.analytics = new Analytics(this.fetch, { encryption: analyticsEncryption });
     this.variableState = new VariableState(this.fetch);
     this.prototypeProgram = new PrototypeProgram(this.fetch);
+    this.template = new Template(this.fetch);
   }
 }

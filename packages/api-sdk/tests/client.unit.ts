@@ -9,6 +9,7 @@ import {
   Project,
   ProjectSecret,
   PrototypeProgram,
+  Template,
   User,
   VariableState,
   Version,
@@ -16,7 +17,7 @@ import {
 import { expect } from 'chai';
 import JWT from 'jsonwebtoken';
 
-const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, ProjectSecret, Version, User, APIKey, Analytics, VariableState, Note];
+const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, ProjectSecret, Version, User, APIKey, Analytics, VariableState, Note, Template];
 
 const USER_HASH = 'UserHash_16chars';
 const createClient = (authorization?: string) =>
