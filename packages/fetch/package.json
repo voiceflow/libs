@@ -7,7 +7,7 @@
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "devDependencies": {
-    "@voiceflow/exception": "1.1.0",
+    "@voiceflow/exception": "1.4.0",
     "fetch-mock": "^9.11.0",
     "undici": "5.12.0"
   },
@@ -22,7 +22,7 @@
   "main": "build/cjs/main.js",
   "module": "build/esm/main.js",
   "peerDependencies": {
-    "@voiceflow/exception": "^1"
+    "@voiceflow/exception": "^1.4"
   },
   "publishConfig": {
     "access": "public",

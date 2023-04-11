@@ -2217,11 +2217,6 @@
     eslint-plugin-xss "^0.1.9"
     eslint-plugin-you-dont-need-lodash-underscore "^6.12.0"
 
-"@voiceflow/exception@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@voiceflow/exception/-/exception-1.1.0.tgz#db61a6121197ed1cf5805c7090c0832731d31762"
-  integrity sha512-jDlZ6TuyhMlsrwekCZy08X1ZP+hlpoxeomCI3OnrOIFr5CmW3SK5XLVl53Om35qIohLojw476MOe8jHZ6jc5hA==
-
 "@voiceflow/git-branch-check@1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@voiceflow/git-branch-check/-/git-branch-check-1.4.0.tgz#5874af67eaaca0bc5270098f9cca0d65ddeb860a"
