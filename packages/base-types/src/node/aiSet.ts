@@ -2,12 +2,11 @@ import { AIContextParams, AIModelParams } from '../utils/ai';
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, NodeNextID } from './utils';
 
-export interface Set {
-  prompt: string;
+export interface Set extends AIContextParams {
   variable: string | null;
 }
 
-export interface StepData extends AIModelParams, AIContextParams {
+export interface StepData extends AIModelParams {
   label: string;
   sets: Set[];
 }

@@ -6,6 +6,12 @@ export enum GPT_MODEL {
 
 export const ChatModels = [GPT_MODEL.GPT_3_5_turbo, GPT_MODEL.GPT_4];
 
+export enum PROMPT_MODE {
+  PROMPT = 'prompt',
+  MEMORY = 'memory',
+  MEMORY_PROMPT = 'memory_prompt',
+}
+
 export interface AIModelParams {
   model?: GPT_MODEL;
   temperature?: number;
@@ -14,5 +20,6 @@ export interface AIModelParams {
 }
 
 export interface AIContextParams {
-  memoryTurns?: number;
+  mode: PROMPT_MODE;
+  prompt: string;
 }
