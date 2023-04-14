@@ -1,4 +1,3 @@
-export { default as Analytics } from './analytics';
 export { default as APIKey } from './apiKey';
 export { default as Diagram } from './diagram';
 export { default as Note } from './note';

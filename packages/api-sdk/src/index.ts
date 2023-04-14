@@ -12,7 +12,7 @@ export const SParams = s.object({
   apiEndpoint: s.string(),
 });
 
-export type Options = Pick<ClientOptions, 'options' | 'analyticsEncryption'>;
+export type Options = Pick<ClientOptions, 'options'>;
 
 export interface Params extends s.StructType<typeof SParams>, Options {}
 
