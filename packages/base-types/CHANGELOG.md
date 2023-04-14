@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.81.7](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.6...@voiceflow/base-types@2.81.7) (2023-04-14)
+
+
+### Bug Fixes
+
+* ai context params ([a5d4d4a](https://github.com/voiceflow/libs/commit/a5d4d4acc0b6723c5758b2a2f05941ad7d8e9527))
+
+
+
+
+
 ## [2.81.6](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.5...@voiceflow/base-types@2.81.6) (2023-03-31)
 
 

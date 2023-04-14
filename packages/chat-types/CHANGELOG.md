@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.32](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.13.31...@voiceflow/chat-types@2.13.32) (2023-04-14)
+
+**Note:** Version bump only for package @voiceflow/chat-types
+
+
+
+
+
 ## [2.13.31](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.13.30...@voiceflow/chat-types@2.13.31) (2023-03-31)
 
 **Note:** Version bump only for package @voiceflow/chat-types
