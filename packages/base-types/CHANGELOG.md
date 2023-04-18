@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.81.8](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.7...@voiceflow/base-types@2.81.8) (2023-04-18)
+
+
+### Bug Fixes
+
+* add codepath property to code step ([69a31db](https://github.com/voiceflow/libs/commit/69a31db521a97cd404ae9ce8509c9830ff9097cf))
+
+
+
+
+
 ## [2.81.7](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.6...@voiceflow/base-types@2.81.7) (2023-04-14)
 
 
