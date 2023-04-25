@@ -7,7 +7,7 @@
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/nestjs-common": "^1.5.1"
+    "@voiceflow/nestjs-common": "2.9.1"
   },
   "devDependencies": {
     "@nestjs/common": "^8.4.2",
