@@ -38,17 +38,22 @@ export enum KnowledgeBaseDocumentType {
   URL = 'url',
 }
 
-export interface KnowledgeBasePDF {
+export interface KnowledgeBaseData {
+  type: KnowledgeBaseDocumentType;
+  name: string;
+}
+
+export interface KnowledgeBasePDF extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.PDF;
   name: string;
 }
 
-export interface KnowledgeBaseText {
+export interface KnowledgeBaseText extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.TEXT;
   name: string;
 }
 
-export interface KnowledgeBaseURL {
+export interface KnowledgeBaseURL extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.URL;
   name: string;
   url: string;
