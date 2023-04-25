@@ -32,6 +32,44 @@ export interface AIAssistSettings {
   generativeTasks?: boolean;
 }
 
+export enum KnowledgeBaseDocumentType {
+  PDF = 'pdf',
+  TEXT = 'text',
+  URL = 'url',
+}
+
+export interface KnowledgeBasePDF {
+  type: KnowledgeBaseDocumentType.PDF;
+  name: string;
+}
+
+export interface KnowledgeBaseText {
+  type: KnowledgeBaseDocumentType.TEXT;
+  name: string;
+}
+
+export interface KnowledgeBaseURL {
+  type: KnowledgeBaseDocumentType.URL;
+  name: string;
+  url: string;
+}
+
+export enum KnowledgeBaseDocumentStatus {
+  UPLOADING = 'UPLOADING',
+  PARSING = 'PARSING',
+  EMBEDDING = 'EMBEDDING',
+  FINISHED = 'FINISHED',
+}
+
+export interface KnowledgeBaseDocument {
+  data: KnowledgeBasePDF | KnowledgeBaseText | KnowledgeBaseURL;
+  status: KnowledgeBaseDocumentStatus;
+  creatorID: number;
+  updatedAt: Date;
+  documentID: string;
+  s3ObjectRef: string;
+}
+
 export interface Model<PlatformData extends AnyRecord, MemberPlatformData extends AnyRecord> {
   _id: string;
   teamID: string;
@@ -57,4 +95,6 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
 
   members: Member<MemberPlatformData>[];
   platformData: PlatformData;
+
+  knowledgeBase?: Record<string, KnowledgeBaseDocument>;
 }
