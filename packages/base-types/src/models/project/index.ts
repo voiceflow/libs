@@ -68,7 +68,10 @@ export enum KnowledgeBaseDocumentStatus {
 
 export interface KnowledgeBaseDocument {
   data: KnowledgeBasePDF | KnowledgeBaseText | KnowledgeBaseURL;
-  status: KnowledgeBaseDocumentStatus;
+  status: {
+    type: KnowledgeBaseDocumentStatus;
+    data?: unknown;
+  };
   creatorID: number;
   updatedAt: Date;
   documentID: string;
