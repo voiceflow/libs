@@ -60,10 +60,10 @@ export interface KnowledgeBaseURL extends KnowledgeBaseData {
 }
 
 export enum KnowledgeBaseDocumentStatus {
-  UPLOADING = 'UPLOADING',
-  PARSING = 'PARSING',
-  EMBEDDING = 'EMBEDDING',
-  FINISHED = 'FINISHED',
+  ERROR = 'ERROR',
+  SUCCESS = 'SUCCESS',
+  PENDING = 'PENDING',
+  INITIALIZED = 'INITIALIZED',
 }
 
 export interface KnowledgeBaseDocument {
