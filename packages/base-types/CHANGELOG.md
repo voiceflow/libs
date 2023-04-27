@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.81.12](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.11...@voiceflow/base-types@2.81.12) (2023-04-27)
+
+
+### Bug Fixes
+
+* nested status (LLM-001) ([61bf91a](https://github.com/voiceflow/libs/commit/61bf91a28cfe2a27933d16c6e384aca7a3dc902d))
+
+
+
+
+
 ## [2.81.11](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.10...@voiceflow/base-types@2.81.11) (2023-04-27)
 
 
