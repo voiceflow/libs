@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.5.0...@voiceflow/fetch@1.5.1) (2023-05-03)
+
+
+### Bug Fixes
+
+* uppercase method names to fix unidici PATCH requests (DX-000) ([#433](https://github.com/voiceflow/libs/issues/433)) ([f402f0f](https://github.com/voiceflow/libs/commit/f402f0f34d86e1fa64c22f979fe931d5d4e34e09))
+
+
+
+
+
 # [1.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.4.0...@voiceflow/fetch@1.5.0) (2022-12-16)
 
 
