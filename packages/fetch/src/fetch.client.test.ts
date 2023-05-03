@@ -197,7 +197,7 @@ describe('Fetch Client', () => {
 
       await fetchClient.get(url);
 
-      expect(fetchSpy).to.be.calledWithExactly(url, { method: 'get', headers: {}, body: undefined });
+      expect(fetchSpy).to.be.calledWithExactly(url, { method: 'GET', headers: {}, body: undefined });
     });
   });
 

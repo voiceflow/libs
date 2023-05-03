@@ -65,7 +65,7 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
 
   private createMethod(method: HTTPMethod) {
     return (url: string | Req, options?: Omit<RequestOptions<Opts>, 'method'>) => {
-      const response = this.send(url, { ...options, method } as RequestOptions<Opts>);
+      const response = this.send(url, { ...options, method: method.toUpperCase() } as RequestOptions<Opts>);
 
       return Object.assign(response, {
         json: async <T = unknown>(): Promise<T> => (await response).json(),
