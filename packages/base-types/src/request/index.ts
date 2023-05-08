@@ -7,6 +7,7 @@ export enum RequestType {
   TEXT = 'text',
   ACTION = 'action',
   INTENT = 'intent',
+  EVENT = 'event',
   LAUNCH = 'launch',
   NO_REPLY = 'no-reply',
 }
@@ -63,8 +64,17 @@ export interface IntentRequestPayload extends ActionAndLabelRequestPayload {
   confidence?: number; // 0-1 confidence of match;
 }
 
+export interface EventRequestPayload extends ActionAndLabelRequestPayload {
+  event: { name: string };
+  data: Record<string, unknown>;
+}
+
 export interface IntentRequest extends BaseRequest<IntentRequestPayload> {
   type: RequestType.INTENT;
+}
+
+export interface EventRequest extends BaseRequest<EventRequestPayload> {
+  type: RequestType.EVENT;
 }
 
 export interface GeneralRequest extends BaseRequest<ActionAndLabelRequestPayload> {
@@ -108,6 +118,8 @@ export const isLaunchRequest = (request: BaseRequest): request is LaunchRequest 
 export const isNoReplyRequest = (request: BaseRequest): request is NoReplyRequest => request.type === RequestType.NO_REPLY;
 
 export const isIntentRequest = (request: BaseRequest): request is IntentRequest => request.type === RequestType.INTENT;
+
+export const isEventRequest = (request: BaseRequest): request is EventRequest => request.type === RequestType.EVENT;
 
 const ALL_REQUEST_TYPES = Object.values(RequestType) as string[];
 

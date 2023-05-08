@@ -1,8 +1,11 @@
+import { Nullable } from '@voiceflow/common';
+
 import { SlotMappings } from './mappings';
 
 // BUILT IN EVENTS
 export enum EventType {
   INTENT = 'intent',
+  ALEXA = 'alexa',
 }
 
 export interface BaseEvent {
@@ -19,6 +22,12 @@ export interface IntentEvent extends BaseEvent, SlotMappings {
   intent: string;
 }
 
+export interface AlexaEvent extends BaseEvent {
+  type: EventType.ALEXA;
+  name: string;
+  mappings: Array<{ var: Nullable<string>; path: string }>;
+}
+
 export interface GeneralEvent extends BaseEvent {
   type: string; // general event type is dynamic, used to match request with the correct command
   name: string;
@@ -27,6 +36,8 @@ export interface GeneralEvent extends BaseEvent {
 export type AnyEvent = IntentEvent | GeneralEvent;
 
 export const isIntentEvent = (event: BaseEvent): event is IntentEvent => event.type === EventType.INTENT;
+
+export const isAlexaEvent = (event: BaseEvent): event is AlexaEvent => event.type === EventType.ALEXA;
 
 const ALL_EVENTS_TYPES = Object.values(EventType) as string[];
 
