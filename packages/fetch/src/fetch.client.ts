@@ -32,7 +32,7 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
       this.fetch = fetchOrConfig;
       this.config = config ?? {};
     } else {
-      this.config = fetchOrConfig ?? {};
+      this.config = fetchOrConfig ?? config ?? {};
     }
   }
   /* eslint-enable lines-between-class-members */
