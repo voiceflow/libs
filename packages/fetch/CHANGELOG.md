@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.2](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.5.1...@voiceflow/fetch@1.5.2) (2023-05-11)
+
+
+### Bug Fixes
+
+* correctly handle FetchClient construction case (DX-000) ([#435](https://github.com/voiceflow/libs/issues/435)) ([44603b8](https://github.com/voiceflow/libs/commit/44603b83e550efdca9fde775bc283f4b5c173fb4))
+
+
+
+
+
 ## [1.5.1](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.5.0...@voiceflow/fetch@1.5.1) (2023-05-03)
 
 
