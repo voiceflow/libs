@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.81.14](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.13...@voiceflow/base-types@2.81.14) (2023-05-15)
+
+
+### Bug Fixes
+
+* knowledge base document version (LLM-001) ([1032e59](https://github.com/voiceflow/libs/commit/1032e597d0419e526afd9e4f74e03568aff46146))
+
+
+
+
+
 ## [2.81.13](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.12...@voiceflow/base-types@2.81.13) (2023-05-02)
 
 
