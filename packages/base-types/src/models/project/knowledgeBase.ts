@@ -44,6 +44,7 @@ export interface KnowledgeBaseDocument {
   updatedAt: Date;
   documentID: string;
   s3ObjectRef: string;
+  version?: number;
 }
 
 export enum ChunkStrategyType {
