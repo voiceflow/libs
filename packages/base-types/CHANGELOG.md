@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.82.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.14...@voiceflow/base-types@2.82.0) (2023-05-16)
+
+
+### Features
+
+* add support for alexa events (PL-30) ([#434](https://github.com/voiceflow/libs/issues/434)) ([2ff461a](https://github.com/voiceflow/libs/commit/2ff461ac9d7ef00e38224b3648255bfe885f0f78))
+
+
+
+
+
 ## [2.81.14](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.13...@voiceflow/base-types@2.81.14) (2023-05-15)
 
 
