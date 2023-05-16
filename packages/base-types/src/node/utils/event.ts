@@ -1,8 +1,11 @@
+import { Nullable } from '@voiceflow/common';
+
 import { SlotMappings } from './mappings';
 
 // BUILT IN EVENTS
 export enum EventType {
   INTENT = 'intent',
+  ALEXA = 'alexa',
 }
 
 export interface BaseEvent {
@@ -17,6 +20,12 @@ export type Event<T extends string = string, D = unknown> = { type: T } & D;
 export interface IntentEvent extends BaseEvent, SlotMappings {
   type: EventType.INTENT;
   intent: string;
+}
+
+export interface AlexaEvent extends BaseEvent {
+  type: EventType.ALEXA;
+  intent: string;
+  mappings: Array<{ var: Nullable<string>; path: string }>;
 }
 
 export interface GeneralEvent extends BaseEvent {

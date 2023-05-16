@@ -61,6 +61,7 @@ export interface IntentRequestPayload extends ActionAndLabelRequestPayload {
   intent: { name: string }; // matched intent name
   entities: Entity[]; // entities matches - multiple of the same entity name may be matched
   confidence?: number; // 0-1 confidence of match;
+  data?: Record<string, unknown>;
 }
 
 export interface IntentRequest extends BaseRequest<IntentRequestPayload> {
