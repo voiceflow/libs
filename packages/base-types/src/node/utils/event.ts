@@ -24,7 +24,7 @@ export interface IntentEvent extends BaseEvent, SlotMappings {
 
 export interface AlexaEvent extends BaseEvent {
   type: EventType.ALEXA;
-  name: string;
+  intent: string;
   mappings: Array<{ var: Nullable<string>; path: string }>;
 }
 
@@ -36,8 +36,6 @@ export interface GeneralEvent extends BaseEvent {
 export type AnyEvent = IntentEvent | GeneralEvent;
 
 export const isIntentEvent = (event: BaseEvent): event is IntentEvent => event.type === EventType.INTENT;
-
-export const isAlexaEvent = (event: BaseEvent): event is AlexaEvent => event.type === EventType.ALEXA;
 
 const ALL_EVENTS_TYPES = Object.values(EventType) as string[];
 
