@@ -1,4 +1,5 @@
 import { CarouselLayout } from '@base-types/node/carousel';
+import { AIModelParams } from '@base-types/utils/ai';
 import { Nullable } from '@voiceflow/common';
 
 import { Utils } from '../node';
@@ -26,6 +27,11 @@ export interface ResumeSession<Prompt = unknown> {
 
 export type Session<Prompt = unknown> = RestartSession | ResumeSession<Prompt>;
 
+export enum GlobalNoMatchType {
+  STATIC = 'static',
+  GENERATIVE = 'generative',
+}
+
 export interface Settings<Prompt = unknown> {
   error: Nullable<Prompt>;
   repeat: RepeatType;
@@ -38,9 +44,15 @@ export interface Settings<Prompt = unknown> {
     delay?: number | undefined;
   };
 
-  globalNoMatch?: {
-    prompt?: Nullable<Prompt> | undefined;
-  };
+  globalNoMatch?:
+    | {
+        type: GlobalNoMatchType.STATIC;
+        prompt: Nullable<Prompt> | undefined;
+      }
+    | {
+        type: GlobalNoMatchType.GENERATIVE;
+        prompt: AIModelParams;
+      };
 }
 
 export const defaultSettings = <Prompt>({
@@ -50,7 +62,7 @@ export const defaultSettings = <Prompt>({
   defaultCanvasNodeVisibility = null,
   defaultCarouselLayout = null,
 
-  globalNoMatch = { prompt: undefined },
+  globalNoMatch = { type: GlobalNoMatchType.STATIC, prompt: undefined },
   globalNoReply = { delay: undefined, prompt: undefined },
 }: Partial<Settings<Prompt>> = {}): Settings<Prompt> => ({
   error,
