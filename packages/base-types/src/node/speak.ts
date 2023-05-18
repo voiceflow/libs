@@ -36,6 +36,7 @@ export interface TraceFramePayload extends BaseResponseTrace {
   src?: Nullable<string>;
   type: TraceSpeakType;
   voice?: string;
+  isPrompt?: boolean;
 }
 
 export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
