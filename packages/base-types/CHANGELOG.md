@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.83.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.83.0...@voiceflow/base-types@2.83.1) (2023-05-18)
+
+
+### Bug Fixes
+
+* add isPrompt to speak trace payload (PL-30) ([#437](https://github.com/voiceflow/libs/issues/437)) ([1ad6a39](https://github.com/voiceflow/libs/commit/1ad6a39bd886e17b95a984feffcfabf8d9a0f019))
+
+
+
+
+
 # [2.83.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.82.0...@voiceflow/base-types@2.83.0) (2023-05-18)
 
 
