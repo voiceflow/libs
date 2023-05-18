@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.83.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.82.0...@voiceflow/base-types@2.83.0) (2023-05-18)
+
+
+### Features
+
+* global generative no match (LLM-001) ([#436](https://github.com/voiceflow/libs/issues/436)) ([71856fd](https://github.com/voiceflow/libs/commit/71856fdcc7d618f8c87e9b4c812823484f559ed4))
+
+
+
+
+
 # [2.82.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.81.14...@voiceflow/base-types@2.82.0) (2023-05-16)
 
 
