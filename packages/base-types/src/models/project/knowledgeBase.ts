@@ -4,6 +4,7 @@ export enum KnowledgeBaseDocumentType {
   PDF = 'pdf',
   TEXT = 'text',
   URL = 'url',
+  DOCX = 'docx',
 }
 
 export interface KnowledgeBaseData {
@@ -13,6 +14,11 @@ export interface KnowledgeBaseData {
 
 export interface KnowledgeBasePDF extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.PDF;
+  name: string;
+}
+
+export interface KnowledgeBaseDocx extends KnowledgeBaseData {
+  type: KnowledgeBaseDocumentType.DOCX;
   name: string;
 }
 
@@ -35,7 +41,7 @@ export enum KnowledgeBaseDocumentStatus {
 }
 
 export interface KnowledgeBaseDocument {
-  data: KnowledgeBasePDF | KnowledgeBaseText | KnowledgeBaseURL;
+  data: KnowledgeBasePDF | KnowledgeBaseText | KnowledgeBaseURL | KnowledgeBaseDocx;
   status: {
     type: KnowledgeBaseDocumentStatus;
     data?: unknown;
