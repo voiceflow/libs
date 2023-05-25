@@ -12,6 +12,11 @@ export enum PROMPT_MODE {
   MEMORY_PROMPT = 'memory_prompt',
 }
 
+export enum DATA_SOURCE {
+  KNOWLEDGE_BASE = 'knowledge_base',
+  DEFAULT = 'default',
+}
+
 export interface AIModelParams {
   model?: GPT_MODEL;
   temperature?: number;
@@ -22,4 +27,9 @@ export interface AIModelParams {
 export interface AIContextParams {
   mode: PROMPT_MODE;
   prompt: string;
+}
+
+export interface AIKnowledgeParams {
+  // make it optional for backward compatibility
+  source?: DATA_SOURCE;
 }
