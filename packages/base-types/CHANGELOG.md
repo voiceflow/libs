@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.83.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.83.2...@voiceflow/base-types@2.83.3) (2023-05-25)
+
+
+### Bug Fixes
+
+* add ai source (LLM-002) ([a75d4ae](https://github.com/voiceflow/libs/commit/a75d4ae6d3f43a37bfec58ce17bb826ad918e6a3))
+
+
+
+
+
 ## [2.83.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.83.1...@voiceflow/base-types@2.83.2) (2023-05-19)
 
 
