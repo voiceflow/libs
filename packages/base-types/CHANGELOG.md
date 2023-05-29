@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.84.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.83.3...@voiceflow/base-types@2.84.0) (2023-05-29)
+
+
+### Features
+
+* add ai prop to TextTracePayload (CT-2052) ([#438](https://github.com/voiceflow/libs/issues/438)) ([7871ba7](https://github.com/voiceflow/libs/commit/7871ba73a6e320ee0937357d1dfd76679ccfcfe3))
+
+
+
+
+
 ## [2.83.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.83.2...@voiceflow/base-types@2.83.3) (2023-05-25)
 
 
