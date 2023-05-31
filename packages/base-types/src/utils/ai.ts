@@ -35,3 +35,14 @@ export interface AIKnowledgeParams {
   // make it optional for backward compatibility
   source?: DATA_SOURCE;
 }
+
+export enum Role {
+  SYSTEM = 'system',
+  ASSISTANT = 'assistant',
+  USER = 'user',
+}
+
+export interface Message {
+  role: Role;
+  content: string;
+}
