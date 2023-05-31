@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.84.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.84.1...@voiceflow/base-types@2.84.2) (2023-05-31)
+
+
+### Bug Fixes
+
+* add role and status (LLM-004) ([36575ba](https://github.com/voiceflow/libs/commit/36575ba2e7726f2262f47c82f1804c80a811c628))
+
+
+
+
+
 ## [2.84.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.84.0...@voiceflow/base-types@2.84.1) (2023-05-31)
 
 
