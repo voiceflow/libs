@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.84.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.84.0...@voiceflow/base-types@2.84.1) (2023-05-31)
+
+
+### Bug Fixes
+
+* add anthropic llm models (LLM-004) ([835cd4c](https://github.com/voiceflow/libs/commit/835cd4c40318ea5a3aee36237c59fe6abba9f893))
+
+
+
+
+
 # [2.84.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.83.3...@voiceflow/base-types@2.84.0) (2023-05-29)
 
 

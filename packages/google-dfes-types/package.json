@@ -1,18 +1,18 @@
 {
   "name": "@voiceflow/google-dfes-types",
   "description": "Google DF-ES service types",
-  "version": "2.15.20",
+  "version": "2.15.21",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/base-types": "^2.84.0",
-    "@voiceflow/chat-types": "^2.13.45",
+    "@voiceflow/base-types": "^2.84.1",
+    "@voiceflow/chat-types": "^2.13.46",
     "@voiceflow/common": "^8.2.0",
-    "@voiceflow/google-types": "^2.19.20",
-    "@voiceflow/voice-types": "^2.9.26",
-    "@voiceflow/voiceflow-types": "^3.23.31"
+    "@voiceflow/google-types": "^2.19.21",
+    "@voiceflow/voice-types": "^2.9.27",
+    "@voiceflow/voiceflow-types": "^3.23.32"
   },
   "files": [
     "build"
