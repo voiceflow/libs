@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.84.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.84.2...@voiceflow/base-types@2.84.3) (2023-05-31)
+
+
+### Bug Fixes
+
+* claude instant typo ([10b770b](https://github.com/voiceflow/libs/commit/10b770bc2b1f5e44e0d5fcff52c0ccc610788ea3))
+
+
+
+
+
 ## [2.84.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.84.1...@voiceflow/base-types@2.84.2) (2023-05-31)
 
 
