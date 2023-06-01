@@ -26,7 +26,6 @@ export interface Node extends BaseNode, NodeNextID {
 export interface TextTracePayload extends BaseResponseTrace {
   slate: TextData;
   delay?: number;
-  ai?: boolean;
 }
 
 export interface TraceFrame extends BaseTraceFrame<TextTracePayload> {
