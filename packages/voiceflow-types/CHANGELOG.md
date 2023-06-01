@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.24.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.23.34...@voiceflow/voiceflow-types@3.24.0) (2023-06-01)
+
+
+### Features
+
+* add feedback property to webchat publishing (CT-2052) ([#439](https://github.com/voiceflow/libs/issues/439)) ([3ed8ab8](https://github.com/voiceflow/libs/commit/3ed8ab80c3e5510f2089156e174b000dc883aed2))
+
+
+
+
+
 ## [3.23.34](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.23.33...@voiceflow/voiceflow-types@3.23.34) (2023-05-31)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
