@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.85.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.85.0...@voiceflow/base-types@2.85.1) (2023-06-12)
+
+
+### Bug Fixes
+
+* move custom block away from collection (CT-2095) ([#441](https://github.com/voiceflow/libs/issues/441)) ([7245163](https://github.com/voiceflow/libs/commit/7245163c237fa6e28bfde763dfb69224b40484cd))
+
+
+
+
+
 # [2.85.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.84.3...@voiceflow/base-types@2.85.0) (2023-06-01)
 
 
