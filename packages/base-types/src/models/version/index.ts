@@ -47,6 +47,22 @@ export interface Folder {
 
 export type DefaultStepColors = Partial<Record<NodeType, string>>;
 
+export interface CustomBlock {
+  key: string;
+  name: string;
+  parameters: Record<
+    string,
+    {
+      id: string;
+      name: string;
+    }
+  >;
+  body: string;
+  stop: boolean;
+  paths: string[];
+  defaultPath: number;
+}
+
 export interface Model<
   _PlatformData extends PlatformData,
   Command extends BaseCommand = BaseCommand,
@@ -73,6 +89,8 @@ export interface Model<
 
   manualSave: boolean;
   autoSaveFromRestore: boolean;
+
+  customBlocks: Record<string, CustomBlock>;
 
   /**
    * @deprecated replaced with domains
