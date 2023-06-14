@@ -46,7 +46,6 @@ export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord, 
   extraIntents: Intent[];
   usedIntentsSet: string[];
   platform: PlatformType;
-  usedCustomBlocks: string[];
 } & SurveyContextExtension;
 
 export interface Prototype<
