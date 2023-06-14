@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.85.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.85.1...@voiceflow/base-types@2.85.2) (2023-06-14)
+
+
+### Bug Fixes
+
+* remove custom block surveyor ([2a69292](https://github.com/voiceflow/libs/commit/2a6929253ab7fd3328af642878f2e510ea435329))
+
+
+
+
+
 ## [2.85.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.85.0...@voiceflow/base-types@2.85.1) (2023-06-12)
 
 
