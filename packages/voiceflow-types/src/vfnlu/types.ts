@@ -2,10 +2,14 @@ import { SlotType } from '../constants';
 
 /**
  * @deprecated
- * LUIS NLU will be retired at October 1st 2025. Avoid using this mapping on core NLU training logic on
- * Voiceflow. Please use `BuiltInVfnluSlotType` instead.
+ * Consider replacing these slot types, which were originally defined for LUIS NLU, into a new set of
+ * default slot types for VFNLU. The VFNLU should not be constrained by the limitations of LUIS. We can
+ * add new slot types that were never supported by LUIS or remove LUIS defaults that we don't want to
+ * support.
+ *
+ * Speak with the NLUM/ML team for how they want to approach this.
  */
-export enum BuiltInLuisSlotType {
+export enum BuiltInVFNLUSlotType {
   /** @see https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-reference-prebuilt-age */
   AGE = 'age',
   /** @see https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-reference-prebuilt-currency */
@@ -46,86 +50,27 @@ export enum BuiltInLuisSlotType {
 
 /**
  * @deprecated
- * LUIS NLU will be retired at October 1st 2025. Avoid using this mapping on core NLU training logic on
- * Voiceflow. Please use `GENERAL_SLOT_TYPE_TO_VFNLU` instead.
+ * This mapping is a temporary data structure that is to map our general slot types into a format
+ * compatible with LUIS. This mapping is unnecessary with the introducion of VFNLU and we should
+ * eventually refactor the NLU so that `SlotType` can be used directly. In the meantime, this mapping
+ * is left in for backwards compatibility.
  */
-export const GENERAL_SLOT_TYPE_TO_LUIS: ReadonlyMap<SlotType, BuiltInLuisSlotType> = new Map([
-  [SlotType.AGE, BuiltInLuisSlotType.AGE],
-  [SlotType.CURRENCY, BuiltInLuisSlotType.CURRENCY],
-  [SlotType.DATETIME, BuiltInLuisSlotType.DATETIME_V2],
-  [SlotType.DIMENSION, BuiltInLuisSlotType.DIMENSION],
-  [SlotType.EMAIL, BuiltInLuisSlotType.EMAIL],
-  [SlotType.GEOGRAPHY, BuiltInLuisSlotType.GEOGRAPHY_V2],
-  [SlotType.KEY_PHRASE, BuiltInLuisSlotType.KEY_PHRASE],
-  [SlotType.NAME, BuiltInLuisSlotType.PERSON_NAME],
-  [SlotType.NUMBER, BuiltInLuisSlotType.NUMBER],
-  [SlotType.ORDINAL, BuiltInLuisSlotType.ORDINAL],
+export const GENERAL_SLOT_TYPE_TO_VFNLU: ReadonlyMap<SlotType, BuiltInVFNLUSlotType> = new Map([
+  [SlotType.AGE, BuiltInVFNLUSlotType.AGE],
+  [SlotType.CURRENCY, BuiltInVFNLUSlotType.CURRENCY],
+  [SlotType.DATETIME, BuiltInVFNLUSlotType.DATETIME_V2],
+  [SlotType.DIMENSION, BuiltInVFNLUSlotType.DIMENSION],
+  [SlotType.EMAIL, BuiltInVFNLUSlotType.EMAIL],
+  [SlotType.GEOGRAPHY, BuiltInVFNLUSlotType.GEOGRAPHY_V2],
+  [SlotType.KEY_PHRASE, BuiltInVFNLUSlotType.KEY_PHRASE],
+  [SlotType.NAME, BuiltInVFNLUSlotType.PERSON_NAME],
+  [SlotType.NUMBER, BuiltInVFNLUSlotType.NUMBER],
+  [SlotType.ORDINAL, BuiltInVFNLUSlotType.ORDINAL],
   // ORDINAL_V2 doesn't exist in VoiceflowConstants.SlotType currently, might get modified in the future once ORDINAL_V2 gets better language support on LUIS
   // eslint-disable-next-line no-secrets/no-secrets
   // [VoiceflowConstants.SlotType.ORDINAL_V2, BuiltInLuisSlotType.ORDINAL_V2],
-  [SlotType.PERCENTAGE, BuiltInLuisSlotType.PERCENTAGE],
-  [SlotType.PHONENUMBER, BuiltInLuisSlotType.PHONENUMBER],
-  [SlotType.TEMPERATURE, BuiltInLuisSlotType.TEMPERATURE],
-  [SlotType.URL, BuiltInLuisSlotType.URL],
+  [SlotType.PERCENTAGE, BuiltInVFNLUSlotType.PERCENTAGE],
+  [SlotType.PHONENUMBER, BuiltInVFNLUSlotType.PHONENUMBER],
+  [SlotType.TEMPERATURE, BuiltInVFNLUSlotType.TEMPERATURE],
+  [SlotType.URL, BuiltInVFNLUSlotType.URL],
 ]);
-
-export interface LuisFeature {
-  modelName: string;
-  isRequired: boolean;
-}
-
-export interface LuisIntentStructure {
-  name: string;
-  features?: string[];
-}
-
-export interface LuisEntityStructure {
-  name: string;
-  roles: string[];
-}
-
-export interface LuisBuiltInEntity {
-  name: string;
-  roles: string[];
-}
-
-export interface LuisUtteranceEntity {
-  entity: string;
-  startPos: number;
-  endPos: number;
-  children?: string[];
-}
-
-export interface LuisUtterance {
-  text: string;
-  intent: string;
-  entities: LuisUtteranceEntity[];
-}
-
-export interface LuisSubList {
-  canonicalForm: string;
-  list: string[];
-}
-
-export interface LuisClosedList {
-  name: string;
-  roles: string[];
-  subLists: LuisSubList[];
-}
-export interface LuisPhraseList {
-  name: string;
-  mode: boolean;
-  words: string;
-  activated: string;
-  enabledForAllModels: boolean;
-}
-
-export interface LuisWorkspace {
-  culture: string;
-  intents: LuisIntentStructure[];
-  entities: LuisEntityStructure[];
-  closedLists: LuisClosedList[];
-  builtInEntities: LuisBuiltInEntity[];
-  utterances: LuisUtterance[];
-  phraselists: LuisPhraseList[];
-}
