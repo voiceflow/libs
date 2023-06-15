@@ -90,7 +90,7 @@ export interface Model<
   manualSave: boolean;
   autoSaveFromRestore: boolean;
 
-  customBlocks: Record<string, CustomBlock>;
+  customBlocks?: Record<string, CustomBlock>;
 
   /**
    * @deprecated replaced with domains

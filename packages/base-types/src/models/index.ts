@@ -1,6 +1,5 @@
 export * as ApiKey from './apiKey';
 export * from './base';
-export * as CustomBlock from './customBlock';
 export * as Diagram from './diagram';
 export * as Program from './program';
 export * as Project from './project';
