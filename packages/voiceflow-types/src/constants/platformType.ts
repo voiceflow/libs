@@ -14,7 +14,7 @@ export enum PlatformType {
   WHATSAPP = 'whatsapp',
   SMS = 'sms',
 
-  /** @deprecated use VOICEFLOW instead */
+  /** @deprecated LUIS will be sunset on October 1st, 2025. Avoid creating dependencies on LUIS. */
   LUIS = 'luis',
   /** @deprecated use VOICEFLOW instead */
   IVR = 'ivr',
