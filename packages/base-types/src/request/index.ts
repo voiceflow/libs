@@ -42,7 +42,11 @@ export interface BaseRequest<Payload = unknown> {
   diagramID?: string; // particular topic to match against
 }
 
-export interface LaunchRequest extends BaseRequest<undefined> {
+export interface LaunchRequestPayload {
+  persona?: string;
+}
+
+export interface LaunchRequest extends BaseRequest<LaunchRequestPayload | undefined> {
   type: RequestType.LAUNCH;
 }
 
