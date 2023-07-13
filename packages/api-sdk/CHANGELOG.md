@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.24.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.23.31...@voiceflow/api-sdk@3.24.0) (2023-07-13)
+
+
+### Features
+
+* add persona to launch request (CT-2093) ([#444](https://github.com/voiceflow/libs/issues/444)) ([66182fe](https://github.com/voiceflow/libs/commit/66182fe75add02bd3e808a3374c5ef301558afd5))
+
+
+
+
+
 ## [3.23.31](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.23.30...@voiceflow/api-sdk@3.23.31) (2023-06-15)
 
 **Note:** Version bump only for package @voiceflow/api-sdk

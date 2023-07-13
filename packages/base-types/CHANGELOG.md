@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.86.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.85.3...@voiceflow/base-types@2.86.0) (2023-07-13)
+
+
+### Features
+
+* add persona to launch request (CT-2093) ([#444](https://github.com/voiceflow/libs/issues/444)) ([66182fe](https://github.com/voiceflow/libs/commit/66182fe75add02bd3e808a3374c5ef301558afd5))
+
+
+
+
+
 ## [2.85.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.85.2...@voiceflow/base-types@2.85.3) (2023-06-15)
 
 
