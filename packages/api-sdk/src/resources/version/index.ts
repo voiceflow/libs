@@ -229,6 +229,12 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
     return data;
   }
 
+  public async getPrototypeVariableStates(id: string): Promise<BaseModels.Version.PrototypeVariableState[]> {
+    const { data } = await this.fetch.get<BaseModels.Version.PrototypeVariableState[]>(`${this._getCRUDEndpoint(id)}/prototype/variable-states`);
+
+    return data;
+  }
+
   public async reorderComponents(id: string, body: { fromID: string; toIndex: number }): Promise<BaseModels.Version.FolderItem> {
     const { data } = await this.fetch.patch<BaseModels.Version.FolderItem>(`${this._getCRUDEndpoint(id)}/components/reorder`, body);
 

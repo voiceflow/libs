@@ -12,6 +12,10 @@ export * from './domain';
 export * from './nluUnclassifiedData';
 export * from './prototype';
 
+export interface PrototypeVariableState {
+  id: string;
+  name: string;
+}
 export interface PlatformData<Settings extends AnyRecord = AnyRecord, Publishing extends AnyRecord = AnyRecord> {
   slots: Slot[];
   intents: Intent[];
