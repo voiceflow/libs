@@ -2201,7 +2201,7 @@
   resolved "https://registry.yarnpkg.com/@voiceflow/exception/-/exception-1.1.0.tgz#db61a6121197ed1cf5805c7090c0832731d31762"
   integrity sha512-jDlZ6TuyhMlsrwekCZy08X1ZP+hlpoxeomCI3OnrOIFr5CmW3SK5XLVl53Om35qIohLojw476MOe8jHZ6jc5hA==
 
-"@voiceflow/git-branch-check@1.4.1":
+"@voiceflow/git-branch-check@^1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@voiceflow/git-branch-check/-/git-branch-check-1.4.1.tgz#afc8df689f656189a3b4ef3aaf7ee247581afa5b"
   integrity sha512-btj43ZdlbaAowzQZWUiZq7ssiV9r0M3uyF9ARjsRLMEigeqc/tTKjkKCXlg70Vd0DXrvsDhEW6q+rB+yACZpGw==
