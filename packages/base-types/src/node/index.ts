@@ -54,6 +54,7 @@ export * as If from './if';
 export * as IfV2 from './ifV2';
 export * as Integration from './integration';
 export * as Interaction from './interaction';
+export * as JSON from './json';
 export * as Intent from './jump';
 export * as Prompt from './prompt';
 export * as Command from './push';
@@ -67,6 +68,7 @@ export * as Stream from './stream';
 export * as Text from './text';
 export * as Url from './url';
 export * as Utils from './utils';
+export * as Video from './video';
 export * as Visual from './visual';
 export * as Zapier from './zapier';
 

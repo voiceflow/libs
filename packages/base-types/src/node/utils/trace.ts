@@ -10,8 +10,10 @@ export enum TraceType {
   SPEAK = 'speak',
   BLOCK = 'block',
   DEBUG = 'debug',
+  JSON = 'json',
   CHOICE = 'choice',
   STREAM = 'stream',
+  VIDEO = 'video',
   VISUAL = 'visual',
   CARD_V2 = 'cardV2',
   CAROUSEL = 'carousel',
@@ -30,6 +32,9 @@ export interface BaseTraceFrame<Payload = any, TracePath extends BaseTraceFrameP
   paths?: TracePath[];
   payload: Payload;
   defaultPath?: number;
+  style?: {
+    delay?: number;
+  };
 }
 
 export interface BaseResponseTrace {
