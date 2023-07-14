@@ -1,7 +1,7 @@
 import { BaseTraceFrame, TraceType } from './utils';
 
 interface StepData {
-  json: string;
+  json: unknown;
 }
 
 export interface TraceFrame extends BaseTraceFrame<StepData> {
