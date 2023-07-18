@@ -10,16 +10,19 @@ export enum TraceType {
   SPEAK = 'speak',
   BLOCK = 'block',
   DEBUG = 'debug',
-  JSON = 'json',
   CHOICE = 'choice',
   STREAM = 'stream',
-  VIDEO = 'video',
   VISUAL = 'visual',
   CARD_V2 = 'cardV2',
   CAROUSEL = 'carousel',
   NO_REPLY = 'no-reply',
   ENTITY_FILLING = 'entity-filling',
   CHANNEL_ACTION = 'channel-action',
+
+  // Voiceflow V3
+  IMAGE = 'image',
+  JSON = 'json',
+  VIDEO = 'video',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {
