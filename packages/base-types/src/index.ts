@@ -1,5 +1,7 @@
 export * as Button from './button';
 export * as BaseButton from './button';
+export * as Markup from './markup';
+export * as BaseMarkup from './markup';
 export * as Models from './models';
 export * as BaseModels from './models';
 export * as Node from './node';

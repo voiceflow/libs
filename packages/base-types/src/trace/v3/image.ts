@@ -1,4 +1,4 @@
-import { BaseTraceFrame, TraceType } from './utils';
+import { BaseTraceFrame, TraceType } from '../../node/utils';
 
 interface StepData {
   url: string;
