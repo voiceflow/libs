@@ -2,11 +2,15 @@ import { TraceFrame as CardV2Trace } from '@base-types/node/cardV2';
 import { TraceFrame as CarouselTrace } from '@base-types/node/carousel';
 import { TraceFrame as ExitTrace } from '@base-types/node/exit';
 import { TraceFrame as FlowTrace } from '@base-types/node/flow';
+// Voiceflow V3
+import { TraceFrame as ImageTrace } from '@base-types/node/image';
 import { TraceFrame as ChoiceTrace } from '@base-types/node/interaction';
+import { TraceFrame as JSONTrace } from '@base-types/node/json';
 import { TraceFrame as SpeakTrace } from '@base-types/node/speak';
 import { TraceFrame as StreamTrace } from '@base-types/node/stream';
 import { TraceFrame as TextTrace } from '@base-types/node/text';
 import { BaseTraceFrame, TraceType } from '@base-types/node/utils';
+import { TraceFrame as VideoTrace } from '@base-types/node/video';
 import { TraceFrame as VisualTrace } from '@base-types/node/visual';
 import { IntentRequest } from '@base-types/request';
 import { Log as RuntimeLog } from '@base-types/runtimeLogs';
@@ -128,4 +132,8 @@ export type AnyTrace =
   | CarouselTrace
   | CardV2Trace
   | EntityFillingTrace
-  | ChannelActionTrace;
+  | ChannelActionTrace
+  // V3 traces
+  | ImageTrace
+  | JSONTrace
+  | VideoTrace;
