@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.87.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.86.0...@voiceflow/base-types@2.87.0) (2023-07-19)
+
+
+### Features
+
+* include startFrom and variables values to prototype variable state (VF-000) ([#448](https://github.com/voiceflow/libs/issues/448)) ([36e005a](https://github.com/voiceflow/libs/commit/36e005a04b6d43c7fae4169115e001b5ed51ee0e))
+
+
+
+
+
 # [2.86.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.85.3...@voiceflow/base-types@2.86.0) (2023-07-13)
 
 
