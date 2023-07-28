@@ -15,10 +15,10 @@ export * from './prototype';
 export interface PrototypeVariableState {
   id: string;
   name: string;
-  startFrom?: {
+  startFrom: {
     diagramID: string;
     stepID: string;
-  };
+  } | null;
   variables: Record<string, string | number | boolean | null>;
 }
 export interface PlatformData<Settings extends AnyRecord = AnyRecord, Publishing extends AnyRecord = AnyRecord> {
