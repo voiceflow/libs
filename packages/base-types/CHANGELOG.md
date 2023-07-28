@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.87.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.0...@voiceflow/base-types@2.87.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* prototype variable state starfrom should have a value or be null (VF-000) ([#449](https://github.com/voiceflow/libs/issues/449)) ([b23402a](https://github.com/voiceflow/libs/commit/b23402a2ea0477dd663ad6bd7e1a30d20d606ede))
+
+
+
+
+
 # [2.87.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.86.0...@voiceflow/base-types@2.87.0) (2023-07-19)
 
 
