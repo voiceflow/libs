@@ -20,9 +20,11 @@ export enum TraceType {
   CHANNEL_ACTION = 'channel-action',
 
   // Voiceflow V3
-  IMAGE = 'image',
-  JSON = 'json',
-  VIDEO = 'video',
+  V3_TEXT = 'v3.text',
+  V3_IMAGE = 'v3.image',
+  V3_JSON = 'v3.json',
+  V3_VIDEO = 'v3.video',
+  V3_DEBUG = 'v3.debug',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {

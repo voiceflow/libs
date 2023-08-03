@@ -130,4 +130,5 @@ export type AnyTrace =
   | V3.ImageTrace
   | V3.JSONTrace
   | V3.VideoTrace
-  | V3.TextTrace;
+  | V3.TextTrace
+  | V3.DebugTrace;

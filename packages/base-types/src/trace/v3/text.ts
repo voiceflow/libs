@@ -7,5 +7,5 @@ interface StepData {
 }
 
 export interface TraceFrame extends BaseTraceFrame<StepData> {
-  type: TraceType.TEXT;
+  type: TraceType.V3_TEXT;
 }

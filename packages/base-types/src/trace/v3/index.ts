@@ -1,4 +1,10 @@
+export { TraceFrame as DebugTrace } from './debug';
+export * as Debug from './debug';
 export { TraceFrame as ImageTrace } from './image';
+export * as Image from './image';
 export { TraceFrame as JSONTrace } from './json';
+export * as JSON from './json';
 export { TraceFrame as TextTrace } from './text';
+export * as Text from './text';
 export { TraceFrame as VideoTrace } from './video';
+export * as Video from './video';

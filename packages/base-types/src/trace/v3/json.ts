@@ -5,5 +5,5 @@ interface StepData {
 }
 
 export interface TraceFrame extends BaseTraceFrame<StepData> {
-  type: TraceType.JSON;
+  type: TraceType.V3_JSON;
 }
