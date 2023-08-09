@@ -75,23 +75,38 @@ export const AmazonToVoiceflowLocaleMap: Record<Locale, VoiceflowConstants.Local
 };
 
 export const VoiceflowToAmazonLocaleMap: Record<VoiceflowConstants.Locale, Locale> = {
-  [VoiceflowConstants.Locale.EN_US]: Locale.EN_US,
   [VoiceflowConstants.Locale.AR_AR]: Locale.EN_US, // FIXME: Unsupported language by Alexa
-  [VoiceflowConstants.Locale.ZH_CN]: Locale.EN_US, // FIXME: Unsupported language by Alexa
-  [VoiceflowConstants.Locale.NL_NL]: Locale.EN_US, // FIXME: Unsupported language by Alexa
-  [VoiceflowConstants.Locale.FR_FR]: Locale.FR_FR,
-  [VoiceflowConstants.Locale.FR_CA]: Locale.FR_CA,
+  [VoiceflowConstants.Locale.BG_BG]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.CA_ES]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.CS_CZ]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.DA_DK]: Locale.EN_US, // FIXME: Unsupported language by Alexa
   [VoiceflowConstants.Locale.DE_DE]: Locale.DE_DE,
+  [VoiceflowConstants.Locale.EN_US]: Locale.EN_US,
+  [VoiceflowConstants.Locale.ES_ES]: Locale.ES_ES,
+  [VoiceflowConstants.Locale.ES_MX]: Locale.ES_MX,
+  [VoiceflowConstants.Locale.ET_EE]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.FR_CA]: Locale.FR_CA,
+  [VoiceflowConstants.Locale.FR_FR]: Locale.FR_FR,
   [VoiceflowConstants.Locale.GU_IN]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.HE_IL]: Locale.EN_US, // FIXME: Unsupported language by Alexa
   [VoiceflowConstants.Locale.HI_IN]: Locale.HI_IN,
+  [VoiceflowConstants.Locale.HU_HU]: Locale.EN_US, // FIXME: Unsupported language by Alexa
   [VoiceflowConstants.Locale.IT_IT]: Locale.IT_IT,
   [VoiceflowConstants.Locale.JA_JP]: Locale.JA_JP,
   [VoiceflowConstants.Locale.KO_KR]: Locale.EN_US, // FIXME: Unsupported language by Alexa
   [VoiceflowConstants.Locale.MR_IN]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.NL_BE]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.NL_NL]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.PL_PL]: Locale.EN_US, // FIXME: Unsupported language by Alexa
   [VoiceflowConstants.Locale.PT_BR]: Locale.PT_BR,
-  [VoiceflowConstants.Locale.ES_ES]: Locale.ES_ES,
-  [VoiceflowConstants.Locale.ES_MX]: Locale.ES_MX,
+  [VoiceflowConstants.Locale.PT_PT]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.RO_RO]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.RU_RU]: Locale.EN_US, // FIXME: Unsupported language by Alexa
   [VoiceflowConstants.Locale.TA_IN]: Locale.EN_US, // FIXME: Unsupported language by Alexa
   [VoiceflowConstants.Locale.TE_IN]: Locale.EN_US, // FIXME: Unsupported language by Alexa
   [VoiceflowConstants.Locale.TR_TR]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.UK_UA]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.VI_VN]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.ZH_CN]: Locale.EN_US, // FIXME: Unsupported language by Alexa
+  [VoiceflowConstants.Locale.ZH_TW]: Locale.EN_US, // FIXME: Unsupported language by Alexa
 };

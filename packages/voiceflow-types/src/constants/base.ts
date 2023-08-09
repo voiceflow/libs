@@ -10,11 +10,28 @@ export enum Locale {
   // Arabic
   AR_AR = 'ar-AR',
 
+  // Bulgarian
+  BG_BG = 'bg-BG',
+
+  // Catalan
+  CA_ES = 'ca-ES',
+
+  // Czech
+  CS_CZ = 'cs-CZ',
+
   // Chinese
   ZH_CN = 'zh-CN',
+  ZH_TW = 'zh-TW',
 
-  // Dutch
+  // Danish
+  DA_DK = 'da-DK',
+
+  // Dutch / Flemish
   NL_NL = 'nl-NL',
+  NL_BE = 'nl-BE',
+
+  // Estonian
+  ET_EE = 'et-EE',
 
   // French
   FR_FR = 'fr-FR',
@@ -22,6 +39,12 @@ export enum Locale {
 
   // German
   DE_DE = 'de-DE',
+
+  // Hebrew
+  HE_IL = 'he-IL',
+
+  // Hungarian
+  HU_HU = 'hu-HU',
 
   // Gujarati
   GU_IN = 'gu-IN',
@@ -41,8 +64,18 @@ export enum Locale {
   // Marathi
   MR_IN = 'mr-IN',
 
+  // Polish
+  PL_PL = 'pl-PL',
+
   // Portugese
+  PT_PT = 'pt-PT',
   PT_BR = 'pt-BR',
+
+  // Romanian
+  RO_RO = 'ro-RO',
+
+  // Russian
+  RU_RU = 'ru-RU',
 
   // Spanish
   ES_ES = 'es-ES',
@@ -56,6 +89,12 @@ export enum Locale {
 
   // Turkish
   TR_TR = 'tr-TR',
+
+  // Ukrainian
+  UK_UA = 'uk-UA',
+
+  // Vietnamese
+  VI_VN = 'vi-VN',
 }
 
 export enum Language {
@@ -65,11 +104,26 @@ export enum Language {
   // Arabic
   AR = 'ar',
 
+  // Bulgarian
+  BG = 'bg',
+
+  // Catalan
+  CA = 'ca',
+
+  // Czech
+  CS = 'cs',
+
   // Chinese
   ZH = 'zh',
 
-  // Dutch
+  // Danish
+  DA = 'da',
+
+  // Dutch / Flemish
   NL = 'nl',
+
+  // Estonian
+  ET = 'et',
 
   // French
   FR = 'fr',
@@ -80,8 +134,14 @@ export enum Language {
   // Gujarati
   GU = 'gu',
 
+  // Hebrew
+  HE = 'he',
+
   // Hindi
   HI = 'hi',
+
+  // Hungarian
+  HU = 'hu',
 
   // Italian
   IT = 'it',
@@ -95,8 +155,17 @@ export enum Language {
   // Marathi
   MR = 'mr',
 
+  // Polish
+  PL = 'pl',
+
   // Portugese
   PT = 'pt',
+
+  // Romanian
+  RO = 'ro',
+
+  // Russian
+  RU = 'ru',
 
   // Spanish
   ES = 'es',
@@ -109,6 +178,12 @@ export enum Language {
 
   // Turkish
   TR = 'tr',
+
+  // Ukrainian
+  UK = 'uk',
+
+  // Vietnamese
+  VI = 'vi',
 }
 
 const LanguageValues: ReadonlySet<Language> = new Set(Object.values(Language));
