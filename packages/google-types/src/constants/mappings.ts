@@ -41,25 +41,41 @@ export const GOOGLE_TO_VOICEFLOW_LOCALE_MAP: Record<Locale, VoiceflowConstants.L
 };
 
 export const VOICEFLOW_TO_GOOGLE_LOCALE_MAP: Record<VoiceflowConstants.Locale, Locale> = {
-  [VoiceflowConstants.Locale.EN_US]: Locale.EN_US,
   [VoiceflowConstants.Locale.AR_AR]: Locale.EN_US, // FIXME: Unsupported language by Google
-  [VoiceflowConstants.Locale.ZH_CN]: Locale.ZH_TW,
-  [VoiceflowConstants.Locale.NL_NL]: Locale.NL_NL,
-  [VoiceflowConstants.Locale.FR_FR]: Locale.FR_FR,
-  [VoiceflowConstants.Locale.FR_CA]: Locale.FR_CA,
+  [VoiceflowConstants.Locale.BG_BG]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.CA_ES]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.CS_CZ]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.DA_DK]: Locale.EN_US, // FIXME: Unsupported language by Google
   [VoiceflowConstants.Locale.DE_DE]: Locale.DE_DE,
+  [VoiceflowConstants.Locale.EN_US]: Locale.EN_US,
+  [VoiceflowConstants.Locale.ES_ES]: Locale.ES_ES,
+  [VoiceflowConstants.Locale.ES_MX]: Locale.ES_419,
+  [VoiceflowConstants.Locale.ET_EE]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.FR_CA]: Locale.FR_CA,
+  [VoiceflowConstants.Locale.FR_FR]: Locale.FR_FR,
   [VoiceflowConstants.Locale.GU_IN]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.HE_IL]: Locale.EN_US, // FIXME: Unsupported language by Google
   [VoiceflowConstants.Locale.HI_IN]: Locale.HI_IN,
+  [VoiceflowConstants.Locale.HU_HU]: Locale.EN_US, // FIXME: Unsupported language by Google
   [VoiceflowConstants.Locale.IT_IT]: Locale.IT_IT,
   [VoiceflowConstants.Locale.JA_JP]: Locale.JA_JP,
   [VoiceflowConstants.Locale.KO_KR]: Locale.KO_KR,
   [VoiceflowConstants.Locale.MR_IN]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.NL_BE]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.NL_NL]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.NL_NL]: Locale.NL_NL,
+  [VoiceflowConstants.Locale.PL_PL]: Locale.EN_US, // FIXME: Unsupported language by Google
   [VoiceflowConstants.Locale.PT_BR]: Locale.PT_BR,
-  [VoiceflowConstants.Locale.ES_ES]: Locale.ES_ES,
-  [VoiceflowConstants.Locale.ES_MX]: Locale.ES_419,
+  [VoiceflowConstants.Locale.PT_PT]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.RO_RO]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.RU_RU]: Locale.EN_US, // FIXME: Unsupported language by Google
   [VoiceflowConstants.Locale.TA_IN]: Locale.EN_US, // FIXME: Unsupported language by Google
   [VoiceflowConstants.Locale.TE_IN]: Locale.EN_US, // FIXME: Unsupported language by Google
   [VoiceflowConstants.Locale.TR_TR]: Locale.TR_TR,
+  [VoiceflowConstants.Locale.UK_UA]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.VI_VN]: Locale.EN_US, // FIXME: Unsupported language by Google
+  [VoiceflowConstants.Locale.ZH_CN]: Locale.ZH_TW,
+  [VoiceflowConstants.Locale.ZH_TW]: Locale.EN_US, // FIXME: Unsupported language by Google
 };
 
 export const GOOGLE_TO_VOICEFLOW_SLOT_TYPE_MAP: Record<SlotType, VoiceflowConstants.SlotType> = {
