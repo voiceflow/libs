@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.25.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.24.6...@voiceflow/voiceflow-types@3.25.0) (2023-08-09)
+
+
+### Features
+
+* add nlu languages (CV3-235) ([#450](https://github.com/voiceflow/libs/issues/450)) ([61f4f06](https://github.com/voiceflow/libs/commit/61f4f06f942eec35bd8fb4c3111a76dfdd316d83))
+
+
+
+
+
 ## [3.24.6](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.24.5...@voiceflow/voiceflow-types@3.24.6) (2023-07-28)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
