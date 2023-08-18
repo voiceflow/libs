@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.87.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.2...@voiceflow/base-types@2.87.3) (2023-08-18)
+
+
+### Bug Fixes
+
+* add else port to ai response (LLM-000) ([cfdf5ad](https://github.com/voiceflow/libs/commit/cfdf5ad1eb1ba0cac94f897be0d2c06cead84eca))
+
+
+
+
+
 ## [2.87.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.1...@voiceflow/base-types@2.87.2) (2023-08-10)
 
 
