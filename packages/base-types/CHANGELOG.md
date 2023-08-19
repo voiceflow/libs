@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.87.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.3...@voiceflow/base-types@2.87.4) (2023-08-19)
+
+
+### Bug Fixes
+
+* port notation structure (LLM-000) ([b6a9caf](https://github.com/voiceflow/libs/commit/b6a9caff3fa69a7fccc7853f9c43323a6e7d3e30))
+
+
+
+
+
 ## [2.87.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.2...@voiceflow/base-types@2.87.3) (2023-08-18)
 
 
