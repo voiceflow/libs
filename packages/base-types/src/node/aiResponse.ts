@@ -1,10 +1,10 @@
 import { AIContextParams, AIKnowledgeParams, AIModelParams } from '../utils/ai';
 import { NodeType } from './constants';
-import { BaseNode, BaseStep, BuiltInNextPort, BuiltInNoMatchPort, NodeElseID, NodeNextID } from './utils';
+import { BaseNode, BaseStep, BaseStepPorts, BuiltInFailPort, BuiltInNextPort, NodeElseID, NodeNextID } from './utils';
 
 export interface StepData extends AIModelParams, AIContextParams, AIKnowledgeParams {}
 
-export interface Step<Data = StepData> extends BaseStep<Data, BuiltInNextPort & BuiltInNoMatchPort> {
+export interface Step<Data = StepData> extends BaseStep<Data, BaseStepPorts<BuiltInNextPort & BuiltInFailPort>> {
   type: NodeType.AI_RESPONSE;
 }
 
