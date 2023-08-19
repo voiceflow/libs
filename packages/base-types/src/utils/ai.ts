@@ -20,6 +20,8 @@ export enum DATA_SOURCE {
   DEFAULT = 'default',
 }
 
+export const KNOWLEDGE_BASE_NOT_FOUND = '[not found]';
+
 export interface AIModelParams {
   model?: GPT_MODEL;
   temperature?: number;
