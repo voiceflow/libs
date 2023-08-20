@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.87.6](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.5...@voiceflow/base-types@2.87.6) (2023-08-20)
+
+
+### Bug Fixes
+
+* add intent confidence to version settings (LLM-000) ([169da9d](https://github.com/voiceflow/libs/commit/169da9db24148941b13dc90080527cf0a028a5ef))
+
+
+
+
+
 ## [2.87.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.4...@voiceflow/base-types@2.87.5) (2023-08-19)
 
 
