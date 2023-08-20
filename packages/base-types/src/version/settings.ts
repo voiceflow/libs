@@ -53,6 +53,8 @@ export interface Settings<Prompt = unknown> {
         type: GlobalNoMatchType.GENERATIVE;
         prompt: AIModelParams;
       };
+
+  intentConfidence?: number;
 }
 
 export const defaultSettings = <Prompt>({
@@ -64,6 +66,8 @@ export const defaultSettings = <Prompt>({
 
   globalNoMatch = { type: GlobalNoMatchType.STATIC, prompt: undefined },
   globalNoReply = { delay: undefined, prompt: undefined },
+
+  intentConfidence = 0.6,
 }: Partial<Settings<Prompt>> = {}): Settings<Prompt> => ({
   error,
   repeat,
@@ -73,4 +77,6 @@ export const defaultSettings = <Prompt>({
 
   globalNoMatch,
   globalNoReply,
+
+  intentConfidence,
 });
