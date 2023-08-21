@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.2.0...@voiceflow/common@8.2.1) (2023-08-21)
+
+
+### Bug Fixes
+
+* potential fix for the (CV3-267) ([1c95eaa](https://github.com/voiceflow/libs/commit/1c95eaa3605961e79b084fdea102466eafb0592a))
+
+
+
+
+
 # [8.2.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.1.5...@voiceflow/common@8.2.0) (2023-01-21)
 
 

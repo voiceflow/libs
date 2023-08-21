@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.87.7](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.6...@voiceflow/base-types@2.87.7) (2023-08-21)
+
+**Note:** Version bump only for package @voiceflow/base-types
+
+
+
+
+
 ## [2.87.6](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.5...@voiceflow/base-types@2.87.6) (2023-08-20)
 
 
