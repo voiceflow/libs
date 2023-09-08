@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.88.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.7...@voiceflow/base-types@2.88.0) (2023-09-08)
+
+
+### Features
+
+* add diagramID to diagram and program models (CV3-363) ([#451](https://github.com/voiceflow/libs/issues/451)) ([6a20f20](https://github.com/voiceflow/libs/commit/6a20f20c7cc087a24dc8767f061e61c5a40ecbce))
+
+
+
+
+
 ## [2.87.7](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.6...@voiceflow/base-types@2.87.7) (2023-08-21)
 
 **Note:** Version bump only for package @voiceflow/base-types
