@@ -4,6 +4,7 @@ export interface Model<Node extends BaseNode = BaseNode, Command extends BaseCom
   id: string;
   startId: string;
   versionID: string;
+  diagramID: string;
 
   name?: string;
   lines: Record<string, Node>;
