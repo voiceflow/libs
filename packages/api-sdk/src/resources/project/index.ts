@@ -5,6 +5,7 @@ import { AnyRecord } from '@voiceflow/common';
 import { Fields } from '../base';
 import CrudResource from '../crud';
 import { ENDPOINT } from './constants';
+import { UpdateMetadataBody } from './interface';
 import MemberResource from './member';
 
 export const modelIDKey = '_id';
@@ -122,6 +123,12 @@ class ProjectResource extends CrudResource<BaseModels.Project.Model<AnyRecord, A
     trainingReceipt: Pick<Required<BaseModels.Project.Prototype>, 'lastTrainedTime' | 'trainedModel'>
   ): Promise<P> {
     const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/prototype/training-receipt`, trainingReceipt);
+
+    return data;
+  }
+
+  public async updateNLUMetadata<P extends BaseModels.Project.Prototype>(id: string, nluMetadata: UpdateMetadataBody): Promise<P> {
+    const { data } = await this.fetch.patch<P>(`${this._getCRUDEndpoint(id)}/prototype/nlp`, nluMetadata);
 
     return data;
   }
