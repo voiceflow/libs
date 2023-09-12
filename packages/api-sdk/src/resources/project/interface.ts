@@ -1,7 +1,6 @@
 export enum NLUType {
   VFNLU = 'vfnlu',
 }
-
 interface BaseUpdateNLUMetadataBody {
   type: NLUType;
 }
