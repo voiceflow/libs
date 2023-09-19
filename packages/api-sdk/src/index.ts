@@ -4,6 +4,7 @@ import { Client } from './client';
 import { ClientOptions, PublicClient } from './publicClient';
 
 export type { Client } from './client';
+export * as Interface from './interface';
 export type { PublicClient } from './publicClient';
 export type { Flatten } from './types';
 

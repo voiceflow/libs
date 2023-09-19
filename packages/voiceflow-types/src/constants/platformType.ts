@@ -4,7 +4,6 @@ export enum PlatformType {
   VOICEFLOW = 'voiceflow',
   DIALOGFLOW_ES = 'df-es',
   DIALOGFLOW_CX = 'df-cx',
-  LUIS = 'luis',
   RASA = 'rasa',
   WATSON = 'watson',
   LEX = 'lex',
@@ -15,6 +14,8 @@ export enum PlatformType {
   WHATSAPP = 'whatsapp',
   SMS = 'sms',
 
+  /** @deprecated LUIS will be sunset on October 1st, 2025. Avoid creating dependencies on LUIS. */
+  LUIS = 'luis',
   /** @deprecated use VOICEFLOW instead */
   IVR = 'ivr',
   /** @deprecated use VOICEFLOW instead */

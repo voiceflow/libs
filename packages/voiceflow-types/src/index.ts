@@ -7,3 +7,4 @@ export * as VoiceflowProgram from './program';
 export * as VoiceflowProject from './project';
 export * as VoiceflowUtils from './utils';
 export * as VoiceflowVersion from './version';
+export * as VFNLU from './vfnlu';
