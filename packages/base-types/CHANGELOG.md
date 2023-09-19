@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.89.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.88.0...@voiceflow/base-types@2.89.0) (2023-09-19)
+
+
+### Features
+
+* replace programIDs with diagramID (CV3-364) ([#452](https://github.com/voiceflow/libs/issues/452)) ([1e8dab0](https://github.com/voiceflow/libs/commit/1e8dab012443df8abbd786240fb9a6c9748d1bc3))
+
+
+
+
+
 # [2.88.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.87.7...@voiceflow/base-types@2.88.0) (2023-09-08)
 
 
