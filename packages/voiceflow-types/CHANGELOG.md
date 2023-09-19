@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.26.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.25.9...@voiceflow/voiceflow-types@3.26.0) (2023-09-19)
+
+
+### Features
+
+* added vfnlu types to base-types [LUIS Removal] (PL-532) ([#443](https://github.com/voiceflow/libs/issues/443)) ([416646a](https://github.com/voiceflow/libs/commit/416646a252ef86c4ab47819d35e12793522ef888))
+
+
+
+
+
 ## [3.25.9](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.25.8...@voiceflow/voiceflow-types@3.25.9) (2023-09-19)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
