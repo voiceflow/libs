@@ -4,7 +4,7 @@ import { BaseCommand, Intent, PrototypeModel, Slot } from '../base';
 
 export interface PrototypeStackFrame<Command extends BaseCommand = BaseCommand> {
   nodeID?: Nullable<string>;
-  programID: string;
+  diagramID: string;
 
   storage?: AnyRecord;
   commands?: Command[];

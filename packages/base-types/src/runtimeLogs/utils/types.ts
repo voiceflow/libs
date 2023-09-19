@@ -11,7 +11,7 @@ export interface PathReference {
 /** A reference to a flow (frame) on the canvas. */
 export interface FlowReference {
   name: string | null;
-  programID: string;
+  diagramID: string;
 }
 
 /** A common interface for representing a before & after change of a value. */
