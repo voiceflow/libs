@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.89.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.89.0...@voiceflow/base-types@2.89.1) (2023-09-19)
+
+
+### Bug Fixes
+
+* make diagramID optional for diagram model (VF-000) ([#453](https://github.com/voiceflow/libs/issues/453)) ([300d144](https://github.com/voiceflow/libs/commit/300d144674e2394990a6e0d0074e829d6281f600))
+
+
+
+
+
 # [2.89.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.88.0...@voiceflow/base-types@2.89.0) (2023-09-19)
 
 
