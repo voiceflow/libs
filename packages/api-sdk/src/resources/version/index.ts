@@ -5,7 +5,10 @@ import { AnyRecord } from '@voiceflow/common';
 import { Fields } from '../base';
 import CrudResource from '../crud';
 import CanvasTemplate from './canvasTemplate';
+import Diagram from './diagram';
 import Domain from './domain';
+import Program from './program';
+import PrototypeProgram from './prototypeProgram';
 
 export const ENDPOINT = 'versions';
 
@@ -16,6 +19,12 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
 
   public canvasTemplate: CanvasTemplate;
 
+  public program: Program;
+
+  public prototypeProgram: PrototypeProgram;
+
+  public diagram: Diagram;
+
   constructor(fetch: Fetch) {
     super({
       fetch,
@@ -25,6 +34,9 @@ class VersionResource extends CrudResource<BaseModels.Version.Model<BaseModels.V
 
     this.domain = new Domain(fetch, { parentEndpoint: ENDPOINT });
     this.canvasTemplate = new CanvasTemplate(fetch, { parentEndpoint: ENDPOINT });
+    this.program = new Program(fetch, { parentEndpoint: ENDPOINT });
+    this.prototypeProgram = new PrototypeProgram(fetch, { parentEndpoint: ENDPOINT });
+    this.diagram = new Diagram(fetch, { parentEndpoint: ENDPOINT });
   }
 
   public async get<T extends Partial<BaseModels.Version.Model<BaseModels.Version.PlatformData>>>(id: string, fields: Fields): Promise<T>;
