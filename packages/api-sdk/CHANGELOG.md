@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.26.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.25.0...@voiceflow/api-sdk@3.26.0) (2023-09-25)
+
+
+### Features
+
+* add new programs and diagrams endpoint under version (CV3-389) ([#454](https://github.com/voiceflow/libs/issues/454)) ([dfcc2c8](https://github.com/voiceflow/libs/commit/dfcc2c8b527deecb22e963c6b248282542193d26))
+
+
+
+
+
 # [3.25.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.24.11...@voiceflow/api-sdk@3.25.0) (2023-09-19)
 
 
