@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.90.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.90.0...@voiceflow/base-types@2.90.1) (2023-09-28)
+
+
+### Bug Fixes
+
+* update slate (CT-000) ([#456](https://github.com/voiceflow/libs/issues/456)) ([d0e66e7](https://github.com/voiceflow/libs/commit/d0e66e7af23c1936ce960ad7b5c4492f283abeca)), closes [/github.com/voiceflow/design/blob/85e923b9617f28c43a0c10240435f42852eef438/libs/ui/package.json#L151](https://github.com//github.com/voiceflow/design/blob/85e923b9617f28c43a0c10240435f42852eef438/libs/ui/package.json/issues/L151)
+
+
+
+
+
 # [2.90.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.89.1...@voiceflow/base-types@2.90.0) (2023-09-19)
 
 
