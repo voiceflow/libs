@@ -7,6 +7,23 @@ export enum KnowledgeBaseDocumentType {
   DOCX = 'docx',
 }
 
+export declare enum KnowledgeBaseBooleanOperators {
+  AND = 'and',
+  OR = 'or',
+}
+
+export interface KnowledgeBaseTagsInclude {
+  items: string[];
+  operator?: KnowledgeBaseBooleanOperators;
+}
+
+export interface KnowledgeBaseTagsFilter {
+  include?: KnowledgeBaseTagsInclude;
+  exclude?: string[];
+  includeAllTagged?: boolean;
+  includeAllNonTagged?: boolean;
+}
+
 export interface KnowledgeBaseData {
   type: KnowledgeBaseDocumentType;
   name: string;
@@ -40,6 +57,11 @@ export enum KnowledgeBaseDocumentStatus {
   INITIALIZED = 'INITIALIZED',
 }
 
+export interface KBTag {
+  tagID: string;
+  label: string;
+}
+
 export interface KnowledgeBaseDocument {
   data: KnowledgeBasePDF | KnowledgeBaseText | KnowledgeBaseURL | KnowledgeBaseDocx;
   status: {
@@ -51,6 +73,7 @@ export interface KnowledgeBaseDocument {
   documentID: string;
   s3ObjectRef: string;
   version?: number;
+  tags?: string[];
 }
 
 export enum ChunkStrategyType {
@@ -75,4 +98,5 @@ export interface KnowledgeBaseSettings {
 export interface KnowledgeBase {
   settings?: KnowledgeBaseSettings;
   documents: Record<string, KnowledgeBaseDocument>;
+  tags?: Record<string, KBTag>;
 }
