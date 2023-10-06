@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.91.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.90.1...@voiceflow/base-types@2.91.0) (2023-10-06)
+
+
+### Features
+
+* KB type models add `KBTags` (NLU-864) ([#455](https://github.com/voiceflow/libs/issues/455)) ([39cf3f1](https://github.com/voiceflow/libs/commit/39cf3f19af31755daa136a1aac57a1bc68493040))
+
+
+
+
+
 ## [2.90.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.90.0...@voiceflow/base-types@2.90.1) (2023-09-28)
 
 
