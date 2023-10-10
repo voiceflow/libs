@@ -20,7 +20,7 @@ export interface MenuItem {
 export interface Model<Node extends BaseDiagramNode = BaseDiagramNode> {
   _id: string;
   versionID: string;
-  diagramID?: string;
+  diagramID: string;
   creatorID: number;
 
   name: string;
