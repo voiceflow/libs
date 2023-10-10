@@ -17,6 +17,7 @@ export { TraceFrame as Carousel } from '@base-types/node/carousel';
 export { TraceFrame as End } from '@base-types/node/exit';
 export { TraceFrame as Flow } from '@base-types/node/flow';
 export { TraceFrame as Choice } from '@base-types/node/interaction';
+export { TraceFrame as KnowledgeBase } from '@base-types/node/knowledgeBase';
 export { TraceFrame as Speak } from '@base-types/node/speak';
 export { TraceFrame as Stream } from '@base-types/node/stream';
 export { TraceFrame as Text } from '@base-types/node/text';
