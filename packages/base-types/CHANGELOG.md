@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.93.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.92.0...@voiceflow/base-types@2.93.0) (2023-10-10)
+
+
+### Features
+
+* add kbfaq trace (nlu-902) ([#458](https://github.com/voiceflow/libs/issues/458)) ([13f995f](https://github.com/voiceflow/libs/commit/13f995fab128f28de9659f3f8103140834eb9862))
+
+
+
+
+
 # [2.92.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.91.0...@voiceflow/base-types@2.92.0) (2023-10-10)
 
 
