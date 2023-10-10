@@ -22,6 +22,7 @@ export { TraceFrame as Stream } from '@base-types/node/stream';
 export { TraceFrame as Text } from '@base-types/node/text';
 export { BaseTraceFrame, TraceType } from '@base-types/node/utils/trace';
 export { TraceFrame as Visual } from '@base-types/node/visual';
+export { TraceFrame as KnowledgeBaseFaq } from '@base-types/node/knowledgeBaseFaq';
 
 /** @deprecated */
 export { TraceFrame as CarouselTrace } from '@base-types/node/carousel';
