@@ -1,6 +1,5 @@
 import { BaseResponseTrace, BaseTraceFrame, TraceType } from './utils';
 
-
 export interface TraceFramePayload extends BaseResponseTrace {
   faqQuestion?: string;
   faqAnswer?: string;
