@@ -70,6 +70,10 @@ export * as Utils from './utils';
 export * as Visual from './visual';
 export * as Zapier from './zapier';
 
+// Voiceflow V3
+export * as Image from '../trace/v3/image';
+export * as Video from '../trace/v3/video';
+
 export interface NextOnlyNode extends BaseNode, NodeNextID {
   type: '_next';
 }

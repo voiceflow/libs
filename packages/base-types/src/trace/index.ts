@@ -12,6 +12,8 @@ import { IntentRequest } from '@base-types/request';
 import { Log as RuntimeLog } from '@base-types/runtimeLogs';
 import { AnyRecord } from '@voiceflow/common';
 
+import * as V3 from './v3';
+
 export { TraceFrame as CardV2 } from '@base-types/node/cardV2';
 export { TraceFrame as Carousel } from '@base-types/node/carousel';
 export { TraceFrame as End } from '@base-types/node/exit';
@@ -22,6 +24,9 @@ export { TraceFrame as Stream } from '@base-types/node/stream';
 export { TraceFrame as Text } from '@base-types/node/text';
 export { BaseTraceFrame, TraceType } from '@base-types/node/utils/trace';
 export { TraceFrame as Visual } from '@base-types/node/visual';
+
+// Voiceflow V3
+export * as V3 from './v3';
 
 /** @deprecated */
 export { TraceFrame as CarouselTrace } from '@base-types/node/carousel';
@@ -120,4 +125,10 @@ export type AnyTrace =
   | CarouselTrace
   | CardV2Trace
   | EntityFillingTrace
-  | ChannelActionTrace;
+  | ChannelActionTrace
+  // V3 traces
+  | V3.ImageTrace
+  | V3.JSONTrace
+  | V3.VideoTrace
+  | V3.TextTrace
+  | V3.DebugTrace;

@@ -18,6 +18,13 @@ export enum TraceType {
   NO_REPLY = 'no-reply',
   ENTITY_FILLING = 'entity-filling',
   CHANNEL_ACTION = 'channel-action',
+
+  // Voiceflow V3
+  V3_TEXT = 'v3.text',
+  V3_IMAGE = 'v3.image',
+  V3_JSON = 'v3.json',
+  V3_VIDEO = 'v3.video',
+  V3_DEBUG = 'v3.debug',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {
@@ -30,6 +37,9 @@ export interface BaseTraceFrame<Payload = any, TracePath extends BaseTraceFrameP
   paths?: TracePath[];
   payload: Payload;
   defaultPath?: number;
+  style?: {
+    delay?: number;
+  };
 }
 
 export interface BaseResponseTrace {
