@@ -2,9 +2,21 @@ import { ErrorMessage } from '@exception/error-message.interface';
 import { ErrorPayload } from '@exception/error-payload.interface';
 import { InternalException } from '@exception/internal.exception';
 
+export interface SerializedHTTPException {
+  message: string;
+  path: string;
+  statusCode: number;
+  statusText: string;
+  timestamp: string;
+}
+
 export class HTTPException extends InternalException {
   public static instanceOf(err: any): err is HTTPException {
     return err instanceof HTTPException;
+  }
+
+  public static serializedInstanceOf(err: any): err is SerializedHTTPException {
+    return err.statusText && err.message && err.statusCode && err.path && err.timestamp;
   }
 
   public statusCode: number;
