@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.95.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.94.0...@voiceflow/base-types@2.95.0) (2023-10-11)
+
+
+### Features
+
+* version kb (nlu-906) ([#460](https://github.com/voiceflow/libs/issues/460)) ([60a178a](https://github.com/voiceflow/libs/commit/60a178a06774c07d45d6bfe5d6f29f7d54b9a7dc))
+
+
+
+
+
 # [2.94.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.93.0...@voiceflow/base-types@2.94.0) (2023-10-11)
 
 
