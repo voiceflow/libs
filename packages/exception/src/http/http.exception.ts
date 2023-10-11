@@ -16,7 +16,7 @@ export class HTTPException extends InternalException {
   }
 
   public static serializedInstanceOf(err: any): err is SerializedHTTPException {
-    return err.statusText && err.message && err.statusCode && err.path && err.timestamp;
+    return typeof err === 'object' && err.statusText && err.message && err.statusCode && err.path && err.timestamp;
   }
 
   public statusCode: number;
