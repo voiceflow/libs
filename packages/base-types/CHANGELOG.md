@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.94.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.93.0...@voiceflow/base-types@2.94.0) (2023-10-11)
+
+
+### Features
+
+* add faqsets model and attach to kb (NLU-903) ([#459](https://github.com/voiceflow/libs/issues/459)) ([dbfd91f](https://github.com/voiceflow/libs/commit/dbfd91fd406a495b9fc5f351b868ce542ea62213))
+
+
+
+
+
 # [2.93.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.92.0...@voiceflow/base-types@2.93.0) (2023-10-10)
 
 
