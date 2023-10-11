@@ -2,6 +2,7 @@ import { AnyRecord } from '@voiceflow/common';
 
 import { NodeType } from '../../node/constants';
 import { BaseCommand, BaseNote, Intent, Slot, Variable } from '../base';
+import { KnowledgeBase } from '../project/knowledgeBase';
 import { CanvasTemplate } from './canvasTemplate';
 import { Domain } from './domain';
 import { NLUUnclassifiedData } from './nluUnclassifiedData';
@@ -100,6 +101,7 @@ export interface Model<
   autoSaveFromRestore: boolean;
 
   customBlocks?: Record<string, CustomBlock>;
+  knowledgeBase?: KnowledgeBase;
 
   /**
    * @deprecated replaced with domains
