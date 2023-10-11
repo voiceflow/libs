@@ -95,8 +95,27 @@ export interface KnowledgeBaseSettings {
   };
 }
 
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
+export interface KnowledgeBaseSetFaq {
+  name: string;
+  status: {
+    type: KnowledgeBaseDocumentStatus;
+    data?: unknown;
+  };
+  creatorID: number;
+  updatedAt: Date;
+  faqSetID: string;
+  version?: number;
+  tags?: string[];
+}
+
 export interface KnowledgeBase {
   settings?: KnowledgeBaseSettings;
   documents: Record<string, KnowledgeBaseDocument>;
   tags?: Record<string, KBTag>;
+  faqSets?: Record<string, KnowledgeBaseSetFaq>;
 }
