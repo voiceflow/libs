@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.96.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.95.0...@voiceflow/base-types@2.96.0) (2023-10-12)
+
+
+### Features
+
+* add exclution operator logic (NLU-864) ([#462](https://github.com/voiceflow/libs/issues/462)) ([6f1225d](https://github.com/voiceflow/libs/commit/6f1225dc2cab693e2a60d5445f3e7b07be6df925))
+
+
+
+
+
 # [2.95.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.94.0...@voiceflow/base-types@2.95.0) (2023-10-11)
 
 
