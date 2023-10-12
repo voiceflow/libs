@@ -4,19 +4,17 @@ import { InternalException } from '@exception/internal.exception';
 
 export interface SerializedHTTPException {
   message: string;
-  path: string;
   statusCode: number;
   statusText: string;
-  timestamp: string;
 }
 
-export class HTTPException extends InternalException {
+export class HTTPException extends InternalException implements SerializedHTTPException {
   public static instanceOf(err: any): err is HTTPException {
     return err instanceof HTTPException;
   }
 
-  public static serializedInstanceOf(err: any): err is SerializedHTTPException {
-    return typeof err === 'object' && err.statusText && err.message && err.statusCode && err.path && err.timestamp;
+  public static isSerializedInstance(err: any): err is SerializedHTTPException {
+    return typeof err === 'object' && 'statusText' in err && 'message' in err && 'statusCode' in err;
   }
 
   public statusCode: number;
