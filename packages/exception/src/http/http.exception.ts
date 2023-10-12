@@ -13,15 +13,15 @@ export class HTTPException extends InternalException implements SerializedHTTPEx
     return err instanceof HTTPException;
   }
 
+  private static hasRequiredProperties(err: unknown): err is Record<keyof SerializedHTTPException, unknown> {
+    return typeof err === 'object' && err !== null && 'statusText' in err && 'message' in err && 'statusCode' in err;
+  }
+
   public static isSerializedInstance(err: unknown): err is SerializedHTTPException {
     return (
-      typeof err === 'object' &&
-      err !== null &&
-      'statusText' in err &&
+      HTTPException.hasRequiredProperties(err) &&
       typeof err.statusText === 'string' &&
-      'message' in err &&
       typeof err.message === 'string' &&
-      'statusCode' in err &&
       typeof err.statusCode === 'number'
     );
   }
