@@ -12,14 +12,14 @@ export declare enum KnowledgeBaseBooleanOperators {
   OR = 'or',
 }
 
-export interface KnowledgeBaseTagsInclude {
+export interface KnowledgeBaseTagsFilterWithOperator {
   items: string[];
   operator?: KnowledgeBaseBooleanOperators;
 }
 
 export interface KnowledgeBaseTagsFilter {
-  include?: KnowledgeBaseTagsInclude;
-  exclude?: string[];
+  include?: KnowledgeBaseTagsFilterWithOperator;
+  exclude?: KnowledgeBaseTagsFilterWithOperator;
   includeAllTagged?: boolean;
   includeAllNonTagged?: boolean;
 }
