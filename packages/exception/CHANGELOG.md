@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/exception@1.4.0...@voiceflow/exception@1.5.0) (2023-10-12)
+
+
+### Features
+
+* adding serialized check (CV3-289) ([#461](https://github.com/voiceflow/libs/issues/461)) ([0ba0d95](https://github.com/voiceflow/libs/commit/0ba0d958e62deac303a8ef99179acfe899be28d3))
+
+
+
+
+
 # [1.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/exception@1.3.0...@voiceflow/exception@1.4.0) (2022-12-14)
 
 
