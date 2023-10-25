@@ -1,7 +1,6 @@
 import type Fetch from '@api-sdk/fetch';
 import { BaseModels } from '@voiceflow/base-types';
 
-import { Fields } from './base';
 import CrudResource from './crud';
 
 const ENDPOINT = 'diagrams';
@@ -16,16 +15,6 @@ class DiagramResource extends CrudResource<BaseModels.Diagram.Model, ModelIDKey,
       clazz: DiagramResource,
       endpoint: ENDPOINT,
     });
-  }
-
-  public async get<T extends Partial<BaseModels.Diagram.Model>>(id: string, fields: Fields): Promise<T>;
-
-  public async get<T extends BaseModels.BaseDiagramNode = BaseModels.BaseDiagramNode>(id: string): Promise<BaseModels.Diagram.Model<T>>;
-
-  public async get<T extends BaseModels.Diagram.Model<any> = BaseModels.Diagram.Model>(id: string): Promise<T>;
-
-  public async get(id: string, fields?: Fields): Promise<BaseModels.Diagram.Model<any>> {
-    return fields ? super._getByID(id, fields) : super._getByID(id);
   }
 
   public async getRTC<T extends BaseModels.Diagram.Model<any> = BaseModels.Diagram.Model>(id: string): Promise<{ diagram: T; timestamp: number }> {
