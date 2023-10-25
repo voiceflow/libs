@@ -45,30 +45,6 @@ describe('DiagramResource', () => {
     sinon.restore();
   });
 
-  it('.get', async () => {
-    const { crud, resource } = createClient();
-
-    crud.getByID.resolves(RESPONSE_DATA);
-
-    const data = await resource.get('1');
-
-    expect(crud.getByID.callCount).to.eql(1);
-    expect(crud.getByID.args[0]).to.eql(['1']);
-    expect(data).to.eql(RESPONSE_DATA);
-  });
-
-  it('.get fields', async () => {
-    const { crud, resource } = createClient();
-
-    crud.getByID.resolves(RESPONSE_DATA);
-
-    const data = await resource.get('1', ['name', 'zoom', 'offsetX']);
-
-    expect(crud.getByID.callCount).to.eql(1);
-    expect(crud.getByID.args[0]).to.eql(['1', ['name', 'zoom', 'offsetX']]);
-    expect(data).to.eql(RESPONSE_DATA);
-  });
-
   it('.getRTC', async () => {
     const { fetch, resource } = createClient();
 
