@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.27.0](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.26.7...@voiceflow/api-sdk@3.27.0) (2023-10-25)
+
+
+### Features
+
+* remove api-sdk diagram get by id (CV3-533) ([#463](https://github.com/voiceflow/libs/issues/463)) ([1be50f4](https://github.com/voiceflow/libs/commit/1be50f43520ec5587c1bc5a1c0cb886819975474))
+
+
+
+
+
 ## [3.26.7](https://github.com/voiceflow/libs/compare/@voiceflow/api-sdk@3.26.6...@voiceflow/api-sdk@3.26.7) (2023-10-12)
 
 **Note:** Version bump only for package @voiceflow/api-sdk
