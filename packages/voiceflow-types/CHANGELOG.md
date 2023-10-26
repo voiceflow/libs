@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.26.8](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.7...@voiceflow/voiceflow-types@3.26.8) (2023-10-26)
+
+
+### Bug Fixes
+
+* add stylesheet to publishing ([5b30cf4](https://github.com/voiceflow/libs/commit/5b30cf44c0e482371fb968e3a4bddeaab77ccb85))
+
+
+
+
+
 ## [3.26.7](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.6...@voiceflow/voiceflow-types@3.26.7) (2023-10-12)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
