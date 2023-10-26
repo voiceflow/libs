@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.26.9](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.8...@voiceflow/voiceflow-types@3.26.9) (2023-10-26)
+
+
+### Bug Fixes
+
+* caps ([3aa1cd6](https://github.com/voiceflow/libs/commit/3aa1cd6ab852e643effafdeb3dc9cfc3364e1476))
+
+
+
+
+
 ## [3.26.8](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.7...@voiceflow/voiceflow-types@3.26.8) (2023-10-26)
 
 
