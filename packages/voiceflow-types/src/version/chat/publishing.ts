@@ -21,7 +21,7 @@ export interface ChatPublishing extends BaseVersion.Publishing {
   position?: ChatPosition;
   watermark?: boolean;
   feedback?: boolean;
-  stylesheet?: string;
+  stylesheet?: string | string[];
   persistence?: ChatPersistence;
   description?: string;
 }
