@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.26.10](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.9...@voiceflow/voiceflow-types@3.26.10) (2023-10-27)
+
+
+### Bug Fixes
+
+* allow multiple stylesheets ([d68a29a](https://github.com/voiceflow/libs/commit/d68a29a52245a6df9b331fd168bd079ec880d3a6))
+
+
+
+
+
 ## [3.26.9](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.8...@voiceflow/voiceflow-types@3.26.9) (2023-10-26)
 
 
