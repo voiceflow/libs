@@ -1,6 +1,6 @@
 import { Struct } from '@common/types';
 
-import { isObject } from './common';
+import { isPlainObject } from './common';
 
 export const deepMap = <T = Struct>(
   object: unknown,
@@ -45,7 +45,7 @@ export const deepMap = <T = Struct>(
 
   const map = (value: unknown, key?: string | number) => {
     if (Array.isArray(value)) return mapArray(value);
-    if (isObject(value)) return mapObject(value);
+    if (isPlainObject(value)) return mapObject(value);
 
     return mapFunction(value, key!);
   };
@@ -92,7 +92,7 @@ export const deepMapKeys = <T = Struct>(object: unknown, mapFunction: (key: stri
 
   const map = (value: unknown) => {
     if (Array.isArray(value)) return mapArray(value);
-    if (isObject(value)) return mapObject(value);
+    if (isPlainObject(value)) return mapObject(value);
 
     return value;
   };
