@@ -1,4 +1,5 @@
 import { deepMap, deepMapKeys } from '@common/utils/object/deepMap';
+import ObjectID from 'bson-objectid';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
@@ -12,6 +13,22 @@ describe('Utils | object | deepMap', () => {
 
     it('transforms simple array', () => {
       expect(deepMap(['2', 3], transform)).to.eql([4, 9]);
+    });
+
+    it("don't change non plain objects", () => {
+      const transform = (n: unknown) => (typeof n === 'string' ? Number(n) ** 2 : n);
+      const date = new Date();
+
+      expect(deepMap(['2', date], transform)).to.eql([4, date]);
+    });
+
+    it('transform objectID', () => {
+      const originalID = new ObjectID();
+      const transformedID = new ObjectID();
+      const transform = (n: unknown) => (n === originalID ? transformedID : n);
+      const date = new Date();
+
+      expect(deepMap(['2', date, originalID], transform)).to.eql(['2', date, transformedID]);
     });
 
     it('transforms object with nested objects/arrays', () => {

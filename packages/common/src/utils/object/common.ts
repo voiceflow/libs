@@ -1,4 +1,5 @@
 import { AnyRecord, Struct } from '@common/types';
+import _isPlainObject from 'lodash/isPlainObject';
 
 export { default as shallowEquals } from 'shallowequal';
 
@@ -14,6 +15,8 @@ export const selectKey = selectField('key');
 export const selectValue = selectField('value');
 
 export const isObject = (obj: unknown): obj is Struct => obj !== null && typeof obj === 'object';
+
+export const isPlainObject = (obj: unknown): obj is Struct => _isPlainObject(obj);
 
 export const hasProperty = <T, K extends keyof T | string>(obj: T, key: K): obj is T & Record<K, unknown> =>
   Object.prototype.hasOwnProperty.call(obj, key);
