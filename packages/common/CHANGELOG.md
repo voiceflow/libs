@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.2.1...@voiceflow/common@8.2.2) (2023-10-30)
+
+
+### Bug Fixes
+
+* deep map (CT-000) ([#465](https://github.com/voiceflow/libs/issues/465)) ([0a626f7](https://github.com/voiceflow/libs/commit/0a626f724a5d9bfa6a14a3f5ff5ce58c816fac1b))
+
+
+
+
+
 ## [8.2.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.2.0...@voiceflow/common@8.2.1) (2023-08-21)
 
 
