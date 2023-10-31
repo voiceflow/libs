@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.96.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.96.1...@voiceflow/base-types@2.96.2) (2023-10-31)
+
+
+### Bug Fixes
+
+* add meta field to v1 ([0c77d3f](https://github.com/voiceflow/libs/commit/0c77d3f5af71ceb72a5f66d721a9f1c529b9d3eb))
+
+
+
+
+
 ## [2.96.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.96.0...@voiceflow/base-types@2.96.1) (2023-10-30)
 
 **Note:** Version bump only for package @voiceflow/base-types
