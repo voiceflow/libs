@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.96.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.96.2...@voiceflow/base-types@2.96.3) (2023-10-31)
+
+
+### Bug Fixes
+
+* remove meta field - use payload instead ([1beed98](https://github.com/voiceflow/libs/commit/1beed98262eb8390d26846ee7bc2132761dc9c09))
+
+
+
+
+
 ## [2.96.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.96.1...@voiceflow/base-types@2.96.2) (2023-10-31)
 
 
