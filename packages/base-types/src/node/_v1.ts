@@ -32,6 +32,7 @@ export interface Node<Event = BaseEvent> extends BaseNode {
   _v: 1;
   stop: boolean;
   paths: Array<NodePath<Event>>;
+  meta: unknown;
   payload: unknown;
   defaultPath?: number; // index starting from 0
 }
