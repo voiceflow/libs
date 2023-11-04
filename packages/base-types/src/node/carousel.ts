@@ -60,7 +60,7 @@ export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData, BaseNoM
 }
 
 export interface TraceCarouselCardDescription {
-  slate: SlateTextValue;
+  slate?: SlateTextValue;
   text: string;
 }
 export interface TraceCarouselCard extends Omit<NodeCarouselCard, 'description'> {

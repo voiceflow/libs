@@ -49,7 +49,7 @@ export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData, BaseNoM
 }
 
 export interface TraceCardV2Description {
-  slate: SlateTextValue;
+  slate?: SlateTextValue;
   text: string;
 }
 export interface TraceCardV2 extends CardDataWithGeneralButton {
