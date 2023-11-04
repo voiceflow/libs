@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.96.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.96.3...@voiceflow/base-types@2.96.4) (2023-11-04)
+
+
+### Bug Fixes
+
+* make slate optional ([e8b844b](https://github.com/voiceflow/libs/commit/e8b844bec1137d379f3255714cb3d5a945fdf4d4))
+
+
+
+
+
 ## [2.96.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.96.2...@voiceflow/base-types@2.96.3) (2023-10-31)
 
 
