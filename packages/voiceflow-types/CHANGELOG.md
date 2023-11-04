@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.26.15](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.14...@voiceflow/voiceflow-types@3.26.15) (2023-11-04)
+
+
+### Bug Fixes
+
+* add last event built-in variable ([5e40921](https://github.com/voiceflow/libs/commit/5e40921ddbfd9fad9d13ea90e24fc625f8df4662))
+
+
+
+
+
 ## [3.26.14](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.13...@voiceflow/voiceflow-types@3.26.14) (2023-11-04)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
