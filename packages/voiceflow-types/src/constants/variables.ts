@@ -8,4 +8,5 @@ export enum BuiltInVariable {
   INTENT_CONFIDENCE = 'intent_confidence',
   LAST_UTTERANCE = 'last_utterance',
   LAST_RESPONSE = 'last_response',
+  LAST_EVENT = 'last_event',
 }
