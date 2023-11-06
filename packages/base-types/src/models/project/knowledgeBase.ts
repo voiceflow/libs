@@ -67,6 +67,7 @@ export interface KnowledgeBaseDocument {
   status: {
     type: KnowledgeBaseDocumentStatus;
     data?: unknown;
+    canEdit?: boolean;
   };
   creatorID: number;
   updatedAt: Date;
