@@ -42,6 +42,7 @@ export interface KnowledgeBaseDocx extends KnowledgeBaseData {
 export interface KnowledgeBaseText extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.TEXT;
   name: string;
+  canEdit?: boolean;
 }
 
 export interface KnowledgeBaseURL extends KnowledgeBaseData {
@@ -67,7 +68,6 @@ export interface KnowledgeBaseDocument {
   status: {
     type: KnowledgeBaseDocumentStatus;
     data?: unknown;
-    canEdit?: boolean;
   };
   creatorID: number;
   updatedAt: Date;
