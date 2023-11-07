@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.97.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.96.4...@voiceflow/base-types@2.97.0) (2023-11-07)
+
+
+### Features
+
+* add canEdit field to KB doc (VF-000) ([#466](https://github.com/voiceflow/libs/issues/466)) ([d712e4c](https://github.com/voiceflow/libs/commit/d712e4c0cb8f6b7e3cc948a29d042378349a76a3))
+
+
+
+
+
 ## [2.96.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.96.3...@voiceflow/base-types@2.96.4) (2023-11-04)
 
 
