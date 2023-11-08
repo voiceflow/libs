@@ -44,6 +44,7 @@ export enum NodeType {
   TRACE = 'trace',
   CHANNEL_ACTION = 'channel_action',
   CUSTOM_BLOCK_POINTER = 'custom_block_pointer',
+  FUNCTION = 'function',
 
   // other
   URL = 'url',

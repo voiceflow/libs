@@ -1,6 +1,7 @@
 import { EmptyObject, Nullable } from '@voiceflow/common';
 
 export enum PortType {
+  FUNCTION = 'function',
   FAIL = 'fail',
   NEXT = 'next',
   PAUSE = 'pause',
