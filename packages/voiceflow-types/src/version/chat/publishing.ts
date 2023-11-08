@@ -1,4 +1,4 @@
-import { BaseVersion } from '@voiceflow/base-types';
+import { BaseRequest, BaseVersion } from '@voiceflow/base-types';
 
 export enum ChatPersistence {
   MEMORY = 'memory', // store user token in JS code memory (least persistent)
@@ -24,4 +24,7 @@ export interface ChatPublishing extends BaseVersion.Publishing {
   stylesheet?: string | string[];
   persistence?: ChatPersistence;
   description?: string;
+  launch?: {
+    event?: BaseRequest.BaseRequest<any>;
+  };
 }
