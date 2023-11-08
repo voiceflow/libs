@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.26.17](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.16...@voiceflow/voiceflow-types@3.26.17) (2023-11-08)
+
+
+### Bug Fixes
+
+* add launch event (CT-000) ([635d1a9](https://github.com/voiceflow/libs/commit/635d1a9ee4ba13aad352548621a4b9575b6a6890))
+
+
+
+
+
 ## [3.26.16](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.15...@voiceflow/voiceflow-types@3.26.16) (2023-11-07)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
