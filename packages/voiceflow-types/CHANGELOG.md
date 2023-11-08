@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.26.18](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.17...@voiceflow/voiceflow-types@3.26.18) (2023-11-08)
+
+
+### Reverts
+
+* Revert "fix: add launch event (CT-000)" ([5f725ea](https://github.com/voiceflow/libs/commit/5f725eadeb67e14076ca0df641a59a16d8830b94))
+
+
+
+
+
 ## [3.26.17](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.16...@voiceflow/voiceflow-types@3.26.17) (2023-11-08)
 
 
