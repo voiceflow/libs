@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.97.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.97.0...@voiceflow/base-types@2.97.1) (2023-11-13)
+
+
+### Bug Fixes
+
+* add override params ([68915bf](https://github.com/voiceflow/libs/commit/68915bfb5dc1a34d6768b63c153d6775deed69bd))
+
+
+
+
+
 # [2.97.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.96.4...@voiceflow/base-types@2.97.0) (2023-11-07)
 
 
