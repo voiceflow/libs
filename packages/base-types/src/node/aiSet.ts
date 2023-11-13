@@ -9,6 +9,9 @@ export interface Set extends AIContextParams {
 export interface StepData extends AIModelParams, AIKnowledgeParams {
   label: string;
   sets: Set[];
+
+  // the existance of this property is also a flag if the step is a legacy version or not
+  overrideParams?: boolean;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
