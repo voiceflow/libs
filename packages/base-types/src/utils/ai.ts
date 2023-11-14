@@ -34,6 +34,12 @@ export interface AIContextParams {
   prompt: string;
 }
 
+export interface AIKnowledgeContextParams {
+  mode: PROMPT_MODE;
+  prompt: string;
+  instruction?: string;
+}
+
 export interface AIKnowledgeParams {
   // make it optional for backward compatibility
   source?: DATA_SOURCE;

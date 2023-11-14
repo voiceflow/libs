@@ -1,8 +1,8 @@
-import { AIContextParams, AIKnowledgeParams, AIModelParams } from '../utils/ai';
+import { AIKnowledgeContextParams, AIKnowledgeParams, AIModelParams } from '../utils/ai';
 import { NodeType } from './constants';
 import { BaseNode, BaseStep, NodeNextID } from './utils';
 
-export interface Set extends AIContextParams {
+export interface Set extends AIKnowledgeContextParams {
   variable: string | null;
 }
 
