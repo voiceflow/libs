@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.3](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.2.2...@voiceflow/common@8.2.3) (2023-11-23)
+
+
+### Bug Fixes
+
+* do not do variable uri replacement ([458e6ac](https://github.com/voiceflow/libs/commit/458e6acd061d0b32df28259464363753abad91da))
+
+
+
+
+
 ## [8.2.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.2.1...@voiceflow/common@8.2.2) (2023-10-30)
 
 
