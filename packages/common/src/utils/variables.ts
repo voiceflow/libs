@@ -69,8 +69,7 @@ export const deepVariableSubstitution = <T>(bodyData: T, variableMap: Record<str
     if (typeof subCollection === 'object') {
       Object.keys(subCollection).forEach((key) => {
         // eslint-disable-next-line no-param-reassign
-        subCollection[key] =
-          key === 'url' ? _recurse(subCollection[key], (variable) => encodeURI(decodeURI(String(variable)))) : _recurse(subCollection[key]);
+        subCollection[key] = _recurse(subCollection[key]);
       });
 
       return subCollection;
