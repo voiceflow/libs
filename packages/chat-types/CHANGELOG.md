@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.81](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.13.80...@voiceflow/chat-types@2.13.81) (2023-11-26)
+
+
+### Bug Fixes
+
+* allow dangerous html setting ([2ff0b44](https://github.com/voiceflow/libs/commit/2ff0b448e4bf5a1060714cc6daacfb650f37d5d6))
+
+
+
+
+
 ## [2.13.80](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.13.79...@voiceflow/chat-types@2.13.80) (2023-11-23)
 
 **Note:** Version bump only for package @voiceflow/chat-types
