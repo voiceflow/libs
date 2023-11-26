@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.82](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.13.81...@voiceflow/chat-types@2.13.82) (2023-11-26)
+
+
+### Reverts
+
+* Revert "fix: allow dangerous html setting" ([aedff4b](https://github.com/voiceflow/libs/commit/aedff4b2c88418037e2200a366cc31aa2ed48878))
+
+
+
+
+
 ## [2.13.81](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.13.80...@voiceflow/chat-types@2.13.81) (2023-11-26)
 
 
