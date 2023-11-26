@@ -5,6 +5,7 @@ import { BaseModels, BaseVersion } from '@voiceflow/base-types';
 export interface Settings extends BaseVersion.Settings<Prompt> {
   session: BaseVersion.Session<Prompt>;
   messageDelay?: BaseModels.Version.PrototypeMessageDelay;
+  allowDangerousHTML?: boolean;
 }
 
 export const defaultMessageDelay = ({ durationMilliseconds = 1000 }: Partial<BaseModels.Version.PrototypeMessageDelay> = {}) => ({
