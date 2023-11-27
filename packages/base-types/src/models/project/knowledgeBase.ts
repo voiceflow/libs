@@ -45,7 +45,7 @@ export interface KnowledgeBaseText extends KnowledgeBaseData {
   canEdit?: boolean;
 }
 
-export enum KnowledgeBaseRefresh {
+export enum KnowledgeBaseRefreshRate {
   NEVER = 'never',
   DAILY = 'daily',
   WEEKLY = 'weekly',
@@ -56,7 +56,7 @@ export interface KnowledgeBaseURL extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.URL;
   name: string;
   url: string;
-  refresh?: KnowledgeBaseRefresh;
+  refreshRate?: KnowledgeBaseRefreshRate;
 }
 
 export enum KnowledgeBaseDocumentStatus {
