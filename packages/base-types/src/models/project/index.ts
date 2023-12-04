@@ -34,6 +34,15 @@ export interface AIAssistSettings {
   generativeTasks?: boolean;
 }
 
+export enum ClassifyStrategy {
+  VF_NLU = 'VF_NLU',
+  VF_NLU_LLM_HYBRID = 'VF_NLU_LLM_HYBRID',
+}
+
+export interface NLUSettings {
+  classifyStrategy?: ClassifyStrategy;
+}
+
 export interface Model<PlatformData extends AnyRecord, MemberPlatformData extends AnyRecord> {
   _id: string;
   teamID: string;
@@ -56,6 +65,7 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   updatedAt?: string;
   updatedBy?: number;
   aiAssistSettings?: AIAssistSettings;
+  nluSettings?: NLUSettings;
 
   members: Member<MemberPlatformData>[];
   platformData: PlatformData;
