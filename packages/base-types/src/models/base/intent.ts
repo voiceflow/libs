@@ -25,4 +25,5 @@ export interface Intent {
   slots?: IntentSlot[];
   inputs: IntentInput[];
   noteID?: string;
+  description?: string;
 }
