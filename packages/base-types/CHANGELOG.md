@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.97.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.97.4...@voiceflow/base-types@2.97.5) (2023-12-04)
+
+
+### Bug Fixes
+
+* nlu settings classify strategy (ACT-018) ([60ed473](https://github.com/voiceflow/libs/commit/60ed473818af02119b4aea189d3d9f388e7391e9))
+
+
+
+
+
 ## [2.97.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.97.3...@voiceflow/base-types@2.97.4) (2023-12-04)
 
 
