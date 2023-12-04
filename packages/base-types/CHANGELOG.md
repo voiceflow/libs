@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.97.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.97.3...@voiceflow/base-types@2.97.4) (2023-12-04)
+
+
+### Bug Fixes
+
+* add description to intent (ACT-018) ([393e86a](https://github.com/voiceflow/libs/commit/393e86a4176bdaf191b15e6587b8ec95c0372423))
+
+
+
+
+
 ## [2.97.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.97.2...@voiceflow/base-types@2.97.3) (2023-11-23)
 
 **Note:** Version bump only for package @voiceflow/base-types
