@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.97.6](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.97.5...@voiceflow/base-types@2.97.6) (2023-12-04)
+
+
+### Bug Fixes
+
+* add gpt 4 turbo (ACT-003) ([79be7e6](https://github.com/voiceflow/libs/commit/79be7e6d1047d096e02a96536d5197d6294e98c3))
+
+
+
+
+
 ## [2.97.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.97.4...@voiceflow/base-types@2.97.5) (2023-12-04)
 
 
