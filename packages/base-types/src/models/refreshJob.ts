@@ -7,5 +7,5 @@ export interface Model {
   url: string;
   refreshRate: KnowledgeBaseDocumentRefreshRate;
   executeAt: Date;
-  checksum?: string;
+  checksum?: string | null;
 }

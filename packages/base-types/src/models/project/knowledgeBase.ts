@@ -83,7 +83,7 @@ export interface KnowledgeBaseDocument {
   version?: number;
   tags?: string[];
   refreshRate?: KnowledgeBaseDocumentRefreshRate;
-  lastSuccessUpdate?: Date;
+  lastSuccessUpdate?: string;
 }
 
 export enum ChunkStrategyType {
