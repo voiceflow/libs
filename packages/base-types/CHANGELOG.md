@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.98.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.97.6...@voiceflow/base-types@2.98.0) (2023-12-08)
+
+
+### Features
+
+* add refresh-jobs schemas (CV3-710) ([#471](https://github.com/voiceflow/libs/issues/471)) ([b2219bb](https://github.com/voiceflow/libs/commit/b2219bbecece9df3657ab17b7530d170bb91a15c))
+
+
+
+
+
 ## [2.97.6](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.97.5...@voiceflow/base-types@2.97.6) (2023-12-04)
 
 
