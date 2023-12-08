@@ -56,6 +56,8 @@ export interface KnowledgeBaseURL extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.URL;
   name: string;
   url: string;
+  refreshRate?: KnowledgeBaseDocumentRefreshRate;
+  lastSuccessUpdate?: string;
 }
 
 export enum KnowledgeBaseDocumentStatus {
@@ -82,8 +84,6 @@ export interface KnowledgeBaseDocument {
   s3ObjectRef: string;
   version?: number;
   tags?: string[];
-  refreshRate?: KnowledgeBaseDocumentRefreshRate;
-  lastSuccessUpdate?: string;
 }
 
 export enum ChunkStrategyType {
