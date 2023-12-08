@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.99.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.98.0...@voiceflow/base-types@2.99.0) (2023-12-08)
+
+
+### Features
+
+* kburl change refreshreate info location (CV3-730) ([#472](https://github.com/voiceflow/libs/issues/472)) ([3506af2](https://github.com/voiceflow/libs/commit/3506af2fe9c28f27299d95bedd5f198d00b5cfb5))
+
+
+
+
+
 # [2.98.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.97.6...@voiceflow/base-types@2.98.0) (2023-12-08)
 
 
