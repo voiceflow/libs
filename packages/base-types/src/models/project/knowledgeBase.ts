@@ -7,6 +7,13 @@ export enum KnowledgeBaseDocumentType {
   DOCX = 'docx',
 }
 
+export enum KnowledgeBaseDocumentRefreshRate {
+  DAILY = 'daily',
+  WEEKLY = 'weekly',
+  MONTHLY = 'monthly',
+  NEVER = 'never',
+}
+
 export declare enum KnowledgeBaseBooleanOperators {
   AND = 'and',
   OR = 'or',
@@ -75,6 +82,8 @@ export interface KnowledgeBaseDocument {
   s3ObjectRef: string;
   version?: number;
   tags?: string[];
+  refreshRate?: KnowledgeBaseDocumentRefreshRate;
+  lastSuccessUpdate?: Date;
 }
 
 export enum ChunkStrategyType {
