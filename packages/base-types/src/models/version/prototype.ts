@@ -45,6 +45,7 @@ export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord, 
   extraSlots: Slot[];
   extraIntents: Intent[];
   usedIntentsSet: string[];
+  usedFunctionsMap: Record<string, string>;
   platform: PlatformType;
 } & SurveyContextExtension;
 
