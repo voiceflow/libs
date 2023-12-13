@@ -31,7 +31,7 @@ workflows:
                 value-env-var: *env_name
             - vfcommon/get_changed_files
             - vfcommon/set-service-data-json:
-                service-directories: apps
+                service-directories: packages
             - vfcommon/set-if-file-changed:
                 file-patterns: package.json yarn.lock libs/.* types/.* meta/.*
                 target-env-var: &build_all build_all_services
