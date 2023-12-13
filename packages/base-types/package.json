@@ -1,13 +1,13 @@
 {
   "name": "@voiceflow/base-types",
   "description": "Voiceflow base project types",
-  "version": "2.99.0",
+  "version": "2.99.1",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/common": "^8.2.3",
+    "@voiceflow/common": "^8.2.4",
     "slate": "0.94.1"
   },
   "files": [
