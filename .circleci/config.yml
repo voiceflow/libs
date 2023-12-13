@@ -1,25 +1,63 @@
 version: 2.1
 
+# This exposes the parameters to be overridden in the generated pipeline
+parameters:
+  ssh-fingerprint:
+    type: string
+    default: '93:f8:51:53:5e:bd:75:0e:29:24:4d:6a:3f:ef:e1:4a'
+
 # this allows you to use CircleCI's dynamic configuration feature
 setup: true
 
 orbs:
-  path-filtering: circleci/path-filtering@0.0.2
-
-# Reusable YAML chunks
-defaults:
-  tag_filters: &tag_filters
-    tags:
-      only: /^@voiceflow/.*@[0-9]*(\.[0-9]*)*$/
+  vfcommon: voiceflow/common@0.48.0
+  gomplate: xavientois/gomplate@0.2.0
 
 workflows:
   generate-config:
+    when:
+      not:
+        equal: [scheduled_pipeline, << pipeline.trigger_source >>]
     jobs:
-      - path-filtering/filter:
+      - gomplate/render-config:
+          context: dev-test
+          executor: vfcommon/node-executor
+          pre-steps:
+            - checkout
+            - vfcommon/set-env-name: # On bors branches, we will be running the e2e tests in a dev environment
+                target_env_var: &env_name ENV_NAME
+            - vfcommon/set-json-string-from-env:
+                field: e2e_env_name
+                value-env-var: *env_name
+            - vfcommon/get_changed_files
+            - vfcommon/set-service-data-json:
+                service-directories: apps
+            - vfcommon/set-if-file-changed:
+                file-patterns: package.json yarn.lock libs/.* types/.* meta/.*
+                target-env-var: &build_all build_all_services
+            - vfcommon/set-json-boolean-from-env:
+                field: *build_all
+                value-env-var: *build_all
+            - vfcommon/set-pr-number
+            - vfcommon/set-pr-branch:
+                target_env_var: &pr_branch PR_BRANCH
+            - vfcommon/set-json-string-from-env:
+                field: pr_branch
+                value-env-var: *pr_branch
+            - vfcommon/set-json-string:
+                field: branch
+                # HACK: this cannot be empty, so we pass both branch and tag (only one of them will be non-empty)
+                # TODO: Fix this once https://discuss.circleci.com/t/empty-string-for-parameter-breaks-config/47695 has a solution
+                value: '<< pipeline.git.branch >><< pipeline.git.tag >>'
+            - vfcommon/set-json-string:
+                field: ecr_url
+                value: 168387678261.dkr.ecr.us-east-1.amazonaws.com
+            - vfcommon/set-json-string-from-env:
+                field: common_orb_version
+                value-env-var: COMMON_ORB_VERSION
+            - run: cat values.json
+          contexts: values.json
           filters:
-            <<: *tag_filters
-          base-revision: master
-          config-path: .circleci/continue-config.yml
-          mapping: |
-            package.json build-all true
-            yarn.lock build-all true
+            branches:
+              ignore:
+                - /.*\.tmp/
