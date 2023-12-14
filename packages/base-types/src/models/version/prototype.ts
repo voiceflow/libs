@@ -45,7 +45,10 @@ export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord, 
   extraSlots: Slot[];
   extraIntents: Intent[];
   usedIntentsSet: string[];
-  usedFunctionsMap: Record<string, string>;
+  /**
+   * !TODO! - Make this required after migrating users to have `usedFunctionsMap`
+   */
+  usedFunctionsMap?: Record<string, string>;
   platform: PlatformType;
 } & SurveyContextExtension;
 
