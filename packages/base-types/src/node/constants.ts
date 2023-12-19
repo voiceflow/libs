@@ -9,6 +9,7 @@ export enum NodeType {
   INTERACTION = 'interaction',
 
   // ai
+  AI_CAPTURE = 'ai_capture',
   AI_RESPONSE = 'generative',
   AI_SET = 'ai_set',
 
