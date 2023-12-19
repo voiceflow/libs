@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.99.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.99.1...@voiceflow/base-types@2.99.2) (2023-12-19)
+
+
+### Bug Fixes
+
+* ai capture ([5eef908](https://github.com/voiceflow/libs/commit/5eef9085b37f04efd5d4c959edd96511254b9f9c))
+
+
+
+
+
 ## [2.99.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.99.0...@voiceflow/base-types@2.99.1) (2023-12-13)
 
 **Note:** Version bump only for package @voiceflow/base-types
