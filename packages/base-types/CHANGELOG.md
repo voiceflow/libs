@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.99.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.99.2...@voiceflow/base-types@2.99.3) (2023-12-19)
+
+
+### Bug Fixes
+
+* ai capture ports ([03f3128](https://github.com/voiceflow/libs/commit/03f3128d2abb8d5456c1a97799079ea9723e0b93))
+
+
+
+
+
 ## [2.99.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.99.1...@voiceflow/base-types@2.99.2) (2023-12-19)
 
 
