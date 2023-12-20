@@ -6,7 +6,9 @@ export interface Model {
   documentID: string;
   workspaceID: number;
   url: string;
+  name: string;
   refreshRate: KnowledgeBaseDocumentRefreshRate;
   executeAt: Date;
   checksum?: string | null;
+  tags?: string[];
 }
