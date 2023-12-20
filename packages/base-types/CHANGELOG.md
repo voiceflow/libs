@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.100.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.99.3...@voiceflow/base-types@2.100.0) (2023-12-20)
+
+
+### Features
+
+* add fields `name` and `tags` to refresh-jobs (CV3-717) ([#486](https://github.com/voiceflow/libs/issues/486)) ([f71945b](https://github.com/voiceflow/libs/commit/f71945b3b9d3bd2f84f0bd0d2c40fac7118b757a))
+
+
+
+
+
 ## [2.99.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.99.2...@voiceflow/base-types@2.99.3) (2023-12-19)
 
 
