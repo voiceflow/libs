@@ -11,7 +11,9 @@
     "@voiceflow/chat-types": "^2.13.91",
     "@voiceflow/common": "^8.2.4",
     "@voiceflow/voice-types": "^2.9.70",
-    "@voiceflow/voiceflow-types": "^3.26.32",
+    "@voiceflow/voiceflow-types": "^3.26.32"
+  },
+  "devDependencies": {
     "googleapis": "92.0.0"
   },
   "files": [
