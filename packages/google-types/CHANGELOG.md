@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.20.43](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.20.42...@voiceflow/google-types@2.20.43) (2023-12-27)
+
+
+### Bug Fixes
+
+* google-apis is only a dev dependency (CT-000) ([#487](https://github.com/voiceflow/libs/issues/487)) ([3a79394](https://github.com/voiceflow/libs/commit/3a793942c27b3b88a76f1e9a4921b63198a066c0))
+
+
+
+
+
 ## [2.20.42](https://github.com/voiceflow/libs/compare/@voiceflow/google-types@2.20.41...@voiceflow/google-types@2.20.42) (2023-12-20)
 
 **Note:** Version bump only for package @voiceflow/google-types
