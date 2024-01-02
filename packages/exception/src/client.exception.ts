@@ -43,7 +43,7 @@ export class ClientException<Res extends BaseResponse = BaseResponse> extends Er
   }
 
   public async build() {
-    const text = await this.response.text();
+    const text = await this.response.clone().text();
 
     try {
       this.extractDetailedError(JSON.parse(text));
