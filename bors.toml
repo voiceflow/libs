@@ -1,4 +1,9 @@
-status = ["ci/circleci: test"]
+status = [
+  "ci/circleci: build",
+  "ci/circleci: dependency-tests",
+  "ci/circleci: unit-tests",
+  "ci/circleci: lint-report"
+]
 delete_merged_branches = true
 use_squash_merge = true
 cut_body_after = "### Implementation details. How do you make this change?"
