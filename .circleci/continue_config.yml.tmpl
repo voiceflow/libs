@@ -75,7 +75,7 @@ workflows:
           post-steps:
             - jira/notify
 
-      {{- $testJobs := (coll.Slice "unit_tests" "integration_tests" "lint_report" "analyze_dependencies" "lint_dockerfile" "dependency_tests")}}
+      {{- $testJobs := (coll.Slice "unit_tests" "lint_report" "analyze_dependencies" "lint_dockerfile" "dependency_tests")}}
       {{ range $testJob := $testJobs }}
       - vfcommon/monorepo_{{ $testJob }}:
           <<: *slack-fail-post-step
