@@ -6,7 +6,8 @@
     "outDir": "build",
     "paths": {
       "@nestjs-common/*": ["src/*"]
-    }
+    },
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "build"]
 }

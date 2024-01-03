@@ -1,0 +1,44 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": ["build/**"],
+      "inputs": [
+        "src/**",
+        ":!src/**/*.test.ts",
+        "package.json",
+        "tsconfig.json",
+        "tsconfig.build.json",
+        "tsconfig.build.*.json",
+        "scripts/**",
+        "config/**"
+      ],
+      "dependsOn": ["^build"]
+    },
+    "test:dependencies": {
+      "inputs": ["src/**/*.test.ts", "package.json", "jest.config.js"]
+    },
+    "test:unit": {
+      "outputs": ["sonar/coverage/**/*"],
+      "inputs": ["src/**", "package.json", "jest.config.js"]
+    },
+    "lint": {
+      "inputs": ["src/**"],
+      "outputs": []
+    },
+    "lint:quiet": {
+      "inputs": ["src/**"],
+      "outputs": []
+    },
+    "lint:fix": {
+      "inputs": ["src/**"],
+      "outputs": ["src/**"]
+    },
+    "lint:report": {
+      "outputs": ["sonar/report.json"]
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
