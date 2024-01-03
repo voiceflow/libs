@@ -2869,10 +2869,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@voiceflow/alexa-types@workspace:packages/alexa-types"
   dependencies:
-    "@voiceflow/base-types": ^2.99.1
+    "@voiceflow/base-types": ^2.100.0
     "@voiceflow/common": ^8.2.4
-    "@voiceflow/voice-types": ^2.9.67
-    "@voiceflow/voiceflow-types": ^3.26.29
+    "@voiceflow/voice-types": ^2.9.70
+    "@voiceflow/voiceflow-types": ^3.26.32
     ask-smapi-model: 1.14.0
   languageName: unknown
   linkType: soft
@@ -2883,7 +2883,7 @@ __metadata:
   dependencies:
     "@types/jsonwebtoken": ^8.5.0
     "@types/node": ^18.11.11
-    "@voiceflow/base-types": ^2.99.1
+    "@voiceflow/base-types": ^2.100.0
     "@voiceflow/common": ^8.2.4
     axios: 0.24.0
     jsonwebtoken: ^8.5.1
@@ -2892,7 +2892,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@voiceflow/base-types@^2.99.1, @voiceflow/base-types@workspace:packages/base-types":
+"@voiceflow/base-types@^2.100.0, @voiceflow/base-types@workspace:packages/base-types":
   version: 0.0.0-use.local
   resolution: "@voiceflow/base-types@workspace:packages/base-types"
   dependencies:
@@ -2901,11 +2901,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@voiceflow/chat-types@^2.13.88, @voiceflow/chat-types@workspace:packages/chat-types":
+"@voiceflow/chat-types@^2.13.91, @voiceflow/chat-types@workspace:packages/chat-types":
   version: 0.0.0-use.local
   resolution: "@voiceflow/chat-types@workspace:packages/chat-types"
   dependencies:
-    "@voiceflow/base-types": ^2.99.1
+    "@voiceflow/base-types": ^2.100.0
     "@voiceflow/common": ^8.2.4
   languageName: unknown
   linkType: soft
@@ -3016,24 +3016,24 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@voiceflow/google-dfes-types@workspace:packages/google-dfes-types"
   dependencies:
-    "@voiceflow/base-types": ^2.99.1
-    "@voiceflow/chat-types": ^2.13.88
+    "@voiceflow/base-types": ^2.100.0
+    "@voiceflow/chat-types": ^2.13.91
     "@voiceflow/common": ^8.2.4
-    "@voiceflow/google-types": ^2.20.39
-    "@voiceflow/voice-types": ^2.9.67
-    "@voiceflow/voiceflow-types": ^3.26.29
+    "@voiceflow/google-types": ^2.20.43
+    "@voiceflow/voice-types": ^2.9.70
+    "@voiceflow/voiceflow-types": ^3.26.32
   languageName: unknown
   linkType: soft
 
-"@voiceflow/google-types@^2.20.39, @voiceflow/google-types@workspace:packages/google-types":
+"@voiceflow/google-types@^2.20.43, @voiceflow/google-types@workspace:packages/google-types":
   version: 0.0.0-use.local
   resolution: "@voiceflow/google-types@workspace:packages/google-types"
   dependencies:
-    "@voiceflow/base-types": ^2.99.1
-    "@voiceflow/chat-types": ^2.13.88
+    "@voiceflow/base-types": ^2.100.0
+    "@voiceflow/chat-types": ^2.13.91
     "@voiceflow/common": ^8.2.4
-    "@voiceflow/voice-types": ^2.9.67
-    "@voiceflow/voiceflow-types": ^3.26.29
+    "@voiceflow/voice-types": ^2.9.70
+    "@voiceflow/voiceflow-types": ^3.26.32
     googleapis: 92.0.0
   languageName: unknown
   linkType: soft
@@ -3165,22 +3165,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@voiceflow/voice-types@^2.9.67, @voiceflow/voice-types@workspace:packages/voice-types":
+"@voiceflow/voice-types@^2.9.70, @voiceflow/voice-types@workspace:packages/voice-types":
   version: 0.0.0-use.local
   resolution: "@voiceflow/voice-types@workspace:packages/voice-types"
   dependencies:
-    "@voiceflow/base-types": ^2.99.1
+    "@voiceflow/base-types": ^2.100.0
     "@voiceflow/common": ^8.2.4
   languageName: unknown
   linkType: soft
 
-"@voiceflow/voiceflow-types@^3.26.29, @voiceflow/voiceflow-types@workspace:packages/voiceflow-types":
+"@voiceflow/voiceflow-types@^3.26.32, @voiceflow/voiceflow-types@workspace:packages/voiceflow-types":
   version: 0.0.0-use.local
   resolution: "@voiceflow/voiceflow-types@workspace:packages/voiceflow-types"
   dependencies:
-    "@voiceflow/base-types": ^2.99.1
-    "@voiceflow/chat-types": ^2.13.88
-    "@voiceflow/voice-types": ^2.9.67
+    "@voiceflow/base-types": ^2.100.0
+    "@voiceflow/chat-types": ^2.13.91
+    "@voiceflow/voice-types": ^2.9.70
   languageName: unknown
   linkType: soft
 
