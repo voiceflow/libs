@@ -8,5 +8,8 @@
     {
       "path": "../common/tsconfig.build.json"
     }
-  ]
+  ],
+  "tsc-alias": {
+    "resolveFullPaths": true
+  }
 }

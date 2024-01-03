@@ -37,7 +37,7 @@
     "url": "git+https://github.com/voiceflow/libs.git"
   },
   "scripts": {
-    "build": "ttsc --build tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "clean": "rimraf build *.tsbuildinfo",
     "commit": "cz",
     "lint": "eslint '**/*.{js,ts}'",
