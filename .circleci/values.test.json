@@ -1,0 +1,7 @@
+{
+  "e2e_env_name": "e2e-libs-0000000",
+  "services": [],
+  "build_all_services": false,
+  "branch": "trying",
+  "ecr_url": "168387678261.dkr.ecr.voiceflow.amazonaws.com"
+}

@@ -1,0 +1,123 @@
+version: 2.1
+
+parameters:
+  k8s-namespace:
+    type: string
+    default: 'voiceflow' # This is usually voiceflow
+  ssh-fingerprint:
+    type: string
+    default: '93:f8:51:53:5e:bd:75:0e:29:24:4d:6a:3f:ef:e1:4a'
+
+orbs:
+  vfcommon: voiceflow/common@{{ .values.common_orb_version }}
+  jira: circleci/jira@1.3.1
+
+{{- $borsBranches := coll.Slice "trying" "staging" }}
+{{- $masterProdBranches := coll.Slice "master" "prod" }}
+
+{{/* isMasterProd denotes whether we are on a master/production branch */}}
+{{- $isMasterProd := has $masterProdBranches .values.branch }}
+
+{{/* isBors denotes whether we are on a master/production branch */}}
+{{- $isBors := has $borsBranches .values.branch }}
+
+{{- $buildAll := or $isBors (conv.ToBool .values.build_all_services)  }}
+
+{{/* Only update modified services or all if we are building all services */}}
+{{- $modifiedServices := coll.Slice }}
+{{- range $service := .values.services }}
+  {{- if or $buildAll $service.modified }}
+    {{- $modifiedServices = coll.Append $service $modifiedServices }}
+  {{- end }}
+{{- end }}
+
+{{/* buildAny denotes whether the list of services to build is non-empty */}}
+{{- $buildAny := not (not $modifiedServices) }}
+
+
+# Reusable YAML chunks
+defaults:
+  bors_branches_filters: &bors_branches_filters
+    branches:
+      only:
+        {{- range $borsBranches }}
+        - {{ . }}
+        {{- end }}
+
+  slack-fail-post-step: &slack-fail-post-step
+    post-steps:
+      - vfcommon/notify_slack:
+          channel: dev_general
+          event: fail
+          mentions: '@eng_cxd'
+          template: basic_fail_1
+          branch_pattern: master
+
+workflows:
+  test-and-release:
+    jobs:
+      - vfcommon/install_and_build:
+          <<: *slack-fail-post-step
+          executor: vfcommon/node-large-executor-node-20
+          context: dev-test
+          avoid_post_install_scripts: false
+          attach_workspace: true
+          name: build
+          force_execute: true
+          run_in_container: false
+          package: all
+          package_folder: "{apps,libs}"
+          paths_to_cache: build
+          {{- if .values.pr_branch }}
+          cache_branch: {{ .values.pr_branch | quote }}
+          {{- end }}
+          monorepo_engine: "turborepo"
+          post-steps:
+            - jira/notify
+
+      {{- $testJobs := (coll.Slice "unit_tests" "lint_report" "dependency_tests")}}
+      {{ range $testJob := $testJobs }}
+      - vfcommon/monorepo_{{ $testJob }}:
+          <<: *slack-fail-post-step
+          context: dev-test
+          executor: vfcommon/node-large-executor-node-20
+          name: {{ strings.KebabCase $testJob }}
+          run_on_root: {{ $.values.build_all_services }}
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - production
+                - /^break-glass.*$/
+        {{- end }}
+
+      {{- if $buildAny }}
+      - vfcommon/sonarcloud_scan:
+          <<: *slack-fail-post-step
+          context: dev-test
+          name: sonarcloud-scan
+          filters:
+            branches:
+              ignore:
+                - production
+                - /^break-glass.*$/
+      {{- end }}
+
+
+      - vfcommon/monorepo_release:
+          <<: *slack-fail-post-step
+          executor: vfcommon/node-executor-node-20
+          sentry_project: creator-app
+          avoid_post_install_scripts: false
+          release_engine: "lite"
+          ssh_key: << pipeline.parameters.ssh-fingerprint >>
+          context: dev-test
+          requires:
+            {{- range $testJob := $testJobs }}
+            - {{ strings.KebabCase $testJob }}
+            {{- end }}
+            - build
+          filters:
+            branches:
+              only: master

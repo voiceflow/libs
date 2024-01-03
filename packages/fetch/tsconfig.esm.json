@@ -8,5 +8,8 @@
     {
       "path": "../exception/tsconfig.build.json"
     }
-  ]
+  ],
+  "tsc-alias": {
+    "resolveFullPaths": true
+  }
 }

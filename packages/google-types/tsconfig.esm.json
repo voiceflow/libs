@@ -20,5 +20,8 @@
     {
       "path": "../voiceflow-types/tsconfig.build.json"
     }
-  ]
+  ],
+  "tsc-alias": {
+    "resolveFullPaths": true
+  }
 }

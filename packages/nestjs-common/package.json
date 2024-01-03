@@ -37,20 +37,16 @@
     "url": "git+https://github.com/voiceflow/libs.git"
   },
   "scripts": {
-    "build": "ttsc --build tsconfig.build.json",
-    "clean": "rimraf build *.tsbuildinfo",
+    "build": "yarn g:tsc -p tsconfig.build.json && yarn g:tsc-alias -p tsconfig.build.json",
+    "clean": "yarn g:rimraf build *.tsbuildinfo",
     "commit": "cz",
     "lint": "eslint '**/*.{js,ts}'",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
     "lint:report": "eslint-output --quiet '**/*.{js,ts}'",
     "prebuild": "yarn clean",
-    "tdd": "yarn test --watch",
-    "test": "yarn test:run",
+    "tdd": "yarn test:unit --watch",
     "test:dependencies": "depcheck",
-    "test:integration": "NODE_ENV=test nyc --report-dir nyc_coverage_integration ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.it.ts'",
-    "test:run": "NODE_ENV=test nyc ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.{unit,it}.ts'",
-    "test:single": "NODE_ENV=test ts-mocha --paths --config config/tests/mocharc.yml",
     "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
   },
   "types": "build/index.d.ts"
