@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/nestjs-common",
   "description": "Reusable utilities for NestJS apps & libraries.",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"

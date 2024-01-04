@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/nestjs-mongodb",
   "description": "MongoDB for NestJS",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
