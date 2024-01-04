@@ -38,15 +38,15 @@
     "build:esm": "yarn g:tsc -p tsconfig.esm.json && yarn g:tsc-alias -p tsconfig.esm.json && yarn postbuild:esm",
     "clean": "yarn g:rimraf build",
     "commit": "cz",
-    "lint": "eslint '**/*.{js,ts}'",
+    "lint": "yarn g:eslint '**/*.{js,ts}'",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
-    "lint:report": "eslint-output --quiet '**/*.{js,ts}'",
+    "lint:report": "yarn g:eslint-output --quiet '**/*.{js,ts}'",
     "postbuild:cjs": "touch build/cjs/package.json && echo '{ \"type\": \"commonjs\" }' > build/cjs/package.json",
     "postbuild:esm": "touch build/esm/package.json && echo '{ \"type\": \"module\" }' > build/esm/package.json",
     "tdd": "yarn test:unit --watch",
-    "test:dependencies": "depcheck",
-    "test:unit": "NODE_ENV=test nyc ts-mocha --paths --config config/test/mocharc.yml 'src/**/*.test.ts'"
+    "test:dependencies": "yarn g:depcheck",
+    "test:unit": "NODE_ENV=test yarn g:nyc ts-mocha --paths --config config/test/mocharc.yml 'src/**/*.test.ts'"
   },
   "types": "build/cjs/main.d.ts"
 }

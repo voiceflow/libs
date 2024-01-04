@@ -43,14 +43,14 @@
     "build": "yarn g:tsc -p tsconfig.build.json && yarn g:tsc-alias -p tsconfig.build.json",
     "clean": "yarn g:rimraf build *.tsbuildinfo",
     "commit": "cz",
-    "lint": "eslint '**/*.{js,ts}'",
+    "lint": "yarn g:eslint '**/*.{js,ts}'",
     "lint:fix": "yarn lint --fix",
     "lint:quiet": "yarn lint --quiet",
-    "lint:report": "eslint-output --quiet '**/*.{js,ts}'",
+    "lint:report": "yarn g:eslint-output --quiet '**/*.{js,ts}'",
     "prebuild": "yarn clean",
     "tdd": "yarn test:unit --watch",
-    "test:dependencies": "depcheck",
-    "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
+    "test:dependencies": "yarn g:depcheck",
+    "test:unit": "NODE_ENV=test yarn g:nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
   },
   "types": "build/index.d.ts"
 }
