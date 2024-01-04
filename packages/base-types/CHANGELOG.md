@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.101.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.100.1...@voiceflow/base-types@2.101.0) (2024-01-04)
+
+### Features
+
+* exposing used functions map on survey context (CV3-728) ([#473](https://github.com/voiceflow/libs/issues/473)) ([d7aa88b](https://github.com/voiceflow/libs/commit/d7aa88b0412cc271b2b39a29f7805bf4b22fba18))
+
 ## [2.100.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.100.0...@voiceflow/base-types@2.100.1) (2024-01-04)
 
 **Note:** Version bump only for package @voiceflow/base-types
