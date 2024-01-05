@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.101.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.101.1...@voiceflow/base-types@2.101.2) (2024-01-05)
+
+### Bug Fixes
+
+* adds instruction to kb summarization settings (CT-000) ([#491](https://github.com/voiceflow/libs/issues/491)) ([a347d9b](https://github.com/voiceflow/libs/commit/a347d9bd58bb13b1347a826e06584cce0418635a))
+
 ## [2.101.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.101.0...@voiceflow/base-types@2.101.1) (2024-01-05)
 
 ### Bug Fixes
