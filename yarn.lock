@@ -3777,6 +3777,7 @@ __metadata:
   dependencies:
     "@types/jsonwebtoken": ^8.5.0
     "@types/node": ^18.11.11
+    "@voiceflow-meta/jest-config": "workspace:*"
     "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/base-types": "workspace:*"
     "@voiceflow/common": "workspace:*"
@@ -3826,6 +3827,7 @@ __metadata:
     "@types/lodash": ^4.14.176
     "@types/number-to-words": 1.2.0
     "@types/shallowequal": ^1.1.1
+    "@voiceflow-meta/jest-config": "workspace:*"
     "@voiceflow-meta/typescript-config": "workspace:*"
     bson-objectid: ^2.0.1
     crypto-js: ^4.2.0
@@ -3946,6 +3948,7 @@ __metadata:
     "@opentelemetry/exporter-prometheus": 0.26.0
     "@opentelemetry/sdk-metrics-base": 0.26.0
     "@types/chai": 4.3.0
+    "@voiceflow-meta/jest-config": "workspace:*"
     "@voiceflow-meta/typescript-config": "workspace:*"
     axios: 0.24.0
     chai: 4.3.6
