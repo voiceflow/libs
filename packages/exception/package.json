@@ -29,8 +29,8 @@
   },
   "scripts": {
     "build": "yarn clean && yarn build:cjs && yarn build:esm",
-    "build:cjs": "yarn g:tsc -p tsconfig.build.json && yarn g:tsc-alias -p tsconfig.build.json && yarn postbuild:cjs",
-    "build:esm": "yarn g:tsc -p tsconfig.esm.json && yarn g:tsc-alias -p tsconfig.esm.json && yarn postbuild:esm",
+    "build:cjs": "yarn g:tsc -p tsconfig.build.cjs.json && yarn g:tsc-alias -p tsconfig.build.cjs.json && yarn postbuild:cjs",
+    "build:esm": "yarn g:tsc -p tsconfig.build.esm.json && yarn g:tsc-alias -p tsconfig.build.esm.json && yarn postbuild:esm",
     "clean": "yarn g:rimraf build",
     "commit": "cz",
     "lint": "yarn g:eslint '**/*.{js,ts}'",
