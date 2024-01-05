@@ -4,24 +4,7 @@
     "module": "esnext",
     "outDir": "build/esm"
   },
-  "references": [
-    {
-      "path": "../base-types/tsconfig.build.json"
-    },
-    {
-      "path": "../chat-types/tsconfig.build.json"
-    },
-    {
-      "path": "../common/tsconfig.build.json"
-    },
-    {
-      "path": "../google-types/tsconfig.build.json"
-    },
-    {
-      "path": "../voice-types/tsconfig.build.json"
-    },
-    {
-      "path": "../voiceflow-types/tsconfig.build.json"
-    }
-  ]
+  "tsc-alias": {
+    "resolveFullPaths": true
+  }
 }

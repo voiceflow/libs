@@ -1,9 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "references": [
-    {
-      "path": "../nestjs-redis/tsconfig.build.json"
-    }
-  ],
   "include": ["src", "typings"]
 }

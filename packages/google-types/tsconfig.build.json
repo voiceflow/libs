@@ -1,21 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "references": [
-    {
-      "path": "../base-types/tsconfig.build.json"
-    },
-    {
-      "path": "../chat-types/tsconfig.build.json"
-    },
-    {
-      "path": "../common/tsconfig.build.json"
-    },
-    {
-      "path": "../voice-types/tsconfig.build.json"
-    },
-    {
-      "path": "../voiceflow-types/tsconfig.build.json"
-    }
-  ],
   "include": ["src"]
 }

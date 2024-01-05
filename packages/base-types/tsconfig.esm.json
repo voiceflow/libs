@@ -4,11 +4,6 @@
     "module": "esnext",
     "outDir": "build/esm"
   },
-  "references": [
-    {
-      "path": "../common/tsconfig.build.json"
-    }
-  ],
   "tsc-alias": {
     "resolveFullPaths": true
   }
