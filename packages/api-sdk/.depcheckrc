@@ -1,11 +1,15 @@
 {
-  "specials": ["bin", "istanbul"],
+  "specials": [
+    "bin",
+    "istanbul"
+  ],
   "ignores": [
     "@types/*",
     "@api-sdk/*",
     "chai",
     "chai-as-promised",
     "sinon",
-    "source-map-support"
+    "source-map-support",
+    "@voiceflow-meta/typescript-config"
   ]
 }

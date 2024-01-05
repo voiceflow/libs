@@ -1,7 +1,10 @@
 {
-  "specials": ["bin"],
+  "specials": [
+    "bin"
+  ],
   "ignores": [
     "@google-types/*",
-    "@types/*"
+    "@types/*",
+    "@voiceflow-meta/typescript-config"
   ]
 }

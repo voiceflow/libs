@@ -19,6 +19,8 @@
     "fixpack",
     "husky",
     "lint-staged",
-    "eslint-import-resolver-typescript"
+    "eslint-import-resolver-typescript",
+    "@voiceflow-meta/typescript-config",
+    "jest-environment-jsdom"
   ]
 }
