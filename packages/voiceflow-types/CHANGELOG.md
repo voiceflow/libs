@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.26.37](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.36...@voiceflow/voiceflow-types@3.26.37) (2024-01-05)
+
+### Bug Fixes
+
+* working ESM build (DX-903) ([#492](https://github.com/voiceflow/libs/issues/492)) ([ab7c8b4](https://github.com/voiceflow/libs/commit/ab7c8b407344c77ac3716921360e27eedcfb8d04))
+
 ## [3.26.36](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.35...@voiceflow/voiceflow-types@3.26.36) (2024-01-05)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types

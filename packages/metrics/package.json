@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/metrics",
   "description": "Helpers for exposing server-side metrics",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
