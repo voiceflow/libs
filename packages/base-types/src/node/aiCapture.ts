@@ -5,15 +5,18 @@ import { NodeType } from './constants';
 import {
   BaseNode,
   BaseNoMatchNodeData,
+  BaseNoMatchStepData,
   BaseNoReplyNodeData,
+  BaseNoReplyStepData,
   BaseStep,
   BuiltInNextPort,
   BuiltInNoMatchNoReplyPorts,
   NodeIntentScope,
   NodeNextID,
+  StepIntentScope,
 } from './utils';
 
-export interface StepData extends AIModelParams {
+export interface StepData extends AIModelParams, BaseNoReplyStepData, StepIntentScope, BaseNoMatchStepData {
   rules: string[];
   entities: string[];
   exitScenerios: string[];
