@@ -2778,10 +2778,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@voiceflow-meta/typescript-config@workspace:*, @voiceflow-meta/typescript-config@workspace:meta/typescript-config":
+  version: 0.0.0-use.local
+  resolution: "@voiceflow-meta/typescript-config@workspace:meta/typescript-config"
+  dependencies:
+    "@voiceflow/tsconfig": 1.4.8
+  languageName: unknown
+  linkType: soft
+
 "@voiceflow/alexa-types@workspace:packages/alexa-types":
   version: 0.0.0-use.local
   resolution: "@voiceflow/alexa-types@workspace:packages/alexa-types"
   dependencies:
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/base-types": "workspace:*"
     "@voiceflow/common": "workspace:*"
     "@voiceflow/voice-types": "workspace:*"
@@ -2796,6 +2805,7 @@ __metadata:
   dependencies:
     "@types/jsonwebtoken": ^8.5.0
     "@types/node": ^18.11.11
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/base-types": "workspace:*"
     "@voiceflow/common": "workspace:*"
     axios: 0.24.0
@@ -2809,6 +2819,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@voiceflow/base-types@workspace:packages/base-types"
   dependencies:
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/common": "workspace:*"
     slate: 0.94.1
   languageName: unknown
@@ -2818,6 +2829,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@voiceflow/chat-types@workspace:packages/chat-types"
   dependencies:
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/base-types": "workspace:*"
     "@voiceflow/common": "workspace:*"
   languageName: unknown
@@ -2842,6 +2854,7 @@ __metadata:
     "@types/lodash": ^4.14.176
     "@types/number-to-words": 1.2.0
     "@types/shallowequal": ^1.1.1
+    "@voiceflow-meta/typescript-config": "workspace:*"
     bson-objectid: ^2.0.1
     crypto-js: ^4.2.0
     cuid: ^2.1.8
@@ -2892,6 +2905,8 @@ __metadata:
 "@voiceflow/exception@workspace:*, @voiceflow/exception@workspace:packages/exception":
   version: 0.0.0-use.local
   resolution: "@voiceflow/exception@workspace:packages/exception"
+  dependencies:
+    "@voiceflow-meta/typescript-config": "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -2899,6 +2914,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@voiceflow/fetch@workspace:packages/fetch"
   dependencies:
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/exception": "workspace:*"
     fetch-mock: ^9.11.0
     undici: 5.12.0
@@ -2922,6 +2938,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@voiceflow/google-dfes-types@workspace:packages/google-dfes-types"
   dependencies:
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/base-types": "workspace:*"
     "@voiceflow/chat-types": "workspace:*"
     "@voiceflow/common": "workspace:*"
@@ -2935,6 +2952,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@voiceflow/google-types@workspace:packages/google-types"
   dependencies:
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/base-types": "workspace:*"
     "@voiceflow/chat-types": "workspace:*"
     "@voiceflow/common": "workspace:*"
@@ -2953,6 +2971,7 @@ __metadata:
     "@opentelemetry/exporter-prometheus": 0.26.0
     "@opentelemetry/sdk-metrics-base": 0.26.0
     "@types/chai": 4.3.0
+    "@voiceflow-meta/typescript-config": "workspace:*"
     axios: 0.24.0
     chai: 4.3.6
     get-port: ^5.1.1
@@ -2978,6 +2997,7 @@ __metadata:
     "@nestjs/terminus": ^8.0.6
     "@nestjs/testing": ^8.4.2
     "@types/mongodb": ^4.0.7
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/nestjs-common": 1.5.2
   peerDependencies:
     "@nestjs/common": ^8.4.2
@@ -2992,6 +3012,7 @@ __metadata:
   dependencies:
     "@nestjs/common": ^8.4.1
     "@types/express": ^4.17.13
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/nestjs-redis": "workspace:*"
     rate-limiter-flexible: 2.3.6
   peerDependencies:
@@ -3011,6 +3032,7 @@ __metadata:
     "@nestjs/terminus": ^8.0.6
     "@nestjs/testing": ^8.4.2
     "@types/ioredis": ^4.28.10
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/nestjs-common": 1.5.2
     ioredis: ^4.28.5
   peerDependencies:
@@ -3025,6 +3047,7 @@ __metadata:
   resolution: "@voiceflow/nestjs-timeout@workspace:packages/nestjs-timeout"
   dependencies:
     "@nestjs/common": 8.0.0
+    "@voiceflow-meta/typescript-config": "workspace:*"
     reflect-metadata: 0.1.13
     rxjs: 7.0.0
   peerDependencies:
@@ -3059,6 +3082,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@voiceflow/voice-types@workspace:packages/voice-types"
   dependencies:
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/base-types": "workspace:*"
     "@voiceflow/common": "workspace:*"
   languageName: unknown
@@ -3068,6 +3092,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@voiceflow/voiceflow-types@workspace:packages/voiceflow-types"
   dependencies:
+    "@voiceflow-meta/typescript-config": "workspace:*"
     "@voiceflow/base-types": "workspace:*"
     "@voiceflow/chat-types": "workspace:*"
     "@voiceflow/voice-types": "workspace:*"
@@ -11156,9 +11181,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"root@workspace:.":
+"root-workspace-0b6124@workspace:.":
   version: 0.0.0-use.local
-  resolution: "root@workspace:."
+  resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@commitlint/cli": 16.0.2
     "@istanbuljs/nyc-config-typescript": ^1.0.2

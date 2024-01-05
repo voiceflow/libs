@@ -13,6 +13,9 @@
     "@voiceflow/voiceflow-types": "workspace:*",
     "ask-smapi-model": "1.14.0"
   },
+  "devDependencies": {
+    "@voiceflow-meta/typescript-config": "workspace:*"
+  },
   "files": [
     "build"
   ],

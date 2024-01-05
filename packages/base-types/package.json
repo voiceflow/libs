@@ -10,6 +10,9 @@
     "@voiceflow/common": "workspace:*",
     "slate": "0.94.1"
   },
+  "devDependencies": {
+    "@voiceflow-meta/typescript-config": "workspace:*"
+  },
   "files": [
     "build"
   ],

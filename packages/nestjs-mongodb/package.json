@@ -14,7 +14,8 @@
     "@nestjs/core": "^8.4.2",
     "@nestjs/terminus": "^8.0.6",
     "@nestjs/testing": "^8.4.2",
-    "@types/mongodb": "^4.0.7"
+    "@types/mongodb": "^4.0.7",
+    "@voiceflow-meta/typescript-config": "workspace:*"
   },
   "engines": {
     "node": ">=16"

@@ -1,6 +1,7 @@
 {
-  "extends": "@voiceflow/tsconfig/monorepo.json",
+  "extends": "@voiceflow-meta/typescript-config/base.json",
   "compilerOptions": {
+    "isolatedModules": false,
     "baseUrl": ".",
     "rootDir": "src",
     "outDir": "build/cjs",

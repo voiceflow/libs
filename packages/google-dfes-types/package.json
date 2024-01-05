@@ -14,6 +14,9 @@
     "@voiceflow/voice-types": "workspace:*",
     "@voiceflow/voiceflow-types": "workspace:*"
   },
+  "devDependencies": {
+    "@voiceflow-meta/typescript-config": "workspace:*"
+  },
   "files": [
     "build"
   ],

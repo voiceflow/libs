@@ -13,6 +13,9 @@
   "keywords": [
     "voiceflow"
   ],
+  "devDependencies": {
+    "@voiceflow-meta/typescript-config": "workspace:*"
+  },
   "license": "ISC",
   "main": "build/cjs/main.js",
   "module": "build/esm/main.js",

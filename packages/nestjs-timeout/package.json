@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@nestjs/common": "8.0.0",
+    "@voiceflow-meta/typescript-config": "workspace:*",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.0.0"
   },

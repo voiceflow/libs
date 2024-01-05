@@ -21,7 +21,8 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.176",
-    "@types/number-to-words": "1.2.0"
+    "@types/number-to-words": "1.2.0",
+    "@voiceflow-meta/typescript-config": "workspace:*"
   },
   "files": [
     "build"

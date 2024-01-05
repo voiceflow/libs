@@ -40,5 +40,6 @@
     "clean": {
       "cache": false
     }
-  }
+  },
+  "globalDependencies": ["meta/typescript-config/*.json"]
 }

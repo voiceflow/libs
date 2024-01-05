@@ -12,6 +12,7 @@
   "devDependencies": {
     "@nestjs/common": "^8.4.1",
     "@types/express": "^4.17.13",
+    "@voiceflow-meta/typescript-config": "workspace:*",
     "@voiceflow/nestjs-redis": "workspace:*"
   },
   "engines": {

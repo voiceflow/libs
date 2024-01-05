@@ -16,6 +16,7 @@
   "devDependencies": {
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^18.11.11",
+    "@voiceflow-meta/typescript-config": "workspace:*",
     "jsonwebtoken": "^8.5.1"
   },
   "files": [

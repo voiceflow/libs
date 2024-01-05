@@ -1,5 +1,4 @@
 {
-  "name": "root",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -18,7 +17,6 @@
     "@voiceflow/eslint-config": "6.1.0",
     "@voiceflow/git-branch-check": "1.4.1",
     "@voiceflow/prettier-config": "1.3.0",
-    "@voiceflow/tsconfig": "1.4.8",
     "chai": "4.3.6",
     "chai-as-promised": "^7.1.1",
     "commitizen": "4.2.4",
@@ -55,20 +53,13 @@
     "strip-ansi": "6.0.1"
   },
   "scripts": {
-    "build:all": "yarn build",
+    "//": "Scripts to make binaries available to workspaces",
     "build": "turbo run build",
+    "build:all": "yarn build",
     "clean": "yarn clean:artifacts && yarn clean:root",
     "clean:artifacts": "turbo run clean",
     "clean:root": "rimraf node_modules",
     "commit": "cz",
-    "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
-    "lint:quiet": "turbo run lint:quiet",
-    "lint:report": "turbo run lint:report",
-    "test:dependencies": "turbo run test:dependencies",
-    "test:run": "turbo run test:run",
-    "test:unit": "turbo run test:unit",
-    "//": "Scripts to make binaries available to workspaces",
     "g:depcheck": "cd $INIT_CWD && depcheck",
     "g:eslint": "cd $INIT_CWD && eslint",
     "g:eslint-output": "cd $INIT_CWD && eslint-output",
@@ -76,13 +67,23 @@
     "g:rimraf": "cd $INIT_CWD && rimraf",
     "g:run-p": "cd $INIT_CWD && run-p",
     "g:tsc": "cd $INIT_CWD && tsc",
-    "g:tsc-alias": "cd $INIT_CWD && tsc-alias"
+    "g:tsc-alias": "cd $INIT_CWD && tsc-alias",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "lint:quiet": "turbo run lint:quiet",
+    "lint:report": "turbo run lint:report",
+    "test:dependencies": "turbo run test:dependencies",
+    "test:run": "turbo run test:run",
+    "test:unit": "turbo run test:unit"
   },
   "volta": {
     "node": "20.10.0",
     "yarn": "3.2.1"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "meta/*"
+    ]
+  }
 }
