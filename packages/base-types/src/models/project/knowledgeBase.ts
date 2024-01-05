@@ -1,4 +1,4 @@
-import { AIContextParams, AIModelParams } from '@base-types/utils/ai';
+import { AIKnowledgeContextParams, AIModelParams } from '@base-types/utils/ai';
 
 export enum KnowledgeBaseDocumentType {
   PDF = 'pdf',
@@ -98,7 +98,7 @@ export interface RecursiveTextSplitter {
 
 export interface KnowledgeBaseSettings {
   chunkStrategy: RecursiveTextSplitter;
-  summarization: AIModelParams & AIContextParams;
+  summarization: AIModelParams & AIKnowledgeContextParams;
   search: {
     limit: number;
     metric: string;
