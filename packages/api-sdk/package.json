@@ -16,6 +16,7 @@
   "devDependencies": {
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^18.11.11",
+    "@voiceflow-meta/jest-config": "workspace:*",
     "@voiceflow-meta/typescript-config": "workspace:*",
     "jsonwebtoken": "^8.5.1"
   },
@@ -50,7 +51,7 @@
     "postbuild:esm": "touch build/esm/package.json && echo '{ \"type\": \"module\" }' > build/esm/package.json",
     "tdd": "yarn test:unit --watch",
     "test:dependencies": "yarn g:depcheck",
-    "test:unit": "NODE_ENV=test yarn g:nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config ./config/tests/.mocharc.json 'tests/**/*.unit.ts'"
+    "test:unit": "yarn g:jest"
   },
   "types": "build/cjs/index.d.ts"
 }

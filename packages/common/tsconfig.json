@@ -1,13 +1,13 @@
 {
   "extends": "@voiceflow-meta/typescript-config/base.json",
   "compilerOptions": {
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "rootDir": "src",
     "outDir": "build/cjs",
     "paths": {
       "@common/*": ["src/*"]
-    },
-    "types": ["mocha"]
+    }
   },
   "exclude": ["node_modules", "build"]
 }

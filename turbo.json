@@ -41,5 +41,5 @@
       "cache": false
     }
   },
-  "globalDependencies": ["meta/typescript-config/*.json"]
+  "globalDependencies": ["meta/jest-config/*.js", "meta/swc-config/*.json", "meta/typescript-config/*.json"]
 }

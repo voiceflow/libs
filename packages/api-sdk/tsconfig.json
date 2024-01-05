@@ -9,8 +9,7 @@
     "paths": {
       "@api-sdk/*": ["src/*"]
     },
-    "lib": ["DOM", "ES2019"],
-    "types": ["mocha"]
+    "lib": ["DOM", "ES2019"]
   },
   "exclude": ["node_modules", "build"]
 }

@@ -1,5 +1,6 @@
-import { hex2abc } from '@common/crypto/hex2abc';
 import { MurmurHash3 } from 'murmurhash-wasm';
+
+import { hex2abc } from './hex2abc';
 
 export class MurmurHash {
   public static hash(key: string, seed = 0): string {

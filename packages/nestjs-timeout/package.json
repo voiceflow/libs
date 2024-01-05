@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@nestjs/common": "8.0.0",
+    "@voiceflow-meta/jest-config": "workspace:*",
     "@voiceflow-meta/typescript-config": "workspace:*",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.0.0"
@@ -51,7 +52,7 @@
     "prebuild": "yarn clean",
     "tdd": "yarn test:unit --watch",
     "test:dependencies": "yarn g:depcheck",
-    "test:unit": "NODE_ENV=test yarn g:nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
+    "test:unit": "yarn g:jest"
   },
   "types": "build/index.d.ts"
 }

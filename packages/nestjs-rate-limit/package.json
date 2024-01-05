@@ -54,9 +54,7 @@
     "lint:quiet": "yarn lint --quiet",
     "lint:report": "yarn g:eslint-output --quiet '**/*.{js,ts}'",
     "prebuild": "yarn clean",
-    "tdd": "yarn test:unit --watch",
-    "test:dependencies": "yarn g:depcheck",
-    "test:unit": "NODE_ENV=test yarn g:nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
+    "test:dependencies": "yarn g:depcheck"
   },
   "types": "build/index.d.ts"
 }
