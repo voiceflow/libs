@@ -1,9 +1,9 @@
 {
-  "extends": "@voiceflow/tsconfig/monorepo.json",
+  "extends": "@voiceflow-meta/typescript-config/base.json",
   "compilerOptions": {
+    "experimentalDecorators": true,
     "exactOptionalPropertyTypes": false,
     "baseUrl": ".",
-    "rootDir": "src",
     "outDir": "build",
     "paths": {
       "@nestjs-rate-limit/*": ["src/*"]

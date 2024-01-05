@@ -1,9 +1,7 @@
 {
   "extends": "./tsconfig.json",
-  "references": [
-    {
-      "path": "../nestjs-redis/tsconfig.build.json"
-    }
-  ],
+  "compilerOptions": {
+    "rootDir": "src"
+  },
   "include": ["src", "typings"]
 }

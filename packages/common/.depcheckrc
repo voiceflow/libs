@@ -20,6 +20,7 @@
     "husky",
     "lint-staged",
     "eslint-import-resolver-typescript",
-    "sinon"
+    "sinon",
+    "@voiceflow-meta/typescript-config"
   ]
 }

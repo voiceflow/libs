@@ -40,5 +40,6 @@
     "clean": {
       "cache": false
     }
-  }
+  },
+  "globalDependencies": ["meta/jest-config/*.js", "meta/swc-config/*.json", "meta/typescript-config/*.json"]
 }

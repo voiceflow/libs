@@ -1,5 +1,4 @@
 {
-  "name": "root",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -10,17 +9,11 @@
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@types/chai": "4.3.0",
     "@types/chai-as-promised": "^7.1.5",
-    "@types/mocha": "^8.2.2",
     "@types/node": "16.11.12",
-    "@types/sinon": "^10.0.13",
-    "@types/sinon-chai": "^3.2.9",
     "@voiceflow/commitlint-config": "2.1.0",
     "@voiceflow/eslint-config": "6.1.0",
     "@voiceflow/git-branch-check": "1.4.1",
     "@voiceflow/prettier-config": "1.3.0",
-    "@voiceflow/tsconfig": "1.4.8",
-    "chai": "4.3.6",
-    "chai-as-promised": "^7.1.1",
     "commitizen": "4.2.4",
     "cz-conventional-changelog": "3.3.0",
     "depcheck": "^1.4.1",
@@ -28,17 +21,13 @@
     "eslint-output": "^3.0.1",
     "fixpack": "^4.0.0",
     "husky": "^4.3.8",
+    "jest": "29.3.1",
     "lerna": "^4.0.0",
     "lint-staged": "^11.0.0",
-    "mocha": "9.2.2",
     "npm-run-all": "4.1.5",
-    "nyc": "^15.1.0",
     "prettier": "^2.3.0",
     "rimraf": "^3.0.2",
-    "sinon": "^14.0.2",
-    "sinon-chai": "^3.7.0",
     "source-map-support": "^0.5.19",
-    "ts-mocha": "^8.0.0",
     "ts-node": "10.9.0",
     "tsc-alias": "1.8.8",
     "tsconfig-paths": "4.0.0",
@@ -55,8 +44,8 @@
     "strip-ansi": "6.0.1"
   },
   "scripts": {
-    "build:all": "yarn build",
     "build": "turbo run build",
+    "build:all": "yarn build",
     "clean": "yarn clean:artifacts && yarn clean:root",
     "clean:artifacts": "turbo run clean",
     "clean:root": "rimraf node_modules",
@@ -72,6 +61,7 @@
     "g:depcheck": "cd $INIT_CWD && depcheck",
     "g:eslint": "cd $INIT_CWD && eslint",
     "g:eslint-output": "cd $INIT_CWD && eslint-output",
+    "g:jest": "cd $INIT_CWD && jest",
     "g:nyc": "cd $INIT_CWD && nyc",
     "g:rimraf": "cd $INIT_CWD && rimraf",
     "g:run-p": "cd $INIT_CWD && run-p",
@@ -82,7 +72,10 @@
     "node": "20.10.0",
     "yarn": "3.2.1"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "meta/*"
+    ]
+  }
 }

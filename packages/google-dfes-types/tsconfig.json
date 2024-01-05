@@ -1,5 +1,5 @@
 {
-  "extends": "@voiceflow/tsconfig/monorepo.json",
+  "extends": "@voiceflow-meta/typescript-config/base.json",
   "compilerOptions": {
     "exactOptionalPropertyTypes": false,
     "baseUrl": ".",
@@ -7,8 +7,7 @@
     "outDir": "build/cjs",
     "paths": {
       "@google-dfes-types/*": ["src/*"]
-    },
-    "types": ["mocha"]
+    }
   },
   "exclude": ["node_modules", "build"]
 }

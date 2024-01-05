@@ -1,10 +1,8 @@
 {
-  "extends": "@voiceflow/tsconfig/monorepo.json",
+  "extends": "@voiceflow-meta/typescript-config/base.json",
   "compilerOptions": {
-    "lib": [
-      "es2019",
-      "dom"
-    ],
+    "skipLibCheck": false,
+    "lib": ["es2019", "dom"],
     "baseUrl": ".",
     "rootDir": ".",
     "outDir": "build/cjs",

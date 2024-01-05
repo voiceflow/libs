@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "outDir": "build/esm"
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true
+  }
+}

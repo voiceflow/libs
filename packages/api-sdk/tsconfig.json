@@ -1,5 +1,5 @@
 {
-  "extends": "@voiceflow/tsconfig/monorepo.json",
+  "extends": "@voiceflow-meta/typescript-config/base.json",
   "compilerOptions": {
     "skipLibCheck": true,
     "exactOptionalPropertyTypes": false,
@@ -9,11 +9,7 @@
     "paths": {
       "@api-sdk/*": ["src/*"]
     },
-    "lib": [
-      "DOM",
-      "ES2019"
-    ],
-    "types": ["mocha"]
+    "lib": ["DOM", "ES2019"]
   },
   "exclude": ["node_modules", "build"]
 }

@@ -1,7 +1,10 @@
 {
-  "specials": ["bin"],
+  "specials": [
+    "bin"
+  ],
   "ignores": [
     "@voiceflow-types/*",
-    "@types/*"
+    "@types/*",
+    "@voiceflow-meta/typescript-config"
   ]
 }

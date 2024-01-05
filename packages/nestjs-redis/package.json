@@ -7,7 +7,7 @@
     "url": "https://github.com/voiceflow/libs/issues"
   },
   "dependencies": {
-    "@voiceflow/nestjs-common": "workspace:*"
+    "@voiceflow/nestjs-common": "1.5.2"
   },
   "devDependencies": {
     "@nestjs/common": "^8.4.2",
@@ -15,6 +15,8 @@
     "@nestjs/terminus": "^8.0.6",
     "@nestjs/testing": "^8.4.2",
     "@types/ioredis": "^4.28.10",
+    "@voiceflow-meta/jest-config": "workspace:*",
+    "@voiceflow-meta/typescript-config": "workspace:*",
     "ioredis": "^4.28.5"
   },
   "engines": {
@@ -55,7 +57,7 @@
     "prebuild": "yarn clean",
     "tdd": "yarn test:unit --watch",
     "test:dependencies": "yarn g:depcheck",
-    "test:unit": "NODE_ENV=test yarn g:nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config config/tests/mocharc.yml 'tests/**/*.unit.ts'"
+    "test:unit": "yarn g:jest"
   },
   "types": "build/index.d.ts"
 }

@@ -1,6 +1,7 @@
 {
-  "extends": "@voiceflow/tsconfig/monorepo.json",
+  "extends": "@voiceflow-meta/typescript-config/base.json",
   "compilerOptions": {
+    "experimentalDecorators": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "rootDir": "src",

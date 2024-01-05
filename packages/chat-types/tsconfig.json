@@ -1,13 +1,12 @@
 {
-  "extends": "@voiceflow/tsconfig/monorepo.json",
+  "extends": "@voiceflow-meta/typescript-config/base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "src",
     "outDir": "build/cjs",
     "paths": {
       "@chat-types/*": ["src/*"]
-    },
-    "types": ["mocha"]
+    }
   },
   "exclude": ["node_modules", "build"]
 }

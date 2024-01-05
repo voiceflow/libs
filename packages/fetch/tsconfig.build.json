@@ -3,11 +3,6 @@
   "compilerOptions": {
     "rootDir": "src"
   },
-  "references": [
-    {
-      "path": "../exception/tsconfig.build.json"
-    }
-  ],
   "include": ["src"],
   "exclude": ["node_modules", "build", "config"]
 }

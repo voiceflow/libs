@@ -1,0 +1,11 @@
+{
+  "name": "@voiceflow-meta/typescript-config",
+  "version": "1.0.0",
+  "private": true,
+  "files": [
+    "base.json"
+  ],
+  "dependencies": {
+    "@voiceflow/tsconfig": "1.4.8"
+  }
+}
