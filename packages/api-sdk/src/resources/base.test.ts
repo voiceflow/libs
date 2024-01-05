@@ -60,6 +60,6 @@ describe('BaseResource', () => {
     const { resource } = createClient();
 
     expect(resource['_getIDsQuery']('name', [])).toBe('');
-    expect(resource['_getIDsQuery']('name', [1, 2])).toBe('?name=1&name=2');
+    expect(resource['_getIDsQuery']('name', ['1', '2'])).toBe('?name=1&name=2');
   });
 });

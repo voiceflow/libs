@@ -6,8 +6,7 @@
     "outDir": "build/cjs",
     "paths": {
       "@google-types/*": ["src/*"]
-    },
-    "types": ["mocha"]
+    }
   },
   "exclude": ["node_modules", "build"]
 }

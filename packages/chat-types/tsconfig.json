@@ -6,8 +6,7 @@
     "outDir": "build/cjs",
     "paths": {
       "@chat-types/*": ["src/*"]
-    },
-    "types": ["mocha"]
+    }
   },
   "exclude": ["node_modules", "build"]
 }

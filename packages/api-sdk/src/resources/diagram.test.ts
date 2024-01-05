@@ -60,6 +60,7 @@ describe('DiagramResource', () => {
     const body = {
       name: 'name',
       versionID: '12',
+      diagramID: 'diagram-id',
       creatorID: 12,
       variables: [],
 
@@ -70,6 +71,7 @@ describe('DiagramResource', () => {
         1: { nodeID: '1', type: 'type', data: {} },
         2: { nodeID: '2', type: 'type', data: {} },
       },
+      modified: 0,
     };
 
     const data = await resource.create(body);

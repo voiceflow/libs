@@ -72,6 +72,7 @@ describe('ProgramResource', () => {
       id: '1',
       startId: '1',
       versionID: '1',
+      diagramID: 'diagram-id',
 
       lines: {
         1: { id: '1', type: 'type' },
@@ -97,6 +98,7 @@ describe('ProgramResource', () => {
         id: '1',
         startId: '1',
         versionID: '1',
+        diagramID: 'diagram-id',
 
         lines: {
           1: { id: '1', type: 'type' },
@@ -108,6 +110,7 @@ describe('ProgramResource', () => {
         id: '2',
         startId: '2',
         versionID: '2',
+        diagramID: 'diagram-id',
 
         lines: {
           2: { id: '2', type: 'type' },
@@ -132,6 +135,7 @@ describe('ProgramResource', () => {
     const body = {
       startId: '1',
       versionID: '1',
+      diagramID: 'diagram-id',
 
       lines: {
         1: { id: '1', type: 'type' },

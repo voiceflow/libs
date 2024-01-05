@@ -82,6 +82,8 @@ describe('VersionResource', () => {
         publishing: {},
       },
       rootDiagramID: '1',
+      manualSave: true,
+      autoSaveFromRestore: false,
     };
 
     const data = await resource.create(body);

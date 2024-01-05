@@ -69,6 +69,9 @@ describe('DomainResource', () => {
     crud.post.mockResolvedValue(RESPONSE_DATA);
 
     const body = {
+      id: '1',
+      topicIDs: ['topic-id-1', 'topic-id-2'],
+      rootDiagramID: 'diagram-id',
       name: 'name',
       live: true,
     };
