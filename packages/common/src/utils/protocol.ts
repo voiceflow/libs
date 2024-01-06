@@ -1,4 +1,4 @@
-import actionCreatorFactory, { AsyncActionCreators, Meta } from 'typescript-fsa';
+import { actionCreatorFactory, AsyncActionCreators, Meta } from 'typescript-fsa';
 
 export interface AsyncError<C extends number = never> {
   message: string;
