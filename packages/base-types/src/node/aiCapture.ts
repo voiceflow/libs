@@ -4,13 +4,13 @@ import { AIModelParams } from '../utils/ai';
 import { NodeType } from './constants';
 import {
   BaseNode,
-  BaseNoMatchNodeData,
-  BaseNoMatchStepData,
   BaseNoReplyNodeData,
   BaseNoReplyStepData,
   BaseStep,
+  BuiltInFailPort,
   BuiltInNextPort,
-  BuiltInNoMatchNoReplyPorts,
+  BuiltInNoReplyPort,
+  NodeElseID,
   NodeIntentScope,
   NodeNextID,
   StepIntentScope,
@@ -19,15 +19,16 @@ import {
 export interface Data extends AIModelParams {
   rules: string[];
   entities: string[];
+  exitPath: boolean;
   exitScenerios: string[];
 }
 
-export interface StepData extends Data, BaseNoReplyStepData, StepIntentScope, BaseNoMatchStepData {}
+export interface StepData extends Data, BaseNoReplyStepData, StepIntentScope {}
 
-export interface Step extends BaseStep<StepData, BaseStepPorts<BuiltInNextPort & BuiltInNoMatchNoReplyPorts>> {
+export interface Step extends BaseStep<StepData, BaseStepPorts<BuiltInNextPort & BuiltInFailPort & BuiltInNoReplyPort>> {
   type: NodeType.AI_CAPTURE;
 }
 
-export interface Node extends BaseNode, Data, NodeNextID, NodeIntentScope, BaseNoReplyNodeData, BaseNoMatchNodeData {
+export interface Node extends BaseNode, Data, NodeNextID, NodeElseID, NodeIntentScope, BaseNoReplyNodeData {
   type: NodeType.AI_CAPTURE;
 }
