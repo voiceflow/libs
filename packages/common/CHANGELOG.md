@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.7](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.2.6...@voiceflow/common@8.2.7) (2024-01-06)
+
+### Bug Fixes
+
+* typescript fsa (CT-000) ([199cee5](https://github.com/voiceflow/libs/commit/199cee581edabc8cc4351e8a6f3cd8835c419287))
+
 ## [8.2.6](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.2.5...@voiceflow/common@8.2.6) (2024-01-05)
 
 ### Bug Fixes
