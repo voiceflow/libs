@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.101.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.101.4...@voiceflow/base-types@2.101.5) (2024-01-06)
+
+### Bug Fixes
+
+* capture ai fail port ([a4384ed](https://github.com/voiceflow/libs/commit/a4384ed2dc719d1ef30d9405edb7e654fa936cae))
+
 ## [2.101.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.101.3...@voiceflow/base-types@2.101.4) (2024-01-06)
 
 **Note:** Version bump only for package @voiceflow/base-types
