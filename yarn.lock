@@ -1049,6 +1049,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fastify/busboy@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "@fastify/busboy@npm:2.1.0"
+  checksum: 3233abd10f73e50668cb4bb278a79b7b3fadd30215ac6458299b0e5a09a29c3586ec07597aae6bd93f5cbedfcef43a8aeea51829cd28fc13850cdbcd324c28d5
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.0.1":
   version: 1.1.2
   resolution: "@gar/promisify@npm:1.1.2"
@@ -3685,7 +3692,7 @@ __metadata:
     fetch-mock: ^9.11.0
     jest-environment-jsdom: 29.7.0
     jest-fetch-mock: 3.0.3
-    undici: 5.12.0
+    undici: 5.26.2
   peerDependencies:
     "@voiceflow/exception": "workspace:*"
   languageName: unknown
@@ -4790,15 +4797,6 @@ __metadata:
   version: 1.0.3
   resolution: "builtins@npm:1.0.3"
   checksum: 47ce94f7eee0e644969da1f1a28e5f29bd2e48b25b2bbb61164c345881086e29464ccb1fb88dbc155ea26e8b1f5fc8a923b26c8c1ed0935b67b644d410674513
-  languageName: node
-  linkType: hard
-
-"busboy@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "busboy@npm:1.6.0"
-  dependencies:
-    streamsearch: ^1.1.0
-  checksum: 32801e2c0164e12106bf236291a00795c3c4e4b709ae02132883fe8478ba2ae23743b11c5735a0aae8afe65ac4b6ca4568b91f0d9fed1fdbc32ede824a73746e
   languageName: node
   linkType: hard
 
@@ -13366,13 +13364,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"streamsearch@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "streamsearch@npm:1.1.0"
-  checksum: 1cce16cea8405d7a233d32ca5e00a00169cc0e19fbc02aa839959985f267335d435c07f96e5e0edd0eadc6d39c98d5435fb5bbbdefc62c41834eadc5622ad942
-  languageName: node
-  linkType: hard
-
 "strict-uri-encode@npm:^2.0.0":
   version: 2.0.0
   resolution: "strict-uri-encode@npm:2.0.0"
@@ -14389,12 +14380,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:5.12.0":
-  version: 5.12.0
-  resolution: "undici@npm:5.12.0"
+"undici@npm:5.26.2":
+  version: 5.26.2
+  resolution: "undici@npm:5.26.2"
   dependencies:
-    busboy: ^1.6.0
-  checksum: fbc227704943c05aa3dc1630695e10309c17d0a535678594d136db107c50593248e9ace70e1ab77496a6c837bf14aa2ab3c501a7a6c45fb6277dbf0846e15ffe
+    "@fastify/busboy": ^2.0.0
+  checksum: 04691e736d32319ec56e430dc706625ba79b98852e47f408d253329d833e6d252a84cef9e698c7f78c7f5955c052c8d4790254b0d3a8ee388df02bb0c2a8994c
   languageName: node
   linkType: hard
 
