@@ -56,5 +56,8 @@
     "prebuild": "yarn clean",
     "test:dependencies": "yarn g:depcheck"
   },
-  "types": "build/index.d.ts"
+  "types": "build/index.d.ts",
+  "volta": {
+    "extends": "../../package.json"
+  }
 }

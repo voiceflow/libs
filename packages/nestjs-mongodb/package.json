@@ -58,5 +58,8 @@
     "test:dependencies": "yarn g:depcheck",
     "test:unit": "yarn g:jest"
   },
-  "types": "build/index.d.ts"
+  "types": "build/index.d.ts",
+  "volta": {
+    "extends": "../../package.json"
+  }
 }

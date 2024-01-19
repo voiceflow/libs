@@ -4,5 +4,11 @@
   "private": true,
   "files": [
     "base.json"
-  ]
+  ],
+  "engines": {
+    "node": "20"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
 }

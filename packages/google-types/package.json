@@ -52,5 +52,8 @@
     "test:integration": "exit 0",
     "test:unit": "exit 0"
   },
-  "types": "build/cjs/index.d.ts"
+  "types": "build/cjs/index.d.ts",
+  "volta": {
+    "extends": "../../package.json"
+  }
 }
