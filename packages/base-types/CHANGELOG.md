@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.102.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.101.5...@voiceflow/base-types@2.102.0) (2024-01-26)
+
+### Features
+
+* add integration fields to knowledge-base-uRL model (CV3-881) ([#496](https://github.com/voiceflow/libs/issues/496)) ([b7cd79d](https://github.com/voiceflow/libs/commit/b7cd79d97e878f57a79b6b170d71e3da8aa7b380))
+
 ## [2.101.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.101.4...@voiceflow/base-types@2.101.5) (2024-01-06)
 
 ### Bug Fixes
