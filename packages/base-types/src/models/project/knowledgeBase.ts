@@ -19,6 +19,10 @@ export declare enum KnowledgeBaseBooleanOperators {
   OR = 'or',
 }
 
+export declare enum IntegrationTypes {
+  ZENDESK = 'zendesk',
+}
+
 export interface KnowledgeBaseTagsFilterWithOperator {
   items: string[];
   operator?: KnowledgeBaseBooleanOperators;
@@ -58,6 +62,11 @@ export interface KnowledgeBaseURL extends KnowledgeBaseData {
   url: string;
   refreshRate?: KnowledgeBaseDocumentRefreshRate;
   lastSuccessUpdate?: string;
+
+  /* ****** Integrations related fields ****** */
+  accessTokenID?: number; // ID of access token connected to that doc
+  integrationExternalID?: string; // integration Provider internal doc ID
+  source?: IntegrationTypes; // type of integration
 }
 
 export enum KnowledgeBaseDocumentStatus {
