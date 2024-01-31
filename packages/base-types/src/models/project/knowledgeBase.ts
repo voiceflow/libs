@@ -14,12 +14,12 @@ export enum KnowledgeBaseDocumentRefreshRate {
   NEVER = 'never',
 }
 
-export declare enum KnowledgeBaseBooleanOperators {
+export enum KnowledgeBaseBooleanOperators {
   AND = 'and',
   OR = 'or',
 }
 
-export declare enum IntegrationTypes {
+export enum IntegrationTypes {
   ZENDESK = 'zendesk',
 }
 
