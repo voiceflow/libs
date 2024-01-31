@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.103.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.102.0...@voiceflow/base-types@2.103.0) (2024-01-31)
+
+### Features
+
+* remove declare enum in kb models (CV3-890) ([#499](https://github.com/voiceflow/libs/issues/499)) ([1752d77](https://github.com/voiceflow/libs/commit/1752d77d971d8d5c73a66fcc664bfe886c668d66))
+
 # [2.102.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.101.5...@voiceflow/base-types@2.102.0) (2024-01-26)
 
 ### Features
