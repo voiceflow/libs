@@ -11,4 +11,6 @@ export interface Model {
   executeAt: Date;
   checksum?: string | null;
   tags?: string[];
+  integrationOauthTokenID?: number;
+  integrationExternalID?: string;
 }
