@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.104.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.103.0...@voiceflow/base-types@2.104.0) (2024-02-03)
+
+### Features
+
+* update refresh-jobs model fields with integration (CV3-890) ([#500](https://github.com/voiceflow/libs/issues/500)) ([e1d428a](https://github.com/voiceflow/libs/commit/e1d428af43ced32e68551c06ded7157c58006325))
+
 # [2.103.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.102.0...@voiceflow/base-types@2.103.0) (2024-01-31)
 
 ### Features
