@@ -1,3 +1,4 @@
+import { CompiledCMSVariable } from '@base-types/cms/variables';
 import { AnyRecord, Nullable } from '@voiceflow/common';
 
 import { BaseCommand, Intent, PrototypeModel, Slot } from '../base';
@@ -45,6 +46,7 @@ export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord, 
   extraSlots: Slot[];
   extraIntents: Intent[];
   usedIntentsSet: string[];
+  cmsVariables: Record<string, CompiledCMSVariable>;
   /**
    * !TODO! - Make this required after migrating users to have `usedFunctionsMap`
    */
