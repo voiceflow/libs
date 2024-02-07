@@ -46,7 +46,7 @@ export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord, 
   extraSlots: Slot[];
   extraIntents: Intent[];
   usedIntentsSet: string[];
-  cmsVariables: Record<string, CompiledCMSVariable>;
+  cmsVariables?: Record<string, CompiledCMSVariable>;
   /**
    * !TODO! - Make this required after migrating users to have `usedFunctionsMap`
    */
