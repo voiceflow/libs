@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.105.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.104.0...@voiceflow/base-types@2.105.0) (2024-02-09)
+
+### Features
+
+* added types for compiled cms variables (CV3-942) ([#501](https://github.com/voiceflow/libs/issues/501)) ([82db3e5](https://github.com/voiceflow/libs/commit/82db3e53988b2e50b450ec99ca395bed589785c8))
+
 # [2.104.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.103.0...@voiceflow/base-types@2.104.0) (2024-02-03)
 
 ### Features
