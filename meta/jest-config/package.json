@@ -11,5 +11,11 @@
     "@swc/jest": "0.2.23",
     "@types/jest": "^29.2.3",
     "@voiceflow-meta/swc-config": "workspace:*"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "volta": {
+    "extends": "../../package.json"
   }
 }
