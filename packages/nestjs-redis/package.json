@@ -1,7 +1,7 @@
 {
   "name": "@voiceflow/nestjs-redis",
   "description": "Redis for NestJS",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": "Voiceflow",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"

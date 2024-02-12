@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.4](https://github.com/voiceflow/libs/compare/@voiceflow/metrics@1.4.3...@voiceflow/metrics@1.4.4) (2024-02-12)
+
+**Note:** Version bump only for package @voiceflow/metrics
+
 ## [1.4.3](https://github.com/voiceflow/libs/compare/@voiceflow/metrics@1.4.2...@voiceflow/metrics@1.4.3) (2024-01-05)
 
 ### Bug Fixes

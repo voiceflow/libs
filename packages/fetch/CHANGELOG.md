@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.5](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.5.4...@voiceflow/fetch@1.5.5) (2024-02-12)
+
+**Note:** Version bump only for package @voiceflow/fetch
+
 ## [1.5.4](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.5.3...@voiceflow/fetch@1.5.4) (2024-01-05)
 
 ### Bug Fixes
