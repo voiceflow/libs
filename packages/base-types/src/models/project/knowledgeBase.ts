@@ -5,6 +5,7 @@ export enum KnowledgeBaseDocumentType {
   TEXT = 'text',
   URL = 'url',
   DOCX = 'docx',
+  TABLE = 'table',
 }
 
 export enum KnowledgeBaseDocumentRefreshRate {
@@ -42,23 +43,19 @@ export interface KnowledgeBaseData {
 
 export interface KnowledgeBasePDF extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.PDF;
-  name: string;
 }
 
 export interface KnowledgeBaseDocx extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.DOCX;
-  name: string;
 }
 
 export interface KnowledgeBaseText extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.TEXT;
-  name: string;
   canEdit?: boolean;
 }
 
 export interface KnowledgeBaseURL extends KnowledgeBaseData {
   type: KnowledgeBaseDocumentType.URL;
-  name: string;
   url: string;
   refreshRate?: KnowledgeBaseDocumentRefreshRate;
   lastSuccessUpdate?: string;
@@ -67,6 +64,11 @@ export interface KnowledgeBaseURL extends KnowledgeBaseData {
   accessTokenID?: number; // ID of access token connected to that doc
   integrationExternalID?: string; // integration Provider internal doc ID
   source?: IntegrationTypes; // type of integration
+}
+
+export interface KnowledgeBaseTable extends KnowledgeBaseData {
+  type: KnowledgeBaseDocumentType.TABLE;
+  rowsCount: number;
 }
 
 export enum KnowledgeBaseDocumentStatus {
@@ -82,7 +84,7 @@ export interface KBTag {
 }
 
 export interface KnowledgeBaseDocument {
-  data: KnowledgeBasePDF | KnowledgeBaseText | KnowledgeBaseURL | KnowledgeBaseDocx;
+  data: KnowledgeBasePDF | KnowledgeBaseText | KnowledgeBaseURL | KnowledgeBaseDocx | KnowledgeBaseTable;
   status: {
     type: KnowledgeBaseDocumentStatus;
     data?: unknown;
