@@ -13,7 +13,7 @@
     "fetch-mock": "^9.11.0",
     "jest-environment-jsdom": "29.7.0",
     "jest-fetch-mock": "3.0.3",
-    "undici": "5.12.0"
+    "undici": "5.28.3"
   },
   "files": [
     "build"
