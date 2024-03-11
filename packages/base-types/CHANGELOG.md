@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.106.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.105.1...@voiceflow/base-types@2.106.0) (2024-03-11)
+
+### Features
+
+* add new table kb doc type (COR-1183) ([#505](https://github.com/voiceflow/libs/issues/505)) ([a0bcf90](https://github.com/voiceflow/libs/commit/a0bcf90ecf01459e3261a795ad9f316bedc9fd58))
+
 ## [2.105.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.105.0...@voiceflow/base-types@2.105.1) (2024-02-12)
 
 **Note:** Version bump only for package @voiceflow/base-types
