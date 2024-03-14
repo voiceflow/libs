@@ -18,7 +18,7 @@
     "@types/node": "^18.11.11",
     "@voiceflow-meta/jest-config": "workspace:*",
     "@voiceflow-meta/typescript-config": "workspace:*",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^9.0.0"
   },
   "files": [
     "build"
