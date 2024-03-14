@@ -9,4 +9,6 @@ export enum BuiltInVariable {
   LAST_UTTERANCE = 'last_utterance',
   LAST_RESPONSE = 'last_response',
   LAST_EVENT = 'last_event',
+  VF_MEMORY = 'vf_memory',
+  VF_CHUNKS = 'vf_chunks',
 }
