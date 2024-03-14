@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.27.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.45...@voiceflow/voiceflow-types@3.27.0) (2024-03-14)
+
+### Features
+
+* update build-in variable constant (COR-1186) ([#510](https://github.com/voiceflow/libs/issues/510)) ([f0682ef](https://github.com/voiceflow/libs/commit/f0682efb05f869d4d9d44e71383e663dc3a58275))
+
 ## [3.26.45](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.44...@voiceflow/voiceflow-types@3.26.45) (2024-03-11)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
