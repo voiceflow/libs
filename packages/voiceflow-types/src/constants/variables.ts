@@ -11,5 +11,5 @@ export enum BuiltInVariable {
   LAST_EVENT = 'last_event',
   VF_MEMORY = 'vf_memory',
   VF_CHUNKS = 'vf_chunks',
-  FUNCTION_QUEUED_MATCHES = 'function_queued_matches',
+  FUNCTION_CONDITIONAL_TRANSFERS = 'function_conditional_transfers',
 }
