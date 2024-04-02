@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.28.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.27.0...@voiceflow/voiceflow-types@3.28.0) (2024-04-02)
+
+### Features
+
+* add variable to store state for listen functionality(COR-1754) ([#511](https://github.com/voiceflow/libs/issues/511)) ([48d595b](https://github.com/voiceflow/libs/commit/48d595bb945012b3bbd9f4d60ccd93b0f5391fa7))
+
 # [3.27.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.26.45...@voiceflow/voiceflow-types@3.27.0) (2024-03-14)
 
 ### Features
