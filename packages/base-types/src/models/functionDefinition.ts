@@ -1,7 +1,16 @@
-import { VariableDatatype } from "@base-types/cms/variables";
+export const FunctionVariableType = {
+    ANY: 'any',
+    ARRAY: 'array',
+    STRING: 'string',
+    OBJECT: 'object',
+    NUMBER: 'number',
+    BOOLEAN: 'boolean',
+} as const;
+
+export type FunctionVariableType = typeof FunctionVariableType[keyof typeof FunctionVariableType];
 
 export interface FunctionCompiledVariableDeclaration {
-    type: VariableDatatype;
+    type: FunctionVariableType;
 }
 
 export interface FunctionCompiledDefinition {
