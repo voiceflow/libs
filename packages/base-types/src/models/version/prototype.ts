@@ -50,7 +50,7 @@ export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord, 
   cmsVariables?: Record<string, CompiledCMSVariable>;
   functionDefinitions?: Record<string, FunctionCompiledDefinition>;
   platform: PlatformType;
-  
+
   /**
    * @deprecated
    */
