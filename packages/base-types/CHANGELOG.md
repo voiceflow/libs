@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.107.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.107.0...@voiceflow/base-types@2.107.1) (2024-04-03)
+
+### Bug Fixes
+
+* type incompatibility (COR-000) ([#513](https://github.com/voiceflow/libs/issues/513)) ([3f75a21](https://github.com/voiceflow/libs/commit/3f75a21b25670038274dd8a1e22bf6ac54aabb18))
+
 # [2.107.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.106.0...@voiceflow/base-types@2.107.0) (2024-04-03)
 
 ### Features
