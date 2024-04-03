@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.107.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.106.0...@voiceflow/base-types@2.107.0) (2024-04-03)
+
+### Features
+
+* refactored used functions map into function definitions (COR-1757) ([#512](https://github.com/voiceflow/libs/issues/512)) ([d18174a](https://github.com/voiceflow/libs/commit/d18174ae4de64027946c6de5b4c3b75f047dd9bf))
+
 # [2.106.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.105.1...@voiceflow/base-types@2.106.0) (2024-03-11)
 
 ### Features
