@@ -5,6 +5,10 @@ export declare const VariableDatatype: {
   readonly IMAGE: 'image';
   readonly NUMBER: 'number';
   readonly BOOLEAN: 'boolean';
+  /**
+   * @deprecated
+   */
+  readonly STRING: 'string';
 };
 
 export type VariableDatatype = typeof VariableDatatype[keyof typeof VariableDatatype];
