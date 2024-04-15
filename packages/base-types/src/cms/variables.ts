@@ -15,7 +15,7 @@ export type VariableDatatype = typeof VariableDatatype[keyof typeof VariableData
 
 export interface BaseCompiledCMSVariable {
   isSystem: boolean;
-  defaultValue: string;
+  defaultValue: string | null;
 }
 
 export interface CompiledSystemCMSVariable extends BaseCompiledCMSVariable {
