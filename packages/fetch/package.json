@@ -39,20 +39,19 @@
   },
   "devDependencies": {
     "@voiceflow/exception": "workspace:*",
-    "fetch-mock": "^9.11.0",
+    "fetch-mock": "9.11.0",
     "jest-environment-jsdom": "29.7.0",
     "jest-fetch-mock": "3.0.3",
     "undici": "5.12.0",
     "vitest-fetch-mock": "0.2.2"
   },
   "peerDependencies": {
-    "@voiceflow/exception": "workspace:*"
+    "@voiceflow/exception": "workspace:^"
   },
   "volta": {
     "extends": "../../package.json"
   },
   "publishConfig": {
-    "access": "public",
-    "types": "build/cjs/main.d.ts"
+    "access": "public"
   }
 }

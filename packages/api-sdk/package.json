@@ -41,19 +41,17 @@
     "@voiceflow/base-types": "workspace:*",
     "@voiceflow/common": "workspace:*",
     "axios": "0.24.0",
-    "jwt-decode": "^3.1.2",
-    "superstruct": "^0.10.12"
+    "jwt-decode": "3.1.2",
+    "superstruct": "0.10.13"
   },
   "devDependencies": {
-    "@types/jsonwebtoken": "^8.5.0",
-    "@types/node": "^18.11.11",
-    "jsonwebtoken": "^8.5.1"
+    "@types/jsonwebtoken": "8.5.8",
+    "jsonwebtoken": "8.5.1"
   },
   "volta": {
     "extends": "../../package.json"
   },
   "publishConfig": {
-    "access": "public",
-    "types": "build/cjs/index.d.ts"
+    "access": "public"
   }
 }

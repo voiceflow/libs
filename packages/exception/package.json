@@ -39,7 +39,6 @@
     "extends": "../../package.json"
   },
   "publishConfig": {
-    "access": "public",
-    "types": "build/cjs/main.d.ts"
+    "access": "public"
   }
 }

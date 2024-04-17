@@ -38,14 +38,13 @@
     "test:unit": "yarn g:vitest run --coverage"
   },
   "devDependencies": {
-    "@nestjs/common": "8.0.0",
+    "@nestjs/common": "8.4.7",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.0.0"
   },
   "peerDependencies": {
-    "@nestjs/common": "^8.0.0",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.0.0"
+    "@nestjs/common": "^8",
+    "rxjs": "^7"
   },
   "engines": {
     "node": ">=16"
@@ -54,7 +53,6 @@
     "extends": "../../package.json"
   },
   "publishConfig": {
-    "access": "public",
-    "types": "build/index.d.ts"
+    "access": "public"
   }
 }

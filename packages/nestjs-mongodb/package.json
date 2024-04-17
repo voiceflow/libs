@@ -40,16 +40,16 @@
     "@voiceflow/nestjs-common": "1.5.2"
   },
   "devDependencies": {
-    "@nestjs/common": "^8.4.2",
-    "@nestjs/core": "^8.4.2",
-    "@nestjs/terminus": "^8.0.6",
-    "@nestjs/testing": "^8.4.2",
-    "@types/mongodb": "^4.0.7"
+    "@nestjs/common": "8.4.7",
+    "@nestjs/core": "8.4.7",
+    "@nestjs/terminus": "8.1.1",
+    "@nestjs/testing": "8.4.7",
+    "@types/mongodb": "4.0.7"
   },
   "peerDependencies": {
-    "@nestjs/common": "^8.4.2",
-    "@nestjs/terminus": "^8.0.6",
-    "mongodb": "^4.6.0"
+    "@nestjs/common": "^8",
+    "@nestjs/terminus": "^8",
+    "mongodb": "^4"
   },
   "engines": {
     "node": ">=16"
@@ -58,7 +58,6 @@
     "extends": "../../package.json"
   },
   "publishConfig": {
-    "access": "public",
-    "types": "build/index.d.ts"
+    "access": "public"
   }
 }
