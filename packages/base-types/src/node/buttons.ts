@@ -1,8 +1,16 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { StepButtonsLayout } from '../button';
-import { NodeType } from './constants';
-import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepNoMatch, DataID, NoMatchNoReplyStepPorts, StepIntentScope } from './utils';
+import type { StepButtonsLayout } from '../button';
+import type { NodeType } from './constants';
+import type {
+  BaseNoMatchStepData,
+  BaseNoReplyStepData,
+  BaseStep,
+  BaseStepNoMatch,
+  DataID,
+  NoMatchNoReplyStepPorts,
+  StepIntentScope,
+} from './utils';
 
 /**
  * @deprecated use `actions` instead

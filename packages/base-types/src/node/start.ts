@@ -1,5 +1,5 @@
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, NodeID } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, NodeID } from './utils';
 
 export interface StepData {
   label?: string;

@@ -1,7 +1,7 @@
 import { VoiceProject } from '@voiceflow/voice-types';
 
-import { MemberPlatformData } from './member';
-import { Product } from './product';
+import type { MemberPlatformData } from './member';
+import type { Product } from './product';
 
 export * from './member';
 export * from './product';

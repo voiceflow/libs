@@ -1,6 +1,14 @@
-import { BaseButton, BaseNode, BaseRequest, Nullable } from '@voiceflow/base-types';
+import type { BaseButton, BaseNode, BaseRequest, Nullable } from '@voiceflow/base-types';
 
-import { DeprecatedNodeNoMatch, NodeNoMatch, NodeNoReply, NodeReprompt, StepNoMatch, StepNoReply, StepReprompt } from './utils';
+import type {
+  DeprecatedNodeNoMatch,
+  NodeNoMatch,
+  NodeNoReply,
+  NodeReprompt,
+  StepNoMatch,
+  StepNoReply,
+  StepReprompt,
+} from './utils';
 
 export interface StepData extends BaseNode.Interaction.StepData, BaseButton.StepButton, StepReprompt {
   noMatch?: Nullable<StepNoMatch>;

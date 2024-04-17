@@ -1,5 +1,5 @@
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, DynamicOnlyStepPorts, NodeNextIDs } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, DynamicOnlyStepPorts, NodeNextIDs } from './utils';
 
 export enum RandomType {
   DEFAULT = 1,

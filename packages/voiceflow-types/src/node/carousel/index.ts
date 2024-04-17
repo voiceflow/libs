@@ -1,7 +1,7 @@
-import { BaseNode } from '@voiceflow/base-types';
+import type { BaseNode } from '@voiceflow/base-types';
 
-import { VoiceflowPrompt } from '../utils';
-import { ChatStep, ChatStepData } from './chat';
+import type { VoiceflowPrompt } from '../utils';
+import type { ChatStep, ChatStepData } from './chat';
 
 export * from './chat';
 

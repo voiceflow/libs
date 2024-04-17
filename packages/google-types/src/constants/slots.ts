@@ -1,4 +1,4 @@
-import { BuiltinSlot } from '@voiceflow/common';
+import type { BuiltinSlot } from '@voiceflow/common';
 
 export enum SlotType {
   DATE = 'actions.type.Date',

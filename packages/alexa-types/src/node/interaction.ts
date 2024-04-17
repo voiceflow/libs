@@ -1,6 +1,6 @@
-import { Voice } from '@alexa-types/constants';
-import { BaseNode } from '@voiceflow/base-types';
-import { VoiceNode } from '@voiceflow/voice-types';
+import type { Voice } from '@alexa-types/constants';
+import type { BaseNode } from '@voiceflow/base-types';
+import type { VoiceNode } from '@voiceflow/voice-types';
 
 export interface StepData extends VoiceNode.Interaction.StepData<Voice> {}
 

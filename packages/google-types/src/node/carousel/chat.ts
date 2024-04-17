@@ -1,4 +1,4 @@
-import * as ChatTypes from '@voiceflow/chat-types';
+import type * as ChatTypes from '@voiceflow/chat-types';
 
 export interface ChatStepData extends ChatTypes.ChatNode.Carousel.StepData {}
 

@@ -1,4 +1,5 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosInstance, AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
 export interface FetchConfig {
   headers?: Record<string, string>;
@@ -67,7 +68,12 @@ class Fetch {
    * // return Promise<number>
    * fetch.granularPatch<number>('/endpoint', 'vendors[$vendorID].skillID', 5678, { vendorID: "234" })
    */
-  public async granularPatch<T>(url: string, path: string, value?: T, pathVariables?: PathVariables): Promise<FetchReturnType<T>> {
+  public async granularPatch<T>(
+    url: string,
+    path: string,
+    value?: T,
+    pathVariables?: PathVariables
+  ): Promise<FetchReturnType<T>> {
     const { data, status } = await this.axios.patch<T>(url, { path, value, pathVariables });
 
     return { data, status };

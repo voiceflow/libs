@@ -1,7 +1,9 @@
 import { ProjectType } from '@voiceflow-types/constants';
 
-import { ChatMemberPlatformData, ChatPlatformData, ChatProject, defaultChatMemberPlatformData, defaultChatPlatformData } from './chat';
-import { defaultVoiceMemberPlatformData, defaultVoicePlatformData, VoiceMemberPlatformData, VoicePlatformData, VoiceProject } from './voice';
+import type { ChatMemberPlatformData, ChatPlatformData, ChatProject } from './chat';
+import { defaultChatMemberPlatformData, defaultChatPlatformData } from './chat';
+import type { VoiceMemberPlatformData, VoicePlatformData, VoiceProject } from './voice';
+import { defaultVoiceMemberPlatformData, defaultVoicePlatformData } from './voice';
 
 export * from './chat';
 export * from './voice';
@@ -47,9 +49,13 @@ export const defaultMemberPlatformData = <T extends SupportedProjectType>(
 ): MemberPlatformDataPerType[T] => {
   switch (type) {
     case ProjectType.CHAT:
-      return defaultChatMemberPlatformData(platformData as Partial<ChatMemberPlatformData>) as MemberPlatformDataPerType[T];
+      return defaultChatMemberPlatformData(
+        platformData as Partial<ChatMemberPlatformData>
+      ) as MemberPlatformDataPerType[T];
     case ProjectType.VOICE:
-      return defaultVoiceMemberPlatformData(platformData as Partial<VoiceMemberPlatformData>) as MemberPlatformDataPerType[T];
+      return defaultVoiceMemberPlatformData(
+        platformData as Partial<VoiceMemberPlatformData>
+      ) as MemberPlatformDataPerType[T];
     default:
       throw new Error(`Unknown project type: ${type}`);
   }

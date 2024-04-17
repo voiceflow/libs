@@ -1,4 +1,4 @@
-import { BaseVersion } from '@voiceflow/base-types';
+import type { BaseVersion } from '@voiceflow/base-types';
 
 export enum ChatPersistence {
   MEMORY = 'memory', // store user token in JS code memory (least persistent)

@@ -1,4 +1,4 @@
-import { AIKnowledgeContextParams, AIModelParams } from '@base-types/utils/ai';
+import type { AIKnowledgeContextParams, AIModelParams } from '@base-types/utils/ai';
 
 export enum KnowledgeBaseDocumentType {
   PDF = 'pdf',

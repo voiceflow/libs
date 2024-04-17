@@ -1,25 +1,11 @@
-import { DeepPartialByKey } from '@voiceflow/base-types';
+import type { DeepPartialByKey } from '@voiceflow/base-types';
 import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
-import { SupportedProjectType } from '../project';
-import {
-  ChatPlatformData,
-  ChatPublishing,
-  ChatSettings,
-  ChatVersion,
-  defaultChatPlatformData,
-  defaultChatPublishing,
-  defaultChatSettings,
-} from './chat';
-import {
-  defaultVoicePlatformData,
-  defaultVoicePublishing,
-  defaultVoiceSettings,
-  VoicePlatformData,
-  VoicePublishing,
-  VoiceSettings,
-  VoiceVersion,
-} from './voice';
+import type { SupportedProjectType } from '../project';
+import type { ChatPlatformData, ChatPublishing, ChatSettings, ChatVersion } from './chat';
+import { defaultChatPlatformData, defaultChatPublishing, defaultChatSettings } from './chat';
+import type { VoicePlatformData, VoicePublishing, VoiceSettings, VoiceVersion } from './voice';
+import { defaultVoicePlatformData, defaultVoicePublishing, defaultVoiceSettings } from './voice';
 
 export * from './base';
 export * from './chat';
@@ -57,15 +43,22 @@ export const defaultPlatformData = <T extends SupportedProjectType>(
 ): PlatformDataPerType[T] => {
   switch (type) {
     case VoiceflowConstants.ProjectType.CHAT:
-      return defaultChatPlatformData(platformData as DeepPartialByKey<ChatPlatformData, 'settings' | 'publishing'>) as PlatformDataPerType[T];
+      return defaultChatPlatformData(
+        platformData as DeepPartialByKey<ChatPlatformData, 'settings' | 'publishing'>
+      ) as PlatformDataPerType[T];
     case VoiceflowConstants.ProjectType.VOICE:
-      return defaultVoicePlatformData(platformData as DeepPartialByKey<VoicePlatformData, 'settings' | 'publishing'>) as PlatformDataPerType[T];
+      return defaultVoicePlatformData(
+        platformData as DeepPartialByKey<VoicePlatformData, 'settings' | 'publishing'>
+      ) as PlatformDataPerType[T];
     default:
       throw new Error(`Unknown project type: ${type}`);
   }
 };
 
-export const defaultSettings = <T extends SupportedProjectType>(type: T, platformData: Partial<SettingsPerType[T]>): SettingsPerType[T] => {
+export const defaultSettings = <T extends SupportedProjectType>(
+  type: T,
+  platformData: Partial<SettingsPerType[T]>
+): SettingsPerType[T] => {
   switch (type) {
     case VoiceflowConstants.ProjectType.CHAT:
       return defaultChatSettings(platformData as Partial<ChatSettings>) as SettingsPerType[T];
@@ -76,7 +69,10 @@ export const defaultSettings = <T extends SupportedProjectType>(type: T, platfor
   }
 };
 
-export const defaultPublishing = <T extends SupportedProjectType>(type: T, platformData: Partial<PublishingPerType[T]>): PublishingPerType[T] => {
+export const defaultPublishing = <T extends SupportedProjectType>(
+  type: T,
+  platformData: Partial<PublishingPerType[T]>
+): PublishingPerType[T] => {
   switch (type) {
     case VoiceflowConstants.ProjectType.CHAT:
       return defaultChatPublishing(platformData as Partial<ChatPublishing>) as PublishingPerType[T];

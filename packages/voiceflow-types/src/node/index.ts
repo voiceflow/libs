@@ -1,13 +1,13 @@
-import { BaseNode } from '@voiceflow/base-types';
+import type { BaseNode } from '@voiceflow/base-types';
 
-import * as Buttons from './buttons';
-import * as Capture from './capture';
-import * as CaptureV2 from './captureV2';
-import * as CardV2 from './cardV2';
-import * as Carousel from './carousel';
-import * as Interaction from './interaction';
-import * as Prompt from './prompt';
-import * as Speak from './speak';
+import type * as Buttons from './buttons';
+import type * as Capture from './capture';
+import type * as CaptureV2 from './captureV2';
+import type * as CardV2 from './cardV2';
+import type * as Carousel from './carousel';
+import type * as Interaction from './interaction';
+import type * as Prompt from './prompt';
+import type * as Speak from './speak';
 
 export * as Buttons from './buttons';
 export * as Capture from './capture';
@@ -28,7 +28,13 @@ export type AnyExtendedStep =
   | Buttons.Step
   | Carousel.Step
   | CardV2.Step;
-export type AnyExtendedNode = Speak.Node | Capture.Node | CaptureV2.Node | Interaction.Node | Carousel.Node | CardV2.Node;
+export type AnyExtendedNode =
+  | Speak.Node
+  | Capture.Node
+  | CaptureV2.Node
+  | Interaction.Node
+  | Carousel.Node
+  | CardV2.Node;
 
 export type AnyStep =
   | BaseNode.AnyCommonStep

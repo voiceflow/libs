@@ -1,4 +1,4 @@
-import { EmptyObject, Nullable } from '@voiceflow/common';
+import type { EmptyObject, Nullable } from '@voiceflow/common';
 
 export enum PortType {
   FAIL = 'fail',
@@ -18,7 +18,7 @@ export interface BasePort {
 export interface BaseStepPorts<
   Builtin extends Partial<Record<PortType, BasePort>>,
   Dynamic extends BasePort[] = BasePort[],
-  ByKey extends Partial<Record<string, BasePort>> = Partial<Record<string, BasePort>>
+  ByKey extends Partial<Record<string, BasePort>> = Partial<Record<string, BasePort>>,
 > {
   builtIn: Builtin;
   dynamic: Dynamic;
@@ -49,13 +49,17 @@ export interface BuiltInNoMatchNoReplyPorts extends BuiltInNoMatchPort, BuiltInN
 
 export interface EmptyStepPorts extends BaseStepPorts<EmptyObject, []> {}
 
-export interface NextStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNextPort, Dynamic> {}
+export interface NextStepPorts<Dynamic extends BasePort[] = BasePort[]>
+  extends BaseStepPorts<BuiltInNextPort, Dynamic> {}
 
-export interface SuccessFailStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNextFailPorts, Dynamic> {}
+export interface SuccessFailStepPorts<Dynamic extends BasePort[] = BasePort[]>
+  extends BaseStepPorts<BuiltInNextFailPorts, Dynamic> {}
 
-export interface DynamicOnlyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<EmptyObject, Dynamic> {}
+export interface DynamicOnlyStepPorts<Dynamic extends BasePort[] = BasePort[]>
+  extends BaseStepPorts<EmptyObject, Dynamic> {}
 
-export interface NoMatchNoReplyStepPorts<Dynamic extends BasePort[] = BasePort[]> extends BaseStepPorts<BuiltInNoMatchNoReplyPorts, Dynamic> {}
+export interface NoMatchNoReplyStepPorts<Dynamic extends BasePort[] = BasePort[]>
+  extends BaseStepPorts<BuiltInNoMatchNoReplyPorts, Dynamic> {}
 
 /**
  * @deprecated

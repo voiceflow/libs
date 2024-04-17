@@ -1,8 +1,8 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { PathReference } from '../../utils';
-import { BaseStepLog } from '../base';
-import { StepLogKind } from '../kinds';
+import type { PathReference } from '../../utils';
+import type { BaseStepLog } from '../base';
+import type { StepLogKind } from '../kinds';
 
 export type CustomActionStepLog = BaseStepLog<
   StepLogKind.CUSTOM_ACTION,

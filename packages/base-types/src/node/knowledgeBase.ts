@@ -1,4 +1,4 @@
-import { BaseResponseTrace, BaseTraceFrame, TraceType } from './utils';
+import type { BaseResponseTrace, BaseTraceFrame, TraceType } from './utils';
 
 export enum KnowledgeBaseCtxType {
   FAQ = 'faq',

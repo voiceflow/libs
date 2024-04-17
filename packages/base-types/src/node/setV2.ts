@@ -1,7 +1,7 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, ExpressionTypeV2, NodeNextID } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, ExpressionTypeV2, NodeNextID } from './utils';
 
 export interface Set {
   type: ExpressionTypeV2.VALUE | ExpressionTypeV2.ADVANCE;

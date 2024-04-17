@@ -3,7 +3,7 @@ import type { HealthIndicatorResult } from '@nestjs/terminus';
 import { HealthCheckError, HealthIndicator } from '@nestjs/terminus';
 import { HealthCheckErrorDto } from '@voiceflow/nestjs-common';
 
-import { RedisService } from './redis.service';
+import type { RedisService } from './redis.service';
 
 @Injectable()
 export class RedisHealthIndicator extends HealthIndicator {

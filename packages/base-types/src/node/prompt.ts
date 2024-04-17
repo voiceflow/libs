@@ -1,5 +1,11 @@
-import { NodeType } from './constants';
-import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, BaseStepNoMatch, NoMatchNoReplyStepPorts } from './utils';
+import type { NodeType } from './constants';
+import type {
+  BaseNoMatchStepData,
+  BaseNoReplyStepData,
+  BaseStep,
+  BaseStepNoMatch,
+  NoMatchNoReplyStepPorts,
+} from './utils';
 
 export interface StepData extends BaseNoReplyStepData, BaseNoMatchStepData {
   /**

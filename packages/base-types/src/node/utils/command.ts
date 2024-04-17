@@ -1,7 +1,7 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { BaseCommand } from './base';
-import { BaseEvent } from './event';
+import type { BaseCommand } from './base';
+import type { BaseEvent } from './event';
 
 // BUILT IN COMMANDS
 export enum CommandType {

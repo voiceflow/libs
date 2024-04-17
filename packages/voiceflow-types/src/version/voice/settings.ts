@@ -1,7 +1,8 @@
 import { VoiceVersion } from '@voiceflow/voice-types';
 import { Voice } from '@voiceflow-types/constants';
 
-import { BaseSettings, defaultBaseSettings } from '../base';
+import type { BaseSettings } from '../base';
+import { defaultBaseSettings } from '../base';
 
 export interface SharedVoiceSettings extends VoiceVersion.Settings<Voice> {}
 

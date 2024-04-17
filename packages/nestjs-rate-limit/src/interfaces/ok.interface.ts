@@ -1,4 +1,4 @@
-import { Result } from './result.interface';
+import type { Result } from './result.interface';
 
 /**
  * The result of successfully consuming a request without exceeding the rate-limit.

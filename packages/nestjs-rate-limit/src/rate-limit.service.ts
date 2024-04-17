@@ -11,7 +11,10 @@ import { TooManyRequests } from './interfaces/too-many-requests.interface';
 export class RateLimitService {
   private readonly rateLimiter: RateLimiterStoreAbstract;
 
-  constructor(@Inject(Providers.RATE_LIMIT_OPTIONS) private readonly config: RateLimitOptions, redis: RedisService) {
+  constructor(
+    @Inject(Providers.RATE_LIMIT_OPTIONS) private readonly config: RateLimitOptions,
+    redis: RedisService
+  ) {
     const storeClient: RedisConnection = redis.connection;
 
     this.rateLimiter = new RateLimiterRedis({

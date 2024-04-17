@@ -1,6 +1,6 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { NodeID } from './base';
+import type { NodeID } from './base';
 
 export enum NoReplyType {
   PATH = 'path',

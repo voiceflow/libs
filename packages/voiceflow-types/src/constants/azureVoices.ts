@@ -1,8 +1,24 @@
 export const AZURE_LOCALE_VOICE_META = {
-  'ar-EG': { language: 'Arabic (Arabic )', locale: 'ar-EG', voices: [{ gender: 'Female', voiceID: 'ar-EG-SalmaNeural' }] },
-  'ar-SA': { language: 'Arabic (Saudi Arabia)', locale: 'ar-SA', voices: [{ gender: 'Male', voiceID: 'ar-SA-HamedNeural' }] },
-  'bg-BG': { language: 'Bulgarian (Bulgaria)', locale: 'bg-BG', voices: [{ gender: 'Male', voiceID: 'bg-BG-KalinaNeural' }] },
-  'ca-ES': { language: 'Catalan (Spain)', locale: 'ca-ES', voices: [{ gender: 'Female', voiceID: 'ca-ES-AlbaNeural' }] },
+  'ar-EG': {
+    language: 'Arabic (Arabic )',
+    locale: 'ar-EG',
+    voices: [{ gender: 'Female', voiceID: 'ar-EG-SalmaNeural' }],
+  },
+  'ar-SA': {
+    language: 'Arabic (Saudi Arabia)',
+    locale: 'ar-SA',
+    voices: [{ gender: 'Male', voiceID: 'ar-SA-HamedNeural' }],
+  },
+  'bg-BG': {
+    language: 'Bulgarian (Bulgaria)',
+    locale: 'bg-BG',
+    voices: [{ gender: 'Male', voiceID: 'bg-BG-KalinaNeural' }],
+  },
+  'ca-ES': {
+    language: 'Catalan (Spain)',
+    locale: 'ca-ES',
+    voices: [{ gender: 'Female', voiceID: 'ca-ES-AlbaNeural' }],
+  },
   'zh-HK': {
     language: 'Chinese (Cantonese, Traditional)',
     locale: 'zh-HK',
@@ -29,10 +45,26 @@ export const AZURE_LOCALE_VOICE_META = {
       { gender: 'Male', voiceID: 'zh-TW-YunJheNeural' },
     ],
   },
-  'hr-HR': { language: 'Croatian (Croatia)', locale: 'hr-HR', voices: [{ gender: 'Male', voiceID: 'hr-HR-SreckoNeural' }] },
-  'cs-CZ': { language: 'Czech (Czech Republic)', locale: 'cs-CZ', voices: [{ gender: 'Male', voiceID: 'cs-CZ-AntoninNeural' }] },
-  'da-DK': { language: 'Danish (Denmark)', locale: 'da-DK', voices: [{ gender: 'Female', voiceID: 'da-DK-ChristelNeural' }] },
-  'nl-NL': { language: 'Dutch (Netherlands)', locale: 'nl-NL', voices: [{ gender: 'Female', voiceID: 'nl-NL-ColetteNeural' }] },
+  'hr-HR': {
+    language: 'Croatian (Croatia)',
+    locale: 'hr-HR',
+    voices: [{ gender: 'Male', voiceID: 'hr-HR-SreckoNeural' }],
+  },
+  'cs-CZ': {
+    language: 'Czech (Czech Republic)',
+    locale: 'cs-CZ',
+    voices: [{ gender: 'Male', voiceID: 'cs-CZ-AntoninNeural' }],
+  },
+  'da-DK': {
+    language: 'Danish (Denmark)',
+    locale: 'da-DK',
+    voices: [{ gender: 'Female', voiceID: 'da-DK-ChristelNeural' }],
+  },
+  'nl-NL': {
+    language: 'Dutch (Netherlands)',
+    locale: 'nl-NL',
+    voices: [{ gender: 'Female', voiceID: 'nl-NL-ColetteNeural' }],
+  },
   'en-AU': {
     language: 'English (Australia)',
     locale: 'en-AU',
@@ -57,7 +89,11 @@ export const AZURE_LOCALE_VOICE_META = {
       { gender: 'Male', voiceID: 'en-IN-PrabhatNeural' },
     ],
   },
-  'en-IE': { language: 'English (Ireland)', locale: 'en-IE', voices: [{ gender: 'Male', voiceID: 'en-IE-ConnorNeural' }] },
+  'en-IE': {
+    language: 'English (Ireland)',
+    locale: 'en-IE',
+    voices: [{ gender: 'Male', voiceID: 'en-IE-ConnorNeural' }],
+  },
   'en-GB': {
     language: 'English (United Kingdom)',
     locale: 'en-GB',
@@ -77,7 +113,11 @@ export const AZURE_LOCALE_VOICE_META = {
       { gender: 'Female', voiceID: 'en-US-ChristopherNeural' },
     ],
   },
-  'fi-FI': { language: 'Finnish (Finland)', locale: 'fi-FI', voices: [{ gender: 'Female', voiceID: 'fi-FI-NooraNeural' }] },
+  'fi-FI': {
+    language: 'Finnish (Finland)',
+    locale: 'fi-FI',
+    voices: [{ gender: 'Female', voiceID: 'fi-FI-NooraNeural' }],
+  },
   'fr-CA': {
     language: 'French (Canada)',
     locale: 'fr-CA',
@@ -94,8 +134,16 @@ export const AZURE_LOCALE_VOICE_META = {
       { gender: 'Male', voiceID: 'fr-FR-HenriNeural' },
     ],
   },
-  'fr-CH': { language: 'French (Switzerland)', locale: 'fr-CH', voices: [{ gender: 'Male', voiceID: 'fr-CH-FabriceNeural' }] },
-  'de-AT': { language: 'German (Austria)', locale: 'de-AT', voices: [{ gender: 'Male', voiceID: 'de-AT-JonasNeural' }] },
+  'fr-CH': {
+    language: 'French (Switzerland)',
+    locale: 'fr-CH',
+    voices: [{ gender: 'Male', voiceID: 'fr-CH-FabriceNeural' }],
+  },
+  'de-AT': {
+    language: 'German (Austria)',
+    locale: 'de-AT',
+    voices: [{ gender: 'Male', voiceID: 'de-AT-JonasNeural' }],
+  },
   'de-DE': {
     language: 'German (Germany)',
     locale: 'de-DE',
@@ -104,8 +152,16 @@ export const AZURE_LOCALE_VOICE_META = {
       { gender: 'Male', voiceID: 'de-DE-ConradNeural' },
     ],
   },
-  'de-CH': { language: 'German (Switzerland)', locale: 'de-CH', voices: [{ gender: 'Male', voiceID: 'de-CH-JanNeural' }] },
-  'el-GR': { language: 'Greek (Greece)', locale: 'el-GR', voices: [{ gender: 'Male', voiceID: 'el-GR-NestorasNeural' }] },
+  'de-CH': {
+    language: 'German (Switzerland)',
+    locale: 'de-CH',
+    voices: [{ gender: 'Male', voiceID: 'de-CH-JanNeural' }],
+  },
+  'el-GR': {
+    language: 'Greek (Greece)',
+    locale: 'el-GR',
+    voices: [{ gender: 'Male', voiceID: 'el-GR-NestorasNeural' }],
+  },
   'he-IL': { language: 'Hebrew (Israel)', locale: 'he-IL', voices: [{ gender: 'Male', voiceID: 'he-IL-AvriNeural' }] },
   'hi-IN': {
     language: 'Hindi (India)',
@@ -115,8 +171,16 @@ export const AZURE_LOCALE_VOICE_META = {
       { gender: 'Female', voiceID: 'hi-IN-SwaraNeural' },
     ],
   },
-  'hu-HU': { language: 'Hungarian (Hungary)', locale: 'hu-HU', voices: [{ gender: 'Male', voiceID: 'hu-HU-TamasNeural' }] },
-  'id-ID': { language: 'Indonesian (Indonesia)', locale: 'id-ID', voices: [{ gender: 'Male', voiceID: 'id-ID-ArdiNeural' }] },
+  'hu-HU': {
+    language: 'Hungarian (Hungary)',
+    locale: 'hu-HU',
+    voices: [{ gender: 'Male', voiceID: 'hu-HU-TamasNeural' }],
+  },
+  'id-ID': {
+    language: 'Indonesian (Indonesia)',
+    locale: 'id-ID',
+    voices: [{ gender: 'Male', voiceID: 'id-ID-ArdiNeural' }],
+  },
   'it-IT': {
     language: 'Italian (Italy)',
     locale: 'it-IT',
@@ -133,10 +197,26 @@ export const AZURE_LOCALE_VOICE_META = {
       { gender: 'Male', voiceID: 'ja-JP-KeitaNeural' },
     ],
   },
-  'ko-KR': { language: 'Korean (Korea)', locale: 'ko-KR', voices: [{ gender: 'Female', voiceID: 'ko-KR-SunHiNeural' }] },
-  'ms-MY': { language: 'Malay (Malaysia)', locale: 'ms-MY', voices: [{ gender: 'Male', voiceID: 'ms-MY-OsmanNeural' }] },
-  'nb-NO': { language: 'Norwegian (Bokmål, Norway)', locale: 'nb-NO', voices: [{ gender: 'Female', voiceID: 'nb-NO-IselinNeural' }] },
-  'pl-PL': { language: 'Polish (Poland)', locale: 'pl-PL', voices: [{ gender: 'Female', voiceID: 'pl-PL-AgnieszkaNeural' }] },
+  'ko-KR': {
+    language: 'Korean (Korea)',
+    locale: 'ko-KR',
+    voices: [{ gender: 'Female', voiceID: 'ko-KR-SunHiNeural' }],
+  },
+  'ms-MY': {
+    language: 'Malay (Malaysia)',
+    locale: 'ms-MY',
+    voices: [{ gender: 'Male', voiceID: 'ms-MY-OsmanNeural' }],
+  },
+  'nb-NO': {
+    language: 'Norwegian (Bokmål, Norway)',
+    locale: 'nb-NO',
+    voices: [{ gender: 'Female', voiceID: 'nb-NO-IselinNeural' }],
+  },
+  'pl-PL': {
+    language: 'Polish (Poland)',
+    locale: 'pl-PL',
+    voices: [{ gender: 'Female', voiceID: 'pl-PL-AgnieszkaNeural' }],
+  },
   'pt-BR': {
     language: 'Portuguese (Brazil)',
     locale: 'pt-BR',
@@ -145,8 +225,16 @@ export const AZURE_LOCALE_VOICE_META = {
       { gender: 'Female', voiceID: 'pt-BR-FranciscaNeural' },
     ],
   },
-  'pt-PT': { language: 'Portuguese (Portugal)', locale: 'pt-PT', voices: [{ gender: 'Female', voiceID: 'pt-PT-FernandaNeural' }] },
-  'ro-RO': { language: 'Romanian (Romania)', locale: 'ro-RO', voices: [{ gender: 'Male', voiceID: 'ro-RO-EmilNeural' }] },
+  'pt-PT': {
+    language: 'Portuguese (Portugal)',
+    locale: 'pt-PT',
+    voices: [{ gender: 'Female', voiceID: 'pt-PT-FernandaNeural' }],
+  },
+  'ro-RO': {
+    language: 'Romanian (Romania)',
+    locale: 'ro-RO',
+    voices: [{ gender: 'Male', voiceID: 'ro-RO-EmilNeural' }],
+  },
   'ru-RU': {
     language: 'Russian (Russia)',
     locale: 'ru-RU',
@@ -156,8 +244,16 @@ export const AZURE_LOCALE_VOICE_META = {
       { gender: 'Male', voiceID: 'ru-RU-DmitryNeural' },
     ],
   },
-  'sk-SK': { language: 'Slovak (Slovakia)', locale: 'sk-SK', voices: [{ gender: 'Male', voiceID: 'sk-SK-ViktoriaNeural' }] },
-  'sl-SI': { language: 'Slovenian (Slovenia)', locale: 'sl-SI', voices: [{ gender: 'Male', voiceID: 'sl-SI-RokNeural' }] },
+  'sk-SK': {
+    language: 'Slovak (Slovakia)',
+    locale: 'sk-SK',
+    voices: [{ gender: 'Male', voiceID: 'sk-SK-ViktoriaNeural' }],
+  },
+  'sl-SI': {
+    language: 'Slovenian (Slovenia)',
+    locale: 'sl-SI',
+    voices: [{ gender: 'Male', voiceID: 'sl-SI-RokNeural' }],
+  },
   'es-MX': {
     language: 'Spanish (Mexico)',
     locale: 'es-MX',
@@ -174,10 +270,30 @@ export const AZURE_LOCALE_VOICE_META = {
       { gender: 'Male', voiceID: 'es-ES-AlvaroNeural' },
     ],
   },
-  'sv-SE': { language: 'Swedish (Sweden)', locale: 'sv-SE', voices: [{ gender: 'Female', voiceID: 'sv-SE-HilleviNeural' }] },
-  'ta-IN': { language: 'Tamil (India)', locale: 'ta-IN', voices: [{ gender: 'Male', voiceID: 'ta-IN-ValluvarNeural' }] },
-  'te-IN': { language: 'Telugu (India)', locale: 'te-IN', voices: [{ gender: 'Female', voiceID: 'te-IN-ShrutiNeural' }] },
+  'sv-SE': {
+    language: 'Swedish (Sweden)',
+    locale: 'sv-SE',
+    voices: [{ gender: 'Female', voiceID: 'sv-SE-HilleviNeural' }],
+  },
+  'ta-IN': {
+    language: 'Tamil (India)',
+    locale: 'ta-IN',
+    voices: [{ gender: 'Male', voiceID: 'ta-IN-ValluvarNeural' }],
+  },
+  'te-IN': {
+    language: 'Telugu (India)',
+    locale: 'te-IN',
+    voices: [{ gender: 'Female', voiceID: 'te-IN-ShrutiNeural' }],
+  },
   'th-TH': { language: 'Thai (Thailand)', locale: 'th-TH', voices: [{ gender: 'Male', voiceID: 'th-TH-NiwatNeural' }] },
-  'tr-TR': { language: 'Turkish (Turkey)', locale: 'tr-TR', voices: [{ gender: 'Female', voiceID: 'tr-TR-EmelNeural' }] },
-  'vi-VN': { language: 'Vietnamese (Vietnam)', locale: 'vi-VN', voices: [{ gender: 'Male', voiceID: 'vi-VN-NamMinhNeural' }] },
+  'tr-TR': {
+    language: 'Turkish (Turkey)',
+    locale: 'tr-TR',
+    voices: [{ gender: 'Female', voiceID: 'tr-TR-EmelNeural' }],
+  },
+  'vi-VN': {
+    language: 'Vietnamese (Vietnam)',
+    locale: 'vi-VN',
+    voices: [{ gender: 'Male', voiceID: 'vi-VN-NamMinhNeural' }],
+  },
 };

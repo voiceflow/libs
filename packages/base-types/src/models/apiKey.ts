@@ -1,4 +1,4 @@
-import { AnyRecord } from '@voiceflow/common';
+import type { AnyRecord } from '@voiceflow/common';
 
 export const API_KEY_PREFIX = 'VF.';
 

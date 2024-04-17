@@ -1,5 +1,5 @@
-import { ErrorMessage } from '@exception/error-message.interface';
-import { ErrorPayload } from '@exception/error-payload.interface';
+import type { ErrorMessage } from '@exception/error-message.interface';
+import type { ErrorPayload } from '@exception/error-payload.interface';
 import { InternalException } from '@exception/internal.exception';
 
 export interface SerializedHTTPException {

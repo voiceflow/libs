@@ -1,7 +1,7 @@
-import { PathReference } from '@base-types/runtimeLogs/utils';
+import type { PathReference } from '@base-types/runtimeLogs/utils';
 
-import { BaseStepLog } from '../base';
-import { StepLogKind } from '../kinds';
+import type { BaseStepLog } from '../base';
+import type { StepLogKind } from '../kinds';
 
 export type SpeakStepLog = BaseStepLog<
   StepLogKind.SPEAK,

@@ -1,6 +1,6 @@
-import { BaseNode } from '@voiceflow/base-types';
+import type { BaseNode } from '@voiceflow/base-types';
 
-import { NodeType } from './constants';
+import type { NodeType } from './constants';
 
 export interface StepData extends Omit<BaseNode.Visual.APLStepData, 'visualType' | 'aplType'> {
   type: BaseNode.Visual.APLType;

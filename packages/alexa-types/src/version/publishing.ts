@@ -1,5 +1,5 @@
 import { Locale } from '@alexa-types/constants';
-import { BaseVersion } from '@voiceflow/base-types';
+import type { BaseVersion } from '@voiceflow/base-types';
 
 export interface Publishing extends BaseVersion.Publishing {
   forExport: boolean;

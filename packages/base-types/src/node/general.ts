@@ -1,7 +1,7 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, BaseTraceFrame, NodeNextID } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, BaseTraceFrame, NodeNextID } from './utils';
 
 export type AnyTrace = BaseTraceFrame<any>;
 

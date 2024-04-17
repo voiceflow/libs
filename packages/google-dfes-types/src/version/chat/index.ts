@@ -1,10 +1,12 @@
-import { DeepPartialByKey } from '@voiceflow/base-types';
-import { ChatVersion } from '@voiceflow/chat-types';
+import type { DeepPartialByKey } from '@voiceflow/base-types';
+import type { ChatVersion } from '@voiceflow/chat-types';
 import { GoogleVersion } from '@voiceflow/google-types';
 
-import { BasePrototype } from '../base';
-import { ChatPublishing, defaultChatPublishing, defaultSharedChatPublishing, SharedChatPublishing } from './publishing';
-import { ChatSettings, defaultChatSettings, defaultSharedChatSettings, SharedChatSettings } from './settings';
+import type { BasePrototype } from '../base';
+import type { ChatPublishing, SharedChatPublishing } from './publishing';
+import { defaultChatPublishing, defaultSharedChatPublishing } from './publishing';
+import type { ChatSettings, SharedChatSettings } from './settings';
+import { defaultChatSettings, defaultSharedChatSettings } from './settings';
 
 export * from './publishing';
 export * from './settings';

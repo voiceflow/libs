@@ -1,7 +1,7 @@
-import { Struct } from '@voiceflow/common';
+import type { Struct } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, BaseTraceFrame, EmptyStepPorts, TraceType } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, BaseTraceFrame, EmptyStepPorts, TraceType } from './utils';
 
 export type StepData = Struct;
 

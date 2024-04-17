@@ -1,4 +1,4 @@
-import { KnowledgeBaseDocumentRefreshRate } from './project/knowledgeBase';
+import type { KnowledgeBaseDocumentRefreshRate } from './project/knowledgeBase';
 
 export interface Model {
   _id: string;

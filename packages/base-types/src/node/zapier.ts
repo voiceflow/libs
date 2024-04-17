@@ -1,5 +1,5 @@
-import { NodeType } from './constants';
-import { BaseStep, IntegrationType, IntegrationUser, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
+import type { NodeType } from './constants';
+import type { BaseStep, IntegrationType, IntegrationUser, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
 
 export enum ZapierActionType {
   START_A_ZAP = 'Start a Zap',

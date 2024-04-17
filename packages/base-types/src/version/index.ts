@@ -1,8 +1,9 @@
-import { Version as VersionModels } from '@base-types/models';
-import { DeepPartialByKey } from '@base-types/types';
+import type { Version as VersionModels } from '@base-types/models';
+import type { DeepPartialByKey } from '@base-types/types';
 
-import { Publishing } from './publishing';
-import { defaultSettings, Settings } from './settings';
+import type { Publishing } from './publishing';
+import type { Settings } from './settings';
+import { defaultSettings } from './settings';
 
 export * from './publishing';
 export * from './settings';

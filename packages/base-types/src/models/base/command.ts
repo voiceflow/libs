@@ -1,6 +1,6 @@
-import { AnyRecord } from '@voiceflow/common';
+import type { AnyRecord } from '@voiceflow/common';
 
-import { Variable } from './common';
+import type { Variable } from './common';
 
 export interface CommandMapping {
   slot: string;

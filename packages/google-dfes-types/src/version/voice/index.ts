@@ -1,10 +1,13 @@
-import { DeepPartialByKey } from '@voiceflow/base-types';
-import { GoogleConstants, GoogleVersion } from '@voiceflow/google-types';
-import { VoiceVersion } from '@voiceflow/voice-types';
+import type { DeepPartialByKey } from '@voiceflow/base-types';
+import type { GoogleConstants } from '@voiceflow/google-types';
+import { GoogleVersion } from '@voiceflow/google-types';
+import type { VoiceVersion } from '@voiceflow/voice-types';
 
-import { BasePrototype } from '../base';
-import { defaultSharedVoicePublishing, defaultVoicePublishing, SharedVoicePublishing, VoicePublishing } from './publishing';
-import { defaultSharedVoiceSettings, defaultVoiceSettings, SharedVoiceSettings, VoiceSettings } from './settings';
+import type { BasePrototype } from '../base';
+import type { SharedVoicePublishing, VoicePublishing } from './publishing';
+import { defaultSharedVoicePublishing, defaultVoicePublishing } from './publishing';
+import type { SharedVoiceSettings, VoiceSettings } from './settings';
+import { defaultSharedVoiceSettings, defaultVoiceSettings } from './settings';
 
 export * from './publishing';
 export * from './settings';

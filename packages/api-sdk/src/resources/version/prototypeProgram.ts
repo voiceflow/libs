@@ -1,5 +1,5 @@
-import Fetch from '@api-sdk/fetch';
-import { BaseModels } from '@voiceflow/base-types';
+import type Fetch from '@api-sdk/fetch';
+import type { BaseModels } from '@voiceflow/base-types';
 
 import CrudNestedResource from '../crudNested';
 
@@ -7,7 +7,12 @@ const ENDPOINT = 'prototype-programs';
 
 export type ModelKey = 'diagramID';
 
-class PrototypeProgramResource extends CrudNestedResource<string, BaseModels.Program.Model, ModelKey, PrototypeProgramResource> {
+class PrototypeProgramResource extends CrudNestedResource<
+  string,
+  BaseModels.Program.Model,
+  ModelKey,
+  PrototypeProgramResource
+> {
   constructor(fetch: Fetch, { parentEndpoint }: { parentEndpoint: string }) {
     super({
       fetch,

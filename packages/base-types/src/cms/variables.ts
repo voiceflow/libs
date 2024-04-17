@@ -11,7 +11,7 @@ export declare const VariableDatatype: {
   readonly STRING: 'string';
 };
 
-export type VariableDatatype = typeof VariableDatatype[keyof typeof VariableDatatype];
+export type VariableDatatype = (typeof VariableDatatype)[keyof typeof VariableDatatype];
 
 export interface BaseCompiledCMSVariable {
   isSystem: boolean;

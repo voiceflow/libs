@@ -1,9 +1,10 @@
-import { DeepPartialByKey } from '@voiceflow/base-types';
+import type { DeepPartialByKey } from '@voiceflow/base-types';
 import { ChatVersion } from '@voiceflow/chat-types';
 
-import { BasePrototype } from '../base';
-import { ChatPublishing } from './publishing';
-import { ChatSettings, defaultChatSettings, defaultSharedChatSettings, SharedChatSettings } from './settings';
+import type { BasePrototype } from '../base';
+import type { ChatPublishing } from './publishing';
+import type { ChatSettings, SharedChatSettings } from './settings';
+import { defaultChatSettings, defaultSharedChatSettings } from './settings';
 
 export * from './publishing';
 export * from './settings';
@@ -29,7 +30,10 @@ export const defaultSharedChatPlatformData = ({
   settings: defaultSharedChatSettings(settings),
 });
 
-export const defaultChatPlatformData = ({ settings, ...data }: DeepPartialByKey<ChatPlatformData, 'settings'>): ChatPlatformData => ({
+export const defaultChatPlatformData = ({
+  settings,
+  ...data
+}: DeepPartialByKey<ChatPlatformData, 'settings'>): ChatPlatformData => ({
   ...defaultSharedChatPlatformData(data),
   settings: defaultChatSettings(settings),
 });

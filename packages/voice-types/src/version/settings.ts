@@ -1,6 +1,7 @@
-import { Prompt } from '@voice-types/models';
+import type { Prompt } from '@voice-types/models';
 import { prompt } from '@voice-types/utils';
-import { BaseVersion, Nullable } from '@voiceflow/base-types';
+import type { Nullable } from '@voiceflow/base-types';
+import { BaseVersion } from '@voiceflow/base-types';
 
 export interface Settings<Voice> extends BaseVersion.Settings<Prompt<Voice>> {
   session: BaseVersion.Session<Prompt<Voice>>;

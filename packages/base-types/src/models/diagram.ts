@@ -1,4 +1,4 @@
-import { BaseDiagramNode, Variable } from './base';
+import type { BaseDiagramNode, Variable } from './base';
 
 export enum DiagramType {
   TOPIC = 'TOPIC',

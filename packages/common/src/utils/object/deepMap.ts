@@ -1,4 +1,4 @@
-import { Struct } from '@common/types';
+import type { Struct } from '@common/types';
 
 import { isPlainObject } from './common';
 
@@ -35,7 +35,6 @@ export const deepMap = <T = Struct>(
 
     cache.set(obj, result);
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const key of Object.keys(obj)) {
       result[key] = map(obj[key], key);
     }
@@ -82,7 +81,6 @@ export const deepMapKeys = <T = Struct>(object: unknown, mapFunction: (key: stri
 
     cache.set(obj, result);
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const key of Object.keys(obj)) {
       result[mapFunction(key, obj[key])] = map(obj[key]);
     }

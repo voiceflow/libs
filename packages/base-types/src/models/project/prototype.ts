@@ -1,6 +1,6 @@
-import { AnyRecord } from '@voiceflow/common';
+import type { AnyRecord } from '@voiceflow/common';
 
-import { ProjectNLP, PrototypeModel } from '../base';
+import type { ProjectNLP, PrototypeModel } from '../base';
 
 export interface PrototypeNLPBase {
   type: string;

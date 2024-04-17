@@ -23,7 +23,9 @@ export const replaceVariables = (
     return '';
   }
 
-  return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner) => String(variableReplacer(match, inner, variables, modifier)));
+  return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner) =>
+    String(variableReplacer(match, inner, variables, modifier))
+  );
 };
 
 // turn float variables to 2 decimal places

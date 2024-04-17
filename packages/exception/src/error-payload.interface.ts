@@ -1,4 +1,4 @@
-import { BaseError } from './base-error.interface';
+import type { BaseError } from './base-error.interface';
 
 export interface ErrorPayload extends BaseError {
   /**

@@ -1,4 +1,4 @@
-import { BaseModels, BaseNode, BaseText } from '@voiceflow/base-types';
+import type { BaseModels, BaseNode, BaseText } from '@voiceflow/base-types';
 
 export interface Prompt extends BaseNode.Utils.DataID {
   content: BaseText.SlateTextValue;

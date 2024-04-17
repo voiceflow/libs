@@ -1,10 +1,11 @@
-import * as BaseModels from '@base-types/models';
+import type * as BaseModels from '@base-types/models';
 import * as Node from '@base-types/node';
 import { Utils } from '@voiceflow/common';
 
 export const createNodeTypeguard = Utils.typeguard.createTypedTypeguardCreator<BaseModels.BaseNode>();
 
-export const isV1 = (node: BaseModels.BaseNode): node is Node._v1.Node => Utils.object.hasProperty(node, '_v') && node._v === 1;
+export const isV1 = (node: BaseModels.BaseNode): node is Node._v1.Node =>
+  Utils.object.hasProperty(node, '_v') && node._v === 1;
 export const isIf = createNodeTypeguard<Node.If.Node>(Node.NodeType.IF);
 export const isUrl = createNodeTypeguard<Node.Url.Node>(Node.NodeType.URL);
 export const isSet = createNodeTypeguard<Node.Set.Node>(Node.NodeType.SET);

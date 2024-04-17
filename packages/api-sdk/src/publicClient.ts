@@ -1,7 +1,19 @@
-import { Crypto } from '@voiceflow/common';
+import type { Crypto } from '@voiceflow/common';
 
-import Fetch, { FetchConfig } from './fetch';
-import { Analytics, APIKey, Diagram, Note, Program, Project, ProjectSecret, PrototypeProgram, VariableState, Version } from './resources';
+import type { FetchConfig } from './fetch';
+import Fetch from './fetch';
+import {
+  Analytics,
+  APIKey,
+  Diagram,
+  Note,
+  Program,
+  Project,
+  ProjectSecret,
+  PrototypeProgram,
+  VariableState,
+  Version,
+} from './resources';
 
 export interface ClientOptions {
   options?: FetchConfig;

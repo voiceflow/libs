@@ -1,6 +1,6 @@
-import { BuiltinIntent } from '@voiceflow/common';
-import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
-import { v1 } from 'ask-smapi-model';
+import type { BuiltinIntent } from '@voiceflow/common';
+import type { VoiceflowConstants } from '@voiceflow/voiceflow-types';
+import type { v1 } from 'ask-smapi-model';
 
 export type InterfaceType = v1.skill.Manifest.Interface['type'];
 
@@ -232,7 +232,18 @@ export const DEFAULT_INTENTS: Record<string, { defaults: DefaultIntent[]; builtI
       },
       {
         name: AmazonIntent.STOP,
-        samples: ["s'arrêter", 'arrêter', 'arrête', 'stop', 'fin', 'cesser', 'mettre fin', 'stopper', 'mettre un terme', 'interrompre'],
+        samples: [
+          "s'arrêter",
+          'arrêter',
+          'arrête',
+          'stop',
+          'fin',
+          'cesser',
+          'mettre fin',
+          'stopper',
+          'mettre un terme',
+          'interrompre',
+        ],
       },
       {
         name: AmazonIntent.YES,
@@ -330,7 +341,16 @@ export const DEFAULT_INTENTS: Record<string, { defaults: DefaultIntent[]; builtI
     defaults: [
       {
         name: AmazonIntent.CANCEL,
-        samples: ['cancellare', 'annullare', 'disdire', 'sopprimere', 'rescindre', 'chiudere', 'abrogare', 'obliterare'],
+        samples: [
+          'cancellare',
+          'annullare',
+          'disdire',
+          'sopprimere',
+          'rescindre',
+          'chiudere',
+          'abrogare',
+          'obliterare',
+        ],
       },
       {
         name: AmazonIntent.HELP,
@@ -407,7 +427,18 @@ export const DEFAULT_INTENTS: Record<string, { defaults: DefaultIntent[]; builtI
       },
       {
         name: AmazonIntent.HELP,
-        samples: ['la ayuda', 'el favor', 'ei auxilio', 'el socorro', 'el empleado', 'la criada', 'ayudar', 'servir', 'auxiliar', 'socorrer'],
+        samples: [
+          'la ayuda',
+          'el favor',
+          'ei auxilio',
+          'el socorro',
+          'el empleado',
+          'la criada',
+          'ayudar',
+          'servir',
+          'auxiliar',
+          'socorrer',
+        ],
       },
       {
         name: AmazonIntent.STOP,
@@ -435,11 +466,30 @@ export const DEFAULT_INTENTS: Record<string, { defaults: DefaultIntent[]; builtI
     defaults: [
       {
         name: AmazonIntent.CANCEL,
-        samples: ['stornieren', 'aufheben', 'kündigen', 'annullieren', 'beenden', 'absagen', 'abbestellen', 'abmelden', 'auflösen', 'zurücknehmen'],
+        samples: [
+          'stornieren',
+          'aufheben',
+          'kündigen',
+          'annullieren',
+          'beenden',
+          'absagen',
+          'abbestellen',
+          'abmelden',
+          'auflösen',
+          'zurücknehmen',
+        ],
       },
       {
         name: AmazonIntent.HELP,
-        samples: ['die hilfe', 'der beistand', 'die aushilfe', 'helfen', 'beitragen', 'behilflich sein', 'hilfe leisten'],
+        samples: [
+          'die hilfe',
+          'der beistand',
+          'die aushilfe',
+          'helfen',
+          'beitragen',
+          'behilflich sein',
+          'hilfe leisten',
+        ],
       },
       {
         name: AmazonIntent.STOP,

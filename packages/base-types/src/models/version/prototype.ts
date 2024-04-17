@@ -1,8 +1,8 @@
-import { CompiledCMSVariable } from '@base-types/cms/variables';
-import { AnyRecord, Nullable } from '@voiceflow/common';
+import type { CompiledCMSVariable } from '@base-types/cms/variables';
+import type { AnyRecord, Nullable } from '@voiceflow/common';
 
-import { BaseCommand, Intent, PrototypeModel, Slot } from '../base';
-import { FunctionCompiledDefinition } from '../functionDefinition';
+import type { BaseCommand, Intent, PrototypeModel, Slot } from '../base';
+import type { FunctionCompiledDefinition } from '../functionDefinition';
 
 export interface PrototypeStackFrame<Command extends BaseCommand = BaseCommand> {
   nodeID?: Nullable<string>;
@@ -42,7 +42,10 @@ export interface PrototypeSettings {
   variableStateID?: string;
 }
 
-export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord, PlatformType extends string = string> = {
+export type SurveyContext<
+  SurveyContextExtension extends AnyRecord = AnyRecord,
+  PlatformType extends string = string,
+> = {
   slotsMap: Record<string, Slot>;
   extraSlots: Slot[];
   extraIntents: Intent[];
@@ -60,7 +63,7 @@ export type SurveyContext<SurveyContextExtension extends AnyRecord = AnyRecord, 
 export interface Prototype<
   Command extends BaseCommand = BaseCommand,
   Locale extends string = string,
-  SurveyContextExtension extends AnyRecord = AnyRecord
+  SurveyContextExtension extends AnyRecord = AnyRecord,
 > {
   type: string;
   data: PrototypeData<Locale>;

@@ -12,5 +12,9 @@ export const isUserInfo = BaseUtils.step.createStepTypeguard<Node.UserInfo.Step>
 export const isCaptureV2 = BaseUtils.step.createStepTypeguard<Node.CaptureV2.Step>(BaseNode.NodeType.CAPTURE_V2);
 export const isPermission = BaseUtils.step.createStepTypeguard<Node.Permission.Step>(Node.NodeType.PERMISSION);
 export const isInteraction = BaseUtils.step.createStepTypeguard<Node.Interaction.Step>(BaseNode.NodeType.INTERACTION);
-export const isCancelPayment = BaseUtils.step.createStepTypeguard<Node.CancelPayment.Step>(Node.NodeType.CANCEL_PAYMENT);
-export const isAccountLinking = BaseUtils.step.createStepTypeguard<Node.AccountLinking.Step>(Node.NodeType.ACCOUNT_LINKING);
+export const isCancelPayment = BaseUtils.step.createStepTypeguard<Node.CancelPayment.Step>(
+  Node.NodeType.CANCEL_PAYMENT
+);
+export const isAccountLinking = BaseUtils.step.createStepTypeguard<Node.AccountLinking.Step>(
+  Node.NodeType.ACCOUNT_LINKING
+);

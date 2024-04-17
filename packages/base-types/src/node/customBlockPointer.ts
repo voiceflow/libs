@@ -1,5 +1,5 @@
-import { NodeType } from './constants';
-import { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, DynamicOnlyStepPorts } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNoMatchStepData, BaseNoReplyStepData, BaseStep, DynamicOnlyStepPorts } from './utils';
 
 export interface StepPorts extends DynamicOnlyStepPorts {}
 

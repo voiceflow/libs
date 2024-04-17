@@ -1,6 +1,6 @@
-import { NodeType } from './constants';
-import { StepData } from './flow';
-import { BaseStep } from './utils';
+import type { NodeType } from './constants';
+import type { StepData } from './flow';
+import type { BaseStep } from './utils';
 
 export { StepData } from './flow';
 

@@ -1,8 +1,8 @@
-import { NodeData as APINodeData } from './api';
-import { NodeType } from './constants';
-import { NodeData as GoogleSheetsNodeData } from './googleSheets';
-import { BaseNode } from './utils';
-import { NodeData as ZapierNodeData } from './zapier';
+import type { NodeData as APINodeData } from './api';
+import type { NodeType } from './constants';
+import type { NodeData as GoogleSheetsNodeData } from './googleSheets';
+import type { BaseNode } from './utils';
+import type { NodeData as ZapierNodeData } from './zapier';
 
 export interface ApiNode extends BaseNode, APINodeData {
   type: NodeType.INTEGRATIONS;

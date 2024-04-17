@@ -1,4 +1,4 @@
-import { ChatNode, ChatStep, ChatStepData } from './chat';
+import type { ChatNode, ChatStep, ChatStepData } from './chat';
 
 export * from './chat';
 

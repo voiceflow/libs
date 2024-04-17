@@ -1,4 +1,4 @@
-import { BaseNode } from '@voiceflow/base-types';
+import type { BaseNode } from '@voiceflow/base-types';
 
 export interface Step extends BaseNode.Visual.Step<BaseNode.Visual.ImageStepData> {}
 

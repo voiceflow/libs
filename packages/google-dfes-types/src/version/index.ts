@@ -1,24 +1,10 @@
 import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
-import { SupportedProjectType } from '../project';
-import {
-  ChatPlatformData,
-  ChatPublishing,
-  ChatSettings,
-  ChatVersion,
-  defaultChatPlatformData,
-  defaultChatPublishing,
-  defaultChatSettings,
-} from './chat';
-import {
-  defaultVoicePlatformData,
-  defaultVoicePublishing,
-  defaultVoiceSettings,
-  VoicePlatformData,
-  VoicePublishing,
-  VoiceSettings,
-  VoiceVersion,
-} from './voice';
+import type { SupportedProjectType } from '../project';
+import type { ChatPlatformData, ChatPublishing, ChatSettings, ChatVersion } from './chat';
+import { defaultChatPlatformData, defaultChatPublishing, defaultChatSettings } from './chat';
+import type { VoicePlatformData, VoicePublishing, VoiceSettings, VoiceVersion } from './voice';
+import { defaultVoicePlatformData, defaultVoicePublishing, defaultVoiceSettings } from './voice';
 
 export * from './base';
 export * from './chat';

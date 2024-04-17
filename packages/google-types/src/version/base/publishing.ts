@@ -1,5 +1,5 @@
-import { Category, Locale } from '@google-types/constants';
-import { BaseVersion } from '@voiceflow/base-types';
+import type { Category, Locale } from '@google-types/constants';
+import type { BaseVersion } from '@voiceflow/base-types';
 
 // shared across google and dfes types
 export interface SharedBasePublishing extends BaseVersion.Publishing {

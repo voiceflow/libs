@@ -1,6 +1,6 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { SlotMappings } from './mappings';
+import type { SlotMappings } from './mappings';
 
 // BUILT IN EVENTS
 export enum EventType {

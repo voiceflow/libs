@@ -1,8 +1,8 @@
-import { AnyRequestButton } from '@base-types/request';
-import { Nullable } from '@voiceflow/common';
+import type { AnyRequestButton } from '@base-types/request';
+import type { Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import {
+import type { NodeType } from './constants';
+import type {
   BaseEvent,
   BaseNode,
   BaseNoMatchNodeData,
@@ -70,7 +70,12 @@ export interface NodeInteraction<Event = BaseEvent> extends NodeNextID {
   event: Event;
 }
 
-export interface Node<Event = BaseEvent> extends BaseNode, DeprecatedBaseNodeNoMatch, BaseNoReplyNodeData, NodeIntentScope, BaseNoMatchNodeData {
+export interface Node<Event = BaseEvent>
+  extends BaseNode,
+    DeprecatedBaseNodeNoMatch,
+    BaseNoReplyNodeData,
+    NodeIntentScope,
+    BaseNoMatchNodeData {
   type: NodeType.INTERACTION;
   interactions: NodeInteraction<Event>[];
   platform?: string;

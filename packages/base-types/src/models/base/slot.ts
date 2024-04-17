@@ -1,6 +1,6 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { Variable } from './common';
+import type { Variable } from './common';
 
 export interface SlotType {
   value?: string;

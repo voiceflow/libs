@@ -1,4 +1,4 @@
-import { RequestHeaders } from './request-options.interface';
+import type { RequestHeaders } from './request-options.interface';
 
 export interface ClientConfiguration {
   baseURL?: string;

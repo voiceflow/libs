@@ -1,4 +1,4 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
 export enum ExpressionType {
   EQUALS = 'equals',
@@ -140,4 +140,7 @@ export type ExpressionV2 =
 
 export type LogicGroupData = GenericExpressionV2<ExpressionTypeV2.AND | ExpressionTypeV2.OR, ExpressionV2[]>;
 
-export type ExpressionData = GenericExpressionV2<ExpressionTypeV2.AND | ExpressionTypeV2.OR, (ExpressionV2 | LogicGroupData)[]>;
+export type ExpressionData = GenericExpressionV2<
+  ExpressionTypeV2.AND | ExpressionTypeV2.OR,
+  (ExpressionV2 | LogicGroupData)[]
+>;

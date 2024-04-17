@@ -1,4 +1,5 @@
-import { BasePublishing, defaultBasePublishing, defaultSharedBasePublishing, SharedBasePublishing } from '../base';
+import type { BasePublishing, SharedBasePublishing } from '../base';
+import { defaultBasePublishing, defaultSharedBasePublishing } from '../base';
 
 export interface SharedChatPublishing extends SharedBasePublishing {}
 

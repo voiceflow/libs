@@ -1,4 +1,4 @@
-import * as Node from '@chat-types/node';
+import type * as Node from '@chat-types/node';
 import { BaseNode, BaseUtils } from '@voiceflow/base-types';
 
 export const isPrompt = BaseUtils.step.createStepTypeguard<Node.Prompt.Step>(BaseNode.NodeType.PROMPT);

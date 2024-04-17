@@ -1,8 +1,9 @@
-import { AnyRecord, ArrayUnionToIntersection, Nullish, PrimitiveMap } from '@common/types';
+import type { AnyRecord, ArrayUnionToIntersection, Nullish, PrimitiveMap } from '@common/types';
 
 export const unique = <T>(items: T[]): T[] => Array.from(new Set(items));
 
-export const without = <T>(items: T[], index: number): T[] => (index < 0 ? items : [...items.slice(0, index), ...items.slice(index + 1)]);
+export const without = <T>(items: T[], index: number): T[] =>
+  index < 0 ? items : [...items.slice(0, index), ...items.slice(index + 1)];
 
 export const withoutValue = <T>(items: T[], value: T): T[] => without(items, items.indexOf(value));
 
@@ -19,7 +20,8 @@ export const insertAll = <T>(items: T[], index: number, additionalItems: T[]): T
 
 export const append = <T>(items: T[], item: T): T[] => (items.includes(item) ? items : [...items, item]);
 
-export const toggleMembership = <T>(items: T[], item: T): T[] => (items.includes(item) ? withoutValue(items, item) : [...items, item]);
+export const toggleMembership = <T>(items: T[], item: T): T[] =>
+  items.includes(item) ? withoutValue(items, item) : [...items, item];
 
 export const head = <T>(items: T[]): [T, T[]] => {
   const [first, ...rest] = items;
@@ -64,7 +66,10 @@ export const separate = <T>(items: T[], predicate: (item: T, index: number) => b
 
 interface CreateEntries {
   <T extends PropertyKey>(array: readonly T[]): Array<readonly [T, T]>;
-  <T extends AnyRecord, K extends PropertyKey = string>(array: readonly T[], getKey: (value: T) => K): Array<readonly [K, T]>;
+  <T extends AnyRecord, K extends PropertyKey = string>(
+    array: readonly T[],
+    getKey: (value: T) => K
+  ): Array<readonly [K, T]>;
 }
 
 interface CreateMap {
@@ -75,7 +80,8 @@ interface CreateMap {
 export const createEntries: CreateEntries = (array: readonly unknown[], getKey = (value: unknown) => value) =>
   array.map((item) => [getKey(item), item] as const);
 
-export const createMap: CreateMap = (array: readonly any[], getKey = (value: any) => value) => Object.fromEntries(createEntries(array, getKey));
+export const createMap: CreateMap = (array: readonly any[], getKey = (value: any) => value) =>
+  Object.fromEntries(createEntries(array, getKey));
 
 export const findUnion = <T>(lhs: T[], rhs: T[]): { rhsOnly: T[]; lhsOnly: T[]; union: T[] } => {
   // using sets instead of arrays since .has is O(1)
@@ -85,7 +91,6 @@ export const findUnion = <T>(lhs: T[], rhs: T[]): { rhsOnly: T[]; lhsOnly: T[]; 
 
   const result = { rhsOnly: [] as T[], lhsOnly: [] as T[], union: [] as T[] };
 
-  // eslint-disable-next-line no-restricted-syntax
   for (const item of unionSet) {
     if (lSet.has(item)) {
       if (rSet.has(item)) {
@@ -119,7 +124,10 @@ export const hasIdenticalMembers = <T>(lhs: T[], rhs: T[]): boolean => {
   return !lhs.some((value) => !rhs.includes(value));
 };
 
-export const asyncForEach = async <T>(array: T[], callback: (item: T, index: number, array: T[]) => Promise<void>): Promise<void> => {
+export const asyncForEach = async <T>(
+  array: T[],
+  callback: (item: T, index: number, array: T[]) => Promise<void>
+): Promise<void> => {
   for (let index = 0; index < array.length; index++) {
     // eslint-disable-next-line callback-return,no-await-in-loop
     await callback(array[index], index, array);
@@ -148,7 +156,8 @@ export const filterAndGetLastRemovedValue = <T>(list: T[], filter: (item: T) => 
   return [filteredList, lastItem];
 };
 
-export const inferUnion = <T extends ArrayLike<unknown>>(array: T): ArrayUnionToIntersection<T> => array as unknown as ArrayUnionToIntersection<T>;
+export const inferUnion = <T extends ArrayLike<unknown>>(array: T): ArrayUnionToIntersection<T> =>
+  array as unknown as ArrayUnionToIntersection<T>;
 
 export const toArray = <T>(valueOrArray: T | T[]): T[] => (Array.isArray(valueOrArray) ? valueOrArray : [valueOrArray]);
 

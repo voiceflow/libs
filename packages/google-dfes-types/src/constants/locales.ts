@@ -1,4 +1,4 @@
-import { PartialRecord } from '@voiceflow/common';
+import type { PartialRecord } from '@voiceflow/common';
 
 export enum Language {
   BN = 'bn',

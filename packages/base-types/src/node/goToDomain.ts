@@ -1,7 +1,7 @@
-import { AnyRecord, EmptyObject, Nullable } from '@voiceflow/common';
+import type { AnyRecord, EmptyObject, Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseStep } from './utils';
+import type { NodeType } from './constants';
+import type { BaseStep } from './utils';
 
 export interface StepData {
   domainID: Nullable<string>;

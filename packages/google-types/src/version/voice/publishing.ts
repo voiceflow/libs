@@ -1,10 +1,13 @@
-import { BasePublishing, defaultBasePublishing, defaultSharedBasePublishing, SharedBasePublishing } from '../base';
+import type { BasePublishing, SharedBasePublishing } from '../base';
+import { defaultBasePublishing, defaultSharedBasePublishing } from '../base';
 
 export interface SharedVoicePublishing extends SharedBasePublishing {}
 
 export interface VoicePublishing extends SharedVoicePublishing, BasePublishing {}
 
-export const defaultSharedVoicePublishing = (publishing: Partial<SharedVoicePublishing> = {}): SharedVoicePublishing => ({
+export const defaultSharedVoicePublishing = (
+  publishing: Partial<SharedVoicePublishing> = {}
+): SharedVoicePublishing => ({
   ...defaultSharedBasePublishing(publishing),
 });
 

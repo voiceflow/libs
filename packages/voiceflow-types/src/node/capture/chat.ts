@@ -1,4 +1,4 @@
-import { ChatNode } from '@voiceflow/chat-types';
+import type { ChatNode } from '@voiceflow/chat-types';
 
 /** @deprecated */
 export interface ChatStepData extends ChatNode.Capture.StepData {}

@@ -1,6 +1,6 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { Point } from './node';
+import type { Point } from './node';
 
 export enum LinkType {
   CURVED = 'CURVED',

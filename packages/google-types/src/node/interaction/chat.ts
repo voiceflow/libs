@@ -1,6 +1,6 @@
-import { ChatNode } from '@voiceflow/chat-types';
+import type { ChatNode } from '@voiceflow/chat-types';
 
-import { SharedNode } from './base';
+import type { SharedNode } from './base';
 
 export interface ChatStepData extends ChatNode.Interaction.StepData {}
 

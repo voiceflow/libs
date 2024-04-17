@@ -1,4 +1,4 @@
-import { BaseEvent } from './event';
+import type { BaseEvent } from './event';
 
 export enum TraceType {
   LOG = 'log',

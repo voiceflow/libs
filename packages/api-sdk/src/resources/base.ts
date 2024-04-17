@@ -1,6 +1,7 @@
 import type { AnyRecord } from '@voiceflow/common';
 
-import Fetcher, { FetcherOptions } from './fetcher';
+import type { FetcherOptions } from './fetcher';
+import Fetcher from './fetcher';
 
 export type Fields = readonly string[];
 

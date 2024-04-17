@@ -1,6 +1,6 @@
-import { ModuleMetadata, Type } from '@nestjs/common';
+import type { ModuleMetadata, Type } from '@nestjs/common';
 
-import { TokenExtractor } from './token-extractor.interface';
+import type { TokenExtractor } from './token-extractor.interface';
 
 export interface RateLimitOptions {
   /** The name of the service. */

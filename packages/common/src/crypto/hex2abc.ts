@@ -26,4 +26,5 @@ const mapping = {
  * @param hex - The hexadecimal string to convert
  * @returns A string of lowercase alphabetical characters
  */
-export const hex2abc = (hex: string): string => Array.prototype.map.call(hex.toLowerCase(), (char) => mapping[char as keyof typeof mapping]).join('');
+export const hex2abc = (hex: string): string =>
+  Array.prototype.map.call(hex.toLowerCase(), (char) => mapping[char as keyof typeof mapping]).join('');

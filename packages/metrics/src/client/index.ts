@@ -1,6 +1,7 @@
-import { ValueRecorder } from '@opentelemetry/api-metrics';
+import type { ValueRecorder } from '@opentelemetry/api-metrics';
 import { PrometheusExporter } from '@opentelemetry/exporter-prometheus';
-import { Meter, MeterProvider, MetricExporter } from '@opentelemetry/sdk-metrics-base';
+import type { Meter, MetricExporter } from '@opentelemetry/sdk-metrics-base';
+import { MeterProvider } from '@opentelemetry/sdk-metrics-base';
 import EventEmitter from 'events';
 
 export interface Config {
@@ -52,12 +53,17 @@ export class Metrics extends EventEmitter {
       this.emit('ready', data);
     });
 
-    this.meter = new MeterProvider({ exporter: this.exporter, interval: config.NODE_ENV === 'test' ? 0 : 1000 }).getMeter(config.SERVICE_NAME);
+    this.meter = new MeterProvider({
+      exporter: this.exporter,
+      interval: config.NODE_ENV === 'test' ? 0 : 1000,
+    }).getMeter(config.SERVICE_NAME);
 
     this.counters = {};
 
     this.recorders = {
-      httpRequestDuration: this.meter.createValueRecorder('http_request_duration', { description: 'Http requests duration' }),
+      httpRequestDuration: this.meter.createValueRecorder('http_request_duration', {
+        description: 'Http requests duration',
+      }),
     };
   }
 

@@ -1,7 +1,7 @@
-import { ErrorMessage } from '@exception/error-message.interface';
+import type { ErrorMessage } from '@exception/error-message.interface';
 
 import { HTTPException } from './http.exception';
-import { HTTPStatus } from './http-status.enum';
+import type { HTTPStatus } from './http-status.enum';
 
 const WHITESPACE_PATTERN = /\s+/g;
 
@@ -16,7 +16,9 @@ export const createHTTPException = (statusCode: HTTPStatus, statusText: string):
     }
   }
 
-  Object.defineProperty(NamedHTTPException, 'name', { value: `${statusText.replace(WHITESPACE_PATTERN, '')}Exception` });
+  Object.defineProperty(NamedHTTPException, 'name', {
+    value: `${statusText.replace(WHITESPACE_PATTERN, '')}Exception`,
+  });
 
   return NamedHTTPException;
 };

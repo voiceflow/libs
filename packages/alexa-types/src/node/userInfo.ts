@@ -1,6 +1,6 @@
-import { BaseNode, Nullable } from '@voiceflow/base-types';
+import type { BaseNode, Nullable } from '@voiceflow/base-types';
 
-import { NodeType, PermissionType } from './constants';
+import type { NodeType, PermissionType } from './constants';
 
 export interface UserInfo {
   type: Nullable<PermissionType>;

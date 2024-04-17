@@ -11,5 +11,9 @@ export const isUserInfo = BaseUtils.node.createNodeTypeguard<Node.UserInfo.Node>
 export const isCaptureV2 = BaseUtils.node.createNodeTypeguard<Node.CaptureV2.Node>(BaseNode.NodeType.CAPTURE_V2);
 export const isPermission = BaseUtils.node.createNodeTypeguard<Node.Permission.Node>(Node.NodeType.PERMISSION);
 export const isInteraction = BaseUtils.node.createNodeTypeguard<Node.Interaction.Node>(BaseNode.NodeType.INTERACTION);
-export const isCancelPayment = BaseUtils.node.createNodeTypeguard<Node.CancelPayment.Node>(Node.NodeType.CANCEL_PAYMENT);
-export const isAccountLinking = BaseUtils.node.createNodeTypeguard<Node.AccountLinking.Node>(Node.NodeType.ACCOUNT_LINKING);
+export const isCancelPayment = BaseUtils.node.createNodeTypeguard<Node.CancelPayment.Node>(
+  Node.NodeType.CANCEL_PAYMENT
+);
+export const isAccountLinking = BaseUtils.node.createNodeTypeguard<Node.AccountLinking.Node>(
+  Node.NodeType.ACCOUNT_LINKING
+);

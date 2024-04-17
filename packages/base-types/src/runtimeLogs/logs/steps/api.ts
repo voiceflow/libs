@@ -1,9 +1,9 @@
-import { APIBodyType, APIMethod } from '@base-types/node/api';
-import { PathReference } from '@base-types/runtimeLogs/utils';
+import type { APIBodyType, APIMethod } from '@base-types/node/api';
+import type { PathReference } from '@base-types/runtimeLogs/utils';
 
-import { BaseStepLog } from '../base';
-import { StepLogKind } from '../kinds';
-import { LogLevel } from '../levels';
+import type { BaseStepLog } from '../base';
+import type { StepLogKind } from '../kinds';
+import type { LogLevel } from '../levels';
 
 interface ApiLogMessageRequest {
   method: APIMethod;

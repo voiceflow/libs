@@ -1,7 +1,7 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import {
+import type { NodeType } from './constants';
+import type {
   BaseNode,
   BaseNoReplyNodeData,
   BaseNoReplyStepData,

@@ -1,7 +1,7 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseCommand, BaseStep, CommandType, NodeID, SlotMappings } from './utils';
+import type { NodeType } from './constants';
+import type { BaseCommand, BaseStep, CommandType, NodeID, SlotMappings } from './utils';
 
 // called the "command block" on creator-app
 export interface StepData extends SlotMappings {
