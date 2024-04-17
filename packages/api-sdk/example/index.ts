@@ -11,6 +11,7 @@ const main = async () => {
     members: [],
     platform: 'alexa',
     platformData: { data: 'data' },
+    customThemes: [],
   });
   const project = await client.project.get<{ data: string }, { data: number }>('11');
   const projectPartial = await client.project.get<{ name: string }>('1', ['name']);
@@ -26,7 +27,12 @@ const main = async () => {
   });
   await client.project.delete('1');
   const platformData = await client.project.updatePlatformData<{ a: number }>('1', { a: 2 });
-  const versions = await client.project.getVersions<{ settings: { a: number }; publishing: { b: string } }>('1');
+  const versions = await client.project.getVersions<{
+    settings: { a: number };
+    publishing: { b: string };
+    slots: [];
+    intents: [];
+  }>('1');
 
   // project members
   const createdUser = await client.project.member.create<{ data: number }>('1', { platformData: { data: 1 } });

@@ -1,6 +1,7 @@
 {
   "extends": "@voiceflow/tsconfig/nest.json",
   "compilerOptions": {
+    "strictNullChecks": false,
     "exactOptionalPropertyTypes": false,
     "baseUrl": ".",
     "outDir": "build",

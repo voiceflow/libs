@@ -62,7 +62,6 @@ export const VOICEFLOW_TO_GOOGLE_LOCALE_MAP: Record<VoiceflowConstants.Locale, L
   [VoiceflowConstants.Locale.KO_KR]: Locale.KO_KR,
   [VoiceflowConstants.Locale.MR_IN]: Locale.EN_US, // FIXME: Unsupported language by Google
   [VoiceflowConstants.Locale.NL_BE]: Locale.EN_US, // FIXME: Unsupported language by Google
-  [VoiceflowConstants.Locale.NL_NL]: Locale.EN_US, // FIXME: Unsupported language by Google
   [VoiceflowConstants.Locale.NL_NL]: Locale.NL_NL,
   [VoiceflowConstants.Locale.PL_PL]: Locale.EN_US, // FIXME: Unsupported language by Google
   [VoiceflowConstants.Locale.PT_BR]: Locale.PT_BR,

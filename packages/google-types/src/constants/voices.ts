@@ -1125,44 +1125,6 @@ export const VoiceLanguageCodeToVoice: Record<VoiceLanguageCode, GoogleVoice[]> 
       ssmlGender: `${SSMLGender.MALE}-2`,
     },
   ],
-  [VoiceLanguageCode.FIL_PH]: [
-    {
-      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
-      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
-      voiceName: [
-        `${VoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-A`,
-        `${VoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-A`,
-      ],
-      ssmlGender: `${SSMLGender.FEMALE}-1`,
-    },
-    {
-      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
-      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
-      voiceName: [
-        `${VoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-B`,
-        `${VoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-B`,
-      ],
-      ssmlGender: `${SSMLGender.FEMALE}-2`,
-    },
-    {
-      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
-      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
-      voiceName: [
-        `${VoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-C`,
-        `${VoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-C`,
-      ],
-      ssmlGender: `${SSMLGender.MALE}-1`,
-    },
-    {
-      voiceLanguage: VoiceLanguage.FILIPINO_PHILIPPINES,
-      voiceType: [VoiceType.WAVENET, VoiceType.STANDARD],
-      voiceName: [
-        `${VoiceLanguageCode.FIL_PH}-${VoiceType.STANDARD}-D`,
-        `${VoiceLanguageCode.FIL_PH}-${VoiceType.WAVENET}-D`,
-      ],
-      ssmlGender: `${SSMLGender.MALE}-2`,
-    },
-  ],
   [VoiceLanguageCode.GU_IN]: [
     {
       voiceLanguage: VoiceLanguage.GUJARATI_INDIA,
