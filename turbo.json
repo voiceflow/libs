@@ -1,45 +1,32 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
-    "build": {
+    "build:cmd": {
       "outputs": ["build/**"],
       "inputs": [
+        "scripts/build_pkg.sh",
         "src/**",
         ":!src/**/*.test.ts",
         "package.json",
         "tsconfig.json",
         "tsconfig.build.json",
-        "tsconfig.build.*.json",
-        "scripts/**",
-        "config/**"
+        "tsconfig.build.*.json"
       ],
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build:cmd"]
+    },
+    "test:types": {
+      "inputs": ["src/**", "package.json", "tsconfig.json", "tsconfig.build.json", "tsconfig.build.*.json"],
+      "dependsOn": ["^build:cmd"]
     },
     "test:dependencies": {
-      "inputs": ["src/**/*.test.ts", "package.json", "jest.config.js"]
+      "inputs": ["src/**", "package.json", ".dependency-cruiser.mjs", ".dependency-cruiser-known-violations.json"]
     },
     "test:unit": {
-      "outputs": ["sonar/coverage/**/*"],
-      "inputs": ["src/**", "package.json", "jest.config.js"]
-    },
-    "lint": {
-      "inputs": ["src/**"],
-      "outputs": []
-    },
-    "lint:quiet": {
-      "inputs": ["src/**"],
-      "outputs": []
-    },
-    "lint:fix": {
-      "inputs": ["src/**"],
-      "outputs": ["src/**"]
-    },
-    "lint:report": {
-      "outputs": ["sonar/report.json"]
+      "outputs": ["sonar/coverage/**", "unit.report.xml"],
+      "inputs": ["src/**", "package.json", "vitest.config.mts"]
     },
     "clean": {
       "cache": false
     }
-  },
-  "globalDependencies": ["meta/jest-config/*.js", "meta/swc-config/*.json", "meta/typescript-config/*.json"]
+  }
 }

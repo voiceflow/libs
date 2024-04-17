@@ -1,9 +1,8 @@
 {
-  "extends": "@voiceflow-meta/typescript-config/base.json",
+  "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
     "lib": ["es2019", "dom"],
     "baseUrl": ".",
-    "rootDir": "src",
     "outDir": "build/cjs",
     "paths": {
       "@exception/*": ["src/*"]

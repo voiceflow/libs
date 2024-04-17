@@ -1,10 +1,40 @@
 {
   "name": "@voiceflow/google-types",
-  "description": "Google service types",
   "version": "2.20.63",
-  "author": "Voiceflow",
+  "description": "Google service types",
+  "keywords": [
+    "voiceflow",
+    "voiceflow-types"
+  ],
+  "homepage": "https://github.com/voiceflow/libs#readme",
   "bugs": {
     "url": "https://github.com/voiceflow/libs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voiceflow/libs.git"
+  },
+  "license": "ISC",
+  "author": "Voiceflow",
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "types": "build/cjs/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "yarn g:turbo run build:cmd --filter=@voiceflow/google-types...",
+    "build:cjs": "yarn g:build:pkg cjs",
+    "build:cmd": "yarn g:run-p build:cjs build:esm",
+    "build:esm": "yarn g:build:pkg esm",
+    "clean": "yarn g:rimraf build",
+    "lint": "yarn g:run-p -c lint:eslint lint:prettier",
+    "lint:eslint": "yarn g:eslint",
+    "lint:fix": "yarn g:run-p -c \"lint:eslint --fix\" \"lint:prettier --write\"",
+    "lint:prettier": "yarn g:prettier --check",
+    "test": "yarn g:run-p -c test:dependencies test:types",
+    "test:dependencies": "yarn g:depcruise",
+    "test:types": "yarn g:tsc --noEmit"
   },
   "dependencies": {
     "@voiceflow/base-types": "workspace:*",
@@ -14,46 +44,13 @@
     "@voiceflow/voiceflow-types": "workspace:*"
   },
   "devDependencies": {
-    "@voiceflow-meta/typescript-config": "workspace:*",
     "googleapis": "92.0.0"
   },
-  "files": [
-    "build"
-  ],
-  "homepage": "https://github.com/voiceflow/libs#readme",
-  "keywords": [
-    "voiceflow",
-    "voiceflow-types"
-  ],
-  "license": "ISC",
-  "main": "build/cjs/index.js",
-  "module": "build/esm/index.js",
+  "volta": {
+    "extends": "../../package.json"
+  },
   "publishConfig": {
     "access": "public",
     "types": "build/cjs/index.d.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/voiceflow/libs.git"
-  },
-  "scripts": {
-    "build": "yarn clean && yarn build:cjs && yarn build:esm",
-    "build:cjs": "yarn g:tsc -p tsconfig.build.cjs.json && yarn g:tsc-alias -p tsconfig.build.cjs.json && yarn postbuild:cjs",
-    "build:esm": "yarn g:tsc -p tsconfig.build.esm.json && yarn g:tsc-alias -p tsconfig.build.esm.json && yarn postbuild:esm",
-    "clean": "yarn g:rimraf build",
-    "lint": "yarn g:eslint '**/*.{js,ts}'",
-    "lint:fix": "yarn lint --fix",
-    "lint:quiet": "yarn lint --quiet",
-    "lint:report": "yarn g:eslint-output --quiet '**/*.{js,ts}'",
-    "postbuild:cjs": "touch build/cjs/package.json && echo '{ \"type\": \"commonjs\" }' > build/cjs/package.json",
-    "postbuild:esm": "touch build/esm/package.json && echo '{ \"type\": \"module\" }' > build/esm/package.json",
-    "test": "exit 0",
-    "test:dependencies": "yarn g:depcheck",
-    "test:integration": "exit 0",
-    "test:unit": "exit 0"
-  },
-  "types": "build/cjs/index.d.ts",
-  "volta": {
-    "extends": "../../package.json"
   }
 }

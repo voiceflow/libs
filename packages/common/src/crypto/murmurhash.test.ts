@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { MurmurHash } from './murmurhash';
 
 // for second test check (4 byte chunk)

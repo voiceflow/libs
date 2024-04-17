@@ -1,16 +1,18 @@
 /* eslint-disable dot-notation */
+import { describe, expect, it, vi } from 'vitest';
+
 import Member from './member';
 
 const RESPONSE_DATA = { field1: '1', field2: { subfield: [1, 10] } };
 
 const createClient = () => {
   const fetch = {
-    get: jest.fn(),
-    post: jest.fn(),
-    put: jest.fn(),
-    patch: jest.fn(),
-    delete: jest.fn(),
-    granularPatch: jest.fn(),
+    get: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    patch: vi.fn(),
+    delete: vi.fn(),
+    granularPatch: vi.fn(),
   };
 
   const resource = new Member(fetch as any);
@@ -137,9 +139,14 @@ describe('MemberResource', () => {
     const data = await resource.platformDataUpdate('1', 'platformData.vendors[$id].name', 'name', { id: '1' });
 
     expect(fetch.granularPatch).toHaveBeenCalledTimes(1);
-    expect(fetch.granularPatch).toHaveBeenCalledWith('projects/1/members/platform-data/update', 'platformData.vendors[$id].name', 'name', {
-      id: '1',
-    });
+    expect(fetch.granularPatch).toHaveBeenCalledWith(
+      'projects/1/members/platform-data/update',
+      'platformData.vendors[$id].name',
+      'name',
+      {
+        id: '1',
+      }
+    );
     expect(data).toBe(RESPONSE_DATA);
   });
 
@@ -151,7 +158,12 @@ describe('MemberResource', () => {
     const data = await resource.platformDataRemove('1', 'platformData.vendors[$id]', { id: '1' });
 
     expect(fetch.granularPatch).toHaveBeenCalledTimes(1);
-    expect(fetch.granularPatch).toHaveBeenCalledWith('projects/1/members/platform-data/remove', 'platformData.vendors[$id]', undefined, { id: '1' });
+    expect(fetch.granularPatch).toHaveBeenCalledWith(
+      'projects/1/members/platform-data/remove',
+      'platformData.vendors[$id]',
+      undefined,
+      { id: '1' }
+    );
     expect(data).toBe(RESPONSE_DATA);
   });
 });

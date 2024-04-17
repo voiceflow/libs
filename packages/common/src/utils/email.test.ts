@@ -1,9 +1,16 @@
+import { describe, expect, it } from 'vitest';
+
 import { getEmailDomain, isValidEmail } from './emails';
 
 describe('Utils | email', () => {
   describe('isValid()', () => {
     it('should be valid', () => {
-      const validEmails = ['joe.doe@test.com', 'john.-last@sub.domain.com', 'test+@voiceflow.com', 't-est+34@voice-flow.com'];
+      const validEmails = [
+        'joe.doe@test.com',
+        'john.-last@sub.domain.com',
+        'test+@voiceflow.com',
+        't-est+34@voice-flow.com',
+      ];
 
       validEmails.forEach((email) => expect(isValidEmail(email)).toBe(true));
     });

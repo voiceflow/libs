@@ -1,6 +1,6 @@
 /* eslint-disable dot-notation */
-
-import { AnyRecord } from '@voiceflow/common';
+import type { AnyRecord } from '@voiceflow/common';
+import { describe, expect, it, vi } from 'vitest';
 
 import CrudNestedResource from './crudNested';
 
@@ -11,14 +11,20 @@ const RESPONSE_DATA = {
 
 const createClient = () => {
   const fetch = {
-    get: jest.fn(),
-    post: jest.fn(),
-    put: jest.fn(),
-    patch: jest.fn(),
-    delete: jest.fn(),
+    get: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    patch: vi.fn(),
+    delete: vi.fn(),
   };
 
-  const resource = new CrudNestedResource<string, { id: string; key: string; optional?: string }, 'id', AnyRecord, 'id'>({
+  const resource = new CrudNestedResource<
+    string,
+    { id: string; key: string; optional?: string },
+    'id',
+    AnyRecord,
+    'id'
+  >({
     clazz: class {},
     fetch: fetch as any,
     endpoint: 'endpoint',

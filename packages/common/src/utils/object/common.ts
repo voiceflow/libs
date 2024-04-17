@@ -1,4 +1,4 @@
-import { AnyRecord, Struct } from '@common/types';
+import type { AnyRecord, Struct } from '@common/types';
 import _isPlainObject from 'lodash/isPlainObject';
 
 export { default as shallowEquals } from 'shallowequal';
@@ -110,8 +110,10 @@ export const omitBy: PickOmitBy = (obj: AnyRecord, predicate: (key: string, valu
  */
 export const filterEntries = pickBy;
 
-export const mapEntry = <T, R>(obj: Record<string | number | symbol, T>, callback: (entry: [key: string, value: T]) => [string, R]) =>
-  Object.fromEntries(Object.entries(obj).map(callback));
+export const mapEntry = <T, R>(
+  obj: Record<string | number | symbol, T>,
+  callback: (entry: [key: string, value: T]) => [string, R]
+) => Object.fromEntries(Object.entries(obj).map(callback));
 
 export const mapValue = <T, R>(obj: Record<string | number | symbol, T>, callback: (value: T) => R) =>
   Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, callback(value)]));

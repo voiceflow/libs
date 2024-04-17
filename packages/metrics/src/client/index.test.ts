@@ -1,3 +1,5 @@
+import { describe, it } from 'vitest';
+
 import * as VFMetrics from '..';
 import MetricsClient from '.';
 

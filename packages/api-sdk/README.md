@@ -7,7 +7,7 @@ SDK for Voiceflow API, with typings for general voiceflow data structures.
 ### Environment
 
 In order to run this package locally, make sure you have `yarn` and `brew` installed.
-You also need to acquire a `.env` file and a `local_sercrets.yaml` file from engineering to load development secrets. 
+You also need to acquire a `.env` file and a `local_sercrets.yaml` file from engineering to load development secrets.
 
 ### Package Manager
 

@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import {
   hasProperty,
   isObject,
@@ -78,12 +80,21 @@ describe('Utils | object | common', () => {
       expect(omit({ value1: '1' }, [])).toEqual({ value1: '1' });
       expect(omit({ value1: '1' }, ['value1'])).toEqual({});
       expect(omit({ value1: '1', value2: '2', value3: 3 }, ['value1', 'value2'])).toEqual({ value3: 3 });
-      expect(omit({ value1: '1', value2: '2', value3: 3, value4: 4 }, ['value1', 'value2', 'value3'])).toEqual({ value4: 4 });
+      expect(omit({ value1: '1', value2: '2', value3: 3, value4: 4 }, ['value1', 'value2', 'value3'])).toEqual({
+        value4: 4,
+      });
     });
 
     it('works with 3+ keys', () => {
       expect(omit({ value1: '1', value2: '2', value3: 3 }, ['value1', 'value2', 'value3'])).toEqual({});
-      expect(omit({ value1: '1', value2: '2', value3: 3, value4: undefined, value5: null }, ['value1', 'value2', 'value3', 'value5'])).toEqual({
+      expect(
+        omit({ value1: '1', value2: '2', value3: 3, value4: undefined, value5: null }, [
+          'value1',
+          'value2',
+          'value3',
+          'value5',
+        ])
+      ).toEqual({
         value4: undefined,
       });
     });
@@ -102,8 +113,19 @@ describe('Utils | object | common', () => {
     });
 
     it('works with 3+ keys', () => {
-      expect(pick({ value1: '1', value2: '2', value3: 3 }, ['value1', 'value2', 'value3'])).toEqual({ value1: '1', value2: '2', value3: 3 });
-      expect(pick({ value1: '1', value2: '2', value3: 3, value4: undefined, value5: null }, ['value1', 'value2', 'value3', 'value5'])).toEqual({
+      expect(pick({ value1: '1', value2: '2', value3: 3 }, ['value1', 'value2', 'value3'])).toEqual({
+        value1: '1',
+        value2: '2',
+        value3: 3,
+      });
+      expect(
+        pick({ value1: '1', value2: '2', value3: 3, value4: undefined, value5: null }, [
+          'value1',
+          'value2',
+          'value3',
+          'value5',
+        ])
+      ).toEqual({
         value1: '1',
         value2: '2',
         value3: 3,
@@ -112,7 +134,10 @@ describe('Utils | object | common', () => {
     });
 
     it('works with undefined keys', () => {
-      expect(pick({ value1: '1', value2: '2' } as any, ['value1', 'value2', 'value3'])).toEqual({ value1: '1', value2: '2' });
+      expect(pick({ value1: '1', value2: '2' } as any, ['value1', 'value2', 'value3'])).toEqual({
+        value1: '1',
+        value2: '2',
+      });
     });
   });
 
@@ -124,7 +149,9 @@ describe('Utils | object | common', () => {
       expect(omitBy({ value1: '1' }, (key) => keys.has(key))).toEqual({});
       expect(omitBy({ value1: '1', value2: '2', value3: 3 }, (key) => keys.has(key))).toEqual({ value3: 3 });
       expect(omitBy({ value1: '1', value2: '2', value3: 3 }, (key) => key === 'value3' || keys.has(key))).toEqual({});
-      expect(omitBy({ value1: '1', value2: '2', value3: 3, value4: undefined, value5: null }, (key) => keys.has(key))).toEqual({
+      expect(
+        omitBy({ value1: '1', value2: '2', value3: 3, value4: undefined, value5: null }, (key) => keys.has(key))
+      ).toEqual({
         value3: 3,
         value4: undefined,
       });
@@ -146,7 +173,9 @@ describe('Utils | object | common', () => {
         value2: '2',
         value3: 3,
       });
-      expect(pickBy({ value1: '1', value2: '2', value3: 3, value4: undefined, value5: null }, (key) => keys.has(key))).toEqual({
+      expect(
+        pickBy({ value1: '1', value2: '2', value3: 3, value4: undefined, value5: null }, (key) => keys.has(key))
+      ).toEqual({
         value1: '1',
         value2: '2',
         value5: null,

@@ -120,3 +120,7 @@ packages/**/yarn.lock
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+
+*.report.xml
+.turbo

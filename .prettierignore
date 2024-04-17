@@ -1,14 +1,18 @@
-coverage
-.idea
-scratch.js
-/scripts
-/.ebextensions/
-/log/
-/routes/multimodal/apl_authoring_tool
-/database
-/node_modules
-/routes
-**/build
-**/node_modules
-**/.nyc_output
-**/nyc_coverage
+CHANGELOG.md
+
+# Node
+node_modules
+
+# TypeScript
+build
+
+# Yarn
+.pnp.*
+.yarn
+*.lock
+
+# Coverage
+sonar
+
+# Tests
+*.report.xml

@@ -1,8 +1,10 @@
-import { Provider } from '@nestjs/common';
-import { Test, TestingModule } from '@nestjs/testing';
+import type { Provider } from '@nestjs/common';
+import type { TestingModule } from '@nestjs/testing';
+import { Test } from '@nestjs/testing';
+import { describe, expect, it } from 'vitest';
 
 import { Providers } from './constants';
-import { RedisConnection, RedisOptions } from './interfaces/options.interface';
+import type { RedisConnection, RedisOptions } from './interfaces/options.interface';
 import { RedisService } from './redis.service';
 
 describe('RedisService', () => {

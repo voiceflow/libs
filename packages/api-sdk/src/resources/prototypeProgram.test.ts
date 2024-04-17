@@ -1,5 +1,7 @@
 /* eslint-disable dot-notation */
 
+import { describe, expect, it } from 'vitest';
+
 import Program from './program';
 import PrototypeProgram from './prototypeProgram';
 

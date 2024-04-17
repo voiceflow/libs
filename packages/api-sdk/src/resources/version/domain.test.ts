@@ -1,4 +1,6 @@
 /* eslint-disable dot-notation */
+import { describe, expect, it, vi } from 'vitest';
+
 import CrudNested from '../crudNested';
 import Domain from './domain';
 
@@ -6,20 +8,20 @@ const RESPONSE_DATA = { field1: '1', field2: { subfield: [1, 10] } };
 
 const createClient = () => {
   const fetch = {
-    get: jest.fn(),
-    post: jest.fn(),
-    put: jest.fn(),
-    patch: jest.fn(),
-    delete: jest.fn(),
+    get: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    patch: vi.fn(),
+    delete: vi.fn(),
   };
 
   const crud = {
-    get: jest.fn(),
-    getByID: jest.fn(),
-    post: jest.fn(),
-    put: jest.fn(),
-    patch: jest.fn(),
-    delete: jest.fn(),
+    get: vi.fn(),
+    getByID: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    patch: vi.fn(),
+    delete: vi.fn(),
   };
 
   CrudNested.prototype['_get'] = crud.get;
@@ -143,7 +145,9 @@ describe('DomainResource', () => {
     const data = await resource.topicReorder('version-id', '1', 'fromID', { toIndex: 3 });
 
     expect(fetch.patch).toHaveBeenCalledTimes(1);
-    expect(fetch.patch).toHaveBeenCalledWith('parentEndpoint/version-id/domains/1/topics/fromID/reorder', { toIndex: 3 });
+    expect(fetch.patch).toHaveBeenCalledWith('parentEndpoint/version-id/domains/1/topics/fromID/reorder', {
+      toIndex: 3,
+    });
     expect(data).toBe(RESPONSE_DATA);
   });
 });

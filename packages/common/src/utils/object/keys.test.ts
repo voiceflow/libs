@@ -1,3 +1,5 @@
+import { describe, it } from 'vitest';
+
 import { getKeys } from './keys';
 
 describe('Utils | object | keys', () => {
@@ -9,6 +11,7 @@ describe('Utils | object | keys', () => {
       const keys = getKeys({ [foo]: 1, [bar]: 2, [fizz]: 3 });
 
       // this would throw a compiler error if `keys[0]` was a `string`
+      // eslint-disable-next-line no-unused-expressions
       keys[0] === foo;
     });
   });

@@ -1,8 +1,10 @@
 /* eslint-disable dot-notation */
 
 import baseAxios from 'axios';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import Fetch, { FetchConfig } from './fetch';
+import type { FetchConfig } from './fetch';
+import Fetch from './fetch';
 
 const CLIENT_KEY = '123qwe123';
 const AUTHORIZATION = 'qwe123qwe';
@@ -11,17 +13,20 @@ const RESPONSE_DATA = {
   status: 200,
 };
 
-const createFetch = (apiEndpoint = '', { options, authorization = 'qwe123qwe' }: { options?: FetchConfig; authorization?: string | null } = {}) => {
+const createFetch = (
+  apiEndpoint = '',
+  { options, authorization = 'qwe123qwe' }: { options?: FetchConfig; authorization?: string | null } = {}
+) => {
   const axiosInstance = {
-    get: jest.fn(),
-    post: jest.fn(),
-    put: jest.fn(),
-    patch: jest.fn(),
-    delete: jest.fn(),
+    get: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    patch: vi.fn(),
+    delete: vi.fn(),
     defaults: {},
   };
 
-  const axiosCreate = jest.spyOn(baseAxios, 'create').mockReturnValue(axiosInstance as any);
+  const axiosCreate = vi.spyOn(baseAxios, 'create').mockReturnValue(axiosInstance as any);
 
   const fetch = new Fetch({
     options,
@@ -35,7 +40,7 @@ const createFetch = (apiEndpoint = '', { options, authorization = 'qwe123qwe' }:
 
 describe('Fetch', () => {
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it('.constructor', () => {
@@ -172,7 +177,11 @@ describe('Fetch', () => {
     const data = await fetch.granularPatch('patch', 'path.[$var].nested', [1, 2], { var: 20 });
 
     expect(axiosInstance.patch).toHaveBeenCalledTimes(1);
-    expect(axiosInstance.patch).toHaveBeenCalledWith('patch', { value: [1, 2], path: 'path.[$var].nested', pathVariables: { var: 20 } });
+    expect(axiosInstance.patch).toHaveBeenCalledWith('patch', {
+      value: [1, 2],
+      path: 'path.[$var].nested',
+      pathVariables: { var: 20 },
+    });
     expect(data).toEqual(RESPONSE_DATA);
   });
 

@@ -1,15 +1,12 @@
 {
-  "extends": "@voiceflow-meta/typescript-config/base.json",
+  "extends": "@voiceflow/tsconfig/nest.json",
   "compilerOptions": {
-    "experimentalDecorators": true,
     "exactOptionalPropertyTypes": false,
     "baseUrl": ".",
-    "rootDir": "src",
     "outDir": "build",
     "paths": {
       "@nestjs-mongodb/*": ["src/*"]
-    },
-    "skipLibCheck": true
+    }
   },
   "exclude": ["node_modules", "build"]
 }

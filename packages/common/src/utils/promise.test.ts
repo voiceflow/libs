@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { delay, rejectIn } from './promise';
 
 describe('Utils | promise', () => {

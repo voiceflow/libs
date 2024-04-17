@@ -1,6 +1,8 @@
-import { Provider } from '@nestjs/common';
-import { Test, TestingModule } from '@nestjs/testing';
-import { MongoClient } from 'mongodb';
+import type { Provider } from '@nestjs/common';
+import type { TestingModule } from '@nestjs/testing';
+import { Test } from '@nestjs/testing';
+import type { MongoClient } from 'mongodb';
+import { describe, expect, it } from 'vitest';
 
 import { Providers } from './constants';
 import { MongoService } from './mongo.service';

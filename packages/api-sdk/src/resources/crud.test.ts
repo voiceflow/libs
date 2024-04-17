@@ -1,5 +1,7 @@
 /* eslint-disable dot-notation */
 
+import { describe, expect, it, vi } from 'vitest';
+
 import CrudResource from './crud';
 
 const RESPONSE_DATA = {
@@ -9,11 +11,11 @@ const RESPONSE_DATA = {
 
 const createClient = () => {
   const fetch = {
-    get: jest.fn(),
-    post: jest.fn(),
-    put: jest.fn(),
-    patch: jest.fn(),
-    delete: jest.fn(),
+    get: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    patch: vi.fn(),
+    delete: vi.fn(),
   };
 
   const resource = new CrudResource<{ id: string; key: string; optional?: string }, 'id', any, 'id'>({

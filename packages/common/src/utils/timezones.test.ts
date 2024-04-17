@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { unique } from './array';
 import { TIMEZONES } from './timezones';
 
