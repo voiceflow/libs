@@ -105,6 +105,27 @@ export interface ChannelActionTrace extends BaseTraceFrame<ChannelActionTracePay
   type: TraceType.CHANNEL_ACTION;
 }
 
+export interface CompletionStartTrace
+  extends BaseTraceFrame<{
+    type: TraceType.SPEAK | TraceType.TEXT;
+    completion: string;
+    voice?: string;
+    delay?: number;
+  }> {
+  type: TraceType.COMPLETION_START;
+}
+
+export interface CompletionContinueTrace
+  extends BaseTraceFrame<{
+    completion: string;
+  }> {
+  type: TraceType.COMPLETION_CONTINUE;
+}
+
+export interface CompletionEndTrace extends BaseTraceFrame {
+  type: TraceType.COMPLETION_END;
+}
+
 export type AnyTrace =
   | LogTrace
   | ExitTrace
@@ -121,4 +142,7 @@ export type AnyTrace =
   | CarouselTrace
   | CardV2Trace
   | EntityFillingTrace
-  | ChannelActionTrace;
+  | ChannelActionTrace
+  | CompletionStartTrace
+  | CompletionContinueTrace
+  | CompletionEndTrace;
