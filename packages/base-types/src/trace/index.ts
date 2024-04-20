@@ -111,6 +111,12 @@ export interface CompletionStartTrace
     completion: string;
     voice?: string;
     delay?: number;
+    tokens?: {
+      model: string;
+      answer: number;
+      query: number;
+      total: number;
+    };
   }> {
   type: TraceType.COMPLETION_START;
 }
@@ -118,6 +124,11 @@ export interface CompletionStartTrace
 export interface CompletionContinueTrace
   extends BaseTraceFrame<{
     completion: string;
+    tokens?: {
+      answer: number;
+      query: number;
+      total: number;
+    };
   }> {
   type: TraceType.COMPLETION_CONTINUE;
 }
