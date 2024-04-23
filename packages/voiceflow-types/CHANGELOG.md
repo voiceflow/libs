@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.29.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.28.4...@voiceflow/voiceflow-types@3.29.0) (2024-04-23)
+
+### Features
+
+* remove built-in variable (COR-000) ([#517](https://github.com/voiceflow/libs/issues/517)) ([b19790d](https://github.com/voiceflow/libs/commit/b19790d57ffe3a349ac4aee630af178f26b13ed0))
+
 ## [3.28.4](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.28.3...@voiceflow/voiceflow-types@3.28.4) (2024-04-15)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
