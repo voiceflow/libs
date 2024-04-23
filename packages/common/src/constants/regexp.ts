@@ -6,7 +6,8 @@ export const SLOT_ANNOTATION_SIMPLE_REGEX = /{([^ .[\]{}]+?)}/g;
 
 export const IS_VARIABLE_REGEXP = /^{.*}$/;
 
-export const READABLE_VARIABLE_REGEXP = /{(\w{1,64})}/g;
+// export const READABLE_VARIABLE_REGEXP = /{(\w{1,64})}/g;
+export const READABLE_VARIABLE_REGEXP = /{(\w{1,64})((?:\.\w{1,64}|\[\d+])*)}/gi;
 
 export const VALID_CHARACTER = 'a-zA-Z';
 
