@@ -36,9 +36,9 @@ export interface Entity {
 export interface LabelRequestPayload {
   label?: string;
 }
-export interface BaseRequest<Payload = unknown> {
+export interface BaseRequest {
   type: string;
-  payload?: Payload;
+  payload?: unknown;
   diagramID?: string; // particular topic to match against
 }
 
@@ -46,16 +46,19 @@ export interface LaunchRequestPayload {
   persona?: string;
 }
 
-export interface LaunchRequest extends BaseRequest<LaunchRequestPayload | undefined> {
+export interface LaunchRequest extends BaseRequest {
   type: RequestType.LAUNCH;
+  payload: LaunchRequestPayload;
 }
 
-export interface NoReplyRequest extends BaseRequest<undefined> {
+export interface NoReplyRequest extends BaseRequest {
   type: RequestType.NO_REPLY;
+  payload: undefined;
 }
 
-export interface TextRequest extends BaseRequest<string> {
+export interface TextRequest extends BaseRequest {
   type: RequestType.TEXT;
+  payload: string;
 }
 
 interface ActionAndLabelRequestPayload extends ActionPayload, LabelRequestPayload {}
@@ -68,16 +71,19 @@ export interface IntentRequestPayload extends ActionAndLabelRequestPayload {
   data?: Record<string, unknown>;
 }
 
-export interface IntentRequest extends BaseRequest<IntentRequestPayload> {
+export interface IntentRequest extends BaseRequest {
   type: RequestType.INTENT;
+  payload: IntentRequestPayload;
 }
 
-export interface GeneralRequest extends BaseRequest<ActionAndLabelRequestPayload> {
-  type: string; // the general request type is dynamic, used to m
+export interface GeneralRequest extends BaseRequest {
+  type: string; // the general request type is dynamic
+  payload: ActionAndLabelRequestPayload;
 }
 
-export interface ActionRequest extends BaseRequest<ActionAndLabelRequestPayload> {
+export interface ActionRequest extends BaseRequest {
   type: RequestType.ACTION;
+  payload: ActionAndLabelRequestPayload;
 }
 
 export interface BaseRequestButton<T extends BaseRequest = BaseRequest> {
