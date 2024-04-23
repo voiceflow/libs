@@ -38,7 +38,7 @@ export interface LabelRequestPayload {
 }
 export interface BaseRequest<Payload = unknown> {
   type: string;
-  payload: Payload;
+  payload?: Payload;
   diagramID?: string; // particular topic to match against
 }
 
