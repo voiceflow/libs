@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import * as SlotUtils from './slot';
 
 describe('Utils | slot', () => {
@@ -9,9 +11,9 @@ describe('Utils | slot', () => {
 
   describe('mapSlotAnnotations', () => {
     it('renames keys and maps', () => {
-      expect(SlotUtils.mapSlotAnnotations('test {{[name].key}} thing', () => ({ key: 'newKey', name: 'newName' }))).toEqual(
-        'test {{[newName].newKey}} thing'
-      );
+      expect(
+        SlotUtils.mapSlotAnnotations('test {{[name].key}} thing', () => ({ key: 'newKey', name: 'newName' }))
+      ).toEqual('test {{[newName].newKey}} thing');
     });
   });
 });

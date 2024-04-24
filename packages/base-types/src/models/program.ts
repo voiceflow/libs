@@ -1,4 +1,4 @@
-import { BaseCommand, BaseNode, Variable } from './base';
+import type { BaseCommand, BaseNode, Variable } from './base';
 
 export interface Model<Node extends BaseNode = BaseNode, Command extends BaseCommand = BaseCommand> {
   id: string;

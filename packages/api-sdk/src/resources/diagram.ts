@@ -1,5 +1,5 @@
 import type Fetch from '@api-sdk/fetch';
-import { BaseModels } from '@voiceflow/base-types';
+import type { BaseModels } from '@voiceflow/base-types';
 
 import CrudResource from './crud';
 
@@ -17,7 +17,9 @@ class DiagramResource extends CrudResource<BaseModels.Diagram.Model, ModelIDKey,
     });
   }
 
-  public async getRTC<T extends BaseModels.Diagram.Model<any> = BaseModels.Diagram.Model>(id: string): Promise<{ diagram: T; timestamp: number }> {
+  public async getRTC<T extends BaseModels.Diagram.Model<any> = BaseModels.Diagram.Model>(
+    id: string
+  ): Promise<{ diagram: T; timestamp: number }> {
     const { data } = await this.fetch.get<{ diagram: T; timestamp: number }>(`${this._getCRUDEndpoint(id)}/rtc`);
 
     return data;
@@ -27,7 +29,9 @@ class DiagramResource extends CrudResource<BaseModels.Diagram.Model, ModelIDKey,
     body: Omit<BaseModels.Diagram.Model<T>, '_id'> & Partial<Pick<BaseModels.Diagram.Model<T>, '_id'>>
   ): Promise<BaseModels.Diagram.Model<T>>;
 
-  public async create<T extends Omit<BaseModels.Diagram.Model<any>, '_id'>>(body: T): Promise<T & Pick<BaseModels.Diagram.Model<any>, '_id'>>;
+  public async create<T extends Omit<BaseModels.Diagram.Model<any>, '_id'>>(
+    body: T
+  ): Promise<T & Pick<BaseModels.Diagram.Model<any>, '_id'>>;
 
   public async create(body: BaseModels.Diagram.Model<any>): Promise<BaseModels.Diagram.Model<any>> {
     return super._post(body);
@@ -40,7 +44,10 @@ class DiagramResource extends CrudResource<BaseModels.Diagram.Model, ModelIDKey,
 
   public async update<T extends Partial<BaseModels.Diagram.Model<any>>>(id: string, body: T): Promise<T>;
 
-  public async update(id: string, body: Partial<BaseModels.Diagram.Model<any>>): Promise<Partial<BaseModels.Diagram.Model<any>>> {
+  public async update(
+    id: string,
+    body: Partial<BaseModels.Diagram.Model<any>>
+  ): Promise<Partial<BaseModels.Diagram.Model<any>>> {
     return super._patch(id, body);
   }
 
@@ -49,7 +56,10 @@ class DiagramResource extends CrudResource<BaseModels.Diagram.Model, ModelIDKey,
     nodeID: string,
     body: T
   ): Promise<T & Pick<BaseModels.BaseDiagramNode, 'nodeID'>> {
-    const { data } = await this.fetch.put<T & Pick<BaseModels.BaseDiagramNode, 'nodeID'>>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
+    const { data } = await this.fetch.put<T & Pick<BaseModels.BaseDiagramNode, 'nodeID'>>(
+      `${this._getCRUDEndpoint(id)}/nodes/${nodeID}`,
+      body
+    );
 
     return data;
   }
@@ -59,7 +69,10 @@ class DiagramResource extends CrudResource<BaseModels.Diagram.Model, ModelIDKey,
     nodeID: string,
     body: Partial<T>
   ): Promise<T & Pick<BaseModels.BaseDiagramNode, 'nodeID'>> {
-    const { data } = await this.fetch.patch<T & Pick<BaseModels.BaseDiagramNode, 'nodeID'>>(`${this._getCRUDEndpoint(id)}/nodes/${nodeID}`, body);
+    const { data } = await this.fetch.patch<T & Pick<BaseModels.BaseDiagramNode, 'nodeID'>>(
+      `${this._getCRUDEndpoint(id)}/nodes/${nodeID}`,
+      body
+    );
 
     return data;
   }

@@ -1,14 +1,15 @@
-import { BaseError } from './base-error.interface';
+import type { BaseError } from './base-error.interface';
 import { ClientException } from './client.exception';
-import { ErrorCode } from './error-code.enum';
-import { ErrorMessage } from './error-message.interface';
+import type { ErrorCode } from './error-code.enum';
+import type { ErrorMessage } from './error-message.interface';
 
 type UndefinedPartial<T> = {
   [K in keyof T]?: T[K] | undefined;
 };
 
 const isObject = (value: unknown): value is object => !!value && typeof value === 'object';
-const hasProperty = (obj: object, key: string): obj is Record<typeof key, unknown> => Object.prototype.hasOwnProperty.call(obj, key);
+const hasProperty = (obj: object, key: string): obj is Record<typeof key, unknown> =>
+  Object.prototype.hasOwnProperty.call(obj, key);
 const isErrorLike = (error: unknown): error is { message: string } =>
   isObject(error) && hasProperty(error, 'message') && typeof error.message === 'string';
 

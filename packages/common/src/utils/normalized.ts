@@ -1,4 +1,4 @@
-import { Normalized } from '@common/types';
+import type { Normalized } from '@common/types';
 
 import { stringify } from './functional';
 import { hasProperty } from './object';
@@ -94,7 +94,7 @@ export const updateNormalizedByKey = <T, N extends Normalized<T>>({ byKey, ...re
   ({
     ...rest,
     byKey: { ...byKey, [key]: obj },
-  } as N);
+  }) as N;
 
 /**
  * @deprecated prefer `normal-store`

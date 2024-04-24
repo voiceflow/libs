@@ -1,6 +1,14 @@
-import { AIKnowledgeContextParams, AIKnowledgeParams, AIModelParams } from '../utils/ai';
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, BaseStepPorts, BuiltInFailPort, BuiltInNextPort, NodeElseID, NodeNextID } from './utils';
+import type { AIKnowledgeContextParams, AIKnowledgeParams, AIModelParams } from '../utils/ai';
+import type { NodeType } from './constants';
+import type {
+  BaseNode,
+  BaseStep,
+  BaseStepPorts,
+  BuiltInFailPort,
+  BuiltInNextPort,
+  NodeElseID,
+  NodeNextID,
+} from './utils';
 
 export interface StepData extends AIModelParams, AIKnowledgeContextParams, AIKnowledgeParams {
   notFoundPath?: boolean;

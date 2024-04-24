@@ -1,4 +1,4 @@
-import { ModuleMetadata, Type } from '@nestjs/common';
+import type { ModuleMetadata, Type } from '@nestjs/common';
 import type { Redis, RedisOptions as IORedisOptions } from 'ioredis';
 
 export type RedisConnection = Redis;

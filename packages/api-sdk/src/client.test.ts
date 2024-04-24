@@ -1,10 +1,35 @@
 import JWT from 'jsonwebtoken';
+import { describe, expect, it } from 'vitest';
 
 import { Client } from './client';
 import Fetch from './fetch';
-import { Analytics, APIKey, Diagram, Note, Program, Project, ProjectSecret, PrototypeProgram, User, VariableState, Version } from './resources';
+import {
+  Analytics,
+  APIKey,
+  Diagram,
+  Note,
+  Program,
+  Project,
+  ProjectSecret,
+  PrototypeProgram,
+  User,
+  VariableState,
+  Version,
+} from './resources';
 
-const CLIENT_RESOURCES = [Fetch, Diagram, Program, Project, ProjectSecret, Version, User, APIKey, Analytics, VariableState, Note];
+const CLIENT_RESOURCES = [
+  Fetch,
+  Diagram,
+  Program,
+  Project,
+  ProjectSecret,
+  Version,
+  User,
+  APIKey,
+  Analytics,
+  VariableState,
+  Note,
+];
 
 const USER_HASH = 'UserHash_16chars';
 const createClient = (authorization?: string) =>
@@ -17,7 +42,9 @@ const createClient = (authorization?: string) =>
 describe('Client', () => {
   it('.constructor', () => {
     const client = createClient();
-    expect(Object.values(client).every((resource) => CLIENT_RESOURCES.some((Resource) => resource instanceof Resource))).toBe(true);
+    expect(
+      Object.values(client).every((resource) => CLIENT_RESOURCES.some((Resource) => resource instanceof Resource))
+    ).toBe(true);
   });
 
   it('.project', () => {

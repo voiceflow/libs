@@ -1,4 +1,4 @@
-import { Locale, ProductType } from '@alexa-types/constants';
+import type { Locale, ProductType } from '@alexa-types/constants';
 
 export enum MarketPlace {
   DE = 'amazon.de',

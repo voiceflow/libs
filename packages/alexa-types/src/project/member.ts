@@ -1,4 +1,4 @@
-import { BaseProject, Nullable } from '@voiceflow/base-types';
+import type { BaseProject, Nullable } from '@voiceflow/base-types';
 
 export interface Vendor {
   skillID: string; // reference id to external alexa skill
@@ -14,7 +14,10 @@ export interface MemberPlatformData extends BaseProject.MemberPlatformData {
   selectedVendor: Nullable<string>;
 }
 
-export const defaultMemberPlatformData = ({ vendors = [], selectedVendor = null }: Partial<MemberPlatformData> = {}): MemberPlatformData => ({
+export const defaultMemberPlatformData = ({
+  vendors = [],
+  selectedVendor = null,
+}: Partial<MemberPlatformData> = {}): MemberPlatformData => ({
   vendors,
   selectedVendor,
 });

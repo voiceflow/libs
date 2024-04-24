@@ -1,9 +1,7 @@
 {
-  "extends": "@voiceflow-meta/typescript-config/base.json",
+  "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
-    "rootDir": "src",
-    "outDir": "build/cjs",
     "paths": {
       "@google-types/*": ["src/*"]
     }

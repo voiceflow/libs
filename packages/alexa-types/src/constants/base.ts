@@ -88,7 +88,16 @@ export const REGIONAL_VOICE = [
   },
   {
     label: 'English US',
-    options: [Voice.IVY, Voice.JOANNA, Voice.JOEY, Voice.JUSTIN, Voice.KENDRA, Voice.KIMBERLY, Voice.MATTHEW, Voice.SALLI],
+    options: [
+      Voice.IVY,
+      Voice.JOANNA,
+      Voice.JOEY,
+      Voice.JUSTIN,
+      Voice.KENDRA,
+      Voice.KIMBERLY,
+      Voice.MATTHEW,
+      Voice.SALLI,
+    ],
   },
   {
     label: 'English AU',

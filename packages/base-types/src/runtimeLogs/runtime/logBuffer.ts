@@ -1,4 +1,4 @@
-import { Log } from '../logs';
+import type { Log } from '../logs';
 
 /**
  * It acts as a buffer in between the runtime which produces the logs and the service/datastore which consumes the logs.

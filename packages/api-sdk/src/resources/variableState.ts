@@ -1,14 +1,19 @@
-import Fetch from '@api-sdk/fetch';
-import { BaseModels } from '@voiceflow/base-types';
+import type Fetch from '@api-sdk/fetch';
+import type { BaseModels } from '@voiceflow/base-types';
 
-import { Fields } from './base';
+import type { Fields } from './base';
 import CrudResource from './crud';
 
 export const ENDPOINT = 'variable-states';
 
 export type ModelKey = '_id';
 
-class VariableStateResource extends CrudResource<BaseModels.VariableState.Model, ModelKey, VariableStateResource, 'projectID' | 'name'> {
+class VariableStateResource extends CrudResource<
+  BaseModels.VariableState.Model,
+  ModelKey,
+  VariableStateResource,
+  'projectID' | 'name'
+> {
   constructor(fetch: Fetch) {
     super({
       fetch,

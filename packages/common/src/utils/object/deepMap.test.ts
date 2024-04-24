@@ -1,4 +1,5 @@
 import ObjectID from 'bson-objectid';
+import { describe, expect, it, vi } from 'vitest';
 
 import { deepMap, deepMapKeys } from './deepMap';
 
@@ -78,7 +79,7 @@ describe('Utils | object | deepMap', () => {
     });
 
     it('mapFunction is called once per primitive value', () => {
-      const square = jest.fn(transform);
+      const square = vi.fn(transform);
 
       deepMap({ two: 2, obj: { three: 3 }, arr: [4] }, square);
 
@@ -86,7 +87,7 @@ describe('Utils | object | deepMap', () => {
     });
 
     it('mapFunction is called with value and key', () => {
-      const square = jest.fn(transform);
+      const square = vi.fn(transform);
 
       deepMap({ two: 2, arr: [3, 6] }, square);
 
@@ -112,7 +113,10 @@ describe('Utils | object | deepMap', () => {
     });
 
     it('transforms keys of array with nested object/array', () => {
-      expect(deepMapKeys([1, { two: 2, three: 3, arr: [4, { five: 5 }] }], transform)).toEqual([1, { TWO: 2, THREE: 3, ARR: [4, { FIVE: 5 }] }]);
+      expect(deepMapKeys([1, { two: 2, three: 3, arr: [4, { five: 5 }] }], transform)).toEqual([
+        1,
+        { TWO: 2, THREE: 3, ARR: [4, { FIVE: 5 }] },
+      ]);
     });
 
     it('transforms an object with circular references', () => {
@@ -128,7 +132,7 @@ describe('Utils | object | deepMap', () => {
     });
 
     it('mapFunction is called once per object property', () => {
-      const caps = jest.fn(transform);
+      const caps = vi.fn(transform);
 
       deepMapKeys({ one: 1, obj: { two: 2, three: 3 }, arr: [4, 5] }, caps);
 
@@ -136,7 +140,7 @@ describe('Utils | object | deepMap', () => {
     });
 
     it('mapFunction is called with key and value', () => {
-      const caps = jest.fn(transform);
+      const caps = vi.fn(transform);
 
       deepMapKeys({ one: 1, arr: [2, 3] }, caps);
 

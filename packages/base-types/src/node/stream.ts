@@ -1,7 +1,16 @@
-import { PortType } from '@base-types/models';
+import type { PortType } from '@base-types/models';
 
-import { NodeType } from './constants';
-import { BaseNode, BasePort, BaseStep, BaseStepPorts, BaseTraceFrame, BuiltInNextPort, NodeID, TraceType } from './utils';
+import type { NodeType } from './constants';
+import type {
+  BaseNode,
+  BasePort,
+  BaseStep,
+  BaseStepPorts,
+  BaseTraceFrame,
+  BuiltInNextPort,
+  NodeID,
+  TraceType,
+} from './utils';
 
 export interface StepData {
   src: string;
@@ -27,7 +36,8 @@ export interface StepDefaultBuiltPorts extends StepBaseBuiltInPorts {
   [PortType.PREVIOUS]?: BasePort;
 }
 
-export interface StepPorts<BuiltInPorts extends StepBaseBuiltInPorts = StepDefaultBuiltPorts> extends BaseStepPorts<BuiltInPorts, []> {}
+export interface StepPorts<BuiltInPorts extends StepBaseBuiltInPorts = StepDefaultBuiltPorts>
+  extends BaseStepPorts<BuiltInPorts, []> {}
 
 export interface Step<Data = StepData, Ports = StepPorts> extends BaseStep<Data, Ports> {
   type: NodeType.STREAM;

@@ -1,4 +1,4 @@
-import { VariableDatatype } from '@base-types/cms/variables';
+import type { VariableDatatype } from '@base-types/cms/variables';
 
 export interface FunctionCompiledVariableDeclaration {
   type: VariableDatatype;

@@ -1,4 +1,4 @@
-import { BaseResponse } from '@voiceflow/exception';
+import type { BaseResponse } from '@voiceflow/exception';
 
 export interface FetchOptions<Headers, Body> {
   method?: string;
@@ -11,4 +11,7 @@ export interface FetchResponse extends BaseResponse {
   json: () => Promise<any>;
 }
 
-export type FetchAPI<Opts extends FetchOptions<any, any>, Req, Res extends FetchResponse> = (input: string | Req, init?: Opts) => Promise<Res>;
+export type FetchAPI<Opts extends FetchOptions<any, any>, Req, Res extends FetchResponse> = (
+  input: string | Req,
+  init?: Opts
+) => Promise<Res>;

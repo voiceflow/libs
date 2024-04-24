@@ -1,7 +1,9 @@
-import { Intent, Prompt } from '@chat-types/models';
-import { BaseModels, BaseVersion, DeepPartialByKey } from '@voiceflow/base-types';
+import type { Intent, Prompt } from '@chat-types/models';
+import type { BaseModels, DeepPartialByKey } from '@voiceflow/base-types';
+import { BaseVersion } from '@voiceflow/base-types';
 
-import { defaultSettings, Settings } from './settings';
+import type { Settings } from './settings';
+import { defaultSettings } from './settings';
 
 export * from './settings';
 
@@ -16,7 +18,11 @@ export interface Version<Prototype extends BaseModels.Version.Prototype = BaseMo
   platformData: PlatformData;
 }
 
-export const defaultPlatformData = ({ intents = [], settings = {}, ...data }: DeepPartialByKey<PlatformData, 'settings'>): PlatformData => ({
+export const defaultPlatformData = ({
+  intents = [],
+  settings = {},
+  ...data
+}: DeepPartialByKey<PlatformData, 'settings'>): PlatformData => ({
   ...BaseVersion.defaultPlatformData<Prompt>(data),
   intents,
   settings: defaultSettings(settings),

@@ -1,15 +1,17 @@
 /* eslint-disable dot-notation */
 
+import { describe, expect, it, vi } from 'vitest';
+
 import BaseResource from './base';
 
 const createClient = () => {
   const fetch = {
-    get: jest.fn(),
-    post: jest.fn(),
-    put: jest.fn(),
-    patch: jest.fn(),
-    delete: jest.fn(),
-    initWithOptions: jest.fn(),
+    get: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    patch: vi.fn(),
+    delete: vi.fn(),
+    initWithOptions: vi.fn(),
   };
 
   class Resource {}

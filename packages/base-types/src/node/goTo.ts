@@ -1,8 +1,8 @@
-import { IntentRequest } from '@base-types/request';
-import { EmptyObject, Nullable } from '@voiceflow/common';
+import type { IntentRequest } from '@base-types/request';
+import type { EmptyObject, Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseNode, BaseNoMatchNodeData, BaseStep } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseNoMatchNodeData, BaseStep } from './utils';
 
 export interface StepData {
   intent: Nullable<string>;

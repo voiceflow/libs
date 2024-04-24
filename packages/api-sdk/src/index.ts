@@ -1,7 +1,8 @@
 import * as s from 'superstruct';
 
 import { Client } from './client';
-import { ClientOptions, PublicClient } from './publicClient';
+import type { ClientOptions } from './publicClient';
+import { PublicClient } from './publicClient';
 
 export type { Client } from './client';
 export * as Interface from './interface';

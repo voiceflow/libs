@@ -1,11 +1,15 @@
 import { ClientException } from '@voiceflow/exception';
 
-import { ClientConfiguration } from './client-configuration.interface';
-import { FetchAPI, FetchOptions, FetchResponse } from './fetch.interface';
+import type { ClientConfiguration } from './client-configuration.interface';
+import type { FetchAPI, FetchOptions, FetchResponse } from './fetch.interface';
 import { HTTPMethod } from './http-method.enum';
-import { RequestHeaders, RequestOptions, RequestQuery } from './request-options.interface';
+import type { RequestHeaders, RequestOptions, RequestQuery } from './request-options.interface';
 
-export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req = URL | Request, Res extends FetchResponse = Response> {
+export class FetchClient<
+  Opts extends FetchOptions<any, any> = RequestInit,
+  Req = URL | Request,
+  Res extends FetchResponse = Response,
+> {
   private static extractHeaders(headers: RequestHeaders | undefined) {
     return new Map(headers instanceof Map ? headers : Object.entries(headers ?? {}));
   }
@@ -41,7 +45,10 @@ export class FetchClient<Opts extends FetchOptions<any, any> = RequestInit, Req 
     // eslint-disable-next-line prefer-const
     let { json, headers, query, body, ...options } = rawOptions;
 
-    headers = new Map([...FetchClient.extractHeaders(this.config.headers).entries(), ...FetchClient.extractHeaders(headers).entries()]);
+    headers = new Map([
+      ...FetchClient.extractHeaders(this.config.headers).entries(),
+      ...FetchClient.extractHeaders(headers).entries(),
+    ]);
     query = FetchClient.extractQuery(query);
 
     if (json != null) {

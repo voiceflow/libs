@@ -1,12 +1,12 @@
-import { AnyRecord } from '@voiceflow/common';
+import type { AnyRecord } from '@voiceflow/common';
 
-import { NodeType } from '../../node/constants';
-import { BaseCommand, BaseNote, Intent, Slot, Variable } from '../base';
-import { KnowledgeBase } from '../project/knowledgeBase';
-import { CanvasTemplate } from './canvasTemplate';
-import { Domain } from './domain';
-import { NLUUnclassifiedData } from './nluUnclassifiedData';
-import { Prototype } from './prototype';
+import type { NodeType } from '../../node/constants';
+import type { BaseCommand, BaseNote, Intent, Slot, Variable } from '../base';
+import type { KnowledgeBase } from '../project/knowledgeBase';
+import type { CanvasTemplate } from './canvasTemplate';
+import type { Domain } from './domain';
+import type { NLUUnclassifiedData } from './nluUnclassifiedData';
+import type { Prototype } from './prototype';
 
 export * from './canvasTemplate';
 export * from './domain';
@@ -77,7 +77,7 @@ export interface Model<
   _PlatformData extends PlatformData,
   Command extends BaseCommand = BaseCommand,
   Locale extends string = string,
-  SurveyContextExt extends AnyRecord = AnyRecord
+  SurveyContextExt extends AnyRecord = AnyRecord,
 > {
   _id: string;
   _version?: number;

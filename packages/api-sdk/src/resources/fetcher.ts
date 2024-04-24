@@ -1,6 +1,8 @@
 import type Fetch from '@api-sdk/fetch';
 
-type Clazz<Client, Options = undefined> = Options extends undefined ? new (fetch: Fetch) => Client : new (fetch: Fetch, options: Options) => Client;
+type Clazz<Client, Options = undefined> = Options extends undefined
+  ? new (fetch: Fetch) => Client
+  : new (fetch: Fetch, options: Options) => Client;
 
 interface BaseFetcherOptions<Client, Options = undefined> {
   fetch: Fetch;

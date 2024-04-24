@@ -1,5 +1,13 @@
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, BaseStepPorts, BuiltInNoMatchPort, Expression, NodeElseID, NodeNextIDs } from './utils';
+import type { NodeType } from './constants';
+import type {
+  BaseNode,
+  BaseStep,
+  BaseStepPorts,
+  BuiltInNoMatchPort,
+  Expression,
+  NodeElseID,
+  NodeNextIDs,
+} from './utils';
 
 export interface StepData {
   expressions: Expression[];

@@ -1,4 +1,4 @@
-import { BaseModels } from '@voiceflow/base-types';
+import type { BaseModels } from '@voiceflow/base-types';
 
 export interface Prompt<Voice> {
   desc?: string; // desc when voice is 'audio'

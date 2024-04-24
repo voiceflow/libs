@@ -1,8 +1,8 @@
-import { Text as TextNode } from '@base-types/node';
-import { PathReference } from '@base-types/runtimeLogs/utils';
+import type { Text as TextNode } from '@base-types/node';
+import type { PathReference } from '@base-types/runtimeLogs/utils';
 
-import { BaseStepLog } from '../base';
-import { StepLogKind } from '../kinds';
+import type { BaseStepLog } from '../base';
+import type { StepLogKind } from '../kinds';
 
 export type TextStepLog = BaseStepLog<
   StepLogKind.TEXT,

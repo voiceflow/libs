@@ -45,13 +45,14 @@ export type DeepPartial<T> = {
 export type EmptyObject = Record<never, never>;
 
 /** Avoids accidentally converting an immutable array type to a mutable one. */
-export type SafeArray<Element, Original> = Original extends Array<Element>
-  ? Element[]
-  : Original extends ReadonlyArray<Element>
-  ? ReadonlyArray<Element>
-  : Original extends ArrayLike<Element>
-  ? ArrayLike<Element>
-  : never;
+export type SafeArray<Element, Original> =
+  Original extends Array<Element>
+    ? Element[]
+    : Original extends ReadonlyArray<Element>
+      ? ReadonlyArray<Element>
+      : Original extends ArrayLike<Element>
+        ? ArrayLike<Element>
+        : never;
 
 export type ArrayUnionToIntersection<T extends ArrayLike<unknown>> = SafeArray<T[number], T>;
 

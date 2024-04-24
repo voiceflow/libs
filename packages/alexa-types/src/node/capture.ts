@@ -1,5 +1,5 @@
-import { Voice } from '@alexa-types/constants';
-import { VoiceNode } from '@voiceflow/voice-types';
+import type { Voice } from '@alexa-types/constants';
+import type { VoiceNode } from '@voiceflow/voice-types';
 
 /** @deprecated */
 export interface StepData extends VoiceNode.Capture.StepData<Voice> {}

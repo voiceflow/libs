@@ -1,19 +1,19 @@
-import { BaseNode } from '@voiceflow/base-types';
+import type { BaseNode } from '@voiceflow/base-types';
 
-import * as AccountLinking from './accountLinking';
-import * as CancelPayment from './cancelPayment';
-import * as Capture from './capture';
-import * as CaptureV2 from './captureV2';
-import * as Display from './display';
-import * as Event from './event';
-import * as Interaction from './interaction';
-import * as Payment from './payment';
-import * as Permission from './permission';
-import * as Prompt from './prompt';
-import * as Reminder from './reminder';
-import * as Speak from './speak';
-import * as Stream from './stream';
-import * as UserInfo from './userInfo';
+import type * as AccountLinking from './accountLinking';
+import type * as CancelPayment from './cancelPayment';
+import type * as Capture from './capture';
+import type * as CaptureV2 from './captureV2';
+import type * as Display from './display';
+import type * as Event from './event';
+import type * as Interaction from './interaction';
+import type * as Payment from './payment';
+import type * as Permission from './permission';
+import type * as Prompt from './prompt';
+import type * as Reminder from './reminder';
+import type * as Speak from './speak';
+import type * as Stream from './stream';
+import type * as UserInfo from './userInfo';
 
 export * as AccountLinking from './accountLinking';
 export * as CancelPayment from './cancelPayment';
@@ -43,10 +43,27 @@ export type AnyOnlyStep =
   | Payment.Step
   | CancelPayment.Step
   | Display.Step;
-export type AnyOnlyNode = AccountLinking.Node | Permission.Node | Reminder.Node | UserInfo.Node | Payment.Node | CancelPayment.Node | Display.Node;
+export type AnyOnlyNode =
+  | AccountLinking.Node
+  | Permission.Node
+  | Reminder.Node
+  | UserInfo.Node
+  | Payment.Node
+  | CancelPayment.Node
+  | Display.Node;
 
-export type AnyStep = BaseNode.AnyCommonStep | AnyExtendedStep | AnyOnlyStep | BaseNode.Directive.Step | BaseNode.Card.Step;
-export type AnyNode = BaseNode.AnyCommonNode | AnyExtendedNode | AnyOnlyNode | BaseNode.Directive.Node | BaseNode.Card.Node;
+export type AnyStep =
+  | BaseNode.AnyCommonStep
+  | AnyExtendedStep
+  | AnyOnlyStep
+  | BaseNode.Directive.Step
+  | BaseNode.Card.Step;
+export type AnyNode =
+  | BaseNode.AnyCommonNode
+  | AnyExtendedNode
+  | AnyOnlyNode
+  | BaseNode.Directive.Node
+  | BaseNode.Card.Node;
 
 export type AnyOnlyCommand = Event.Command;
 export type AnyCommand = BaseNode.AnyCommonCommand | AnyOnlyCommand;

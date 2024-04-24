@@ -1,13 +1,14 @@
 /* eslint-disable dot-notation */
 import JWT from 'jsonwebtoken';
 import * as s from 'superstruct';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import ApiSDK, { SGenerateClientParams, SParams } from '.';
 import { Client } from './client';
 import { PublicClient } from './publicClient';
 
 const createSDK = () => {
-  const assert = jest.spyOn(s, 'assert');
+  const assert = vi.spyOn(s, 'assert');
 
   const sdk = new ApiSDK({
     clientKey: '123',
@@ -25,7 +26,7 @@ const AUTHORIZATION = USER_HASH + JWT.sign({}, 'test');
 
 describe('ApiSDK', () => {
   beforeEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it('.constructor', () => {

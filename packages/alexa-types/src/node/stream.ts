@@ -1,4 +1,4 @@
-import { BaseModels, BaseNode } from '@voiceflow/base-types';
+import type { BaseModels, BaseNode } from '@voiceflow/base-types';
 
 export interface StepData {
   loop: boolean;

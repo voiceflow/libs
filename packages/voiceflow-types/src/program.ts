@@ -1,5 +1,5 @@
-import { BaseModels } from '@voiceflow/base-types';
+import type { BaseModels } from '@voiceflow/base-types';
 
-import { AnyCommand, AnyNode } from './node';
+import type { AnyCommand, AnyNode } from './node';
 
 export interface Program extends BaseModels.Program.Model<AnyNode, AnyCommand> {}

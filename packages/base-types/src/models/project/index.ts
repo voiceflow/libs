@@ -1,10 +1,10 @@
-import { AnyRecord } from '@voiceflow/common';
+import type { AnyRecord } from '@voiceflow/common';
 
-import { LinkType } from '../base/link';
-import { KnowledgeBase } from './knowledgeBase';
-import { Member } from './member';
-import { Prototype } from './prototype';
-import { Themes } from './theme';
+import type { LinkType } from '../base/link';
+import type { KnowledgeBase } from './knowledgeBase';
+import type { Member } from './member';
+import type { Prototype } from './prototype';
+import type { Themes } from './theme';
 
 export { LinkType } from '../base/link';
 export * from './knowledgeBase';

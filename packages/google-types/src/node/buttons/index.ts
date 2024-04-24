@@ -1,5 +1,5 @@
-import { ChatStep, ChatStepData } from './chat';
-import { VoiceStep, VoiceStepData } from './voice';
+import type { ChatStep, ChatStepData } from './chat';
+import type { VoiceStep, VoiceStepData } from './voice';
 
 export * from './base';
 export * from './chat';

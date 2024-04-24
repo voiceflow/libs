@@ -1,6 +1,7 @@
 import { GoogleVersion } from '@voiceflow/google-types';
 
-import { BasePublishing, defaultBasePublishing } from '../base';
+import type { BasePublishing } from '../base';
+import { defaultBasePublishing } from '../base';
 
 export interface SharedChatPublishing extends GoogleVersion.SharedChatPublishing {}
 

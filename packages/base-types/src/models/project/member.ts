@@ -1,4 +1,4 @@
-import { AnyRecord } from '@voiceflow/common';
+import type { AnyRecord } from '@voiceflow/common';
 
 export interface Member<P extends AnyRecord = AnyRecord> {
   creatorID: number;

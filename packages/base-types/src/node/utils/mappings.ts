@@ -1,4 +1,4 @@
-import { SlotMapping } from '@base-types/models';
+import type { SlotMapping } from '@base-types/models';
 
 export interface SlotMappings {
   mappings?: SlotMapping[];

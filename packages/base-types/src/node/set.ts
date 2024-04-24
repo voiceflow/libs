@@ -1,7 +1,7 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, Expression, NodeNextID } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, Expression, NodeNextID } from './utils';
 
 export interface Set {
   variable: Nullable<string>;

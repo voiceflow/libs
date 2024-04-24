@@ -1,8 +1,8 @@
-import { BaseStepPorts } from '@base-types/models';
+import type { BaseStepPorts } from '@base-types/models';
 
-import { AIModelParams } from '../utils/ai';
-import { NodeType } from './constants';
-import {
+import type { AIModelParams } from '../utils/ai';
+import type { NodeType } from './constants';
+import type {
   BaseNode,
   BaseNoReplyNodeData,
   BaseNoReplyStepData,
@@ -25,7 +25,8 @@ export interface Data extends AIModelParams {
 
 export interface StepData extends Data, BaseNoReplyStepData, StepIntentScope {}
 
-export interface Step extends BaseStep<StepData, BaseStepPorts<BuiltInNextPort & BuiltInFailPort & BuiltInNoReplyPort>> {
+export interface Step
+  extends BaseStep<StepData, BaseStepPorts<BuiltInNextPort & BuiltInFailPort & BuiltInNoReplyPort>> {
   type: NodeType.AI_CAPTURE;
 }
 

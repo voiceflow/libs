@@ -1,5 +1,5 @@
-import { Prompt } from '@chat-types/models';
-import { BaseNode, BaseText } from '@voiceflow/base-types';
+import type { Prompt } from '@chat-types/models';
+import type { BaseNode, BaseText } from '@voiceflow/base-types';
 
 export interface StepNoReply extends BaseNode.Utils.StepNoReply<Prompt> {}
 

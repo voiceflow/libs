@@ -1,14 +1,16 @@
 /* eslint-disable dot-notation */
 
+import { describe, expect, it, vi } from 'vitest';
+
 import Analytics from './analytics';
 
 const createClient = (encrypted = false) => {
   const fetch = {
-    post: jest.fn().mockResolvedValue(undefined),
+    post: vi.fn().mockResolvedValue(undefined),
   };
 
   const encryption = {
-    encryptJSON: jest.fn().mockReturnValue('message'),
+    encryptJSON: vi.fn().mockReturnValue('message'),
   };
 
   const analytics = new Analytics(fetch as any, encrypted ? { encryption: encryption as any } : undefined);
@@ -126,7 +128,13 @@ describe('Analytics', () => {
 
     expect(fetch.post).toHaveBeenCalledWith('analytics/private-batch-track', [
       { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined },
-      { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
+      {
+        event: 'Event 2',
+        hashed: ['id'],
+        properties: { id: 'id', value: 10 },
+        teamhashed: undefined,
+        envIDs: undefined,
+      },
     ]);
   });
 
@@ -156,8 +164,22 @@ describe('Analytics', () => {
     await Promise.resolve();
 
     expect(fetch.post).toHaveBeenCalledWith('analytics/batch-track', [
-      { event: 'Event', anonymousID: undefined, envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined },
-      { event: 'Event 2', anonymousID: '1', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
+      {
+        event: 'Event',
+        anonymousID: undefined,
+        envIDs: undefined,
+        hashed: undefined,
+        properties: {},
+        teamhashed: undefined,
+      },
+      {
+        event: 'Event 2',
+        anonymousID: '1',
+        hashed: ['id'],
+        properties: { id: 'id', value: 10 },
+        teamhashed: undefined,
+        envIDs: undefined,
+      },
     ]);
   });
 
@@ -188,7 +210,13 @@ describe('Analytics', () => {
 
     expect(fetch.post).toHaveBeenCalledWith('analytics/private-batch-track', [
       { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined },
-      { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
+      {
+        event: 'Event 2',
+        hashed: ['id'],
+        properties: { id: 'id', value: 10 },
+        teamhashed: undefined,
+        envIDs: undefined,
+      },
     ]);
   });
 
@@ -207,7 +235,13 @@ describe('Analytics', () => {
 
     expect(analytics['privateQueue']['queue']).toEqual([
       { event: 'Event', envIDs: undefined, hashed: undefined, properties: {}, teamhashed: undefined },
-      { event: 'Event 2', hashed: ['id'], properties: { id: 'id', value: 10 }, teamhashed: undefined, envIDs: undefined },
+      {
+        event: 'Event 2',
+        hashed: ['id'],
+        properties: { id: 'id', value: 10 },
+        teamhashed: undefined,
+        envIDs: undefined,
+      },
     ]);
   });
 

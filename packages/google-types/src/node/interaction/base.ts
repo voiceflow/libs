@@ -1,6 +1,6 @@
-import { BaseNode, BaseRequest } from '@voiceflow/base-types';
+import type { BaseNode, BaseRequest } from '@voiceflow/base-types';
 
-import { ButtonNode } from '../buttons';
+import type { ButtonNode } from '../buttons';
 
 export interface NodeInteraction extends BaseNode.Utils.SlotMappings {
   intent: string;

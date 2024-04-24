@@ -1,5 +1,5 @@
-import Fetch from '@api-sdk/fetch';
-import { BaseModels } from '@voiceflow/base-types';
+import type Fetch from '@api-sdk/fetch';
+import type { BaseModels } from '@voiceflow/base-types';
 
 import CrudNestedResource from '../crudNested';
 
@@ -53,8 +53,16 @@ class DomainResource extends CrudNestedResource<string, BaseModels.Version.Domai
     return data;
   }
 
-  public async topicReorder(versionID: string, id: string, topicID: string, body: { toIndex: number }): Promise<string[]> {
-    const { data } = await this.fetch.patch<string[]>(`${this._getCRUDEndpoint(versionID, id)}/topics/${topicID}/reorder`, body);
+  public async topicReorder(
+    versionID: string,
+    id: string,
+    topicID: string,
+    body: { toIndex: number }
+  ): Promise<string[]> {
+    const { data } = await this.fetch.patch<string[]>(
+      `${this._getCRUDEndpoint(versionID, id)}/topics/${topicID}/reorder`,
+      body
+    );
 
     return data;
   }

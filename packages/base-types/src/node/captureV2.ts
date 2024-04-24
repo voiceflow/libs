@@ -1,8 +1,8 @@
-import { Intent } from '@base-types/models';
-import { Nullable } from '@voiceflow/common';
+import type { Intent } from '@base-types/models';
+import type { Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import {
+import type { NodeType } from './constants';
+import type {
   BaseNode,
   BaseNoMatchNodeData,
   BaseNoMatchStepData,

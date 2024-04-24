@@ -1,4 +1,4 @@
-import { FetchOptions } from './fetch.interface';
+import type { FetchOptions } from './fetch.interface';
 
 export type RequestHeaders = Record<string, string> | Map<string, string>;
 
@@ -10,4 +10,5 @@ export interface ExtraOptions {
   query?: RequestQuery | undefined;
 }
 
-export type RequestOptions<Opts extends FetchOptions<any, any>> = Omit<Partial<Opts>, keyof ExtraOptions> & ExtraOptions;
+export type RequestOptions<Opts extends FetchOptions<any, any>> = Omit<Partial<Opts>, keyof ExtraOptions> &
+  ExtraOptions;

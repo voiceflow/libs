@@ -1,5 +1,5 @@
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, NodeRequiredNextID } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, NodeRequiredNextID } from './utils';
 
 export interface StepData {
   directive: string;

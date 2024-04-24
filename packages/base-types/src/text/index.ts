@@ -1,4 +1,4 @@
-import { BaseElement, BaseText } from 'slate';
+import type { BaseElement, BaseText } from 'slate';
 
 export interface Color {
   r: number;

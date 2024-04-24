@@ -1,27 +1,7 @@
 {
   "name": "@voiceflow/nestjs-rate-limit",
-  "description": "HTTP request rate-limiting for NestJS.",
   "version": "1.2.4",
-  "author": "Voiceflow",
-  "bugs": {
-    "url": "https://github.com/voiceflow/libs/issues"
-  },
-  "dependencies": {
-    "rate-limiter-flexible": "2.3.6"
-  },
-  "devDependencies": {
-    "@nestjs/common": "^8.4.1",
-    "@types/express": "^4.17.13",
-    "@voiceflow-meta/typescript-config": "workspace:*",
-    "@voiceflow/nestjs-redis": "workspace:*"
-  },
-  "engines": {
-    "node": ">=16"
-  },
-  "files": [
-    "build"
-  ],
-  "homepage": "https://github.com/voiceflow/libs#readme",
+  "description": "HTTP request rate-limiting for NestJS.",
   "keywords": [
     "http",
     "limit",
@@ -29,35 +9,54 @@
     "rate",
     "rate-limit"
   ],
-  "license": "ISC",
-  "main": "build/index.js",
-  "peerDependencies": {
-    "@nestjs/common": "^8.4.1",
-    "@voiceflow/nestjs-redis": "workspace:*",
-    "cookie-parser": "^1.4.6",
-    "express": "^4.18.1"
-  },
-  "publishConfig": {
-    "access": "public",
-    "types": "build/index.d.ts"
+  "homepage": "https://github.com/voiceflow/libs#readme",
+  "bugs": {
+    "url": "https://github.com/voiceflow/libs/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voiceflow/libs.git"
   },
-  "scripts": {
-    "build": "yarn g:tsc -p tsconfig.build.json && yarn g:tsc-alias -p tsconfig.build.json",
-    "clean": "yarn g:rimraf build *.tsbuildinfo",
-    "commit": "cz",
-    "lint": "yarn g:eslint '**/*.{js,ts}'",
-    "lint:fix": "yarn lint --fix",
-    "lint:quiet": "yarn lint --quiet",
-    "lint:report": "yarn g:eslint-output --quiet '**/*.{js,ts}'",
-    "prebuild": "yarn clean",
-    "test:dependencies": "yarn g:depcheck"
-  },
+  "license": "ISC",
+  "author": "Voiceflow",
+  "main": "build/index.js",
   "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "yarn g:turbo run build:cmd --filter=@voiceflow/nestjs-rate-limit...",
+    "build:cmd": "yarn g:build:pkg",
+    "clean": "yarn g:rimraf build",
+    "lint": "yarn g:run-p -c lint:eslint lint:prettier",
+    "lint:eslint": "yarn g:eslint",
+    "lint:fix": "yarn g:run-p -c \"lint:eslint --fix\" \"lint:prettier --write\"",
+    "lint:prettier": "yarn g:prettier --check",
+    "test": "yarn g:run-p -c test:dependencies test:types",
+    "test:dependencies": "yarn g:depcruise",
+    "test:types": "yarn g:tsc --noEmit"
+  },
+  "dependencies": {
+    "rate-limiter-flexible": "2.3.6"
+  },
+  "devDependencies": {
+    "@nestjs/common": "8.4.7",
+    "@types/express": "4.17.13",
+    "@voiceflow/nestjs-redis": "workspace:*"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^8",
+    "@voiceflow/nestjs-redis": "workspace:^",
+    "cookie-parser": "^1",
+    "express": "^4"
+  },
+  "engines": {
+    "node": ">=16"
+  },
   "volta": {
     "extends": "../../package.json"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

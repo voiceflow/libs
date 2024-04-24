@@ -1,11 +1,12 @@
-import { CanActivate, ExecutionContext, HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
+import type { CanActivate, ExecutionContext } from '@nestjs/common';
+import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 import assert from 'assert/strict';
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 
 import { Providers } from './constants';
-import { RateLimitOptions } from './interfaces/rate-limit-options.interface';
-import { TokenExtractor } from './interfaces/token-extractor.interface';
-import { RateLimitService } from './rate-limit.service';
+import type { RateLimitOptions } from './interfaces/rate-limit-options.interface';
+import type { TokenExtractor } from './interfaces/token-extractor.interface';
+import type { RateLimitService } from './rate-limit.service';
 
 @Injectable()
 export class RateLimitGuard implements CanActivate {
@@ -17,7 +18,10 @@ export class RateLimitGuard implements CanActivate {
 
   private readonly tokenExtractor: TokenExtractor;
 
-  constructor(private readonly service: RateLimitService, @Inject(Providers.RATE_LIMIT_OPTIONS) options: RateLimitOptions) {
+  constructor(
+    private readonly service: RateLimitService,
+    @Inject(Providers.RATE_LIMIT_OPTIONS) options: RateLimitOptions
+  ) {
     this.tokenExtractor = options.tokenExtractor || RateLimitGuard.extractTokenFromHeadersOrCookies;
   }
 

@@ -1,7 +1,7 @@
-import { EmptyObject, Nullable } from '@voiceflow/common';
+import type { EmptyObject, Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, NodeNextID } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, NodeNextID } from './utils';
 
 export interface StepData {
   nodeID: Nullable<string>;

@@ -1,5 +1,5 @@
-import { VoiceNode } from '@voiceflow/voice-types';
-import { Voice } from '@voiceflow-types/constants';
+import type { VoiceNode } from '@voiceflow/voice-types';
+import type { Voice } from '@voiceflow-types/constants';
 
 export interface VoiceStepData extends VoiceNode.Buttons.StepData<Voice> {}
 

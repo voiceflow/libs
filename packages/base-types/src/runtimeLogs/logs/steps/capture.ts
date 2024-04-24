@@ -1,6 +1,9 @@
-import { ChangedVariables, PathReference, VariableValue } from '@base-types/runtimeLogs/utils';
+import type { ChangedVariables, PathReference, VariableValue } from '@base-types/runtimeLogs/utils';
 
-import { BaseStepLog } from '../base';
-import { StepLogKind } from '../kinds';
+import type { BaseStepLog } from '../base';
+import type { StepLogKind } from '../kinds';
 
-export type CaptureStepLog = BaseStepLog<StepLogKind.CAPTURE, PathReference & ChangedVariables<VariableValue | null, string, VariableValue>>;
+export type CaptureStepLog = BaseStepLog<
+  StepLogKind.CAPTURE,
+  PathReference & ChangedVariables<VariableValue | null, string, VariableValue>
+>;

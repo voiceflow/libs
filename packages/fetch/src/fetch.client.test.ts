@@ -1,24 +1,21 @@
+import { URL as NodeURL } from 'node:url';
+
 import { ClientException } from '@voiceflow/exception';
 import fetchMock from 'fetch-mock';
-import jestFetchMock from 'jest-fetch-mock';
-import { URL as NodeURL } from 'node:url';
 import * as undici from 'undici';
+import type { Mock } from 'vitest';
+import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
+import createFetchMock from 'vitest-fetch-mock';
 
 import { FetchClient } from './fetch.client';
 
-type NodeFetch = typeof undici['fetch'];
+type NodeFetch = (typeof undici)['fetch'];
 
 const TARGET_URL = 'http://example.com/resource/123';
 const JSON_HEADERS = { 'content-type': 'application/json' };
 
-jestFetchMock.enableMocks();
-
 describe('Fetch Client', () => {
   let sandbox: fetchMock.FetchMockSandbox;
-
-  beforeAll(() => {
-    jestFetchMock.mockImplementation(async () => null as any);
-  });
 
   beforeEach(() => {
     sandbox = fetchMock.sandbox();
@@ -26,6 +23,12 @@ describe('Fetch Client', () => {
 
   describe('#raw()', () => {
     const url = 'http://example.com';
+    const fetch = createFetchMock(vi);
+    fetch.enableMocks();
+
+    beforeAll(() => {
+      fetch.mockImplementation(async () => null as any);
+    });
 
     describe('window.fetch', () => {
       let fetchClient: FetchClient;
@@ -40,7 +43,7 @@ describe('Fetch Client', () => {
 
         await fetchClient.raw(request, options);
 
-        expect(jestFetchMock).toHaveBeenCalledWith(request, options);
+        expect(fetch).toHaveBeenCalledWith(request, options);
       });
 
       it('should pass through URL instance to window.fetch', async () => {
@@ -48,22 +51,22 @@ describe('Fetch Client', () => {
 
         await fetchClient.raw(request);
 
-        expect(jestFetchMock).toHaveBeenCalledWith(request);
+        expect(fetch).toHaveBeenCalledWith(request);
       });
 
       it('should pass through string to window.fetch', async () => {
         await fetchClient.raw(url);
 
-        expect(jestFetchMock).toHaveBeenCalledWith(url);
+        expect(fetch).toHaveBeenCalledWith(url);
       });
     });
 
     describe('undici.fetch', () => {
-      let fetchSpy: jest.Mock;
+      let fetchSpy: Mock;
       let fetchClient: FetchClient<undici.RequestInit, NodeURL | undici.Request, undici.Response>;
 
       beforeEach(() => {
-        fetchSpy = jest.fn();
+        fetchSpy = vi.fn();
         fetchClient = new FetchClient(fetchSpy as NodeFetch);
       });
 
@@ -191,7 +194,7 @@ describe('Fetch Client', () => {
 
     it('should not prefix request using URL instance', async () => {
       const url = new NodeURL(TARGET_URL);
-      const fetchSpy = jest.fn().mockResolvedValue(new undici.Response());
+      const fetchSpy = vi.fn().mockResolvedValue(new undici.Response());
       const fetchClient = new FetchClient(fetchSpy, { baseURL: 'http://foo.com/' });
 
       await fetchClient.get(url);
@@ -272,7 +275,7 @@ describe('Fetch Client', () => {
       try {
         await fetch.get(TARGET_URL);
 
-        fail('expected to throw ClientException');
+        expect.fail('expected to throw ClientException');
       } catch (err) {
         if (ClientException.instanceOf(err)) {
           expect(err.statusCode).toEqual(status);
@@ -281,7 +284,7 @@ describe('Fetch Client', () => {
           expect(err.cause).toEqual(cause);
           expect(err.details).toEqual(details);
         } else {
-          fail('should be an instance of ClientException');
+          expect.fail('should be an instance of ClientException');
         }
       }
 

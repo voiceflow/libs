@@ -1,12 +1,15 @@
 import { GoogleProject } from '@voiceflow/google-types';
 
-import { BaseMemberPlatformData, defaultBaseMemberPlatformData } from '../base';
+import type { BaseMemberPlatformData } from '../base';
+import { defaultBaseMemberPlatformData } from '../base';
 
 export interface SharedChatMemberPlatformData extends GoogleProject.SharedChatMemberPlatformData {}
 
 export interface ChatMemberPlatformData extends SharedChatMemberPlatformData, BaseMemberPlatformData {}
 
-export const defaultSharedChatMemberPlatformData = (data: Partial<SharedChatMemberPlatformData> = {}): SharedChatMemberPlatformData => ({
+export const defaultSharedChatMemberPlatformData = (
+  data: Partial<SharedChatMemberPlatformData> = {}
+): SharedChatMemberPlatformData => ({
   ...GoogleProject.defaultSharedBaseMemberPlatformData(data),
 });
 

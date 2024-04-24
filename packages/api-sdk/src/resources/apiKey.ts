@@ -1,5 +1,5 @@
 import type Fetch from '@api-sdk/fetch';
-import { BaseModels } from '@voiceflow/base-types';
+import type { BaseModels } from '@voiceflow/base-types';
 
 import CrudResource from './crud';
 
@@ -21,7 +21,10 @@ class APIKeyResource extends CrudResource<BaseModels.ApiKey.Model, ModelIDKey, A
     return super._getByID<BaseModels.ApiKey.Model>(id);
   }
 
-  public async create(workspaceID: string, body: Partial<BaseModels.ApiKey.Model>): Promise<BaseModels.ApiKey.Model & { key: string }> {
+  public async create(
+    workspaceID: string,
+    body: Partial<BaseModels.ApiKey.Model>
+  ): Promise<BaseModels.ApiKey.Model & { key: string }> {
     return super._post({ ...body, workspaceID } as any);
   }
 

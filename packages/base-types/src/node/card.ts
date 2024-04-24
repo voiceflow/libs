@@ -1,5 +1,5 @@
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, NodeNextID } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, NodeNextID } from './utils';
 
 export enum CardType {
   SIMPLE = 'Simple',

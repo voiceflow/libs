@@ -1,6 +1,6 @@
-import { AnyRecord } from '@voiceflow/common';
+import type { AnyRecord } from '@voiceflow/common';
 
-import { AnyBaseStepPorts, BasePortList, NextStepPorts } from './port';
+import type { AnyBaseStepPorts, BasePortList, NextStepPorts } from './port';
 
 /**
  * @deprecated use BaseNode instead

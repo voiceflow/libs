@@ -18,7 +18,13 @@ These exceptions are meant to be caught and transformed by express middleware or
 Named exceptions exist for all standard HTTP 4xx and 5xx error codes.
 
 ```ts
-import { ErrorCode, BadRequestException, NotFoundException, InternalServerErrorException, BadGatewayException } from '@voiceflow/exception';
+import {
+  ErrorCode,
+  BadRequestException,
+  NotFoundException,
+  InternalServerErrorException,
+  BadGatewayException,
+} from '@voiceflow/exception';
 
 // default error message
 throw new BadRequestException();
@@ -31,7 +37,7 @@ throw new BadGatewayException({ message: 'request timed out', errorCode: ErrorCo
 
 try {
   // do something
-  } catch (err) {
+} catch (err) {
   // wrap internal error
   throw new InternalServerErrorException({ message: 'implementation error', cause: err });
 }

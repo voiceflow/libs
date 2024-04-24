@@ -1,6 +1,6 @@
-import { BaseNode, Nullable } from '@voiceflow/base-types';
+import type { BaseNode, Nullable } from '@voiceflow/base-types';
 
-import { NodeType } from './constants';
+import type { NodeType } from './constants';
 
 export interface Mapping {
   var: Nullable<string>;

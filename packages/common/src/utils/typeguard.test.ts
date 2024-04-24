@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { createTypedTypeguardCreator, createTypeguardCreator } from './typeguard';
 
 describe('Utils | typeguard', () => {
@@ -5,7 +7,7 @@ describe('Utils | typeguard', () => {
     it('casts the guarded argument', () => {
       const createTypeguard = createTypeguardCreator<string>();
       const input: unknown = 'foo';
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
       const assertTyped = (_arg: 'foo') => undefined;
 
       const typeguard = createTypeguard('foo');
@@ -44,7 +46,7 @@ describe('Utils | typeguard', () => {
     it('casts the guarded argument', () => {
       const createTypeguard = createTypedTypeguardCreator<TypedValue>();
       const input = { type: 'foo' as const, id: 123 };
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
       const assertTyped = (_arg: { type: 'foo' }) => undefined;
 
       const typeguard = createTypeguard('foo');

@@ -1,6 +1,6 @@
-import { BaseNode, Nullable } from '@voiceflow/base-types';
+import type { BaseNode, Nullable } from '@voiceflow/base-types';
 
-import { NodeNoMatch, NodeNoReply, StepNoMatch, StepNoReply } from './utils';
+import type { NodeNoMatch, NodeNoReply, StepNoMatch, StepNoReply } from './utils';
 
 export interface StepData<Voice> extends BaseNode.CardV2.StepData {
   description: string;

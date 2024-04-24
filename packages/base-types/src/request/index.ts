@@ -1,5 +1,5 @@
 import type { Chip } from '../button';
-import { ActionPayload } from './action';
+import type { ActionPayload } from './action';
 
 export * as Action from './action';
 
@@ -110,10 +110,12 @@ export const isActionRequest = (request: BaseRequest): request is ActionRequest 
 
 export const isLaunchRequest = (request: BaseRequest): request is LaunchRequest => request.type === RequestType.LAUNCH;
 
-export const isNoReplyRequest = (request: BaseRequest): request is NoReplyRequest => request.type === RequestType.NO_REPLY;
+export const isNoReplyRequest = (request: BaseRequest): request is NoReplyRequest =>
+  request.type === RequestType.NO_REPLY;
 
 export const isIntentRequest = (request: BaseRequest): request is IntentRequest => request.type === RequestType.INTENT;
 
 const ALL_REQUEST_TYPES = Object.values(RequestType) as string[];
 
-export const isGeneralRequest = (request: BaseRequest): request is GeneralRequest => !ALL_REQUEST_TYPES.includes(request.type);
+export const isGeneralRequest = (request: BaseRequest): request is GeneralRequest =>
+  !ALL_REQUEST_TYPES.includes(request.type);

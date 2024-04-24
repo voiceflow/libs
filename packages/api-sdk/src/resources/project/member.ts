@@ -1,8 +1,10 @@
-import Fetch, { PathVariables } from '@api-sdk/fetch';
-import { BaseModels } from '@voiceflow/base-types';
-import { AnyRecord } from '@voiceflow/common';
+import type { PathVariables } from '@api-sdk/fetch';
+import type Fetch from '@api-sdk/fetch';
+import type { BaseModels } from '@voiceflow/base-types';
+import type { AnyRecord } from '@voiceflow/common';
 
-import BaseResource, { Fields } from '../base';
+import type { Fields } from '../base';
+import BaseResource from '../base';
 import { ENDPOINT } from './constants';
 
 export const modelIDKey = 'creatorID';
@@ -23,11 +25,16 @@ class MemberResource extends BaseResource<MemberResource> {
 
   public async list<P extends Partial<BaseModels.Project.Member>>(projectID: string, fields: Fields): Promise<P[]>;
 
-  public async list<P extends BaseModels.Project.Member<any> = BaseModels.Project.Member>(projectID: string): Promise<P[]>;
+  public async list<P extends BaseModels.Project.Member<any> = BaseModels.Project.Member>(
+    projectID: string
+  ): Promise<P[]>;
 
   public async list<P extends AnyRecord>(projectID: string): Promise<BaseModels.Project.Member<P>[]>;
 
-  public async list(projectID: string, fields?: Fields): Promise<BaseModels.Project.Member<any>[] | Partial<BaseModels.Project.Member<any>>[]> {
+  public async list(
+    projectID: string,
+    fields?: Fields
+  ): Promise<BaseModels.Project.Member<any>[] | Partial<BaseModels.Project.Member<any>>[]> {
     const { data } = await this.fetch.get<BaseModels.Project.Member<any>[] | Partial<BaseModels.Project.Member<any>>[]>(
       `${this._getCRUDEndpoint(projectID)}${this._getFieldsQuery(fields)}`
     );
@@ -37,11 +44,17 @@ class MemberResource extends BaseResource<MemberResource> {
 
   public async get<P extends Partial<BaseModels.Project.Member>>(projectID: string, fields: Fields): Promise<P>;
 
-  public async get<P extends BaseModels.Project.Member<any> = BaseModels.Project.Member>(projectID: string, fields: Fields): Promise<P>;
+  public async get<P extends BaseModels.Project.Member<any> = BaseModels.Project.Member>(
+    projectID: string,
+    fields: Fields
+  ): Promise<P>;
 
   public async get<P extends AnyRecord>(projectID: string): Promise<BaseModels.Project.Member<P>>;
 
-  public async get(projectID: string, fields?: Fields): Promise<BaseModels.Project.Member<any> | Partial<BaseModels.Project.Member<any>>> {
+  public async get(
+    projectID: string,
+    fields?: Fields
+  ): Promise<BaseModels.Project.Member<any> | Partial<BaseModels.Project.Member<any>>> {
     const { data } = await this.fetch.get<BaseModels.Project.Member<any> | Partial<BaseModels.Project.Member<any>>>(
       `${this.endpoint}/${projectID}/member${this._getFieldsQuery(fields)}`
     );
@@ -59,7 +72,10 @@ class MemberResource extends BaseResource<MemberResource> {
     body: P
   ): Promise<P & Pick<BaseModels.Project.Member<any>, ModelIDKey>>;
 
-  public async create(projectID: string, body: Omit<BaseModels.Project.Member<any>, ModelIDKey>): Promise<BaseModels.Project.Member<any>> {
+  public async create(
+    projectID: string,
+    body: Omit<BaseModels.Project.Member<any>, ModelIDKey>
+  ): Promise<BaseModels.Project.Member<any>> {
     const { data } = await this.fetch.post<BaseModels.Project.Member<any>>(this._getCRUDEndpoint(projectID), body);
 
     return data;
@@ -75,7 +91,10 @@ class MemberResource extends BaseResource<MemberResource> {
     body: P
   ): Promise<P & Pick<BaseModels.Project.Member<any>, ModelIDKey>>;
 
-  public async update(projectID: string, body: Omit<BaseModels.Project.Member<any>, ModelIDKey>): Promise<BaseModels.Project.Member<any>> {
+  public async update(
+    projectID: string,
+    body: Omit<BaseModels.Project.Member<any>, ModelIDKey>
+  ): Promise<BaseModels.Project.Member<any>> {
     const { data } = await this.fetch.put<BaseModels.Project.Member<any>>(this._getCRUDEndpoint(projectID), body);
 
     return data;
@@ -87,20 +106,45 @@ class MemberResource extends BaseResource<MemberResource> {
     return data;
   }
 
-  public async platformDataAdd<P>(projectID: string, path: string, value: P, pathVariables?: PathVariables): Promise<P> {
-    const { data } = await this.fetch.granularPatch<P>(`${this._getCRUDEndpoint(projectID)}/platform-data/add`, path, value, pathVariables);
+  public async platformDataAdd<P>(
+    projectID: string,
+    path: string,
+    value: P,
+    pathVariables?: PathVariables
+  ): Promise<P> {
+    const { data } = await this.fetch.granularPatch<P>(
+      `${this._getCRUDEndpoint(projectID)}/platform-data/add`,
+      path,
+      value,
+      pathVariables
+    );
 
     return data;
   }
 
-  public async platformDataUpdate<P>(projectID: string, path: string, value: P, pathVariables?: PathVariables): Promise<P> {
-    const { data } = await this.fetch.granularPatch<P>(`${this._getCRUDEndpoint(projectID)}/platform-data/update`, path, value, pathVariables);
+  public async platformDataUpdate<P>(
+    projectID: string,
+    path: string,
+    value: P,
+    pathVariables?: PathVariables
+  ): Promise<P> {
+    const { data } = await this.fetch.granularPatch<P>(
+      `${this._getCRUDEndpoint(projectID)}/platform-data/update`,
+      path,
+      value,
+      pathVariables
+    );
 
     return data;
   }
 
   public async platformDataRemove<P>(projectID: string, path: string, pathVariables?: PathVariables): Promise<P> {
-    const { data } = await this.fetch.granularPatch<P>(`${this._getCRUDEndpoint(projectID)}/platform-data/remove`, path, undefined, pathVariables);
+    const { data } = await this.fetch.granularPatch<P>(
+      `${this._getCRUDEndpoint(projectID)}/platform-data/remove`,
+      path,
+      undefined,
+      pathVariables
+    );
 
     return data;
   }

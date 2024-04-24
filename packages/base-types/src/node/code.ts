@@ -1,5 +1,5 @@
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, NodeNextID, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, NodeNextID, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
 
 export interface CodePath {
   key: string;

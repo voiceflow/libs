@@ -66,7 +66,7 @@ export const parser = (exp: string) => {
   sanitized = sanitized.replace(RANDOM_INT_REGEX, (_match, _g1, g2, _g3, g4) => {
     const { min, max } = getMinMax(g2, g4);
 
-    return min || max ? `Math.floor(Math.random() * (${max} - ${min} + 1)) + ${min}` : `Math.floor(Math.random())`;
+    return min || max ? `Math.floor(Math.random() * (${max} - ${min} + 1)) + ${min}` : 'Math.floor(Math.random())';
   });
   sanitized = sanitized.replace(EVAL_REGEX, 'eval($2)');
 

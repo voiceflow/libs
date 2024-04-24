@@ -1,1 +1,3 @@
-export const getKeys = <T>(obj: T): (keyof T)[] => Object.keys(obj) as (keyof T)[];
+import type { AnyRecord } from '@common/types';
+
+export const getKeys = <T extends AnyRecord>(obj: T): (keyof T)[] => Object.keys(obj) as (keyof T)[];

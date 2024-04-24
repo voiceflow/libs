@@ -1,7 +1,7 @@
-import { Intent } from '@chat-types/models';
-import { BaseNode, Nullable } from '@voiceflow/base-types';
+import type { Intent } from '@chat-types/models';
+import type { BaseNode, Nullable } from '@voiceflow/base-types';
 
-import { NodeNoMatch, NodeNoReply, StepNoMatch, StepNoReply } from './utils';
+import type { NodeNoMatch, NodeNoReply, StepNoMatch, StepNoReply } from './utils';
 
 export interface IntentCapture extends BaseNode.CaptureV2.IntentCapture {
   intent: Intent;

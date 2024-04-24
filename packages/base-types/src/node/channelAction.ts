@@ -1,7 +1,7 @@
-import { AnyRecord, Nullable } from '@voiceflow/common';
+import type { AnyRecord, Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseEvent, BaseNode, BasePort, BasePortList, BaseStep, BaseStepPorts, NodeID } from './utils';
+import type { NodeType } from './constants';
+import type { BaseEvent, BaseNode, BasePort, BasePortList, BaseStep, BaseStepPorts, NodeID } from './utils';
 
 interface StepData<Payload = AnyRecord> {
   stop?: boolean;
@@ -15,7 +15,8 @@ export interface StepPort<Event = BaseEvent> extends BasePort {
 
 interface StepPorts<Event> extends BaseStepPorts<Record<string, StepPort<Event>>, StepPort<Event>[]> {}
 
-export interface Step<Payload = AnyRecord, Event = BaseEvent> extends BaseStep<StepData<Payload>, StepPorts<Event>, BasePortList<StepPort<Event>>> {
+export interface Step<Payload = AnyRecord, Event = BaseEvent>
+  extends BaseStep<StepData<Payload>, StepPorts<Event>, BasePortList<StepPort<Event>>> {
   type: NodeType.CHANNEL_ACTION;
 }
 

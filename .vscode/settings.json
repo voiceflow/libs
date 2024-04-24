@@ -1,25 +1,39 @@
 {
-  "editor.tabSize": 2,
-  "editor.detectIndentation": false,
-  "eslint.format.enable": true,
-  "eslint.lintTask.enable": true,
-  "eslint.packageManager": "yarn",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[javascript]": {
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.format.enable": true,
+  "eslint.experimental.useFlatConfig": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/sonar": true,
+    "**/.husky": true,
+    "**/.yarn": true,
+    "**/.turbo": true
+  }
 }

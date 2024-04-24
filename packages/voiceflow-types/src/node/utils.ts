@@ -1,4 +1,4 @@
-import { BaseNode, BaseText } from '@voiceflow/base-types';
+import type { BaseNode, BaseText } from '@voiceflow/base-types';
 
 export type VoiceflowPrompt = BaseText.SlateTextValue | string;
 

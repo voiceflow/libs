@@ -1,5 +1,7 @@
-import { CallHandler, ExecutionContext, InternalServerErrorException, NestInterceptor } from '@nestjs/common';
-import { Observable, throwError, TimeoutError } from 'rxjs';
+import type { CallHandler, ExecutionContext, NestInterceptor } from '@nestjs/common';
+import { InternalServerErrorException } from '@nestjs/common';
+import type { Observable } from 'rxjs';
+import { throwError, TimeoutError } from 'rxjs';
 import { catchError, timeout } from 'rxjs/operators';
 
 /**

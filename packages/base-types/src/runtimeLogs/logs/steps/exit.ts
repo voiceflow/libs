@@ -1,9 +1,9 @@
-import { PathReference } from '@base-types/runtimeLogs/utils';
-import { EmptyObject } from '@voiceflow/common';
+import type { PathReference } from '@base-types/runtimeLogs/utils';
+import type { EmptyObject } from '@voiceflow/common';
 
-import { BaseStepLog } from '../base';
-import { StepLogKind } from '../kinds';
-import { LogLevel } from '../levels';
+import type { BaseStepLog } from '../base';
+import type { StepLogKind } from '../kinds';
+import type { LogLevel } from '../levels';
 
 export type ExitStepLog =
   // Non-verbose mode doesn't include the state

@@ -1,9 +1,9 @@
-import { ActionRequestButton, GeneralRequestButton } from '@base-types/request';
-import { SlateTextValue } from '@base-types/text';
-import { Nullable } from '@voiceflow/common';
+import type { ActionRequestButton, GeneralRequestButton } from '@base-types/request';
+import type { SlateTextValue } from '@base-types/text';
+import type { Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import {
+import type { NodeType } from './constants';
+import type {
   BaseNode,
   BaseNoMatchNodeData,
   BaseNoMatchStepData,

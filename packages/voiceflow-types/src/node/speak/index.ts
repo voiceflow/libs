@@ -1,4 +1,4 @@
-import { VoiceNode, VoiceStep, VoiceStepData } from './voice';
+import type { VoiceNode, VoiceStep, VoiceStepData } from './voice';
 
 export * from './voice';
 

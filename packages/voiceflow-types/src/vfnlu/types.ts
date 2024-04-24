@@ -66,7 +66,8 @@ export const GENERAL_SLOT_TYPE_TO_VFNLU: ReadonlyMap<SlotType, BuiltInVFNLUSlotT
   [SlotType.NAME, BuiltInVFNLUSlotType.PERSON_NAME],
   [SlotType.NUMBER, BuiltInVFNLUSlotType.NUMBER],
   [SlotType.ORDINAL, BuiltInVFNLUSlotType.ORDINAL],
-  // ORDINAL_V2 doesn't exist in VoiceflowConstants.SlotType currently, might get modified in the future once ORDINAL_V2 gets better language support on LUIS
+  // ORDINAL_V2 doesn't exist in VoiceflowConstants.SlotType currently,
+  // might get modified in the future once ORDINAL_V2 gets better language support on LUIS
   // eslint-disable-next-line no-secrets/no-secrets
   // [VoiceflowConstants.SlotType.ORDINAL_V2, BuiltInLuisSlotType.ORDINAL_V2],
   [SlotType.PERCENTAGE, BuiltInVFNLUSlotType.PERCENTAGE],

@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { getTopLevelDiff } from './diff';
 
 describe('Utils | object | diff', () => {
@@ -11,7 +13,13 @@ describe('Utils | object | diff', () => {
     });
 
     it('gets diff of objects with custom compare', () => {
-      expect(getTopLevelDiff({ foo: 1, bar: 2, fuzz: 6 }, { fizz: 4, buzz: 5, fuzz: 9 }, (lhs, rhs) => typeof lhs === typeof rhs)).toEqual({
+      expect(
+        getTopLevelDiff(
+          { foo: 1, bar: 2, fuzz: 6 },
+          { fizz: 4, buzz: 5, fuzz: 9 },
+          (lhs, rhs) => typeof lhs === typeof rhs
+        )
+      ).toEqual({
         foo: 1,
         bar: 2,
       });

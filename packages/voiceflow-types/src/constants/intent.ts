@@ -88,7 +88,18 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     },
     {
       name: IntentName.STOP,
-      samples: ["s'arrêter", 'arrêter', 'arrête', 'stop', 'fin', 'cesser', 'mettre fin', 'stopper', 'mettre un terme', 'interrompre'],
+      samples: [
+        "s'arrêter",
+        'arrêter',
+        'arrête',
+        'stop',
+        'fin',
+        'cesser',
+        'mettre fin',
+        'stopper',
+        'mettre un terme',
+        'interrompre',
+      ],
     },
     {
       name: IntentName.HELP,
@@ -382,7 +393,18 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     },
     {
       name: IntentName.CANCEL,
-      samples: ['stornieren', 'aufheben', 'kündigen', 'annullieren', 'beenden', 'absagen', 'abbestellen', 'abmelden', 'auflösen', 'zurücknehmen'],
+      samples: [
+        'stornieren',
+        'aufheben',
+        'kündigen',
+        'annullieren',
+        'beenden',
+        'absagen',
+        'abbestellen',
+        'abmelden',
+        'auflösen',
+        'zurücknehmen',
+      ],
     },
     {
       name: IntentName.RESUME,
@@ -492,7 +514,20 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     },
     {
       name: IntentName.STOP,
-      samples: ['रुकें', 'रोकना', 'विराम', 'रुको', 'रुक', 'रुकना', 'रुक जाना', 'बंद', 'बंद करो', 'बंद कर दो', 'बंद करना', 'स्टॉप्'],
+      samples: [
+        'रुकें',
+        'रोकना',
+        'विराम',
+        'रुको',
+        'रुक',
+        'रुकना',
+        'रुक जाना',
+        'बंद',
+        'बंद करो',
+        'बंद कर दो',
+        'बंद करना',
+        'स्टॉप्',
+      ],
     },
     {
       name: IntentName.NEXT,
@@ -623,7 +658,7 @@ export const DEFAULT_INTENTS_MAP: Record<string, DefaultIntent[]> = {
     { name: IntentName.NO, samples: ['no', 'no', 'no', 'no', 'de cap manera', 'negatiu'] },
     {
       name: IntentName.YES,
-      samples: ['sí', 'sí', `d'acord`, `d'acord`, 'sí', 'sí', 'clar'],
+      samples: ['sí', 'sí', "d'acord", "d'acord", 'sí', 'sí', 'clar'],
     },
     {
       name: IntentName.STOP,

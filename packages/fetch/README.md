@@ -20,7 +20,9 @@ This is a universal library and can be used in the browser or in a Node.JS envir
 ```ts
 import { FetchClient } from '@voiceflow/fetch';
 
-const fetch = new FetchClient({ /* config */ });
+const fetch = new FetchClient({
+  /* config */
+});
 ```
 
 ### Node Usage
@@ -29,12 +31,14 @@ const fetch = new FetchClient({ /* config */ });
 import { FetchClient } from '@voiceflow/fetch';
 import * as undici from 'undici';
 
-const fetch = new FetchClient(undici.fetch, { /* config */ });
+const fetch = new FetchClient(undici.fetch, {
+  /* config */
+});
 ```
 
 ## Configuration
 
-- __`baseURL`__ (`string`): this will be added as a prefix to the URL of all requests
+- **`baseURL`** (`string`): this will be added as a prefix to the URL of all requests
 
 ## Features
 
@@ -54,7 +58,7 @@ This will also automatically add the request header `Content-Type: application/j
 const fetch = new FetchClient();
 
 await fetch.put('http://example.com', {
-  json: { foo: 'bar' }
+  json: { foo: 'bar' },
 });
 ```
 
@@ -66,7 +70,7 @@ You can also specify a type for the parsed result, by default the type will be `
 ```ts
 const fetch = new FetchClient();
 
-const result = await fetch.get('http://example.com').json<{ id: number, name: string }>();
+const result = await fetch.get('http://example.com').json<{ id: number; name: string }>();
 ```
 
 ### HTTP Methods
@@ -77,11 +81,11 @@ Use the appropriate method to set the HTTP method being used in the request.
 const fetch = new FetchClient();
 
 fetch.delete('/foo'); // DELETE /foo
-fetch.get('/foo');    // GET    /foo
-fetch.head('/foo');   // HEAD   /foo
-fetch.patch('/foo');  // PATCH  /foo
-fetch.post('/foo');   // POST   /foo
-fetch.put('/foo');    // PUT    /foo
+fetch.get('/foo'); // GET    /foo
+fetch.head('/foo'); // HEAD   /foo
+fetch.patch('/foo'); // PATCH  /foo
+fetch.post('/foo'); // POST   /foo
+fetch.put('/foo'); // PUT    /foo
 ```
 
 ### Base URL

@@ -75,7 +75,7 @@ workflows:
           post-steps:
             - jira/notify
 
-      {{- $testJobs := (coll.Slice "unit_tests" "lint_report" "dependency_tests")}}
+      {{- $testJobs := (coll.Slice "lint_report" "types_tests" "dependency_tests" "unit_tests")}}
       {{ range $testJob := $testJobs }}
       - vfcommon/monorepo_{{ $testJob }}:
           <<: *slack-fail-post-step
@@ -83,6 +83,9 @@ workflows:
           executor: vfcommon/node-large-executor-node-20
           name: {{ strings.KebabCase $testJob }}
           run_on_root: {{ $.values.build_all_services }}
+          {{- if eq $testJob "unit_tests" }}
+          collect_coverage: true
+          {{- end }}
           requires:
             - build
           filters:
@@ -97,6 +100,9 @@ workflows:
           <<: *slack-fail-post-step
           context: dev-test
           name: sonarcloud-scan
+          install_node_modules: true
+          requires:
+            - unit-tests
           filters:
             branches:
               ignore:

@@ -1,7 +1,7 @@
 import { VoiceProject } from '@voiceflow/voice-types';
-import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
+import type { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
-import { VoiceMemberPlatformData } from './member';
+import type { VoiceMemberPlatformData } from './member';
 
 export * from './member';
 
@@ -17,7 +17,9 @@ export interface VoiceProject extends VoiceProject.Project<VoiceMemberPlatformDa
   platformData: VoicePlatformData;
 }
 
-export const defaultSharedVoicePlatformData = (data: Partial<SharedVoicePlatformData> = {}): SharedVoicePlatformData => ({
+export const defaultSharedVoicePlatformData = (
+  data: Partial<SharedVoicePlatformData> = {}
+): SharedVoicePlatformData => ({
   ...VoiceProject.defaultPlatformData(data),
 });
 

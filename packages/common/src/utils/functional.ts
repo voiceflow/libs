@@ -1,6 +1,7 @@
-import { Nullish } from '../types';
+import type { Nullish } from '../types';
 
-export const isFunction = <T extends (...args: any[]) => any = (...args: any[]) => any>(value: unknown): value is T => typeof value === 'function';
+export const isFunction = <T extends (...args: any[]) => any = (...args: any[]) => any>(value: unknown): value is T =>
+  typeof value === 'function';
 
 export type Transform<T = any, R = T> = (value: T) => R;
 
@@ -8,10 +9,19 @@ export interface Compose {
   <R, T1>(t0: Transform<T1, R>): (value: T1) => R;
   <R, T1, T2>(t0: Transform<T1, T2>, t1: Transform<T2, R>): (value: T1) => R;
   <R, T1, T2, T3>(t0: Transform<T1, T2>, t1: Transform<T2, T3>, t2: Transform<T3, R>): (value: T1) => R;
-  <R, T1, T2, T3, T4>(t0: Transform<T1, T2>, t1: Transform<T2, T3>, t2: Transform<T3, T4>, t3: Transform<T4, R>): (value: T1) => R;
-  <R, T1, T2, T3, T4, T5>(t0: Transform<T1, T2>, t1: Transform<T2, T3>, t2: Transform<T3, T4>, t3: Transform<T4, T5>, t4: Transform<T5, R>): (
-    value: T1
-  ) => R;
+  <R, T1, T2, T3, T4>(
+    t0: Transform<T1, T2>,
+    t1: Transform<T2, T3>,
+    t2: Transform<T3, T4>,
+    t3: Transform<T4, R>
+  ): (value: T1) => R;
+  <R, T1, T2, T3, T4, T5>(
+    t0: Transform<T1, T2>,
+    t1: Transform<T2, T3>,
+    t2: Transform<T3, T4>,
+    t3: Transform<T4, T5>,
+    t4: Transform<T5, R>
+  ): (value: T1) => R;
   <R, T1, T2, T3, T4, T5, T6>(
     t0: Transform<T1, T2>,
     t1: Transform<T2, T3>,
@@ -76,7 +86,6 @@ export const chainAsync =
       await fns[0]?.(...args);
       await fns[1]?.(...args);
     } else {
-      // eslint-disable-next-line no-restricted-syntax
       for (const fn of fns) {
         // eslint-disable-next-line no-await-in-loop
         await fn?.(...args);

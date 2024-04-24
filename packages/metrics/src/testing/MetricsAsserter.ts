@@ -6,7 +6,8 @@ import { expect } from 'chai';
 import { setTimeout as sleep } from 'timers/promises';
 import types from 'util/types';
 
-import { BaseConfig, createBaseConfig } from './createBaseConfig';
+import type { BaseConfig } from './createBaseConfig';
+import { createBaseConfig } from './createBaseConfig';
 
 /**
  * An internal class used to expose the {@link AssertionHelper.assert}

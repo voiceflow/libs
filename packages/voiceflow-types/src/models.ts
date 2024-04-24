@@ -1,7 +1,7 @@
-import { Diagram } from '@voiceflow-types/diagram';
-import { Program } from '@voiceflow-types/program';
-import { Project } from '@voiceflow-types/project';
-import { Version } from '@voiceflow-types/version';
+import type { Diagram } from '@voiceflow-types/diagram';
+import type { Program } from '@voiceflow-types/program';
+import type { Project } from '@voiceflow-types/project';
+import type { Version } from '@voiceflow-types/version';
 
 export interface VF {
   project: Project;

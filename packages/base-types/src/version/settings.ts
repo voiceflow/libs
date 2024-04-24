@@ -1,8 +1,8 @@
-import { CarouselLayout } from '@base-types/node/carousel';
-import { AIModelParams } from '@base-types/utils/ai';
-import { Nullable } from '@voiceflow/common';
+import type { CarouselLayout } from '@base-types/node/carousel';
+import type { AIModelParams } from '@base-types/utils/ai';
+import type { Nullable } from '@voiceflow/common';
 
-import { Utils } from '../node';
+import type { Utils } from '../node';
 
 export enum RepeatType {
   OFF = 'OFF',

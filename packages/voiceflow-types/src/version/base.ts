@@ -1,6 +1,6 @@
-import { BaseModels } from '@voiceflow/base-types';
+import type { BaseModels } from '@voiceflow/base-types';
 import { Locale } from '@voiceflow-types/constants';
-import { AnyCommand } from '@voiceflow-types/node';
+import type { AnyCommand } from '@voiceflow-types/node';
 
 // shared only across voiceflow types
 export interface BasePrototype extends BaseModels.Version.Prototype<AnyCommand, Locale> {}

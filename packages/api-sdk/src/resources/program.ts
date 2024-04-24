@@ -1,7 +1,7 @@
 import type Fetch from '@api-sdk/fetch';
-import { BaseModels } from '@voiceflow/base-types';
+import type { BaseModels } from '@voiceflow/base-types';
 
-import { Fields } from './base';
+import type { Fields } from './base';
 import CrudResource from './crud';
 
 const ENDPOINT = 'programs';
@@ -20,7 +20,9 @@ class ProgramResource extends CrudResource<BaseModels.Program.Model, ModelIDKey,
 
   public async get<T extends Partial<BaseModels.Program.Model>>(id: string, fields: Fields): Promise<T>;
 
-  public async get<T extends BaseModels.BaseNode, C extends BaseModels.BaseCommand>(id: string): Promise<BaseModels.Program.Model<T, C>>;
+  public async get<T extends BaseModels.BaseNode, C extends BaseModels.BaseCommand>(
+    id: string
+  ): Promise<BaseModels.Program.Model<T, C>>;
 
   public async get<T extends BaseModels.Program.Model<any, any> = BaseModels.Program.Model>(id: string): Promise<T>;
 
@@ -36,12 +38,18 @@ class ProgramResource extends CrudResource<BaseModels.Program.Model, ModelIDKey,
     body: T
   ): Promise<T & Pick<BaseModels.Program.Model<any, any>, ModelIDKey>>;
 
-  public async create(body: Omit<BaseModels.Program.Model<any, any>, ModelIDKey>): Promise<BaseModels.Program.Model<any, any>> {
+  public async create(
+    body: Omit<BaseModels.Program.Model<any, any>, ModelIDKey>
+  ): Promise<BaseModels.Program.Model<any, any>> {
     return super._post(body);
   }
 
-  public async createMany(body: Omit<BaseModels.Program.Model<any, any>, ModelIDKey>[]): Promise<BaseModels.Program.Model<any, any>[]> {
-    const { data } = await this.fetch.post<BaseModels.Program.Model<any, any>[]>(`${super._getCRUDEndpoint()}/batch`, { programs: body });
+  public async createMany(
+    body: Omit<BaseModels.Program.Model<any, any>, ModelIDKey>[]
+  ): Promise<BaseModels.Program.Model<any, any>[]> {
+    const { data } = await this.fetch.post<BaseModels.Program.Model<any, any>[]>(`${super._getCRUDEndpoint()}/batch`, {
+      programs: body,
+    });
     return data;
   }
 

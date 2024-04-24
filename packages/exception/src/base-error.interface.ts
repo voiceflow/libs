@@ -1,4 +1,4 @@
-import { ErrorCode } from './error-code.enum';
+import type { ErrorCode } from './error-code.enum';
 
 export interface BaseError {
   /**

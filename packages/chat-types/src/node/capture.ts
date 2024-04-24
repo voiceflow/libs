@@ -1,6 +1,6 @@
-import { BaseButton, BaseNode, BaseRequest, Nullable } from '@voiceflow/base-types';
+import type { BaseButton, BaseNode, BaseRequest, Nullable } from '@voiceflow/base-types';
 
-import { NodeNoReply, NodeReprompt, StepNoReply, StepReprompt } from './utils';
+import type { NodeNoReply, NodeReprompt, StepNoReply, StepReprompt } from './utils';
 
 /** @deprecated */
 export interface StepData extends BaseNode.Capture.StepData, BaseButton.StepButton, StepReprompt {

@@ -1,5 +1,5 @@
-import Fetch from '@api-sdk/fetch';
-import { BaseModels } from '@voiceflow/base-types';
+import type Fetch from '@api-sdk/fetch';
+import type { BaseModels } from '@voiceflow/base-types';
 
 import CrudNestedResource from '../crudNested';
 
@@ -7,7 +7,12 @@ const ENDPOINT = 'canvasTemplate';
 
 export type ModelKey = 'id';
 
-class CanvasTemplateResource extends CrudNestedResource<string, BaseModels.Version.CanvasTemplate, ModelKey, CanvasTemplateResource> {
+class CanvasTemplateResource extends CrudNestedResource<
+  string,
+  BaseModels.Version.CanvasTemplate,
+  ModelKey,
+  CanvasTemplateResource
+> {
   constructor(fetch: Fetch, { parentEndpoint }: { parentEndpoint: string }) {
     super({
       fetch,
@@ -25,7 +30,10 @@ class CanvasTemplateResource extends CrudNestedResource<string, BaseModels.Versi
     return this._getByID<BaseModels.Version.CanvasTemplate>(versionID, id);
   }
 
-  public async create(versionID: string, body: BaseModels.Version.CanvasTemplate): Promise<BaseModels.Version.CanvasTemplate> {
+  public async create(
+    versionID: string,
+    body: BaseModels.Version.CanvasTemplate
+  ): Promise<BaseModels.Version.CanvasTemplate> {
     return this._post<BaseModels.Version.CanvasTemplate>(versionID, body);
   }
 

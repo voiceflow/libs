@@ -1,4 +1,4 @@
-import { PartialRecord } from '@voiceflow/common';
+import type { PartialRecord } from '@voiceflow/common';
 
 export enum Language {
   BN = 'bn',
@@ -214,7 +214,6 @@ export const LocaleToVoiceLanguageCode: PartialRecord<Locale, VoiceLanguageCode>
   [Locale.ZH_CN]: VoiceLanguageCode.CMN_CN,
   [Locale.DA_DK]: VoiceLanguageCode.DA_DK,
   [Locale.NL]: VoiceLanguageCode.NL_NL,
-  [Locale.EN_US]: VoiceLanguageCode.EN_US,
   [Locale.EN_AU]: VoiceLanguageCode.EN_AU,
   [Locale.EN_GB]: VoiceLanguageCode.EN_GB,
   [Locale.EN_IN]: VoiceLanguageCode.EN_IN,

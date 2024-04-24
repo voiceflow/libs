@@ -1,5 +1,5 @@
-import { Intent } from './intent';
-import { Slot } from './slot';
+import type { Intent } from './intent';
+import type { Slot } from './slot';
 
 export interface PrototypeModel {
   slots: Slot[];

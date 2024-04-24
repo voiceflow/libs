@@ -1,6 +1,6 @@
-import { NodePath } from './_v1';
-import { NodeType } from './constants';
-import { BaseNode, BaseStep, BaseStepPorts, BuiltInNoMatchPort, ExpressionData, NodeElseID } from './utils';
+import type { NodePath } from './_v1';
+import type { NodeType } from './constants';
+import type { BaseNode, BaseStep, BaseStepPorts, BuiltInNoMatchPort, ExpressionData, NodeElseID } from './utils';
 
 export enum IfNoMatchType {
   PATH = 'path',

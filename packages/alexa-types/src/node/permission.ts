@@ -1,7 +1,7 @@
-import { BaseNode } from '@voiceflow/base-types';
-import { v1 } from 'ask-smapi-model';
+import type { BaseNode } from '@voiceflow/base-types';
+import type { v1 } from 'ask-smapi-model';
 
-import { NodeType, PermissionType } from './constants';
+import type { NodeType, PermissionType } from './constants';
 
 export interface StepData {
   permissions: PermissionType[];

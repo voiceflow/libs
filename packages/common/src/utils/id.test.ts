@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { remapObjectIDs } from './id';
 
 // sample ObjectIds
@@ -26,7 +28,9 @@ describe('Utils | id', () => {
       const map = { [Sample.A]: Sample.B, [Sample.REAL]: Sample.C };
 
       expect(remapObjectIDs({ 1: Sample.A, 2: Sample.REAL }, map)).toEqual({ 1: Sample.B, 2: Sample.C });
-      expect(remapObjectIDs({ 1: { 2: { 3: Sample.A, 4: [Sample.REAL] } } }, map)).toEqual({ 1: { 2: { 3: Sample.B, 4: [Sample.C] } } });
+      expect(remapObjectIDs({ 1: { 2: { 3: Sample.A, 4: [Sample.REAL] } } }, map)).toEqual({
+        1: { 2: { 3: Sample.B, 4: [Sample.C] } },
+      });
     });
 
     it('converts multiple maps', () => {
@@ -36,7 +40,9 @@ describe('Utils | id', () => {
       ]);
 
       expect(remapObjectIDs({ 1: Sample.A, 2: Sample.REAL }, map)).toEqual({ 1: Sample.B, 2: Sample.C });
-      expect(remapObjectIDs({ 1: { 2: { 3: Sample.A, 4: [Sample.REAL] } } }, map)).toEqual({ 1: { 2: { 3: Sample.B, 4: [Sample.C] } } });
+      expect(remapObjectIDs({ 1: { 2: { 3: Sample.A, 4: [Sample.REAL] } } }, map)).toEqual({
+        1: { 2: { 3: Sample.B, 4: [Sample.C] } },
+      });
     });
 
     it('converts very nested', () => {

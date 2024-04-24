@@ -39,14 +39,28 @@ type ObjectKeys = Record<string, Array<SlotTypeValue>>;
 const EMAIL: SlotTypeValue = {
   name: SlotType.EMAIL,
   label: 'Email',
-  values: ['user@voiceflow.com', 'professor@utoronto.edu', 'person_name@gmail.com', 'username123.signature@hotmail.com', 'researcher@charity.org'],
+  values: [
+    'user@voiceflow.com',
+    'professor@utoronto.edu',
+    'person_name@gmail.com',
+    'username123.signature@hotmail.com',
+    'researcher@charity.org',
+  ],
   regex: '^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$',
 };
 
 const PHONENUMBER: SlotTypeValue = {
   name: SlotType.PHONENUMBER,
   label: 'Phone Number',
-  values: ['1 (800) 642-7676', '123-456-7890', '647 126 3928', '360 392-1293', '906-459-2349', '2018073710', '4791945491'],
+  values: [
+    '1 (800) 642-7676',
+    '123-456-7890',
+    '647 126 3928',
+    '360 392-1293',
+    '906-459-2349',
+    '2018073710',
+    '4791945491',
+  ],
 };
 
 const NUMBER = (label: string): SlotTypeValue => ({
@@ -193,7 +207,17 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.DATETIME,
       label: 'Datetime',
-      values: ['May 2nd', 'May 25th, 2025', 'Tuesday to Thursday', 'From 6pm to 7pm', '6:30 pm to 7 pm', '8am', '8:30 pm', '9 am', '10:12 am'],
+      values: [
+        'May 2nd',
+        'May 25th, 2025',
+        'Tuesday to Thursday',
+        'From 6pm to 7pm',
+        '6:30 pm to 7 pm',
+        '8am',
+        '8:30 pm',
+        '9 am',
+        '10:12 am',
+      ],
     },
     {
       name: SlotType.DIMENSION,
@@ -271,7 +295,18 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.CURRENCY,
       label: 'Monnaie',
-      values: ['un dollar', '3 dollars', '5$', '£12.09', '33 pence', 'Sept sou', '6 livres', 'douze pesos', 'trois francs', '7 dollars canadien'],
+      values: [
+        'un dollar',
+        '3 dollars',
+        '5$',
+        '£12.09',
+        '33 pence',
+        'Sept sou',
+        '6 livres',
+        'douze pesos',
+        'trois francs',
+        '7 dollars canadien',
+      ],
     },
     {
       name: SlotType.DATETIME,
@@ -368,7 +403,17 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.CURRENCY,
       label: 'Moneda',
-      values: ['5 dólares', '1 peso', '3.2 libras', 'Tres rublos', '1 peso dominicano', '4.5 dólares canadienses', '3.5€', '€9', 'tres euros'],
+      values: [
+        '5 dólares',
+        '1 peso',
+        '3.2 libras',
+        'Tres rublos',
+        '1 peso dominicano',
+        '4.5 dólares canadienses',
+        '3.5€',
+        '€9',
+        'tres euros',
+      ],
     },
     {
       name: SlotType.DATETIME,
@@ -485,7 +530,17 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.CURRENCY,
       label: 'Valuta',
-      values: ['8 euro', 'negen cent', '4 japanse yen', 'vier pesos', '11 centen', '33 pence', '5 dollar', '0.12 bitcoin', 'drieëntwintig pond'],
+      values: [
+        '8 euro',
+        'negen cent',
+        '4 japanse yen',
+        'vier pesos',
+        '11 centen',
+        '33 pence',
+        '5 dollar',
+        '0.12 bitcoin',
+        'drieëntwintig pond',
+      ],
     },
     {
       name: SlotType.DIMENSION,
@@ -544,7 +599,16 @@ export const SlotTypes: ObjectKeys = {
     {
       name: SlotType.CURRENCY,
       label: 'Valuta',
-      values: ['5 dollari', '9.10 dollari canadesi', '6 sterline', '$4.1', 'quattro pence', '24 pesos', '84 £', '£99.12'],
+      values: [
+        '5 dollari',
+        '9.10 dollari canadesi',
+        '6 sterline',
+        '$4.1',
+        'quattro pence',
+        '24 pesos',
+        '84 £',
+        '£99.12',
+      ],
     },
     {
       name: SlotType.DIMENSION,

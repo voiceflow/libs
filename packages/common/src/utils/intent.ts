@@ -1,6 +1,7 @@
 import _sample from 'lodash/sample';
 
-import { BuiltinSlot, LOWER_CASE_CUSTOM_SLOT_TYPE, SLOT_REGEXP, SPACE_REGEXP } from '../constants';
+import type { BuiltinSlot } from '../constants';
+import { LOWER_CASE_CUSTOM_SLOT_TYPE, SLOT_REGEXP, SPACE_REGEXP } from '../constants';
 import { getAllSamples } from './slot';
 
 export const formatIntentName = (name: string): string => {
@@ -34,7 +35,10 @@ export const getUtterancesWithSlotNames = ({
       })
     );
 
-export const getSlotType = (slots: BuiltinSlot<string, string>[], slot: { name: string; type: { value?: string } }): string => {
+export const getSlotType = (
+  slots: BuiltinSlot<string, string>[],
+  slot: { name: string; type: { value?: string } }
+): string => {
   let type = slot.name;
   const lowerCaseType = slot.type.value?.toLowerCase() ?? '';
 
@@ -65,7 +69,11 @@ export interface JSONUtterance {
 }
 
 // extension of the String.prototype.replace format
-const continuousReplace = (text: string, regex: RegExp, replacer: (substring: string, ...args: any[]) => string): string => {
+const continuousReplace = (
+  text: string,
+  regex: RegExp,
+  replacer: (substring: string, ...args: any[]) => string
+): string => {
   // regex without any global flags (g or i)
   const localRegex = new RegExp(regex, '');
   let temp: string | undefined;
@@ -91,7 +99,6 @@ export const utteranceEntityPermutations = ({
   limit?: number;
   replacer?: (sample: string, entityID: string) => string;
   getSamples?: (inputs: string[]) => string[];
-  // eslint-disable-next-line sonarjs/cognitive-complexity
 }): JSONUtterance[] => {
   const newUtterances: JSONUtterance[] = [];
   const entityRef: Record<string, { utterances: string[]; samples: string[] }> = {};
@@ -102,28 +109,36 @@ export const utteranceEntityPermutations = ({
     const entities: JSONEntity[] = [];
 
     // Find all occurences of {entityName} in training utterances
-    const text = continuousReplace(utterance, VF_ENTITY_REGEXP, (_match: string, entityName: string, entityID: string, offset: number) => {
-      const entity = entitiesByID[entityID];
-      if (!entity) return entityName;
+    const text = continuousReplace(
+      utterance,
+      VF_ENTITY_REGEXP,
+      (_match: string, entityName: string, entityID: string, offset: number) => {
+        const entity = entitiesByID[entityID];
+        if (!entity) return entityName;
 
-      const sample = (entityRef[entityID]?.samples.shift() || _sample(getSamples(entity?.inputs)) || entityName).trim();
-      if (!entityRef[entityID]?.samples?.length) delete entityRef[entityID];
+        const sample = (
+          entityRef[entityID]?.samples.shift() ||
+          _sample(getSamples(entity?.inputs)) ||
+          entityName
+        ).trim();
+        if (!entityRef[entityID]?.samples?.length) delete entityRef[entityID];
 
-      const replacement = replacer?.(sample, entityID) ?? sample;
+        const replacement = replacer?.(sample, entityID) ?? sample;
 
-      // This module should additionally create one full training utterance with positional entity (startPos, endPos, entityName).
-      const startPos = offset || 0;
-      const endPos = startPos + replacement.length - 1;
-      entities.push({
-        startPos,
-        endPos,
-        entity: entity.name,
-        key: entityID,
-      });
+        // This module should additionally create one full training utterance with positional entity (startPos, endPos, entityName).
+        const startPos = offset || 0;
+        const endPos = startPos + replacement.length - 1;
+        entities.push({
+          startPos,
+          endPos,
+          entity: entity.name,
+          key: entityID,
+        });
 
-      // Replace the entities with the replacement value
-      return replacement;
-    });
+        // Replace the entities with the replacement value
+        return replacement;
+      }
+    );
 
     newUtterances.push({
       text,
@@ -195,4 +210,5 @@ export const injectUtteranceSpaces = (originalUtterance: string): string => {
 };
 
 // VF.HELP -> help
-export const cleanVFIntentName = (intentName: string) => (intentName.startsWith('VF.') ? intentName.slice(3).toLowerCase() : intentName);
+export const cleanVFIntentName = (intentName: string) =>
+  intentName.startsWith('VF.') ? intentName.slice(3).toLowerCase() : intentName;

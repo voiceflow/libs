@@ -1,6 +1,6 @@
-import { BaseResponse } from './base-response.interface';
-import { ErrorCode } from './error-code.enum';
-import { ErrorPayload } from './error-payload.interface';
+import type { BaseResponse } from './base-response.interface';
+import type { ErrorCode } from './error-code.enum';
+import type { ErrorPayload } from './error-payload.interface';
 
 export class ClientException<Res extends BaseResponse = BaseResponse> extends Error implements ErrorPayload {
   public static instanceOf(err: any): err is ClientException {

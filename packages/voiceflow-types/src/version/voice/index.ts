@@ -1,9 +1,10 @@
-import { DeepPartialByKey } from '@voiceflow/base-types';
+import type { DeepPartialByKey } from '@voiceflow/base-types';
 import { VoiceVersion } from '@voiceflow/voice-types';
 import { Voice } from '@voiceflow-types/constants';
 
-import { BasePrototype } from '../base';
-import { defaultSharedVoiceSettings, defaultVoiceSettings, SharedVoiceSettings, VoiceSettings } from './settings';
+import type { BasePrototype } from '../base';
+import type { SharedVoiceSettings, VoiceSettings } from './settings';
+import { defaultSharedVoiceSettings, defaultVoiceSettings } from './settings';
 
 export * from './settings';
 
@@ -27,7 +28,10 @@ export const defaultSharedVoicePlatformData = ({
   settings: defaultSharedVoiceSettings(settings),
 });
 
-export const defaultVoicePlatformData = ({ settings, ...data }: DeepPartialByKey<VoicePlatformData, 'settings'>): VoicePlatformData => ({
+export const defaultVoicePlatformData = ({
+  settings,
+  ...data
+}: DeepPartialByKey<VoicePlatformData, 'settings'>): VoicePlatformData => ({
   ...defaultSharedVoicePlatformData(data),
   settings: defaultVoiceSettings(settings),
 });

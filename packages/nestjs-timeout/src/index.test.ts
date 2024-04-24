@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import * as pkg from '.';
 import { TimeoutInterceptor } from './timeout.interceptor';
 import { TimeoutModule } from './timeout.module';

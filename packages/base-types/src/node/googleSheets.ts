@@ -1,7 +1,7 @@
-import { Nullable } from '@voiceflow/common';
+import type { Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseStep, IntegrationType, IntegrationUser, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
+import type { NodeType } from './constants';
+import type { BaseStep, IntegrationType, IntegrationUser, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
 
 export enum GoogleSheetsActionType {
   CREATE_DATA = 'Create Data',

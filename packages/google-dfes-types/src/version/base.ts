@@ -1,9 +1,10 @@
-import { Locale } from '@google-dfes-types/constants';
-import { AnyCommand } from '@google-dfes-types/node';
-import { BaseModels, BaseVersion } from '@voiceflow/base-types';
-import { GoogleVersion } from '@voiceflow/google-types';
+import type { Locale } from '@google-dfes-types/constants';
+import type { AnyCommand } from '@google-dfes-types/node';
+import type { BaseModels, BaseVersion } from '@voiceflow/base-types';
+import type { GoogleVersion } from '@voiceflow/google-types';
 
-export interface BasePrototype extends BaseModels.Version.Prototype<AnyCommand, Locale, GoogleVersion.GaDfesSurveyContextExtension> {}
+export interface BasePrototype
+  extends BaseModels.Version.Prototype<AnyCommand, Locale, GoogleVersion.GaDfesSurveyContextExtension> {}
 
 export interface BasePublishing extends BaseVersion.Publishing {
   locales: Locale[];
@@ -11,7 +12,11 @@ export interface BasePublishing extends BaseVersion.Publishing {
   triggerPhrase?: string[];
 }
 
-export const defaultBasePublishing = ({ locales = [], agentName, triggerPhrase = [] }: Partial<BasePublishing> = {}): BasePublishing => ({
+export const defaultBasePublishing = ({
+  locales = [],
+  agentName,
+  triggerPhrase = [],
+}: Partial<BasePublishing> = {}): BasePublishing => ({
   locales,
   agentName,
   triggerPhrase,

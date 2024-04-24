@@ -1,4 +1,4 @@
-import { StepLogKind } from '../logs/kinds';
+import type { StepLogKind } from '../logs/kinds';
 
 export type Iso8601Timestamp = string;
 

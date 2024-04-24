@@ -1,9 +1,13 @@
 import type { PutPostType, SchemeType } from '@api-sdk/types';
 import type { AnyRecord } from '@voiceflow/common';
 
-import BaseResource, { BaseResourceOptions, Fields } from './base';
+import type { BaseResourceOptions, Fields } from './base';
+import BaseResource from './base';
 
-type NestedCrudResourceOptions<Client extends AnyRecord, Options extends { parentEndpoint: string }> = BaseResourceOptions<Client, Options>;
+type NestedCrudResourceOptions<
+  Client extends AnyRecord,
+  Options extends { parentEndpoint: string },
+> = BaseResourceOptions<Client, Options>;
 
 class NestedCrudResource<
   ParentID,
@@ -11,7 +15,7 @@ class NestedCrudResource<
   ModelKey extends keyof SchemeType<Scheme>,
   Client extends Record<string, any>,
   Exclude extends keyof SchemeType<Scheme> = never,
-  Options extends { parentEndpoint: string } = { parentEndpoint: string }
+  Options extends { parentEndpoint: string } = { parentEndpoint: string },
 > extends BaseResource<Client, Options> {
   private parentEndpoint: string;
 
@@ -36,9 +40,16 @@ class NestedCrudResource<
     return data;
   }
 
-  protected async _getByID<T extends Partial<SchemeType<Scheme>>>(parentID: ParentID, id: SchemeType<Scheme>[ModelKey], fields: Fields): Promise<T>;
+  protected async _getByID<T extends Partial<SchemeType<Scheme>>>(
+    parentID: ParentID,
+    id: SchemeType<Scheme>[ModelKey],
+    fields: Fields
+  ): Promise<T>;
 
-  protected async _getByID<T extends SchemeType<Scheme>>(parentID: ParentID, id: SchemeType<Scheme>[ModelKey]): Promise<T>;
+  protected async _getByID<T extends SchemeType<Scheme>>(
+    parentID: ParentID,
+    id: SchemeType<Scheme>[ModelKey]
+  ): Promise<T>;
 
   protected async _getByID(parentID: ParentID, id: SchemeType<Scheme>[ModelKey], fields?: Fields) {
     const { data } = await this.fetch.get(`${this._getCRUDEndpoint(parentID, id)}${this._getFieldsQuery(fields)}`);
@@ -46,7 +57,10 @@ class NestedCrudResource<
     return data;
   }
 
-  protected async _post<T extends SchemeType<Scheme>>(parentID: ParentID, body: PutPostType<T, ModelKey, Exclude>): Promise<T> {
+  protected async _post<T extends SchemeType<Scheme>>(
+    parentID: ParentID,
+    body: PutPostType<T, ModelKey, Exclude>
+  ): Promise<T> {
     const { data } = await this.fetch.post<T>(this._getCRUDEndpoint(parentID), body);
 
     return data;
@@ -62,7 +76,11 @@ class NestedCrudResource<
     return data;
   }
 
-  protected async _patch<T extends Partial<SchemeType<Scheme>>>(parentID: ParentID, id: SchemeType<Scheme>[ModelKey], body: T): Promise<T> {
+  protected async _patch<T extends Partial<SchemeType<Scheme>>>(
+    parentID: ParentID,
+    id: SchemeType<Scheme>[ModelKey],
+    body: T
+  ): Promise<T> {
     const { data } = await this.fetch.patch<T>(this._getCRUDEndpoint(parentID, id), body);
 
     return data;

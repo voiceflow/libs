@@ -1,4 +1,4 @@
-import { BuiltinIntent } from '@voiceflow/common';
+import type { BuiltinIntent } from '@voiceflow/common';
 
 export enum DialogflowESIntent {
   FALLBACK = 'actions.intent.FALLBACK',

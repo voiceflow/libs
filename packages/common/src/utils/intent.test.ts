@@ -1,10 +1,15 @@
+import { describe, expect, it } from 'vitest';
+
 import * as data from './__fixtures__/name.json';
 import { injectUtteranceSpaces, utteranceEntityPermutations } from './intent';
 
 describe('utteranceEntityPermutations unit tests', () => {
   it('works correctly', async () => {
     const utterances = data.intents[0].inputs.map(({ text }) => text);
-    const entitiesByID = Object.fromEntries(data.slots.map((slot) => [slot.key, slot])) as Record<string, { inputs: string[]; name: string }>;
+    const entitiesByID = Object.fromEntries(data.slots.map((slot) => [slot.key, slot])) as Record<
+      string,
+      { inputs: string[]; name: string }
+    >;
     const key = '4i3h3mmi';
 
     const luisUtterances = utteranceEntityPermutations({ utterances, entitiesByID });
@@ -78,6 +83,7 @@ describe('injectUtteranceSpaces', () => {
     '{{[slot].4i3h3mmi}} {{[slotmans].4i3h3mmi}} {{[third].third}}',
     'multiple {{[slotmans].4i3h3mmi}} slots {{[slotmans].4i3h3mmi}} words {{[slotmans].4i3h3mmi}}',
   ];
+
   it('add spaces around slots if needed', () => {
     for (let i = 0; i < testUtterances.length; ++i) {
       expect(injectUtteranceSpaces(testUtterances[i])).toBe(expectedResults[i]);

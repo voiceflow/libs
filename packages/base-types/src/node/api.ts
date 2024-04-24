@@ -1,7 +1,7 @@
-import { AnyRecord, Nullable } from '@voiceflow/common';
+import type { AnyRecord, Nullable } from '@voiceflow/common';
 
-import { NodeType } from './constants';
-import { BaseStep, IntegrationType, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
+import type { NodeType } from './constants';
+import type { BaseStep, IntegrationType, NodeSuccessFailID, SuccessFailStepPorts } from './utils';
 
 export interface APIKeyVal {
   key: string;
@@ -27,7 +27,8 @@ export enum APIMethod {
   DELETE = 'DELETE',
 }
 
-export const lowercaseAPIMethod = <T extends APIMethod>(method: T): Lowercase<T> => method.toLowerCase() as Lowercase<T>;
+export const lowercaseAPIMethod = <T extends APIMethod>(method: T): Lowercase<T> =>
+  method.toLowerCase() as Lowercase<T>;
 
 export enum APIActionType {
   GET = 'Make a GET Request',

@@ -1,4 +1,4 @@
-import { ButtonNode } from '../buttons';
+import type { ButtonNode } from '../buttons';
 
 /** @deprecated */
 export interface SharedNode {

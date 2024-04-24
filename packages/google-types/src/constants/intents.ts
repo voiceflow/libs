@@ -1,5 +1,5 @@
-import { BuiltinIntent } from '@voiceflow/common';
-import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
+import type { BuiltinIntent } from '@voiceflow/common';
+import type { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
 export enum GoogleIntent {
   NO = 'actions.intent.NO',

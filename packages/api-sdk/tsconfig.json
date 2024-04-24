@@ -1,11 +1,8 @@
 {
-  "extends": "@voiceflow-meta/typescript-config/base.json",
+  "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
-    "skipLibCheck": true,
     "exactOptionalPropertyTypes": false,
     "baseUrl": ".",
-    "rootDir": "src",
-    "outDir": "build/cjs",
     "paths": {
       "@api-sdk/*": ["src/*"]
     },

@@ -1,12 +1,14 @@
 import { Voice } from '@alexa-types/constants';
-import { AnyCommand } from '@alexa-types/node';
-import { BaseModels, DeepPartialByKey } from '@voiceflow/base-types';
+import type { AnyCommand } from '@alexa-types/node';
+import type { BaseModels, DeepPartialByKey } from '@voiceflow/base-types';
 import { VoiceVersion } from '@voiceflow/voice-types';
-import { VoiceflowConstants } from '@voiceflow/voiceflow-types';
+import type { VoiceflowConstants } from '@voiceflow/voiceflow-types';
 
-import { AlexaSurveyContextExtension } from './prototype';
-import { defaultPublishing, Publishing } from './publishing';
-import { defaultSettings, Settings } from './settings';
+import type { AlexaSurveyContextExtension } from './prototype';
+import type { Publishing } from './publishing';
+import { defaultPublishing } from './publishing';
+import type { Settings } from './settings';
+import { defaultSettings } from './settings';
 
 export * from './prototype';
 export * from './publishing';
@@ -27,7 +29,10 @@ export interface PlatformData extends VoiceVersion.PlatformData<Voice> {
 }
 
 export interface Version
-  extends VoiceVersion.Version<Voice, BaseModels.Version.Prototype<AnyCommand, VoiceflowConstants.Locale, AlexaSurveyContextExtension>> {
+  extends VoiceVersion.Version<
+    Voice,
+    BaseModels.Version.Prototype<AnyCommand, VoiceflowConstants.Locale, AlexaSurveyContextExtension>
+  > {
   platformData: PlatformData;
 }
 

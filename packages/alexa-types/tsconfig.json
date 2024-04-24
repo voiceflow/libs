@@ -1,10 +1,8 @@
 {
-  "extends": "@voiceflow-meta/typescript-config/base.json",
+  "extends": "@voiceflow/tsconfig",
   "compilerOptions": {
     "exactOptionalPropertyTypes": false,
     "baseUrl": ".",
-    "rootDir": "src",
-    "outDir": "build/cjs",
     "paths": {
       "@alexa-types/*": ["src/*"]
     }

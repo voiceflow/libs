@@ -1,14 +1,16 @@
+import { describe, expect, it, vi } from 'vitest';
+
 import Note from './note';
 
 const NOTE = { id: 'qwe', text: 'text', mentions: [1, 2], meta: {} };
 
 const createClient = () => {
   const fetch = {
-    get: jest.fn(),
-    post: jest.fn(),
-    put: jest.fn(),
-    patch: jest.fn(),
-    delete: jest.fn(),
+    get: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    patch: vi.fn(),
+    delete: vi.fn(),
   };
 
   const resource = new Note(fetch as any);
@@ -28,7 +30,7 @@ describe('NoteResource', () => {
     const data = await resource.upsert('1', NOTE as any);
 
     expect(fetch.put).toHaveBeenCalledTimes(1);
-    expect(fetch.put).toHaveBeenCalledWith(`notes/1`, { note: NOTE });
+    expect(fetch.put).toHaveBeenCalledWith('notes/1', { note: NOTE });
     expect(data).toBe(NOTE);
   });
 
@@ -38,6 +40,6 @@ describe('NoteResource', () => {
     await resource.delete('1', 'qwe');
 
     expect(fetch.delete).toHaveBeenCalledTimes(1);
-    expect(fetch.delete).toHaveBeenCalledWith(`notes/1/qwe`);
+    expect(fetch.delete).toHaveBeenCalledWith('notes/1/qwe');
   });
 });

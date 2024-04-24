@@ -1,4 +1,4 @@
-import { v1 } from 'ask-smapi-model';
+import type { v1 } from 'ask-smapi-model';
 
 export interface AmazonProfile {
   name: string;

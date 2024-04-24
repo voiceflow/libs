@@ -1,5 +1,6 @@
 /* eslint-disable dot-notation */
 import JWT from 'jsonwebtoken';
+import { describe, expect, it } from 'vitest';
 
 import User from './user';
 

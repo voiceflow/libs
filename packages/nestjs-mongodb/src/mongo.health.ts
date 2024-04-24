@@ -2,9 +2,9 @@ import { Injectable } from '@nestjs/common';
 import type { HealthIndicatorResult } from '@nestjs/terminus';
 import { HealthCheckError, HealthIndicator } from '@nestjs/terminus';
 import { HealthCheckErrorDto } from '@voiceflow/nestjs-common';
-import { Document } from 'mongodb';
+import type { Document } from 'mongodb';
 
-import { MongoService } from './mongo.service';
+import type { MongoService } from './mongo.service';
 
 @Injectable()
 export class MongoHealthIndicator extends HealthIndicator {

@@ -1,4 +1,17 @@
-import { chain, chainAsync, chainVoid, chainVoidAsync, compose, identity, isFunction, noop, stringify, withEffect } from './functional';
+import { describe, expect, it, vi } from 'vitest';
+
+import {
+  chain,
+  chainAsync,
+  chainVoid,
+  chainVoidAsync,
+  compose,
+  identity,
+  isFunction,
+  noop,
+  stringify,
+  withEffect,
+} from './functional';
 import { delay } from './promise';
 
 describe('Utils | functional', () => {
@@ -161,7 +174,7 @@ describe('Utils | functional', () => {
   describe('withEffect()', () => {
     it('apply effect to a value and return the value', () => {
       const input = 4;
-      const spy = jest.fn();
+      const spy = vi.fn();
 
       withEffect(spy)(input);
 
