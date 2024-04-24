@@ -1,6 +1,6 @@
 {
   "name": "@voiceflow/google-types",
-  "version": "2.20.63",
+  "version": "2.21.0",
   "description": "Google service types",
   "keywords": [
     "voiceflow",

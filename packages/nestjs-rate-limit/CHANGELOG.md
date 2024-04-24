@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/nestjs-rate-limit@1.2.4...@voiceflow/nestjs-rate-limit@1.3.0) (2024-04-24)
+
+### Features
+
+* update toolchain to latest ([#519](https://github.com/voiceflow/libs/issues/519)) ([232b6cf](https://github.com/voiceflow/libs/commit/232b6cfcc65955760950de753f37c8b4f7e0ae62))
+
 ## [1.2.4](https://github.com/voiceflow/libs/compare/@voiceflow/nestjs-rate-limit@1.2.3...@voiceflow/nestjs-rate-limit@1.2.4) (2024-02-12)
 
 **Note:** Version bump only for package @voiceflow/nestjs-rate-limit
