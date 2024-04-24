@@ -51,7 +51,7 @@ export interface LaunchRequest extends BaseRequest {
   payload?: LaunchRequestPayload;
 }
 
-export interface NoReplyRequest extends BaseRequest {
+export interface NoReplyRequest extends Omit<BaseRequest, 'payload'> {
   type: RequestType.NO_REPLY;
 }
 
