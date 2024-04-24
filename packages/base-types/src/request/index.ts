@@ -48,12 +48,11 @@ export interface LaunchRequestPayload {
 
 export interface LaunchRequest extends BaseRequest {
   type: RequestType.LAUNCH;
-  payload: LaunchRequestPayload;
+  payload?: LaunchRequestPayload;
 }
 
 export interface NoReplyRequest extends BaseRequest {
   type: RequestType.NO_REPLY;
-  payload: undefined;
 }
 
 export interface TextRequest extends BaseRequest {
@@ -78,12 +77,12 @@ export interface IntentRequest extends BaseRequest {
 
 export interface GeneralRequest extends BaseRequest {
   type: string; // the general request type is dynamic
-  payload: ActionAndLabelRequestPayload;
+  payload?: ActionAndLabelRequestPayload;
 }
 
 export interface ActionRequest extends BaseRequest {
   type: RequestType.ACTION;
-  payload: ActionAndLabelRequestPayload;
+  payload?: ActionAndLabelRequestPayload;
 }
 
 export interface BaseRequestButton<T extends BaseRequest = BaseRequest> {
