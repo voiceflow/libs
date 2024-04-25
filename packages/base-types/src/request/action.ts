@@ -22,7 +22,7 @@ export interface ActionPayload {
 }
 
 export const isBaseAction = (value: unknown): value is BaseAction<unknown> =>
-  !!value && typeof value === 'object' && isRecord(value) && hasRequiredProperty(value, 'type', 'string') && hasRequiredProperty(value, 'payload');
+  isRecord(value) && hasRequiredProperty(value, 'type', 'string') && hasRequiredProperty(value, 'payload');
 
 export const isActionPayload = (value: unknown): value is ActionPayload =>
   isRecord(value) && (!('actions' in value) || isArrayOf(value.actions, (value: unknown) => isBaseAction(value)));
