@@ -1,5 +1,4 @@
 import { hasOptionalProperty, hasRequiredProperty, hasRequiredSchema, isArrayOf, isRecord } from '@base-types/utils/types';
-import { isObject } from '@voiceflow/common/build/cjs/utils/object';
 
 import type { Chip } from '../button';
 import { ActionPayload, isActionPayload } from './action';
@@ -56,11 +55,11 @@ export interface LaunchRequest extends BaseRequest {
 
 export interface NoReplyRequest extends Omit<BaseRequest, 'payload'> {
   type: RequestType.NO_REPLY;
-  payload: string;
 }
 
 export interface TextRequest extends BaseRequest {
   type: RequestType.TEXT;
+  payload: string;
 }
 
 interface ActionAndLabelRequestPayload extends ActionPayload, LabelRequestPayload { }
@@ -160,12 +159,12 @@ const isIntentRequestPayload = (value: unknown): value is IntentRequestPayload =
   hasOptionalProperty(value, 'query', 'object');
 
 export const isIntentRequest = (value: unknown): value is IntentRequest =>
-  isBaseRequest(value) && value.type === RequestType.INTENT && isObject(value) && hasRequiredProperty(value, 'payload', isIntentRequestPayload);
+  isBaseRequest(value) && value.type === RequestType.INTENT && isRecord(value) && hasRequiredProperty(value, 'payload', isIntentRequestPayload);
 
 const ALL_REQUEST_TYPES = Object.values(RequestType) as string[];
 
 export const isGeneralRequest = (value: unknown): value is GeneralRequest =>
   isBaseRequest(value) &&
   !ALL_REQUEST_TYPES.includes(value.type) &&
-  isObject(value) &&
+  isRecord(value) &&
   (!('payload' in value) || isActionAndLabelResponsePayload(value.payload));
