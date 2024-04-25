@@ -1,4 +1,4 @@
-import { hasRequiredProperty, hasRequiredSchema, isArrayOf, isRecord } from '@base-types/utils/types';
+import { validateAJV } from '@base-types/utils/types';
 
 export enum ActionType {
   OPEN_URL = 'open_url',
@@ -21,13 +21,48 @@ export interface ActionPayload {
   actions?: BaseAction[];
 }
 
-export const isBaseAction = (value: unknown): value is BaseAction<unknown> =>
-  isRecord(value) && hasRequiredProperty(value, 'type', 'string') && hasRequiredProperty(value, 'payload');
+const $baseActionSchema = {
+  type: "object",
+  additionalProperties: true,
+  required: ['type', 'payload'],
+  properties: {
+    type: { type: "string" },
+  }
+}
 
-export const isActionPayload = (value: unknown): value is ActionPayload =>
-  isRecord(value) && (!('actions' in value) || isArrayOf(value.actions, (value: unknown) => isBaseAction(value)));
+export const isBaseAction = (value: unknown): value is BaseAction<unknown> => (
+  validateAJV($baseActionSchema)(value)
+);
 
-export const isOpenURLAction = (action: unknown): action is OpenURLAction =>
-  isBaseAction(action) &&
-  action.type === ActionType.OPEN_URL &&
-  hasRequiredSchema(action.payload, (value) => hasRequiredProperty(value, 'url', 'string'));
+export const actionPayloadSchema = {
+  type: "object",
+  additionalProperties: true,
+  required: [],
+  properties: {
+    actions: {
+      type: "array",
+      items: $baseActionSchema,
+    }
+  }
+}
+
+export const isActionPayload = (value: unknown): value is ActionPayload => (
+  validateAJV(actionPayloadSchema)(value)
+)
+
+export const isOpenURLAction = (value: unknown): value is OpenURLAction =>
+  isBaseAction(value) &&
+  validateAJV({
+    type: "object",
+    additionalProperties: true,
+    properties: {
+      type: { enum: [ActionType.OPEN_URL] },
+      payload: {
+        type: "object",
+        additionalProperties: true,
+        properties: {
+          url: { type: "string" }
+        }
+      }
+    }
+  })(value);

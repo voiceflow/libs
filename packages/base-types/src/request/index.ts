@@ -1,7 +1,7 @@
-import { hasOptionalProperty, hasRequiredProperty, hasRequiredSchema, isArrayOf, isRecord } from '@base-types/utils/types';
+import { inherit, validateAJV } from '@base-types/utils/types';
 
 import type { Chip } from '../button';
-import { ActionPayload, isActionPayload } from './action';
+import { ActionPayload, actionPayloadSchema, isActionPayload } from './action';
 
 export * as Action from './action';
 
@@ -116,52 +116,144 @@ export interface NodeButton {
   buttons?: AnyRequestButton[];
 }
 
+const $baseRequestSchema = {
+  type: "object",
+  required: ["type"],
+  additionalProperties: true,
+  properties: {
+    type: { type: "string" },
+    diagramID: { type: "string" }
+  }
+};
+
 export const isBaseRequest = (value: unknown): value is BaseRequest =>
-  isRecord(value) && hasRequiredProperty(value, 'type', 'string') && hasOptionalProperty(value, 'diagramID', 'string');
+  validateAJV($baseRequestSchema)(value);
 
 export const isTextRequest = (value: unknown): value is TextRequest =>
-  isBaseRequest(value) && value.type === RequestType.TEXT && isRecord(value) && hasRequiredProperty(value, 'payload', 'string');
+  validateAJV(
+    inherit(
+      $baseRequestSchema,
+      {
+        type: "object",
+        required: ["payload"],
+        properties: {
+          type: { enum: [RequestType.TEXT] },
+          payload: { type: 'string' }
+        }
+      }
+    )
+  )(value)
 
-const isLabelPayload = (value: unknown): value is LabelRequestPayload => isRecord(value) && hasOptionalProperty(value, 'label', 'string');
+const $labelPayloadSchema = {
+  type: "object",
+  required: [],
+  additionalProperties: true,
+  properties: {
+    label: { type: 'string' }
+  }
+};
 
-const isActionAndLabelResponsePayload = (value: unknown): value is ActionAndLabelRequestPayload =>
-  isRecord(value) && isLabelPayload(value) && isActionPayload(value);
+const $actionAndLabelPayloadSchema = inherit(actionPayloadSchema, $labelPayloadSchema);
 
 export const isActionRequest = (value: unknown): value is ActionRequest =>
   isBaseRequest(value) &&
-  value.type === RequestType.ACTION &&
-  isRecord(value) &&
-  hasOptionalProperty(value, 'payload', isActionAndLabelResponsePayload);
-
-const isLaunchRequestPayload = (value: unknown): value is LaunchRequestPayload => isRecord(value) && hasOptionalProperty(value, 'persona', 'string');
+  validateAJV(
+    inherit(
+      $baseRequestSchema,
+      {
+        type: "object",
+        required: ["type"],
+        properties: {
+          type: { enum: [RequestType.ACTION] },
+          payload: $actionAndLabelPayloadSchema
+        }
+      }
+    )
+  )(value)
 
 export const isLaunchRequest = (value: unknown): value is LaunchRequest =>
-  isBaseRequest(value) && value.type === RequestType.LAUNCH && isRecord(value) && hasOptionalProperty(value, 'payload', isLaunchRequestPayload);
+  isBaseRequest(value) &&
+  validateAJV(
+    inherit(
+      $baseRequestSchema,
+      {
+        type: "object",
+        required: [],
+        properties: {
+          type: { enum: [RequestType.LAUNCH] },
+          payload: {
+            type: "object",
+            required: [],
+            additionalProperties: true,
+            properties: {
+              persona: { type: 'string' }
+            }
+          }
+        }
+      }
+    )
+  )(value)
 
 export const isNoReplyRequest = (value: unknown): value is NoReplyRequest => isBaseRequest(value) && value.type === RequestType.NO_REPLY;
 
-const isEntity = (value: unknown): value is Entity =>
-  isRecord(value) &&
-  hasRequiredProperty(value, 'name', 'string') &&
-  hasRequiredProperty(value, 'value', 'string') &&
-  hasOptionalProperty(value, 'query', 'string');
+const $entitySchema = {
+  type: "object",
+  required: ['name', 'value'],
+  properties: {
+    name: { type: 'string' },
+    value: { type: 'string' },
+    query: { type: 'string' }
+  }
+};
 
-const isIntentRequestPayload = (value: unknown): value is IntentRequestPayload =>
-  isActionAndLabelResponsePayload(value) &&
-  isRecord(value) &&
-  hasRequiredProperty(value, 'query', 'string') &&
-  hasRequiredSchema(value.intent, (intent) => hasRequiredProperty(intent, 'name', 'string')) &&
-  isArrayOf(value.entities, (value) => isEntity(value)) &&
-  hasOptionalProperty(value, 'confidence', 'number') &&
-  hasOptionalProperty(value, 'data', 'object');
+const $intentRequestPayloadSchema = {
+  type: "object",
+  required: ['query', 'entities'],
+  additionalProperties: true,
+  properties: {
+    query: { type: 'string' },
+    intent: {
+      type: "object",
+      required: ['name'],
+      properties: {
+        name: { type: 'string' }
+      }
+    },
+    entities: {
+      type: "array",
+      items: $entitySchema
+    },
+    confidence: { type: 'number' },
+    data: { type: 'object' }
+  }
+}
 
 export const isIntentRequest = (value: unknown): value is IntentRequest =>
-  isBaseRequest(value) && value.type === RequestType.INTENT && isRecord(value) && hasRequiredProperty(value, 'payload', isIntentRequestPayload);
-
-const ALL_REQUEST_TYPES = Object.values(RequestType) as string[];
+  validateAJV(
+    inherit(
+      $baseRequestSchema,
+      {
+        type: "object",
+        required: ['payload'],
+        properties: {
+          type: { enum: [RequestType.INTENT] },
+          payload: $intentRequestPayloadSchema
+        }
+      }
+    )
+  )(value);
 
 export const isGeneralRequest = (value: unknown): value is GeneralRequest =>
-  isBaseRequest(value) &&
-  !ALL_REQUEST_TYPES.includes(value.type) &&
-  isRecord(value) &&
-  (!('payload' in value) || isActionAndLabelResponsePayload(value.payload));
+  validateAJV(
+    inherit(
+      $baseRequestSchema,
+      {
+        type: "object",
+        properties: {
+          payload: $actionAndLabelPayloadSchema
+        }
+      }
+    )
+  )(value) && (
+    !Object.values<string>(RequestType).includes((value as any).type)
+  );

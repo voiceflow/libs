@@ -1,27 +1,23 @@
-type TypeNames = 'string' | 'object' | 'number' | 'boolean' | 'undefined';
+import Ajv from "ajv";
 
-export const hasRequiredProperty = <T extends string>(
-  value: Record<string, unknown>,
-  property: T,
-  type?: TypeNames | ((value: unknown) => boolean)
-) =>
-  property in value &&
-  (typeof type === 'undefined' ||
-    (typeof type === 'string' && typeof value[property] === type) ||
-    (typeof type !== 'string' && type(value[property])));
+export const validateAJV = (schema: Record<string, any>) => (value): boolean => (
+  !!(new Ajv({ allErrors: true })).compile(schema)(value)
+);
 
-export const hasOptionalProperty = <T extends string>(
-  value: Record<string, unknown>,
-  property: T,
-  type?: TypeNames | ((value: unknown) => boolean)
-) =>
-  !(property in value) ||
-  typeof type === 'undefined' ||
-  (typeof type === 'string' && typeof value[property] === type) ||
-  (typeof type !== 'string' && type(value[property]));
-
-export const hasRequiredSchema = (value: unknown, schema: (value: Record<string, unknown>) => boolean) => isRecord(value) && schema(value);
-
-export const isArrayOf = (value: unknown, schema: (value: unknown) => boolean) => Array.isArray(value) && value.every(schema);
-
-export const isRecord = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value);
+export const inherit = (parent: Record<string, any>, derivedSchema: Record<string, any>) => ({
+  type: derivedSchema.type ?? parent.type,
+  required: Array.from(
+    new Set([
+      ...(derivedSchema.required ?? []), 
+      ...(parent.required ?? [])
+    ])
+  ),
+  additionalProperties: derivedSchema.additionalProperties ?? parent.additionalProperties,
+  properties: [
+    ...Object.entries(parent.properties),
+    ...Object.entries(derivedSchema.properties)
+  ].reduce((acc, [propName, declare]) => ({
+    ...acc,
+    [propName]: declare
+  }), {})
+});

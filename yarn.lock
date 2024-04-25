@@ -2255,7 +2255,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ajv@npm:8.12.0, ajv@npm:^8.11.0":
+"ajv@npm:8.12.0, ajv@npm:^8.11.0, ajv@npm:^8.12.0":
   version: 8.12.0
   resolution: "ajv@npm:8.12.0"
   dependencies:
@@ -8142,6 +8142,7 @@ __metadata:
     "@voiceflow/prettier-config": 1.5.1
     "@voiceflow/tsconfig": 1.7.1
     "@voiceflow/vitest-config": 1.2.1
+    ajv: ^8.12.0
     dependency-cruiser: 16.3.1
     eslint: 9.0.0
     husky: 9.0.11
