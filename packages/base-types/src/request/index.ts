@@ -32,6 +32,11 @@ export interface Entity {
   name: string; // name of matched entity
   value: string; // inferred value of matched entity
   query?: string; // raw value of matched entity
+
+  /**
+   * @deprecated This value is no longer generated. Please remove all code relying on
+   * LUIS NLU to produce `verboseValue`
+   */
   verboseValue?: VerboseValue[]; // more detailed results from LUIS
 }
 
@@ -135,28 +140,20 @@ export const isLaunchRequest = (value: unknown): value is LaunchRequest =>
 
 export const isNoReplyRequest = (value: unknown): value is NoReplyRequest => isBaseRequest(value) && value.type === RequestType.NO_REPLY;
 
-const isVerboseValue = (value: unknown): value is VerboseValue =>
-  isRecord(value) &&
-  hasRequiredProperty(value, 'rawText', 'string') &&
-  hasRequiredProperty(value, 'canonicalText', 'string') &&
-  hasRequiredProperty(value, 'startIndex', 'number');
-
 const isEntity = (value: unknown): value is Entity =>
   isRecord(value) &&
   hasRequiredProperty(value, 'name', 'string') &&
   hasRequiredProperty(value, 'value', 'string') &&
-  hasOptionalProperty(value, 'query', 'string') &&
-  hasRequiredProperty(value, 'verboseValue', 'object') &&
-  isArrayOf(value.verboseValue, (value) => isVerboseValue(value));
+  hasOptionalProperty(value, 'query', 'string');
 
 const isIntentRequestPayload = (value: unknown): value is IntentRequestPayload =>
   isActionAndLabelResponsePayload(value) &&
   isRecord(value) &&
   hasRequiredProperty(value, 'query', 'string') &&
   hasRequiredSchema(value.intent, (intent) => hasRequiredProperty(intent, 'name', 'string')) &&
-  isArrayOf(value.entities, (value: unknown) => isEntity(value)) &&
+  isArrayOf(value.entities, (value) => isEntity(value)) &&
   hasOptionalProperty(value, 'confidence', 'number') &&
-  hasOptionalProperty(value, 'query', 'object');
+  hasOptionalProperty(value, 'data', 'object');
 
 export const isIntentRequest = (value: unknown): value is IntentRequest =>
   isBaseRequest(value) && value.type === RequestType.INTENT && isRecord(value) && hasRequiredProperty(value, 'payload', isIntentRequestPayload);
