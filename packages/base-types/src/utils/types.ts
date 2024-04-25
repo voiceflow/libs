@@ -1,6 +1,6 @@
 import Ajv from "ajv";
 
-export const validateAJV = (schema: Record<string, any>) => (value): boolean => (
+export const validateAJV = (schema: Record<string, any>) => (value: unknown): boolean => (
   !!(new Ajv({ allErrors: true })).compile(schema)(value)
 );
 
