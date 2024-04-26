@@ -12,6 +12,9 @@ import type { IntentRequest } from '@base-types/request';
 import type { Log as RuntimeLog } from '@base-types/runtimeLogs';
 import type { AnyRecord } from '@voiceflow/common';
 
+import { CompletionContinueTrace, CompletionEndTrace, CompletionStartTrace } from './completion';
+
+export { CompletionContinueTrace, CompletionEndTrace, CompletionStartTrace, CompletionStartTraceSpeak, CompletionStartTraceText } from './completion';
 export { TraceFrame as CardV2 } from '@base-types/node/cardV2';
 export { TraceFrame as Carousel } from '@base-types/node/carousel';
 export { TraceFrame as End } from '@base-types/node/exit';
@@ -103,38 +106,6 @@ export interface ChannelActionTracePayload {
 
 export interface ChannelActionTrace extends BaseTraceFrame<ChannelActionTracePayload> {
   type: TraceType.CHANNEL_ACTION;
-}
-
-export interface CompletionStartTrace
-  extends BaseTraceFrame<{
-    type: TraceType.SPEAK | TraceType.TEXT;
-    completion: string;
-    voice?: string;
-    delay?: number;
-    tokens?: {
-      model: string;
-      answer: number;
-      query: number;
-      total: number;
-    };
-  }> {
-  type: TraceType.COMPLETION_START;
-}
-
-export interface CompletionContinueTrace
-  extends BaseTraceFrame<{
-    completion: string;
-    tokens?: {
-      answer: number;
-      query: number;
-      total: number;
-    };
-  }> {
-  type: TraceType.COMPLETION_CONTINUE;
-}
-
-export interface CompletionEndTrace extends BaseTraceFrame {
-  type: TraceType.COMPLETION_END;
 }
 
 export type AnyTrace =
