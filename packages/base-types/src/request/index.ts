@@ -1,7 +1,5 @@
-import { inherit, validateAJV } from '@base-types/utils/types';
-
 import type { Chip } from '../button';
-import { ActionPayload, actionPayloadSchema, isActionPayload } from './action';
+import { ActionPayload } from './action';
 
 export * as Action from './action';
 
@@ -116,144 +114,48 @@ export interface NodeButton {
   buttons?: AnyRequestButton[];
 }
 
-const $baseRequestSchema = {
-  type: "object",
-  required: ["type"],
-  additionalProperties: true,
-  properties: {
-    type: { type: "string" },
-    diagramID: { type: "string" }
-  }
-};
+/**
+ * @deprecated This type guard is no longer an effective check if `request` is the specified type. The actual
+ * data being sent does not match the original type definition. This type guard will not be updated with a fix.
+ * Please use the type guards and equivalent DTOs in `@voiceflow/dtos` instead.
+ */
+export const isTextRequest = (request: BaseRequest): request is TextRequest => request.type === RequestType.TEXT;
 
-export const isBaseRequest = (value: unknown): value is BaseRequest =>
-  validateAJV($baseRequestSchema)(value);
+/**
+ * @deprecated This type guard is no longer an effective check if `request` is the specified type. The actual
+ * data being sent does not match the original type definition. This type guard will not be updated with a fix.
+ * Please use the type guards and equivalent DTOs in `@voiceflow/dtos` instead.
+ */
+export const isActionRequest = (request: BaseRequest): request is ActionRequest => request.type === RequestType.ACTION;
 
-export const isTextRequest = (value: unknown): value is TextRequest =>
-  validateAJV(
-    inherit(
-      $baseRequestSchema,
-      {
-        type: "object",
-        required: ["payload"],
-        properties: {
-          type: { enum: [RequestType.TEXT] },
-          payload: { type: 'string' }
-        }
-      }
-    )
-  )(value)
+/**
+ * @deprecated This type guard is no longer an effective check if `request` is the specified type. The actual
+ * data being sent does not match the original type definition. This type guard will not be updated with a fix.
+ * Please use the type guards and equivalent DTOs in `@voiceflow/dtos` instead.
+ */
+export const isLaunchRequest = (request: BaseRequest): request is LaunchRequest => request.type === RequestType.LAUNCH;
 
-const $labelPayloadSchema = {
-  type: "object",
-  required: [],
-  additionalProperties: true,
-  properties: {
-    label: { type: 'string' }
-  }
-};
+/**
+ * @deprecated This type guard is no longer an effective check if `request` is the specified type. The actual
+ * data being sent does not match the original type definition. This type guard will not be updated with a fix.
+ * Please use the type guards and equivalent DTOs in `@voiceflow/dtos` instead.
+ */
+export const isNoReplyRequest = (request: BaseRequest): request is NoReplyRequest =>
+  request.type === RequestType.NO_REPLY;
 
-const $actionAndLabelPayloadSchema = inherit(actionPayloadSchema, $labelPayloadSchema);
+/**
+ * @deprecated This type guard is no longer an effective check if `request` is the specified type. The actual
+ * data being sent does not match the original type definition. This type guard will not be updated with a fix.
+ * Please use the type guards and equivalent DTOs in `@voiceflow/dtos` instead.
+ */
+export const isIntentRequest = (request: BaseRequest): request is IntentRequest => request.type === RequestType.INTENT;
 
-export const isActionRequest = (value: unknown): value is ActionRequest =>
-  isBaseRequest(value) &&
-  validateAJV(
-    inherit(
-      $baseRequestSchema,
-      {
-        type: "object",
-        required: ["type"],
-        properties: {
-          type: { enum: [RequestType.ACTION] },
-          payload: $actionAndLabelPayloadSchema
-        }
-      }
-    )
-  )(value)
+const ALL_REQUEST_TYPES = Object.values(RequestType) as string[];
 
-export const isLaunchRequest = (value: unknown): value is LaunchRequest =>
-  isBaseRequest(value) &&
-  validateAJV(
-    inherit(
-      $baseRequestSchema,
-      {
-        type: "object",
-        required: [],
-        properties: {
-          type: { enum: [RequestType.LAUNCH] },
-          payload: {
-            type: "object",
-            required: [],
-            additionalProperties: true,
-            properties: {
-              persona: { type: 'string' }
-            }
-          }
-        }
-      }
-    )
-  )(value)
-
-export const isNoReplyRequest = (value: unknown): value is NoReplyRequest => isBaseRequest(value) && value.type === RequestType.NO_REPLY;
-
-const $entitySchema = {
-  type: "object",
-  required: ['name', 'value'],
-  properties: {
-    name: { type: 'string' },
-    value: { type: 'string' },
-    query: { type: 'string' }
-  }
-};
-
-const $intentRequestPayloadSchema = {
-  type: "object",
-  required: ['query', 'entities'],
-  additionalProperties: true,
-  properties: {
-    query: { type: 'string' },
-    intent: {
-      type: "object",
-      required: ['name'],
-      properties: {
-        name: { type: 'string' }
-      }
-    },
-    entities: {
-      type: "array",
-      items: $entitySchema
-    },
-    confidence: { type: 'number' },
-    data: { type: 'object' }
-  }
-}
-
-export const isIntentRequest = (value: unknown): value is IntentRequest =>
-  validateAJV(
-    inherit(
-      $baseRequestSchema,
-      {
-        type: "object",
-        required: ['payload'],
-        properties: {
-          type: { enum: [RequestType.INTENT] },
-          payload: $intentRequestPayloadSchema
-        }
-      }
-    )
-  )(value);
-
-export const isGeneralRequest = (value: unknown): value is GeneralRequest =>
-  validateAJV(
-    inherit(
-      $baseRequestSchema,
-      {
-        type: "object",
-        properties: {
-          payload: $actionAndLabelPayloadSchema
-        }
-      }
-    )
-  )(value) && (
-    !Object.values<string>(RequestType).includes((value as any).type)
-  );
+/**
+ * @deprecated This type guard is no longer an effective check if `request` is the specified type. The actual
+ * data being sent does not match the original type definition. This type guard will not be updated with a fix.
+ * Please use the type guards and equivalent DTOs in `@voiceflow/dtos` instead.
+ */
+export const isGeneralRequest = (request: BaseRequest): request is GeneralRequest =>
+  !ALL_REQUEST_TYPES.includes(request.type);
