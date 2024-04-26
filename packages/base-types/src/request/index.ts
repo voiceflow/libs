@@ -68,10 +68,10 @@ export interface TextRequest extends BaseRequest {
 interface ActionAndLabelRequestPayload extends ActionPayload, LabelRequestPayload { }
 
 export interface IntentRequestPayload extends ActionAndLabelRequestPayload {
-  query: string; // original text input
   intent: { name: string }; // matched intent name
-  entities: Entity[]; // entities matches - multiple of the same entity name may be matched
+  entities?: Entity[]; // entities matches - multiple of the same entity name may be matched
   confidence?: number; // 0-1 confidence of match;
+  query?: string; // original text input
   data?: Record<string, unknown>;
 }
 
