@@ -69,9 +69,9 @@ interface ActionAndLabelRequestPayload extends ActionPayload, LabelRequestPayloa
 
 export interface IntentRequestPayload extends ActionAndLabelRequestPayload {
   intent: { name: string }; // matched intent name
-  entities?: Entity[]; // entities matches - multiple of the same entity name may be matched
+  entities: Entity[]; // entities matches - multiple of the same entity name may be matched
+  query: string; // original text input
   confidence?: number; // 0-1 confidence of match;
-  query?: string; // original text input
   data?: Record<string, unknown>;
 }
 
