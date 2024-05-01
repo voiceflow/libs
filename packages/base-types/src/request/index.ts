@@ -35,7 +35,7 @@ export interface Entity {
    * @deprecated This value is no longer generated. Please remove all code relying on
    * LUIS NLU to produce `verboseValue`
    */
-  verboseValue?: VerboseValue[]; // more detailed results from LUIS.
+  verboseValue?: VerboseValue[]; // more detailed results from LUIS
 }
 
 export interface LabelRequestPayload {
