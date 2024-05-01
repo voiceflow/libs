@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.110.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.109.0...@voiceflow/base-types@2.110.0) (2024-05-01)
+
+### Bug Fixes
+
+* changes to force rebuild (IN-001) ([d173f8b](https://github.com/voiceflow/libs/commit/d173f8b4a1e135ea80cef843a5fcdadebf4edaca))
+* force rebuild (IN-001) ([7a0f668](https://github.com/voiceflow/libs/commit/7a0f6689a51088076431d7911ca372ee4502efbc))
+
+### Features
+
+* fixing inaccurate request types (PL-753) ([#522](https://github.com/voiceflow/libs/issues/522)) ([584149e](https://github.com/voiceflow/libs/commit/584149e9f0ce23fdd214f160999aa1b160453758))
+
 # [2.109.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.108.0...@voiceflow/base-types@2.109.0) (2024-05-01)
 
 ### Features
