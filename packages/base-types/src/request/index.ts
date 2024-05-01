@@ -1,5 +1,5 @@
 import type { Chip } from '../button';
-import { ActionPayload } from './action';
+import type { ActionPayload } from './action';
 
 export * as Action from './action';
 
@@ -65,7 +65,7 @@ export interface TextRequest extends BaseRequest {
   payload: string;
 }
 
-interface ActionAndLabelRequestPayload extends ActionPayload, LabelRequestPayload { }
+interface ActionAndLabelRequestPayload extends ActionPayload, LabelRequestPayload {}
 
 export interface IntentRequestPayload extends ActionAndLabelRequestPayload {
   intent: { name: string }; // matched intent name
@@ -95,13 +95,13 @@ export interface BaseRequestButton<T extends BaseRequest = BaseRequest> {
   request: T;
 }
 
-export interface TextRequestButton extends BaseRequestButton<TextRequest> { }
+export interface TextRequestButton extends BaseRequestButton<TextRequest> {}
 
-export interface ActionRequestButton extends BaseRequestButton<ActionRequest> { }
+export interface ActionRequestButton extends BaseRequestButton<ActionRequest> {}
 
-export interface IntentRequestButton extends BaseRequestButton<IntentRequest> { }
+export interface IntentRequestButton extends BaseRequestButton<IntentRequest> {}
 
-export interface GeneralRequestButton extends BaseRequestButton<GeneralRequest> { }
+export interface GeneralRequestButton extends BaseRequestButton<GeneralRequest> {}
 
 export type AnyRequestButton = TextRequestButton | IntentRequestButton | GeneralRequestButton | ActionRequestButton;
 
