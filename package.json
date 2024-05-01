@@ -1,11 +1,8 @@
 {
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "meta/*"
-    ]
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo run build:cmd",
     "build:all": "yarn build",
