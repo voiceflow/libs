@@ -12,9 +12,15 @@ import type { IntentRequest } from '@base-types/request';
 import type { Log as RuntimeLog } from '@base-types/runtimeLogs';
 import type { AnyRecord } from '@voiceflow/common';
 
-import { CompletionContinueTrace, CompletionEndTrace, CompletionStartTrace } from './completion';
+import type { CompletionContinueTrace, CompletionEndTrace, CompletionStartTrace } from './completion';
 
-export { CompletionContinueTrace, CompletionEndTrace, CompletionStartTrace, CompletionStartTraceSpeak, CompletionStartTraceText } from './completion';
+export {
+  CompletionContinueTrace,
+  CompletionEndTrace,
+  CompletionStartTrace,
+  CompletionStartTraceSpeak,
+  CompletionStartTraceText,
+} from './completion';
 export { TraceFrame as CardV2 } from '@base-types/node/cardV2';
 export { TraceFrame as Carousel } from '@base-types/node/carousel';
 export { TraceFrame as End } from '@base-types/node/exit';

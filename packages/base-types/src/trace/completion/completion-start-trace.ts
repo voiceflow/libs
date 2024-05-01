@@ -1,4 +1,5 @@
-import { BaseTraceFrame, TraceType } from '@base-types/node/utils';
+import type { BaseTraceFrame } from '@base-types/node/utils';
+import { TraceType } from '@base-types/node/utils';
 
 export interface CompletionStartTrace extends BaseTraceFrame<BaseCompletionStartTracePayload> {
   type: TraceType.COMPLETION_START;
@@ -35,9 +36,11 @@ export interface BaseCompletionStartTracePayload {
   };
 }
 
-export const isCompletionStartTrace = (trace: BaseTraceFrame): trace is CompletionStartTrace => trace.type === TraceType.COMPLETION_START;
+export const isCompletionStartTrace = (trace: BaseTraceFrame): trace is CompletionStartTrace =>
+  trace.type === TraceType.COMPLETION_START;
 
 export const isCompletionStartTraceSpeak = (trace: CompletionStartTrace): trace is CompletionStartTraceSpeak =>
   trace.payload.type === TraceType.SPEAK;
 
-export const isCompletionStartTraceText = (trace: CompletionStartTrace): trace is CompletionStartTraceText => trace.payload.type === TraceType.TEXT;
+export const isCompletionStartTraceText = (trace: CompletionStartTrace): trace is CompletionStartTraceText =>
+  trace.payload.type === TraceType.TEXT;
