@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.109.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.108.0...@voiceflow/base-types@2.109.0) (2024-05-01)
+
+### Features
+
+* trace completion types (PL-909) ([#520](https://github.com/voiceflow/libs/issues/520)) ([8ce3420](https://github.com/voiceflow/libs/commit/8ce3420ac8ab3198543d91fd7a19b07cc7b6f217))
+
 # [2.108.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.107.3...@voiceflow/base-types@2.108.0) (2024-04-24)
 
 ### Features
