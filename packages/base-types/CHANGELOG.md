@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.110.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.110.1...@voiceflow/base-types@2.110.2) (2024-05-22)
+
+### Bug Fixes
+
+* add gpt-4o to base ai types (ML-914) ([#524](https://github.com/voiceflow/libs/issues/524)) ([7a63e1e](https://github.com/voiceflow/libs/commit/7a63e1e590718a683340c41bfe41152c122522dc))
+
 ## [2.110.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.110.0...@voiceflow/base-types@2.110.1) (2024-05-22)
 
 ### Bug Fixes
