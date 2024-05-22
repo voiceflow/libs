@@ -34,7 +34,8 @@
     "lint:prettier": "yarn g:prettier --check",
     "test": "yarn g:run-p -c test:dependencies test:types",
     "test:dependencies": "yarn g:depcruise",
-    "test:types": "yarn g:tsc --noEmit"
+    "test:types": "yarn g:tsc --noEmit",
+    "test:unit": ""
   },
   "dependencies": {
     "rate-limiter-flexible": "2.3.6"
