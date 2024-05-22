@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/voiceflow/libs/compare/@voiceflow/exception@1.6.0...@voiceflow/exception@1.6.1) (2024-05-22)
+
+### Bug Fixes
+
+* attempt to fix unit tests ([#525](https://github.com/voiceflow/libs/issues/525)) ([b0c1aba](https://github.com/voiceflow/libs/commit/b0c1aba3265dc8427b5a97877a4c9bac9fb82d43))
+
 # [1.6.0](https://github.com/voiceflow/libs/compare/@voiceflow/exception@1.5.4...@voiceflow/exception@1.6.0) (2024-04-24)
 
 ### Features

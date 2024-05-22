@@ -1,6 +1,6 @@
 {
   "name": "@voiceflow/fetch",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Voiceflow fetch wrapper and error handling for SDKs",
   "keywords": [
     "voiceflow"
