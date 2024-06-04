@@ -125,16 +125,14 @@ export interface NodeButton {
   buttons?: AnyRequestButton[];
 }
 
-export const isRequestWithActionPayload = (request: BaseRequest): request is { type: string; payload: ActionPayload } =>
+export const hasActionPayload = (request: BaseRequest): request is { type: string; payload: ActionPayload } =>
   'payload' in request &&
   typeof request.payload === 'object' &&
   request.payload !== null &&
   'actions' in request.payload &&
   Array.isArray(request.payload.actions);
 
-export const isRequestWithLabelPayload = (
-  request: BaseRequest
-): request is { type: string; payload: LabelRequestPayload } =>
+export const hasLabelPayload = (request: BaseRequest): request is { type: string; payload: LabelRequestPayload } =>
   'payload' in request &&
   typeof request.payload === 'object' &&
   request.payload !== null &&
