@@ -125,6 +125,20 @@ export interface NodeButton {
   buttons?: AnyRequestButton[];
 }
 
+export const isRequestWithActionPayload = (request: BaseRequest): request is { type: string; payload: ActionPayload } => 
+  'payload' in request &&
+  typeof request.payload === 'object' &&
+  request.payload !== null &&
+  'actions' in request.payload &&
+  Array.isArray(request.payload.actions);
+
+export const isRequestWithLabelPayload = (request: BaseRequest): request is { type: string; payload: LabelRequestPayload } => 
+  'payload' in request &&
+  typeof request.payload === 'object' &&
+  request.payload !== null &&
+  'label' in request.payload &&
+  typeof request.payload.label === 'string';
+
 /**
  * @deprecated This type guard is no longer an effective check if `request` is the specified type. The actual
  * data being sent does not match the original type definition. This type guard will not be updated with a fix.
