@@ -2,21 +2,21 @@ import { describe, expect, it } from 'vitest';
 
 import type { BaseRequest } from '.';
 import {
+  hasActionPayload,
+  hasLabelPayload,
   isActionRequest,
   isGeneralRequest,
   isIntentRequest,
   isLaunchRequest,
   isNoReplyRequest,
   isPathRequest,
-  isRequestWithActionPayload,
-  isRequestWithLabelPayload,
   isTextRequest,
   RequestType,
 } from '.';
 import { ActionType } from './action';
 
 describe('request types', () => {
-  describe('isRequestWithActionPayload', () => {
+  describe('hasActionPayload', () => {
     it('returns false for mismatching data', () => {
       const fail1: BaseRequest = {
         type: 'fail',
@@ -38,13 +38,15 @@ describe('request types', () => {
         payload: { actions: 'string' },
       };
 
-      /* eslint-disable no-secrets/no-secrets */
-      expect(isRequestWithActionPayload(fail1)).to.eql(false);
-      expect(isRequestWithActionPayload(fail2)).to.eql(false);
-      expect(isRequestWithActionPayload(fail3)).to.eql(false);
-      expect(isRequestWithActionPayload(fail4)).to.eql(false);
-      expect(isRequestWithActionPayload(fail5)).to.eql(false);
-      /* eslint-enable no-secrets/no-secrets */
+      expect(hasActionPayload(fail1)).to.eql(false);
+
+      expect(hasActionPayload(fail2)).to.eql(false);
+
+      expect(hasActionPayload(fail3)).to.eql(false);
+
+      expect(hasActionPayload(fail4)).to.eql(false);
+
+      expect(hasActionPayload(fail5)).to.eql(false);
     });
 
     it('returns true for matching data', () => {
@@ -76,13 +78,13 @@ describe('request types', () => {
         },
       };
 
-      expect(isRequestWithActionPayload(pass1)).to.eql(true);
-      expect(isRequestWithActionPayload(pass2)).to.eql(true);
-      expect(isRequestWithActionPayload(pass3)).to.eql(true);
+      expect(hasActionPayload(pass1)).to.eql(true);
+      expect(hasActionPayload(pass2)).to.eql(true);
+      expect(hasActionPayload(pass3)).to.eql(true);
     });
   });
 
-  describe('isRequestWithActionPayload', () => {
+  describe('hasLabelPayload', () => {
     it('returns false for mismatching data', () => {
       const fail1: BaseRequest = {
         type: 'fail',
@@ -104,11 +106,11 @@ describe('request types', () => {
         payload: { label: [] },
       };
 
-      expect(isRequestWithLabelPayload(fail1)).to.eql(false);
-      expect(isRequestWithLabelPayload(fail2)).to.eql(false);
-      expect(isRequestWithLabelPayload(fail3)).to.eql(false);
-      expect(isRequestWithLabelPayload(fail4)).to.eql(false);
-      expect(isRequestWithLabelPayload(fail5)).to.eql(false);
+      expect(hasLabelPayload(fail1)).to.eql(false);
+      expect(hasLabelPayload(fail2)).to.eql(false);
+      expect(hasLabelPayload(fail3)).to.eql(false);
+      expect(hasLabelPayload(fail4)).to.eql(false);
+      expect(hasLabelPayload(fail5)).to.eql(false);
     });
 
     it('returns true for matching data', () => {
@@ -136,9 +138,9 @@ describe('request types', () => {
         },
       };
 
-      expect(isRequestWithLabelPayload(pass1)).to.eql(true);
-      expect(isRequestWithLabelPayload(pass2)).to.eql(true);
-      expect(isRequestWithLabelPayload(pass3)).to.eql(true);
+      expect(hasLabelPayload(pass1)).to.eql(true);
+      expect(hasLabelPayload(pass2)).to.eql(true);
+      expect(hasLabelPayload(pass3)).to.eql(true);
     });
   });
 
