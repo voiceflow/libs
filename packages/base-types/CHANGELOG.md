@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.111.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.110.2...@voiceflow/base-types@2.111.0) (2024-06-04)
+
+### Features
+
+* add `embeddingModel` field to `KnowledgeBaseSettings` (COR-2162) ([#526](https://github.com/voiceflow/libs/issues/526)) ([367d751](https://github.com/voiceflow/libs/commit/367d7510ee91f942bd39082aa2c9afb628275687))
+
 ## [2.110.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.110.1...@voiceflow/base-types@2.110.2) (2024-05-22)
 
 ### Bug Fixes
