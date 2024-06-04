@@ -107,6 +107,11 @@ export interface RecursiveTextSplitter {
   overlap?: number;
 }
 
+export interface EmbeddingModel {
+  model: string;
+  size: number;
+}
+
 export interface KnowledgeBaseSettings {
   chunkStrategy: RecursiveTextSplitter;
   summarization: AIModelParams & AIKnowledgeContextParams;
@@ -114,6 +119,7 @@ export interface KnowledgeBaseSettings {
     limit: number;
     metric: string;
   };
+  embeddingModel?: EmbeddingModel;
 }
 
 export interface FAQ {
