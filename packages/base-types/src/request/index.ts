@@ -91,6 +91,11 @@ export interface GeneralActionAndLabelRequest extends GeneralUnknownRequest {
 
 export type GeneralRequest = GeneralUnknownRequest | GeneralActionAndLabelRequest;
 
+export interface PathRequest extends GeneralUnknownRequest {
+  type: `path-${string}`;
+  payload: ActionPayload & Required<LabelRequestPayload>;
+}
+
 export interface ActionRequest extends BaseRequest {
   type: RequestType.ACTION;
   payload?: ActionAndLabelRequestPayload;
@@ -165,3 +170,11 @@ const ALL_REQUEST_TYPES = Object.values(RequestType) as string[];
  */
 export const isGeneralRequest = (request: BaseRequest): request is GeneralRequest =>
   !ALL_REQUEST_TYPES.includes(request.type);
+
+/**
+ * @deprecated This type guard is no longer an effective check if `request` is the specified type. The actual
+ * data being sent does not match the original type definition. This type guard will not be updated with a fix.
+ * Please use the type guards and equivalent DTOs in `@voiceflow/dtos` instead.
+ */
+export const isPathRequest = (request: BaseRequest): request is PathRequest =>
+  isGeneralRequest(request) && request.type.startsWith('path-');
