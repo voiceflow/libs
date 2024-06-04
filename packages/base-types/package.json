@@ -32,10 +32,11 @@
     "lint:eslint": "yarn g:eslint",
     "lint:fix": "yarn g:run-p -c \"lint:eslint --fix\" \"lint:prettier --write\"",
     "lint:prettier": "yarn g:prettier --check",
-    "test": "yarn g:run-p -c test:dependencies test:types",
+    "test": "yarn g:run-p -c test:dependencies test:types test:unit",
     "test:dependencies": "yarn g:depcruise",
     "test:types": "yarn g:tsc --noEmit",
-    "test:unit": ""
+    "test:unit": "yarn g:vitest run --coverage",
+    "tdd": "yarn g:vitest"
   },
   "dependencies": {
     "@voiceflow/common": "workspace:*",
