@@ -80,10 +80,16 @@ export interface IntentRequest extends BaseRequest {
   payload: IntentRequestPayload;
 }
 
-export interface GeneralRequest extends BaseRequest {
+export interface GeneralUnknownRequest extends BaseRequest {
   type: string; // the general request type is dynamic
-  payload?: ActionAndLabelRequestPayload;
+  payload?: unknown;
 }
+
+export interface GeneralActionAndLabelRequest extends GeneralUnknownRequest {
+  payload: ActionAndLabelRequestPayload;
+}
+
+export type GeneralRequest = GeneralUnknownRequest | GeneralActionAndLabelRequest;
 
 export interface ActionRequest extends BaseRequest {
   type: RequestType.ACTION;
