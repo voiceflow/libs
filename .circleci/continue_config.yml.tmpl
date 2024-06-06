@@ -82,7 +82,7 @@ workflows:
           context: dev-test
           executor: vfcommon/node-large-executor-node-20
           name: {{ strings.KebabCase $testJob }}
-          run_on_root: {{ $.values.build_all_services }}
+          run_on_root: true
           {{- if eq $testJob "unit_tests" }}
           collect_coverage: true
           {{- end }}
