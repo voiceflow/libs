@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.31.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.30.5...@voiceflow/voiceflow-types@3.31.0) (2024-06-12)
+
+### Features
+
+* add elevenlabs ([9eefd68](https://github.com/voiceflow/libs/commit/9eefd6889ed7f8a12169b9be166f0580bbf9187a))
+
 ## [3.30.5](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.30.4...@voiceflow/voiceflow-types@3.30.5) (2024-06-04)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
