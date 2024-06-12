@@ -7,6 +7,9 @@ export enum PortType {
   NO_REPLY = 'no-reply',
   NO_MATCH = 'else',
   PREVIOUS = 'previous',
+
+  // a open port does not get remapped to the next step in the block
+  OPEN = 'open',
 }
 
 export interface BasePort {
