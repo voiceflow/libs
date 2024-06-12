@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.31.1](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.31.0...@voiceflow/voiceflow-types@3.31.1) (2024-06-12)
+
+### Reverts
+
+* Revert "feat: add elevenlabs" ([327c1d1](https://github.com/voiceflow/libs/commit/327c1d167191ab39e28f1582364a166d71ae77ea))
+
 # [3.31.0](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.30.5...@voiceflow/voiceflow-types@3.31.0) (2024-06-12)
 
 ### Features
