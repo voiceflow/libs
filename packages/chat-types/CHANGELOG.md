@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.8](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.14.5...@voiceflow/chat-types@2.14.8) (2024-06-20)
+
+### Bug Fixes
+
+* bump package types (COR-000) ([#530](https://github.com/voiceflow/libs/issues/530)) ([33d024d](https://github.com/voiceflow/libs/commit/33d024dc2d04bc23b314932699d30c270bb59837))
+* bump packages pt. 2 (COR-000) ([#531](https://github.com/voiceflow/libs/issues/531)) ([78838e0](https://github.com/voiceflow/libs/commit/78838e054b5fa940f85ac0c5c3d3067eba3dd4dc))
+
 ## [2.14.5](https://github.com/voiceflow/libs/compare/@voiceflow/chat-types@2.14.4...@voiceflow/chat-types@2.14.5) (2024-06-04)
 
 **Note:** Version bump only for package @voiceflow/chat-types

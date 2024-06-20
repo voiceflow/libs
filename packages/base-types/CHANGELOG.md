@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.111.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.111.0...@voiceflow/base-types@2.111.3) (2024-06-20)
+
+### Bug Fixes
+
+* add label field for setV3 (COR-2296) ([#529](https://github.com/voiceflow/libs/issues/529)) ([5d186ef](https://github.com/voiceflow/libs/commit/5d186efd9fd5ef35f30f8cf42b363e0ff5c16d03))
+* bump package types (COR-000) ([#530](https://github.com/voiceflow/libs/issues/530)) ([33d024d](https://github.com/voiceflow/libs/commit/33d024dc2d04bc23b314932699d30c270bb59837))
+* bump packages pt. 2 (COR-000) ([#531](https://github.com/voiceflow/libs/issues/531)) ([78838e0](https://github.com/voiceflow/libs/commit/78838e054b5fa940f85ac0c5c3d3067eba3dd4dc))
+
 # [2.111.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.110.2...@voiceflow/base-types@2.111.0) (2024-06-04)
 
 ### Features
