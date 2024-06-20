@@ -7,7 +7,7 @@ export interface Set {
   type: ExpressionTypeV2.VALUE | ExpressionTypeV2.ADVANCE;
   variable: Nullable<string>;
   expression: string;
-  label: Nullable<string>
+  label: Nullable<string>;
 }
 
 export interface StepData {
