@@ -1,6 +1,6 @@
 {
   "name": "@voiceflow/google-dfes-types",
-  "version": "2.17.7",
+  "version": "2.17.8",
   "description": "Google DF-ES service types",
   "keywords": [
     "voiceflow",
