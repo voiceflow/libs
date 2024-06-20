@@ -7,6 +7,7 @@ export interface Set {
   type: ExpressionTypeV2.VALUE | ExpressionTypeV2.ADVANCE;
   variable: Nullable<string>;
   expression: string;
+  label: Nullable<string>
 }
 
 export interface StepData {
@@ -17,6 +18,7 @@ export interface StepData {
 export interface NodeSet {
   variable: Nullable<string>;
   expression: string | number;
+  label: Nullable<string>;
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
