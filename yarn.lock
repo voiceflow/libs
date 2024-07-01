@@ -565,6 +565,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@es-joy/jsdoccomment@npm:~0.42.0":
+  version: 0.42.0
+  resolution: "@es-joy/jsdoccomment@npm:0.42.0"
+  dependencies:
+    comment-parser: 1.4.1
+    esquery: ^1.5.0
+    jsdoc-type-pratt-parser: ~4.0.0
+  checksum: ea0b56ca8d7470cac4694669807e4b4bbf25389c220af483ea14455c31d4a9e0f6ef0b08f45b92eb8c401bb3d6f662b4b14da51f222b85d78b2b757372072652
+  languageName: node
+  linkType: hard
+
 "@esbuild/aix-ppc64@npm:0.20.2":
   version: 0.20.2
   resolution: "@esbuild/aix-ppc64@npm:0.20.2"
@@ -1355,6 +1366,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@taplo/core@npm:^0.1.0":
+  version: 0.1.1
+  resolution: "@taplo/core@npm:0.1.1"
+  checksum: 4673176900669a14e4d6a0900f7c5b6556b8275b85ab4541be517c150a95fe6b5883e7bf672f71d81488b723e3c115933cb5b36977d3dc0d8d75874495b52aaf
+  languageName: node
+  linkType: hard
+
+"@taplo/lib@npm:^0.4.0-alpha.2":
+  version: 0.4.0-alpha.2
+  resolution: "@taplo/lib@npm:0.4.0-alpha.2"
+  dependencies:
+    "@taplo/core": ^0.1.0
+  checksum: 891fbb433eed8f7faee33136d91352e79a82b1dad806369c2f796772a566afd08061d458d1a03464830c5d8df18517a5ff812c50dfe370786fab601f752702bc
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -1905,18 +1932,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@voiceflow/dependency-cruiser-config@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@voiceflow/dependency-cruiser-config@npm:1.8.2"
+"@voiceflow/dependency-cruiser-config@npm:1.8.5":
+  version: 1.8.5
+  resolution: "@voiceflow/dependency-cruiser-config@npm:1.8.5"
   peerDependencies:
     dependency-cruiser: ^16
-  checksum: 1cfd6acd4d195ba910ccc38906d780b62102991f5862d06b9f575e329a5509587e877c6ae4751175fb575ecab7ad8d0b0144f9ebd39009efb8217dd2f208e373
+  checksum: b0728b1a66abba503110c99a7d77b7d55692afd0de2dabdb3e5ea70667899dfa1cbd0a9c60df72639908cbd8c1dfe328634ee5293c6cf3ea0148d5bfbc5f7cbd
   languageName: node
   linkType: hard
 
-"@voiceflow/eslint-config@npm:7.4.1":
-  version: 7.4.1
-  resolution: "@voiceflow/eslint-config@npm:7.4.1"
+"@voiceflow/eslint-config@npm:7.5.0":
+  version: 7.5.0
+  resolution: "@voiceflow/eslint-config@npm:7.5.0"
   dependencies:
     "@typescript-eslint/eslint-plugin": 7.6.0
     "@typescript-eslint/parser": 7.6.0
@@ -1927,6 +1954,7 @@ __metadata:
     eslint-import-resolver-typescript: 3.6.1
     eslint-plugin-eslint-comments: 3.2.0
     eslint-plugin-import: 2.29.1
+    eslint-plugin-jsdoc: 48.2.3
     eslint-plugin-no-secrets: 0.8.9
     eslint-plugin-prefer-arrow: 1.2.3
     eslint-plugin-prettier: 5.1.3
@@ -1936,7 +1964,7 @@ __metadata:
     eslint-plugin-unicorn: 52.0.0
     eslint-plugin-you-dont-need-lodash-underscore: 6.14.0
     globals: 15.0.0
-  checksum: 9268d79f5f65dfc3579f3fc40323db338af1b6c11799b9a6585479589f1da691a33aef73ccde95b30ac2c4d2ebe1fa8877279ae08624f6187fb01807721449bf
+  checksum: dff0fd544b7f8be02341eb9c40d45dcd455566f09b10abf47fdc5641e31a068aa6f0fe6d67605e2239f73dbe7ead04497d81d6a426a035bf04b31496df477116
   languageName: node
   linkType: hard
 
@@ -2087,31 +2115,32 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@voiceflow/prettier-config@npm:1.5.1":
-  version: 1.5.1
-  resolution: "@voiceflow/prettier-config@npm:1.5.1"
+"@voiceflow/prettier-config@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@voiceflow/prettier-config@npm:1.6.0"
   dependencies:
     prettier-plugin-packagejson: 2.4.14
-  checksum: 90c35c01fa525bfce6612f433d8f25e3982ce1b3d7bc7c8c1db36789d6fe4de75c29e6707a1913e3d12db7778b9d72e7fdb45d7be982ee59d666eeb113e45f6c
+    prettier-plugin-toml: 2.0.1
+  checksum: c038b24884bcd6d83df74f89998b37eb9d48743d635bf0afe221c3f0b8f48aa05119d62cbe7075325953cf73504237c08a4df62bcea81d44f2517ddc61ea7dc7
   languageName: node
   linkType: hard
 
-"@voiceflow/tsconfig@npm:1.7.1":
-  version: 1.7.1
-  resolution: "@voiceflow/tsconfig@npm:1.7.1"
-  checksum: 0c8079178a36d95392e1a4e3a2284637c38ff8fdd87ca2f2bdd2d1f68fbb541e6c8a9180c377c01cb8a278deb75da15d4f505dd1864eaf57bda4d30ec04e0881
+"@voiceflow/tsconfig@npm:1.9.0":
+  version: 1.9.0
+  resolution: "@voiceflow/tsconfig@npm:1.9.0"
+  checksum: 6c6121020bf66db9a9aad54f8400d9d04b78a3875589911b801adab6fcef5ff435b157a3fc7493813f960b345c455a4ef1b59e17f11476ed29a7e214586c139f
   languageName: node
   linkType: hard
 
-"@voiceflow/vitest-config@npm:1.2.1":
-  version: 1.2.1
-  resolution: "@voiceflow/vitest-config@npm:1.2.1"
+"@voiceflow/vitest-config@npm:1.2.5":
+  version: 1.2.5
+  resolution: "@voiceflow/vitest-config@npm:1.2.5"
   dependencies:
     "@vitest/coverage-v8": 1.4.0
     vite-tsconfig-paths: 4.3.2
   peerDependencies:
     vitest: ^1
-  checksum: 1b8f81403038a0e6280ed3211ef3cbd66958a5ad49657fae4c6ba29087c0c87611955a45075d17b2071328c840254b3fe4cd6ed7a44a2610e1bdde28f6be0eeb
+  checksum: b55276ac2da2188c23dd4af3215ebdfdb3a45bdb884d4f7847e7c48d4c03abc9cdd94d70dcb012676b9d03443989dbf4e2280fdaa528101b72d32b7bb61c782c
   languageName: node
   linkType: hard
 
@@ -2332,6 +2361,13 @@ __metadata:
     normalize-path: ^3.0.0
     picomatch: ^2.0.4
   checksum: 985163db2292fac9e5a1e072bf99f1b5baccf196e4de25a0b0b81865ebddeb3b3eb4480734ef0a2ac8c002845396b91aa89121f5b84f93981a4658164a9ec6e9
+  languageName: node
+  linkType: hard
+
+"are-docs-informative@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "are-docs-informative@npm:0.0.2"
+  checksum: 7a48ca90d66e29afebc4387d7029d86cfe97bad7e796c8e7de01309e02dcfc027250231c02d4ca208d2984170d09026390b946df5d3d02ac638ab35f74501c74
   languageName: node
   linkType: hard
 
@@ -3003,6 +3039,13 @@ __metadata:
   version: 9.5.0
   resolution: "commander@npm:9.5.0"
   checksum: c7a3e27aa59e913b54a1bafd366b88650bc41d6651f0cbe258d4ff09d43d6a7394232a4dadd0bf518b3e696fdf595db1028a0d82c785b88bd61f8a440cecfade
+  languageName: node
+  linkType: hard
+
+"comment-parser@npm:1.4.1":
+  version: 1.4.1
+  resolution: "comment-parser@npm:1.4.1"
+  checksum: e0f6f60c5139689c4b1b208ea63e0730d9195a778e90dd909205f74f00b39eb0ead05374701ec5e5c29d6f28eb778cd7bc41c1366ab1d271907f1def132d6bf1
   languageName: node
   linkType: hard
 
@@ -4051,6 +4094,25 @@ __metadata:
   peerDependencies:
     eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
   checksum: e65159aef808136d26d029b71c8c6e4cb5c628e65e5de77f1eb4c13a379315ae55c9c3afa847f43f4ff9df7e54515c77ffc6489c6a6f81f7dd7359267577468c
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-jsdoc@npm:48.2.3":
+  version: 48.2.3
+  resolution: "eslint-plugin-jsdoc@npm:48.2.3"
+  dependencies:
+    "@es-joy/jsdoccomment": ~0.42.0
+    are-docs-informative: ^0.0.2
+    comment-parser: 1.4.1
+    debug: ^4.3.4
+    escape-string-regexp: ^4.0.0
+    esquery: ^1.5.0
+    is-builtin-module: ^3.2.1
+    semver: ^7.6.0
+    spdx-expression-parse: ^4.0.0
+  peerDependencies:
+    eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
+  checksum: 07307b43af441f51282b39953737674db3b4749c261d08af9dc25e9ab780f14d7608ff117313bedb4ae3dd8a53ff1c16ece6e22ef299901e7ce1fbef5bb8a734
   languageName: node
   linkType: hard
 
@@ -6051,6 +6113,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsdoc-type-pratt-parser@npm:~4.0.0":
+  version: 4.0.0
+  resolution: "jsdoc-type-pratt-parser@npm:4.0.0"
+  checksum: af0629c9517e484be778d8564440fec8de5b7610e0c9c88a3ba4554321364faf72b46689c8d8845faa12c0718437a9ed97e231977efc0f2d50e8a2dbad807eb3
+  languageName: node
+  linkType: hard
+
 "jsdom@npm:^20.0.0":
   version: 20.0.3
   resolution: "jsdom@npm:20.0.3"
@@ -7673,6 +7742,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier-plugin-toml@npm:2.0.1":
+  version: 2.0.1
+  resolution: "prettier-plugin-toml@npm:2.0.1"
+  dependencies:
+    "@taplo/lib": ^0.4.0-alpha.2
+  peerDependencies:
+    prettier: ^3.0.3
+  checksum: a327adde74fd2f804c56934e127f1b6687532be271d9fa4a425674b1373c4a038515f91bcce7654554515ae94e8144227cca3bad7ecdcfa5545a1d58a6fa248a
+  languageName: node
+  linkType: hard
+
 "prettier@npm:3.2.5":
   version: 3.2.5
   resolution: "prettier@npm:3.2.5"
@@ -8136,12 +8216,12 @@ __metadata:
   dependencies:
     "@commitlint/cli": 19.2.2
     "@voiceflow/commitlint-config": 2.3.1
-    "@voiceflow/dependency-cruiser-config": 1.8.2
-    "@voiceflow/eslint-config": 7.4.1
+    "@voiceflow/dependency-cruiser-config": 1.8.5
+    "@voiceflow/eslint-config": 7.5.0
     "@voiceflow/git-branch-check": 1.4.1
-    "@voiceflow/prettier-config": 1.5.1
-    "@voiceflow/tsconfig": 1.7.1
-    "@voiceflow/vitest-config": 1.2.1
+    "@voiceflow/prettier-config": 1.6.0
+    "@voiceflow/tsconfig": 1.9.0
+    "@voiceflow/vitest-config": 1.2.5
     dependency-cruiser: 16.3.1
     eslint: 9.0.0
     husky: 9.0.11
@@ -8646,6 +8726,16 @@ __metadata:
     spdx-exceptions: ^2.1.0
     spdx-license-ids: ^3.0.0
   checksum: a1c6e104a2cbada7a593eaa9f430bd5e148ef5290d4c0409899855ce8b1c39652bcc88a725259491a82601159d6dc790bedefc9016c7472f7de8de7361f8ccde
+  languageName: node
+  linkType: hard
+
+"spdx-expression-parse@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "spdx-expression-parse@npm:4.0.0"
+  dependencies:
+    spdx-exceptions: ^2.1.0
+    spdx-license-ids: ^3.0.0
+  checksum: 936be681fbf5edeec3a79c023136479f70d6edb3fd3875089ac86cd324c6c8c81add47399edead296d1d0af17ae5ce88c7f88885eb150b62c2ff6e535841ca6a
   languageName: node
   linkType: hard
 
