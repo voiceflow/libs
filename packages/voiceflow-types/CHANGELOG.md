@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.31.4](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.31.3...@voiceflow/voiceflow-types@3.31.4) (2024-07-05)
+
+### Bug Fixes
+
+* use elevenlabs constants (ENG-175) ([#533](https://github.com/voiceflow/libs/issues/533)) ([d0bb8b4](https://github.com/voiceflow/libs/commit/d0bb8b43b6f0085f28429e7b56dfcb64390f6a82))
+
 ## [3.31.3](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.30.5...@voiceflow/voiceflow-types@3.31.3) (2024-06-20)
 
 ### Bug Fixes
