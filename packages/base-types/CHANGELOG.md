@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.111.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.111.3...@voiceflow/base-types@2.111.4) (2024-07-05)
+
+### Bug Fixes
+
+* add time property to traces (ENG-172) ([ff082d2](https://github.com/voiceflow/libs/commit/ff082d2e61bcfff48bbb9068e7c77f7ed6c77597))
+
 ## [2.111.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.111.0...@voiceflow/base-types@2.111.3) (2024-06-20)
 
 ### Bug Fixes
