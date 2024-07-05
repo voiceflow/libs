@@ -34,6 +34,9 @@ export interface BaseTraceFrame<Payload = any, TracePath extends BaseTraceFrameP
   paths?: TracePath[];
   payload: Payload;
   defaultPath?: number;
+
+  // remove optional after all traces are updated
+  time?: number;
 }
 
 export interface BaseResponseTrace {
