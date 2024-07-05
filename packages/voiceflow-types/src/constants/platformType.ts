@@ -39,4 +39,5 @@ export enum TTSPlatformType {
   ALEXA = 'alexa',
   AZURE = 'azure',
   GOOGLE = 'google',
+  ELEVENLABS = 'elevenlabs',
 }
