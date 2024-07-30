@@ -1972,20 +1972,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@voiceflow/google-dfes-types@workspace:packages/google-dfes-types":
-  version: 0.0.0-use.local
-  resolution: "@voiceflow/google-dfes-types@workspace:packages/google-dfes-types"
-  dependencies:
-    "@voiceflow/base-types": "workspace:*"
-    "@voiceflow/chat-types": "workspace:*"
-    "@voiceflow/common": "workspace:*"
-    "@voiceflow/google-types": "workspace:*"
-    "@voiceflow/voice-types": "workspace:*"
-    "@voiceflow/voiceflow-types": "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"@voiceflow/google-types@workspace:*, @voiceflow/google-types@workspace:packages/google-types":
+"@voiceflow/google-types@workspace:packages/google-types":
   version: 0.0.0-use.local
   resolution: "@voiceflow/google-types@workspace:packages/google-types"
   dependencies:
