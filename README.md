@@ -29,7 +29,3 @@ Check the full description [here](packages/voiceflow-types/README.md)
 ## Alexa Types
 
 Check the full description [here](packages/alexa-types/README.md)
-
-## Google Types
-
-Check the full description [here](packages/google-types/README.md)
