@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.3.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.3.0...@voiceflow/common@8.3.1) (2024-09-12)
+
+### Bug Fixes
+
+* use ESM-compatible imports within @voiceflow/common (DX-2356) ([#538](https://github.com/voiceflow/libs/issues/538)) ([1c2eaaf](https://github.com/voiceflow/libs/commit/1c2eaaffc20940b39e457cdaa94d7cd38a2272f0))
+
 # [8.3.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.2.8...@voiceflow/common@8.3.0) (2024-04-24)
 
 ### Features

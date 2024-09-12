@@ -1,6 +1,6 @@
 {
   "name": "@voiceflow/api-sdk",
-  "version": "3.28.9",
+  "version": "3.28.10",
   "description": "wrapper for creator-api",
   "keywords": [
     "voiceflow"
