@@ -1,5 +1,5 @@
-import type CipherHelper from 'crypto-js/aes';
-import Utf8 from 'crypto-js/enc-utf8';
+import type CipherHelper from 'crypto-js/aes.js';
+import Utf8 from 'crypto-js/enc-utf8.js';
 
 interface SynchronousOptions {
   alg: typeof CipherHelper;

@@ -1,5 +1,5 @@
 import type { AnyRecord } from '@common/types';
-import _transform from 'lodash/transform';
+import _transform from 'lodash/transform.js';
 
 const defaultCompare = <T>(left: T, right: T): boolean => left === right;
 

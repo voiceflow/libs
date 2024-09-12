@@ -1,4 +1,4 @@
-import numberToWords from 'number-to-words/src';
+import numberToWords from 'number-to-words/src/index.js';
 
 export const NON_ALPHANUMERIC_REGEXP = /\W/g;
 

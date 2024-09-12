@@ -1,4 +1,4 @@
-import _uniqBy from 'lodash/uniqBy';
+import _uniqBy from 'lodash/uniqBy.js';
 
 import { SLOT_REGEXP } from '../constants';
 

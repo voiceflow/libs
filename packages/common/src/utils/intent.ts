@@ -1,4 +1,4 @@
-import _sample from 'lodash/sample';
+import _sample from 'lodash/sample.js';
 
 import type { BuiltinSlot } from '../constants';
 import { LOWER_CASE_CUSTOM_SLOT_TYPE, SLOT_REGEXP, SPACE_REGEXP } from '../constants';
