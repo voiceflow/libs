@@ -1,5 +1,5 @@
 import type { AnyRecord, Struct } from '@common/types';
-import _isPlainObject from 'lodash/isPlainObject';
+import _isPlainObject from 'lodash/isPlainObject.js';
 
 export { default as shallowEquals } from 'shallowequal';
 

@@ -1,5 +1,5 @@
-import CryptoBase64 from 'crypto-js/enc-base64';
-import Utf8 from 'crypto-js/enc-utf8';
+import CryptoBase64 from 'crypto-js/enc-base64.js';
+import Utf8 from 'crypto-js/enc-utf8.js';
 
 class Base64 {
   public static encode(data: string): string {
