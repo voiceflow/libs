@@ -52,6 +52,7 @@ export interface VariableElement extends Element {
   id: string;
   name: string;
   isSlot?: boolean;
+  isSecret?: boolean;
 }
 
 export type AnyElement = Element | LinkElement | VariableElement;
