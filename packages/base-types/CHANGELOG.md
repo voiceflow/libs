@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.111.6](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.111.5...@voiceflow/base-types@2.111.6) (2024-09-18)
+
+### Bug Fixes
+
+* add optional isSecret prop to variable elemnt (COR-3275) ([#539](https://github.com/voiceflow/libs/issues/539)) ([4310d95](https://github.com/voiceflow/libs/commit/4310d957dd26b4f44631b3184e405f9559e4b952))
+
 ## [2.111.5](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.111.4...@voiceflow/base-types@2.111.5) (2024-09-12)
 
 **Note:** Version bump only for package @voiceflow/base-types
