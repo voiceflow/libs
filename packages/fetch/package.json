@@ -15,9 +15,27 @@
   },
   "license": "ISC",
   "author": "Voiceflow",
+  "exports": {
+    ".": {
+      "types": "./build/cjs/main.d.ts",
+      "import": "./build/esm/main.js",
+      "default": "./build/cjs/main.js"
+    },
+    "./undici": {
+      "types": "./build/cjs/undici.d.ts",
+      "import": "./build/esm/undici.js",
+      "default": "./build/cjs/undici.js"
+    }
+  },
   "main": "build/cjs/main.js",
-  "module": "build/esm/main.js",
   "types": "build/cjs/main.d.ts",
+  "typesVersions": {
+    "*": {
+      "undici": [
+        "./build/cjs/undici.d.ts"
+      ]
+    }
+  },
   "files": [
     "build"
   ],
@@ -46,7 +64,13 @@
     "vitest-fetch-mock": "0.2.2"
   },
   "peerDependencies": {
-    "@voiceflow/exception": "workspace:^"
+    "@voiceflow/exception": "workspace:^",
+    "undici": "^5"
+  },
+  "peerDependenciesMeta": {
+    "undici": {
+      "optional": true
+    }
   },
   "volta": {
     "extends": "../../package.json"
