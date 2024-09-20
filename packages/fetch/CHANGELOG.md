@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.6.1...@voiceflow/fetch@1.7.0) (2024-09-20)
+
+### Features
+
+* expose node-specific fetch/undici export (DX-2425) ([#540](https://github.com/voiceflow/libs/issues/540)) ([9ee9583](https://github.com/voiceflow/libs/commit/9ee95831ef5b1b446391cef878d7ccee8eb6c08f))
+
 ## [1.6.1](https://github.com/voiceflow/libs/compare/@voiceflow/fetch@1.6.0...@voiceflow/fetch@1.6.1) (2024-05-22)
 
 **Note:** Version bump only for package @voiceflow/fetch
