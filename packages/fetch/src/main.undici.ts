@@ -9,7 +9,7 @@ export * from './http-method.enum';
 export * from './request-options.interface';
 
 export class FetchClient extends BaseFetchClient<undici.RequestInit, URL | undici.Request, undici.Response> {
-  constructor(config?: ClientConfiguration) {
+  constructor(config: ClientConfiguration = {}) {
     super(undici.fetch, config);
   }
 }

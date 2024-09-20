@@ -22,9 +22,9 @@
       "default": "./build/cjs/main.js"
     },
     "./undici": {
-      "types": "./build/cjs/undici.d.ts",
-      "import": "./build/esm/undici.js",
-      "default": "./build/cjs/undici.js"
+      "types": "./build/cjs/main.undici.d.ts",
+      "import": "./build/esm/main.undici.js",
+      "default": "./build/cjs/main.undici.js"
     }
   },
   "main": "build/cjs/main.js",
@@ -32,7 +32,7 @@
   "typesVersions": {
     "*": {
       "undici": [
-        "./build/cjs/undici.d.ts"
+        "./build/cjs/main.undici.d.ts"
       ]
     }
   },
