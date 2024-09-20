@@ -1958,6 +1958,10 @@ __metadata:
     vitest-fetch-mock: 0.2.2
   peerDependencies:
     "@voiceflow/exception": "workspace:^"
+    undici: ^5
+  peerDependenciesMeta:
+    undici:
+      optional: true
   languageName: unknown
   linkType: soft
 
