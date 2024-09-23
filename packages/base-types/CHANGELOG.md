@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.113.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.112.0...@voiceflow/base-types@2.113.0) (2024-09-23)
+
+### Features
+
+* add audio interface field (COR-000) ([#543](https://github.com/voiceflow/libs/issues/543)) ([d884ece](https://github.com/voiceflow/libs/commit/d884ece7946dfe4d0954eba11a3aa2083b49c1ea))
+
 # [2.112.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.111.6...@voiceflow/base-types@2.112.0) (2024-09-23)
 
 ### Features
