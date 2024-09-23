@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.112.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.111.6...@voiceflow/base-types@2.112.0) (2024-09-23)
+
+### Features
+
+* add audioSrc to text trace (COR-000) ([#542](https://github.com/voiceflow/libs/issues/542)) ([9a76aa3](https://github.com/voiceflow/libs/commit/9a76aa3bb7609b62ff78d197c5af8545eae53290))
+
 ## [2.111.6](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.111.5...@voiceflow/base-types@2.111.6) (2024-09-18)
 
 ### Bug Fixes
