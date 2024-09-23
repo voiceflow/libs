@@ -24,4 +24,5 @@ export interface ChatPublishing extends BaseVersion.Publishing {
   stylesheet?: string | string[];
   persistence?: ChatPersistence;
   description?: string;
+  audioInterface?: boolean;
 }
