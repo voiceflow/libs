@@ -35,7 +35,7 @@ export interface Node extends BaseNode, NodeNextID {
 export interface TextTracePayload extends BaseResponseTrace {
   slate: TextData;
   delay?: number;
-  audios?: string[];
+  audio?: { src: string };
 }
 
 export interface TraceFrame extends BaseTraceFrame<TextTracePayload> {
