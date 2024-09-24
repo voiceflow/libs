@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.14](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.10.13...@voiceflow/voice-types@2.10.14) (2024-09-24)
+
+### Bug Fixes
+
+* move default voice to base settings (COR-000) ([#544](https://github.com/voiceflow/libs/issues/544)) ([bfbb3db](https://github.com/voiceflow/libs/commit/bfbb3db9e436ead6e99c2fd32d35643946c08c39))
+
 ## [2.10.13](https://github.com/voiceflow/libs/compare/@voiceflow/voice-types@2.10.12...@voiceflow/voice-types@2.10.13) (2024-09-23)
 
 **Note:** Version bump only for package @voiceflow/voice-types
