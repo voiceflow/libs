@@ -49,7 +49,7 @@
   "peerDependencies": {
     "@nestjs/common": "^8",
     "@nestjs/terminus": "^8",
-    "mongodb": "^4"
+    "mongodb": "^4.17.0"
   },
   "engines": {
     "node": ">=16"
