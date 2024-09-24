@@ -3,9 +3,7 @@ import { ChatVersion } from '@voiceflow/chat-types';
 import type { BaseSettings } from '../base';
 import { defaultBaseSettings } from '../base';
 
-export interface SharedChatSettings extends ChatVersion.Settings {
-  defaultVoice?: string;
-}
+export interface SharedChatSettings extends ChatVersion.Settings {}
 
 export interface ChatSettings extends SharedChatSettings, BaseSettings {}
 
