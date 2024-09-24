@@ -38,6 +38,7 @@ export interface Settings<Prompt = unknown> {
   session: Session<Prompt>;
   defaultCanvasNodeVisibility: Nullable<Utils.CanvasNodeVisibility>;
   defaultCarouselLayout?: Nullable<CarouselLayout>;
+  defaultVoice?: Nullable<string>;
 
   globalNoReply?: {
     prompt?: Nullable<Prompt> | undefined;
@@ -61,6 +62,7 @@ export const defaultSettings = <Prompt>({
   error = null,
   repeat = RepeatType.ALL,
   session = { type: SessionType.RESTART },
+  defaultVoice = null,
   defaultCanvasNodeVisibility = null,
   defaultCarouselLayout = null,
 
@@ -72,6 +74,7 @@ export const defaultSettings = <Prompt>({
   error,
   repeat,
   session,
+  defaultVoice,
   defaultCanvasNodeVisibility,
   defaultCarouselLayout,
 

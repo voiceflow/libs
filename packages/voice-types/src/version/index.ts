@@ -7,17 +7,19 @@ import { defaultSettings } from './settings';
 
 export * from './settings';
 
-export interface PlatformData<Voice> extends BaseVersion.PlatformData<Prompt<Voice>> {
+export interface PlatformData<Voice extends string> extends BaseVersion.PlatformData<Prompt<Voice>> {
   intents: Intent<Voice>[];
   settings: Settings<Voice>;
 }
 
-export interface Version<Voice, Prototype extends BaseModels.Version.Prototype = BaseModels.Version.Prototype>
-  extends BaseVersion.Version<Prompt<Voice>, Prototype> {
+export interface Version<
+  Voice extends string,
+  Prototype extends BaseModels.Version.Prototype = BaseModels.Version.Prototype,
+> extends BaseVersion.Version<Prompt<Voice>, Prototype> {
   platformData: PlatformData<Voice>;
 }
 
-export const defaultPlatformData = <Voice>(
+export const defaultPlatformData = <Voice extends string>(
   { intents = [], settings = {}, ...data }: DeepPartialByKey<PlatformData<Voice>, 'settings'>,
   params: DefaultSettingsParams<Voice>
 ): PlatformData<Voice> => ({
