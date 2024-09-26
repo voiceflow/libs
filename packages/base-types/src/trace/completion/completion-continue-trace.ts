@@ -7,11 +7,6 @@ export interface CompletionContinueTrace extends BaseTraceFrame<CompletionContin
 
 export interface CompletionContinueTracePayload {
   completion: string;
-  tokens?: {
-    answer: number;
-    query: number;
-    total: number;
-  };
 }
 
 export const isCompletionContinueTrace = (trace: BaseTraceFrame): trace is CompletionContinueTrace =>

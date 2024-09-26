@@ -27,13 +27,6 @@ export interface CompletionStartTraceTextPayload extends BaseCompletionStartTrac
 
 export interface BaseCompletionStartTracePayload {
   type: TraceType.TEXT | TraceType.SPEAK;
-  completion: string;
-  tokens?: {
-    model: string;
-    answer: number;
-    query: number;
-    total: number;
-  };
 }
 
 export const isCompletionStartTrace = (trace: BaseTraceFrame): trace is CompletionStartTrace =>
