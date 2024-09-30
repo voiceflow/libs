@@ -19,9 +19,7 @@ export enum TraceType {
   ENTITY_FILLING = 'entity-filling',
   CHANNEL_ACTION = 'channel-action',
   KNOWLEDGE_BASE = 'knowledgeBase',
-  COMPLETION_START = 'completion-start',
-  COMPLETION_CONTINUE = 'completion-continue',
-  COMPLETION_END = 'completion-end',
+  COMPLETION = 'completion',
 }
 
 export interface BaseTraceFramePath<Event extends BaseEvent = BaseEvent> {
