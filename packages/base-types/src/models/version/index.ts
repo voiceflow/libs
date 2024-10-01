@@ -109,4 +109,7 @@ export interface Model<
   topics?: FolderItem[];
 
   nluUnclassifiedData?: NLUUnclassifiedData[];
+
+  updatedAt?: string;
+  publishedAt?: string | null;
 }
