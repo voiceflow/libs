@@ -4,5 +4,5 @@ import type { Slot } from './slot';
 export interface PrototypeModel {
   slots: Slot[];
   intents: Intent[];
-  ragNLUId?: string;
+  modelID?: string;
 }
