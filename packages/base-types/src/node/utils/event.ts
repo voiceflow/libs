@@ -24,7 +24,7 @@ export interface IntentEvent extends BaseEvent, SlotMappings {
 }
 
 export interface EventEvent extends BaseEvent {
-  type: 'event';
+  type: EventType.EVENT;
   event: string;
 }
 
