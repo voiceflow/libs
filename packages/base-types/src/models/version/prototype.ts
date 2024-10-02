@@ -50,6 +50,7 @@ export type SurveyContext<
   extraSlots: Slot[];
   extraIntents: Intent[];
   usedIntentsSet: string[];
+  usedEventsSet: string[];
   cmsVariables?: Record<string, CompiledCMSVariable>;
   functionDefinitions?: Record<string, FunctionCompiledDefinition>;
   platform: PlatformType;
