@@ -1,5 +1,4 @@
 import type { ActionRequestButton, GeneralRequestButton } from '@base-types/request';
-import type { SlateTextValue } from '@base-types/text';
 import type { Nullable } from '@voiceflow/common';
 
 import type { NodeType } from './constants';
@@ -11,12 +10,10 @@ import type {
   BaseNoReplyStepData,
   BaseStep,
   BaseStepPorts,
-  BaseTraceFrame,
   BuiltInNextPort,
   BuiltInNoMatchNoReplyPorts,
   DataID,
   NodeNextID,
-  TraceType,
 } from './utils';
 
 export interface CardV2Button extends DataID {
@@ -51,17 +48,4 @@ export interface Node
   type: NodeType.CARD_V2;
   isBlocking: boolean;
   platform?: string;
-}
-
-export interface TraceCardV2Description {
-  slate?: SlateTextValue;
-  text: string;
-}
-export interface TraceCardV2 extends CardDataWithGeneralButton {
-  description: TraceCardV2Description;
-}
-
-export interface TraceFramePayload extends TraceCardV2 {}
-export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
-  type: TraceType.CARD_V2;
 }

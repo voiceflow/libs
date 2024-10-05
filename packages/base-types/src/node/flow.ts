@@ -1,7 +1,7 @@
 import type { Nullable } from '@voiceflow/common';
 
 import type { NodeType } from './constants';
-import type { BaseNode, BaseStep, BaseTraceFrame, NodeNextID, NodeVariablesMappings, TraceType } from './utils';
+import type { BaseNode, BaseStep, NodeNextID, NodeVariablesMappings } from './utils';
 
 export type VariableMapping = [Nullable<string>, Nullable<string>][];
 
@@ -18,13 +18,4 @@ export interface Node extends BaseNode, NodeNextID {
   type: NodeType.FLOW;
   diagram_id?: string;
   variable_map?: NodeVariablesMappings;
-}
-
-export interface TraceFramePayload {
-  name?: string;
-  diagramID: string;
-}
-
-export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
-  type: TraceType.FLOW;
 }

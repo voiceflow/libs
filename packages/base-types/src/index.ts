@@ -11,8 +11,6 @@ export * as BaseRequest from './request';
 export * as RuntimeLogs from './runtimeLogs';
 export * as Text from './text';
 export * as BaseText from './text';
-export * as Trace from './trace';
-export * as BaseTrace from './trace';
 export * from './types';
 export * as Utils from './utils';
 export * as BaseUtils from './utils';

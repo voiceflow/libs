@@ -11,12 +11,10 @@ import type {
   BaseNoReplyStepData,
   BaseStep,
   BaseStepPorts,
-  BaseTraceFrame,
   BuiltInNextPort,
   BuiltInNoMatchNoReplyPorts,
   DataID,
   NodeNextID,
-  TraceType,
 } from './utils';
 
 export enum CarouselLayout {
@@ -57,20 +55,4 @@ export interface Node extends BaseNode, NodeNextID, BaseNoReplyNodeData, BaseNoM
   layout: CarouselLayout;
   isBlocking: boolean;
   platform?: string;
-}
-
-export interface TraceCarouselCardDescription {
-  slate?: SlateTextValue;
-  text: string;
-}
-export interface TraceCarouselCard extends Omit<NodeCarouselCard, 'description'> {
-  description: TraceCarouselCardDescription;
-}
-
-export interface TraceFramePayload {
-  cards: TraceCarouselCard[];
-  layout: CarouselLayout;
-}
-export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
-  type: TraceType.CAROUSEL;
 }
