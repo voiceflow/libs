@@ -5,6 +5,7 @@ import type { SlotMappings } from './mappings';
 // BUILT IN EVENTS
 export enum EventType {
   INTENT = 'intent',
+  EVENT = 'event',
   ALEXA = 'alexa',
 }
 
@@ -20,6 +21,11 @@ export type Event<T extends string = string, D = unknown> = { type: T } & D;
 export interface IntentEvent extends BaseEvent, SlotMappings {
   type: EventType.INTENT;
   intent: string;
+}
+
+export interface EventEvent extends BaseEvent {
+  type: EventType.EVENT;
+  event: string;
 }
 
 export interface AlexaEvent extends BaseEvent {
