@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.115.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.114.0...@voiceflow/base-types@2.115.0) (2024-10-07)
+
+### Bug Fixes
+
+* add event type (COR-3438) ([#548](https://github.com/voiceflow/libs/issues/548)) ([470794e](https://github.com/voiceflow/libs/commit/470794e36121e3df04d4bba9d3fb4287d6778d5a))
+
+### Features
+
+* added modelID to PrototypeModel in base-types (RUN-26) ([#547](https://github.com/voiceflow/libs/issues/547)) ([87eac81](https://github.com/voiceflow/libs/commit/87eac810f5e7b0d7c004a0fab340a470524ce7ee))
+
 # [2.114.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.113.2...@voiceflow/base-types@2.114.0) (2024-10-01)
 
 ### Features
