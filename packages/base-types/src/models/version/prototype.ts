@@ -39,7 +39,9 @@ export interface PrototypeSettings {
   brandImage?: string;
   hasPassword?: boolean;
   buttonsOnly?: boolean;
+  hasBranding?: boolean;
   variableStateID?: string;
+  publicPrototypeEnabled?: boolean;
 }
 
 export type SurveyContext<
