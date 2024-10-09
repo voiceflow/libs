@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.116.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.115.0...@voiceflow/base-types@2.116.0) (2024-10-09)
+
+### Features
+
+* add additional props to prototype settings (COR-000) ([#550](https://github.com/voiceflow/libs/issues/550)) ([838c885](https://github.com/voiceflow/libs/commit/838c8857375821ba321bb9e4dc56d38452e895f2))
+
 # [2.115.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.114.0...@voiceflow/base-types@2.115.0) (2024-10-07)
 
 ### Bug Fixes
