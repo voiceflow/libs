@@ -1,16 +1,7 @@
 import type { PortType } from '@base-types/models';
 
 import type { NodeType } from './constants';
-import type {
-  BaseNode,
-  BasePort,
-  BaseStep,
-  BaseStepPorts,
-  BaseTraceFrame,
-  BuiltInNextPort,
-  NodeID,
-  TraceType,
-} from './utils';
+import type { BaseNode, BasePort, BaseStep, BaseStepPorts, BuiltInNextPort, NodeID } from './utils';
 
 export interface StepData {
   src: string;
@@ -20,13 +11,6 @@ export interface StepData {
   iconImage?: string;
   description?: string;
   backgroundImage?: string;
-}
-
-export enum TraceStreamAction {
-  LOOP = 'LOOP',
-  PLAY = 'PLAY',
-  PAUSE = 'PAUSE',
-  END = 'END',
 }
 
 export interface StepBaseBuiltInPorts extends BuiltInNextPort {}
@@ -55,19 +39,4 @@ export interface Node extends BaseNode {
   pauseID?: NodeID;
   previousID?: NodeID;
   platform?: string;
-}
-
-export interface TraceFramePayload {
-  src: string;
-  token: string;
-  action: TraceStreamAction;
-  loop: boolean;
-  title?: string;
-  iconImage?: string;
-  description?: string;
-  backgroundImage?: string;
-}
-
-export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
-  type: TraceType.STREAM;
 }

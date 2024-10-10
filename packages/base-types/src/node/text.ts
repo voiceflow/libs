@@ -1,16 +1,7 @@
 import type { SlateTextValue } from '@base-types/text';
 
 import type { NodeType } from './constants';
-import type {
-  BaseNode,
-  BaseResponseTrace,
-  BaseStep,
-  BaseTraceFrame,
-  DataID,
-  NodeNextID,
-  StepCanvasNodeVisibility,
-  TraceType,
-} from './utils';
+import type { BaseNode, BaseStep, DataID, NodeNextID, StepCanvasNodeVisibility } from './utils';
 
 export interface TextData extends DataID {
   content: SlateTextValue;
@@ -30,14 +21,4 @@ export interface Node extends BaseNode, NodeNextID {
   type: NodeType.TEXT;
   texts: TextData[];
   platform?: string;
-}
-
-export interface TextTracePayload extends BaseResponseTrace {
-  slate: TextData;
-  delay?: number;
-  audio?: { src: string };
-}
-
-export interface TraceFrame extends BaseTraceFrame<TextTracePayload> {
-  type: TraceType.TEXT;
 }

@@ -1,7 +1,7 @@
 import type { Nullable } from '@voiceflow/common';
 
 import type { NodeType } from './constants';
-import type { BaseNode, BaseStep, BaseTraceFrame, NodeNextID, TraceType } from './utils';
+import type { BaseNode, BaseStep, NodeNextID } from './utils';
 
 export enum DeviceType {
   MOBILE = 'mobile',
@@ -89,8 +89,4 @@ export interface Node extends BaseNode, NodeNextID {
   type: NodeType.VISUAL;
   data: StepData;
   platform?: string;
-}
-
-export interface TraceFrame extends BaseTraceFrame<StepData> {
-  type: TraceType.VISUAL;
 }

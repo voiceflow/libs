@@ -1,19 +1,17 @@
 import type { Nullable } from '@voiceflow/common';
 
 import type { NodeType } from './constants';
-import type { BaseNode, BaseStep, BaseTraceFrame, NodeNextID } from './utils';
+import type { BaseNode, BaseStep, NodeNextID } from './utils';
 
-export type AnyTrace = BaseTraceFrame<any>;
-
-export interface StepData<Trace extends AnyTrace = AnyTrace> {
-  traces: Nullable<Trace>[];
+export interface StepData {
+  traces: Nullable<any>[];
 }
 
 export interface Step<Data = StepData> extends BaseStep<Data> {
   type: NodeType.GENERAL;
 }
 
-export interface Node<Trace extends AnyTrace = AnyTrace> extends BaseNode, NodeNextID {
+export interface Node extends BaseNode, NodeNextID {
   type: NodeType.GENERAL;
-  traces: Trace[];
+  traces: any[];
 }

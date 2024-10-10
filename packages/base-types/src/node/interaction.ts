@@ -1,4 +1,3 @@
-import type { AnyRequestButton } from '@base-types/request';
 import type { Nullable } from '@voiceflow/common';
 
 import type { NodeType } from './constants';
@@ -11,14 +10,12 @@ import type {
   BaseNoReplyStepData,
   BaseStep,
   BaseStepNoMatch,
-  BaseTraceFrame,
   DeprecatedBaseNodeNoMatch,
   NodeIntentScope,
   NodeNextID,
   NoMatchNoReplyStepPorts,
   SlotMappings,
   StepIntentScope,
-  TraceType,
 } from './utils';
 
 /**
@@ -79,12 +76,4 @@ export interface Node<Event = BaseEvent>
   type: NodeType.INTERACTION;
   interactions: NodeInteraction<Event>[];
   platform?: string;
-}
-
-export interface TraceFramePayload {
-  buttons: AnyRequestButton[];
-}
-
-export interface TraceFrame extends BaseTraceFrame<TraceFramePayload> {
-  type: TraceType.CHOICE;
 }
