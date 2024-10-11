@@ -1,4 +1,4 @@
-import type { AIKnowledgeContextParams, AIKnowledgeParams, AIModelParams } from '../utils/ai';
+import type { AICompletionParams, AIKnowledgeContextParams, AIKnowledgeParams, AIModelParams } from '../utils/ai';
 import type { NodeType } from './constants';
 import type {
   BaseNode,
@@ -10,7 +10,7 @@ import type {
   NodeNextID,
 } from './utils';
 
-export interface StepData extends AIModelParams, AIKnowledgeContextParams, AIKnowledgeParams {
+export interface StepData extends AIModelParams, AICompletionParams, AIKnowledgeContextParams, AIKnowledgeParams {
   notFoundPath?: boolean;
 
   // the existance of this property is also a flag if the step is a legacy version or not

@@ -31,6 +31,11 @@ export interface AIModelParams {
   system?: string;
 }
 
+export interface AICompletionParams {
+  // make it optional for backward compatibility
+  messages?: Message[];
+}
+
 export interface AIContextParams {
   mode: PROMPT_MODE;
   prompt: string;
