@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.117.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.116.1...@voiceflow/base-types@2.117.0) (2024-10-14)
+
+### Features
+
+* add messages to ai node props (DLC-271) ([#551](https://github.com/voiceflow/libs/issues/551)) ([200b10d](https://github.com/voiceflow/libs/commit/200b10d5af7c0068d46f047a78a586508948ea9d))
+
 ## [2.116.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.116.0...@voiceflow/base-types@2.116.1) (2024-10-10)
 
 ### Bug Fixes
