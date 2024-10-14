@@ -10,7 +10,7 @@ import type {
   NodeNextID,
 } from './utils';
 
-export interface StepData extends AIModelParams, AICompletionParams, AIKnowledgeContextParams, AIKnowledgeParams {
+export interface StepData extends AIModelParams, AIKnowledgeContextParams, AIKnowledgeParams {
   notFoundPath?: boolean;
 
   // the existance of this property is also a flag if the step is a legacy version or not
@@ -21,6 +21,12 @@ export interface Step<Data = StepData> extends BaseStep<Data, BaseStepPorts<Buil
   type: NodeType.AI_RESPONSE;
 }
 
-export interface Node extends BaseNode, StepData, NodeNextID, NodeElseID {
+export interface NodeData extends AIModelParams, AICompletionParams, AIKnowledgeContextParams, AIKnowledgeParams {
+  notFoundPath?: boolean;
+
+  // the existance of this property is also a flag if the step is a legacy version or not
+  overrideParams?: boolean;
+}
+export interface Node extends BaseNode, NodeData, NodeNextID, NodeElseID {
   type: NodeType.AI_RESPONSE;
 }
