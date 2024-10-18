@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.118.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.117.0...@voiceflow/base-types@2.118.0) (2024-10-18)
+
+### Features
+
+* remove public prototype enabled from version settings (COR-000) ([#553](https://github.com/voiceflow/libs/issues/553)) ([8ace54c](https://github.com/voiceflow/libs/commit/8ace54c72a396f26cb7c2fbb7d41a67f9b9b08b9))
+
 # [2.117.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.116.1...@voiceflow/base-types@2.117.0) (2024-10-14)
 
 ### Features
