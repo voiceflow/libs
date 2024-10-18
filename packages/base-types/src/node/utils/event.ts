@@ -39,7 +39,7 @@ export interface GeneralEvent extends BaseEvent {
   name: string;
 }
 
-export type AnyEvent = IntentEvent | GeneralEvent;
+export type AnyEvent = IntentEvent | GeneralEvent | EventEvent;
 
 export const isIntentEvent = (event: BaseEvent): event is IntentEvent => event.type === EventType.INTENT;
 
