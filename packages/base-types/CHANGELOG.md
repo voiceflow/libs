@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.118.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.118.0...@voiceflow/base-types@2.118.1) (2024-10-21)
+
+### Bug Fixes
+
+* add event to any event type (COR-3436) ([#554](https://github.com/voiceflow/libs/issues/554)) ([b5f2931](https://github.com/voiceflow/libs/commit/b5f293135607f179d5476157eacf5fef35ab2ea0))
+
 # [2.118.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.117.0...@voiceflow/base-types@2.118.0) (2024-10-18)
 
 ### Features
