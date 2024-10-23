@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.119.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.118.1...@voiceflow/base-types@2.119.0) (2024-10-23)
+
+### Features
+
+* adding changes field (COR-3604) ([#555](https://github.com/voiceflow/libs/issues/555)) ([a211af5](https://github.com/voiceflow/libs/commit/a211af54b1e579f2f59c46c225e269281a08aa59))
+
 ## [2.118.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.118.0...@voiceflow/base-types@2.118.1) (2024-10-21)
 
 ### Bug Fixes
