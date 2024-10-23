@@ -1,5 +1,5 @@
 import type { APIBodyType, APIMethod } from '@base-types/node/api';
-import type { PathReference } from '@base-types/runtimeLogs/utils';
+import type { PathReference, ValueChange } from '@base-types/runtimeLogs/utils';
 
 import type { BaseStepLog } from '../base';
 import type { StepLogKind } from '../kinds';
@@ -24,6 +24,7 @@ interface ApiLogMessageResponse {
 interface ApiLogMessage {
   request: ApiLogMessageRequest;
   response: ApiLogMessageResponse;
+  changes: Record<string, ValueChange<unknown, unknown>>;
 }
 
 type VerboseApiLogMessageRequest = {
@@ -54,6 +55,7 @@ interface VerboseApiLogMessageResponse {
 interface VerboseApiLogMessage {
   request: VerboseApiLogMessageRequest;
   response: VerboseApiLogMessageResponse;
+  changes: Record<string, ValueChange<unknown, unknown>>;
 }
 
 export type ApiStepLog =
