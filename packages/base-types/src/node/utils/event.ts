@@ -43,6 +43,8 @@ export type AnyEvent = IntentEvent | GeneralEvent | EventEvent;
 
 export const isIntentEvent = (event: BaseEvent): event is IntentEvent => event.type === EventType.INTENT;
 
+export const isEventEvent = (event: BaseEvent): event is EventEvent => event.type === EventType.EVENT;
+
 const ALL_EVENTS_TYPES = Object.values(EventType) as string[];
 
 export const isGeneralEvent = (event: GeneralEvent): event is GeneralEvent => !ALL_EVENTS_TYPES.includes(event.type);
