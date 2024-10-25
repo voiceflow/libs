@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.120.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.119.0...@voiceflow/base-types@2.120.0) (2024-10-25)
+
+### Features
+
+* add event trigger guard (COR-3437) ([#556](https://github.com/voiceflow/libs/issues/556)) ([ff1a9f7](https://github.com/voiceflow/libs/commit/ff1a9f706bef07e38199401ed789e7c9943d4cb5))
+
 # [2.119.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.118.1...@voiceflow/base-types@2.119.0) (2024-10-23)
 
 ### Features
