@@ -12,7 +12,7 @@ export enum CommandType {
 export interface TypedBaseCommand<Event extends BaseEvent = BaseEvent> extends BaseCommand {
   type: CommandType;
   event?: Event;
-  on?: Record<string, unknown>;  // npm package `sift` query object
+  on?: Record<string, unknown>; // npm package `sift` query object
 }
 
 export interface JumpCommand<Event extends BaseEvent = BaseEvent> extends TypedBaseCommand<Event> {
