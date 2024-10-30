@@ -1,7 +1,7 @@
 import type { Nullable } from "@voiceflow/common";
 
 import type { BaseCommand } from "./base";
-import type { AnyEvent, BaseEvent } from "./event";
+import { isBaseEvent, type BaseEvent } from "./event";
 
 // BUILT IN COMMANDS
 export enum CommandType {
@@ -66,10 +66,10 @@ export const isWithPush = (command: BaseCommand): command is WithPush =>
     command.type === CommandType.PUSH;
 
 export const isWithEventMatching = <TEvent extends BaseEvent = BaseEvent>(command: BaseCommand): command is EventMatchedCommand<TEvent> => 
-    'event' in command;
+    'event' in command && isBaseEvent(command.event);
 
 export const isWithOnMatching = (command: BaseCommand): command is OnMatchedCommand => 
-    'on' in command;
+    'on' in command && typeof command.on === 'object' && command.on !== null;
 
 export const isJumpEventMatchedCommand = <Event extends BaseEvent = BaseEvent>(
   command: BaseCommand,
