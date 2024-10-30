@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+
 import { isBaseEvent } from './event';
 
 describe('event.ts', () => {
@@ -17,15 +18,17 @@ describe('event.ts', () => {
 
     it('accepts values that are BaseEvent', () => {
       expect(isBaseEvent({ type: 'event-type' })).to.eq(true);
-      expect(isBaseEvent({ 
-        type: 'event-type', 
-        propA: 1,
-        propB: 'hello',
-        propC: true,
-        propD: {
-          propE: [1,2,3,4,5],
-        }
-      })).to.eq(true);
+      expect(
+        isBaseEvent({
+          type: 'event-type',
+          propA: 1,
+          propB: 'hello',
+          propC: true,
+          propD: {
+            propE: [1, 2, 3, 4, 5],
+          },
+        })
+      ).to.eq(true);
     });
   });
 });

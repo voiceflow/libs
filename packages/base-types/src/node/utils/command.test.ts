@@ -1,46 +1,63 @@
-import { BaseCommand } from '@base-types/models';
+import type { BaseCommand } from '@base-types/models';
 import { describe, expect, it } from 'vitest';
-import { CommandType, isJumpEventMatchedCommand, isJumpOnMatchedCommand, isPushEventMatchedCommand, isPushOnMatchedCommand, isWithEventMatching, isWithJump, isWithOnMatching, isWithPush, JumpEventMatchedCommand, JumpOnMatchedCommand, PushEventMatchedCommand, PushOnMatchedCommand } from './command';
+
+import type {
+  JumpEventMatchedCommand,
+  JumpOnMatchedCommand,
+  PushEventMatchedCommand,
+  PushOnMatchedCommand,
+} from './command';
+import {
+  CommandType,
+  isJumpEventMatchedCommand,
+  isJumpOnMatchedCommand,
+  isPushEventMatchedCommand,
+  isPushOnMatchedCommand,
+  isWithEventMatching,
+  isWithJump,
+  isWithOnMatching,
+  isWithPush,
+} from './command';
 
 describe('command.ts', () => {
   const basePushCommand: BaseCommand = {
-    type: CommandType.PUSH
+    type: CommandType.PUSH,
   };
 
   const baseJumpCommand: BaseCommand = {
-    type: CommandType.JUMP
+    type: CommandType.JUMP,
   };
 
   const jumpOnMatchedCommand: JumpOnMatchedCommand = {
     type: CommandType.JUMP,
     on: {
-      'event.type': 'event-A'
+      'event.type': 'event-A',
     },
-    nextID: 'next-id'
+    nextID: 'next-id',
   };
 
   const pushOnMatchedCommand: PushOnMatchedCommand = {
     type: CommandType.PUSH,
     on: {
-      'event.type': 'event-A'
+      'event.type': 'event-A',
     },
-    diagramID: 'diagram-id'
+    diagramID: 'diagram-id',
   };
-  
+
   const jumpEventMatchedCommand: JumpEventMatchedCommand = {
     type: CommandType.JUMP,
     event: {
-      type: 'event-A'
+      type: 'event-A',
     },
-    nextID: 'next-id'
+    nextID: 'next-id',
   };
 
   const pushEventMatchedCommand: PushEventMatchedCommand = {
     type: CommandType.PUSH,
     event: {
-      type: 'event-A'
+      type: 'event-A',
     },
-    diagramID: 'diagram-id'
+    diagramID: 'diagram-id',
   };
 
   describe('isWithJump', () => {
@@ -97,7 +114,7 @@ describe('command.ts', () => {
     });
   });
 
-  describe('isJumpEventMatchedCommand', () => {
+  describe('isJumpEventMatched', () => {
     it('fails non-matching commands', () => {
       expect(isJumpEventMatchedCommand(baseJumpCommand)).to.eql(false);
       expect(isJumpEventMatchedCommand(basePushCommand)).to.eql(false);
@@ -111,7 +128,7 @@ describe('command.ts', () => {
     });
   });
 
-  describe('isPushEventMatchedCommand', () => {
+  describe('isPushEventMatched', () => {
     it('fails non-matching commands', () => {
       expect(isPushEventMatchedCommand(baseJumpCommand)).to.eql(false);
       expect(isPushEventMatchedCommand(basePushCommand)).to.eql(false);
@@ -125,7 +142,7 @@ describe('command.ts', () => {
     });
   });
 
-  describe('isJumpOnMatchedCommand', () => {
+  describe('isJumpOnMatched', () => {
     it('fails non-matching commands', () => {
       expect(isJumpOnMatchedCommand(baseJumpCommand)).to.eql(false);
       expect(isJumpOnMatchedCommand(basePushCommand)).to.eql(false);
@@ -139,7 +156,7 @@ describe('command.ts', () => {
     });
   });
 
-  describe('isPushOnMatchedCommand', () => {
+  describe('isPushOnMatched', () => {
     it('fails non-matching commands', () => {
       expect(isPushOnMatchedCommand(baseJumpCommand)).to.eql(false);
       expect(isPushOnMatchedCommand(basePushCommand)).to.eql(false);
