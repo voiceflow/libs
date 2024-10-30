@@ -35,7 +35,7 @@
     "test": "yarn g:run-p -c test:dependencies test:types",
     "test:dependencies": "yarn g:depcruise",
     "test:types": "yarn g:tsc --noEmit",
-    "test:unit": ""
+    "test:unit": "yarn g:vitest run --coverage"
   },
   "dependencies": {
     "@voiceflow/common": "workspace:*",
