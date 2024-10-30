@@ -43,11 +43,8 @@ export type AnyEvent = IntentEvent | GeneralEvent | EventEvent;
 
 const ALL_EVENTS_TYPES = Object.values(EventType) as string[];
 
-export const isBaseEvent = (event: unknown): event is BaseEvent => 
-    typeof event === 'object' &&
-    event !== null &&
-    'type' in event &&
-    typeof event.type === 'string';
+export const isBaseEvent = (event: unknown): event is BaseEvent =>
+  typeof event === 'object' && event !== null && 'type' in event && typeof event.type === 'string';
 
 export const isIntentEvent = (event: BaseEvent): event is IntentEvent => event.type === EventType.INTENT;
 

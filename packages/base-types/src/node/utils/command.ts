@@ -1,16 +1,15 @@
-import type { Nullable } from "@voiceflow/common";
+import type { Nullable } from '@voiceflow/common';
 
-import type { BaseCommand } from "./base";
-import { isBaseEvent, type BaseEvent } from "./event";
+import type { BaseCommand } from './base';
+import { type BaseEvent, isBaseEvent } from './event';
 
 // BUILT IN COMMANDS
 export enum CommandType {
-  JUMP = "jump",
-  PUSH = "push",
+  JUMP = 'jump',
+  PUSH = 'push',
 }
 
-export interface TypedBaseCommand
-  extends BaseCommand {
+export interface TypedBaseCommand extends BaseCommand {
   type: CommandType;
 }
 
@@ -36,57 +35,48 @@ export interface WithPush extends TypedBaseCommand {
 }
 
 export interface JumpEventMatchedCommand<Event extends BaseEvent = BaseEvent>
-  extends WithJump, WithEventMatching<Event> {}
+  extends WithJump,
+    WithEventMatching<Event> {}
 
 export interface PushEventMatchedCommand<Event extends BaseEvent = BaseEvent>
-  extends WithPush, WithEventMatching<Event> {}
+  extends WithPush,
+    WithEventMatching<Event> {}
 
-export interface JumpOnMatchedCommand
-  extends WithJump, WithSiftOnMatching {}
+export interface JumpOnMatchedCommand extends WithJump, WithSiftOnMatching {}
 
-export interface PushOnMatchedCommand
-  extends WithPush, WithSiftOnMatching {}
+export interface PushOnMatchedCommand extends WithPush, WithSiftOnMatching {}
 
 export type EventMatchedCommand<Event extends BaseEvent = BaseEvent> =
   | JumpEventMatchedCommand<Event>
   | PushEventMatchedCommand<Event>;
 
-export type OnMatchedCommand =
-  | JumpOnMatchedCommand
-  | PushOnMatchedCommand;
+export type OnMatchedCommand = JumpOnMatchedCommand | PushOnMatchedCommand;
 
-export type AnyCommand<Event extends BaseEvent = BaseEvent> =
-  | EventMatchedCommand<Event>
-  | OnMatchedCommand;
+export type AnyCommand<Event extends BaseEvent = BaseEvent> = EventMatchedCommand<Event> | OnMatchedCommand;
 
-export const isWithJump = (command: BaseCommand): command is WithJump => 
-    command.type === CommandType.JUMP;
+export const isWithJump = (command: BaseCommand): command is WithJump => command.type === CommandType.JUMP;
 
-export const isWithPush = (command: BaseCommand): command is WithPush => 
-    command.type === CommandType.PUSH;
+export const isWithPush = (command: BaseCommand): command is WithPush => command.type === CommandType.PUSH;
 
-export const isWithEventMatching = <TEvent extends BaseEvent = BaseEvent>(command: BaseCommand): command is EventMatchedCommand<TEvent> => 
-    'event' in command && isBaseEvent(command.event);
+export const isWithEventMatching = <TEvent extends BaseEvent = BaseEvent>(
+  command: BaseCommand
+): command is EventMatchedCommand<TEvent> => 'event' in command && isBaseEvent(command.event);
 
-export const isWithOnMatching = (command: BaseCommand): command is OnMatchedCommand => 
-    'on' in command && typeof command.on === 'object' && command.on !== null;
+export const isWithOnMatching = (command: BaseCommand): command is OnMatchedCommand =>
+  'on' in command && typeof command.on === 'object' && command.on !== null;
 
 export const isJumpEventMatchedCommand = <Event extends BaseEvent = BaseEvent>(
-  command: BaseCommand,
-): command is JumpEventMatchedCommand<Event> =>
-  isWithJump(command) && isWithEventMatching(command);
+  command: BaseCommand
+): command is JumpEventMatchedCommand<Event> => isWithJump(command) && isWithEventMatching(command);
 
 export const isPushEventMatchedCommand = <Event extends BaseEvent = BaseEvent>(
-  command: BaseCommand,
-): command is JumpEventMatchedCommand<Event> =>
-  isWithPush(command) && isWithEventMatching(command);
+  command: BaseCommand
+): command is JumpEventMatchedCommand<Event> => isWithPush(command) && isWithEventMatching(command);
 
 export const isJumpOnMatchedCommand = <Event extends BaseEvent = BaseEvent>(
-  command: BaseCommand,
-): command is JumpEventMatchedCommand<Event> =>
-  isWithJump(command) && isWithOnMatching(command);
+  command: BaseCommand
+): command is JumpEventMatchedCommand<Event> => isWithJump(command) && isWithOnMatching(command);
 
 export const isPushOnMatchedCommand = <Event extends BaseEvent = BaseEvent>(
-  command: BaseCommand,
-): command is JumpEventMatchedCommand<Event> =>
-  isWithPush(command) && isWithOnMatching(command);
+  command: BaseCommand
+): command is JumpEventMatchedCommand<Event> => isWithPush(command) && isWithOnMatching(command);
