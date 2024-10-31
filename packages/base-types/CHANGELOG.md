@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.121.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.120.0...@voiceflow/base-types@2.121.0) (2024-10-31)
+
+### Features
+
+* added on query to command (COR-1997) ([#557](https://github.com/voiceflow/libs/issues/557)) ([406dc44](https://github.com/voiceflow/libs/commit/406dc44974cc92d5d450fee8c2aea364cd4a4e01))
+
 # [2.120.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.119.0...@voiceflow/base-types@2.120.0) (2024-10-25)
 
 ### Features
