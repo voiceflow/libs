@@ -40,6 +40,11 @@ export interface Settings<Prompt = unknown> {
   defaultCarouselLayout?: Nullable<CarouselLayout>;
   defaultVoice?: Nullable<string>;
 
+  deepgramASR?: {
+    endpointing: number;
+    utteranceEndMS: number;
+  };
+
   globalNoReply?: {
     prompt?: Nullable<Prompt> | undefined;
     delay?: number | undefined;
