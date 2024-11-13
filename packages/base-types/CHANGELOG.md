@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.121.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.121.0...@voiceflow/base-types@2.121.1) (2024-11-13)
+
+### Bug Fixes
+
+* deepgram asr settings (RUN-320) ([a501934](https://github.com/voiceflow/libs/commit/a50193490e2662c064d51b469b353dd519ed6cdf))
+
 # [2.121.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.120.0...@voiceflow/base-types@2.121.0) (2024-10-31)
 
 ### Features
