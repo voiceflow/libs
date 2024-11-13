@@ -74,6 +74,8 @@ export const defaultSettings = <Prompt>({
   globalNoMatch = { type: GlobalNoMatchType.STATIC, prompt: undefined },
   globalNoReply = { delay: undefined, prompt: undefined },
 
+  deepgramASR,
+
   intentConfidence = 0.6,
 }: Partial<Settings<Prompt>> = {}): Settings<Prompt> => ({
   error,
@@ -85,6 +87,8 @@ export const defaultSettings = <Prompt>({
 
   globalNoMatch,
   globalNoReply,
+
+  deepgramASR,
 
   intentConfidence,
 });
