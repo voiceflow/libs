@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.121.3](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.121.2...@voiceflow/base-types@2.121.3) (2024-11-15)
+
+### Bug Fixes
+
+* add general deepgram settings ([309cef8](https://github.com/voiceflow/libs/commit/309cef8d99233e4a74314ef2ca933f3bf33ee42e))
+
 ## [2.121.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.121.1...@voiceflow/base-types@2.121.2) (2024-11-13)
 
 ### Bug Fixes
