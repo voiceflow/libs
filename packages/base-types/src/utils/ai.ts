@@ -36,6 +36,24 @@ export interface AICompletionParams {
   messages?: Message[];
 }
 
+export interface AIResponseFormatParams {
+  // make it optional for backward compatibility
+  responseFormat?: {
+    type: 'object';
+    properties: Record<
+      string,
+      {
+        type: 'string' | 'number' | 'integer' | 'boolean' | 'enum';
+        enum?: Array<string | number | boolean>;
+        const?: string | number | boolean;
+        description?: string;
+      }
+    >;
+    additionalProperties: boolean;
+    required: string[];
+  };
+}
+
 export interface AIContextParams {
   mode: PROMPT_MODE;
   prompt: string;
