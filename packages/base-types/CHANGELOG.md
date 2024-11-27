@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.122.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.121.4...@voiceflow/base-types@2.122.0) (2024-11-27)
+
+### Features
+
+* add new response format params (DLC-476) ([#558](https://github.com/voiceflow/libs/issues/558)) ([83df04a](https://github.com/voiceflow/libs/commit/83df04a7bf1443f5a63a311cd121090b38f205cd))
+
 ## [2.121.4](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.121.3...@voiceflow/base-types@2.121.4) (2024-11-15)
 
 ### Bug Fixes
