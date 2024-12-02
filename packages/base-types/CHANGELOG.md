@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.122.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.122.0...@voiceflow/base-types@2.122.1) (2024-12-02)
+
+### Bug Fixes
+
+* removed modelID (RUN-400) ([#559](https://github.com/voiceflow/libs/issues/559)) ([819170a](https://github.com/voiceflow/libs/commit/819170ad104e68dd55187081845ee0856641b91d))
+
 # [2.122.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.121.4...@voiceflow/base-types@2.122.0) (2024-11-27)
 
 ### Features
