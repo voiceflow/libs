@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.124.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.123.0...@voiceflow/base-types@2.124.0) (2024-12-10)
+
+### Features
+
+* global no reply enabled property (COR-4158) ([#561](https://github.com/voiceflow/libs/issues/561)) ([96a2579](https://github.com/voiceflow/libs/commit/96a2579d89bcedbe2adb747c8584893ae2bb2a16))
+
 # [2.123.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.122.1...@voiceflow/base-types@2.123.0) (2024-12-10)
 
 ### Features
