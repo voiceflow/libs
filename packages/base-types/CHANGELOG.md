@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.123.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.122.1...@voiceflow/base-types@2.123.0) (2024-12-10)
+
+### Features
+
+* response format as string (DLC-000) ([#560](https://github.com/voiceflow/libs/issues/560)) ([22c27ed](https://github.com/voiceflow/libs/commit/22c27ed29e34c32ac971b43b5c1afff0deb16a7e))
+
 ## [2.122.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.122.0...@voiceflow/base-types@2.122.1) (2024-12-02)
 
 ### Bug Fixes
