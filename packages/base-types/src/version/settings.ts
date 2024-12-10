@@ -45,6 +45,7 @@ export interface Settings<Prompt = unknown> {
   globalNoReply?: {
     prompt?: Nullable<Prompt> | undefined;
     delay?: number | undefined;
+    enabled?: boolean;
   };
 
   globalNoMatch?:
@@ -69,7 +70,7 @@ export const defaultSettings = <Prompt>({
   defaultCarouselLayout = null,
 
   globalNoMatch = { type: GlobalNoMatchType.STATIC, prompt: undefined },
-  globalNoReply = { delay: undefined, prompt: undefined },
+  globalNoReply = { delay: undefined, prompt: undefined, enabled: true },
 
   deepgramASR,
 
