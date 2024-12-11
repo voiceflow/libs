@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.126.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.125.0...@voiceflow/base-types@2.126.0) (2024-12-11)
+
+### Features
+
+* fix message role type (RUN-447) ([#563](https://github.com/voiceflow/libs/issues/563)) ([5f9f75c](https://github.com/voiceflow/libs/commit/5f9f75c33f07e81c5b997273e95b4d17bf721283))
+
 # [2.125.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.124.0...@voiceflow/base-types@2.125.0) (2024-12-11)
 
 ### Features
