@@ -56,13 +56,16 @@ export interface AIKnowledgeParams {
   source?: DATA_SOURCE;
 }
 
-export enum Role {
-  SYSTEM = 'system',
-  ASSISTANT = 'assistant',
-  USER = 'user',
-}
+// internal voiceflow message roles, roughly maps to OpenAI
+export const AIMessageRole = {
+  USER: 'user',
+  SYSTEM: 'system',
+  ASSISTANT: 'assistant',
+} as const;
+
+export type AIMessageRole = (typeof AIMessageRole)[keyof typeof AIMessageRole];
 
 export interface Message {
-  role: Role;
+  role: AIMessageRole;
   content: string;
 }
