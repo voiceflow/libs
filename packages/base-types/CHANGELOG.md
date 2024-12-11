@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.125.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.124.0...@voiceflow/base-types@2.125.0) (2024-12-11)
+
+### Features
+
+* add model to version (RUN-446) ([#562](https://github.com/voiceflow/libs/issues/562)) ([3a3afda](https://github.com/voiceflow/libs/commit/3a3afda17d67c5ceea46a1acf88fb60b37739f1d))
+
 # [2.124.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.123.0...@voiceflow/base-types@2.124.0) (2024-12-10)
 
 ### Features
