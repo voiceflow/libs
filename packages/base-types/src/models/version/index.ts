@@ -55,6 +55,10 @@ export interface Folder {
   items: FolderItem[];
 }
 
+export interface NLUModel {
+  modelID: string;
+}
+
 export type DefaultStepColors = Partial<Record<NodeType, string>>;
 
 export interface CustomBlock {
@@ -96,6 +100,7 @@ export interface Model<
   canvasTemplates?: CanvasTemplate[];
   templateDiagramID?: string;
   defaultStepColors?: DefaultStepColors;
+  model?: NLUModel;
 
   manualSave: boolean;
   autoSaveFromRestore: boolean;
