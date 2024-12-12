@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.127.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.127.1...@voiceflow/base-types@2.127.2) (2024-12-12)
+
+### Bug Fixes
+
+* separate event imports in command.ts (RUN-457) ([#566](https://github.com/voiceflow/libs/issues/566)) ([ea40ea3](https://github.com/voiceflow/libs/commit/ea40ea3cfdcea8404071cade2847cc4dd112a1d0))
+
 ## [2.127.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.127.0...@voiceflow/base-types@2.127.1) (2024-12-12)
 
 **Note:** Version bump only for package @voiceflow/base-types
