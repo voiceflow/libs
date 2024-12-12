@@ -70,7 +70,7 @@ export const defaultSettings = <Prompt>({
   defaultCarouselLayout = null,
 
   globalNoMatch = { type: GlobalNoMatchType.STATIC, prompt: undefined },
-  globalNoReply = { delay: undefined, prompt: undefined, enabled: true },
+  globalNoReply = { delay: undefined, prompt: undefined, enabled: false },
 
   deepgramASR,
 
