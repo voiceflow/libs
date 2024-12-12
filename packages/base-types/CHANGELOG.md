@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.127.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.126.0...@voiceflow/base-types@2.127.0) (2024-12-12)
+
+### Features
+
+* globalNoReply.enabled false as default (COR-4232) ([#565](https://github.com/voiceflow/libs/issues/565)) ([1e551c0](https://github.com/voiceflow/libs/commit/1e551c05e616dd86e371c23371d67410a7513e22))
+
 # [2.126.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.125.0...@voiceflow/base-types@2.126.0) (2024-12-11)
 
 ### Features
