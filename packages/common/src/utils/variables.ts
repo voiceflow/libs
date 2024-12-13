@@ -72,7 +72,9 @@ export const replaceVariables = (
   }
 
   if (keepTypeIfOnlyVariable && phrase.match(VARIABLE_ONLY_REGEXP)) {
-    return variableReplacer(phrase, phrase.slice(1, -1), variables, modifier);
+    // remove the curly braces {} from phrase to get the inner
+    const inner = phrase.slice(1, -1);
+    return variableReplacer(phrase, inner, variables, modifier);
   }
 
   return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner) =>
