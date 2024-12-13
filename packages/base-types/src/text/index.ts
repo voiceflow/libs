@@ -50,6 +50,7 @@ export interface LinkElement extends Element {
 export interface VariableElement extends Element {
   type: ElementType.VARIABLE;
   id: string;
+  path?: string;
   name: string;
   isSlot?: boolean;
   isSecret?: boolean;
