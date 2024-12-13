@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.128.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.127.2...@voiceflow/base-types@2.128.0) (2024-12-13)
+
+### Features
+
+* update slate variable element (DLC-517) ([#567](https://github.com/voiceflow/libs/issues/567)) ([fad3dd7](https://github.com/voiceflow/libs/commit/fad3dd74065cc01098ccfe7dcd0351b376823f6d))
+
 ## [2.127.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.127.1...@voiceflow/base-types@2.127.2) (2024-12-12)
 
 ### Bug Fixes
