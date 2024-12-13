@@ -1,4 +1,5 @@
-import { READABLE_VARIABLE_REGEXP } from '@common/constants';
+import { READABLE_VARIABLE_REGEXP, VARIABLE_ONLY_REGEXP } from '@common/constants';
+import _get from 'lodash/get.js';
 
 export const variableReplacer = (
   match: string,
@@ -6,21 +7,72 @@ export const variableReplacer = (
   variables: Record<string, unknown>,
   modifier?: (variable: unknown) => unknown
 ): unknown => {
-  if (inner in variables) {
-    return typeof modifier === 'function' ? modifier(variables[inner]) : variables[inner];
+  const { id, path } = splitVariableName(inner);
+  if (!(id in variables)) {
+    return match;
   }
 
-  return match;
+  if (!path) {
+    return typeof modifier === 'function' ? modifier(variables[id]) : variables[id];
+  }
+
+  try {
+    const variable = typeof variables[id] === 'string' ? JSON.parse(variables[id]) : variables[id];
+    return typeof modifier === 'function' ? modifier(_get(variable, path, 0)) : _get(variable, path, 0);
+  } catch (err: any) {
+    if (err?.message.includes('is not valid JSON')) {
+      return 0;
+    }
+    throw err;
+  }
+};
+
+export const splitVariableName = (inner: string) => {
+  const firstDotIndex = inner.indexOf('.');
+  const firstSquareBracketIndex = inner.indexOf('[');
+
+  if (firstDotIndex === -1 && firstSquareBracketIndex === -1) {
+    return { id: inner, path: '' };
+  }
+
+  if (firstDotIndex !== -1 && firstSquareBracketIndex === -1) {
+    return {
+      id: inner.slice(0, firstDotIndex),
+      path: inner.slice(firstDotIndex + 1), // skip the dot
+    };
+  }
+  if (firstDotIndex === -1 && firstSquareBracketIndex !== -1) {
+    return {
+      id: inner.slice(0, firstSquareBracketIndex),
+      path: inner.slice(firstSquareBracketIndex),
+    };
+  }
+
+  if (firstDotIndex < firstSquareBracketIndex) {
+    return {
+      id: inner.slice(0, firstDotIndex),
+      path: inner.slice(firstDotIndex + 1), // skip the dot
+    };
+  }
+
+  return {
+    id: inner.slice(0, firstSquareBracketIndex),
+    path: inner.slice(firstSquareBracketIndex),
+  };
 };
 
 export const replaceVariables = (
   phrase: string | undefined | null,
   variables: Record<string, unknown>,
   modifier: ((variable: unknown) => unknown) | undefined = undefined,
-  { trim = true }: { trim?: boolean } = {}
-): string => {
+  { trim = true, keepTypeIfOnlyVariable = false }: { trim?: boolean; keepTypeIfOnlyVariable?: boolean } = {}
+): string | unknown => {
   if (!phrase || (trim && !phrase.trim())) {
     return '';
+  }
+
+  if (keepTypeIfOnlyVariable && phrase.match(VARIABLE_ONLY_REGEXP)) {
+    return variableReplacer(phrase, phrase.slice(1, -1), variables, modifier);
   }
 
   return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner) =>
