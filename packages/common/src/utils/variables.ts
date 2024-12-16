@@ -17,7 +17,7 @@ export const variableReplacer = (
   }
 
   try {
-    const variable = typeof variables[id] === 'string' ? JSON.parse(variables[id]) : variables[id];
+    const variable = typeof variables[id] === 'string' ? JSON.parse(variables[id] as string) : variables[id];
     return typeof modifier === 'function' ? modifier(_get(variable, path, 0)) : _get(variable, path, 0);
   } catch (err: any) {
     if (err?.message.includes('is not valid JSON')) {
