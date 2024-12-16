@@ -108,5 +108,21 @@ describe('Utils | variables', () => {
       );
       expect(replacedVariable).toBe('"world"');
     });
+
+    it('returns toString() of path match, even in cases of object', () => {
+      const variable = 'name';
+      const replacedVariable = replaceVariables(`Hello, {${variable}.name}!`, {
+        [variable]: { name: { first: 'john', last: 'doe' } },
+      });
+      expect(replacedVariable).toBe('Hello, [object Object]!');
+    });
+
+    it('returns toString() of path match, even in cases of arrays', () => {
+      const variable = 'name';
+      const replacedVariable = replaceVariables(`Hello, {${variable}.name}!`, {
+        [variable]: { name: ['mr', 'john', 'doe'] },
+      });
+      expect(replacedVariable).toBe('Hello, mr,john,doe!');
+    });
   });
 });
