@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.3.2...@voiceflow/common@8.4.0) (2024-12-16)
+
+### Features
+
+* update replace variable (dlc-504) ([#568](https://github.com/voiceflow/libs/issues/568)) ([b3f163d](https://github.com/voiceflow/libs/commit/b3f163d19f311cf411c16678b53d113562c39583))
+
 ## [8.3.2](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.3.1...@voiceflow/common@8.3.2) (2024-12-12)
 
 ### Bug Fixes
