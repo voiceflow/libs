@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.4.0...@voiceflow/common@8.5.0) (2024-12-17)
+
+### Features
+
+* improve interface (DLC-504) ([#569](https://github.com/voiceflow/libs/issues/569)) ([8d4af7b](https://github.com/voiceflow/libs/commit/8d4af7ba8b3df9e0b1e6ee1450d0b32bf9c95229))
+
 # [8.4.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.3.2...@voiceflow/common@8.4.0) (2024-12-16)
 
 ### Features
