@@ -61,12 +61,24 @@ export const splitVariableName = (inner: string) => {
   };
 };
 
-export const replaceVariables = (
+export function replaceVariables(
+  phrase: string | undefined | null,
+  variables: Record<string, unknown>,
+  modifier?: (variable: unknown) => unknown,
+  options?: { trim?: boolean; keepTypeIfOnlyVariable?: false }
+): string;
+export function replaceVariables(
+  phrase: string | undefined | null,
+  variables: Record<string, unknown>,
+  modifier?: (variable: unknown) => unknown,
+  options?: { trim?: boolean; keepTypeIfOnlyVariable: true }
+): unknown;
+export function replaceVariables(
   phrase: string | undefined | null,
   variables: Record<string, unknown>,
   modifier: ((variable: unknown) => unknown) | undefined = undefined,
   { trim = true, keepTypeIfOnlyVariable = false }: { trim?: boolean; keepTypeIfOnlyVariable?: boolean } = {}
-): string | unknown => {
+): string | unknown {
   if (!phrase || (trim && !phrase.trim())) {
     return '';
   }
@@ -80,7 +92,7 @@ export const replaceVariables = (
   return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner) =>
     String(variableReplacer(match, inner, variables, modifier))
   );
-};
+}
 
 // turn float variables to 4 decimal places
 export const sanitizeVariables = (variables: Record<string, unknown>): Record<string, unknown> =>
