@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.129.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.128.2...@voiceflow/base-types@2.129.0) (2024-12-17)
+
+### Features
+
+* add structured output to node data (DLC-525) ([#570](https://github.com/voiceflow/libs/issues/570)) ([addda95](https://github.com/voiceflow/libs/commit/addda95292f22f404a7d9c2160babb6c6e166995))
+
 ## [2.128.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.128.1...@voiceflow/base-types@2.128.2) (2024-12-17)
 
 **Note:** Version bump only for package @voiceflow/base-types
