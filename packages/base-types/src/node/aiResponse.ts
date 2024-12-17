@@ -1,4 +1,10 @@
-import type { AICompletionParams, AIKnowledgeContextParams, AIKnowledgeParams, AIModelParams } from '../utils/ai';
+import type {
+  AICompletionParams,
+  AIKnowledgeContextParams,
+  AIKnowledgeParams,
+  AIModelParams,
+  AIResponseFormatParams,
+} from '../utils/ai';
 import type { NodeType } from './constants';
 import type {
   BaseNode,
@@ -21,7 +27,12 @@ export interface Step<Data = StepData> extends BaseStep<Data, BaseStepPorts<Buil
   type: NodeType.AI_RESPONSE;
 }
 
-export interface NodeData extends AIModelParams, AICompletionParams, AIKnowledgeContextParams, AIKnowledgeParams {
+export interface NodeData
+  extends AIModelParams,
+    AICompletionParams,
+    AIKnowledgeContextParams,
+    AIKnowledgeParams,
+    AIResponseFormatParams {
   notFoundPath?: boolean;
 
   // the existance of this property is also a flag if the step is a legacy version or not
