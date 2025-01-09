@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.130.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.129.0...@voiceflow/base-types@2.130.0) (2025-01-09)
+
+### Features
+
+* add intents and slots to version model (RUN-523) ([#571](https://github.com/voiceflow/libs/issues/571)) ([81127a5](https://github.com/voiceflow/libs/commit/81127a5aa39740fd987a8d4183c003a310fa4b38))
+
 # [2.129.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.128.2...@voiceflow/base-types@2.129.0) (2024-12-17)
 
 ### Features
