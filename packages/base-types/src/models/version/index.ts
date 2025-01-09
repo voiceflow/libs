@@ -56,7 +56,9 @@ export interface Folder {
 }
 
 export interface NLUModel {
-  modelID: string;
+  modelID?: string;
+  slots: Slot[];
+  intents: Intent[];
 }
 
 export type DefaultStepColors = Partial<Record<NodeType, string>>;
