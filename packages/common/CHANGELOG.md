@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.6.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.5.0...@voiceflow/common@8.6.0) (2025-01-13)
+
+### Features
+
+* improve splitVariableName API (DLC-551) ([#572](https://github.com/voiceflow/libs/issues/572)) ([c72f509](https://github.com/voiceflow/libs/commit/c72f509551cb4e89f3a9793dea62990389ad8c57))
+
 # [8.5.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.4.0...@voiceflow/common@8.5.0) (2024-12-17)
 
 ### Features
