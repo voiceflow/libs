@@ -27,7 +27,10 @@ export const variableReplacer = (
   }
 };
 
-export const splitVariableName = (inner: string) => {
+export const splitVariableName = (
+  inner: string,
+  options: { pathWithDotPrefix: boolean } = { pathWithDotPrefix: false }
+) => {
   const firstDotIndex = inner.indexOf('.');
   const firstSquareBracketIndex = inner.indexOf('[');
 
@@ -38,7 +41,7 @@ export const splitVariableName = (inner: string) => {
   if (firstDotIndex !== -1 && firstSquareBracketIndex === -1) {
     return {
       id: inner.slice(0, firstDotIndex),
-      path: inner.slice(firstDotIndex + 1), // skip the dot
+      path: options.pathWithDotPrefix ? inner.slice(firstDotIndex) : inner.slice(firstDotIndex + 1),
     };
   }
   if (firstDotIndex === -1 && firstSquareBracketIndex !== -1) {
@@ -51,7 +54,7 @@ export const splitVariableName = (inner: string) => {
   if (firstDotIndex < firstSquareBracketIndex) {
     return {
       id: inner.slice(0, firstDotIndex),
-      path: inner.slice(firstDotIndex + 1), // skip the dot
+      path: options.pathWithDotPrefix ? inner.slice(firstDotIndex) : inner.slice(firstDotIndex + 1),
     };
   }
 

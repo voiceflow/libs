@@ -33,6 +33,30 @@ describe('Utils | variables', () => {
       expect(id).toBe('name');
       expect(path).toBe('[0].first.last');
     });
+
+    it('works with options (just bracket notation)', () => {
+      const { id, path } = splitVariableName('name[0]', { pathWithDotPrefix: true });
+      expect(id).toBe('name');
+      expect(path).toBe('[0]');
+    });
+
+    it('works with options (just dot notation)', () => {
+      const { id, path } = splitVariableName('name.first.last', { pathWithDotPrefix: true });
+      expect(id).toBe('name');
+      expect(path).toBe('.first.last');
+    });
+
+    it('works with options (both notation)', () => {
+      const { id, path } = splitVariableName('name[0].first.last', { pathWithDotPrefix: true });
+      expect(id).toBe('name');
+      expect(path).toBe('[0].first.last');
+    });
+
+    it('works with options (both notation)', () => {
+      const { id, path } = splitVariableName('name.first[0].last', { pathWithDotPrefix: true });
+      expect(id).toBe('name');
+      expect(path).toBe('.first[0].last');
+    });
   });
 
   describe('replaceVariables()', () => {
