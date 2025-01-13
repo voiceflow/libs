@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.15.47](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.15.46...@voiceflow/alexa-types@2.15.47) (2025-01-13)
+
+**Note:** Version bump only for package @voiceflow/alexa-types
+
 ## [2.15.46](https://github.com/voiceflow/libs/compare/@voiceflow/alexa-types@2.15.45...@voiceflow/alexa-types@2.15.46) (2025-01-13)
 
 **Note:** Version bump only for package @voiceflow/alexa-types

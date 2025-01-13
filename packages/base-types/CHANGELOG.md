@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.131.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.130.1...@voiceflow/base-types@2.131.0) (2025-01-13)
+
+### Features
+
+* optional intents and slots in version model (RUN-523) ([#573](https://github.com/voiceflow/libs/issues/573)) ([c0e33ba](https://github.com/voiceflow/libs/commit/c0e33baa6fde2700b839c0fd0dabeee7e853f6d3))
+
 ## [2.130.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.130.0...@voiceflow/base-types@2.130.1) (2025-01-13)
 
 **Note:** Version bump only for package @voiceflow/base-types
