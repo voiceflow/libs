@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.131.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.131.0...@voiceflow/base-types@2.131.1) (2025-01-17)
+
+### Bug Fixes
+
+* add promptID to ai response node (COR-4556) ([#574](https://github.com/voiceflow/libs/issues/574)) ([552da2f](https://github.com/voiceflow/libs/commit/552da2f527177aa39b5081b2977aeaad3448295e))
+
 # [2.131.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.130.1...@voiceflow/base-types@2.131.0) (2025-01-13)
 
 ### Features
