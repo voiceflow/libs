@@ -33,6 +33,8 @@ export interface NodeData
     AIKnowledgeContextParams,
     AIKnowledgeParams,
     AIResponseFormatParams {
+  // need this for tracking prompts in the runtime
+  promptID?: string;
   notFoundPath?: boolean;
 
   // the existance of this property is also a flag if the step is a legacy version or not
