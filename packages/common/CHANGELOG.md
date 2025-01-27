@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.7.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.6.0...@voiceflow/common@8.7.0) (2025-01-27)
+
+### Features
+
+* add JSON DTOs and dtos subexport (ENG-441) ([#575](https://github.com/voiceflow/libs/issues/575)) ([ebd1caf](https://github.com/voiceflow/libs/commit/ebd1caf6c80e68cf17aad85e1105c015166805ee))
+
 # [8.6.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.5.0...@voiceflow/common@8.6.0) (2025-01-13)
 
 ### Features
