@@ -1461,6 +1461,12 @@ __metadata:
     number-to-words: 1.2.4
     shallowequal: 1.1.0
     typescript-fsa: 3.0.0
+    zod: 3.24.1
+  peerDependencies:
+    zod: ^3
+  peerDependenciesMeta:
+    zod:
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -8635,5 +8641,12 @@ __metadata:
   version: 1.0.0
   resolution: "yocto-queue@npm:1.0.0"
   checksum: 2cac84540f65c64ccc1683c267edce396b26b1e931aa429660aefac8fbe0188167b7aee815a3c22fa59a28a58d898d1a2b1825048f834d8d629f4c2a5d443801
+  languageName: node
+  linkType: hard
+
+"zod@npm:3.24.1":
+  version: 3.24.1
+  resolution: "zod@npm:3.24.1"
+  checksum: dcd5334725b29555593c186fd6505878bb7ccb4f5954f728d2de24bf71f9397492d83bdb69d5b8a376eb500a02273ae0691b57deb1eb8718df3f64c77cc5534a
   languageName: node
   linkType: hard
