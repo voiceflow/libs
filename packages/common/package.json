@@ -15,9 +15,28 @@
   },
   "license": "ISC",
   "author": "Voiceflow",
+  "exports": {
+    ".": {
+      "types": "./build/cjs/index.d.ts",
+      "main": "./build/cjs/index.js",
+      "module": "./build/esm/index.js"
+    },
+    "./dtos": {
+      "types": "./build/cjs/dtos/main.d.ts",
+      "main": "./build/cjs/dtos/main.js",
+      "module": "./build/esm/dtos/main.js"
+    }
+  },
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
   "types": "build/cjs/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "dtos": [
+        "./build/cjs/dtos/main.d.ts"
+      ]
+    }
+  },
   "files": [
     "build"
   ],
@@ -52,7 +71,16 @@
   },
   "devDependencies": {
     "@types/lodash": "4.14.178",
-    "@types/number-to-words": "1.2.0"
+    "@types/number-to-words": "1.2.0",
+    "zod": "3.24.1"
+  },
+  "peerDependencies": {
+    "zod": "^3"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
   },
   "volta": {
     "extends": "../../package.json"

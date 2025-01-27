@@ -1461,6 +1461,12 @@ __metadata:
     number-to-words: 1.2.4
     shallowequal: 1.1.0
     typescript-fsa: 3.0.0
+    zod: 3.24.1
+  peerDependencies:
+    zod: ^3
+  peerDependenciesMeta:
+    zod:
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -1499,14 +1505,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@voiceflow/git-branch-check@npm:1.4.1":
-  version: 1.4.1
-  resolution: "@voiceflow/git-branch-check@npm:1.4.1"
+"@voiceflow/git-branch-check@npm:1.4.2":
+  version: 1.4.2
+  resolution: "@voiceflow/git-branch-check@npm:1.4.2"
   dependencies:
-    current-git-branch: ^1.1.0
+    current-git-branch: 1.1.0
   bin:
-    git-branch-check: index.js
-  checksum: 7573d448d4bc3f4b5fb548bab72cae68ae378c67f09ee1a1f555b2e62357ad0854990492b5ac8e3a5d1dbfc50c79cbf5d450f7fddc17f41405392bd1c9de12a8
+    git-branch-check: src/index.js
+  checksum: 1416f524b6f0a5d4d26b7d50604e87a2ffee2833ad8ae7ea1bb18f04218052dd66817b6944d9fbf263707a34f0745682e12d692c53301ac1955fcd8bf0e73ddf
   languageName: node
   linkType: hard
 
@@ -2583,7 +2589,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"current-git-branch@npm:^1.1.0":
+"current-git-branch@npm:1.1.0":
   version: 1.1.0
   resolution: "current-git-branch@npm:1.1.0"
   dependencies:
@@ -6945,7 +6951,7 @@ __metadata:
     "@voiceflow/commitlint-config": 2.3.1
     "@voiceflow/dependency-cruiser-config": 1.8.2
     "@voiceflow/eslint-config": 7.4.1
-    "@voiceflow/git-branch-check": 1.4.1
+    "@voiceflow/git-branch-check": 1.4.2
     "@voiceflow/prettier-config": 1.5.1
     "@voiceflow/tsconfig": 1.7.1
     "@voiceflow/vitest-config": 1.2.1
@@ -8635,5 +8641,12 @@ __metadata:
   version: 1.0.0
   resolution: "yocto-queue@npm:1.0.0"
   checksum: 2cac84540f65c64ccc1683c267edce396b26b1e931aa429660aefac8fbe0188167b7aee815a3c22fa59a28a58d898d1a2b1825048f834d8d629f4c2a5d443801
+  languageName: node
+  linkType: hard
+
+"zod@npm:3.24.1":
+  version: 3.24.1
+  resolution: "zod@npm:3.24.1"
+  checksum: dcd5334725b29555593c186fd6505878bb7ccb4f5954f728d2de24bf71f9397492d83bdb69d5b8a376eb500a02273ae0691b57deb1eb8718df3f64c77cc5534a
   languageName: node
   linkType: hard
