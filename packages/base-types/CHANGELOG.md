@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.132.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.131.2...@voiceflow/base-types@2.132.0) (2025-01-29)
+
+### Features
+
+* remove entities and intents from version model (RUN-602) ([#576](https://github.com/voiceflow/libs/issues/576)) ([855cf22](https://github.com/voiceflow/libs/commit/855cf22374591eb9bef63f08374b81c194bc2c1d))
+
 ## [2.131.2](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.131.1...@voiceflow/base-types@2.131.2) (2025-01-27)
 
 **Note:** Version bump only for package @voiceflow/base-types
