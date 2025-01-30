@@ -1,0 +1,47 @@
+name: Check Pre-release Versions in package.json
+
+on:
+  push:
+
+jobs:
+  check-pre-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for pre-release versions
+        run: |
+          has_pre_release=false
+          package_json_files=$(find . -name "package.json" -not -path "*/node_modules/*")
+          for package_json in $package_json_files; do
+              version=$(jq -r '.version' "$package_json")
+              if [[ "$version" =~ [^-]+-[a-zA-Z0-9]+ ]]; then
+                  echo "Pre-release version found in $package_json: $version"
+                  has_pre_release=true
+              fi
+
+              for dep_type in dependencies devDependencies peerDependencies; do
+                  if jq -e ".$dep_type" "$package_json" > /dev/null; then
+                  dep_names=$(jq -r ".$dep_type | keys[]" "$package_json")
+                  for dep_name in $dep_names; do
+                      if [[ "$dep_name" =~ ^@voiceflow/ || "$dep_name" =~ ^npm:@voiceflow/ ]]; then
+                        dep_version=$(jq -r ".$dep_type[\"$dep_name\"]" "$package_json")
+                        if [[ "$dep_version" =~ [^-]+-[a-zA-Z0-9]+ && ! "$dep_version" =~ ^npm:@voiceflow/ ]]; then
+                            echo "Pre-release dependency found in $package_json ($dep_type): $dep_name@$dep_version"
+                            has_pre_release=true
+                        fi
+                      fi
+                  done
+                  fi
+              done
+          done
+
+          if [ "$has_pre_release" = true ]; then
+              echo "❌ Pre-release versions detected. Failing the workflow."
+              exit 1
+          fi
+
+      - name: Success Message
+        if: success()
+        run: echo "✅ No pre-release versions found."
