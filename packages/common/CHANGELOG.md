@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.7.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.7.0...@voiceflow/common@8.7.1) (2025-02-14)
+
+### Bug Fixes
+
+* fix cjs exports format (COR-4870) ([#578](https://github.com/voiceflow/libs/issues/578)) ([c8b4a03](https://github.com/voiceflow/libs/commit/c8b4a03c823edd7630d7ad54be27dbea2ad35b45))
+
 # [8.7.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.6.0...@voiceflow/common@8.7.0) (2025-01-27)
 
 ### Features

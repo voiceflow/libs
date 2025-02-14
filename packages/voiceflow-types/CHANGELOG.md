@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.36](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.32.35...@voiceflow/voiceflow-types@3.32.36) (2025-02-14)
+
+**Note:** Version bump only for package @voiceflow/voiceflow-types
+
 ## [3.32.35](https://github.com/voiceflow/libs/compare/@voiceflow/voiceflow-types@3.32.34...@voiceflow/voiceflow-types@3.32.35) (2025-01-29)
 
 **Note:** Version bump only for package @voiceflow/voiceflow-types
