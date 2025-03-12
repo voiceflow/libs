@@ -37,7 +37,7 @@
     "test:unit": "yarn g:vitest run --coverage"
   },
   "dependencies": {
-    "@voiceflow/nestjs-common": "1.5.2"
+    "@voiceflow/nestjs-common": "2.55.3"
   },
   "devDependencies": {
     "@nestjs/common": "8.4.7",
