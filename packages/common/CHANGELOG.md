@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.7.1...@voiceflow/common@8.8.0) (2025-06-10)
+
+### Features
+
+* add common DTOs (COR-6222) ([#582](https://github.com/voiceflow/libs/issues/582)) ([aba1ad3](https://github.com/voiceflow/libs/commit/aba1ad3ef693641b48be6e50ae462e158436b543))
+
 ## [8.7.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.7.0...@voiceflow/common@8.7.1) (2025-02-14)
 
 ### Bug Fixes
