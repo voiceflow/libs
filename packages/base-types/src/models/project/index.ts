@@ -34,6 +34,10 @@ export interface AIAssistSettings {
   generativeTasks?: boolean;
 }
 
+export interface TranscriptSettings {
+  saveTestTranscripts: boolean;
+}
+
 export enum ClassifyStrategy {
   VF_NLU = 'VF_NLU',
   VF_NLU_LLM_HYBRID = 'VF_NLU_LLM_HYBRID',
@@ -71,4 +75,6 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   platformData: PlatformData;
 
   knowledgeBase?: KnowledgeBase;
+
+  transcriptSettings?: TranscriptSettings;
 }
