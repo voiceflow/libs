@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.8.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.8.0...@voiceflow/common@8.8.1) (2025-06-18)
+
+### Bug Fixes
+
+* common export order (ENG-597) ([#584](https://github.com/voiceflow/libs/issues/584)) ([13f5584](https://github.com/voiceflow/libs/commit/13f5584e425a6002112bdbc5c0ef6aef2a93d137))
+
 # [8.8.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.7.1...@voiceflow/common@8.8.0) (2025-06-10)
 
 ### Features
