@@ -18,13 +18,13 @@
   "exports": {
     ".": {
       "types": "./build/cjs/index.d.ts",
-      "default": "./build/cjs/index.js",
-      "module": "./build/esm/index.js"
+      "import": "./build/esm/index.js",
+      "default": "./build/cjs/index.js"
     },
     "./dtos": {
       "types": "./build/cjs/dtos/main.d.ts",
-      "default": "./build/cjs/dtos/main.js",
-      "module": "./build/esm/dtos/main.js"
+      "import": "./build/esm/dtos/main.js",
+      "default": "./build/cjs/dtos/main.js"
     }
   },
   "main": "build/cjs/index.js",
