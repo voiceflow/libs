@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.134.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.133.1...@voiceflow/base-types@2.134.0) (2025-07-23)
+
+### Features
+
+* add  staging env prop to project (COR-7008) ([#585](https://github.com/voiceflow/libs/issues/585)) ([741d928](https://github.com/voiceflow/libs/commit/741d9288739549fcb20d5fde5aee644093bab16a))
+
 ## [2.133.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.133.0...@voiceflow/base-types@2.133.1) (2025-06-18)
 
 **Note:** Version bump only for package @voiceflow/base-types
