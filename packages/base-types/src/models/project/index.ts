@@ -54,6 +54,7 @@ export interface Model<PlatformData extends AnyRecord, MemberPlatformData extend
   creatorID: number;
   devVersion?: string;
   liveVersion?: string;
+  stagingVersion?: string;
 
   name: string;
   type?: string; // chat | voice | etc
