@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.134.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.134.0...@voiceflow/base-types@2.134.1) (2025-07-24)
+
+### Bug Fixes
+
+* cleanup (COR-7009) ([#586](https://github.com/voiceflow/libs/issues/586)) ([e607f69](https://github.com/voiceflow/libs/commit/e607f69ed5ea88943d2b3d66f36cbdb5e02cfbd0))
+
 # [2.134.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.133.1...@voiceflow/base-types@2.134.0) (2025-07-23)
 
 ### Features
