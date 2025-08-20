@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.135.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.134.1...@voiceflow/base-types@2.135.0) (2025-08-20)
+
+### Features
+
+* add save transcripts with no interaction field (COR-7415) ([#587](https://github.com/voiceflow/libs/issues/587)) ([94033f9](https://github.com/voiceflow/libs/commit/94033f9f440ce3156e205239a220167230708023))
+
 ## [2.134.1](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.134.0...@voiceflow/base-types@2.134.1) (2025-07-24)
 
 ### Bug Fixes
