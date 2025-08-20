@@ -36,6 +36,7 @@ export interface AIAssistSettings {
 
 export interface TranscriptSettings {
   saveTestTranscripts: boolean;
+  saveTranscriptsWithNoInteraction: boolean;
 }
 
 export enum ClassifyStrategy {
