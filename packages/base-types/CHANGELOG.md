@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.136.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.135.0...@voiceflow/base-types@2.136.0) (2025-10-14)
+
+### Features
+
+* inactive transcript timeout project field (COR-8062) ([#588](https://github.com/voiceflow/libs/issues/588)) ([ef81c32](https://github.com/voiceflow/libs/commit/ef81c32ac66707993cb75da627b4146017338c15))
+
 # [2.135.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.134.1...@voiceflow/base-types@2.135.0) (2025-08-20)
 
 ### Features
