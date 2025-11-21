@@ -3,7 +3,7 @@
  * https://github.com/BenLorantfy/nestjs-zod/blob/main/packages/z/src/z/generic-types/json.ts
  */
 
-import type { ZodSchema } from 'zod';
+import type { ZodType } from 'zod';
 import { z } from 'zod';
 
 type Literal = boolean | number | string;
@@ -14,10 +14,8 @@ const literal = z.union([z.string(), z.number(), z.boolean()]);
 const DEFAULT_MESSAGE = 'Expected value to be a JSON-serializable';
 
 export const zJSON = (message: string = DEFAULT_MESSAGE) => {
-  const schema: ZodSchema<JSON> = z.lazy(() =>
-    z.union([literal, z.array(schema), z.record(schema)], {
-      invalid_type_error: message,
-    })
+  const schema: ZodType<JSON> = z.lazy(() =>
+    z.union([literal, z.array(schema), z.record(z.string(), schema)], { error: message })
   );
 
   return schema;
