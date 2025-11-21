@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.9.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.8.1...@voiceflow/common@8.9.0) (2025-11-21)
+
+### Features
+
+* upgrade zod to v4 (ENG-697) ([#589](https://github.com/voiceflow/libs/issues/589)) ([0c9db8f](https://github.com/voiceflow/libs/commit/0c9db8f794bb51647591aff83b1ea0ff4b777bf2))
+
 ## [8.8.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.8.0...@voiceflow/common@8.8.1) (2025-06-18)
 
 ### Bug Fixes
