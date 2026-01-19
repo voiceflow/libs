@@ -3,4 +3,7 @@ import type { ChangedVariables, PathReference } from '@base-types/runtimeLogs/ut
 import type { BaseStepLog } from '../base';
 import type { StepLogKind } from '../kinds';
 
-export type SetStepLog = BaseStepLog<StepLogKind.SET, PathReference & ChangedVariables<any>>;
+export type SetStepLog = BaseStepLog<
+  StepLogKind.SET,
+  PathReference & ChangedVariables<any> & { changedTranscriptProperties?: Record<string, string> }
+>;
