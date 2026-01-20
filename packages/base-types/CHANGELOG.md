@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.138.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.137.0...@voiceflow/base-types@2.138.0) (2026-01-20)
+
+### Features
+
+* include transcript properties in setv3 logging (COR-9466) ([#591](https://github.com/voiceflow/libs/issues/591)) ([47e9cee](https://github.com/voiceflow/libs/commit/47e9cee090fac278e709ee0dd24fa7c19040223f))
+
 # [2.137.0](https://github.com/voiceflow/libs/compare/@voiceflow/base-types@2.136.1...@voiceflow/base-types@2.137.0) (2025-11-25)
 
 ### Features
