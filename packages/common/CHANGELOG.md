@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.11.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.10.0...@voiceflow/common@8.11.0) (2026-01-29)
+
+### Features
+
+* improve variables utils (COR-9708) ([#592](https://github.com/voiceflow/libs/issues/592)) ([37bbab7](https://github.com/voiceflow/libs/commit/37bbab7bfe44d935f269349ee69d5293d28cd252))
+
 # [8.10.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.9.0...@voiceflow/common@8.10.0) (2025-11-25)
 
 ### Features
