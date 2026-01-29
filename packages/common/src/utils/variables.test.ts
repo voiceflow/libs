@@ -128,7 +128,7 @@ describe('Utils | variables', () => {
       const replacedVariable = replaceVariables(
         `{${variable}.name}`,
         { [variable]: { name: 'world' } },
-        JSON.stringify
+        { modifier: JSON.stringify }
       );
       expect(replacedVariable).toBe('"world"');
     });

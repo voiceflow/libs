@@ -5,7 +5,7 @@ export const variableReplacer = (
   match: string,
   inner: string,
   variables: Record<string, unknown>,
-  modifier?: (variable: unknown) => unknown
+  modifier: (variable: unknown) => unknown = (val) => val
 ): unknown => {
   const { id, path } = splitVariableName(inner);
   if (!(id in variables)) {
@@ -13,12 +13,13 @@ export const variableReplacer = (
   }
 
   if (!path) {
-    return typeof modifier === 'function' ? modifier(variables[id]) : variables[id];
+    return modifier(variables[id]);
   }
 
   try {
     const variable = typeof variables[id] === 'string' ? JSON.parse(variables[id] as string) : variables[id];
-    return typeof modifier === 'function' ? modifier(_get(variable, path, 0)) : _get(variable, path, 0);
+
+    return modifier(_get(variable, path, 0));
   } catch (err: any) {
     if (err?.message.includes('is not valid JSON')) {
       return 0;
@@ -67,32 +68,36 @@ export const splitVariableName = (
 export function replaceVariables(
   phrase: string | undefined | null,
   variables: Record<string, unknown>,
-  modifier?: (variable: unknown) => unknown,
-  options?: { trim?: boolean; keepTypeIfOnlyVariable?: false }
+  options?: { modifier?: (variable: unknown) => unknown; trim?: boolean; keepTypeIfOnlyVariable?: false }
 ): string;
 export function replaceVariables(
   phrase: string | undefined | null,
   variables: Record<string, unknown>,
-  modifier?: (variable: unknown) => unknown,
-  options?: { trim?: boolean; keepTypeIfOnlyVariable: true }
+  options: { modifier?: (variable: unknown) => unknown; trim?: boolean; keepTypeIfOnlyVariable: true }
 ): unknown;
 export function replaceVariables(
   phrase: string | undefined | null,
   variables: Record<string, unknown>,
-  modifier: ((variable: unknown) => unknown) | undefined = undefined,
-  { trim = true, keepTypeIfOnlyVariable = false }: { trim?: boolean; keepTypeIfOnlyVariable?: boolean } = {}
+  {
+    trim = true,
+    modifier,
+    keepTypeIfOnlyVariable = false,
+  }: { modifier?: ((variable: unknown) => unknown) | undefined; trim?: boolean; keepTypeIfOnlyVariable?: boolean } = {}
 ): string | unknown {
-  if (!phrase || (trim && !phrase.trim())) {
+  const formattedPhrase = trim ? phrase?.trim() : phrase;
+
+  if (!formattedPhrase) {
     return '';
   }
 
-  if (keepTypeIfOnlyVariable && phrase.match(VARIABLE_ONLY_REGEXP)) {
+  if (keepTypeIfOnlyVariable && formattedPhrase.match(VARIABLE_ONLY_REGEXP)) {
     // remove the curly braces {} from phrase to get the inner
-    const inner = phrase.slice(1, -1);
-    return variableReplacer(phrase, inner, variables, modifier);
+    const inner = formattedPhrase.slice(1, -1);
+
+    return variableReplacer(formattedPhrase, inner, variables, modifier);
   }
 
-  return phrase.replace(READABLE_VARIABLE_REGEXP, (match, inner) =>
+  return formattedPhrase.replace(READABLE_VARIABLE_REGEXP, (match, inner) =>
     String(variableReplacer(match, inner, variables, modifier))
   );
 }
@@ -123,18 +128,22 @@ export const transformStringVariableToNumber = (str: string | number | null): nu
   return Number.isNaN(number) ? str : number;
 };
 
-export const deepVariableSubstitution = <T>(bodyData: T, variableMap: Record<string, unknown>): T => {
-  const _recurse = (subCollection: any, modifier?: (variable: unknown) => unknown): any => {
+export const deepVariableSubstitution = <T>(
+  bodyData: T,
+  variableMap: Record<string, unknown>,
+  options?: { trim?: boolean; modifier?: (variable: unknown) => unknown; keepTypeIfOnlyVariable?: boolean }
+): T => {
+  const _recurse = (subCollection: any): any => {
     if (!subCollection) {
       return subCollection;
     }
 
     if (typeof subCollection === 'string') {
-      return replaceVariables(subCollection, variableMap, modifier);
+      return replaceVariables(subCollection, variableMap, options as any);
     }
 
     if (Array.isArray(subCollection)) {
-      return subCollection.map((v) => _recurse(v, modifier));
+      return subCollection.map((v) => _recurse(v));
     }
 
     if (typeof subCollection === 'object') {
