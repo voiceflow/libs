@@ -85,8 +85,7 @@ export function replaceVariables(
   }: { modifier?: ((variable: unknown) => unknown) | undefined; trim?: boolean; keepTypeIfOnlyVariable?: boolean } = {}
 ): string | unknown {
   const stringPhrase = typeof phrase === 'string' ? phrase : String(phrase ?? '');
-
-  const formattedPhrase = trim ? stringPhrase.trim() : stringPhrase;
+  const formattedPhrase = trim ? stringPhrase.trim() : phrase;
 
   if (!formattedPhrase) {
     return '';
