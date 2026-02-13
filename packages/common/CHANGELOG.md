@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.11.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.11.0...@voiceflow/common@8.11.1) (2026-02-13)
+
+### Bug Fixes
+
+* ensure phrase is a string (COR-10013) ([#593](https://github.com/voiceflow/libs/issues/593)) ([d1002d1](https://github.com/voiceflow/libs/commit/d1002d110e155cb7039831d70f1169ed87a42c34))
+
 # [8.11.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.10.0...@voiceflow/common@8.11.0) (2026-01-29)
 
 ### Features

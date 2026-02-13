@@ -1,6 +1,6 @@
 {
   "name": "@voiceflow/common",
-  "version": "8.11.0",
+  "version": "8.11.1",
   "description": "Junk drawer of utility functions",
   "keywords": [
     "voiceflow"
