@@ -10,6 +10,7 @@ export type Callback = Function<[], Eventual<void>>;
 
 export type Eventual<T> = Promise<T> | T;
 
+export type Enum<T extends Record<string, string | number>> = T[keyof T];
 export type StringifyEnum<T extends string> = T | `${T}`;
 
 export type NormalizedValue<T> = T extends Normalized<infer R> ? R : never;
