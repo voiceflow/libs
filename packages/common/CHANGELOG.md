@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.12.0](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.11.1...@voiceflow/common@8.12.0) (2026-10-13)
+
+### Features
+
+* sideEffects on package.json ([a8f9715](https://github.com/voiceflow/libs/commit/a8f971557aa4fc4417e4e023d61988d94355bd49))
+
 ## [8.11.1](https://github.com/voiceflow/libs/compare/@voiceflow/common@8.11.0...@voiceflow/common@8.11.1) (2026-02-13)
 
 ### Bug Fixes
