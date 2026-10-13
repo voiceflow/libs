@@ -1,7 +1,6 @@
 {
   "name": "@voiceflow/common",
   "version": "8.11.1",
-  "sideEffects": false,
   "description": "Junk drawer of utility functions",
   "keywords": [
     "voiceflow"
@@ -16,6 +15,7 @@
   },
   "license": "ISC",
   "author": "Voiceflow",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./build/cjs/index.d.ts",
