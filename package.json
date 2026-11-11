@@ -41,6 +41,7 @@
   },
   "prettier": "@voiceflow/prettier-config",
   "resolutions": {
+    "buffer-equal-constant-time": "patch:buffer-equal-constant-time@npm:1.0.1#.yarn/patches/buffer-equal-constant-time-npm-1.0.1-41826f3419.patch",
     "strip-ansi": "6.0.1"
   },
   "devDependencies": {
@@ -52,7 +53,7 @@
     "@voiceflow/prettier-config": "1.5.1",
     "@voiceflow/tsconfig": "1.7.1",
     "@voiceflow/vitest-config": "1.2.1",
-    "dependency-cruiser": "16.3.1",
+    "dependency-cruiser": "16.10.4",
     "eslint": "9.0.0",
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
@@ -65,12 +66,12 @@
     "typescript": "5.4.5",
     "vitest": "1.5.0"
   },
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@4.18.1",
   "engines": {
-    "node": "20"
+    "node": "26"
   },
   "volta": {
-    "node": "20.12.1",
-    "yarn": "3.2.1"
+    "node": "26.12.1",
+    "yarn": "4.18.1"
   }
 }

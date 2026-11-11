@@ -24,7 +24,7 @@ workflows:
           install-gomplate: false
           executor:
             name: vfcommon/node-executor-node-20
-            tag: '20.11.1-vf-3'
+            tag: '26.12.1-vf-1'
           pre-steps:
             - vfcommon/checkout_clone:
                 clone_type: treeless
@@ -60,6 +60,9 @@ workflows:
                 # HACK: this cannot be empty, so we pass both branch and tag (only one of them will be non-empty)
                 # TODO: Fix this once https://discuss.circleci.com/t/empty-string-for-parameter-breaks-config/47695 has a solution
                 value: '<< pipeline.git.branch >><< pipeline.git.tag >>'
+            - vfcommon/set-json-command:
+                field: node_version
+                command: jq --raw-output '.volta.node // ""' package.json
             - vfcommon/set-json-string:
                 field: ecr_url
                 value: 168387678261.dkr.ecr.us-east-1.amazonaws.com
