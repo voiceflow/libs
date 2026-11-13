@@ -79,9 +79,6 @@ workflows:
           {{- end }}
           monorepo_engine: "turborepo"
           post-steps:
-            - run:
-                name: Turbo version
-                command: yarn turbo --version
             - jira/notify
 
       {{- $testJobs := (coll.Slice "lint_report" "types_tests" "dependency_tests" "unit_tests")}}
