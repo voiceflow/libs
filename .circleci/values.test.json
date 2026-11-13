@@ -3,5 +3,6 @@
   "services": [],
   "build_all_services": false,
   "branch": "trying",
+  "node_version": "26.12.1",
   "ecr_url": "168387678261.dkr.ecr.voiceflow.amazonaws.com"
 }

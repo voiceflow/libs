@@ -53,12 +53,18 @@ defaults:
           template: basic_fail_1
           branch_pattern: master
 
+  executor: &node-executor
+    name: vfcommon/node-executor-node-20
+    tag: {{ .values.node_version }}-vf-1
+
 workflows:
   test-and-release:
     jobs:
       - vfcommon/install_and_build:
           <<: *slack-fail-post-step
-          executor: vfcommon/node-large-executor-node-20
+          executor:
+            <<: *node-executor
+            default_resource_class: large
           context: dev-test
           avoid_post_install_scripts: false
           attach_workspace: true
@@ -80,7 +86,9 @@ workflows:
       - vfcommon/monorepo_{{ $testJob }}:
           <<: *slack-fail-post-step
           context: dev-test
-          executor: vfcommon/node-large-executor-node-20
+          executor:
+            <<: *node-executor
+            default_resource_class: large
           name: {{ strings.KebabCase $testJob }}
           run_on_root: true
           {{- if eq $testJob "unit_tests" }}
@@ -113,7 +121,7 @@ workflows:
 
       - vfcommon/monorepo_release:
           <<: *slack-fail-post-step
-          executor: vfcommon/node-executor-node-20
+          executor: *node-executor
           avoid_post_install_scripts: false
           release_engine: "lite"
           ssh_key: << pipeline.parameters.ssh-fingerprint >>
