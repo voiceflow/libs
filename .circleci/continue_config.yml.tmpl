@@ -78,6 +78,8 @@ workflows:
           cache_branch: {{ .values.pr_branch | quote }}
           {{- end }}
           monorepo_engine: "turborepo"
+          post_build_steps:
+            - vfcommon/persist_turbo_cache
           post-steps:
             - jira/notify
 
