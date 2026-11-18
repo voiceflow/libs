@@ -7,11 +7,15 @@
       "inputs": [
         "scripts/build_pkg.sh",
         "src/**",
-        ":!src/**/*.test.ts",
+        "!src/generated/**",
+        "!src/**/*.test.ts",
+        "!src/**/*.unit.ts",
         "package.json",
         "tsconfig.json",
         "tsconfig.build.json",
-        "tsconfig.build.*.json"
+        "tsconfig.build.*.json",
+        "!**/.DS_Store",
+        "!**/.env"
       ],
       "dependsOn": ["^build:cmd"]
     },

@@ -16,3 +16,6 @@ sonar
 
 # Tests
 *.report.xml
+
+# Turborepo
+.turbo
